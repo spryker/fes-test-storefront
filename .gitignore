@@ -1,3 +1,5 @@
 .nuxt
-.env
 node_modules
+_theme
+
+.env
