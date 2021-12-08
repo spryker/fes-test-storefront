@@ -3,12 +3,12 @@
   "version": "0.5.0-dev.10",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build -m",
-    "build:analyze": "nuxt build -a -m",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "test": "jest"
+    "dev": "cd theme && nuxt",
+    "build": "cd theme && nuxt build -m",
+    "build:analyze": "cd theme && nuxt build -a -m",
+    "start": "cd theme && nuxt start",
+    "generate": "cd theme && nuxt generate",
+    "test": "cd theme && jest"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
