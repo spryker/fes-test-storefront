@@ -36,5 +36,8 @@
     "babel-jest": "24.9.0",
     "jest": "24.9.0",
     "vue-jest": "4.0.0-rc.1"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.12.13"
   }
 }
