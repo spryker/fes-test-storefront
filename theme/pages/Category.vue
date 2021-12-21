@@ -774,4 +774,7 @@ export default {
     width: 100vw;
   }
 }
+::v-deep .sf-product-card__add-button {
+  z-index: 1;
+}
 </style>
