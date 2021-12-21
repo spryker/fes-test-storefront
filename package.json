@@ -22,12 +22,12 @@
     "@vue-storefront/nuxt": "2.3.1",
     "@vue-storefront/nuxt-theme": "2.3.1",
     "cookie-universal-nuxt": "2.1.4",
-    "core-js": "2.6.12",
-    "dotenv": "10.0.0",
+    "core-js": "^2.6.12",
+    "dotenv": "^10.0.0",
     "nuxt": "2.14.12",
     "nuxt-i18n": "6.20.0",
     "vee-validate": "3.4.5",
-    "vue-scrollto": "2.20.0"
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "@nuxt/types": "0.7.9",
