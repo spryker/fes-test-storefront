@@ -448,4 +448,7 @@ export default {
   bottom: 40%;
   left: 40%;
 }
+::v-deep .sf-header-navigation__menu {
+  display: flex;
+}
 </style>
