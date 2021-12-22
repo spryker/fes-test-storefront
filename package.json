@@ -21,7 +21,7 @@
     "@vue-storefront/middleware": "2.3.1",
     "@vue-storefront/nuxt": "2.3.1",
     "@vue-storefront/nuxt-theme": "2.3.1",
-    "cookie-universal-nuxt": "2.1.4",
+    "cookie-universal-nuxt": "^2.1.5",
     "core-js": "^2.6.12",
     "dotenv": "^10.0.0",
     "nuxt": "2.14.12",
