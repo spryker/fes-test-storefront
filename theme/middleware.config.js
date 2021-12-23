@@ -13,6 +13,7 @@ module.exports = {
             process.env.API_URL ||
             'http://glue.de.spryker.local',
         },
+        country: 'DE',
         currency: process.env.CURRENCY_DEFAULT || 'EUR',
         locale: process.env.LOCALE_DEFAULT || 'en_US',
       },
