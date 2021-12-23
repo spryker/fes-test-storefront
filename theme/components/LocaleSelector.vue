@@ -60,6 +60,8 @@ export default {
   },
 
   setup(props, context) {
+    const loc = useLocale();
+    console.log('loc:', loc)
     const { locales } = useLocale();
     const { locale } = context.root.$i18n;
     const isLangModalOpen = ref(false);

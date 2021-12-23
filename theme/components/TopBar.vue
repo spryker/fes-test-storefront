@@ -16,7 +16,7 @@
     <template #right>
       <div class="right-wrapper" v-if="!routerHelpers.isCheckout($route.path)">
         <CurrencySelector data-cy="svsf-topBar-currencySelector" />
-        <LocaleSelector data-cy="svsf-topBar-localeSelector" />
+<!--        <LocaleSelector data-cy="svsf-topBar-localeSelector" />-->
       </div>
     </template>
   </SfTopBar>

@@ -63,12 +63,12 @@
           </SfHeaderNavigationItem>
         </SfHeaderNavigation>
       </template>
-      <template #aside>
+<!--      <template #aside>
         <LocaleSelector
           data-cy="svsf-appHeader-localeSelector"
           class="smartphone-only"
         />
-      </template>
+      </template>-->
       <template #header-icons>
         <div class="sf-header__icons">
           <SfButton
