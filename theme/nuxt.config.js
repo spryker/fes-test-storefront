@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import theme from './themeConfig';
 
 export default {
   head: {
@@ -38,6 +39,7 @@ export default {
   loading: { color: '#fff' },
   plugins: [],
   buildModules: [
+    ['@nuxtjs/composition-api/module'],
     // to core
     '@nuxt/typescript-build',
     '@nuxtjs/style-resources',
@@ -149,12 +151,15 @@ export default {
     ],
   ],
   modules: [
-    '@vue-storefront/middleware/nuxt',
-    'vue-scrollto/nuxt',
-    'nuxt-i18n',
+    ['nuxt-i18n', {
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    }],
     'cookie-universal-nuxt',
+    'vue-scrollto/nuxt',
+    '@vue-storefront/middleware/nuxt'
   ],
   publicRuntimeConfig: {
+    theme,
     // middlewareUrl: 'http://localhost:8181',
     spryker: {
       currency: {
@@ -172,18 +177,42 @@ export default {
     },
   },
   i18n: {
-    defaultLocale: process.env.LOCALE_DEFAULT || 'en_US',
-    langDir: 'lang/',
-    locales: [
-      { code: 'en_US', iso: 'en_US', file: 'en.js', label: 'English' },
-      { code: 'de_DE', iso: 'de_DE', file: 'de.js', label: 'German' },
+    currency: 'USD',
+    country: 'US',
+    countries: [
+      { name: 'US', label: 'United States', states: ['California', 'Nevada'] },
+      { name: 'AT', label: 'Austria' },
+      { name: 'DE', label: 'Germany' },
+      { name: 'NL', label: 'Netherlands' }
     ],
+    currencies: [
+      { name: 'EUR', label: 'Euro' },
+      { name: 'USD', label: 'Dollar' }
+    ],
+    locales: [
+      { code: 'en', label: 'English', file: 'en.js', iso: 'en' },
+      { code: 'de', label: 'German', file: 'de.js', iso: 'de' }
+    ],
+    defaultLocale: 'en',
     lazy: true,
     seo: true,
-    detectBrowserLanguage: {
-      cookieKey: 'vsf-locale',
-      fallbackLocale: 'en_US',
+    langDir: 'lang/',
+    vueI18n: {
+      fallbackLocale: 'en',
+      numberFormats: {
+        en: {
+          currency: {
+            style: 'currency', currency: 'USD', currencyDisplay: 'symbol'
+          }
+        },
+        de: {
+          currency: {
+            style: 'currency', currency: 'EUR', currencyDisplay: 'symbol'
+          }
+        }
+      }
     },
+    detectBrowserLanguage: false
   },
   styleResources: {
     scss: [
@@ -205,13 +234,6 @@ export default {
     ],
   },
   router: {
-    middleware: ['checkout'],
-    scrollBehavior(_to, _from, savedPosition) {
-      if (savedPosition) {
-        return savedPosition;
-      } else {
-        return { x: 0, y: 0 };
-      }
-    },
+    middleware: ['checkout']
   },
 };
