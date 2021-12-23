@@ -7,7 +7,7 @@ import {
 } from '@vue-storefront/core';
 
 const getContext = () => {
-  const vm = getCurrentInstance();
+  const vm = getCurrentInstance().proxy;
   return vm.$root as any;
 };
 
