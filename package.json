@@ -1,6 +1,6 @@
 {
   "name": "@spryker-vsf/theme",
-  "version": "0.5.0-dev.10",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "cd theme && nuxt",
