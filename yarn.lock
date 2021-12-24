@@ -1821,7 +1821,7 @@
     lodash-es "^4.17.15"
     vue "^2.6.11"
 
-"@vue-storefront/middleware@2.5.3":
+"@vue-storefront/middleware@^2.5.3":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@vue-storefront/middleware/-/middleware-2.5.3.tgz#9c3fe3a3c7ff71059c50dc033d3742d24c2ff933"
   integrity sha512-jWv3ff6RWir7LlykpYrTG7XM7N34BtViZQNwncUzqmBkGKrIwUKIrAdl8ptwEyql9KODaAYiZwF4uH/9Qxxiow==
@@ -1831,7 +1831,7 @@
     cors "^2.8.5"
     express "^4.17.1"
 
-"@vue-storefront/nuxt-theme@2.5.3":
+"@vue-storefront/nuxt-theme@^2.5.3":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@vue-storefront/nuxt-theme/-/nuxt-theme-2.5.3.tgz#0cbdae0b49b90face823e5ed42ef32336bb81cc5"
   integrity sha512-YO1nCo2jB3oJBgV775d65cOwoQbw4KV7bS4OqbevVS/XvfrubpN1PwvuEX0GlNEz7fc/qh4japtq+5//c9An4g==
@@ -1841,7 +1841,7 @@
     lodash.merge "^4.6.2"
     vue-lazy-hydration "^2.0.0-beta.4"
 
-"@vue-storefront/nuxt@2.5.3":
+"@vue-storefront/nuxt@^2.5.3":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@vue-storefront/nuxt/-/nuxt-2.5.3.tgz#d9315e2008e2491704564d4339cba2f8869548e2"
   integrity sha512-rXWrkEdEenDMnSl0Emef/D09V9FSHU2rJ0NcTSnZVnosWYzT5Wi7ps6+ABQV+fTGnDbIbKjK+9eeC2tx6XVaCg==
