@@ -222,6 +222,11 @@ export default {
     ],
   },
   build: {
+    babel: {
+      plugins: [
+        ['@babel/plugin-proposal-private-methods', { loose: true }]
+      ]
+    },
     transpile: ['vee-validate/dist/rules'],
     plugins: [
       new webpack.DefinePlugin({
