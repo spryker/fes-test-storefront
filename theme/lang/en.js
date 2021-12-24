@@ -40,7 +40,7 @@ export default {
   'Clear all': 'Clear all',
   'Empty': 'Looks like you haven’t added any items to the bag yet. Start shopping to fill it in.',
   'Help & FAQs': 'Help & FAQs',
-  'Download': 'Download our application.',
+  'Download our application.': 'Download our application.',
   'Find out more': 'Find out more',
   'Login': 'Login',
   'Forgotten password?': 'Forgotten password?',
@@ -159,5 +159,10 @@ export default {
   'Delivery': 'Delivery',
   'Pickup in store': 'Pickup in store',
   'Free': 'Free',
-  'Select Channel': 'Select Channel'
+  'Select Channel': 'Select Channel',
+  'Choose currency': 'Choose currency',
+  'All': 'All',
+  'My Cart': 'My Cart',
+  'Your cart is empty': 'Your cart is empty',
+  'My Wishlist': 'My Wishlist',
 };

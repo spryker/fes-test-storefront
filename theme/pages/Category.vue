@@ -257,9 +257,7 @@
           v-show="pagination.totalPages > 1"
           class="products__pagination__options desktop-only"
         >
-          <span class="products__pagination__label">{{
-            $t('Show on page:')
-          }}</span>
+          <span class="products__pagination__label">{{$t('Show on page') }}:</span>
           <SfSelect
             data-cy="svsf-categorySection-itemsPerPage-select"
             class="products__items-per-page"
