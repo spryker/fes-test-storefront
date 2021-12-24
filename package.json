@@ -22,7 +22,6 @@
     "@vue-storefront/nuxt": "2.5.3",
     "@vue-storefront/nuxt-theme": "2.5.3",
     "cookie-universal-nuxt": "^2.1.5",
-    "core-js": "^2.6.12",
     "dotenv": "^10.0.0",
     "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.28.1",
