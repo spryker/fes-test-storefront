@@ -1,11 +1,6 @@
 import webpack from 'webpack';
 
 export default {
-  mode: 'universal',
-  server: {
-    port: 3000,
-    host: '0.0.0.0',
-  },
   head: {
     title: 'Spryker VSF',
     meta: [
@@ -177,14 +172,41 @@ export default {
     },
   },
   i18n: {
-    defaultLocale: process.env.LOCALE_DEFAULT || 'en_US',
-    langDir: 'lang/',
-    locales: [
-      { code: 'en_US', iso: 'en_US', file: 'en.js', label: 'English' },
-      { code: 'de_DE', iso: 'de_DE', file: 'de.js', label: 'German' },
+    currency: 'USD',
+    country: 'US',
+    countries: [
+      { name: 'US', label: 'United States', states: ['California', 'Nevada'] },
+      { name: 'AT', label: 'Austria' },
+      { name: 'DE', label: 'Germany' },
+      { name: 'NL', label: 'Netherlands' }
     ],
+    currencies: [
+      { name: 'EUR', label: 'Euro' },
+      { name: 'USD', label: 'Dollar' }
+    ],
+    locales: [
+      { code: 'en', label: 'English', file: 'en.js', iso: 'en' },
+      { code: 'de', label: 'German', file: 'de.js', iso: 'de' }
+    ],
+    defaultLocale: 'en',
     lazy: true,
     seo: true,
+    langDir: 'lang/',
+    vueI18n: {
+      fallbackLocale: 'en',
+      numberFormats: {
+        en: {
+          currency: {
+            style: 'currency', currency: 'USD', currencyDisplay: 'symbol'
+          }
+        },
+        de: {
+          currency: {
+            style: 'currency', currency: 'EUR', currencyDisplay: 'symbol'
+          }
+        }
+      }
+    },
     detectBrowserLanguage: {
       cookieKey: 'vsf-locale',
       fallbackLocale: 'en_US',
