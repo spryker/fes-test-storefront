@@ -185,15 +185,15 @@ export default {
       { name: 'USD', label: 'Dollar' }
     ],
     locales: [
-      { code: 'en', label: 'English', file: 'en.js', iso: 'en' },
-      { code: 'de', label: 'German', file: 'de.js', iso: 'de' }
+      { code: 'en_US', iso: 'en_US', label: 'English', file: 'en.js' },
+      { code: 'de_DE', iso: 'de_DE', label: 'German', file: 'de.js' }
     ],
-    defaultLocale: 'en',
+    defaultLocale: process.env.LOCALE_DEFAULT || 'en_US',
     lazy: true,
     seo: true,
     langDir: 'lang/',
     vueI18n: {
-      fallbackLocale: 'en',
+      fallbackLocale: 'en_US',
       numberFormats: {
         en: {
           currency: {
