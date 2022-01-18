@@ -366,6 +366,10 @@ export default {
   }
 }
 
+.sf-header-navigation-item:nth-child(n+6) {
+  display: none;
+}
+
 .nav-item {
   --header-navigation-item-margin: 0 var(--spacer-base);
 }
