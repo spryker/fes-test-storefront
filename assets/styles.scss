@@ -12,9 +12,29 @@ body {
   @include assign-color-variants(--c-secondary, --_c-orange-primary);
   @include assign-color-variants(--c-secondary-variant, --_c-orange-secondary);
 
-  --badge-background: #EB553C;
+  --badge-background: var(--_c-orange-primary);
+  --price-old-color: #B2B2B2;
+  --price-special-color: var(--_c-orange-primary);
+  --price-regular-color: #333333;
   --header-background: #E7EAEE;
   --top-bar-background: #D0D5DC;
+
+  .sf-product-card__rating {
+    .sf-rating {
+      &__icon {
+        --icon-color: #FDBE36;
+      }
+      &__icon--negative {
+        --icon-color: #D1D1D1;
+      }
+    }
+  }
+
+  .sf-header__icons {
+    .sf-badge--number {
+      --badge-background: var(--_c-green-primary);
+    }
+  }
 
   footer {
     --c-secondary: #E7EAEE;
