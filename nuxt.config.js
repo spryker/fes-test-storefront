@@ -167,6 +167,7 @@ export default {
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
         paths: [process.cwd()],
       }),
+      '~assets/styles.scss',
     ],
   },
   build: {

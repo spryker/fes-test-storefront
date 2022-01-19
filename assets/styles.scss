@@ -1,0 +1,30 @@
+body {
+  @include generate-color-variants(--_c-green-primary,  #1cb696);
+  @include generate-color-variants(--_c-green-secondary, #17927b);
+
+  @include generate-color-variants(--_c-orange-primary, #EB553C);
+  @include generate-color-variants(--_c-orange-secondary, #dd3317);
+
+
+  @include assign-color-variants(--c-primary, --_c-green-primary);
+  @include assign-color-variants(--c-primary-variant, --_c-green-secondary);
+
+  @include assign-color-variants(--c-secondary, --_c-orange-primary);
+  @include assign-color-variants(--c-secondary-variant, --_c-orange-secondary);
+
+  --badge-background: #EB553C;
+  --header-background: #E7EAEE;
+  --top-bar-background: #D0D5DC;
+
+  footer {
+    --c-secondary: #E7EAEE;
+
+    .sf-footer-column .sf-list__item {
+      --menu-item-label-color: #8F8F8F;
+    }
+
+    .sf-footer-column__title {
+      color: #4C4C4C;
+    }
+  }
+}
