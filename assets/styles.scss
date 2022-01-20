@@ -19,14 +19,12 @@ body {
   --header-background: #E7EAEE;
   --top-bar-background: #D0D5DC;
 
-  .sf-product-card__rating {
-    .sf-rating {
-      &__icon {
-        --icon-color: #FDBE36;
-      }
-      &__icon--negative {
-        --icon-color: #D1D1D1;
-      }
+  .sf-rating {
+    &__icon {
+      --icon-color: #FDBE36;
+    }
+    &__icon--negative {
+      --icon-color: #D1D1D1;
     }
   }
 
