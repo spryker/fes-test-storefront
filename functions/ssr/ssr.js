@@ -130,13 +130,12 @@ const config = {
     ],
   ],
   modules: [
-    '@vue-storefront/middleware/nuxt',
     'vue-scrollto/nuxt',
     'nuxt-i18n',
     'cookie-universal-nuxt',
   ],
   publicRuntimeConfig: {
-    middlewareUrl: 'https://condescending-brahmagupta-12ccc5.netlify.app',
+    middlewareUrl: 'https://gallant-banach-5334d4.netlify.app',
     spryker: {
       currency: {
         default: process.env.CURRENCY_DEFAULT || 'USD',

@@ -111,6 +111,7 @@ export default {
     ],
   ],
   modules: [
+    '@vue-storefront/middleware/nuxt',
     'vue-scrollto/nuxt',
     'nuxt-i18n',
     'cookie-universal-nuxt',
