@@ -1,4 +1,8 @@
+html,
 body {
+  --font-family--primary: Circular, sans-serif;
+  --font-family--secondary: var(--font-family--primary);
+
   @include generate-color-variants(--_c-green-primary,  #1cb696);
   @include generate-color-variants(--_c-green-secondary, #17927b);
 

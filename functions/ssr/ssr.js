@@ -1,13 +1,17 @@
-import webpack from 'webpack';
+const serverless = require('serverless-http');
+
+
+const webpack = require('webpack');
+
 
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
-      name: currency,
-      label: currency,
-    }))
+    name: currency,
+    label: currency,
+  }))
   : ['USD'];
 
-export default {
+const config = {
   head: {
     title: 'Spryker VSF',
     meta: [
@@ -22,9 +26,24 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'crossorigin',
+      },
+      {
+        rel: 'preload',
+        href:
+          'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        as: 'style',
+      },
+      {
         rel: 'stylesheet',
-        href: 'fonts.css'
-      }
+        href:
+          'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        media: 'print',
+        onload: "this.media='all'",
+        once: true,
+      },
     ],
   },
   loading: { color: '#fff' },
@@ -111,12 +130,13 @@ export default {
     ],
   ],
   modules: [
+    '@vue-storefront/middleware/nuxt',
     'vue-scrollto/nuxt',
     'nuxt-i18n',
     'cookie-universal-nuxt',
   ],
   publicRuntimeConfig: {
-    // middlewareUrl: 'http://localhost:8181',
+    middlewareUrl: 'https://condescending-brahmagupta-12ccc5.netlify.app',
     spryker: {
       currency: {
         default: process.env.CURRENCY_DEFAULT || 'USD',
@@ -152,9 +172,6 @@ export default {
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
         paths: [process.cwd()],
       }),
-      require.resolve('./assets/styles.scss', {
-        paths: [process.cwd()],
-      }),
     ],
   },
   build: {
@@ -163,9 +180,8 @@ export default {
       new webpack.DefinePlugin({
         'process.VERSION': JSON.stringify({
           // eslint-disable-next-line global-require
-          version: require(process.env.PACKAGE_PATH_FOR_NUXT_CONFIG ||
-            './package.json').version,
-          lastCommit: process.env.LAST_COMMIT || '',
+          version: '0.5.0-dev.13',
+          lastCommit: '',
         }),
       }),
     ],
@@ -181,3 +197,46 @@ export default {
     },
   },
 };
+
+
+// function listFiles() {
+//   console.log('listing files')
+//   const testFolder = '.';
+//   const fs = require('fs');
+//
+//   fs.readdir(testFolder, (err, files) => {
+//     files.forEach(file => {
+//       console.log(file);
+//     });
+//   });
+//
+// }
+
+const { Nuxt } = require('nuxt-start')
+
+// const fs = require("fs"); // eslint-disable-line
+
+
+function createNuxtHandler(nuxtConfig) {
+  // listFiles();
+
+
+  const nuxt = new Nuxt({
+    ...nuxtConfig,
+    dev: false,
+    _start: true,
+  })
+
+  let serverPromise = null;
+  return (event, ctx, callback) => {
+    // listFiles();
+    console.log('invoke', JSON.stringify(event), JSON.stringify(ctx))
+    if (!serverPromise) {
+      serverPromise = Promise.resolve(nuxt?.ready()).then(() => serverless( nuxt.server.app ))
+    }
+    return serverPromise.then((server) => server(event, ctx, callback))
+  }
+}
+
+
+exports.handler = createNuxtHandler(config)
