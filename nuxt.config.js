@@ -22,24 +22,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-        crossorigin: 'crossorigin',
-      },
-      {
-        rel: 'preload',
-        href:
-          'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
-        as: 'style',
-      },
-      {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
-        media: 'print',
-        onload: "this.media='all'",
-        once: true,
-      },
+        href: 'fonts.css'
+      }
     ],
   },
   loading: { color: '#fff' },
@@ -165,6 +150,9 @@ export default {
   styleResources: {
     scss: [
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
+        paths: [process.cwd()],
+      }),
+      require.resolve('./assets/styles.scss', {
         paths: [process.cwd()],
       }),
     ],
