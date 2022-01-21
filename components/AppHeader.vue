@@ -76,41 +76,64 @@
             class="sf-button--pure sf-header__action"
             @click="handleAccountClick"
           >
-            <SfIcon
-              data-cy="svsf-appHeader-account-icon"
-              :icon="accountIcon"
-              size="1.25rem"
-            />
+            <div class="icon-row">
+              <SfIcon
+                data-cy="svsf-appHeader-account-icon"
+                :icon="userIcon.path"
+                :class="userIcon.class"
+                :viewBox="userIcon.viewBox"
+              />
+              <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
+            </div>
+            User
+          </SfButton>
+          <SfButton class="sf-button--pure sf-header__action">
+          <div class="icon-row">
+            <SfIcon :icon="quickOrderIcon.path"
+            :class="quickOrderIcon.class" :viewBox="quickOrderIcon.viewBox"/>
+          </div>
+          Quick Order
           </SfButton>
           <SfButton
             data-cy="svsf-appHeader-wishlist-button"
             class="sf-button--pure sf-header__action"
             @click="toggleWishlistSidebar"
           >
-            <SfIcon
-              data-cy="svsf-appHeader-wishlist-icon"
-              class="sf-header__icon"
-              icon="heart"
-              size="1.25rem"
-            />
+            <div class="icon-row">
+              <SfIcon
+                data-cy="svsf-appHeader-wishlist-icon"
+                :class="shoppingListIcon.class"
+                :icon="shoppingListIcon.path"
+                :viewBox="shoppingListIcon.viewBox"
+              />
+              <SfBadge
+                data-cy="svsf-appHeader-cart-badge"
+                class="sf-badge--number"
+                >2</SfBadge
+              >
+            </div>
+            Shopping List
           </SfButton>
           <SfButton
             data-cy="svsf-appHeader-cart-button"
             class="sf-button--pure sf-header__action"
             @click="toggleCartSidebar"
           >
-            <SfIcon
-              data-cy="svsf-appHeader-cart-icon"
-              class="sf-header__icon"
-              icon="empty_cart"
-              size="1.25rem"
-            />
-            <SfBadge
-              data-cy="svsf-appHeader-cart-badge"
-              v-if="cartTotalItems"
-              class="sf-badge--number cart-badge"
-              >{{ cartTotalItems }}</SfBadge
-            >
+            <div class="icon-row">
+              <SfIcon
+                data-cy="svsf-appHeader-cart-icon"
+                :class="cartIcon.class"
+                :icon="cartIcon.path"
+                :viewBox="cartIcon.viewBox"
+              />
+              <SfBadge
+                data-cy="svsf-appHeader-cart-badge"
+                v-if="cartTotalItems"
+                class="sf-badge--number cart-badge"
+                >{{ cartTotalItems }}</SfBadge
+              >
+            </div>
+            My Cart
           </SfButton>
         </div>
       </template>
@@ -133,6 +156,7 @@
             @keyup.esc="clearTerm"
             @blur="clearTerm"
           />
+          <SfIcon :icon="searchIcon.path" class="search-icon" size="20px"/>
           <div
             data-cy="svsf-appHeader-productsPopUp"
             v-if="getAbstractProducts(suggestions).length > 0"
@@ -233,6 +257,7 @@ import { onSSR } from '@vue-storefront/core';
 import { useUiHelpers, useUiState } from '~/composables';
 import LocaleSelector from './LocaleSelector';
 import SearchResults from '~/components/SearchResults';
+import { quickOrderIcon, shoppingListIcon, cartIcon, userIcon, searchIcon, arrowIcon } from '~/assets/icons';
 
 export default {
   components: {
@@ -346,6 +371,12 @@ export default {
       isMobileMenuOpen,
       closeMobileMenu,
       toggleMobileMenu,
+      quickOrderIcon,
+      shoppingListIcon,
+      cartIcon,
+      userIcon,
+      searchIcon,
+      arrowIcon
     };
   },
 };

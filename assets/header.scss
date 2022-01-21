@@ -1,0 +1,67 @@
+html, body {
+  --header-logo-height: 4.125rem;
+  --header-logo-margin: 13px 0 32px;
+  --search-bar-width: 100%;
+  --search-bar-placeholder-color: var(--price-old-color);
+  --search-bar-placeholder-color-focus: var(--search-bar-placeholder-color);
+  --header-icon-color: #4C4C4C;
+}
+
+.sf-search-bar {
+  --search-bar-width: 100%;
+  flex: 1;
+}
+
+.search-icon {
+  position: absolute;
+  z-index: 3;
+  left: 20px;
+  --icon-color: var(--header-icon-color);
+}
+
+.searchbar_input {
+  background-color: var(--c-white);
+  padding: 26px 16px 26px 56px;
+  border: none;
+  border-radius: 2px;
+}
+
+.sf-header__navigation {
+  --header-navigation-margin: 0 auto 0 58px;
+}
+
+.sf-header__icons {
+  .sf-badge--number {
+    --badge-background: var(--_c-green-primary);
+    --badge-border-radius: 2px;
+    --badge-font-size: 11px;
+    --badge-min-height: 16px;
+    --badge-min-width: 16px;
+    --badge-height: 16px;
+    padding: 0;
+    line-height: normal;
+  }
+
+  .sf-button--pure {
+    --button-color: var(--header-icon-color);
+    --icon-color: var(--header-icon-color);
+  }
+}
+
+.sf-header__action {
+  --button-text-transform: uppercase;
+  flex-direction: column;
+  --button-font-size: 10px;
+  margin-left: 30px;
+
+  .icon-row {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 36px;
+  }
+}
+
+.sf-search-bar {
+  padding-inline-start: 56px;
+}
