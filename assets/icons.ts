@@ -26,3 +26,8 @@ export const arrowIcon = {path: "M5.53474 0.185211L3.3059 2.41405L1.07643 0.1848
   viewBox: "0 0 7 4",
   class: "arrow-icon"
 };
+
+export const checkIcon = {path: "M10.645 -0.000732422L4.564 6.08027L1.491 3.00927L0 4.50027L4.403 8.90527L11.977 1.33027L10.645 -0.000732422Z",
+  viewBox: "0 0 12 9",
+  class: "check-icon"
+};

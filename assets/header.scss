@@ -65,3 +65,13 @@ html, body {
 .sf-search-bar {
   padding-inline-start: 56px;
 }
+
+.sf-top-bar__center, .sf-header__aside {
+  --button-font-size: 11px;
+  --button-color: var(--header-icon-color);
+  --icon-color: var(--header-icon-color);
+}
+
+.sf-button {
+  gap: 5px;
+}
