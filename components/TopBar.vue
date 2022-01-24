@@ -56,6 +56,11 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/topbar-button';
 
+.sf-top-bar {
+  position: relative;
+  z-index: var(--header-z-index);
+}
+
 .topbar {
   &__button {
     margin: 0 0 0 var(--spacer-xs);

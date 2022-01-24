@@ -20,49 +20,6 @@
           />
         </nuxt-link>
       </template>
-      <template #navigation>
-        <SfHeaderNavigation
-          data-cy="svsf-appHeader-navigation"
-          :is-visible-on-mobile="false"
-          @close="isVisible = false"
-        >
-          <SfHeaderNavigationItem
-            :data-cy="`svsf-appHeader-navigation-${category.label}`"
-            v-for="(category, index) in categories"
-            :key="index"
-            :label="category.label"
-            :link="localePath(category.url)"
-            @mouseenter="currentCategory = category.label"
-            @mouseleave="currentCategory = ''"
-            @click="currentCategory = category.label"
-          >
-            <SfMegaMenu
-              data-cy="svsf-appHeader-menu"
-              class="app-header-menu"
-              v-if="category.items.length"
-              :is-absolute="true"
-              :visible="currentCategory === category.label"
-              :title="category.label"
-              @close="currentCategory = ''"
-            >
-              <SfList data-cy="svsf-appHeader-subcategory-list">
-                <SfListItem
-                  :data-cy="`svsf-appHeader-subcategory-${childIndex}`"
-                  v-for="(subcategory, childIndex) in category.items"
-                  :key="childIndex"
-                >
-                  <SfLink
-                    :data-cy="`svsf-appHeader-subcategory-${childIndex}-link`"
-                    :link="localePath(subcategory.url)"
-                  >
-                    {{ subcategory.label }}
-                  </SfLink>
-                </SfListItem>
-              </SfList>
-            </SfMegaMenu>
-          </SfHeaderNavigationItem>
-        </SfHeaderNavigation>
-      </template>
       <template #aside>
         <LocaleSelector
           data-cy="svsf-appHeader-localeSelector"
@@ -193,6 +150,93 @@
         </div>
       </template>
     </SfHeader>
+
+    <SfHeaderNavigation
+      data-cy="svsf-appHeader-navigation"
+      :is-visible-on-mobile="false"
+      @close="isVisible = false"
+    >
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="All products"
+        class="button"
+        @mouseenter="currentMenu = `products`"
+        @mouseleave="currentMenu = ''"
+        @click="currentMenu = `products`"
+      >
+        <SfMegaMenu
+          data-cy="svsf-appHeader-menu"
+          class="app-header-menu"
+          v-if="categories.length"
+          :is-absolute="true"
+          :visible="currentMenu === `products`"
+          title="All products"
+          @close="currentMenu = ''"
+        >
+          <SfList data-cy="svsf-appHeader-category-list" class="categories">
+            <SfListItem :data-cy="`svsf-appHeader-category-list-${index}`"
+              v-for="(category, index) in categories"
+              :key="index"
+              @mouseenter.native="currentCategory = category.label"
+              @click.native="currentCategory = category.label"
+              :class="[{selected: currentCategory === category.label}]"
+              >
+                <SfImage src="/nav-icon.png" alt="category icon" width="32" height="32"/>
+                {{ category.label }}
+            </SfListItem>
+          </SfList>
+
+          <SfList :data-cy="`svsf-appHeader-subcategory-list-${index}`"
+            v-for="(category, index) in categories"
+            :key="index"
+            class="subcategory"
+            :class="[{hidden: currentCategory !== category.label}]"
+            >
+            <SfListItem
+              :data-cy="`svsf-appHeader-subcategory-${childIndex}`"
+              v-for="(subcategory, childIndex) in category.items"
+              :key="childIndex"
+            >
+              <SfLink
+                :data-cy="`svsf-appHeader-subcategory-${childIndex}-link`"
+                :link="localePath(subcategory.url)"
+              >
+                {{ subcategory.label }}
+              </SfLink>
+            </SfListItem>
+            <SfListItem>
+              <SfLink
+                :link="localePath(category.url)"
+              >
+                View all
+              </SfLink>
+            </SfListItem>
+          </SfList>
+        </SfMegaMenu>
+      </SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Top sellers"
+      ></SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Product bundles"
+      ></SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Product sets"
+      ></SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Configurable bundle"
+      ></SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Brands"
+      ></SfHeaderNavigationItem>
+    </SfHeaderNavigation>
+
+    <SfOverlay :visible="currentMenu !== ''"></SfOverlay>
 
     <!-- TODO: delete when SfHeaderNavigation mobile menu will be fixed -->
     <SfMegaMenu
@@ -359,6 +403,7 @@ export default {
       changeSearchTerm,
       categories,
       term,
+      currentMenu: '',
       currentCategory: '',
       isVisible: false,
       clearTerm,
@@ -387,7 +432,7 @@ export default {
 
 .sf-header {
   position: relative;
-  z-index: 1;
+  z-index: var(--header-z-index);
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
@@ -433,8 +478,79 @@ export default {
   }
 }
 
-.sf-header-navigation-item:nth-child(n+6) {
-  display: none;
+.sf-mega-menu {
+  --shadow: 0 -2px 7px rgba(0, 0, 0, 0.1);
+  --mega-menu-content-padding: 0;
+  min-width: 720px;
+  width: auto;
+  box-shadow: var(--shadow);
+}
+
+.sf-header-navigation {
+  z-index: var(--header-z-index);
+  position: relative;
+  background-color: var(--c-white);
+}
+
+.sf-header-navigation-item {
+  --header-navigation-item-position: relative;
+  --header-navigation-item-padding: 0;
+  --header-navigation-item-display: block;
+  --header-navigation-item-font-size: 16px;
+  --header-navigation-item-color: #8F8F8F;
+  --header-navigation-item-border: none;
+  --header-navigation-item-flex: none;
+  --gray: #E3E3E3;
+  --font-size--base: 15px;
+
+  padding: 25px 0;
+  display: block;
+
+  &.button {
+    padding: 15px 0;
+    --header-navigation-item-color: var(--c-black);
+
+    &:hover {
+      --c-primary: var(--c-black);
+    }
+  }
+
+  .sf-mega-menu {
+    z-index: 3;
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  .categories {
+    --list-item-padding: 5px 16px 5px 5px;
+    width: 360px;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: var(--font-size--base);
+    }
+  }
+
+  .subcategory {
+    --list-item-padding: 6px 20px;
+    flex: 1;
+    align-self: normal;
+    border-left: 1px solid var(--gray);
+    box-shadow: var(--shadow);
+  }
+
+  .sf-list__item {
+    --list-item-color: #4C4C4C;
+    --link-color: var(--list-item-color);
+    --link-text-decoration: none;
+    &:hover, &.selected, a:hover {
+      --list-item-color: var(--c-black);
+      background-color: #F0F0F0;
+    }
+  }
 }
 
 .nav-item {

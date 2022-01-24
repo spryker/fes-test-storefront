@@ -17,6 +17,7 @@ body {
   @include assign-color-variants(--c-secondary-variant, --_c-orange-secondary);
 
   --badge-background: var(--_c-orange-primary);
+  --overlay-background: rgba(0, 0, 0, 0.3);
   --price-old-color: #B2B2B2;
   --price-special-color: var(--_c-orange-primary);
   --price-regular-color: #333333;
