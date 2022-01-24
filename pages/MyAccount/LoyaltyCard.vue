@@ -14,9 +14,7 @@
 </template>
 
 <script>
-import { SfTabs } from '@storefront-ui/vue';
-import SfLink from '~/components/SfLink';
-
+import { SfTabs, SfLink } from '@storefront-ui/vue';
 export default {
   name: 'LoyalityCard',
   components: { SfTabs, SfLink }
