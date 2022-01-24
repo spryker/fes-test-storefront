@@ -28,7 +28,11 @@ export default {
     ],
   },
   loading: { color: '#fff' },
-  plugins: [],
+  plugins: [
+    '~/plugins/injector.js',
+    '~/plugins/component-register.js',
+    '~/plugins/xmlissue.server.js',
+  ],
   buildModules: [
     // to core
     '@nuxt/typescript-build',
@@ -119,6 +123,8 @@ export default {
   publicRuntimeConfig: {
     // middlewareUrl: 'http://localhost:8181',
     spryker: {
+      contentBackendUrl:
+        process.env.CONTENT_BACKEND_URL || 'https://eb-demo-server.herokuapp.com',
       currency: {
         default: process.env.CURRENCY_DEFAULT || 'USD',
         options: currencies,

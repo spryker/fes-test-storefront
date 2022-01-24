@@ -47,7 +47,11 @@ const config = {
     ],
   },
   loading: { color: '#fff' },
-  plugins: [],
+  plugins: [
+    '~/plugins/injector.js',
+    '~/plugins/component-register.js',
+    '~/plugins/xmlissue.server.js',
+  ],
   buildModules: [
     // to core
     '@nuxt/typescript-build',
@@ -137,6 +141,8 @@ const config = {
   publicRuntimeConfig: {
     middlewareUrl: 'https://gallant-banach-5334d4.netlify.app',
     spryker: {
+      contentBackendUrl:
+        process.env.CONTENT_BACKEND_URL || 'https://eb-demo-server.herokuapp.com',
       currency: {
         default: process.env.CURRENCY_DEFAULT || 'USD',
         options: currencies,

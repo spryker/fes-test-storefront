@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.2.1",
+    "@spryker-oryx/experience": "file:./spryker-oryx-experience-0.0.1.tgz",
+    "@spryker-oryx/injector": "file:./spryker-oryx-injector-0.0.1.tgz",
+    "@spryker-oryx/vsf": "file:./spryker-oryx-vsf-0.0.1.tgz",
     "@spryker-vsf/api": "^0.6.0-dev.5",
     "@spryker-vsf/catalog-search-suggestions": "^0.2.0-dev.2",
     "@spryker-vsf/composables": "^0.6.0-dev.5",
@@ -23,9 +26,6 @@
     "@vue-storefront/nuxt": "~2.3.4",
     "@vue-storefront/nuxt-theme": "~2.3.4",
     "cookie-universal-nuxt": "^2.1.5",
-    "@spryker-oryx/injector": "file:./spryker-oryx-injector-0.0.1.tgz",
-    "@spryker-oryx/experience": "file:./spryker-oryx-experience-0.0.1.tgz",
-    "@spryker-oryx/vsf": "file:./spryker-oryx-vsf-0.0.1.tgz",
     "core-js": "^2.6.12",
     "cypress": "^9.2.1",
     "dotenv": "^10.0.0",
@@ -34,7 +34,8 @@
     "nuxt-start": "~2.14.12",
     "serverless-http": "^2.7.0",
     "vee-validate": "^3.4.14",
-    "vue-scrollto": "^2.20.0"
+    "vue-scrollto": "^2.20.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "@nuxt/types": "~2.14.12",
