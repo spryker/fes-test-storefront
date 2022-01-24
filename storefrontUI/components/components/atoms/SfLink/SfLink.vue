@@ -1,20 +1,19 @@
-<template functional>
+<template>
   <component
-    :is="$options.linkComponentTag($options.isExternal, $nuxt, $router)"
-    v-bind="
-      $options.attributes($options.isExternal, $router, props.link, data.attrs)
-    "
-    :class="[data.class, data.staticClass, 'sf-link']"
-    v-on="listeners"
+    :is="linkComponentTag"
+    v-focus
+    v-bind="urlTag"
+    class="sf-link"
+    v-on="$listeners"
   >
     <!-- @slot -->
     <slot />
   </component>
 </template>
 <script>
-import { focus } from "../../../utilities/directives";
+import { focus } from '@storefront-ui/vue/src/utilities/directives';
 export default {
-  name: "SfLink",
+  name: 'SfLink',
   directives: { focus },
   props: {
     /**
@@ -22,27 +21,28 @@ export default {
      */
     link: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
   },
-  isExternal() {
-    return (
-      typeof this.link === "string" && this.link.search(/(^\/|^#)/g) === -1
-    );
-  },
-  attributes(isExternal, $router, link, attrs) {
-    const urlTag = isExternal || !$router ? { href: link } : { to: link };
-    return {
-      ...attrs,
-      ...urlTag,
-    };
-  },
-  linkComponentTag(isExternal, $nuxt, $router) {
-    const routerLink = $nuxt ? "nuxt-link" : "router-link";
-    return isExternal || !$router ? "a" : routerLink;
+  computed: {
+    isExternal() {
+      return (
+        typeof this.link === 'string' && this.link.search(/(^\/|^#)/g) === -1
+      );
+    },
+    isNativeLinkTag() {
+      return this.isExternal || !this.$router;
+    },
+    urlTag() {
+      return this.isNativeLinkTag ? { href: this.link } : { to: this.link };
+    },
+    linkComponentTag() {
+      const routerLink = this.$nuxt ? 'nuxt-link' : 'router-link';
+      return this.isNativeLinkTag ? 'a' : routerLink;
+    },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfLink.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfLink.scss';
 </style>
