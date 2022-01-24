@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import path from 'path'
 
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
@@ -170,6 +171,20 @@ export default {
         }),
       }),
     ],
+    extend(config) {
+      config.resolve.alias['@storefront-ui/vue/styles'] = path.resolve(
+        __dirname,
+        './storefrontUI/styles'
+      );
+      config.resolve.alias['@storefront-ui/vue/src'] = path.resolve(
+        __dirname,
+        './storefrontUI/components'
+      );
+      config.resolve.alias['@storefront-ui/vue'] = path.resolve(
+        __dirname,
+        './storefrontUI/components'
+      );
+    }
   },
   router: {
     middleware: ['checkout'],
