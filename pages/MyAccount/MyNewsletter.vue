@@ -37,7 +37,8 @@
 </template>
 
 <script>
-import { SfTabs, SfCheckbox, SfButton, SfLink } from '@storefront-ui/vue';
+import { SfTabs, SfCheckbox, SfButton } from '@storefront-ui/vue';
+import SfLink from '~/components/SfLink';
 export default {
   name: 'MyNewsletter',
   components: {

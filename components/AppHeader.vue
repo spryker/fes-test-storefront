@@ -212,10 +212,10 @@ import {
   SfSearchBar,
   SfOverlay,
   SfMegaMenu,
-  SfLink,
   SfList,
   SfMenuItem,
 } from '@storefront-ui/vue';
+import SfLink from '~/components/SfLink';
 import {
   useCart,
   useWishlist,
