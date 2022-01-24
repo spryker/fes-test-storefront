@@ -76,10 +76,13 @@ export default {
   text-transform: uppercase;
   font-size: 12px;
   gap: 8px;
+  color: var(--header-icon-color);
+  font-weight: 600;
 }
 
 .static {
   --icon-color: #8e9194;
   color: var(--icon-color);
+  font-weight: var(--font-weight--normal);
 }
 </style>
