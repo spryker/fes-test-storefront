@@ -23,7 +23,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'fonts.css'
+        href: '/fonts.css'
       }
     ],
   },
