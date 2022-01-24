@@ -1367,7 +1367,23 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@spryker-vsf/api@^0.6.0-dev.5":
+"@spryker-oryx/experience@file:./spryker-oryx-experience-0.0.1.tgz":
+  version "0.0.1"
+  resolved "file:./spryker-oryx-experience-0.0.1.tgz#c53cbb0baca6b05083bad0def8aa7e097b8f2b6f"
+
+"@spryker-oryx/injector@file:./spryker-oryx-injector-0.0.1.tgz":
+  version "0.0.1"
+  resolved "file:./spryker-oryx-injector-0.0.1.tgz#134946a6e261610ee322cb4dcb73ce97038f9318"
+
+"@spryker-oryx/vsf@file:./spryker-oryx-vsf-0.0.1.tgz":
+  version "0.0.1"
+  resolved "file:./spryker-oryx-vsf-0.0.1.tgz#2c2b9000df97f0530e63ab1aba5832fec7d77103"
+  dependencies:
+    "@spryker-vsf/api" "^0.6.0-dev.3"
+    "@vue-storefront/core" "^2.3.1"
+    rxjs "^6.6.3"
+
+"@spryker-vsf/api@^0.6.0-dev.3", "@spryker-vsf/api@^0.6.0-dev.5":
   version "0.6.0-dev.5"
   resolved "https://registry.yarnpkg.com/@spryker-vsf/api/-/api-0.6.0-dev.5.tgz#99dff120e943834ff60622d2a257bd1516ec6b96"
   integrity sha512-zrQx6Ygk2iLZFoBUAo8TkHipDrrYDSAGEngj1D5rw2lig5PEsEgUe1bR0RVwvP9p12LqrNfsCS6bLE9WGc2eOQ==
@@ -1738,6 +1754,17 @@
   integrity sha512-8uALY5LTvSuHgloDVUvWP3pIauILm+8/0pDMokuDYIoNsOkSwd5AiHBTSEJjKTDcZr5z8UpgOWZkxBF4iJftoA==
   dependencies:
     "@types/node" "*"
+
+"@vue-storefront/core@^2.3.1":
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/@vue-storefront/core/-/core-2.5.4.tgz#214ec0d2bdc3d2f18abdc45991ac7389aa9e1044"
+  integrity sha512-J/zzReZ5D1pwKibFyLbcm1355L8+DKYgBms32QZ79AmscoFeRRRhnBFQHQ+DoygtxU2cKNzyMddTIocYdtEBeQ==
+  dependencies:
+    axios "0.21.1"
+    express "^4.17.1"
+    is-https "^3.0.2"
+    lodash-es "^4.17.15"
+    vue "^2.6.11"
 
 "@vue-storefront/core@~2.3.4":
   version "2.3.4"
@@ -8522,7 +8549,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.6.0:
+rxjs@^6.6.0, rxjs@^6.6.3:
   version "6.6.7"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.7.tgz#90ac018acabf491bf65044235d5863c4dab804c9"
   integrity sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==
