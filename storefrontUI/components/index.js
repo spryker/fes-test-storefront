@@ -1,4 +1,3 @@
-// Auto-generated file by create-index-files.js. Do not edit manually
 import SfArrow from "./components/atoms/SfArrow/SfArrow.vue";
 import SfBadge from "./components/atoms/SfBadge/SfBadge.vue";
 import SfBreadcrumbs from "./components/atoms/SfBreadcrumbs/SfBreadcrumbs.vue";
