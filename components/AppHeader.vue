@@ -438,7 +438,8 @@ export default {
     --header-padding: 0;
   }
   &__logo-image {
-    height: 100%;
+    height: var(--header-logo-height);
+    min-width: 11.5rem;
   }
 
   &__navigation {
@@ -561,6 +562,14 @@ export default {
   --search-bar-width: 100%;
   padding-inline-start: 56px;
   flex: 1;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+
+  .searchbar_input {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .searchbar {
