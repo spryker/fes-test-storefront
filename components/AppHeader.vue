@@ -214,8 +214,8 @@ import {
   SfMegaMenu,
   SfList,
   SfMenuItem,
+  SfLink
 } from '@storefront-ui/vue';
-import SfLink from '~/components/SfLink';
 import {
   useCart,
   useWishlist,
