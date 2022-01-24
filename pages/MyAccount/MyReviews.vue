@@ -14,7 +14,9 @@
 </template>
 
 <script>
-import { SfTabs, SfLink } from '@storefront-ui/vue';
+import { SfTabs } from '@storefront-ui/vue';
+import SfLink from '~/components/SfLink';
+
 export default {
   name: 'MyReviews',
   components: { SfTabs, SfLink }
