@@ -11,6 +11,7 @@ module.exports = {
         },
         currency: process.env.CURRENCY_DEFAULT || 'USD',
         locale: process.env.LOCALE_DEFAULT || 'en_US',
+        store: process.env.STORE || 'US',
       },
 
       extensions: (extensions) => [
