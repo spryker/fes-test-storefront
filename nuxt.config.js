@@ -187,4 +187,5 @@ export default {
       }
     },
   },
+  serverMiddleware: ['~/serverMiddleware/previewModeSSR'],
 };

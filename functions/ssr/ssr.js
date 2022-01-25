@@ -201,6 +201,7 @@ const config = {
       }
     },
   },
+  serverMiddleware: ['~/serverMiddleware/previewModeSSR'],
 };
 
 
