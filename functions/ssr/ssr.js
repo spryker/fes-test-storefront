@@ -2,6 +2,8 @@ const serverless = require('serverless-http');
 const webpack = require('webpack');
 const { Nuxt } = require('nuxt-start');
 
+console.log('url', process.env.URL);
+
 
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
@@ -138,7 +140,7 @@ const config = {
     'cookie-universal-nuxt',
   ],
   publicRuntimeConfig: {
-    middlewareUrl: '/',
+    middlewareUrl: process.env.URL,
     spryker: {
       contentBackendUrl:
         process.env.CONTENT_BACKEND_URL || 'https://eb-demo-server.herokuapp.com',
