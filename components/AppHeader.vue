@@ -280,9 +280,9 @@ import {
   SfSearchBar,
   SfOverlay,
   SfMegaMenu,
-  SfLink,
   SfList,
   SfMenuItem,
+  SfLink
 } from '@storefront-ui/vue';
 import {
   useCart,

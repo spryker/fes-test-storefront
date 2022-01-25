@@ -276,7 +276,7 @@ import {
   SfPrice,
   SfProperty,
   SfAccordion,
-  SfLink,
+  SfLink
 } from '@storefront-ui/vue';
 import { ref, computed, inject, onBeforeMount } from '@vue/composition-api';
 import {

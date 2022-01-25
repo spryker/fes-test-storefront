@@ -38,6 +38,7 @@
 
 <script>
 import { SfTabs, SfCheckbox, SfButton, SfLink } from '@storefront-ui/vue';
+
 export default {
   name: 'MyNewsletter',
   components: {
