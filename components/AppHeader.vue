@@ -66,7 +66,8 @@
               <SfBadge
                 data-cy="svsf-appHeader-cart-badge"
                 class="sf-badge--number"
-                >2</SfBadge
+                v-if="wishlistTotalItems"
+                >{{ wishlistTotalItems }}</SfBadge
               >
             </div>
             Shopping List
@@ -290,6 +291,7 @@ import {
   useUser,
   cartGetters,
   useCategory,
+  wishlistGetters,
   productGetters,
 } from '@spryker-vsf/composables';
 import {
@@ -331,7 +333,7 @@ export default {
     const { changeSearchTerm, getFacetsFromURL } = useUiHelpers();
     const { isAuthenticated, load: loadUser } = useUser();
     const { cart, load: loadCart } = useCart();
-    const { load: loadWishlist } = useWishlist();
+    const { load: loadWishlist, wishlist } = useWishlist();
     const { categories, search: searchCategories } = useCategory(
       'category-tree',
     );
@@ -349,6 +351,10 @@ export default {
         : suggestionsGetters.getCompletion(suggestions.value, term.value);
     });
 
+    const wishlistTotalItems = computed(() => {
+        const count = wishlistGetters.getItems(wishlist.value);
+        return count ? count.toString() : null;
+    });
     const cartTotalItems = computed(() => {
       const count = cartGetters.getTotalItems(cart.value);
       return count ? count.toString() : null;
@@ -397,6 +403,7 @@ export default {
       isAuthenticated,
       accountIcon,
       cartTotalItems,
+      wishlistTotalItems,
       handleAccountClick,
       toggleCartSidebar,
       toggleWishlistSidebar,
@@ -654,11 +661,5 @@ export default {
   .nuxt-link-active {
     font-weight: bold;
   }
-}
-
-.cart-badge {
-  position: absolute;
-  bottom: 40%;
-  left: 40%;
 }
 </style>
