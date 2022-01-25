@@ -444,7 +444,7 @@ export default {
 
 .sf-header {
   position: relative;
-  z-index: var(--header-z-index);
+  z-index: calc(var(--header-z-index) + 1);
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
