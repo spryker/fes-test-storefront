@@ -21,6 +21,7 @@
       class="breadcrumbs desktop-only"
       :breadcrumbs="breadcrumbs"
     />
+    <LayoutSlot :slotName="slotName" />
     <div class="navbar section">
       <div class="navbar__aside desktop-only">
         <SfHeading
@@ -168,7 +169,6 @@
         </SfLoader>
       </div>
       <div class="products" v-if="!loading">
-        <LayoutSlot :slotName="slotName" />
         <transition-group
           v-if="isCategoryGridView"
           appear
