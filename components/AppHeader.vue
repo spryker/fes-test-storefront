@@ -42,7 +42,7 @@
               />
               <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
             </div>
-            User
+            {{ accountName }}
           </SfButton>
           <SfButton class="sf-button--pure sf-header__action">
           <div class="icon-row">
@@ -331,7 +331,7 @@ export default {
       toggleMobileMenu,
     } = useUiState();
     const { changeSearchTerm, getFacetsFromURL } = useUiHelpers();
-    const { isAuthenticated, load: loadUser } = useUser();
+    const { isAuthenticated, load: loadUser, user } = useUser();
     const { cart, load: loadCart } = useCart();
     const { load: loadWishlist, wishlist } = useWishlist();
     const { categories, search: searchCategories } = useCategory(
@@ -363,6 +363,10 @@ export default {
     const accountIcon = computed(() =>
       isAuthenticated.value ? 'profile_fill' : 'profile',
     );
+
+    const accountName = computed(() => {
+      return isAuthenticated.value ? `${user.value.attributes.firstName} ${user.value.attributes.lastName}` : 'not logged in';
+    });
 
     // TODO: https://github.com/DivanteLtd/vue-storefront/issues/4927
     const handleAccountClick = async () => {
@@ -402,6 +406,7 @@ export default {
     return {
       isAuthenticated,
       accountIcon,
+      accountName,
       cartTotalItems,
       wishlistTotalItems,
       handleAccountClick,
