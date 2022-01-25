@@ -21,6 +21,7 @@
       class="breadcrumbs desktop-only"
       :breadcrumbs="breadcrumbs"
     />
+    <LayoutSlot :slotName="slotName" />
     <div class="navbar section">
       <div class="navbar__aside desktop-only">
         <SfHeading
@@ -168,7 +169,6 @@
         </SfLoader>
       </div>
       <div class="products" v-if="!loading">
-        <LayoutSlot :slotName="slotName" />
         <transition-group
           v-if="isCategoryGridView"
           appear
@@ -387,7 +387,7 @@ import {
   onMounted,
   ref,
   watch,
-  onUnmounted,
+  onUnmounted, reactive, provide
 } from '@vue/composition-api';
 import {
   useCart,
@@ -449,7 +449,16 @@ export default {
           : null;
     });
 
-    onSSR(async () => {
+    const currentCategory = computed(() => {
+      return breadcrumbs.value[breadcrumbs.value.length - 1];
+    });
+    const slotData = reactive({
+      category: currentCategory,
+    });
+
+    provide('CURRENT_CATEGORY', slotData);
+
+    onMounted(async () => {
       await search(th.getFacetsFromURL());
     });
 

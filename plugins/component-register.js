@@ -1,6 +1,9 @@
 import { registerComponent } from '@spryker-oryx/vsf';
 
 export default () => {
+  registerComponent('ProductsList', {
+    componentFactory: () => import('~/components/Dynamic/ProductsList.vue'),
+  });
   registerComponent('Banner', {
     componentFactory: () => import('~/components/Dynamic/Banner.vue'),
   });
