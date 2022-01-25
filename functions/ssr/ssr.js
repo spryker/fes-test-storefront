@@ -138,7 +138,7 @@ const config = {
     'cookie-universal-nuxt',
   ],
   publicRuntimeConfig: {
-    middlewareUrl: 'https://gallant-banach-5334d4.netlify.app',
+    middlewareUrl: '/',
     spryker: {
       contentBackendUrl:
         process.env.CONTENT_BACKEND_URL || 'https://eb-demo-server.herokuapp.com',
