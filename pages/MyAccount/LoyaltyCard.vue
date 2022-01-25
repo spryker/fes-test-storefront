@@ -15,6 +15,7 @@
 
 <script>
 import { SfTabs, SfLink } from '@storefront-ui/vue';
+
 export default {
   name: 'LoyalityCard',
   components: { SfTabs, SfLink }

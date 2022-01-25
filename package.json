@@ -40,7 +40,8 @@
   },
   "devDependencies": {
     "@nuxt/types": "~2.14.12",
-    "@nuxt/typescript-build": "2.0.4"
+    "@nuxt/typescript-build": "2.0.4",
+    "fse": "^4.0.1"
   },
   "resolutions": {
     "@babel/preset-env": "7.12.13"
