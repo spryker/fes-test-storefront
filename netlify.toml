@@ -10,7 +10,6 @@ NODE_VERSION = "14"
 
 [functions."ssr"]
   included_files = [
-    "middleware.config.js",
     ".nuxt/**",
     "node_modules/@storefront-ui/**",
     "node_modules/@nuxt/ufo/**",
