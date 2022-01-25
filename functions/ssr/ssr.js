@@ -1,7 +1,6 @@
 const serverless = require('serverless-http');
-
-
 const webpack = require('webpack');
+const { Nuxt } = require('nuxt-start');
 
 
 const currencies = process.env.CURRENCIES
@@ -218,31 +217,29 @@ const config = {
 //
 // }
 
-const { Nuxt } = require('nuxt-start')
-
 // const fs = require("fs"); // eslint-disable-line
 
-
-function createNuxtHandler(nuxtConfig) {
-  // listFiles();
-
-
+exports.handler = async function (event, ctx, callback) {
   const nuxt = new Nuxt({
-    ...nuxtConfig,
+    ...config,
     dev: false,
     _start: true,
-  })
+  });
 
-  let serverPromise = null;
-  return (event, ctx, callback) => {
-    // listFiles();
-    console.log('invoke', JSON.stringify(event), JSON.stringify(ctx))
-    if (!serverPromise) {
-      serverPromise = Promise.resolve(nuxt?.ready()).then(() => serverless( nuxt.server.app ))
-    }
-    return serverPromise.then((server) => server(event, ctx, callback))
+  let server = null;
+
+  if (!server) {
+    await nuxt?.ready();
+    server = serverless(nuxt.server.app);
   }
-}
 
+  const result = await server(event, ctx, callback);
 
-exports.handler = createNuxtHandler(config)
+  return {
+    ...result,
+    headers: {
+      ...result.headers,
+      'Cache-Control': 'public, max-age=31536000',
+    },
+  };
+};
