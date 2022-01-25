@@ -2,9 +2,6 @@ const serverless = require('serverless-http');
 const webpack = require('webpack');
 const { Nuxt } = require('nuxt-start');
 
-console.log('url', process.env.URL);
-
-
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
     name: currency,
@@ -204,22 +201,6 @@ const config = {
   },
   serverMiddleware: ['~/serverMiddleware/previewModeSSR'],
 };
-
-
-// function listFiles() {
-//   console.log('listing files')
-//   const testFolder = '.';
-//   const fs = require('fs');
-//
-//   fs.readdir(testFolder, (err, files) => {
-//     files.forEach(file => {
-//       console.log(file);
-//     });
-//   });
-//
-// }
-
-// const fs = require("fs"); // eslint-disable-line
 
 exports.handler = async function (event, ctx, callback) {
   const nuxt = new Nuxt({
