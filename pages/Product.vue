@@ -15,7 +15,7 @@
     <SfBreadcrumbs
       data-cy="svsf-productSection-error-message"
       class="breadcrumbs desktop-only"
-      :breadcrumbs="productGetters.getProductBreadcrumbs(products)"
+      :breadcrumbs="breadcrumbs"
     />
     <div class="product">
       <!-- TODO: replace example images with the getter, wait for SfGallery fix by SFUI team: https://github.com/DivanteLtd/storefront-ui/issues/1074 -->
@@ -213,6 +213,7 @@
         </SfTabs>
       </div>
     </div>
+    <LayoutSlot v-if="currentCategory" :slotName="slotName" />
     <RelatedProducts
       data-cy="svsf-productSection-relatedProducts"
       v-if="relatedProducts.length"
@@ -274,7 +275,14 @@ import {
 
 import InstagramFeed from '~/components/InstagramFeed.vue';
 import RelatedProducts from '~/components/RelatedProducts.vue';
-import { ref, computed, watch } from '@vue/composition-api';
+import {
+  ref,
+  computed,
+  watch,
+  onMounted,
+  provide,
+  reactive,
+} from '@vue/composition-api';
 import {
   useProduct,
   useCart,
@@ -286,6 +294,8 @@ import {
 } from '@spryker-vsf/composables';
 import { onSSR } from '@vue-storefront/core';
 import { useUiState } from '~/composables';
+import LayoutSlot from '@spryker-oryx/vsf/lib/components/LayoutSlot';
+
 
 export default {
   name: 'Product',
@@ -346,6 +356,18 @@ export default {
     const categories = computed(() =>
       productGetters.getCategoryIds(product.value),
     );
+
+    const breadcrumbs = computed(() =>
+      productGetters.getProductBreadcrumbs(products.value),
+    );
+    const currentCategory = computed(() => {
+      return breadcrumbs.value[breadcrumbs.value.length - 2];
+    });
+    const slotData = reactive({
+      category: currentCategory,
+    });
+    provide('CURRENT_CATEGORY', slotData);
+
     const reviews = computed(() =>
       reviewGetters.getItems(productReviews.value),
     );
@@ -384,6 +406,12 @@ export default {
       cartError.value = error.value?.addItem ?? null;
     }
 
+    onMounted(async () => {
+      await search({ id });
+      await searchRelatedProducts({ catId: [categories.value[0]], limit: 8 });
+      await searchReviews({ productId: id });
+    });
+
     onSSR(async () => {
       await search({ id });
       await searchRelatedProducts({ catId: [categories.value[0]], limit: 8 });
@@ -407,7 +435,12 @@ export default {
       });
     };
 
+    const slotName = computed(() => context.root.$route.path);
+
     return {
+      currentCategory,
+      breadcrumbs,
+      slotName,
       updateFilter,
       resetAttributes,
       addToWishlist,
@@ -442,6 +475,7 @@ export default {
     };
   },
   components: {
+    LayoutSlot,
     SfColor,
     SfProperty,
     SfHeading,

@@ -387,7 +387,7 @@ import {
   onMounted,
   ref,
   watch,
-  onUnmounted,
+  onUnmounted, reactive, provide
 } from '@vue/composition-api';
 import {
   useCart,
@@ -449,7 +449,16 @@ export default {
           : null;
     });
 
-    onSSR(async () => {
+    const currentCategory = computed(() => {
+      return breadcrumbs.value[breadcrumbs.value.length - 1];
+    });
+    const slotData = reactive({
+      category: currentCategory,
+    });
+
+    provide('CURRENT_CATEGORY', slotData);
+
+    onMounted(async () => {
       await search(th.getFacetsFromURL());
     });
 
