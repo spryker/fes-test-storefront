@@ -2,10 +2,11 @@
   <div class="container">
     <SfButton
       data-cy="svsf-currencySelector-openPopUp-button"
-      class="container__lang container__lang--selected"
+      class="container__button container__button--selected"
       @click="isCurModalOpen = !isCurModalOpen"
     >
       {{ currency.selected }}
+      <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
     </SfButton>
     <SfBottomModal
       data-cy="svsf-currencySelector-modal"
@@ -45,6 +46,7 @@
 <script>
 import {
   SfImage,
+  SfIcon,
   SfSelect,
   SfButton,
   SfList,
@@ -54,10 +56,12 @@ import {
 import { ref } from '@vue/composition-api';
 import { useCurrency } from '@spryker-vsf/composables';
 import { onSSR } from '@vue-storefront/core';
+import { arrowIcon } from '~/assets/icons';
 
 export default {
   components: {
     SfImage,
+    SfIcon,
     SfSelect,
     SfButton,
     SfList,
@@ -76,19 +80,16 @@ export default {
       currency,
       isCurModalOpen,
       setCurrency,
+      arrowIcon
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.container {
-  margin: 0 -5px;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  position: relative;
+@import '~assets/topbar-button';
 
+.container {
   .sf-bottom-modal {
     z-index: 2;
     left: 0;
@@ -111,23 +112,6 @@ export default {
       margin-right: 1rem;
       border: 1px solid var(--c-light);
       border-radius: 50%;
-    }
-  }
-
-  &__lang {
-    --image-width: 20px;
-    --button-box-shadow: none;
-    background: none;
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    opacity: 0.5;
-    border: none;
-    color: inherit;
-
-    &:hover,
-    &--selected {
-      opacity: 1;
     }
   }
 }

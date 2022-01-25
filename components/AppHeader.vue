@@ -20,49 +20,6 @@
           />
         </nuxt-link>
       </template>
-      <template #navigation>
-        <SfHeaderNavigation
-          data-cy="svsf-appHeader-navigation"
-          :is-visible-on-mobile="false"
-          @close="isVisible = false"
-        >
-          <SfHeaderNavigationItem
-            :data-cy="`svsf-appHeader-navigation-${category.label}`"
-            v-for="(category, index) in categories"
-            :key="index"
-            :label="category.label"
-            :link="localePath(category.url)"
-            @mouseenter="currentCategory = category.label"
-            @mouseleave="currentCategory = ''"
-            @click="currentCategory = category.label"
-          >
-            <SfMegaMenu
-              data-cy="svsf-appHeader-menu"
-              class="app-header-menu"
-              v-if="category.items.length"
-              :is-absolute="true"
-              :visible="currentCategory === category.label"
-              :title="category.label"
-              @close="currentCategory = ''"
-            >
-              <SfList data-cy="svsf-appHeader-subcategory-list">
-                <SfListItem
-                  :data-cy="`svsf-appHeader-subcategory-${childIndex}`"
-                  v-for="(subcategory, childIndex) in category.items"
-                  :key="childIndex"
-                >
-                  <SfLink
-                    :data-cy="`svsf-appHeader-subcategory-${childIndex}-link`"
-                    :link="localePath(subcategory.url)"
-                  >
-                    {{ subcategory.label }}
-                  </SfLink>
-                </SfListItem>
-              </SfList>
-            </SfMegaMenu>
-          </SfHeaderNavigationItem>
-        </SfHeaderNavigation>
-      </template>
       <template #aside>
         <LocaleSelector
           data-cy="svsf-appHeader-localeSelector"
@@ -76,41 +33,65 @@
             class="sf-button--pure sf-header__action"
             @click="handleAccountClick"
           >
-            <SfIcon
-              data-cy="svsf-appHeader-account-icon"
-              :icon="accountIcon"
-              size="1.25rem"
-            />
+            <div class="icon-row">
+              <SfIcon
+                data-cy="svsf-appHeader-account-icon"
+                :icon="userIcon.path"
+                :class="userIcon.class"
+                :viewBox="userIcon.viewBox"
+              />
+              <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
+            </div>
+            {{ accountName }}
+          </SfButton>
+          <SfButton class="sf-button--pure sf-header__action">
+          <div class="icon-row">
+            <SfIcon :icon="quickOrderIcon.path"
+            :class="quickOrderIcon.class" :viewBox="quickOrderIcon.viewBox"/>
+          </div>
+          Quick Order
           </SfButton>
           <SfButton
             data-cy="svsf-appHeader-wishlist-button"
             class="sf-button--pure sf-header__action"
             @click="toggleWishlistSidebar"
           >
-            <SfIcon
-              data-cy="svsf-appHeader-wishlist-icon"
-              class="sf-header__icon"
-              icon="heart"
-              size="1.25rem"
-            />
+            <div class="icon-row">
+              <SfIcon
+                data-cy="svsf-appHeader-wishlist-icon"
+                :class="shoppingListIcon.class"
+                :icon="shoppingListIcon.path"
+                :viewBox="shoppingListIcon.viewBox"
+              />
+              <SfBadge
+                data-cy="svsf-appHeader-cart-badge"
+                class="sf-badge--number"
+                v-if="wishlistTotalItems"
+                >{{ wishlistTotalItems }}</SfBadge
+              >
+            </div>
+            Shopping List
           </SfButton>
           <SfButton
             data-cy="svsf-appHeader-cart-button"
             class="sf-button--pure sf-header__action"
             @click="toggleCartSidebar"
           >
-            <SfIcon
-              data-cy="svsf-appHeader-cart-icon"
-              class="sf-header__icon"
-              icon="empty_cart"
-              size="1.25rem"
-            />
-            <SfBadge
-              data-cy="svsf-appHeader-cart-badge"
-              v-if="cartTotalItems"
-              class="sf-badge--number cart-badge"
-              >{{ cartTotalItems }}</SfBadge
-            >
+            <div class="icon-row">
+              <SfIcon
+                data-cy="svsf-appHeader-cart-icon"
+                :class="cartIcon.class"
+                :icon="cartIcon.path"
+                :viewBox="cartIcon.viewBox"
+              />
+              <SfBadge
+                data-cy="svsf-appHeader-cart-badge"
+                v-if="cartTotalItems"
+                class="sf-badge--number cart-badge"
+                >{{ cartTotalItems }}</SfBadge
+              >
+            </div>
+            My Cart
           </SfButton>
         </div>
       </template>
@@ -133,6 +114,7 @@
             @keyup.esc="clearTerm"
             @blur="clearTerm"
           />
+          <SfIcon :icon="searchIcon.path" class="search-icon" size="20px"/>
           <div
             data-cy="svsf-appHeader-productsPopUp"
             v-if="getAbstractProducts(suggestions).length > 0"
@@ -169,6 +151,93 @@
         </div>
       </template>
     </SfHeader>
+
+    <SfHeaderNavigation
+      data-cy="svsf-appHeader-navigation"
+      :is-visible-on-mobile="false"
+      @close="isVisible = false"
+    >
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="All products"
+        class="button"
+        @mouseenter="currentMenu = `products`"
+        @mouseleave="currentMenu = ''"
+        @click="currentMenu = `products`"
+      >
+        <SfMegaMenu
+          data-cy="svsf-appHeader-menu"
+          class="app-header-menu"
+          v-if="categories.length"
+          :is-absolute="true"
+          :visible="currentMenu === `products`"
+          title="All products"
+          @close="currentMenu = ''"
+        >
+          <SfList data-cy="svsf-appHeader-category-list" class="categories">
+            <SfListItem :data-cy="`svsf-appHeader-category-list-${index}`"
+              v-for="(category, index) in categories"
+              :key="index"
+              @mouseenter.native="currentCategory = category.label"
+              @click.native="currentCategory = category.label"
+              :class="[{selected: currentCategory === category.label}]"
+              >
+                <SfImage src="/nav-icon.png" alt="category icon" width="32" height="32"/>
+                {{ category.label }}
+            </SfListItem>
+          </SfList>
+
+          <SfList :data-cy="`svsf-appHeader-subcategory-list-${index}`"
+            v-for="(category, index) in categories"
+            :key="index"
+            class="subcategory"
+            :class="[{hidden: currentCategory !== category.label}]"
+            >
+            <SfListItem
+              :data-cy="`svsf-appHeader-subcategory-${childIndex}`"
+              v-for="(subcategory, childIndex) in category.items"
+              :key="childIndex"
+            >
+              <SfLink
+                :data-cy="`svsf-appHeader-subcategory-${childIndex}-link`"
+                :link="localePath(subcategory.url)"
+              >
+                {{ subcategory.label }}
+              </SfLink>
+            </SfListItem>
+            <SfListItem>
+              <SfLink
+                :link="localePath(category.url)"
+              >
+                View all
+              </SfLink>
+            </SfListItem>
+          </SfList>
+        </SfMegaMenu>
+      </SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Top sellers"
+      ></SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Product bundles"
+      ></SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Product sets"
+      ></SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Configurable bundle"
+      ></SfHeaderNavigationItem>
+      <SfHeaderNavigationItem
+        data-cy="svsf-appHeader-navigation-all-products"
+        label="Brands"
+      ></SfHeaderNavigationItem>
+    </SfHeaderNavigation>
+
+    <SfOverlay :visible="currentMenu !== ''"></SfOverlay>
 
     <!-- TODO: delete when SfHeaderNavigation mobile menu will be fixed -->
     <SfMegaMenu
@@ -222,6 +291,7 @@ import {
   useUser,
   cartGetters,
   useCategory,
+  wishlistGetters,
   productGetters,
 } from '@spryker-vsf/composables';
 import {
@@ -233,6 +303,7 @@ import { onSSR } from '@vue-storefront/core';
 import { useUiHelpers, useUiState } from '~/composables';
 import LocaleSelector from './LocaleSelector';
 import SearchResults from '~/components/SearchResults';
+import { quickOrderIcon, shoppingListIcon, cartIcon, userIcon, searchIcon, arrowIcon } from '~/assets/icons';
 
 export default {
   components: {
@@ -260,9 +331,9 @@ export default {
       toggleMobileMenu,
     } = useUiState();
     const { changeSearchTerm, getFacetsFromURL } = useUiHelpers();
-    const { isAuthenticated, load: loadUser } = useUser();
+    const { isAuthenticated, load: loadUser, user } = useUser();
     const { cart, load: loadCart } = useCart();
-    const { load: loadWishlist } = useWishlist();
+    const { load: loadWishlist, wishlist } = useWishlist();
     const { categories, search: searchCategories } = useCategory(
       'category-tree',
     );
@@ -280,6 +351,10 @@ export default {
         : suggestionsGetters.getCompletion(suggestions.value, term.value);
     });
 
+    const wishlistTotalItems = computed(() => {
+        const count = wishlistGetters.getItems(wishlist.value);
+        return count ? count.toString() : null;
+    });
     const cartTotalItems = computed(() => {
       const count = cartGetters.getTotalItems(cart.value);
       return count ? count.toString() : null;
@@ -288,6 +363,10 @@ export default {
     const accountIcon = computed(() =>
       isAuthenticated.value ? 'profile_fill' : 'profile',
     );
+
+    const accountName = computed(() => {
+      return isAuthenticated.value ? `${user.value.attributes.firstName} ${user.value.attributes.lastName}` : 'not logged in';
+    });
 
     // TODO: https://github.com/DivanteLtd/vue-storefront/issues/4927
     const handleAccountClick = async () => {
@@ -327,13 +406,16 @@ export default {
     return {
       isAuthenticated,
       accountIcon,
+      accountName,
       cartTotalItems,
+      wishlistTotalItems,
       handleAccountClick,
       toggleCartSidebar,
       toggleWishlistSidebar,
       changeSearchTerm,
       categories,
       term,
+      currentMenu: '',
       currentCategory: '',
       isVisible: false,
       clearTerm,
@@ -346,6 +428,12 @@ export default {
       isMobileMenuOpen,
       closeMobileMenu,
       toggleMobileMenu,
+      quickOrderIcon,
+      shoppingListIcon,
+      cartIcon,
+      userIcon,
+      searchIcon,
+      arrowIcon
     };
   },
 };
@@ -356,28 +444,154 @@ export default {
 
 .sf-header {
   position: relative;
-  z-index: 1;
+  z-index: calc(var(--header-z-index) + 1);
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
   }
   &__logo-image {
-    height: 100%;
+    height: var(--header-logo-height);
+    min-width: 11.5rem;
+  }
+
+  &__navigation {
+    --header-navigation-margin: 0 auto 0 58px;
+  }
+
+  &__action {
+    --button-text-transform: uppercase;
+    flex-direction: column;
+    --button-font-size: 10px;
+    margin-left: 30px;
+
+    .icon-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      height: 36px;
+    }
+  }
+
+  &__icons {
+    .sf-badge--number {
+      --badge-background: var(--_c-green-primary);
+      --badge-border-radius: 2px;
+      --badge-font-size: 11px;
+      --badge-min-height: 16px;
+      --badge-min-width: 16px;
+      --badge-height: 16px;
+      padding: 0;
+      line-height: normal;
+    }
+
+    .sf-button--pure {
+      --button-color: var(--header-icon-color);
+      --icon-color: var(--header-icon-color);
+    }
   }
 }
 
-.sf-header-navigation-item:nth-child(n+6) {
-  display: none;
+.sf-mega-menu {
+  --shadow: 0 -2px 7px rgba(0, 0, 0, 0.1);
+  --mega-menu-content-padding: 0;
+  min-width: 720px;
+  width: auto;
+  box-shadow: var(--shadow);
+}
+
+.sf-header-navigation {
+  z-index: var(--header-z-index);
+  position: relative;
+  background-color: var(--c-white);
+}
+
+.sf-header-navigation-item {
+  --header-navigation-item-position: relative;
+  --header-navigation-item-padding: 0;
+  --header-navigation-item-display: block;
+  --header-navigation-item-font-size: 16px;
+  --header-navigation-item-color: #8F8F8F;
+  --header-navigation-item-border: none;
+  --header-navigation-item-flex: none;
+  --gray: #E3E3E3;
+  --font-size--base: 15px;
+
+  padding: 25px 0;
+  display: block;
+
+  &.button {
+    padding: 15px 0;
+    --header-navigation-item-color: var(--c-black);
+
+    &:hover {
+      --c-primary: var(--c-black);
+    }
+  }
+
+  .sf-mega-menu {
+    z-index: 3;
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  .categories {
+    --list-item-padding: 5px 16px 5px 5px;
+    width: 360px;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: var(--font-size--base);
+    }
+  }
+
+  .subcategory {
+    --list-item-padding: 6px 20px;
+    flex: 1;
+    align-self: normal;
+    border-left: 1px solid var(--gray);
+    box-shadow: var(--shadow);
+  }
+
+  .sf-list__item {
+    --list-item-color: #4C4C4C;
+    --link-color: var(--list-item-color);
+    --link-text-decoration: none;
+    &:hover, &.selected, a:hover {
+      --list-item-color: var(--c-black);
+      background-color: #F0F0F0;
+    }
+  }
 }
 
 .nav-item {
   --header-navigation-item-margin: 0 var(--spacer-base);
 }
 
+.sf-search-bar {
+  --search-bar-width: 100%;
+  padding-inline-start: 56px;
+  flex: 1;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+
+  .searchbar_input {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .searchbar {
   position: relative;
   &_input {
     z-index: 2;
+    background-color: var(--c-white);
+    padding: 26px 16px 26px 56px;
+    border: none;
+    border-radius: 2px;
   }
   &_hint {
     position: absolute;
@@ -434,6 +648,13 @@ export default {
   }
 }
 
+.search-icon {
+  position: absolute;
+  z-index: 3;
+  left: 20px;
+  --icon-color: var(--header-icon-color);
+}
+
 .mobile-menu {
   position: fixed;
   left: 0;
@@ -445,11 +666,5 @@ export default {
   .nuxt-link-active {
     font-weight: bold;
   }
-}
-
-.cart-badge {
-  position: absolute;
-  bottom: 40%;
-  left: 40%;
 }
 </style>

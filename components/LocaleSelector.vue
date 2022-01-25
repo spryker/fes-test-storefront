@@ -1,10 +1,11 @@
 <template>
   <div class="container">
     <SfButton
-      class="container__lang container__lang--selected"
+      class="container__button container__button--selected"
       @click="isLangModalOpen = !isLangModalOpen"
     >
-      <SfImage :src="`/icons/langs/${locale}.webp`" width="20" alt="Flag" />
+      {{ abbreviations[locale] }}
+      <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
     </SfButton>
     <SfBottomModal
       :is-open="isLangModalOpen"
@@ -40,6 +41,7 @@
 <script>
 import {
   SfImage,
+  SfIcon,
   SfSelect,
   SfButton,
   SfList,
@@ -48,10 +50,12 @@ import {
 } from '@storefront-ui/vue';
 import { ref, computed } from '@vue/composition-api';
 import { useLocale } from '@spryker-vsf/composables';
+import { arrowIcon } from '~/assets/icons';
 
 export default {
   components: {
     SfImage,
+    SfIcon,
     SfSelect,
     SfButton,
     SfList,
@@ -83,18 +87,17 @@ export default {
       availableLocales,
       locale,
       isLangModalOpen,
+      arrowIcon,
+      abbreviations: {en_US: 'EN', de_DE: 'DE'}
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import '~assets/topbar-button';
+
 .container {
-  margin: 0 -5px;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  position: relative;
   .sf-bottom-modal {
     z-index: 2;
     left: 0;
@@ -111,20 +114,6 @@ export default {
     }
     @include for-desktop {
       display: flex;
-    }
-  }
-  &__lang {
-    width: 20px;
-    --button-box-shadow: none;
-    background: none;
-    padding: 0 5px;
-    display: flex;
-    align-items: center;
-    opacity: 0.5;
-    border: none;
-    &:hover,
-    &--selected {
-      opacity: 1;
     }
   }
 }

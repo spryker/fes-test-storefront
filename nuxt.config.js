@@ -24,7 +24,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'fonts.css'
+        href: '/fonts.css'
       }
     ],
   },
@@ -155,6 +155,7 @@ export default {
       fallbackLocale: 'en_US',
     },
   },
+  css: ["./assets/icons.scss", "./assets/header.scss"],
   styleResources: {
     scss: [
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
