@@ -11,6 +11,7 @@ NODE_VERSION = "14"
 [functions."ssr"]
   included_files = [
     ".nuxt/**",
+    "node_modules/@storefront-ui/**",
     "serverMiddleware/**"
     ]
 
