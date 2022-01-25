@@ -458,6 +458,10 @@ export default {
 
     provide('CURRENT_CATEGORY', slotData);
 
+
+    onSSR(async () => {
+      await search(th.getFacetsFromURL());
+    });
     onMounted(async () => {
       await search(th.getFacetsFromURL());
     });
