@@ -168,6 +168,7 @@
         </SfLoader>
       </div>
       <div class="products" v-if="!loading">
+        <LayoutSlot :slotName="slotName" />
         <transition-group
           v-if="isCategoryGridView"
           appear
@@ -400,6 +401,7 @@ import { useUiHelpers, useUiState } from '~/composables';
 import { onSSR } from '@vue-storefront/core';
 import Filters from '../components/Filters';
 import CardHorizontal from '../components/Category/CardHorizontal';
+import LayoutSlot from '@spryker-oryx/vsf/lib/components/LayoutSlot';
 
 export default {
   name: 'Category',
@@ -478,6 +480,8 @@ export default {
       });
     };
 
+    const slotName = computed(() => context.root.$route.path);
+
     return {
       ...uiState,
       th,
@@ -495,6 +499,7 @@ export default {
       cartErrorMessage,
       isAuthenticated,
       isAddToCartVisible,
+      slotName,
     };
   },
   components: {
@@ -513,6 +518,7 @@ export default {
     Filters,
     SfNotification,
     CardHorizontal,
+    LayoutSlot,
   },
 };
 </script>

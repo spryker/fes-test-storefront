@@ -21,7 +21,8 @@ NODE_VERSION = "14"
     "node_modules/@vue-storefront/**",
     "node_modules/vue-scrollto/**",
     "node_modules/nuxt-i18n/**",
-    "node_modules/cookie-universal-nuxt/**"
+    "node_modules/cookie-universal-nuxt/**",
+    "serverMiddleware/**"
     ]
 
 [[redirects]]
