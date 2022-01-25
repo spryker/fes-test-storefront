@@ -11,13 +11,6 @@ NODE_VERSION = "14"
 [functions."ssr"]
   included_files = [
     ".nuxt/**",
-    "node_modules/@storefront-ui/**",
-    "node_modules/follow-redirects/**",
-    "node_modules/body-scroll-lock/**",
-    "node_modules/@vue-storefront/**",
-    "node_modules/vue-scrollto/**",
-    "node_modules/nuxt-i18n/**",
-    "node_modules/cookie-universal-nuxt/**",
     "serverMiddleware/**"
     ]
 
