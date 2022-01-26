@@ -448,7 +448,6 @@ export default {
 
 .sf-header {
   position: relative;
-  z-index: calc(var(--header-z-index) + 1);
   --header-padding: var(--spacer-sm);
   @include for-desktop {
     --header-padding: 0;
@@ -504,7 +503,6 @@ export default {
 }
 
 .sf-header-navigation {
-  z-index: var(--header-z-index);
   position: relative;
   background-color: var(--c-white);
 }
@@ -591,7 +589,7 @@ export default {
 .searchbar {
   position: relative;
   &_input {
-    z-index: 2;
+    z-index: 1;
     background-color: var(--c-white);
     padding: 26px 16px 26px 56px;
     border: none;
@@ -614,6 +612,7 @@ export default {
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
     top: 50px;
     overflow: auto;
+    z-index: 2;
 
     &-product {
       display: flex;

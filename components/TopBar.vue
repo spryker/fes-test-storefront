@@ -58,7 +58,6 @@ export default {
 
 .sf-top-bar {
   position: relative;
-  z-index: var(--header-z-index);
 }
 
 .topbar {
