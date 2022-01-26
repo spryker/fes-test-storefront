@@ -497,8 +497,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
-
 #product {
   box-sizing: border-box;
   padding: 0 var(--spacer-sm);

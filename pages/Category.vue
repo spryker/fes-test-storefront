@@ -23,14 +23,14 @@
     />
     <LayoutSlot :slotName="slotName" />
     <div class="navbar section">
-      <div class="navbar__aside desktop-only">
+      <!--      <div class="navbar__aside desktop-only">
         <SfHeading
           data-cy="svsf-categorySection-categories-heading"
           :level="3"
           :title="$t('Categories')"
           class="navbar__title"
         />
-      </div>
+      </div>-->
       <div class="navbar__main">
         <SfButton
           data-cy="svsf-categorySection-filters-button"
@@ -47,6 +47,17 @@
           />
           {{ $t('Filters') }}
         </SfButton>
+        <div class="navbar__counter">
+          <span class="navbar__label desktop-only"
+            >{{ $t('Products found') }}:
+          </span>
+          <span class="desktop-only">
+            {{ pagination.totalItems }}
+          </span>
+          <span class="navbar__label smartphone-only">
+            {{ pagination.totalItems }} {{ $t('Items') }}
+          </span>
+        </div>
         <div class="navbar__sort desktop-only">
           <span class="navbar__label">{{ $t('Sort by') }}:</span>
           <SfSelect
@@ -66,17 +77,6 @@
               >{{ option.value }}</SfSelectOption
             >
           </SfSelect>
-        </div>
-        <div class="navbar__counter">
-          <span class="navbar__label desktop-only"
-            >{{ $t('Products found') }}:
-          </span>
-          <span class="desktop-only">
-            {{ pagination.totalItems }}
-          </span>
-          <span class="navbar__label smartphone-only">
-            {{ pagination.totalItems }} {{ $t('Items') }}
-          </span>
         </div>
         <div class="navbar__view">
           <span class="navbar__view-label desktop-only">{{ $t('View') }}</span>
@@ -194,6 +194,7 @@
               )
             "
             :max-rating="5"
+            :image-height="189"
             :score-rating="productGetters.getAverageRating(product)"
             :wishlistIcon="
               productGetters.getProductConcretes(product).length === 1 &&
@@ -538,7 +539,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
 #category {
   box-sizing: border-box;
   @include for-desktop {
@@ -579,7 +579,7 @@ export default {
     flex: 1;
     padding: 0;
     @include for-desktop {
-      padding: var(--spacer-xs) var(--spacer-xl);
+      padding: 0;
     }
   }
   &__aside {
@@ -632,7 +632,7 @@ export default {
   &__sort {
     display: flex;
     align-items: center;
-    margin: 0 auto 0 var(--spacer-2xl);
+    margin: 0;
   }
   &__counter {
     font-family: var(--font-family--secondary);
@@ -732,9 +732,13 @@ export default {
     }
   }
   &__product-card {
-    --product-card-add-button-transform: translate3d(0, 30%, 0);
+    //--product-card-add-button-transform: translate3d(0, 30%, 0);
+    --product-card-add-button-opacity: 1;
+    --product-card-title-font-weight: var(--font-weight--bold);
     flex: 1 1 50%;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
     @include for-desktop {
       --product-card-padding: var(--spacer-sm);
       flex: 1 1 25%;
@@ -792,6 +796,35 @@ export default {
     margin-left: -50vw;
     margin-right: -50vw;
     width: 100vw;
+  }
+}
+::v-deep .sf-product-card {
+  &__image-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    background-color: #f2f2f2;
+    padding: var(--spacer-sm);
+    text-align: center;
+  }
+  &__link {
+    height: 100%;
+  }
+  &__image {
+    display: block;
+    .sf-image {
+      --image-height: 189px;
+      mix-blend-mode: darken;
+      object-fit: contain;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    overflow: hidden;
+    display: -webkit-box;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
   }
 }
 </style>
