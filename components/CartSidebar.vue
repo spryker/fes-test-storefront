@@ -29,7 +29,7 @@
           />
           <SfButton
             data-cy="svsf-cartSidebar-clearCart-button"
-            class="color-light"
+            class="clear-cart__button"
             @click="clearCartItems"
           >
             {{ $t('Clear cart') }}
@@ -117,18 +117,18 @@
       <template #content-bottom>
         <transition name="sf-fade">
           <div v-if="totalItems">
-            <SfProperty
-              data-cy="svsf-cartSidebar-totalPrice-property"
-              :name="$t('Total price')"
-              class="sf-property--full-width sf-property--large my-cart__total-price"
-            >
-              <template #value>
-                <SfPrice
-                  data-cy="svsf-cartSidebar-price"
-                  :regular="cartGetters.getFormattedPrice(totals.total)"
-                />
-              </template>
-            </SfProperty>
+<!--            <SfProperty-->
+<!--              data-cy="svsf-cartSidebar-totalPrice-property"-->
+<!--              :name="$t('Total price')"-->
+<!--              class="sf-property&#45;&#45;full-width sf-property&#45;&#45;large my-cart__total-price"-->
+<!--            >-->
+<!--              <template #value>-->
+<!--                <SfPrice-->
+<!--                  data-cy="svsf-cartSidebar-price"-->
+<!--                  :regular="cartGetters.getFormattedPrice(totals.total)"-->
+<!--                />-->
+<!--              </template>-->
+<!--            </SfProperty>-->
             <nuxt-link
               data-cy="svsf-cartSidebar-checkout-link"
               :to="`/checkout/${
@@ -137,7 +137,7 @@
             >
               <SfButton
                 data-cy="svsf-cartSidebar-checkout-button"
-                class="sf-button--full-width color-secondary"
+                class="sf-button--full-width color-primary"
                 @click="toggleCartSidebar"
               >
                 {{ $t('Go to checkout') }}
@@ -291,11 +291,12 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
+
   &__total-items {
     margin: 0;
   }
   &__total-price {
-    --price-font-size: var(--font-size--xl);
+    --price-font-size: var(--font-size--lg);
     --price-font-weight: var(--font-weight--medium);
     margin: 0 0 var(--spacer-base) 0;
   }
@@ -331,7 +332,10 @@ export default {
 .collected-product-list {
   flex: 1;
 }
+
 .collected-product {
+  border: 1px solid #DCE0E5;
+  border-radius: 2px;
   margin: 0 0 var(--spacer-sm) 0;
   --image-height: auto;
   --collected-product-image-background: #fff;
@@ -342,14 +346,20 @@ export default {
     }
   }
   &__properties {
-    margin: var(--spacer-xs) 0 0 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     align-items: flex-start;
     flex: 2;
     &:first-child {
       margin-bottom: 8px;
+    }
+    .sf-property {
+      --property-name-color: #333333;
+      --property-value-color: #8F8F8F;
+      margin: 0 0 var(--spacer-sm) 0;
+      &__value {
+        font-weight: normal;
+      }
     }
   }
   &__actions {
@@ -374,10 +384,10 @@ export default {
     --cp-compare-opacity: 1;
     @include for-desktop {
       --collected-product-configuration-display: flex;
-      .collected-product__properties {
-        display: none;
-      }
     }
+  }
+  &__title {
+    font-weight: 600;
   }
 }
 
@@ -387,12 +397,74 @@ export default {
   align-items: flex-end;
 
   & .sf-button {
-    font-size: var(--font-size--xs);
-    padding: var(--spacer-xs) var(--spacer-sm);
+    --button-background: transparent;
+    --button-box-shadow: none;
+    --button-padding: 0;
+    --button-font-weight: var(--font-weight--normal);
+    --button-text-transform: none;
+    color: #8F8F8F;
+    font-size: 15px;
+    &:hover {
+      color: var(--c-primary)
+    }
   }
 }
 
 .error-notification {
   font-size: var(--font-size--sm);
+}
+</style>
+<style lang="scss">
+.cart-meta {
+  .sf-property {
+    &__name, &__value {
+      color: #4C4C4C;
+      font-size: 15px;
+    }
+  }
+}
+
+.sf-sidebar {
+  .sf-sidebar__title {
+    --h3-font-size: 30px;
+  }
+  .sf-sidebar__aside {
+    z-index: 4;
+  }
+
+  .sf-collected-product {
+    &__title {
+      color: #2E2E2E;
+      font-weight: var(--font-weight--semibold);
+    }
+
+    &__remove {
+      --collected-product-remove-right: 20px;
+    }
+
+    &__aside {
+      .sf-image {
+        --image-height: auto;
+      }
+    }
+
+    .sf-quantity-selector {
+      --quantity-selector-background: #F5F5F5;
+      padding: 0 0.5rem;
+
+      &__button {
+        --button-height: 50%;
+        --button-background: #FFFFFF;
+        --button-padding: var(--spacer-xs);
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.04), 0 10px 10px rgba(0, 0, 0, 0.0474128);
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .sf-sidebar__bottom {
+    --sidebar-bottom-padding: 15px 30px;
+    box-shadow: 0px -1px 12px rgba(0, 0, 0, 0.1);
+  }
 }
 </style>
