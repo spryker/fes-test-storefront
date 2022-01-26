@@ -357,7 +357,8 @@ export default {
       --property-name-color: #333333;
       --property-value-color: #8F8F8F;
       margin: 0 0 var(--spacer-sm) 0;
-      &__value {
+      &__name, &__value {
+        font-size: 15px;
         font-weight: normal;
       }
     }
