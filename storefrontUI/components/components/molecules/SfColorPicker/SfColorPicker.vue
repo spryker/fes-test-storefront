@@ -45,12 +45,12 @@
   </div>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfOverlay from '../../atoms/SfOverlay/SfOverlay.vue';
 
 export default {
-  name: "SfColorPicker",
+  name: 'SfColorPicker',
   components: { SfIcon, SfButton, SfOverlay },
   props: {
     /**
@@ -65,7 +65,7 @@ export default {
      */
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Close button state whether show it or not
@@ -77,11 +77,11 @@ export default {
   },
   methods: {
     toggle() {
-      this.$emit("click:toggle");
+      this.$emit('click:toggle');
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfColorPicker.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfColorPicker.scss';
 </style>

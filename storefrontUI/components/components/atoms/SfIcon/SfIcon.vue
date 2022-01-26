@@ -43,13 +43,13 @@
   </span>
 </template>
 <script>
-import icons from "@storefront-ui/shared/icons/icons";
-import { iconColorsValues as SF_COLORS } from "@storefront-ui/shared/variables/colors";
-import { sizesValues as SF_SIZES } from "@storefront-ui/shared/variables/sizes";
+import icons from '@storefront-ui/shared/icons/icons';
+import { iconColorsValues as SF_COLORS } from '@storefront-ui/shared/variables/colors';
+import { sizesValues as SF_SIZES } from '@storefront-ui/shared/variables/sizes';
 const SF_ICONS = Object.keys(icons);
 
 export default {
-  name: "SfIcon",
+  name: 'SfIcon',
   inject: {
     components: {
       default: {
@@ -68,7 +68,7 @@ export default {
      */
     icon: {
       type: [String, Array],
-      default: "",
+      default: '',
     },
     /**
      * Custom size of the icon
@@ -77,7 +77,7 @@ export default {
      */
     size: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Custom color of the icon
@@ -86,7 +86,7 @@ export default {
      */
     color: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Custom viewBox size of the icon
@@ -96,7 +96,7 @@ export default {
      */
     viewBox: {
       type: String,
-      default: "0 0 24 24",
+      default: '0 0 24 24',
     },
     /**
      * The fraction in which the icon is partially collored with --icon-color value and the rest with --icon-color-negative.
@@ -109,23 +109,23 @@ export default {
   },
   iconColorClass(color) {
     const isSFColors = SF_COLORS.includes(color.trim());
-    return isSFColors ? `color-${color.trim()}` : "";
+    return isSFColors ? `color-${color.trim()}` : '';
   },
   iconSizeClass(size) {
     const isSFSizes = SF_SIZES.includes(size.trim());
-    return isSFSizes ? `size-${size.trim()}` : "";
+    return isSFSizes ? `size-${size.trim()}` : '';
   },
   iconCustomStyle(color, size) {
     const isSFColors = SF_COLORS.includes(color.trim());
     const isSFSizes = SF_SIZES.includes(size.trim());
     return {
-      "--icon-color": !isSFColors ? color : "",
-      "--icon-size": !isSFSizes ? size : "",
+      '--icon-color': !isSFColors ? color : '',
+      '--icon-size': !isSFSizes ? size : '',
     };
   },
   iconViewBox(icon, viewBox) {
     const isSFIcons = () => {
-      if (typeof icon === "string") {
+      if (typeof icon === 'string') {
         return SF_ICONS.includes(icon.trim());
       } else return null;
     };
@@ -133,7 +133,7 @@ export default {
   },
   iconPaths(icon) {
     const isSFIcons = () => {
-      if (typeof icon === "string") {
+      if (typeof icon === 'string') {
         return SF_ICONS.includes(icon.trim());
       } else return null;
     };
@@ -145,10 +145,10 @@ export default {
   },
   fillPath(coverage) {
     const fillPathUrl = (index) => `url(#${index})`;
-    return coverage === 1 ? "var(--icon-color)" : fillPathUrl(coverage);
+    return coverage === 1 ? 'var(--icon-color)' : fillPathUrl(coverage);
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfIcon.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfIcon.scss';
 </style>

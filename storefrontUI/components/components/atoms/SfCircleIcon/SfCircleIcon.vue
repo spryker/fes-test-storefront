@@ -22,10 +22,10 @@
   </component>
 </template>
 <script>
-import SfButton from "../SfButton/SfButton.vue";
-import SfIcon from "../SfIcon/SfIcon.vue";
+import SfButton from '../SfButton/SfButton.vue';
+import SfIcon from '../SfIcon/SfIcon.vue';
 export default {
-  name: "SfCircleIcon",
+  name: 'SfCircleIcon',
   inject: {
     components: {
       default: {
@@ -37,15 +37,15 @@ export default {
   props: {
     icon: {
       type: [String, Array],
-      default: "home",
+      default: 'home',
     },
     iconColor: {
       type: String,
-      default: "",
+      default: '',
     },
     iconSize: {
       type: String,
-      default: "",
+      default: '',
     },
     disabled: {
       type: Boolean,
@@ -55,5 +55,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfCircleIcon.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfCircleIcon.scss';
 </style>

@@ -1,72 +1,72 @@
-import { SfBanner } from "@storefront-ui/vue";
-import banner from "../../../../public/assets/storybook/SfBanner/Banner2.jpg";
+import { SfBanner } from '@storefront-ui/vue';
+import banner from '../../../../public/assets/storybook/SfBanner/Banner2.jpg';
 
 export default {
-  title: "Components/Molecules/Banner",
+  title: 'Components/Molecules/Banner',
   component: SfBanner,
   argTypes: {
     classes: {
       control: {
-        type: "select",
-        options: ["sf-banner--right", ""],
+        type: 'select',
+        options: ['sf-banner--right', ''],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     subtitle: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     description: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     buttonText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     background: {
       control: {
-        type: "color",
+        type: 'color',
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     image: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     click: {
-      action: "Button clicked!",
-      table: { category: "Events" },
+      action: 'Button clicked!',
+      table: { category: 'Events' },
     },
   },
   args: {
@@ -93,47 +93,47 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  title: "Eco Sandals",
-  subtitle: "Summer shoes",
+  title: 'Eco Sandals',
+  subtitle: 'Summer shoes',
   description:
-    "The collection features formal and casual comfort shoes with a Danish design focus. Made from premium leathers and comfort.",
-  buttonText: "Shop Now",
+    'The collection features formal and casual comfort shoes with a Danish design focus. Made from premium leathers and comfort.',
+  buttonText: 'Shop Now',
 };
 
 export const OnlyTitle = Template.bind({});
 OnlyTitle.args = {
-  title: "Eco Sandals",
+  title: 'Eco Sandals',
 };
 
 export const OnlyDescription = Template.bind({});
 OnlyDescription.args = {
   description:
-    "The collection features formal and casual comfort shoes with a Danish design focus. Made from premium leathers and comfort.",
+    'The collection features formal and casual comfort shoes with a Danish design focus. Made from premium leathers and comfort.',
 };
 
 export const OnlySubtitle = Template.bind({});
 OnlySubtitle.args = {
-  subtitle: "Summer shoes",
+  subtitle: 'Summer shoes',
 };
 
 export const OnlyCallToAction = Template.bind({});
 OnlyCallToAction.args = {
-  buttonText: "Shop Now",
+  buttonText: 'Shop Now',
 };
 
 export const WithBackground = Template.bind({});
 WithBackground.args = {
-  background: "#e1e3e2",
+  background: '#e1e3e2',
   ...Common.args,
-  image: "",
+  image: '',
 };
 
 export const OnTheRight = Template.bind({});
 OnTheRight.args = {
   ...Common.args,
-  background: "#e1e3e2",
-  classes: "sf-banner--right",
-  image: "",
+  background: '#e1e3e2',
+  classes: 'sf-banner--right',
+  image: '',
 };
 
 export const WithTitleSlot = (args, { argTypes }) => ({

@@ -1,76 +1,76 @@
-import { SfInput, SfIcon } from "@storefront-ui/vue";
+import { SfInput, SfIcon } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Input",
+  title: 'Components/Atoms/Input',
   component: SfInput,
   argTypes: {
     classes: {
       control: {
-        type: "select",
-        options: ["", "sf-input--filled", "sf-input--outline"],
+        type: 'select',
+        options: ['', 'sf-input--filled', 'sf-input--outline'],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     type: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     name: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     errorMessage: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     valid: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     required: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     hasShowPassword: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     placeholder: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     value: {
-      control: "text",
+      control: 'text',
     },
-    onChange: { action: "input changed!", table: { category: "Events" } },
+    onChange: { action: 'input changed!', table: { category: 'Events' } },
   },
 };
 
@@ -100,15 +100,15 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  type: "text",
-  label: "First name",
-  name: "name",
+  type: 'text',
+  label: 'First name',
+  name: 'name',
 };
 
 export const WithError = Template.bind({});
 WithError.args = {
   ...Common.args,
-  errorMessage: "Required",
+  errorMessage: 'Required',
   valid: false,
 };
 
@@ -132,7 +132,7 @@ Disabled.args = {
 export const ShowPassword = Template.bind({});
 ShowPassword.args = {
   ...Common.args,
-  type: "password",
+  type: 'password',
   hasShowPassword: true,
 };
 
@@ -145,8 +145,8 @@ WithPlaceholder.args = {
 export const Filled = Template.bind({});
 Filled.args = {
   ...Common.args,
-  classes: "sf-input--filled",
-  value: "Storefront",
+  classes: 'sf-input--filled',
+  value: 'Storefront',
 };
 
 export const WithLabelSlot = (args, { argTypes }) => ({

@@ -1,30 +1,30 @@
-import { SfProductOption } from "@storefront-ui/vue";
+import { SfProductOption } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/ProductOption",
+  title: 'Components/Molecules/ProductOption',
   component: SfProductOption,
   decorators: [
     () => ({ template: "<div style='max-width: 300px'><story/></div>" }),
   ],
   argTypes: {
     label: {
-      control: "text",
-      description: "Label to assign to the product",
+      control: 'text',
+      description: 'Label to assign to the product',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     color: {
-      control: "color",
-      description: "Product color",
-      defaultValue: "",
+      control: 'color',
+      description: 'Product color',
+      defaultValue: '',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
@@ -39,8 +39,8 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  color: "red",
-  label: "Red",
+  color: 'red',
+  label: 'Red',
 };
 
 export const UseColorSlot = (args, { argTypes }) => ({

@@ -121,9 +121,9 @@ import {
   SfPrice,
   SfProperty,
   SfLink,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 export default {
-  name: "ReviewOrder",
+  name: 'ReviewOrder',
   components: {
     SfHeading,
     SfTable,
@@ -155,8 +155,8 @@ export default {
   data() {
     return {
       terms: false,
-      promoCode: "",
-      tableHeaders: ["Size", "Description", "Quantity", "Colour", "Amount"],
+      promoCode: '',
+      tableHeaders: ['Size', 'Description', 'Quantity', 'Colour', 'Amount'],
     };
   },
   computed: {
@@ -169,9 +169,9 @@ export default {
     shippingMethod() {
       const shippingMethod = this.shipping.shippingMethod;
       const method = this.shippingMethods.find(
-        (method) => method.value === shippingMethod
+        (method) => method.value === shippingMethod,
       );
-      return method ? method : { price: "$0.00" };
+      return method ? method : { price: '$0.00' };
     },
     payment() {
       return this.order.payment;
@@ -179,9 +179,9 @@ export default {
     paymentMethod() {
       const paymentMethod = this.payment.paymentMethod;
       const method = this.paymentMethods.find(
-        (method) => method.value === paymentMethod
+        (method) => method.value === paymentMethod,
       );
-      return method ? method : { label: "" };
+      return method ? method : { label: '' };
     },
     subtotal() {
       const products = this.products;
@@ -190,22 +190,22 @@ export default {
         const price = current.price.special
           ? current.price.special
           : current.price.regular;
-        const total = qty * parseFloat(price.replace("$", ""));
+        const total = qty * parseFloat(price.replace('$', ''));
         return previous + total;
       }, 0);
-      return "$" + subtotal.toFixed(2);
+      return '$' + subtotal.toFixed(2);
     },
     total() {
-      const subtotal = parseFloat(this.subtotal.replace("$", ""));
-      const shipping = parseFloat(this.shippingMethod.price.replace("$", ""));
+      const subtotal = parseFloat(this.subtotal.replace('$', ''));
+      const shipping = parseFloat(this.shippingMethod.price.replace('$', ''));
       const total = subtotal + (isNaN(shipping) ? 0 : shipping);
-      return "$" + total.toFixed(2);
+      return '$' + total.toFixed(2);
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 .title {
   --heading-padding: var(--spacer-xl) 0 var(--spacer-base);
   --heading-title-font-weight: var(--font-weight--bold);

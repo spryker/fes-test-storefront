@@ -1,9 +1,9 @@
-import SfCimage from "./SfCimage.vue";
-import { placeholderTypes } from "./helpers";
-import { RESIZE_TYPES } from "@cld-apis/utils";
+import SfCimage from './SfCimage.vue';
+import { placeholderTypes } from './helpers';
+import { RESIZE_TYPES } from '@cld-apis/utils';
 
 export default {
-  title: "Components/Atoms/Cloudinary/Image",
+  title: 'Components/Atoms/Cloudinary/Image',
   component: SfCimage,
   decorators: [
     () => ({
@@ -36,62 +36,62 @@ export default {
   },
   argTypes: {
     publicId: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       description:
-        "Path to image stored in Cloudinary (including folder), or image url",
+        'Path to image stored in Cloudinary (including folder), or image url',
     },
     cloud: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     transformations: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     progressive: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       description:
-        "Whether to generate a JPEG using the progressive (interlaced) JPEG format.",
+        'Whether to generate a JPEG using the progressive (interlaced) JPEG format.',
     },
     placeholder: {
       control: {
-        type: "select",
+        type: 'select',
         options: Object.keys(placeholderTypes),
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
       description:
-        "The placeholder image to use while the image is loading. Possible values: - `blur`, `pixelate`, `vectorize`, `predominant`.",
+        'The placeholder image to use while the image is loading. Possible values: - `blur`, `pixelate`, `vectorize`, `predominant`.',
     },
     loading: {
       control: {
-        type: "select",
-        options: ["", "lazy", "eager"],
+        type: 'select',
+        options: ['', 'lazy', 'eager'],
       },
       table: {
-        category: "Attributes",
+        category: 'Attributes',
       },
-      defaultValue: "lazy",
+      defaultValue: 'lazy',
       description:
-        "Set loading type for the component. Possible values: ``, `lazy` and `eager`.",
+        'Set loading type for the component. Possible values: ``, `lazy` and `eager`.',
     },
     alt: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Attributes",
+        category: 'Attributes',
       },
-      description: "Alternative text in case image is not loaded.",
+      description: 'Alternative text in case image is not loaded.',
     },
   },
 };
@@ -113,23 +113,23 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  publicId: "sheep",
+  publicId: 'sheep',
   cloud: {
-    cloudName: "demo",
+    cloudName: 'demo',
   },
-  alt: "Example sheep",
+  alt: 'Example sheep',
 };
 
 export const WithPlaceholder = Template.bind({});
 WithPlaceholder.args = {
   ...Common.args,
-  placeholder: "blur",
+  placeholder: 'blur',
 };
 
 export const Progressive = Template.bind({});
 Progressive.args = {
   ...Common.args,
-  placeholder: "blur",
+  placeholder: 'blur',
 };
 
 export const Resize = Template.bind({});
@@ -156,7 +156,7 @@ ResizeWithGravity.args = {
         height: 500,
         type: RESIZE_TYPES.CROP,
       },
-      gravity: "auto",
+      gravity: 'auto',
     },
   ],
 };
@@ -164,7 +164,7 @@ ResizeWithGravity.args = {
 export const AsThumbnail = Template.bind({});
 AsThumbnail.args = {
   ...Common.args,
-  publicId: "puppy_cute",
+  publicId: 'puppy_cute',
   transformations: [
     {
       resize: {
@@ -183,7 +183,7 @@ WithBorder.args = {
     {
       border: {
         width: 2,
-        color: "black",
+        color: 'black',
       },
     },
   ],
@@ -205,10 +205,10 @@ WithColor.args = {
   transformations: [
     {
       effect: {
-        name: "colorize",
+        name: 'colorize',
         value: 50,
       },
-      color: "red",
+      color: 'red',
     },
   ],
 };
@@ -216,7 +216,7 @@ WithColor.args = {
 export const WithAccessibility = Template.bind({});
 WithAccessibility.args = {
   ...Common.args,
-  alt: "",
+  alt: '',
 };
 WithAccessibility.decorators = [
   () => ({

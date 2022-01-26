@@ -16,10 +16,10 @@
   </div>
 </template>
 <script>
-import Simplebar from "simplebar-vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import Simplebar from 'simplebar-vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfScrollable",
+  name: 'SfScrollable',
   components: {
     SfButton,
     Simplebar,
@@ -30,21 +30,21 @@ export default {
      */
     maxContentHeight: {
       type: String,
-      default: "",
+      default: '',
     },
     /*
      * Text for button showing content
      */
     showText: {
       type: String,
-      default: "Show",
+      default: 'Show',
     },
     /*
      * Text for button hiding content
      */
     hideText: {
       type: String,
-      default: "Hide",
+      default: 'Hide',
     },
   },
   data() {
@@ -57,7 +57,7 @@ export default {
   computed: {
     style() {
       return {
-        "--_scrollable-max-height": this.maxContentHeight.trim()
+        '--_scrollable-max-height': this.maxContentHeight.trim()
           ? this.maxContentHeight
           : undefined,
       };
@@ -65,10 +65,9 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.contentEl = this.$refs.content.$el.querySelector(
-        ".simplebar-content"
-      );
-      if (typeof MutationObserver === "undefined" || !this.contentEl) return;
+      this.contentEl =
+        this.$refs.content.$el.querySelector('.simplebar-content');
+      if (typeof MutationObserver === 'undefined' || !this.contentEl) return;
       const observer = new MutationObserver(this.sizeCalc);
       this.sizeCalc();
       observer.observe(this.contentEl, { childList: true });
@@ -84,5 +83,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfScrollable.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfScrollable.scss';
 </style>

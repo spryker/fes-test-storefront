@@ -1,23 +1,23 @@
-import SfAddressPicker from "./SfAddressPicker.vue";
+import SfAddressPicker from './SfAddressPicker.vue';
 
 export default {
-  title: "Components/Molecules/AddressPicker",
+  title: 'Components/Molecules/AddressPicker',
   component: SfAddressPicker,
   argTypes: {
     name: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     selected: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Computed",
+        category: 'Computed',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
-    input: { action: "Address picked", table: { category: "Events" } },
+    input: { action: 'Address picked', table: { category: 'Events' } },
   },
 };
 
@@ -39,13 +39,13 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  name: "first",
-  title: "Jack Smith",
-  street: "Mazowiecka 34",
-  postCode: "02-020",
-  city: "Warszawa, Mazowieckie",
-  country: "Poland",
-  phone: "+48 777 777 777",
+  name: 'first',
+  title: 'Jack Smith',
+  street: 'Mazowiecka 34',
+  postCode: '02-020',
+  city: 'Warszawa, Mazowieckie',
+  country: 'Poland',
+  phone: '+48 777 777 777',
 };
 
 export const Selected = Template.bind({});

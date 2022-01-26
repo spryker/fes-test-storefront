@@ -1,38 +1,38 @@
-import { SfCard } from "@storefront-ui/vue";
-import cardImg from "../../../../public/assets/storybook/SfCard/card.jpg";
+import { SfCard } from '@storefront-ui/vue';
+import cardImg from '../../../../public/assets/storybook/SfCard/card.jpg';
 
 export default {
-  title: "Components/Molecules/Card",
+  title: 'Components/Molecules/Card',
   component: SfCard,
   argTypes: {
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     titleLevel: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     description: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     buttonText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -57,12 +57,12 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  title: "Baby Care",
+  title: 'Baby Care',
   titleLevel: 3,
   description:
-    "Read how to take care of your baby, see our products available, clothes and suggestions how stay healthy.",
-  link: "",
-  buttonText: "Learn more",
+    'Read how to take care of your baby, see our products available, clothes and suggestions how stay healthy.',
+  link: '',
+  buttonText: 'Learn more',
 };
 
 export const WithDetailsSlot = (args, { argTypes }) => ({

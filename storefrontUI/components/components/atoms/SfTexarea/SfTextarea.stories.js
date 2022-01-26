@@ -1,93 +1,93 @@
-import { SfTextarea } from "@storefront-ui/vue";
+import { SfTextarea } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Textarea",
+  title: 'Components/Atoms/Textarea',
   component: SfTextarea,
   argTypes: {
     value: {
-      control: "text",
-      defaultValue: "",
+      control: 'text',
+      defaultValue: '',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     name: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     cols: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     rows: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     minlength: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     maxlength: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     wrap: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     errorMessage: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     valid: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: true,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     required: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: false,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: false,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     placeholder: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    change: { action: "Text area changed", table: { category: "Events" } },
-    click: { action: "Text area focus", table: { category: "Events" } },
+    change: { action: 'Text area changed', table: { category: 'Events' } },
+    click: { action: 'Text area focus', table: { category: 'Events' } },
   },
 };
 
@@ -122,10 +122,10 @@ const Template = (args, { argTypes }) => ({
 export const Common = Template.bind({});
 
 Common.args = {
-  label: "First name",
-  name: "first-name",
+  label: 'First name',
+  name: 'first-name',
   cols: 40,
   rows: 10,
-  wrap: "soft",
-  errorMessage: "Required",
+  wrap: 'soft',
+  errorMessage: 'Required',
 };

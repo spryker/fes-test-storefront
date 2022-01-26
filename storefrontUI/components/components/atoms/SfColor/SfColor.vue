@@ -38,11 +38,11 @@
   </component>
 </template>
 <script>
-import SfBadge from "../SfBadge/SfBadge.vue";
-import SfIcon from "../SfIcon/SfIcon.vue";
-import SfButton from "../SfButton/SfButton.vue";
+import SfBadge from '../SfBadge/SfBadge.vue';
+import SfIcon from '../SfIcon/SfIcon.vue';
+import SfButton from '../SfButton/SfButton.vue';
 export default {
-  name: "SfColor",
+  name: 'SfColor',
   inject: {
     components: {
       default: {
@@ -55,7 +55,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: "",
+      default: '',
     },
     selected: {
       type: Boolean,
@@ -72,5 +72,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfColor.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfColor.scss';
 </style>

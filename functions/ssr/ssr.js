@@ -4,9 +4,9 @@ const { Nuxt } = require('nuxt-start');
 
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
-    name: currency,
-    label: currency,
-  }))
+      name: currency,
+      label: currency,
+    }))
   : ['USD'];
 
 const config = {
@@ -30,14 +30,12 @@ const config = {
       },
       {
         rel: 'preload',
-        href:
-          'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
         as: 'style',
       },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
         media: 'print',
         onload: "this.media='all'",
         once: true,
@@ -131,23 +129,22 @@ const config = {
       },
     ],
   ],
-  modules: [
-    'vue-scrollto/nuxt',
-    'nuxt-i18n',
-    'cookie-universal-nuxt',
-  ],
+  modules: ['vue-scrollto/nuxt', 'nuxt-i18n', 'cookie-universal-nuxt'],
   publicRuntimeConfig: {
     middlewareUrl: process.env.URL,
     spryker: {
       contentBackendUrl:
-        process.env.CONTENT_BACKEND_URL || 'https://eb-demo-server.herokuapp.com',
+        process.env.CONTENT_BACKEND_URL ||
+        'https://eb-demo-server.herokuapp.com',
       currency: {
         default: process.env.CURRENCY_DEFAULT || 'USD',
         options: currencies,
       },
       store: process.env.STORE || 'DE',
       priceMode: process.env.PRICE_MODE || 'GROSS_MODE',
-      enabledLocales: process.env.LOCALES ? process.env.LOCALES.split(',') : ['en_US','de_DE'],
+      enabledLocales: process.env.LOCALES
+        ? process.env.LOCALES.split(',')
+        : ['en_US', 'de_DE'],
     },
   },
   i18n: {

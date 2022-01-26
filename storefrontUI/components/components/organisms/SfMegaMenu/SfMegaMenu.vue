@@ -29,17 +29,17 @@
   </transition>
 </template>
 <script>
-import Vue from "vue";
-import SfMegaMenuColumn from "./_internal/SfMegaMenuColumn.vue";
-Vue.component("SfMegaMenuColumn", SfMegaMenuColumn);
-import SfBar from "../../molecules/SfBar/SfBar.vue";
-import SfMenuItem from "../../molecules/SfMenuItem/SfMenuItem";
+import Vue from 'vue';
+import SfMegaMenuColumn from './_internal/SfMegaMenuColumn.vue';
+Vue.component('SfMegaMenuColumn', SfMegaMenuColumn);
+import SfBar from '../../molecules/SfBar/SfBar.vue';
+import SfMenuItem from '../../molecules/SfMenuItem/SfMenuItem';
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../utilities/mobile-observer";
+} from '../../../utilities/mobile-observer';
 export default {
-  name: "SfMegaMenu",
+  name: 'SfMegaMenu',
   components: {
     SfBar,
     SfMenuItem,
@@ -47,7 +47,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     visible: {
       type: Boolean,
@@ -59,27 +59,27 @@ export default {
     },
     transitionName: {
       type: String,
-      default: "sf-fade",
+      default: 'sf-fade',
     },
     /**
      * @deprecated will be removed in 1.0.0
      */
     asideTitle: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
     return {
-      active: "",
+      active: '',
     };
   },
   provide() {
     const megaMenu = {};
-    Object.defineProperty(megaMenu, "active", {
+    Object.defineProperty(megaMenu, 'active', {
       get: () => this.active,
     });
-    Object.defineProperty(megaMenu, "changeActive", {
+    Object.defineProperty(megaMenu, 'changeActive', {
       value: this.changeActive,
     });
     return { megaMenu };
@@ -90,7 +90,7 @@ export default {
   watch: {
     isMobile: {
       handler() {
-        this.active = "";
+        this.active = '';
       },
       immediate: true,
     },
@@ -101,17 +101,17 @@ export default {
   methods: {
     changeActive(payload) {
       this.active = payload;
-      this.$emit("change", payload);
+      this.$emit('change', payload);
     },
     back() {
       if (!this.active) {
-        this.$emit("close");
+        this.$emit('close');
       }
-      this.active = "";
+      this.active = '';
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfMegaMenu.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfMegaMenu.scss';
 </style>

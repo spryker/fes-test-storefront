@@ -21,14 +21,14 @@
   </li>
 </template>
 <script>
-import SfButton from "../../../atoms/SfButton/SfButton.vue";
-import SfLink from "../../../atoms/SfLink/SfLink.vue";
+import SfButton from '../../../atoms/SfButton/SfButton.vue';
+import SfLink from '../../../atoms/SfLink/SfLink.vue';
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../../utilities/mobile-observer";
+} from '../../../../utilities/mobile-observer';
 export default {
-  name: "SfHeroItem",
+  name: 'SfHeroItem',
   components: {
     SfButton,
     SfLink,
@@ -37,32 +37,32 @@ export default {
     /** Hero item title */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /** Hero item subtitle (at the top) */
     subtitle: {
       type: String,
-      default: "",
+      default: '',
     },
     /** text that will be displayed inside the button. You can replace the button  with "call-to-action" slot */
     buttonText: {
       type: String,
-      default: "",
+      default: '',
     },
     /** Background color */
     background: {
       type: String,
-      default: "",
+      default: '',
     },
     /** Background image path */
     image: {
       type: [Object, String],
-      default: "",
+      default: '',
     },
     /** link to be used in button if necessary */
     link: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -74,17 +74,17 @@ export default {
     ...mapMobileObserver(),
     style() {
       const image = this.image;
-      const isImageString = typeof image === "string";
+      const isImageString = typeof image === 'string';
       const background = this.background;
       return {
-        "background-image": isImageString
+        'background-image': isImageString
           ? `url(${image})`
           : `url(${this.mobileView ? image.mobile : image.desktop})`,
-        "--_hero-item-background-color": background,
+        '--_hero-item-background-color': background,
       };
     },
     wrapper() {
-      return !this.mobileView ? "div" : this.link ? "SfLink" : "SfButton";
+      return !this.mobileView ? 'div' : this.link ? 'SfLink' : 'SfButton';
     },
   },
   mounted() {

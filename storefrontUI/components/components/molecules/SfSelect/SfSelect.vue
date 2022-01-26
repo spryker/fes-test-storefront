@@ -45,13 +45,13 @@
   </div>
 </template>
 <script>
-import { focus } from "../../../utilities/directives";
-import SfSelectOption from "./_internal/SfSelectOption.vue";
-import Vue from "vue";
+import { focus } from '../../../utilities/directives';
+import SfSelectOption from './_internal/SfSelectOption.vue';
+import Vue from 'vue';
 
-Vue.component("SfSelectOption", SfSelectOption);
+Vue.component('SfSelectOption', SfSelectOption);
 export default {
-  name: "SfSelect",
+  name: 'SfSelect',
   directives: { focus },
   props: {
     /**
@@ -59,7 +59,7 @@ export default {
      */
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Required attribute
@@ -87,30 +87,30 @@ export default {
      */
     errorMessage: {
       type: String,
-      default: "This field is not correct.",
+      default: 'This field is not correct.',
     },
     /**
      * Value selected.
      */
     value: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Adds placeholder
      */
     placeholder: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   methods: {
     changeHandler(event) {
-      this.$emit("input", event.target.value);
+      this.$emit('input', event.target.value);
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfSelect.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfSelect.scss';
 </style>

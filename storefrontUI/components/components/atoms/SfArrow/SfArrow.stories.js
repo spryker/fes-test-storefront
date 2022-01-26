@@ -1,39 +1,39 @@
-import { SfArrow, SfIcon } from "@storefront-ui/vue";
+import { SfArrow, SfIcon } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Arrow",
+  title: 'Components/Atoms/Arrow',
   component: SfArrow,
   argTypes: {
     disabled: {
-      control: "boolean",
-      table: { category: "Attributes" },
-      description: "Disable clickable",
-      type: "boolean",
+      control: 'boolean',
+      table: { category: 'Attributes' },
+      description: 'Disable clickable',
+      type: 'boolean',
     },
     ariaLabel: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Attributes",
+        category: 'Attributes',
       },
-      defaultValue: "Arrow label",
+      defaultValue: 'Arrow label',
     },
-    onClick: { action: "clicked", table: { category: "Events" } },
+    onClick: { action: 'clicked', table: { category: 'Events' } },
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-arrow--right",
-          "sf-arrow--long",
-          "sf-arrow--transparent",
-          "sf-arrow--rounded",
-          "sf-arrow--no-shadow",
-          "sf-arrow--top",
-          "sf-arrow--down",
+          '',
+          'sf-arrow--right',
+          'sf-arrow--long',
+          'sf-arrow--transparent',
+          'sf-arrow--rounded',
+          'sf-arrow--no-shadow',
+          'sf-arrow--top',
+          'sf-arrow--down',
         ],
       },
       table: {
-        category: "Modifier classes",
+        category: 'Modifier classes',
       },
     },
   },

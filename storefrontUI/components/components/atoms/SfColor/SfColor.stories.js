@@ -1,39 +1,39 @@
-import { SfColor } from "@storefront-ui/vue";
+import { SfColor } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Color",
+  title: 'Components/Atoms/Color',
   component: SfColor,
   argTypes: {
     color: {
-      control: "color",
+      control: 'color',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     hasBadge: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: false,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     classes: {
       control: {
-        type: "select",
-        options: ["sf-color--rounded", ""],
+        type: 'select',
+        options: ['sf-color--rounded', ''],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     selected: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: false,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    onClick: { action: "toggle selected", table: { category: "Events" } },
+    onClick: { action: 'toggle selected', table: { category: 'Events' } },
   },
 };
 
@@ -53,7 +53,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  color: "black",
+  color: 'black',
 };
 
 export const Selected = Template.bind({});
@@ -64,5 +64,5 @@ Selected.args = {
 
 export const WithColor = Template.bind({});
 WithColor.args = {
-  color: "red",
+  color: 'red',
 };

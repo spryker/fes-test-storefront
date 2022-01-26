@@ -75,16 +75,16 @@
   </div>
 </template>
 <script>
-import SfComponentSelectOption from "./_internal/SfComponentSelectOption.vue";
-import SfChevron from "../../atoms/SfChevron/SfChevron.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
-import { focus } from "../../../utilities/directives";
-import { clickOutside } from "../../../utilities/directives";
-import Vue from "vue";
-Vue.component("SfComponentSelectOption", SfComponentSelectOption);
+import SfComponentSelectOption from './_internal/SfComponentSelectOption.vue';
+import SfChevron from '../../atoms/SfChevron/SfChevron.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfOverlay from '../../atoms/SfOverlay/SfOverlay.vue';
+import { focus } from '../../../utilities/directives';
+import { clickOutside } from '../../../utilities/directives';
+import Vue from 'vue';
+Vue.component('SfComponentSelectOption', SfComponentSelectOption);
 export default {
-  name: "SfComponentSelect",
+  name: 'SfComponentSelect',
   directives: { focus, clickOutside },
   components: {
     SfButton,
@@ -92,8 +92,8 @@ export default {
     SfOverlay,
   },
   model: {
-    prop: "selected",
-    event: "change",
+    prop: 'selected',
+    event: 'change',
   },
   props: {
     /**
@@ -101,14 +101,14 @@ export default {
      */
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Selected item value
      */
     selected: {
       type: [String, Number, Object],
-      default: "",
+      default: '',
     },
     /**
      * Dropdown list size
@@ -143,7 +143,7 @@ export default {
      */
     errorMessage: {
       type: String,
-      default: "This field is not correct.",
+      default: 'This field is not correct.',
     },
     /**
      * If true clicking outside will not dismiss the select
@@ -159,21 +159,21 @@ export default {
       options: [],
       indexes: {},
       optionHeight: 0,
-      focusedOption: "",
+      focusedOption: '',
     };
   },
   computed: {
     index: {
       get() {
         const stringified = this.indexes[JSON.stringify(this.selected)];
-        if (typeof stringified === "undefined") {
+        if (typeof stringified === 'undefined') {
           return -1;
         }
         return stringified;
       },
       set(index) {
         this.focusedOption = this.options[index].value;
-        this.$emit("change", this.options[index].value);
+        this.$emit('change', this.options[index].value);
       },
     },
     html() {
@@ -217,7 +217,7 @@ export default {
     }
   },
   beforeDestroy: function () {
-    this.$off("update", this.update);
+    this.$off('update', this.update);
   },
   methods: {
     update(index) {
@@ -227,7 +227,7 @@ export default {
       const options = [];
       const indexes = {};
       if (!this.$slots.default) return;
-      this.$on("update", this.update);
+      this.$on('update', this.update);
       this.$slots.default.forEach(({ tag, componentOptions, elm }, index) => {
         if (!tag) return;
         options.push({
@@ -281,5 +281,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfComponentSelect.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfComponentSelect.scss';
 </style>

@@ -1,16 +1,16 @@
-import { SfLoader, SfImage } from "@storefront-ui/vue";
+import { SfLoader, SfImage } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Loader",
+  title: 'Components/Atoms/Loader',
   component: SfLoader,
   decorators: [
     () => ({ template: '<div style="margin: 3em;"><story /></div>' }),
   ],
   argTypes: {
     loading: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },

@@ -14,14 +14,14 @@
   </li>
 </template>
 <script>
-import { focus } from "../../../../utilities/directives";
+import { focus } from '../../../../utilities/directives';
 export default {
-  name: "SfComponentSelectOption",
+  name: 'SfComponentSelectOption',
   directives: { focus },
   props: {
     value: {
       type: [String, Number, Object],
-      default: "",
+      default: '',
     },
   },
   computed: {
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     clicked() {
-      this.$parent.$emit("update", this.indexes[JSON.stringify(this.value)]);
+      this.$parent.$emit('update', this.indexes[JSON.stringify(this.value)]);
     },
   },
 };

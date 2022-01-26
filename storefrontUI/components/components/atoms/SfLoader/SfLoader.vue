@@ -44,7 +44,7 @@
 </template>
 <script>
 export default {
-  name: "SfLoader",
+  name: 'SfLoader',
   props: {
     /**
      * Shows the loader on top of the existing content
@@ -57,5 +57,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfLoader.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfLoader.scss';
 </style>

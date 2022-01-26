@@ -1,50 +1,50 @@
-import { icons } from "@storefront-ui/shared/icons/icons";
-import { sizesValues as sizes } from "@storefront-ui/shared/variables/sizes";
-import { iconColorsValues as colors } from "@storefront-ui/shared/variables/colors";
-import { SfCharacteristic } from "@storefront-ui/vue";
+import { icons } from '@storefront-ui/shared/icons/icons';
+import { sizesValues as sizes } from '@storefront-ui/shared/variables/sizes';
+import { iconColorsValues as colors } from '@storefront-ui/shared/variables/colors';
+import { SfCharacteristic } from '@storefront-ui/vue';
 const iconsNames = Object.keys(icons);
 
 export default {
-  title: "Components/Molecules/Characteristic",
+  title: 'Components/Molecules/Characteristic',
   component: SfCharacteristic,
   argTypes: {
     sizeIcon: {
       control: {
-        type: "select",
+        type: 'select',
         options: sizes,
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     colorIcon: {
       control: {
-        type: "select",
+        type: 'select',
         options: colors,
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     icon: {
       control: {
-        type: "select",
+        type: 'select',
         options: iconsNames,
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     description: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -64,14 +64,14 @@ const Template = (args, { argTypes }) => ({
 });
 export const Common = Template.bind({});
 Common.args = {
-  description: "It carefully packaged with a personal touch",
-  title: "Safety",
+  description: 'It carefully packaged with a personal touch',
+  title: 'Safety',
 };
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   ...Common.args,
-  icon: "safety",
+  icon: 'safety',
 };
 
 export const UseIconSlot = (args, { argTypes }) => ({

@@ -1,102 +1,102 @@
-import { SfSelect, SfProductOption } from "@storefront-ui/vue";
+import { SfSelect, SfProductOption } from '@storefront-ui/vue';
 
 const options = [
-  { value: "" },
-  { value: "amaranth", color: "#E52B50", label: "Amaranth" },
-  { value: "amber", color: "#FFBF00", label: "Amber" },
-  { value: "arctic-lime", color: "#D0FF14", label: "Arctic lime" },
-  { value: "bluetiful", color: "#3C69E7", label: "Bluetiful" },
-  { value: "buff", color: "#F0DC82", label: "Buff" },
+  { value: '' },
+  { value: 'amaranth', color: '#E52B50', label: 'Amaranth' },
+  { value: 'amber', color: '#FFBF00', label: 'Amber' },
+  { value: 'arctic-lime', color: '#D0FF14', label: 'Arctic lime' },
+  { value: 'bluetiful', color: '#3C69E7', label: 'Bluetiful' },
+  { value: 'buff', color: '#F0DC82', label: 'Buff' },
 ];
 
 export default {
-  title: "Components/Molecules/Select",
+  title: 'Components/Molecules/Select',
   component: SfSelect,
   argTypes: {
     classes: {
       control: {
-        type: "select",
-        options: ["sf-select--underlined", ""],
+        type: 'select',
+        options: ['sf-select--underlined', ''],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
-      description: "Select field label",
+      description: 'Select field label',
     },
     value: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
-      description: "Value selected",
+      description: 'Value selected',
     },
     placeholder: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
-      description: "Placeholder",
+      description: 'Placeholder',
     },
     errorMessage: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "This field is not correct.",
+          summary: 'This field is not correct.',
         },
       },
       description:
-        "Error message value of form select. It will be appeared if `valid` is `true`.",
+        'Error message value of form select. It will be appeared if `valid` is `true`.',
     },
     required: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: false,
         },
       },
-      description: "Required field?",
+      description: 'Required field?',
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: false,
         },
       },
-      description: "Disabled status of form select",
+      description: 'Disabled status of form select',
     },
     valid: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: true,
         },
       },
-      description: "Validate value of form select",
+      description: 'Validate value of form select',
     },
-    input: { action: "Selected", table: { category: "Events" } },
+    input: { action: 'Selected', table: { category: 'Events' } },
   },
 };
 
@@ -106,7 +106,7 @@ const Template = (args, { argTypes }) => ({
   data() {
     return {
       options,
-      selectedValue: "",
+      selectedValue: '',
     };
   },
   template: `
@@ -130,7 +130,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  label: "Color",
+  label: 'Color',
 };
 
 export const Invalid = Template.bind({});
@@ -154,19 +154,19 @@ Disabled.args = {
 export const WithPlaceholder = Template.bind({});
 WithPlaceholder.args = {
   ...Common.args,
-  placeholder: "Select something",
+  placeholder: 'Select something',
 };
 
 export const Underlined = Template.bind({});
 Underlined.args = {
   ...Common.args,
-  classes: "sf-select--underlined",
+  classes: 'sf-select--underlined',
 };
 
 export const HasSelectedValue = Template.bind({});
 HasSelectedValue.args = {
   ...Common.args,
-  value: "amber",
+  value: 'amber',
 };
 
 export const UseLabelSlot = (args, { argTypes }) => ({
@@ -175,7 +175,7 @@ export const UseLabelSlot = (args, { argTypes }) => ({
   data() {
     return {
       options,
-      selectedValue: "",
+      selectedValue: '',
     };
   },
   template: `

@@ -121,15 +121,15 @@
   </div>
 </template>
 <script>
-import SfPrice from "../../atoms/SfPrice/SfPrice.vue";
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfLink from "../../atoms/SfLink/SfLink.vue";
-import SfRating from "../../atoms/SfRating/SfRating.vue";
-import SfImage from "../../atoms/SfImage/SfImage.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import SfAddToCart from "../../molecules/SfAddToCart/SfAddToCart.vue";
+import SfPrice from '../../atoms/SfPrice/SfPrice.vue';
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfLink from '../../atoms/SfLink/SfLink.vue';
+import SfRating from '../../atoms/SfRating/SfRating.vue';
+import SfImage from '../../atoms/SfImage/SfImage.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfAddToCart from '../../molecules/SfAddToCart/SfAddToCart.vue';
 export default {
-  name: "SfProductCardHorizontal",
+  name: 'SfProductCardHorizontal',
   components: {
     SfPrice,
     SfRating,
@@ -140,7 +140,7 @@ export default {
     SfAddToCart,
   },
   model: {
-    prop: "qty",
+    prop: 'qty',
   },
   props: {
     /**
@@ -148,7 +148,7 @@ export default {
      */
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Product image
@@ -156,7 +156,7 @@ export default {
      */
     image: {
       type: [Array, Object, String],
-      default: "",
+      default: '',
     },
     /**
      * Product image width, without unit
@@ -177,14 +177,14 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Link to product page
      */
     link: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
     /**
      * Link element tag
@@ -236,7 +236,7 @@ export default {
      */
     wishlistIcon: {
       type: [String, Array, Boolean],
-      default: "heart",
+      default: 'heart',
     },
     /**
      * Wish list icon for product which has been added to wish list
@@ -245,7 +245,7 @@ export default {
      */
     isOnWishlistIcon: {
       type: [String, Array],
-      default: "heart_fill",
+      default: 'heart_fill',
     },
     /**
      * Status of whether product is on wish list or not
@@ -267,22 +267,22 @@ export default {
       return this.isOnWishlist ? this.isOnWishlistIcon : this.wishlistIcon;
     },
     ariaLabel() {
-      return this.isOnWishlist ? "Remove from wishlist" : "Add to wishlist";
+      return this.isOnWishlist ? 'Remove from wishlist' : 'Add to wishlist';
     },
     wishlistIconClasses() {
-      const defaultClass = "sf-product-card-horizontal__wishlist-icon";
+      const defaultClass = 'sf-product-card-horizontal__wishlist-icon';
       return `${defaultClass} ${
-        this.isOnWishlist ? "sf-product-card-horizontal--on-wishlist" : ""
+        this.isOnWishlist ? 'sf-product-card-horizontal--on-wishlist' : ''
       }`;
     },
   },
   methods: {
     toggleIsOnWishlist() {
-      this.$emit("click:wishlist", !this.isOnWishlist);
+      this.$emit('click:wishlist', !this.isOnWishlist);
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfProductCardHorizontal.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfProductCardHorizontal.scss';
 </style>

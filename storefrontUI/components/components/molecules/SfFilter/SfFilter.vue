@@ -27,10 +27,10 @@
   </SfCheckbox>
 </template>
 <script>
-import SfCheckbox from "../../molecules/SfCheckbox/SfCheckbox.vue";
-import SfColor from "../../atoms/SfColor/SfColor.vue";
+import SfCheckbox from '../../molecules/SfCheckbox/SfCheckbox.vue';
+import SfColor from '../../atoms/SfColor/SfColor.vue';
 export default {
-  name: "SfFilter",
+  name: 'SfFilter',
   components: {
     SfCheckbox,
     SfColor,
@@ -38,11 +38,11 @@ export default {
   props: {
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     count: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     selected: {
       type: Boolean,
@@ -50,11 +50,11 @@ export default {
     },
     color: {
       type: String,
-      default: "",
+      default: '',
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfFilter.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfFilter.scss';
 </style>
