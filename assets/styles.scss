@@ -1,5 +1,4 @@
-html,
-body {
+html {
   --font-family--primary: Circular, sans-serif;
   --font-family--secondary: var(--font-family--primary);
 
@@ -22,25 +21,30 @@ body {
   --price-regular-color: #333333;
   --header-background: #e7eaee;
   --top-bar-background: #d0d5dc;
+  //--overlay-z-index: 4;
+  --sidebar-z-index: 5;
+}
 
-  .sf-rating {
-    &__icon {
-      --icon-color: #fdbe36;
-    }
-    &__icon--negative {
-      --icon-color: #d1d1d1;
-    }
+.sf-rating {
+  &__icon {
+    --icon-color: #fdbe36;
   }
-
-  footer {
-    --c-secondary: #e7eaee;
-
-    .sf-footer-column .sf-list__item {
-      --menu-item-label-color: #8f8f8f;
-    }
-
-    .sf-footer-column__title {
-      color: #4c4c4c;
-    }
+  &__icon--negative {
+    --icon-color: #d1d1d1;
   }
 }
+
+footer {
+  --c-secondary: #e7eaee;
+
+  .sf-footer-column .sf-list__item {
+    --menu-item-label-color: #8f8f8f;
+  }
+
+  .sf-footer-column__title {
+    color: #4c4c4c;
+  }
+}
+
+@import "icons";
+@import "header";

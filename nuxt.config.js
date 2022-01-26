@@ -158,7 +158,7 @@ export default {
       fallbackLocale: 'en_US',
     },
   },
-  css: ['./assets/styles.scss", "./assets/icons.scss', './assets/header.scss'],
+  css: ['./assets/styles.scss'],
   styleResources: {
     scss: [
       require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
