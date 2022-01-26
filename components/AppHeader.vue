@@ -298,7 +298,7 @@ import {
   useCatalogSearchSuggestions,
   catalogSearchSuggestionsGetters as suggestionsGetters,
 } from '@spryker-vsf/catalog-search-suggestions';
-import { computed, ref, watch } from '@vue/composition-api';
+import { computed, onMounted, ref, watch } from '@vue/composition-api';
 import { onSSR } from '@vue-storefront/core';
 import { useUiHelpers, useUiState } from '~/composables';
 import LocaleSelector from './LocaleSelector';
@@ -381,6 +381,10 @@ export default {
       await loadUser();
       await loadCart();
       await loadWishlist();
+      await searchCategories();
+    });
+
+    onMounted(async () => {
       await searchCategories();
     });
 
