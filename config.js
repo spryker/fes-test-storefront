@@ -1,5 +1,5 @@
-const webpack = require('webpack');
-const path = require('path');
+import webpack from 'webpack';
+import path from 'path';
 
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
@@ -8,7 +8,7 @@ const currencies = process.env.CURRENCIES
     }))
   : ['USD'];
 
-module.exports = {
+export default {
   head: {
     title: 'Spryker VSF',
     meta: [
@@ -171,13 +171,9 @@ module.exports = {
       fallbackLocale: 'en_US',
     },
   },
-  css: ['./assets/icons.scss', './assets/header.scss'],
+  css: ['./assets/styles.scss'],
   styleResources: {
-    scss: [
-      require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
-        paths: [process.cwd()],
-      }),
-    ],
+    scss: '@storefront-ui/shared/styles/_helpers.scss',
   },
   build: {
     transpile: ['vee-validate/dist/rules'],
@@ -193,7 +189,11 @@ module.exports = {
     extend(config) {
       config.resolve.alias['@storefront-ui/vue/styles'] = path.resolve(
         __dirname,
-        './storefrontUI/styles',
+        './storefrontUI/components/css/_all.scss',
+      );
+      config.resolve.alias['@storefront-ui/shared/styles'] = path.resolve(
+        __dirname,
+        './storefrontUI/styles/styles',
       );
       config.resolve.alias['@storefront-ui/vue/src'] = path.resolve(
         __dirname,

@@ -1,6 +1,6 @@
 const serverless = require('serverless-http');
-const config = require('../../config');
 const { Nuxt } = require('nuxt-start');
+const config = require('../../nuxt.config');
 
 exports.handler = async function (event, ctx, callback) {
   const nuxt = new Nuxt({
@@ -17,6 +17,7 @@ exports.handler = async function (event, ctx, callback) {
   }
 
   const result = await server(event, ctx, callback);
+
   const cacheValue = event.queryStringParameters.ebPreview
     ? 'no-cache'
     : 'public, max-age=31536000';
