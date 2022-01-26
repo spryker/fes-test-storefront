@@ -45,21 +45,21 @@
             icon="filter"
             class="navbar__filters-icon"
           />
-          {{ $t("Filters") }}
+          {{ $t('Filters') }}
         </SfButton>
         <div class="navbar__counter">
           <span class="navbar__label desktop-only"
-            >{{ $t("Products found") }}:
+            >{{ $t('Products found') }}:
           </span>
           <span class="desktop-only">
             {{ pagination.totalItems }}
           </span>
           <span class="navbar__label smartphone-only">
-            {{ pagination.totalItems }} {{ $t("Items") }}
+            {{ pagination.totalItems }} {{ $t('Items') }}
           </span>
         </div>
         <div class="navbar__sort desktop-only">
-          <span class="navbar__label">{{ $t("Sort by") }}:</span>
+          <span class="navbar__label">{{ $t('Sort by') }}:</span>
           <SfSelect
             data-cy="svsf-categorySection-sortBy-select"
             class="navbar__select"
@@ -79,7 +79,7 @@
           </SfSelect>
         </div>
         <div class="navbar__view">
-          <span class="navbar__view-label desktop-only">{{ $t("View") }}</span>
+          <span class="navbar__view-label desktop-only">{{ $t('View') }}</span>
           <SfIcon
             data-cy="svsf-categorySection-tiles-icon"
             class="navbar__view-icon"
@@ -138,7 +138,7 @@
                       <nuxt-link
                         :to="localePath(th.getCatLink(cat))"
                         :class="cat.isCurrent ? 'sidebar--cat-selected' : ''"
-                        >{{ $t("All") }}</nuxt-link
+                        >{{ $t('All') }}</nuxt-link
                       >
                     </template>
                   </SfMenuItem>
@@ -539,7 +539,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
 #category {
   box-sizing: border-box;
   @include for-desktop {

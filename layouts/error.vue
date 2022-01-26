@@ -35,7 +35,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
 #error {
   box-sizing: border-box;
   display: flex;

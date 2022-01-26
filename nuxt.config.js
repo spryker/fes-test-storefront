@@ -160,11 +160,7 @@ export default {
   },
   css: ['./assets/styles.scss'],
   styleResources: {
-    scss: [
-      require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
-        paths: [process.cwd()],
-      }),
-    ],
+    scss: '@storefront-ui/shared/styles/_helpers.scss',
   },
   build: {
     transpile: ['vee-validate/dist/rules'],
@@ -181,7 +177,11 @@ export default {
     extend(config) {
       config.resolve.alias['@storefront-ui/vue/styles'] = path.resolve(
         __dirname,
-        './storefrontUI/styles',
+        './storefrontUI/components/css/_all.scss',
+      );
+      config.resolve.alias['@storefront-ui/shared/styles'] = path.resolve(
+        __dirname,
+        './storefrontUI/styles/styles',
       );
       config.resolve.alias['@storefront-ui/vue/src'] = path.resolve(
         __dirname,
