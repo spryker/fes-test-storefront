@@ -1,62 +1,62 @@
-import { SfSidebar } from "@storefront-ui/vue";
+import { SfSidebar } from '@storefront-ui/vue';
 export default {
-  title: "Components/Organisms/Sidebar",
+  title: 'Components/Organisms/Sidebar',
   component: SfSidebar,
   argTypes: {
     classes: {
       control: {
-        type: "select",
-        options: ["sf-sidebar--right", ""],
+        type: 'select',
+        options: ['sf-sidebar--right', ''],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     subtitle: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     headingLevel: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     button: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: true,
     },
     visible: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     persistent: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     overlay: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: true,
     },
-    close: { action: "Close sidebar clicked", table: { category: "Events" } },
+    close: { action: 'Close sidebar clicked', table: { category: 'Events' } },
   },
   parameters: {
     docs: {
@@ -87,13 +87,13 @@ const Template = (args, { argTypes }) => ({
 export const Common = Template.bind({});
 Common.args = {
   visible: true,
-  title: "My Cart",
+  title: 'My Cart',
 };
 
 export const OnTheRight = Template.bind({});
 OnTheRight.args = {
   ...Common.args,
-  classes: "sf-sidebar--right",
+  classes: 'sf-sidebar--right',
 };
 
 export const NoOverlay = Template.bind({});

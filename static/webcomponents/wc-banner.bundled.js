@@ -254,13 +254,15 @@ class c extends HTMLElement {
     var e, r;
     const s = this.constructor._$Eh(t, n);
     if (void 0 !== s && !0 === n.reflect) {
-      const o = (null !==
-        (r =
-          null === (e = n.converter) || void 0 === e
-            ? void 0
-            : e.toAttribute) && void 0 !== r
-        ? r
-        : l.toAttribute)(i, n.type);
+      const o = (
+        null !==
+          (r =
+            null === (e = n.converter) || void 0 === e
+              ? void 0
+              : e.toAttribute) && void 0 !== r
+          ? r
+          : l.toAttribute
+      )(i, n.type);
       (this._$Ei = t),
         null == o ? this.removeAttribute(s) : this.setAttribute(s, o),
         (this._$Ei = null);
@@ -407,11 +409,15 @@ const d = globalThis.trustedTypes,
   m = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,
   O = /-->/g,
   _ = />/g,
-  j = />|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,
+  j =
+    />|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,
   C = /'/g,
   T = /"/g,
   k = /^(?:script|style|textarea)$/i,
-  A = ((t) => (i, ...n) => ({ _$litType$: t, strings: i, values: n }))(1),
+  A = (
+    (t) =>
+    (i, ...n) => ({ _$litType$: t, strings: i, values: n })
+  )(1),
   $ = Symbol.for('lit-noChange'),
   M = Symbol.for('lit-nothing'),
   E = new WeakMap(),
@@ -570,9 +576,10 @@ class P {
         el: { content: n },
         parts: e,
       } = this._$AD,
-      r = (null !== (i = null == t ? void 0 : t.creationScope) && void 0 !== i
-        ? i
-        : y
+      r = (
+        null !== (i = null == t ? void 0 : t.creationScope) && void 0 !== i
+          ? i
+          : y
       ).importNode(n, !0);
     L.currentNode = r;
     let s = L.nextNode(),
@@ -1095,13 +1102,15 @@ class tt extends HTMLElement {
     var e, r;
     const s = this.constructor._$Eh(t, n);
     if (void 0 !== s && !0 === n.reflect) {
-      const o = (null !==
-        (r =
-          null === (e = n.converter) || void 0 === e
-            ? void 0
-            : e.toAttribute) && void 0 !== r
-        ? r
-        : Z.toAttribute)(i, n.type);
+      const o = (
+        null !==
+          (r =
+            null === (e = n.converter) || void 0 === e
+              ? void 0
+              : e.toAttribute) && void 0 !== r
+          ? r
+          : Z.toAttribute
+      )(i, n.type);
       (this._$Ei = t),
         null == o ? this.removeAttribute(s) : this.setAttribute(s, o),
         (this._$Ei = null);
@@ -2485,19 +2494,21 @@ let Bo = class extends et {
   ),
   (Bo = Vo(
     [
-      ((t) => (i) =>
-        'function' == typeof i
-          ? ((t, i) => (window.customElements.define(t, i), i))(t, i)
-          : ((t, i) => {
-              const { kind: n, elements: e } = i;
-              return {
-                kind: n,
-                elements: e,
-                finisher(i) {
-                  window.customElements.define(t, i);
-                },
-              };
-            })(t, i))('wc-banner'),
+      (
+        (t) => (i) =>
+          'function' == typeof i
+            ? ((t, i) => (window.customElements.define(t, i), i))(t, i)
+            : ((t, i) => {
+                const { kind: n, elements: e } = i;
+                return {
+                  kind: n,
+                  elements: e,
+                  finisher(i) {
+                    window.customElements.define(t, i);
+                  },
+                };
+              })(t, i)
+      )('wc-banner'),
     ],
     Bo,
   ));

@@ -143,13 +143,13 @@ export default Vue.extend({
     const makeQuery = (queryLink: string): Object => {
       return queryLink
         ? JSON.parse(
-          '{"' +
-          decodeURI(content.value.queryLink)
-            .replace(/"/g, '\\"')
-            .replace(/&/g, '","')
-            .replace(/=/g, '":"') +
-          '"}',
-        )
+            '{"' +
+              decodeURI(content.value.queryLink)
+                .replace(/"/g, '\\"')
+                .replace(/&/g, '","')
+                .replace(/=/g, '":"') +
+              '"}',
+          )
         : {};
     };
     const getCategorySlug = (): string | null => {

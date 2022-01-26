@@ -21,19 +21,19 @@
 </template>
 <script>
 export default {
-  name: "SfProperty",
+  name: 'SfProperty',
   props: {
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     value: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfProperty.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfProperty.scss';
 </style>

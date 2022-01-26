@@ -1,7 +1,7 @@
-import Form from "./Form";
+import Form from './Form';
 
 export default {
-  title: "Examples/Form",
+  title: 'Examples/Form',
   component: Form,
 };
 

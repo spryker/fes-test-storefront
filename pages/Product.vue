@@ -296,7 +296,6 @@ import { onSSR } from '@vue-storefront/core';
 import { useUiState } from '~/composables';
 import LayoutSlot from '@spryker-oryx/vsf/lib/components/LayoutSlot';
 
-
 export default {
   name: 'Product',
   transition: 'fade',
@@ -312,9 +311,8 @@ export default {
       loading: relatedLoading,
     } = useProduct('relatedProducts');
     const { addItem, loading, cart, error } = useCart();
-    const { reviews: productReviews, search: searchReviews } = useReview(
-      'productReviews',
-    );
+    const { reviews: productReviews, search: searchReviews } =
+      useReview('productReviews');
     const { addItem: addToWishlist } = useWishlist();
     const { isAuthenticated } = useUser();
 

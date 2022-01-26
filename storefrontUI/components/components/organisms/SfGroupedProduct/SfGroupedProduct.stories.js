@@ -1,19 +1,19 @@
-import { SfGroupedProduct, SfProperty } from "@storefront-ui/vue";
+import { SfGroupedProduct, SfProperty } from '@storefront-ui/vue';
 export default {
-  title: "Components/Organisms/GroupedProduct",
+  title: 'Components/Organisms/GroupedProduct',
   component: SfGroupedProduct,
   argTypes: {
     settings: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     hasCarousel: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: true,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -53,13 +53,13 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  settings: { type: "slider" },
-  image: "/assets/storybook/SfGroupedProduct/product-white.png",
+  settings: { type: 'slider' },
+  image: '/assets/storybook/SfGroupedProduct/product-white.png',
   imageWidth: 82,
   imageHeight: 112,
   imageLazy: true,
-  title: "Leave white brooch",
-  priceRegular: "$10.99",
+  title: 'Leave white brooch',
+  priceRegular: '$10.99',
 };
 
 export const UseConfigurationSlot = (args, { argTypes }) => ({

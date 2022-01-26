@@ -36,7 +36,7 @@
 </template>
 <script>
 export default {
-  name: "SfImage",
+  name: 'SfImage',
   props: {
     /**
      * Main source url for the image
@@ -68,29 +68,29 @@ export default {
      */
     width: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * Height of the image
      */
     height: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * Url source of the image's placeholder while it is loading.
      */
     placeholder: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Native loading attribute supported, either "eager", "lazy" or none.
      */
     loading: {
       type: String,
-      default: "lazy",
-      validator: (value) => ["", "lazy", "eager"].includes(value),
+      default: 'lazy',
+      validator: (value) => ['', 'lazy', 'eager'].includes(value),
     },
   },
   data() {
@@ -105,7 +105,7 @@ export default {
       arr.sort((setA, setB) =>
         setA.width && setB.width
           ? Number.parseInt(setA.width) - Number.parseInt(setB.width)
-          : Number.parseInt(setA.resolution) - Number.parseInt(setB.resolution)
+          : Number.parseInt(setA.resolution) - Number.parseInt(setB.resolution),
       );
       return arr;
     },
@@ -113,12 +113,12 @@ export default {
       return this.sortedSrcsets.reduce(
         (str, set) =>
           `${this.prefix(str)}${set.src} ${this.srcsetDescriptor(set)}`,
-        ""
+        '',
       );
     },
     sizes() {
       const hasBreakpoints = this.sortedSrcsets.every(
-        (set) => set.breakpoint && set.width
+        (set) => set.breakpoint && set.width,
       );
 
       if (!hasBreakpoints) return null;
@@ -126,13 +126,13 @@ export default {
       return this.sortedSrcsets.reduce(
         (str, set) =>
           `${this.prefix(str)}${this.formatBreakpoint(
-            set.breakpoint
+            set.breakpoint,
           )}${this.formatDimension(set.width)}`,
-        ""
+        '',
       );
     },
     classes() {
-      return `sf-image ${this.loaded && "sf-image-loaded"}`;
+      return `sf-image ${this.loaded && 'sf-image-loaded'}`;
     },
     variables() {
       const width =
@@ -140,7 +140,7 @@ export default {
       const height =
         this.width && `--image-height: ${this.formatDimension(this.height)}`;
 
-      return [width, height].filter(Boolean).join(";");
+      return [width, height].filter(Boolean).join(';');
     },
   },
   methods: {
@@ -148,27 +148,27 @@ export default {
       this.loaded = true;
     },
     formatResolution(resolution) {
-      return ("" + resolution).endsWith("x") ? resolution : `${resolution}x`;
+      return ('' + resolution).endsWith('x') ? resolution : `${resolution}x`;
     },
     formatDimension(width) {
-      return ["em", "px", "vw"].includes(`${width}`.slice(-2))
+      return ['em', 'px', 'vw'].includes(`${width}`.slice(-2))
         ? width
         : `${width}px`;
     },
     formatBreakpoint(breakpoint) {
-      return breakpoint ? `(max-width: ${breakpoint}px) ` : "";
+      return breakpoint ? `(max-width: ${breakpoint}px) ` : '';
     },
     prefix(str) {
-      return str ? `${str}, ` : "";
+      return str ? `${str}, ` : '';
     },
     srcsetDescriptor(srcset) {
       return srcset.width
-        ? `${Number.parseInt(srcset.width) || ""}w`
+        ? `${Number.parseInt(srcset.width) || ''}w`
         : this.formatResolution(srcset.resolution);
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfImage.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfImage.scss';
 </style>

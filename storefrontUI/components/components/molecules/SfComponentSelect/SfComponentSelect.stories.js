@@ -1,72 +1,72 @@
-import { SfComponentSelect, SfProductOption } from "@storefront-ui/vue";
+import { SfComponentSelect, SfProductOption } from '@storefront-ui/vue';
 const optionsList = [
-  { value: "amaranth", color: "#E52B50", label: "Amaranth" },
-  { value: "amber", color: "#FFBF00", label: "Amber" },
-  { value: "arctic-lime", color: "#D0FF14", label: "Arctic lime" },
-  { value: "bluetiful", color: "#3C69E7", label: "Bluetiful" },
-  { value: "buff", color: "#F0DC82", label: "Buff" },
+  { value: 'amaranth', color: '#E52B50', label: 'Amaranth' },
+  { value: 'amber', color: '#FFBF00', label: 'Amber' },
+  { value: 'arctic-lime', color: '#D0FF14', label: 'Arctic lime' },
+  { value: 'bluetiful', color: '#3C69E7', label: 'Bluetiful' },
+  { value: 'buff', color: '#F0DC82', label: 'Buff' },
 ];
 
 export default {
-  title: "Components/Molecules/ComponentSelect",
+  title: 'Components/Molecules/ComponentSelect',
   component: SfComponentSelect,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-component-select--underlined",
-          "sf-component-select--no-chevron",
+          '',
+          'sf-component-select--underlined',
+          'sf-component-select--no-chevron',
         ],
       },
     },
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     selected: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     size: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     required: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     valid: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     errorMessage: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     persistent: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -96,7 +96,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  label: "Color",
+  label: 'Color',
   options: optionsList,
 };
 
@@ -128,13 +128,13 @@ Selected.args = {
 export const WithUnderlined = Template.bind({});
 WithUnderlined.args = {
   ...Common.args,
-  classes: "sf-component-select--underlined",
+  classes: 'sf-component-select--underlined',
 };
 
 export const NoChevron = Template.bind({});
 NoChevron.args = {
   ...Common.args,
-  classes: "sf-component-select--no-chevron",
+  classes: 'sf-component-select--no-chevron',
 };
 
 export const UseLabelSlot = (args, { argTypes }) => ({

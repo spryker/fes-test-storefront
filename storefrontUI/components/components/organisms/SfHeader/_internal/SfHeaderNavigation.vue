@@ -14,14 +14,14 @@
   </div>
 </template>
 <script>
-import SfSidebar from "../../../organisms/SfSidebar/SfSidebar";
+import SfSidebar from '../../../organisms/SfSidebar/SfSidebar';
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../../utilities/mobile-observer";
+} from '../../../../utilities/mobile-observer';
 
 export default {
-  name: "SfHeaderNavigation",
+  name: 'SfHeaderNavigation',
   components: {
     SfSidebar,
   },

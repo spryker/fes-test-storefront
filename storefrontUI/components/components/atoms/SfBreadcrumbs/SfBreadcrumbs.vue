@@ -45,9 +45,9 @@
   </nav>
 </template>
 <script>
-import SfLink from "../SfLink/SfLink";
+import SfLink from '../SfLink/SfLink';
 export default {
-  name: "SfBreadcrumbs",
+  name: 'SfBreadcrumbs',
   inject: {
     components: {
       default: { SfLink },
@@ -68,5 +68,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfBreadcrumbs.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfBreadcrumbs.scss';
 </style>

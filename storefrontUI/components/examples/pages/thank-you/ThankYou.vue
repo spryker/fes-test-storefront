@@ -69,12 +69,7 @@
             Your feedback is important to us. Let us know what we could improve.
           </p>
           <SfButton
-            class="
-              feedback-button
-              color-secondary
-              sf-button--full-width
-              button-size
-            "
+            class="feedback-button color-secondary sf-button--full-width button-size"
             >Send my feedback</SfButton
           >
         </div>
@@ -86,9 +81,9 @@
   </div>
 </template>
 <script>
-import { SfHeading, SfButton, SfCallToAction } from "@storefront-ui/vue";
+import { SfHeading, SfButton, SfCallToAction } from '@storefront-ui/vue';
 export default {
-  name: "Product",
+  name: 'Product',
   components: {
     SfHeading,
     SfButton,
@@ -97,20 +92,20 @@ export default {
   data() {
     return {
       address: {
-        name: "Divante Headquarter",
-        street: "St. Dmowskiego 17, 53-534",
-        city: "Wroclaw, Poland",
-        email: "demo@vuestorefront.io",
+        name: 'Divante Headquarter',
+        street: 'St. Dmowskiego 17, 53-534',
+        city: 'Wroclaw, Poland',
+        email: 'demo@vuestorefront.io',
       },
       order: {
-        number: "#80932031-030-00",
+        number: '#80932031-030-00',
       },
     };
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 #thank-you {
   box-sizing: border-box;
   @include for-desktop {

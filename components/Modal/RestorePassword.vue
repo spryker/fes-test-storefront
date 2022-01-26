@@ -81,13 +81,8 @@ export default {
     ValidationObserver,
   },
   setup() {
-    const {
-      restore,
-      restored,
-      error,
-      loading,
-      cancel,
-    } = useUserPasswordRestore();
+    const { restore, restored, error, loading, cancel } =
+      useUserPasswordRestore();
     const { toggleRestorePasswordLogin, toggleLogin } = useModalState();
 
     const form = ref({});

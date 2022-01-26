@@ -1,6 +1,6 @@
-import Login from "./Login.vue";
+import Login from './Login.vue';
 export default {
-  title: "Pages/Login & Sign-in",
+  title: 'Pages/Login & Sign-in',
   component: Login,
 };
 

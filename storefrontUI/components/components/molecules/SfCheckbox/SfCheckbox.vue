@@ -49,10 +49,10 @@
   </div>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon";
-import { focus } from "../../../utilities/directives";
+import SfIcon from '../../atoms/SfIcon/SfIcon';
+import { focus } from '../../../utilities/directives';
 export default {
-  name: "SfCheckbox",
+  name: 'SfCheckbox',
   directives: {
     focus,
   },
@@ -60,28 +60,28 @@ export default {
     SfIcon,
   },
   model: {
-    prop: "selected",
-    event: "change",
+    prop: 'selected',
+    event: 'change',
   },
   props: {
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     value: {
       type: [String, Boolean],
-      default: "",
+      default: '',
     },
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      *  Hint/Required message value of checkbox.
      */
     hintMessage: {
       type: String,
-      default: "Required.",
+      default: 'Required.',
     },
     required: {
       type: Boolean,
@@ -92,14 +92,14 @@ export default {
      */
     infoMessage: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Error message value of select. It will be appeared if `valid` is `true`.
      */
     errorMessage: {
       type: String,
-      default: "This field is not correct.",
+      default: 'This field is not correct.',
     },
     valid: {
       type: Boolean,
@@ -116,7 +116,7 @@ export default {
   },
   computed: {
     isChecked() {
-      if (typeof this.selected === "boolean") {
+      if (typeof this.selected === 'boolean') {
         return this.selected;
       } else {
         return this.selected.includes(this.value);
@@ -124,30 +124,30 @@ export default {
     },
     computedMessageSlotName() {
       return this.messagesHandler(
-        "show-error-message",
-        "show-info-message",
-        this.required ? "show-hint-message" : ""
+        'show-error-message',
+        'show-info-message',
+        this.required ? 'show-hint-message' : '',
       );
     },
     computedMessage() {
       return this.messagesHandler(
         this.errorMessage,
         this.infoMessage,
-        this.required ? this.hintMessage : ""
+        this.required ? this.hintMessage : '',
       );
     },
     computedMessageClass() {
       return this.messagesHandler(
-        "sf-checkbox__message--error",
-        "sf-checkbox__message--info",
-        this.required ? "sf-checkbox__message--hint" : ""
+        'sf-checkbox__message--error',
+        'sf-checkbox__message--info',
+        this.required ? 'sf-checkbox__message--hint' : '',
       );
     },
   },
   methods: {
     inputHandler() {
-      if (typeof this.selected === "boolean") {
-        this.$emit("change", !this.selected);
+      if (typeof this.selected === 'boolean') {
+        this.$emit('change', !this.selected);
       } else {
         let selected = [...this.selected];
         if (selected.includes(this.value)) {
@@ -155,7 +155,7 @@ export default {
         } else {
           selected.push(this.value);
         }
-        this.$emit("change", selected);
+        this.$emit('change', selected);
       }
     },
     messagesHandler(error, info, hint) {
@@ -166,12 +166,12 @@ export default {
       } else if (this.hintMessage) {
         return hint;
       } else {
-        return "";
+        return '';
       }
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfCheckbox.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfCheckbox.scss';
 </style>

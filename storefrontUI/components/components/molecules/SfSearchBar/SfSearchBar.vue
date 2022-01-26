@@ -23,11 +23,11 @@
   </div>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import { focus } from "../../../utilities/directives";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import { focus } from '../../../utilities/directives';
 export default {
-  name: "SfSearchBar",
+  name: 'SfSearchBar',
   directives: {
     focus,
   },
@@ -39,7 +39,7 @@ export default {
      */
     placeholder: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Value that will be displayed in search bar
@@ -60,15 +60,15 @@ export default {
     listeners() {
       return {
         ...this.$listeners,
-        input: (event) => this.$emit("input", event.target.value),
-        "keyup.enter": (event) => this.$emit("input", event.target.value),
-        "keyup.esc": () => this.$emit("input", ""),
-        blur: () => this.$emit("blur"),
+        input: (event) => this.$emit('input', event.target.value),
+        'keyup.enter': (event) => this.$emit('input', event.target.value),
+        'keyup.esc': () => this.$emit('input', ''),
+        blur: () => this.$emit('blur'),
       };
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfSearchBar.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfSearchBar.scss';
 </style>

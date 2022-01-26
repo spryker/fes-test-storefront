@@ -1,6 +1,6 @@
-import Checkout from "./Checkout.vue";
+import Checkout from './Checkout.vue';
 export default {
-  title: "Pages/Checkout",
+  title: 'Pages/Checkout',
   component: Checkout,
 };
 

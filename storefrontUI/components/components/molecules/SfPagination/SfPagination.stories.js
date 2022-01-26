@@ -1,44 +1,44 @@
-import { SfPagination } from "@storefront-ui/vue";
+import { SfPagination } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/Pagination",
+  title: 'Components/Molecules/Pagination',
   component: SfPagination,
   argTypes: {
     total: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: 0,
     },
     current: {
-      control: "number",
+      control: 'number',
       defaultValue: 1,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     visible: {
-      control: "number",
+      control: 'number',
       defaultValue: 5,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     hasArrows: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: true,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     pageParamName: {
-      control: "text",
-      defaultValue: "page",
+      control: 'text',
+      defaultValue: 'page',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    click: { action: "Go to page clicked", table: { category: "Events" } },
+    click: { action: 'Go to page clicked', table: { category: 'Events' } },
   },
 };
 

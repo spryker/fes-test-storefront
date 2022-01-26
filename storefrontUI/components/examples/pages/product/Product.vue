@@ -170,9 +170,9 @@ import {
   SfProductOption,
   SfBreadcrumbs,
   SfNotification,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 export default {
-  name: "Product",
+  name: 'Product',
   components: {
     SfGallery,
     SfHeading,
@@ -193,46 +193,46 @@ export default {
   data() {
     return {
       current: 1,
-      selectedColor: "beige",
+      selectedColor: 'beige',
       selectedSize: undefined,
       qty: 1,
       product: {
-        name: "Cashmere Sweater",
+        name: 'Cashmere Sweater',
         description:
-          "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
+          'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
         images: [
           {
-            mobile: { url: "assets/storybook/Product/productA.png" },
-            desktop: { url: "assets/storybook/Product/productA.png" },
-            big: { url: "assets/storybook/Product/productA.png" },
-            alt: "Product A",
+            mobile: { url: 'assets/storybook/Product/productA.png' },
+            desktop: { url: 'assets/storybook/Product/productA.png' },
+            big: { url: 'assets/storybook/Product/productA.png' },
+            alt: 'Product A',
           },
           {
-            mobile: { url: "assets/storybook/Product/productB.jpg" },
-            desktop: { url: "assets/storybook/Product/productB.jpg" },
-            big: { url: "assets/storybook/Product/productB.jpg" },
-            alt: "Product B",
+            mobile: { url: 'assets/storybook/Product/productB.jpg' },
+            desktop: { url: 'assets/storybook/Product/productB.jpg' },
+            big: { url: 'assets/storybook/Product/productB.jpg' },
+            alt: 'Product B',
           },
           {
-            mobile: { url: "assets/storybook/Product/productA.png" },
-            desktop: { url: "assets/storybook/Product/productA.png" },
-            big: { url: "assets/storybook/Product/productA.png" },
-            alt: "Product A",
+            mobile: { url: 'assets/storybook/Product/productA.png' },
+            desktop: { url: 'assets/storybook/Product/productA.png' },
+            big: { url: 'assets/storybook/Product/productA.png' },
+            alt: 'Product A',
           },
           {
-            mobile: { url: "assets/storybook/Product/productB.jpg" },
-            desktop: { url: "assets/storybook/Product/productB.jpg" },
-            big: { url: "assets/storybook/Product/productB.jpg" },
-            alt: "Product B",
+            mobile: { url: 'assets/storybook/Product/productB.jpg' },
+            desktop: { url: 'assets/storybook/Product/productB.jpg' },
+            big: { url: 'assets/storybook/Product/productB.jpg' },
+            alt: 'Product B',
           },
         ],
-        price: "$50.00",
+        price: '$50.00',
         colors: [
-          { color: "#EDCBB9", name: "beige", selected: true },
-          { color: "#ABD9D8", name: "mint1", selected: false },
-          { color: "#DB5593", name: "pink1", selected: false },
-          { color: "#ABD9D8", name: "mint2", selected: false },
-          { color: "#DB5593", name: "pink2", selected: false },
+          { color: '#EDCBB9', name: 'beige', selected: true },
+          { color: '#ABD9D8', name: 'mint1', selected: false },
+          { color: '#DB5593', name: 'pink1', selected: false },
+          { color: '#ABD9D8', name: 'mint2', selected: false },
+          { color: '#DB5593', name: 'pink2', selected: false },
         ],
         rating: {
           rate: 4,
@@ -240,42 +240,42 @@ export default {
         },
         details: [
           {
-            name: "Product Code",
+            name: 'Product Code',
             value: 435435,
           },
           {
-            name: "Material",
-            value: "Cotton",
+            name: 'Material',
+            value: 'Cotton',
           },
           {
-            name: "Category",
-            value: "Pants",
+            name: 'Category',
+            value: 'Pants',
           },
           {
-            name: "Country",
-            value: "Poland",
+            name: 'Country',
+            value: 'Poland',
           },
         ],
-        sizes: ["32", "34", "36", "38", "40", "42"],
-        careInstructions: "Do not wash!",
+        sizes: ['32', '34', '36', '38', '40', '42'],
+        careInstructions: 'Do not wash!',
         brand:
-          "Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.",
+          'Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.',
         reviews: [
           {
-            author: "Jane D.Smith",
-            date: "April 2019",
+            author: 'Jane D.Smith',
+            date: 'April 2019',
             message:
-              "I was looking for a bright light for the kitchen but wanted some item more modern than a strip light. this one is perfect, very bright and looks great. I can comment on interlation as I had an electrition instal it. Would recommend.",
+              'I was looking for a bright light for the kitchen but wanted some item more modern than a strip light. this one is perfect, very bright and looks great. I can comment on interlation as I had an electrition instal it. Would recommend.',
             rating: {
               max: 5,
               rate: 4,
             },
           },
           {
-            author: "Jane D.Smith",
-            date: "April 2019",
+            author: 'Jane D.Smith',
+            date: 'April 2019',
             message:
-              "I was looking for a bright light for the kitchen but wanted some item more modern than a strip light. this one is perfect, very bright and looks great. I can comment on interlation as I had an electrition instal it. Would recommend.",
+              'I was looking for a bright light for the kitchen but wanted some item more modern than a strip light. this one is perfect, very bright and looks great. I can comment on interlation as I had an electrition instal it. Would recommend.',
             rating: {
               max: 5,
               rate: 4,
@@ -285,37 +285,37 @@ export default {
       },
       tabs: [
         {
-          title: "Description",
+          title: 'Description',
           content:
             "The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses.",
         },
         {
-          title: "Read reviews",
-          content: "",
+          title: 'Read reviews',
+          content: '',
         },
         {
-          title: "Additional Information",
-          content: "",
+          title: 'Additional Information',
+          content: '',
         },
       ],
       selected: false,
       breadcrumbs: [
         {
-          text: "Home",
+          text: 'Home',
           route: {
-            link: "#",
+            link: '#',
           },
         },
         {
-          text: "Category",
+          text: 'Category',
           route: {
-            link: "#",
+            link: '#',
           },
         },
         {
-          text: "Pants",
+          text: 'Pants',
           route: {
-            link: "#",
+            link: '#',
           },
         },
       ],
@@ -342,15 +342,15 @@ export default {
     },
     changeTab(tabNumber) {
       document
-        .getElementById("tabs")
-        .scrollIntoView({ behavior: "smooth", block: "end" });
+        .getElementById('tabs')
+        .scrollIntoView({ behavior: 'smooth', block: 'end' });
       this.openTab = tabNumber;
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 #product {
   box-sizing: border-box;
   @include for-desktop {

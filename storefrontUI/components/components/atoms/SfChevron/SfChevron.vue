@@ -13,14 +13,14 @@
   </div>
 </template>
 <script>
-import { focus } from "../../../utilities/directives";
+import { focus } from '../../../utilities/directives';
 export default {
-  name: "SfChevron",
+  name: 'SfChevron',
   directives: {
     focus,
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfChevron.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfChevron.scss';
 </style>

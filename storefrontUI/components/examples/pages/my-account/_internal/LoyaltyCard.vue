@@ -10,14 +10,14 @@
   </SfTabs>
 </template>
 <script>
-import { SfTabs } from "@storefront-ui/vue";
+import { SfTabs } from '@storefront-ui/vue';
 export default {
-  name: "LoyalityCard",
+  name: 'LoyalityCard',
   components: { SfTabs },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 .tab-orphan {
   @include for-mobile {
     --tabs-title-display: none;

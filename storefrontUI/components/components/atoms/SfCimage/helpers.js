@@ -4,14 +4,14 @@ import {
   ColorAdjustment,
   RESIZE_TYPES,
   Gravity,
-} from "@cld-apis/utils";
+} from '@cld-apis/utils';
 
 export const placeholderTypes = {
   blur: [
     {
       effect: {
         name: BlurEffects.Default,
-        value: "2000",
+        value: '2000',
       },
     },
   ],
@@ -26,16 +26,16 @@ export const placeholderTypes = {
     {
       effect: {
         name: ColorAdjustment.Vectorize,
-        value: "3:0.1",
+        value: '3:0.1',
       },
-      format: "svg",
+      format: 'svg',
     },
   ],
   predominant: [
     {
-      resize: { width: "iw_div_2", type: RESIZE_TYPES.PAD },
+      resize: { width: 'iw_div_2', type: RESIZE_TYPES.PAD },
       aspectRatio: 1,
-      background: "auto",
+      background: 'auto',
     },
     {
       resize: {

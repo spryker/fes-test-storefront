@@ -254,13 +254,15 @@ class c extends HTMLElement {
     var e, n;
     const o = this.constructor._$Eh(t, s);
     if (void 0 !== o && !0 === s.reflect) {
-      const h = (null !==
-        (n =
-          null === (e = s.converter) || void 0 === e
-            ? void 0
-            : e.toAttribute) && void 0 !== n
-        ? n
-        : r.toAttribute)(i, s.type);
+      const h = (
+        null !==
+          (n =
+            null === (e = s.converter) || void 0 === e
+              ? void 0
+              : e.toAttribute) && void 0 !== n
+          ? n
+          : r.toAttribute
+      )(i, s.type);
       (this._$Ei = t),
         null == h ? this.removeAttribute(o) : this.setAttribute(o, h),
         (this._$Ei = null);
@@ -407,11 +409,15 @@ const u = globalThis.trustedTypes,
   S = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,
   $ = /-->/g,
   _ = />/g,
-  C = />|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,
+  C =
+    />|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,
   A = /'/g,
   k = /"/g,
   U = /^(?:script|style|textarea)$/i,
-  x = ((t) => (i, ...s) => ({ _$litType$: t, strings: i, values: s }))(1),
+  x = (
+    (t) =>
+    (i, ...s) => ({ _$litType$: t, strings: i, values: s })
+  )(1),
   E = Symbol.for('lit-noChange'),
   M = Symbol.for('lit-nothing'),
   T = new WeakMap(),
@@ -570,9 +576,10 @@ class z {
         el: { content: s },
         parts: e,
       } = this._$AD,
-      n = (null !== (i = null == t ? void 0 : t.creationScope) && void 0 !== i
-        ? i
-        : w
+      n = (
+        null !== (i = null == t ? void 0 : t.creationScope) && void 0 !== i
+          ? i
+          : w
       ).importNode(s, !0);
     O.currentNode = n;
     let o = O.nextNode(),
@@ -1099,13 +1106,15 @@ class it extends HTMLElement {
     var e, n;
     const o = this.constructor._$Eh(t, s);
     if (void 0 !== o && !0 === s.reflect) {
-      const h = (null !==
-        (n =
-          null === (e = s.converter) || void 0 === e
-            ? void 0
-            : e.toAttribute) && void 0 !== n
-        ? n
-        : X.toAttribute)(i, s.type);
+      const h = (
+        null !==
+          (n =
+            null === (e = s.converter) || void 0 === e
+              ? void 0
+              : e.toAttribute) && void 0 !== n
+          ? n
+          : X.toAttribute
+      )(i, s.type);
       (this._$Ei = t),
         null == h ? this.removeAttribute(o) : this.setAttribute(o, h),
         (this._$Ei = null);
@@ -1436,19 +1445,21 @@ let at = class extends nt {
   lt([rt()], at.prototype, 'bannerImagelink', void 0),
   (at = lt(
     [
-      ((t) => (i) =>
-        'function' == typeof i
-          ? ((t, i) => (window.customElements.define(t, i), i))(t, i)
-          : ((t, i) => {
-              const { kind: s, elements: e } = i;
-              return {
-                kind: s,
-                elements: e,
-                finisher(i) {
-                  window.customElements.define(t, i);
-                },
-              };
-            })(t, i))('my-element'),
+      (
+        (t) => (i) =>
+          'function' == typeof i
+            ? ((t, i) => (window.customElements.define(t, i), i))(t, i)
+            : ((t, i) => {
+                const { kind: s, elements: e } = i;
+                return {
+                  kind: s,
+                  elements: e,
+                  finisher(i) {
+                    window.customElements.define(t, i);
+                  },
+                };
+              })(t, i)
+      )('my-element'),
     ],
     at,
   ));

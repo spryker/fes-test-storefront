@@ -1,40 +1,40 @@
-import { SfSteps } from "@storefront-ui/vue";
+import { SfSteps } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/Steps",
+  title: 'Components/Molecules/Steps',
   component: SfSteps,
   argTypes: {
     canGoBack: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: true,
         },
       },
-      description: "Disable clicking on  a past step",
+      description: 'Disable clicking on  a past step',
     },
     active: {
-      control: "number",
+      control: 'number',
       defaultValue: 0,
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: 0,
         },
       },
-      description: "Current active step",
+      description: 'Current active step',
     },
     steps: {
-      control: "array",
+      control: 'array',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "[]",
+          summary: '[]',
         },
       },
-      description: "Steps to display",
+      description: 'Steps to display',
     },
-    change: { action: "Step changed", table: { category: "Events" } },
+    change: { action: 'Step changed', table: { category: 'Events' } },
   },
 };
 
@@ -58,7 +58,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  steps: ["Details", "Shipping", "Payment", "Review"],
+  steps: ['Details', 'Shipping', 'Payment', 'Review'],
 };
 
 export const NoGoBack = Template.bind({});

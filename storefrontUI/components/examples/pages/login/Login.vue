@@ -117,9 +117,9 @@ import {
   SfButton,
   SfCheckbox,
   SfHeading,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 export default {
-  name: "Login",
+  name: 'Login',
   components: {
     SfModal,
     SfInput,
@@ -130,33 +130,33 @@ export default {
   data() {
     return {
       isLogIn: true,
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       createAccount: false,
       rememberMe: false,
-      firstName: "",
-      lastName: "",
+      firstName: '',
+      lastName: '',
     };
   },
   computed: {
     modalTitle() {
-      return this.isLogIn ? "Log In" : "Join Vue Storefront";
+      return this.isLogIn ? 'Log In' : 'Join Vue Storefront';
     },
   },
   watch: {
     isLogIn() {
-      this.email = "";
-      this.password = "";
+      this.email = '';
+      this.password = '';
       this.createAccount = false;
       this.rememberMe = false;
-      this.firstName = "";
-      this.lastName = "";
+      this.firstName = '';
+      this.lastName = '';
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 .modal-content,
 .aside {
   display: flex;

@@ -1,70 +1,70 @@
-import { SfGallery } from "@storefront-ui/vue";
+import { SfGallery } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Molecules/Gallery",
+  title: 'Components/Molecules/Gallery',
   component: SfGallery,
   argTypes: {
     images: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     imageWidth: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     imageHeight: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     thumbWidth: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     thumbHeight: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     current: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     sliderOptions: {
-      control: "object",
+      control: 'object',
       defaultValue: {
-        type: "slider",
+        type: 'slider',
         autoplay: false,
         rewind: false,
         gap: 0,
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     outsideZoom: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     enableZoom: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    click: { action: "Image clicked", table: { category: "Events" } },
+    click: { action: 'Image clicked', table: { category: 'Events' } },
   },
 };
 
@@ -88,51 +88,51 @@ Common.args = {
   images: [
     {
       desktop: {
-        url: "assets/storybook/SfGallery/productA.png",
+        url: 'assets/storybook/SfGallery/productA.png',
       },
       mobile: {
-        url: "assets/storybook/SfGallery/productA.png",
+        url: 'assets/storybook/SfGallery/productA.png',
       },
       zoom: {
-        url: "assets/storybook/SfGallery/productA.png",
+        url: 'assets/storybook/SfGallery/productA.png',
       },
-      alt: "Product A",
+      alt: 'Product A',
     },
     {
       desktop: {
-        url: "assets/storybook/SfGallery/productB.jpg",
+        url: 'assets/storybook/SfGallery/productB.jpg',
       },
       mobile: {
-        url: "assets/storybook/SfGallery/productB.jpg",
+        url: 'assets/storybook/SfGallery/productB.jpg',
       },
       zoom: {
-        url: "assets/storybook/SfGallery/productB.jpg",
+        url: 'assets/storybook/SfGallery/productB.jpg',
       },
-      alt: "Product B",
+      alt: 'Product B',
     },
     {
       desktop: {
-        url: "assets/storybook/SfGallery/productA.png",
+        url: 'assets/storybook/SfGallery/productA.png',
       },
       mobile: {
-        url: "assets/storybook/SfGallery/productA.png",
+        url: 'assets/storybook/SfGallery/productA.png',
       },
       zoom: {
-        url: "assets/storybook/SfGallery/productA.png",
+        url: 'assets/storybook/SfGallery/productA.png',
       },
-      alt: "Product A",
+      alt: 'Product A',
     },
     {
       desktop: {
-        url: "assets/storybook/SfGallery/productB.jpg",
+        url: 'assets/storybook/SfGallery/productB.jpg',
       },
       mobile: {
-        url: "assets/storybook/SfGallery/productB.jpg",
+        url: 'assets/storybook/SfGallery/productB.jpg',
       },
       zoom: {
-        url: "assets/storybook/SfGallery/productB.jpg",
+        url: 'assets/storybook/SfGallery/productB.jpg',
       },
-      alt: "Product B",
+      alt: 'Product B',
     },
   ],
   current: 1,

@@ -1,7 +1,7 @@
-import { shallowMount } from "@vue/test-utils";
-import SfStore from "./SfStore.vue";
-describe("SfStore.vue", () => {
-  it("renders a component", () => {
+import { shallowMount } from '@vue/test-utils';
+import SfStore from './SfStore.vue';
+describe('SfStore.vue', () => {
+  it('renders a component', () => {
     const component = shallowMount(SfStore, {
       provide: {
         registerStore: () => {},
@@ -11,6 +11,6 @@ describe("SfStore.vue", () => {
         locatorData: () => {},
       },
     });
-    expect(component.classes("sf-store")).toBe(true);
+    expect(component.classes('sf-store')).toBe(true);
   });
 });

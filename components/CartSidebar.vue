@@ -68,12 +68,10 @@
                   <div class="collected-product__properties">
                     <SfProperty
                       :data-cy="`svsf-cartSidebar-configuration-property-${key}`"
-                      v-for="(
-                        attribute, key
-                      ) in cartGetters.getItemAttributes(product, [
-                        'color',
-                        'brand',
-                      ])"
+                      v-for="(attribute, key) in cartGetters.getItemAttributes(
+                        product,
+                        ['color', 'brand'],
+                      )"
                       :key="key"
                       :name="key"
                       :value="attribute"

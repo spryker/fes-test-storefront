@@ -1,28 +1,28 @@
-import { SfHero } from "@storefront-ui/vue";
+import { SfHero } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Organisms/Hero",
+  title: 'Components/Organisms/Hero',
   component: SfHero,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-hero-item--position-bg-top-right",
-          "sf-hero-item--position-bg-bottom-right",
-          "sf-hero-item--position-bg-bottom-left",
-          "sf-hero-item--align-right",
+          '',
+          'sf-hero-item--position-bg-top-right',
+          'sf-hero-item--position-bg-bottom-right',
+          'sf-hero-item--position-bg-bottom-left',
+          'sf-hero-item--align-right',
         ],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     sliderOptions: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -33,11 +33,11 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   data() {
     return {
-      title: "Colorful summer dresses are already in store",
-      image: "/assets/storybook/SfHero/hero.png",
-      subtitle: "Summer Collection 2019",
-      buttonText: "Learn more",
-      background: "#ECEFF1",
+      title: 'Colorful summer dresses are already in store',
+      image: '/assets/storybook/SfHero/hero.png',
+      subtitle: 'Summer Collection 2019',
+      buttonText: 'Learn more',
+      background: '#ECEFF1',
     };
   },
   template: `

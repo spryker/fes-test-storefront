@@ -112,7 +112,7 @@
                   class="sf-button--text shipping__action desktop-only"
                   :class="{ 'shipping__action--is-active': item.isOpen }"
                   @click="item.isOpen = !item.isOpen"
-                  >{{ item.isOpen ? "- info" : "+ info" }}
+                  >{{ item.isOpen ? '- info' : '+ info' }}
                 </SfButton>
               </div>
               <div class="shipping__label-price">{{ item.price }}</div>
@@ -142,9 +142,9 @@ import {
   SfButton,
   SfSelect,
   SfRadio,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 export default {
-  name: "Shipping",
+  name: 'Shipping',
   components: {
     SfHeading,
     SfInput,
@@ -164,63 +164,63 @@ export default {
   },
   data() {
     return {
-      firstName: "",
-      lastName: "",
-      streetName: "",
-      city: "",
-      state: "",
-      zipCode: "",
-      country: "",
-      phoneNumber: "",
-      shippingMethod: "",
+      firstName: '',
+      lastName: '',
+      streetName: '',
+      city: '',
+      state: '',
+      zipCode: '',
+      country: '',
+      phoneNumber: '',
+      shippingMethod: '',
       countries: [
-        "Austria",
-        "Azerbaijan",
-        "Belarus",
-        "Belgium",
-        "Bosnia and Herzegovina",
-        "Bulgaria",
-        "Croatia",
-        "Cyprus",
-        "Czech Republic",
-        "Denmark",
-        "Estonia",
-        "Finland",
-        "France",
-        "Georgia",
-        "Germany",
-        "Greece",
-        "Hungary",
-        "Iceland",
-        "Ireland",
-        "Italy",
-        "Kosovo",
-        "Latvia",
-        "Liechtenstein",
-        "Lithuania",
-        "Luxembourg",
-        "Macedonia",
-        "Malta",
-        "Moldova",
-        "Monaco",
-        "Montenegro",
-        "The Netherlands",
-        "Norway",
-        "Poland",
-        "Portugal",
-        "Romania",
-        "Russia",
-        "San Marino",
-        "Serbia",
-        "Slovakia",
-        "Slovenia",
-        "Spain",
-        "Sweden",
-        "Switzerland",
-        "Turkey",
-        "Ukraine",
-        "United Kingdom",
-        "Vatican City",
+        'Austria',
+        'Azerbaijan',
+        'Belarus',
+        'Belgium',
+        'Bosnia and Herzegovina',
+        'Bulgaria',
+        'Croatia',
+        'Cyprus',
+        'Czech Republic',
+        'Denmark',
+        'Estonia',
+        'Finland',
+        'France',
+        'Georgia',
+        'Germany',
+        'Greece',
+        'Hungary',
+        'Iceland',
+        'Ireland',
+        'Italy',
+        'Kosovo',
+        'Latvia',
+        'Liechtenstein',
+        'Lithuania',
+        'Luxembourg',
+        'Macedonia',
+        'Malta',
+        'Moldova',
+        'Monaco',
+        'Montenegro',
+        'The Netherlands',
+        'Norway',
+        'Poland',
+        'Portugal',
+        'Romania',
+        'Russia',
+        'San Marino',
+        'Serbia',
+        'Slovakia',
+        'Slovenia',
+        'Spain',
+        'Sweden',
+        'Switzerland',
+        'Turkey',
+        'Ukraine',
+        'United Kingdom',
+        'Vatican City',
       ],
     };
   },
@@ -242,7 +242,7 @@ export default {
   },
   methods: {
     updateField(fieldName, fieldValue) {
-      this.$emit("input", {
+      this.$emit('input', {
         ...this.value,
         [fieldName]: fieldValue,
       });
@@ -251,7 +251,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 .title {
   --heading-padding: var(--spacer-xl) 0 var(--spacer-lg);
   --heading-title-font-weight: var(--font-weight--bold);
@@ -349,13 +349,13 @@ export default {
   &__action {
     margin: 0 0 0 var(--spacer-xs);
     &::before {
-      content: "+";
+      content: '+';
     }
     &--is-active {
       --button-color: var(--c-primary);
       --button-transition: color 150ms linear;
       &::before {
-        content: "-";
+        content: '-';
       }
     }
   }

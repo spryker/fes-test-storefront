@@ -6,11 +6,11 @@
 </template>
 <script>
 export default {
-  name: "SfSelectOption",
+  name: 'SfSelectOption',
   props: {
     value: {
       type: [String, Number, Object],
-      default: "",
+      default: '',
     },
   },
 };

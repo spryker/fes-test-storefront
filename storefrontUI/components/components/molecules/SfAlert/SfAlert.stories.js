@@ -1,25 +1,25 @@
-import { SfAlert } from "@storefront-ui/vue";
+import { SfAlert } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Molecules/Alert",
+  title: 'Components/Molecules/Alert',
   component: SfAlert,
   argTypes: {
     message: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     type: {
       control: {
-        type: "select",
-        options: ["", "secondary", "info", "success", "warning", "danger"],
+        type: 'select',
+        options: ['', 'secondary', 'info', 'success', 'warning', 'danger'],
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "secondary",
+      defaultValue: 'secondary',
     },
   },
 };
@@ -32,36 +32,36 @@ const Template = (args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  message: "Low in stock",
+  message: 'Low in stock',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Default.args,
-  type: "secondary",
+  type: 'secondary',
 };
 export const Info = Template.bind({});
 Info.args = {
   ...Default.args,
-  type: "info",
+  type: 'info',
 };
 
 export const Success = Template.bind({});
 Success.args = {
   ...Default.args,
-  type: "success",
+  type: 'success',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
   ...Default.args,
-  type: "warning",
+  type: 'warning',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   ...Default.args,
-  type: "danger",
+  type: 'danger',
 };
 
 export const WithMessageSlot = (args, { argTypes }) => ({

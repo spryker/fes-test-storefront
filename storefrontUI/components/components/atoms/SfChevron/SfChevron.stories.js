@@ -1,22 +1,22 @@
-import { SfChevron, SfIcon } from "@storefront-ui/vue";
+import { SfChevron, SfIcon } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Chevron",
+  title: 'Components/Atoms/Chevron',
   component: SfChevron,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-chevron--top",
-          "sf-chevron--left",
-          "sf-chevron--right",
+          '',
+          'sf-chevron--top',
+          'sf-chevron--left',
+          'sf-chevron--right',
         ],
       },
-      description: "Modifier classes",
+      description: 'Modifier classes',
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
   },
@@ -32,17 +32,17 @@ export const Common = Template.bind({});
 
 export const Top = Template.bind({});
 Top.args = {
-  classes: "sf-chevron--top",
+  classes: 'sf-chevron--top',
 };
 
 export const Right = Template.bind({});
 Right.args = {
-  classes: "sf-chevron--right",
+  classes: 'sf-chevron--right',
 };
 
 export const Left = Template.bind({});
 Left.args = {
-  classes: "sf-chevron--left",
+  classes: 'sf-chevron--left',
 };
 
 export const WithDefaultSlot = (args, { argTypes }) => ({
