@@ -199,27 +199,33 @@ const config = {
   serverMiddleware: ['~/serverMiddleware/previewModeSSR'],
 };
 
-exports.handler = async function (event, ctx, callback) {
+function createNuxtHandler(nuxtConfig) {
   const nuxt = new Nuxt({
-    ...config,
+    ...nuxtConfig,
     dev: false,
     _start: true,
   });
 
   let server = null;
+  return async (event, ctx, callback) => {
+    if (!server) {
+      await nuxt?.ready();
+      server = serverless(nuxt.server.app);
+    }
 
-  if (!server) {
-    await nuxt?.ready();
-    server = serverless(nuxt.server.app);
-  }
+    const result = await server(event, ctx, callback);
+    const cacheValue = event.queryStringParameters.ebPreview
+      ? 'no-cache'
+      : 'public, max-age=31536000';
 
-  const result = await server(event, ctx, callback);
-
-  return {
-    ...result,
-    headers: {
-      ...result.headers,
-      'Cache-Control': 'public, max-age=31536000',
-    },
+    return {
+      ...result,
+      headers: {
+        ...result.headers,
+        'Cache-Control': cacheValue,
+      },
+    };
   };
-};
+}
+
+exports.handler = createNuxtHandler(config);
