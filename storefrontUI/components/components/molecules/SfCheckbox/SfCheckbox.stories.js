@@ -1,70 +1,70 @@
-import { SfCheckbox } from "@storefront-ui/vue";
+import { SfCheckbox } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Molecules/Checkbox",
+  title: 'Components/Molecules/Checkbox',
   component: SfCheckbox,
   argTypes: {
     name: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     value: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     hintMessage: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     required: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     infoMessage: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     errorMessage: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     valid: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     selected: {
-      control: "array",
+      control: 'array',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    change: { action: "Selected items changed", table: { category: "Events" } },
+    change: { action: 'Selected items changed', table: { category: 'Events' } },
   },
 };
 
@@ -88,8 +88,8 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  name: "shipping",
-  label: "I want to create an account",
+  name: 'shipping',
+  label: 'I want to create an account',
 };
 
 export const Selected = Template.bind({});
@@ -107,13 +107,13 @@ Required.args = {
 export const WithInfo = Template.bind({});
 WithInfo.args = {
   ...Common.args,
-  infoMessage: "This is an info message",
+  infoMessage: 'This is an info message',
 };
 
 export const WithCustomError = Template.bind({});
 WithCustomError.args = {
   ...Common.args,
-  errorMessage: "Something is wrong",
+  errorMessage: 'Something is wrong',
   valid: false,
 };
 

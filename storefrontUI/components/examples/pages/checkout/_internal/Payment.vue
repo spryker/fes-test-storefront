@@ -245,9 +245,9 @@ import {
   SfRadio,
   SfImage,
   SfCheckbox,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 export default {
-  name: "Payment",
+  name: 'Payment',
   components: {
     SfHeading,
     SfInput,
@@ -274,44 +274,44 @@ export default {
   data() {
     return {
       sameAsShipping: false,
-      firstName: "",
-      lastName: "",
-      streetName: "",
-      apartment: "",
-      city: "",
-      state: "",
-      zipCode: "",
-      country: "",
-      phoneNumber: "",
-      paymentMethod: "",
+      firstName: '',
+      lastName: '',
+      streetName: '',
+      apartment: '',
+      city: '',
+      state: '',
+      zipCode: '',
+      country: '',
+      phoneNumber: '',
+      paymentMethod: '',
       invoice: false,
-      cardNumber: "",
-      cardHolder: "",
-      cardMonth: "",
-      cardYear: "",
-      cardCVC: "",
+      cardNumber: '',
+      cardHolder: '',
+      cardMonth: '',
+      cardYear: '',
+      cardCVC: '',
       cardKeep: false,
       months: [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
       ],
-      years: ["2020", "2021", "2022", "2025"],
+      years: ['2020', '2021', '2022', '2025'],
       countries: [],
     };
   },
   computed: {
     isCreditCard() {
-      return ["debit", "mastercard", "electron"].includes(this.paymentMethod);
+      return ['debit', 'mastercard', 'electron'].includes(this.paymentMethod);
     },
   },
   watch: {
@@ -349,16 +349,16 @@ export default {
           this.phoneNumber = this.shipping.phoneNumber;
           this.paymentMethod = this.shipping.paymentMethod;
         } else {
-          this.firstName = "";
-          this.lastName = "";
-          this.streetName = "";
-          this.apartment = "";
-          this.city = "";
-          this.state = "";
-          this.zipCode = "";
-          this.country = "";
-          this.phoneNumber = "";
-          this.paymentMethod = "";
+          this.firstName = '';
+          this.lastName = '';
+          this.streetName = '';
+          this.apartment = '';
+          this.city = '';
+          this.state = '';
+          this.zipCode = '';
+          this.country = '';
+          this.phoneNumber = '';
+          this.paymentMethod = '';
         }
       },
       immediate: true,
@@ -369,13 +369,13 @@ export default {
   },
   methods: {
     updateField(fieldName, fieldValue) {
-      this.$emit("input", {
+      this.$emit('input', {
         ...this.value,
         [fieldName]: fieldValue,
       });
     },
     getCountries() {
-      fetch("https://restcountries.eu/rest/v2/all?fields=name")
+      fetch('https://restcountries.eu/rest/v2/all?fields=name')
         .then((response) => response.json())
         .then((data) => {
           const countries = data.map((country) => country.name);
@@ -389,7 +389,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 .title {
   --heading-padding: var(--spacer-xl) 0 var(--spacer-lg);
   --heading-title-font-weight: var(--font-weight--bold);

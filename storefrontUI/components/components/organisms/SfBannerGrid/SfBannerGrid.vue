@@ -48,7 +48,7 @@
 </template>
 <script>
 export default {
-  name: "SfBannerGrid",
+  name: 'SfBannerGrid',
   props: {
     bannerGrid: {
       type: Number,
@@ -58,5 +58,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfBannerGrid.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfBannerGrid.scss';
 </style>

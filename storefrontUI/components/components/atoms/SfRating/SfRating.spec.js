@@ -1,11 +1,11 @@
-import { shallowMount } from "@vue/test-utils";
-import SfRating from "./SfRating.vue";
-describe("SfRating.vue", () => {
-  it("renders a component", () => {
+import { shallowMount } from '@vue/test-utils';
+import SfRating from './SfRating.vue';
+describe('SfRating.vue', () => {
+  it('renders a component', () => {
     const component = shallowMount(SfRating);
-    expect(component.classes("sf-rating")).toBe(true);
+    expect(component.classes('sf-rating')).toBe(true);
   });
-  it("render multiple stars when max is increased", () => {
+  it('render multiple stars when max is increased', () => {
     const score = 4;
     const max = 10;
     const component = shallowMount(SfRating, {
@@ -14,11 +14,11 @@ describe("SfRating.vue", () => {
         max,
       },
     });
-    expect(component.findAll(".sf-rating__icon--negative").length).toBe(
-      max - score
+    expect(component.findAll('.sf-rating__icon--negative').length).toBe(
+      max - score,
     );
   });
-  it("renders with custom positive icon", () => {
+  it('renders with custom positive icon', () => {
     const score = 3;
     const max = 5;
     const component = shallowMount(SfRating, {
@@ -27,12 +27,12 @@ describe("SfRating.vue", () => {
         max,
       },
       slots: {
-        "icon-positive": '<div class="sf-rating__icon-clock"></div>',
+        'icon-positive': '<div class="sf-rating__icon-clock"></div>',
       },
     });
-    expect(component.findAll(".sf-rating__icon-clock").length).toBe(score);
+    expect(component.findAll('.sf-rating__icon-clock').length).toBe(score);
   });
-  it("renders with custom negative icon", () => {
+  it('renders with custom negative icon', () => {
     const score = 2;
     const max = 5;
     const component = shallowMount(SfRating, {
@@ -41,11 +41,11 @@ describe("SfRating.vue", () => {
         max,
       },
       slots: {
-        "icon-negative": '<div class="sf-rating__icon-close"></div>',
+        'icon-negative': '<div class="sf-rating__icon-close"></div>',
       },
     });
-    expect(component.findAll(".sf-rating__icon-close").length).toBe(
-      max - score
+    expect(component.findAll('.sf-rating__icon-close').length).toBe(
+      max - score,
     );
   });
 });

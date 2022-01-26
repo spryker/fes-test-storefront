@@ -1,93 +1,93 @@
-import { SfRadio } from "@storefront-ui/vue";
+import { SfRadio } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/Radio",
+  title: 'Components/Molecules/Radio',
   component: SfRadio,
   argTypes: {
     classes: {
       control: {
-        type: "select",
-        options: ["sf-radio--transparent", ""],
+        type: 'select',
+        options: ['sf-radio--transparent', ''],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
-      description: "CSS classes modifiers",
+      description: 'CSS classes modifiers',
     },
     selected: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
-      description: "Value of the selected option",
+      defaultValue: '',
+      description: 'Value of the selected option',
     },
     name: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
-      description: "Name of the option",
+      defaultValue: '',
+      description: 'Name of the option',
     },
     value: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
-      description: "Value of the option",
+      defaultValue: '',
+      description: 'Value of the option',
     },
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
-      description: "Label for option",
+      defaultValue: '',
+      description: 'Label for option',
     },
     details: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
-      description: "Option details",
+      defaultValue: '',
+      description: 'Option details',
     },
     description: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
-      description: "Additional description to the radio option to display",
+      defaultValue: '',
+      description: 'Additional description to the radio option to display',
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: false,
         },
       },
-      defaultValue: "",
-      description: "Indicate if this option is disabled",
+      defaultValue: '',
+      description: 'Indicate if this option is disabled',
     },
     required: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: false,
         },
       },
     },
     change: {
-      action: "Toggle selection: change event",
-      table: { category: "Events" },
+      action: 'Toggle selection: change event',
+      table: { category: 'Events' },
     },
     input: {
-      action: "Toggle selection: input event",
-      table: { category: "Events" },
+      action: 'Toggle selection: input event',
+      table: { category: 'Events' },
     },
   },
 };
@@ -113,24 +113,24 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  label: "Pickup in the store",
-  details: "Delivery from 4-6 business days",
+  label: 'Pickup in the store',
+  details: 'Delivery from 4-6 business days',
   description:
-    "Novelty! From now on you have the option of picking up an order in the selected InPack parceler. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.",
-  name: "Shipping",
-  value: "store",
+    'Novelty! From now on you have the option of picking up an order in the selected InPack parceler. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.',
+  name: 'Shipping',
+  value: 'store',
 };
 
 export const Selected = Template.bind({});
 Selected.args = {
   ...Common.args,
-  selected: "store",
+  selected: 'store',
 };
 
 export const TransparentSelected = Template.bind({});
 TransparentSelected.args = {
   ...Selected.args,
-  classes: "sf-radio--transparent",
+  classes: 'sf-radio--transparent',
 };
 
 export const Disabled = Template.bind({});

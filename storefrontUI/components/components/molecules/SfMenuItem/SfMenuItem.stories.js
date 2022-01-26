@@ -1,40 +1,40 @@
-import { SfMenuItem, SfIcon } from "@storefront-ui/vue";
-import { icons } from "@storefront-ui/shared/icons/icons";
+import { SfMenuItem, SfIcon } from '@storefront-ui/vue';
+import { icons } from '@storefront-ui/shared/icons/icons';
 const iconsNames = Object.keys(icons);
 
 export default {
-  title: "Components/Molecules/MenuItem",
+  title: 'Components/Molecules/MenuItem',
   component: SfMenuItem,
   decorators: [
     () => ({ template: '<div style="max-width: 300px"><story/></div>' }),
   ],
   argTypes: {
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     count: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     icon: {
       control: {
-        type: "select",
+        type: 'select',
         options: iconsNames,
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "chevron_right",
+      defaultValue: 'chevron_right',
     },
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -52,14 +52,14 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  label: "Red",
+  label: 'Red',
   count: 30,
 };
 
 export const AsLink = Template.bind({});
 AsLink.args = {
   ...Common.args,
-  link: "https://www.storefrontui.io/",
+  link: 'https://www.storefrontui.io/',
 };
 
 export const UseIconSlot = (args, { argTypes }) => ({

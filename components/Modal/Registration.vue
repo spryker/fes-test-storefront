@@ -168,10 +168,8 @@ export default {
   setup() {
     const { register, error, loading } = useUser();
     const { required } = useUserRegistrationConfirmation();
-    const {
-      toggleLogin,
-      toggleRegistrationConfirmationRequired,
-    } = useModalState();
+    const { toggleLogin, toggleRegistrationConfirmationRequired } =
+      useModalState();
 
     const form = ref({});
     const registerErrors = ref(userGetters.mapAuthErrors(null));

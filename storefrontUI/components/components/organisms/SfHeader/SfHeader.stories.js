@@ -1,110 +1,110 @@
-import { SfHeader, SfLink } from "@storefront-ui/vue";
+import { SfHeader, SfLink } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Organisms/Header",
+  title: 'Components/Organisms/Header',
   component: SfHeader,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-header--has-mobile-search",
-          "sf-header--has-mobile-navigation",
-          "sf-header--multiline",
+          '',
+          'sf-header--has-mobile-search',
+          'sf-header--has-mobile-navigation',
+          'sf-header--multiline',
         ],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     logo: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     cartIcon: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
-        defaultValue: "empty_cart",
+        category: 'Props',
+        defaultValue: 'empty_cart',
       },
     },
     wishlistIcon: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
-        defaultValue: "heart",
+        category: 'Props',
+        defaultValue: 'heart',
       },
     },
     accountIcon: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
-        defaultValue: "profile",
+        category: 'Props',
+        defaultValue: 'profile',
       },
     },
     activeIcon: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
-        defaultValue: "",
+        category: 'Props',
+        defaultValue: '',
       },
     },
     searchPlaceholder: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
-        defaultValue: "Search for items",
+        category: 'Props',
+        defaultValue: 'Search for items',
       },
     },
     searchValue: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     cartItemsQty: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: 0,
       },
     },
     isSticky: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     isNavVisible: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    "change:search": {
-      action: "Changed search value",
-      table: { category: "Events" },
+    'change:search': {
+      action: 'Changed search value',
+      table: { category: 'Events' },
     },
-    "click:cart": {
-      action: "Clicked on cart",
-      table: { category: "Events" },
+    'click:cart': {
+      action: 'Clicked on cart',
+      table: { category: 'Events' },
     },
-    "click:wishlist": {
-      action: "Clicked on Wishlist",
-      table: { category: "Events" },
+    'click:wishlist': {
+      action: 'Clicked on Wishlist',
+      table: { category: 'Events' },
     },
-    "click:account": {
-      action: "Clicked on Account",
-      table: { category: "Events" },
+    'click:account': {
+      action: 'Clicked on Account',
+      table: { category: 'Events' },
     },
   },
 };
@@ -114,8 +114,8 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   data() {
     return {
-      navigationItems: ["women", "man", "kids"],
-      searchValues: "",
+      navigationItems: ['women', 'man', 'kids'],
+      searchValues: '',
     };
   },
   template: `
@@ -151,6 +151,6 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  title: "Storefront UI",
-  logo: "/assets/logo.svg",
+  title: 'Storefront UI',
+  logo: '/assets/logo.svg',
 };

@@ -105,23 +105,23 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import SfHeaderNavigationItem from "./_internal/SfHeaderNavigationItem.vue";
-import SfHeaderNavigation from "./_internal/SfHeaderNavigation.vue";
-Vue.component("SfHeaderNavigation", SfHeaderNavigation);
-Vue.component("SfHeaderNavigationItem", SfHeaderNavigationItem);
+import Vue from 'vue';
+import SfHeaderNavigationItem from './_internal/SfHeaderNavigationItem.vue';
+import SfHeaderNavigation from './_internal/SfHeaderNavigation.vue';
+Vue.component('SfHeaderNavigation', SfHeaderNavigation);
+Vue.component('SfHeaderNavigationItem', SfHeaderNavigationItem);
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../utilities/mobile-observer";
-import { isClient } from "../../../utilities/helpers";
-import SfImage from "../../atoms/SfImage/SfImage.vue";
-import SfSearchBar from "../../molecules/SfSearchBar/SfSearchBar.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfLink from "../../atoms/SfLink/SfLink.vue";
+} from '../../../utilities/mobile-observer';
+import { isClient } from '../../../utilities/helpers';
+import SfImage from '../../atoms/SfImage/SfImage.vue';
+import SfSearchBar from '../../molecules/SfSearchBar/SfSearchBar.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfLink from '../../atoms/SfLink/SfLink.vue';
 export default {
-  name: "SfHeader",
+  name: 'SfHeader',
   components: {
     SfImage,
     SfSearchBar,
@@ -135,44 +135,44 @@ export default {
      */
     logo: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
     /**
      * Header title
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Header cartIcon (accepts same value as SfIcon)
      */
     cartIcon: {
       type: [String, Boolean, Array],
-      default: "empty_cart",
+      default: 'empty_cart',
     },
     /**
      * Header wishlistIcon (accepts same value as SfIcon)
      */
     wishlistIcon: {
       type: [String, Boolean, Array],
-      default: "heart",
+      default: 'heart',
     },
     /**
      * Header accountIcon (accepts same value as SfIcon)
      */
     accountIcon: {
       type: [String, Boolean, Array],
-      default: "profile",
+      default: 'profile',
     },
     /**
      * Header activeIcon (accepts account, wishlist and cart)
      */
     activeIcon: {
       type: String,
-      default: "",
+      default: '',
       validator(value) {
-        return ["", "account", "wishlist", "cart"].includes(value);
+        return ['', 'account', 'wishlist', 'cart'].includes(value);
       },
     },
     /**
@@ -180,28 +180,28 @@ export default {
      */
     searchPlaceholder: {
       type: String,
-      default: "Search for items",
+      default: 'Search for items',
     },
     /**
      * Header search phrase
      */
     searchValue: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Header wishlist items quantity
      */
     wishlistItemsQty: {
       type: [String, Number],
-      default: "0",
+      default: '0',
     },
     /**
      * Header cart items quantity
      */
     cartItemsQty: {
       type: [String, Number],
-      default: "0",
+      default: '0',
     },
     /**
      * Header sticky to top
@@ -247,7 +247,7 @@ export default {
         this.animationLong = null;
         this.animationStart = null;
         this.animationLong = window.requestAnimationFrame(
-          this.animationHandler
+          this.animationHandler,
         );
       },
     },
@@ -261,13 +261,13 @@ export default {
   },
   mounted() {
     if (this.isSticky) {
-      window.addEventListener("scroll", this.scrollHandler, { passive: true });
+      window.addEventListener('scroll', this.scrollHandler, { passive: true });
     }
   },
   beforeDestroy() {
     unMapMobileObserver();
     if (this.isSticky) {
-      window.removeEventListener("scroll", this.scrollHandler, {
+      window.removeEventListener('scroll', this.scrollHandler, {
         passive: true,
       });
     }
@@ -278,11 +278,11 @@ export default {
       const progress = timestamp - this.animationStart;
       if (progress < this.animationDuration) {
         this.animationLong = window.requestAnimationFrame(
-          this.animationHandler
+          this.animationHandler,
         );
         return;
       }
-      this.hidden = this.scrollDirection === "down";
+      this.hidden = this.scrollDirection === 'down';
     },
     scrollHandler() {
       if (!isClient) return;
@@ -291,7 +291,7 @@ export default {
       if (!!this.refs) {
         if (currentScrollPosition >= this.$refs.header.offsetHeight) {
           this.scrollDirection =
-            currentScrollPosition < this.lastScrollPosition ? "up" : "down";
+            currentScrollPosition < this.lastScrollPosition ? 'up' : 'down';
         }
       }
       this.lastScrollPosition = currentScrollPosition;
@@ -300,5 +300,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfHeader.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfHeader.scss';
 </style>

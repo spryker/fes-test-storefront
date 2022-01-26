@@ -67,9 +67,9 @@ import {
   SfCharacteristic,
   SfProperty,
   SfDivider,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 export default {
-  name: "OrderSummary",
+  name: 'OrderSummary',
   components: {
     SfHeading,
     SfButton,
@@ -99,20 +99,20 @@ export default {
     return {
       characteristics: [
         {
-          title: "Safety",
-          description: "It carefully packaged with a personal touch",
-          icon: "safety",
+          title: 'Safety',
+          description: 'It carefully packaged with a personal touch',
+          icon: 'safety',
         },
         {
-          title: "Easy shipping",
+          title: 'Easy shipping',
           description:
-            "You’ll receive dispatch confirmation and an arrival date",
-          icon: "shipping",
+            'You’ll receive dispatch confirmation and an arrival date',
+          icon: 'shipping',
         },
         {
-          title: "Changed your mind?",
-          description: "Rest assured, we offer free returns within 30 days",
-          icon: "return",
+          title: 'Changed your mind?',
+          description: 'Rest assured, we offer free returns within 30 days',
+          icon: 'return',
         },
       ],
     };
@@ -120,11 +120,11 @@ export default {
   computed: {
     cheapestShippingMethod() {
       const methods = this.shippingMethods.filter(
-        (method) => method.price !== "Free"
+        (method) => method.price !== 'Free',
       );
       const cheapestMethod = methods.reduce((previous, current) => {
-        const price = parseFloat(current.price.replace("$", ""));
-        const previousPrice = parseFloat(previous.price.replace("$", ""));
+        const price = parseFloat(current.price.replace('$', ''));
+        const previousPrice = parseFloat(previous.price.replace('$', ''));
         return price < previousPrice ? current : previous;
       });
       return cheapestMethod;
@@ -136,24 +136,24 @@ export default {
         const price = current.price.special
           ? current.price.special
           : current.price.regular;
-        const total = qty * parseFloat(price.replace("$", ""));
+        const total = qty * parseFloat(price.replace('$', ''));
         return previous + total;
       }, 0);
-      return "$" + subtotal.toFixed(2);
+      return '$' + subtotal.toFixed(2);
     },
     total() {
-      const subtotal = parseFloat(this.subtotal.replace("$", ""));
+      const subtotal = parseFloat(this.subtotal.replace('$', ''));
       const shipping = parseFloat(
-        this.cheapestShippingMethod.price.replace("$", "")
+        this.cheapestShippingMethod.price.replace('$', ''),
       );
       const total = subtotal + (isNaN(shipping) ? 0 : shipping);
-      return "$" + total.toFixed(2);
+      return '$' + total.toFixed(2);
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 .title {
   --heading-title-font-weight: var(--font-weight--bold);
   --heading-title-font-size: var(--h4-font-size);
@@ -208,7 +208,7 @@ export default {
     padding: 0;
     list-style: none;
     li::before {
-      content: "•";
+      content: '•';
       color: var(--c-primary);
       padding: 0 var(--spacer-xs) 0 0;
     }

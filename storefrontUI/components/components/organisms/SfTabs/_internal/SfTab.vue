@@ -32,25 +32,25 @@
   </div>
 </template>
 <script>
-import { isClient } from "../../../../utilities/helpers";
-import SfChevron from "../../../atoms/SfChevron/SfChevron.vue";
-import SfButton from "../../../atoms/SfButton/SfButton.vue";
-import SfScrollable from "../../../molecules/SfScrollable/SfScrollable.vue";
+import { isClient } from '../../../../utilities/helpers';
+import SfChevron from '../../../atoms/SfChevron/SfChevron.vue';
+import SfButton from '../../../atoms/SfButton/SfButton.vue';
+import SfScrollable from '../../../molecules/SfScrollable/SfScrollable.vue';
 export default {
-  name: "SfTab",
+  name: 'SfTab',
   components: {
     SfChevron,
     SfScrollable,
     SfButton,
   },
-  inject: ["tabConfig"],
+  inject: ['tabConfig'],
   props: {
     /**
      * Tab title.
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -75,10 +75,10 @@ export default {
       if (!isClient) return;
       const width = Math.max(
         document.documentElement.clientWidth,
-        window.innerWidth
+        window.innerWidth,
       );
       if (this.isActive && width > this.desktopMin) return;
-      this.$parent.$emit("toggle", this._uid);
+      this.$parent.$emit('toggle', this._uid);
     },
   },
 };

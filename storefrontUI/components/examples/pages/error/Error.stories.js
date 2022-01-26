@@ -1,6 +1,6 @@
-import Error from "./Error";
+import Error from './Error';
 export default {
-  title: "Pages/Error",
+  title: 'Pages/Error',
   component: Error,
 };
 

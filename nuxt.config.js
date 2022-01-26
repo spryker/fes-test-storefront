@@ -18,7 +18,8 @@ export default {
       new webpack.DefinePlugin({
         'process.VERSION': JSON.stringify({
           // eslint-disable-next-line global-require
-          version: require(process.env.PACKAGE_PATH_FOR_NUXT_CONFIG || './package.json').version,
+          version: require(process.env.PACKAGE_PATH_FOR_NUXT_CONFIG ||
+            './package.json').version,
           lastCommit: process.env.LAST_COMMIT || '',
         }),
       }),

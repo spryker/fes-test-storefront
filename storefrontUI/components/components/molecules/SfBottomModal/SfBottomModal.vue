@@ -46,14 +46,14 @@
   </div>
 </template>
 <script>
-import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
-import SfTransition from "../../../utilities/transitions/component/SfTransition.js";
-import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import SfCircleIcon from "../../atoms/SfCircleIcon/SfCircleIcon.vue";
-import { isClient } from "../../../utilities/helpers";
+import SfOverlay from '../../atoms/SfOverlay/SfOverlay.vue';
+import SfTransition from '../../../utilities/transitions/component/SfTransition.js';
+import SfHeading from '../../atoms/SfHeading/SfHeading.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfCircleIcon from '../../atoms/SfCircleIcon/SfCircleIcon.vue';
+import { isClient } from '../../../utilities/helpers';
 export default {
-  name: "SfBottomModal",
+  name: 'SfBottomModal',
   components: { SfOverlay, SfButton, SfCircleIcon, SfHeading, SfTransition },
   props: {
     /**
@@ -68,11 +68,11 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     transition: {
       type: [String, Boolean],
-      default: "",
+      default: '',
     },
   },
   watch: {
@@ -80,9 +80,9 @@ export default {
       handler(value) {
         if (!isClient) return;
         if (value) {
-          document.addEventListener("keydown", this.keydownHandler);
+          document.addEventListener('keydown', this.keydownHandler);
         } else {
-          document.removeEventListener("keydown", this.keydownHandler);
+          document.removeEventListener('keydown', this.keydownHandler);
         }
       },
       immediate: true,
@@ -90,10 +90,10 @@ export default {
   },
   methods: {
     close() {
-      this.$emit("click:close");
+      this.$emit('click:close');
     },
     keydownHandler(e) {
-      if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
         this.close();
       }
     },
@@ -101,5 +101,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfBottomModal.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfBottomModal.scss';
 </style>

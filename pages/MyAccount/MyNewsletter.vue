@@ -29,8 +29,12 @@
         <SfButton class="form__button">{{ $t('Save changes') }}</SfButton>
       </div>
       <p class="notice">
-        {{ $t('Read and understand') }} <SfLink class="notice__link" href="#">{{ $t('Privacy') }}</SfLink> and
-        <SfLink class="notice__link" href="#">{{ $t('Cookies Policy') }}</SfLink> {{ $t('Commercial information') }}
+        {{ $t('Read and understand') }}
+        <SfLink class="notice__link" href="#">{{ $t('Privacy') }}</SfLink> and
+        <SfLink class="notice__link" href="#">{{
+          $t('Cookies Policy')
+        }}</SfLink>
+        {{ $t('Commercial information') }}
       </p>
     </SfTab>
   </SfTabs>
@@ -45,15 +49,15 @@ export default {
     SfTabs,
     SfCheckbox,
     SfButton,
-    SfLink
+    SfLink,
   },
   data() {
     return { newsletter: [] };
-  }
+  },
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .tab-orphan {
   @include for-mobile {
     --tabs-title-display: none;
@@ -89,12 +93,11 @@ export default {
   margin: var(--spacer-base) 0 0 0;
   font-size: var(--font-size--xs);
   &__link {
-  color: var(--c-primary);
-  text-decoration: none;
+    color: var(--c-primary);
+    text-decoration: none;
     &:hover {
       color: var(--c-text);
     }
   }
 }
-
 </style>

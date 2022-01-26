@@ -22,16 +22,16 @@
   </div>
 </template>
 <script>
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import SfQuantitySelector from "../../atoms/SfQuantitySelector/SfQuantitySelector.vue";
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfQuantitySelector from '../../atoms/SfQuantitySelector/SfQuantitySelector.vue';
 export default {
-  name: "SfAddToCart",
+  name: 'SfAddToCart',
   components: {
     SfButton,
     SfQuantitySelector,
   },
   model: {
-    prop: "qty",
+    prop: 'qty',
   },
   props: {
     /**
@@ -53,5 +53,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfAddToCart.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfAddToCart.scss';
 </style>

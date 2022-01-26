@@ -387,7 +387,9 @@ import {
   onMounted,
   ref,
   watch,
-  onUnmounted, reactive, provide
+  onUnmounted,
+  reactive,
+  provide,
 } from '@vue/composition-api';
 import {
   useCart,
@@ -457,7 +459,6 @@ export default {
     });
 
     provide('CURRENT_CATEGORY', slotData);
-
 
     onSSR(async () => {
       await search(th.getFacetsFromURL());

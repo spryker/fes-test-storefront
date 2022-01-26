@@ -38,12 +38,12 @@
   </div>
 </template>
 <script>
-import SfIcon from "../../../atoms/SfIcon/SfIcon.vue";
-import SfCircleIcon from "../../../atoms/SfCircleIcon/SfCircleIcon.vue";
-import SfButton from "../../../atoms/SfButton/SfButton.vue";
-import { focus } from "../../../../utilities/directives";
+import SfIcon from '../../../atoms/SfIcon/SfIcon.vue';
+import SfCircleIcon from '../../../atoms/SfCircleIcon/SfCircleIcon.vue';
+import SfButton from '../../../atoms/SfButton/SfButton.vue';
+import { focus } from '../../../../utilities/directives';
 export default {
-  name: "SfBottomNavigationItem",
+  name: 'SfBottomNavigationItem',
   directives: { focus },
   components: {
     SfCircleIcon,
@@ -53,7 +53,7 @@ export default {
   props: {
     icon: {
       type: [String, Array],
-      default: "",
+      default: '',
     },
     isActive: {
       type: Boolean,
@@ -61,15 +61,15 @@ export default {
     },
     iconActive: {
       type: String,
-      default: "",
+      default: '',
     },
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     iconSize: {
       type: String,
-      default: "20px",
+      default: '20px',
     },
     isFloating: {
       type: Boolean,

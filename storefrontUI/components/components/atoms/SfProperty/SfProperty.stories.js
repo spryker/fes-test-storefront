@@ -1,34 +1,34 @@
-import { SfProperty, SfBadge } from "@storefront-ui/vue";
+import { SfProperty, SfBadge } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Property",
+  title: 'Components/Atoms/Property',
   component: SfProperty,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-property--full-width",
-          "sf-property--value-in-middle",
-          "sf-property--large",
-          "sf-property--without-suffix",
+          '',
+          'sf-property--full-width',
+          'sf-property--value-in-middle',
+          'sf-property--large',
+          'sf-property--without-suffix',
         ],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     name: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     value: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -42,32 +42,32 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  name: "Material",
-  value: "Cotton",
+  name: 'Material',
+  value: 'Cotton',
 };
 
 export const FullWidth = Template.bind({});
 FullWidth.args = {
   ...Common.args,
-  classes: "sf-property--full-width",
+  classes: 'sf-property--full-width',
 };
 
 export const ValueInMiddle = Template.bind({});
 ValueInMiddle.args = {
   ...Common.args,
-  classes: "sf-property--value-in-middle",
+  classes: 'sf-property--value-in-middle',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   ...Common.args,
-  classes: "sf-property--large",
+  classes: 'sf-property--large',
 };
 
 export const WithouSuffix = Template.bind({});
 WithouSuffix.args = {
   ...Common.args,
-  classes: "sf-property--without-suffix",
+  classes: 'sf-property--without-suffix',
 };
 
 export const WithNameSlot = (args, { argTypes }) => ({

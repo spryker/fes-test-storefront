@@ -147,16 +147,16 @@
   </div>
 </template>
 <script>
-import { colorsValues as SF_COLORS } from "@storefront-ui/shared/variables/colors";
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfPrice from "../../atoms/SfPrice/SfPrice.vue";
-import SfRating from "../../atoms/SfRating/SfRating.vue";
-import SfImage from "../../atoms/SfImage/SfImage.vue";
-import SfCircleIcon from "../../atoms/SfCircleIcon/SfCircleIcon.vue";
-import SfBadge from "../../atoms/SfBadge/SfBadge.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import { colorsValues as SF_COLORS } from '@storefront-ui/shared/variables/colors';
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfPrice from '../../atoms/SfPrice/SfPrice.vue';
+import SfRating from '../../atoms/SfRating/SfRating.vue';
+import SfImage from '../../atoms/SfImage/SfImage.vue';
+import SfCircleIcon from '../../atoms/SfCircleIcon/SfCircleIcon.vue';
+import SfBadge from '../../atoms/SfBadge/SfBadge.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfProductCard",
+  name: 'SfProductCard',
   components: {
     SfPrice,
     SfRating,
@@ -173,7 +173,7 @@ export default {
      */
     image: {
       type: [Array, Object, String],
-      default: "",
+      default: '',
     },
     /**
      * Product image width, without unit
@@ -194,7 +194,7 @@ export default {
      */
     badgeLabel: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Badge color
@@ -203,21 +203,21 @@ export default {
      */
     badgeColor: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Product title
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Link to product page
      */
     link: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
     /**
      * Link element tag
@@ -269,7 +269,7 @@ export default {
      */
     wishlistIcon: {
       type: [String, Array, Boolean],
-      default: "heart",
+      default: 'heart',
     },
     /**
      * Wish list icon for product which has been added to wish list
@@ -278,7 +278,7 @@ export default {
      */
     isOnWishlistIcon: {
       type: [String, Array],
-      default: "heart_fill",
+      default: 'heart_fill',
     },
     /**
      * Status of whether product is on wish list or not
@@ -319,7 +319,7 @@ export default {
       return SF_COLORS.includes(this.badgeColor.trim());
     },
     badgeColorClass() {
-      return this.isSFColors ? `${this.badgeColor.trim()}` : "";
+      return this.isSFColors ? `${this.badgeColor.trim()}` : '';
     },
     currentWishlistIcon() {
       return this.isOnWishlist ? this.isOnWishlistIcon : this.wishlistIcon;
@@ -328,16 +328,16 @@ export default {
       return !this.isAddingToCart && this.isAddedToCart;
     },
     ariaLabel() {
-      return this.isOnWishlist ? "Remove from wishlist" : "Add to wishlist";
+      return this.isOnWishlist ? 'Remove from wishlist' : 'Add to wishlist';
     },
     wishlistIconClasses() {
-      const defaultClass = "sf-button--pure sf-product-card__wishlist-icon";
-      return `${defaultClass} ${this.isOnWishlist ? "on-wishlist" : ""}`;
+      const defaultClass = 'sf-button--pure sf-product-card__wishlist-icon';
+      return `${defaultClass} ${this.isOnWishlist ? 'on-wishlist' : ''}`;
     },
   },
   methods: {
     toggleIsOnWishlist() {
-      this.$emit("click:wishlist", !this.isOnWishlist);
+      this.$emit('click:wishlist', !this.isOnWishlist);
     },
     onAddToCart(event) {
       event.preventDefault();
@@ -345,11 +345,11 @@ export default {
       setTimeout(() => {
         this.isAddingToCart = false;
       }, 1000);
-      this.$emit("click:add-to-cart");
+      this.$emit('click:add-to-cart');
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfProductCard.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfProductCard.scss';
 </style>

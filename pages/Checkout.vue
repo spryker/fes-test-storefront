@@ -170,12 +170,8 @@ export default {
         let customer;
 
         if (isAuthenticated.value) {
-          const {
-            salutation,
-            firstName,
-            lastName,
-            email,
-          } = user.value.attributes;
+          const { salutation, firstName, lastName, email } =
+            user.value.attributes;
           customer = {
             salutation,
             firstName,

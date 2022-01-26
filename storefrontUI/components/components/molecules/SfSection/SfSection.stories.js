@@ -1,37 +1,37 @@
-import { SfSection } from "@storefront-ui/vue";
+import { SfSection } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/Section",
+  title: 'Components/Molecules/Section',
   component: SfSection,
   argTypes: {
     titleHeading: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
-      description: "Heading title",
+      description: 'Heading title',
     },
     subtitleHeading: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
-      description: "Heading subtitle",
+      description: 'Heading subtitle',
     },
     levelHeading: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: 2,
         },
       },
-      description: "Heading tag level",
+      description: 'Heading tag level',
     },
   },
 };
@@ -52,8 +52,8 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  titleHeading: "Share your look",
-  subtitleHeading: "#YOURLOOK",
+  titleHeading: 'Share your look',
+  subtitleHeading: '#YOURLOOK',
 };
 
 export const UseHeadingSlot = (args, { argTypes }) => ({

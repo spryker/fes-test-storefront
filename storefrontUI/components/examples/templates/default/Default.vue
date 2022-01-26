@@ -32,10 +32,10 @@
   </div>
 </template>
 <script>
-import { SfHeader, SfFooter, SfList, SfMenuItem } from "@storefront-ui/vue";
-import Home from "../../pages/home/Home.vue";
+import { SfHeader, SfFooter, SfList, SfMenuItem } from '@storefront-ui/vue';
+import Home from '../../pages/home/Home.vue';
 export default {
-  name: "Default",
+  name: 'Default',
   components: {
     SfHeader,
     SfFooter,
@@ -45,25 +45,25 @@ export default {
   },
   data() {
     return {
-      shopLogo: "/assets/logo.svg",
-      shopName: "Storefront UI",
-      shopRootCategories: ["women", "man", "kids"],
+      shopLogo: '/assets/logo.svg',
+      shopName: 'Storefront UI',
+      shopRootCategories: ['women', 'man', 'kids'],
       footerColumns: [
         {
-          title: "About us",
-          items: ["Who we are", "Quality in the details", "Customer Reviews"],
+          title: 'About us',
+          items: ['Who we are', 'Quality in the details', 'Customer Reviews'],
         },
         {
-          title: "Departments",
-          items: ["Women fashion", "Men fashion", "Kidswear", "Home"],
+          title: 'Departments',
+          items: ['Women fashion', 'Men fashion', 'Kidswear', 'Home'],
         },
         {
-          title: "Help",
-          items: ["Customer service", "Size guide", "Contact us"],
+          title: 'Help',
+          items: ['Customer service', 'Size guide', 'Contact us'],
         },
         {
-          title: "Payment & delivery",
-          items: ["Purchase terms", "Guarantee"],
+          title: 'Payment & delivery',
+          items: ['Purchase terms', 'Guarantee'],
         },
       ],
     };
@@ -71,7 +71,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 #default {
 }
 </style>

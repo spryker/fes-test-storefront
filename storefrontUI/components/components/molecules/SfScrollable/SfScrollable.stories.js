@@ -1,60 +1,60 @@
-import { SfScrollable, SfProductOption } from "@storefront-ui/vue";
+import { SfScrollable, SfProductOption } from '@storefront-ui/vue';
 
 const options = [
   {
-    color: "red",
-    label: "Red",
+    color: 'red',
+    label: 'Red',
   },
   {
-    color: "blue",
-    label: "Blue",
+    color: 'blue',
+    label: 'Blue',
   },
   {
-    color: "green",
-    label: "Green",
+    color: 'green',
+    label: 'Green',
   },
   {
-    color: "black",
-    label: "Black",
+    color: 'black',
+    label: 'Black',
   },
   {
-    color: "navy",
-    label: "Navy",
+    color: 'navy',
+    label: 'Navy',
   },
   {
-    color: "pink",
-    label: "Pink",
+    color: 'pink',
+    label: 'Pink',
   },
 ];
 
 export default {
-  title: "Components/Molecules/Scrollable",
+  title: 'Components/Molecules/Scrollable',
   component: SfScrollable,
   argTypes: {
     maxContentHeight: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
     showText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "Show",
+          summary: 'Show',
         },
       },
     },
     hideText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "Hide",
+          summary: 'Hide',
         },
       },
     },
@@ -88,17 +88,17 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  customStyle: "",
-  showText: "View all colors",
-  hideText: "Hide colors",
-  maxContentHeight: "6.875rem",
+  customStyle: '',
+  showText: 'View all colors',
+  hideText: 'Hide colors',
+  maxContentHeight: '6.875rem',
 };
 
 export const WithCSSHeight = Template.bind({});
 WithCSSHeight.args = {
   ...Common.args,
-  maxContentHeight: "",
-  customStyle: "--max-height: 6.875rem;",
+  maxContentHeight: '',
+  customStyle: '--max-height: 6.875rem;',
 };
 
 export const UseButtonSlot = (args, { argTypes }) => ({

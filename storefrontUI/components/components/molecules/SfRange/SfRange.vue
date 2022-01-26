@@ -4,11 +4,11 @@
   </div>
 </template>
 <script>
-import noUiSlider from "nouislider";
-import "nouislider/dist/nouislider.css";
+import noUiSlider from 'nouislider';
+import 'nouislider/dist/nouislider.css';
 
 export default {
-  name: "SfRange",
+  name: 'SfRange',
   props: {
     /*
      * Sets the starting values for slider(s), if only one number is given than only one slider appears
@@ -68,13 +68,13 @@ export default {
       const configSettings = Object.assign(this.config, config);
       noUiSlider
         .create(this.$refs.range, configSettings)
-        .on("change", (values) => {
-          this.$emit("change", values);
+        .on('change', (values) => {
+          this.$emit('change', values);
         });
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfRange.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfRange.scss';
 </style>

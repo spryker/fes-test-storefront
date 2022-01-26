@@ -1,38 +1,38 @@
-import { SfRating, SfIcon } from "@storefront-ui/vue";
+import { SfRating, SfIcon } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Rating",
+  title: 'Components/Atoms/Rating',
   component: SfRating,
   argTypes: {
     max: {
       control: {
-        type: "number",
+        type: 'number',
         range: {
           min: 0,
         },
       },
       defaultValue: 5,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     score: {
       control: {
-        type: "number",
+        type: 'number',
         range: {
           min: 0,
         },
       },
       defaultValue: 1,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     icon: {
-      control: "text",
-      defaultValue: "star",
+      control: 'text',
+      defaultValue: 'star',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -58,7 +58,7 @@ WithMax.args = {
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   ...Common.args,
-  icon: "heart",
+  icon: 'heart',
 };
 
 export const WithIconPositiveSlot = (args, { argTypes }) => ({

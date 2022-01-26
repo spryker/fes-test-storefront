@@ -1,23 +1,23 @@
-import { SfBullets } from "@storefront-ui/vue";
+import { SfBullets } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Bullets",
+  title: 'Components/Atoms/Bullets',
   component: SfBullets,
   argTypes: {
     total: {
       control: {
-        type: "number",
+        type: 'number',
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: 0,
     },
     current: {
-      control: "number",
+      control: 'number',
       defaultValue: 0,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },

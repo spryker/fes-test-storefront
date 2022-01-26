@@ -1,45 +1,45 @@
-import { SfHeading, SfIcon } from "@storefront-ui/vue";
+import { SfHeading, SfIcon } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Heading",
+  title: 'Components/Atoms/Heading',
   component: SfHeading,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-heading--underline",
-          "sf-heading--left",
-          "sf-heading--right",
+          '',
+          'sf-heading--underline',
+          'sf-heading--left',
+          'sf-heading--right',
         ],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     level: {
       control: {
-        type: "number",
+        type: 'number',
         range: {
           min: 1,
           max: 6,
         },
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     description: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -60,8 +60,8 @@ const Template = (args, { argTypes }) => ({
 export const Common = Template.bind({});
 Common.args = {
   level: 3,
-  title: "Share your look",
-  description: "#YOURLOOK",
+  title: 'Share your look',
+  description: '#YOURLOOK',
 };
 
 export const WithLabelSlot = (args, { argTypes }) => ({

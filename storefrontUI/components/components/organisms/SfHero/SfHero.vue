@@ -44,14 +44,14 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import SfHeroItem from "./_internal/SfHeroItem.vue";
-import SfArrow from "../../atoms/SfArrow/SfArrow.vue";
-import SfBullets from "../../atoms/SfBullets/SfBullets.vue";
-import Glide from "@glidejs/glide";
-Vue.component("SfHeroItem", SfHeroItem);
+import Vue from 'vue';
+import SfHeroItem from './_internal/SfHeroItem.vue';
+import SfArrow from '../../atoms/SfArrow/SfArrow.vue';
+import SfBullets from '../../atoms/SfBullets/SfBullets.vue';
+import Glide from '@glidejs/glide';
+Vue.component('SfHeroItem', SfHeroItem);
 export default {
-  name: "SfHero",
+  name: 'SfHero',
   components: {
     SfArrow,
     SfBullets,
@@ -69,7 +69,7 @@ export default {
     return {
       glide: null,
       defaultOptions: {
-        type: "slider",
+        type: 'slider',
         rewind: true,
         autoplay: 5000,
         perView: 1,
@@ -110,11 +110,11 @@ export default {
     go(direct) {
       if (!this.glide) return;
       switch (direct) {
-        case "prev":
-          this.glide.go("<");
+        case 'prev':
+          this.glide.go('<');
           break;
-        case "next":
-          this.glide.go(">");
+        case 'next':
+          this.glide.go('>');
           break;
         default:
           this.glide.go(`=${direct}`);
@@ -125,5 +125,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfHero.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfHero.scss';
 </style>

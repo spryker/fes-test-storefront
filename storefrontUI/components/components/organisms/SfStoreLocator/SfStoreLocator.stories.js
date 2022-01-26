@@ -1,7 +1,7 @@
-import { SfStoreLocator } from "@storefront-ui/vue";
+import { SfStoreLocator } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Organisms/StoreLocator",
+  title: 'Components/Organisms/StoreLocator',
   component: SfStoreLocator,
   decorators: [
     () => ({
@@ -11,122 +11,122 @@ export default {
   argTypes: {
     tileServerUrl: {
       control: {
-        type: "select",
+        type: 'select',
         options: {
           default:
-            "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
-          openstreetmap: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+          openstreetmap: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         },
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     tileServerAttribution: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     center: {
-      control: "array",
+      control: 'array',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     zoom: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     maxZoom: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     markerIconSize: {
-      control: "array",
+      control: 'array',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     markerIconAnchor: {
-      control: "array",
+      control: 'array',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     mapOptions: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     tileLayerOptions: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     markerOptions: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     flyToStoreZoom: {
       control: {
-        type: "number",
+        type: 'number',
         range: {
           min: 1,
           max: 16,
         },
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     latlng: {
-      control: "array",
+      control: 'array',
       table: {
-        category: "SfStore Props",
+        category: 'SfStore Props',
       },
     },
     address: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "SfStore Props",
+        category: 'SfStore Props',
       },
     },
     phone: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "SfStore Props",
+        category: 'SfStore Props',
       },
     },
     email: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "SfStore Props",
+        category: 'SfStore Props',
       },
     },
     name: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "SfStore Props",
+        category: 'SfStore Props',
       },
     },
     picture: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "SfStore Props",
+        category: 'SfStore Props',
       },
     },
-    "update:zoom": {
-      action: "Zoom value updated",
-      table: { category: "Events" },
+    'update:zoom': {
+      action: 'Zoom value updated',
+      table: { category: 'Events' },
     },
   },
 };
@@ -165,11 +165,11 @@ Common.args = {
   markerIconSize: [21, 28],
   markerIconAnchor: [10.5, 0],
   latlng: [47.4968864, 19.0531093],
-  address: "Budapest, Deák Ferenc u. 19, 1052",
-  phone: "(70) 881 9463",
-  email: "example@email.com",
-  name: "Store",
-  picture: "/assets/storybook/SfStore/storeA.png",
+  address: 'Budapest, Deák Ferenc u. 19, 1052',
+  phone: '(70) 881 9463',
+  email: 'example@email.com',
+  name: 'Store',
+  picture: '/assets/storybook/SfStore/storeA.png',
 };
 
 export const UseMapLoadingSlot = (args, { argTypes }) => ({

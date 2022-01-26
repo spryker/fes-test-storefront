@@ -1,57 +1,57 @@
-import { SfNotification, SfIcon } from "@storefront-ui/vue";
+import { SfNotification, SfIcon } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/Notification",
+  title: 'Components/Molecules/Notification',
   component: SfNotification,
   argTypes: {
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     message: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     message: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     action: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "",
+      defaultValue: '',
     },
     visible: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: false,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     type: {
       control: {
-        type: "select",
-        options: ["", "secondary", "info", "success", "warning", "danger"],
+        type: 'select',
+        options: ['', 'secondary', 'info', 'success', 'warning', 'danger'],
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "secondary",
+      defaultValue: 'secondary',
     },
-    "click:action": { action: "Action clicked", table: { category: "Events" } },
-    "click:close": {
-      action: "Close notification clicked",
-      table: { category: "Events" },
+    'click:action': { action: 'Action clicked', table: { category: 'Events' } },
+    'click:close': {
+      action: 'Close notification clicked',
+      table: { category: 'Events' },
     },
   },
 };
@@ -73,50 +73,50 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  message: "This is an information message",
+  message: 'This is an information message',
   visible: true,
 };
 
 export const WithTitle = Template.bind({});
 WithTitle.args = {
   ...Common.args,
-  title: "Added to Cart",
+  title: 'Added to Cart',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Common.args,
-  type: "secondary",
+  type: 'secondary',
 };
 
 export const Info = Template.bind({});
 Info.args = {
   ...Common.args,
-  type: "info",
+  type: 'info',
 };
 
 export const Success = Template.bind({});
 Success.args = {
   ...Common.args,
-  type: "success",
+  type: 'success',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
   ...Common.args,
-  type: "warning",
+  type: 'warning',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   ...Common.args,
-  type: "danger",
+  type: 'danger',
 };
 
 export const WithAction = Template.bind({});
 WithAction.args = {
   ...Common.args,
-  action: "View cart",
+  action: 'View cart',
 };
 
 export const UseIconSlot = (args, { argTypes }) => ({
