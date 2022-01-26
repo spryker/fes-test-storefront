@@ -16,19 +16,19 @@
 </template>
 <script>
 export default {
-  name: "SfProductOption",
+  name: 'SfProductOption',
   props: {
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     color: {
       type: String,
-      default: "",
+      default: '',
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfProductOption.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfProductOption.scss';
 </style>

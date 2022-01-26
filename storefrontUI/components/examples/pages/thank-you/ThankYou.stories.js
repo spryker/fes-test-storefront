@@ -1,6 +1,6 @@
-import ThankYou from "./ThankYou";
+import ThankYou from './ThankYou';
 export default {
-  title: "Pages/ThankYou",
+  title: 'Pages/ThankYou',
   component: ThankYou,
 };
 

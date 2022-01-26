@@ -1,32 +1,32 @@
-import { SfBar } from "@storefront-ui/vue";
+import { SfBar } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Molecules/Bar",
+  title: 'Components/Molecules/Bar',
   component: SfBar,
   argTypes: {
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     back: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     close: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    onBackClick: { action: "Back clicked", table: { category: "Events" } },
-    onCloseClick: { action: "Close clicked", table: { category: "Events" } },
+    onBackClick: { action: 'Back clicked', table: { category: 'Events' } },
+    onCloseClick: { action: 'Close clicked', table: { category: 'Events' } },
   },
   args: {
-    title: "Dresses",
+    title: 'Dresses',
     back: false,
     close: false,
   },

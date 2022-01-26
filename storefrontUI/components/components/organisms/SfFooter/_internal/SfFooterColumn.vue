@@ -14,16 +14,16 @@
   </div>
 </template>
 <script>
-import SfChevron from "../../../atoms/SfChevron/SfChevron.vue";
-import { focus } from "../../../../utilities/directives";
+import SfChevron from '../../../atoms/SfChevron/SfChevron.vue';
+import { focus } from '../../../../utilities/directives';
 export default {
-  name: "SfFooterColumn",
+  name: 'SfFooterColumn',
   directives: { focus },
   components: { SfChevron },
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   computed: {

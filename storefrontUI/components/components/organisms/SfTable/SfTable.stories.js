@@ -1,15 +1,15 @@
-import { SfTable, SfButton } from "@storefront-ui/vue";
+import { SfTable, SfButton } from '@storefront-ui/vue';
 export default {
-  title: "Components/Organisms/Table",
+  title: 'Components/Organisms/Table',
   component: SfTable,
   argTypes: {
     classes: {
       control: {
-        type: "select",
-        options: ["", "sf-table--no-border"],
+        type: 'select',
+        options: ['', 'sf-table--no-border'],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
   },
@@ -21,20 +21,20 @@ const Template = (args, { argTypes }) => ({
   data() {
     return {
       tableHeaders: [
-        "Order ID",
-        "Pay. date",
-        "Pay. method",
-        "Amount",
-        "Status",
+        'Order ID',
+        'Pay. date',
+        'Pay. method',
+        'Amount',
+        'Status',
       ],
       tableRows: [
-        ["#35767", "4th Nov", "Paypal", "12.00$", "Finalise"],
-        ["#35767", "4th Nov", "Visa", "15.00$", "In process"],
-        ["#35767", "4th Nov", "Paypal", "12.00$", "Finalise"],
+        ['#35767', '4th Nov', 'Paypal', '12.00$', 'Finalise'],
+        ['#35767', '4th Nov', 'Visa', '15.00$', 'In process'],
+        ['#35767', '4th Nov', 'Paypal', '12.00$', 'Finalise'],
       ],
       status: {
-        Finalise: "text-success",
-        "In process": "text-warning",
+        Finalise: 'text-success',
+        'In process': 'text-warning',
       },
     };
   },
@@ -65,5 +65,5 @@ Common.args = {};
 
 export const WithoutBorder = Template.bind({});
 WithoutBorder.args = {
-  classes: "sf-table--no-border",
+  classes: 'sf-table--no-border',
 };

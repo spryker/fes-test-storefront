@@ -60,7 +60,7 @@
             @click="
               listeners.click &&
                 listeners.click(
-                  $options.inactiveLeft(props.total, props.current) + 1 + index
+                  $options.inactiveLeft(props.total, props.current) + 1 + index,
                 )
             "
           ></component>
@@ -70,9 +70,9 @@
   </ol>
 </template>
 <script>
-import SfButton from "../SfButton/SfButton.vue";
+import SfButton from '../SfButton/SfButton.vue';
 export default {
-  name: "SfBullets",
+  name: 'SfBullets',
   inject: {
     components: {
       default: { SfButton },
@@ -106,5 +106,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfBullets.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfBullets.scss';
 </style>

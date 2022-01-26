@@ -38,12 +38,12 @@
   </div>
 </template>
 <script>
-import { focus } from "../../../../utilities/directives";
-import SfExpand from "../../../../utilities/transitions/component/SfExpand";
-import SfChevron from "../../../atoms/SfChevron/SfChevron.vue";
-import SfButton from "../../../atoms/SfButton/SfButton.vue";
+import { focus } from '../../../../utilities/directives';
+import SfExpand from '../../../../utilities/transitions/component/SfExpand';
+import SfChevron from '../../../atoms/SfChevron/SfChevron.vue';
+import SfButton from '../../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfAccordionItem",
+  name: 'SfAccordionItem',
   directives: { focus },
   components: {
     SfChevron,
@@ -53,7 +53,7 @@ export default {
   props: {
     header: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -63,11 +63,11 @@ export default {
   },
   methods: {
     accordionClick() {
-      this.$parent.$emit("toggle", this._uid);
+      this.$parent.$emit('toggle', this._uid);
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfAccordion.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfAccordion.scss';
 </style>

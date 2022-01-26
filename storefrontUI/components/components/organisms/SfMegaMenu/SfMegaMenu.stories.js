@@ -1,55 +1,55 @@
-import { SfMegaMenu, SfList, SfMenuItem, SfBanner } from "@storefront-ui/vue";
-import "./SfMegaMenu.stories.scss";
+import { SfMegaMenu, SfList, SfMenuItem, SfBanner } from '@storefront-ui/vue';
+import './SfMegaMenu.stories.scss';
 
 const categories = [
   {
-    title: "Clothing",
+    title: 'Clothing',
     subcategories: [
-      { title: "Skirts" },
-      { title: "Sweaters" },
-      { title: "Dresses" },
-      { title: "TShirts" },
-      { title: "Pants" },
-      { title: "Underwear" },
-      { title: "Jackets" },
-      { title: "Blouses" },
+      { title: 'Skirts' },
+      { title: 'Sweaters' },
+      { title: 'Dresses' },
+      { title: 'TShirts' },
+      { title: 'Pants' },
+      { title: 'Underwear' },
+      { title: 'Jackets' },
+      { title: 'Blouses' },
     ],
   },
   {
-    title: "Accesories",
+    title: 'Accesories',
     subcategories: [
-      { title: "Bags & Purses" },
-      { title: "Belts" },
-      { title: "Gloves" },
-      { title: "Hats" },
+      { title: 'Bags & Purses' },
+      { title: 'Belts' },
+      { title: 'Gloves' },
+      { title: 'Hats' },
     ],
   },
   {
-    title: "Shoes",
+    title: 'Shoes',
     subcategories: [
-      { title: "Boots" },
-      { title: "Heels" },
-      { title: "Flat shoes" },
-      { title: "Loafers" },
-      { title: "Sandals" },
-      { title: "Slippers" },
-      { title: "Trainers" },
+      { title: 'Boots' },
+      { title: 'Heels' },
+      { title: 'Flat shoes' },
+      { title: 'Loafers' },
+      { title: 'Sandals' },
+      { title: 'Slippers' },
+      { title: 'Trainers' },
     ],
     banners: [
       {
-        title: "THE OFFICE LIFE",
-        subtitle: "T-shirts",
+        title: 'THE OFFICE LIFE',
+        subtitle: 'T-shirts',
         pictures: {
-          mobile: "/assets/storybook/SfMegaMenu/bannerSandals.jpg",
-          desktop: "/assets/storybook/SfMegaMenu/bannerSandals.jpg",
+          mobile: '/assets/storybook/SfMegaMenu/bannerSandals.jpg',
+          desktop: '/assets/storybook/SfMegaMenu/bannerSandals.jpg',
         },
       },
       {
-        title: "ECO SANDALS",
-        subtitle: "T-shirts",
+        title: 'ECO SANDALS',
+        subtitle: 'T-shirts',
         pictures: {
-          mobile: "/assets/storybook/SfMegaMenu/bannerBeachBag.jpg",
-          desktop: "/assets/storybook/SfMegaMenu/bannerBeachBag.jpg",
+          mobile: '/assets/storybook/SfMegaMenu/bannerBeachBag.jpg',
+          desktop: '/assets/storybook/SfMegaMenu/bannerBeachBag.jpg',
         },
       },
     ],
@@ -57,38 +57,38 @@ const categories = [
 ];
 
 export default {
-  title: "Components/Organisms/MegaMenu",
+  title: 'Components/Organisms/MegaMenu',
   component: SfMegaMenu,
   argTypes: {
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     visible: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     isAbsolute: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     transitionName: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "sf-fade",
+          summary: 'sf-fade',
         },
       },
     },
-    change: { action: "Active item changed", table: { category: "Events" } },
-    close: { action: "Close button clicked", table: { category: "Events" } },
+    change: { action: 'Active item changed', table: { category: 'Events' } },
+    close: { action: 'Close button clicked', table: { category: 'Events' } },
   },
 };
 
@@ -141,7 +141,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  title: "Menu",
+  title: 'Menu',
 };
 
 export const UseAsideSlot = (args, { argTypes }) => ({

@@ -5,19 +5,19 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import { deprecationWarning } from "../../../utilities/helpers";
-import SfAccordionItem from "./_internal/SfAccordionItem.vue";
-Vue.component("SfAccordionItem", SfAccordionItem);
+import Vue from 'vue';
+import { deprecationWarning } from '../../../utilities/helpers';
+import SfAccordionItem from './_internal/SfAccordionItem.vue';
+Vue.component('SfAccordionItem', SfAccordionItem);
 export default {
-  name: "SfAccordion",
+  name: 'SfAccordion',
   props: {
     /**
      * Opens an accordion item based on title. If 'all' string is passed then all items will be open by default.
      */
     open: {
       type: [String, Array],
-      default: "",
+      default: '',
     },
     /**
      * Opens the first accordion item if set to "true"
@@ -39,7 +39,7 @@ export default {
      */
     transition: {
       type: String,
-      default: "sf-expand",
+      default: 'sf-expand',
     },
     showChevron: {
       type: Boolean,
@@ -52,7 +52,7 @@ export default {
     };
   },
   mounted() {
-    this.$on("toggle", this.toggleHandler);
+    this.$on('toggle', this.toggleHandler);
     this.setAsOpen();
   },
   updated() {
@@ -66,12 +66,12 @@ export default {
           this.$children[0].isOpen = this.firstOpen;
           deprecationWarning(
             this.$options.name,
-            "Prop 'firstOpen' has been deprecated and will be removed in v1.0.0. Use 'open' instead."
+            "Prop 'firstOpen' has been deprecated and will be removed in v1.0.0. Use 'open' instead.",
           );
           return;
         }
         // <- TODO remove in 1.0.0
-        if (this.open === "all") {
+        if (this.open === 'all') {
           this.multiple = true;
           this.openHeader = this.$children.map((child) => child.header);
         }
@@ -103,5 +103,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfAccordion.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfAccordion.scss';
 </style>

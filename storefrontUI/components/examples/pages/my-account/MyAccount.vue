@@ -46,7 +46,7 @@
   </div>
 </template>
 <script>
-import { SfBreadcrumbs, SfContentPages } from "@storefront-ui/vue";
+import { SfBreadcrumbs, SfContentPages } from '@storefront-ui/vue';
 import {
   MyProfile,
   ShippingDetails,
@@ -54,9 +54,9 @@ import {
   MyNewsletter,
   OrderHistory,
   MyReviews,
-} from "./_internal/index.js";
+} from './_internal/index.js';
 export default {
-  name: "MyAccount",
+  name: 'MyAccount',
   components: {
     SfBreadcrumbs,
     SfContentPages,
@@ -69,63 +69,63 @@ export default {
   },
   data() {
     return {
-      activePage: "My profile",
+      activePage: 'My profile',
       breadcrumbs: [
         {
-          text: "Home",
+          text: 'Home',
           route: {
-            link: "#",
+            link: '#',
           },
         },
         {
-          text: "My Account",
+          text: 'My Account',
           route: {
-            link: "#",
+            link: '#',
           },
         },
       ],
       account: {
-        firstName: "John",
-        lastName: "Dog",
-        email: "johndog@email.com",
-        password: "a*23Et",
+        firstName: 'John',
+        lastName: 'Dog',
+        email: 'johndog@email.com',
+        password: 'a*23Et',
         shipping: [
           {
-            firstName: "John",
-            lastName: "Dog",
-            streetName: "Sezame Street",
-            apartment: "24/193A",
-            city: "Wroclaw",
-            state: "Lower Silesia",
-            zipCode: "53-540",
-            country: "Poland",
-            phoneNumber: "(00)560 123 456",
+            firstName: 'John',
+            lastName: 'Dog',
+            streetName: 'Sezame Street',
+            apartment: '24/193A',
+            city: 'Wroclaw',
+            state: 'Lower Silesia',
+            zipCode: '53-540',
+            country: 'Poland',
+            phoneNumber: '(00)560 123 456',
           },
           {
-            firstName: "John",
-            lastName: "Dog",
-            streetName: "Sezame Street",
-            apartment: "20/193A",
-            city: "Wroclaw",
-            state: "Lower Silesia",
-            zipCode: "53-603",
-            country: "Poland",
-            phoneNumber: "(00)560 123 456",
+            firstName: 'John',
+            lastName: 'Dog',
+            streetName: 'Sezame Street',
+            apartment: '20/193A',
+            city: 'Wroclaw',
+            state: 'Lower Silesia',
+            zipCode: '53-603',
+            country: 'Poland',
+            phoneNumber: '(00)560 123 456',
           },
         ],
         orders: [
-          ["#35765", "4th Nov, 2019", "Visa card", "$12.00", "In process"],
-          ["#35766", "4th Nov, 2019", "Paypal", "$12.00", "Finalised"],
-          ["#35768", "4th Nov, 2019", "Mastercard", "$12.00", "Finalised"],
-          ["#35769", "4th Nov, 2019", "Paypal", "$12.00", "Finalised"],
+          ['#35765', '4th Nov, 2019', 'Visa card', '$12.00', 'In process'],
+          ['#35766', '4th Nov, 2019', 'Paypal', '$12.00', 'Finalised'],
+          ['#35768', '4th Nov, 2019', 'Mastercard', '$12.00', 'Finalised'],
+          ['#35769', '4th Nov, 2019', 'Paypal', '$12.00', 'Finalised'],
         ],
       },
     };
   },
   methods: {
     changeActivePage(title) {
-      if (title === "Log out") {
-        alert("You are logged out!");
+      if (title === 'Log out') {
+        alert('You are logged out!');
         return;
       }
       this.activePage = title;
@@ -134,7 +134,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 #my-account {
   box-sizing: border-box;
   @include for-desktop {

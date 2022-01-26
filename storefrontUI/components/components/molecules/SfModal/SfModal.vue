@@ -45,16 +45,16 @@
   </section>
 </template>
 <script>
-import SfBar from "../../molecules/SfBar/SfBar.vue";
-import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
-import { focusTrap } from "../../../utilities/directives";
-import { clickOutside } from "../../../utilities/directives";
-import { isClient } from "../../../utilities/helpers";
+import SfBar from '../../molecules/SfBar/SfBar.vue';
+import SfOverlay from '../../atoms/SfOverlay/SfOverlay.vue';
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { focusTrap } from '../../../utilities/directives';
+import { clickOutside } from '../../../utilities/directives';
+import { isClient } from '../../../utilities/helpers';
 export default {
-  name: "SfModal",
+  name: 'SfModal',
   directives: { focusTrap, clickOutside },
   components: {
     SfBar,
@@ -63,8 +63,8 @@ export default {
     SfButton,
   },
   model: {
-    prop: "visible",
-    event: "close",
+    prop: 'visible',
+    event: 'close',
   },
   props: {
     /**
@@ -72,7 +72,7 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Visibility of the modal
@@ -107,14 +107,14 @@ export default {
      */
     transitionOverlay: {
       type: String,
-      default: "sf-fade",
+      default: 'sf-fade',
     },
     /**
      * overlay transition effect
      */
     transitionModal: {
       type: String,
-      default: "sf-fade",
+      default: 'sf-fade',
     },
   },
   data() {
@@ -131,10 +131,10 @@ export default {
           this.$nextTick(() => {
             disableBodyScroll(this.$refs.content);
           });
-          document.addEventListener("keydown", this.keydownHandler);
+          document.addEventListener('keydown', this.keydownHandler);
         } else {
           clearAllBodyScrollLocks();
-          document.removeEventListener("keydown", this.keydownHandler);
+          document.removeEventListener('keydown', this.keydownHandler);
         }
       },
       immediate: true,
@@ -142,7 +142,7 @@ export default {
   },
   methods: {
     close() {
-      this.$emit("close", false);
+      this.$emit('close', false);
     },
     checkPersistence() {
       if (!this.persistent) {
@@ -150,7 +150,7 @@ export default {
       }
     },
     keydownHandler(e) {
-      if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
         this.close();
       }
     },
@@ -166,5 +166,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfModal.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfModal.scss';
 </style>

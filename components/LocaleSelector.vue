@@ -5,7 +5,11 @@
       @click="isLangModalOpen = !isLangModalOpen"
     >
       {{ abbreviations[locale] }}
-      <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
+      <SfIcon
+        :icon="arrowIcon.path"
+        :class="arrowIcon.class"
+        :viewBox="arrowIcon.viewBox"
+      />
     </SfButton>
     <SfBottomModal
       :is-open="isLangModalOpen"
@@ -88,7 +92,7 @@ export default {
       locale,
       isLangModalOpen,
       arrowIcon,
-      abbreviations: {en_US: 'EN', de_DE: 'DE'}
+      abbreviations: { en_US: 'EN', de_DE: 'DE' },
     };
   },
 };

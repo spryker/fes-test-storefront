@@ -1,2 +1,2 @@
-import OrderSummary from "./OrderSummary.vue";
+import OrderSummary from './OrderSummary.vue';
 export { OrderSummary };

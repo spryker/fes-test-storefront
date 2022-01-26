@@ -2,55 +2,43 @@
   <SfFooter :column="4" multiple class="footer">
     <SfFooterColumn :title="$t('About us')">
       <SfList>
-        <SfListItem
-          v-for="item in aboutUs"
-          :key="item"
-          >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem v-for="item in aboutUs" :key="item">
+          <SfMenuItem :label="$t(item)" />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Departments')">
       <SfList>
-        <SfListItem
-          v-for="item in departments"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem v-for="item in departments" :key="item">
+          <SfMenuItem :label="$t(item)" />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Help')">
       <SfList>
-        <SfListItem
-          v-for="item in help"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem v-for="item in help" :key="item">
+          <SfMenuItem :label="$t(item)" />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
     <SfFooterColumn :title="$t('Payment & Delivery')">
       <SfList>
-        <SfListItem
-          v-for="item in paymentsDelivery"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
+        <SfListItem v-for="item in paymentsDelivery" :key="item">
+          <SfMenuItem :label="$t(item)" />
         </SfListItem>
       </SfList>
     </SfFooterColumn>
     <SfFooterColumn title="Social">
       <div class="footer__socials">
-        <SfImage class="footer__social-image" v-for="item in social" :key="item" :src="'/icons/'+item+'.svg'" :alt="item" width="32" height="32" />
+        <SfImage
+          class="footer__social-image"
+          v-for="item in social"
+          :key="item"
+          :src="'/icons/' + item + '.svg'"
+          :alt="item"
+          width="32"
+          height="32"
+        />
       </div>
     </SfFooterColumn>
   </SfFooter>
@@ -64,7 +52,7 @@ export default {
     SfFooter,
     SfList,
     SfImage,
-    SfMenuItem
+    SfMenuItem,
   },
   data() {
     return {
@@ -74,14 +62,13 @@ export default {
       paymentsDelivery: ['Purchase terms', 'Guarantee'],
       social: ['facebook', 'pinterest', 'google', 'twitter', 'youtube'],
       isMobile: false,
-      desktopMin: 1024
+      desktopMin: 1024,
     };
-  }
+  },
 };
 </script>
 
 <style lang="scss">
-
 .footer {
   margin-bottom: 3.75rem;
   @include for-desktop {

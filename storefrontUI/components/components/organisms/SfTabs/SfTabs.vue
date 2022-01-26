@@ -5,12 +5,12 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import SfTab from "./_internal/SfTab.vue";
-Vue.component("SfTab", SfTab);
+import Vue from 'vue';
+import SfTab from './_internal/SfTab.vue';
+Vue.component('SfTab', SfTab);
 
 export default {
-  name: "SfTabs",
+  name: 'SfTabs',
   props: {
     /** Which tab should be open  */
     openTab: {
@@ -20,17 +20,17 @@ export default {
     /** Max height of visible content  */
     tabMaxContentHeight: {
       type: String,
-      default: "",
+      default: '',
     },
     /** Text for button showing content  */
     tabShowText: {
       type: String,
-      default: "show",
+      default: 'show',
     },
     /** Text for button hiding content  */
     tabHideText: {
       type: String,
-      default: "hide",
+      default: 'hide',
     },
   },
   data() {
@@ -45,7 +45,7 @@ export default {
     },
   },
   mounted() {
-    this.$on("toggle", this.toggle);
+    this.$on('toggle', this.toggle);
     if (this.openTab) this.openChild();
   },
   methods: {
@@ -55,7 +55,7 @@ export default {
       });
       const activeTab =
         this.$children.findIndex((child) => child.isActive === true) + 1;
-      this.$emit("click:tab", activeTab);
+      this.$emit('click:tab', activeTab);
     },
     openChild() {
       if (this.openTab < this.$children.length + 1) {
@@ -66,13 +66,13 @@ export default {
   },
   provide: function () {
     const tabConfig = {};
-    Object.defineProperty(tabConfig, "tabMaxContentHeight", {
+    Object.defineProperty(tabConfig, 'tabMaxContentHeight', {
       get: () => this.tabMaxContentHeight,
     });
-    Object.defineProperty(tabConfig, "tabShowText", {
+    Object.defineProperty(tabConfig, 'tabShowText', {
       get: () => this.tabShowText,
     });
-    Object.defineProperty(tabConfig, "tabHideText", {
+    Object.defineProperty(tabConfig, 'tabHideText', {
       get: () => this.tabHideText,
     });
     return {
@@ -82,5 +82,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfTabs.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfTabs.scss';
 </style>

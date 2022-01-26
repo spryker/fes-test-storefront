@@ -1,51 +1,51 @@
-import { SfButton } from "@storefront-ui/vue";
+import { SfButton } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Button",
+  title: 'Components/Atoms/Button',
   component: SfButton,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-button--outline",
-          "sf-button--underlined",
-          "sf-button--text",
-          "sf-button--full-width",
-          "sf-button--pure",
-          "color-primary",
-          "color-secondary",
-          "color-light",
-          "color-warning",
-          "color-danger",
-          "color-info",
-          "color-success",
+          '',
+          'sf-button--outline',
+          'sf-button--underlined',
+          'sf-button--text',
+          'sf-button--full-width',
+          'sf-button--pure',
+          'color-primary',
+          'color-secondary',
+          'color-light',
+          'color-warning',
+          'color-danger',
+          'color-info',
+          'color-success',
         ],
       },
-      description: "Modifier classes for button",
+      description: 'Modifier classes for button',
       table: {
-        category: "HTML Attributes",
+        category: 'HTML Attributes',
       },
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: false,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     link: {
-      control: "text",
-      defaultValue: "",
+      control: 'text',
+      defaultValue: '',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     content: {
-      control: "text",
+      control: 'text',
     },
-    onClick: { action: "Button clicked", table: { category: "Events" } },
+    onClick: { action: 'Button clicked', table: { category: 'Events' } },
   },
 };
 
@@ -64,8 +64,8 @@ const Template = (args, { argTypes }) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  classes: "color-primary",
-  content: "Shop now",
+  classes: 'color-primary',
+  content: 'Shop now',
 };
 
 export const Disabled = Template.bind({});
@@ -77,44 +77,44 @@ Disabled.args = {
 export const AsLink = Template.bind({});
 AsLink.args = {
   ...Primary.args,
-  classes: "sf-button--underlined",
-  link: "https://storefrontui.io",
+  classes: 'sf-button--underlined',
+  link: 'https://storefrontui.io',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Primary.args,
-  classes: "color-secondary",
+  classes: 'color-secondary',
 };
 
 export const Light = Template.bind({});
 Light.args = {
   ...Primary.args,
-  classes: "color-light",
+  classes: 'color-light',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
   ...Primary.args,
-  classes: "color-warning",
+  classes: 'color-warning',
 };
 
 export const InDanger = Template.bind({});
 InDanger.args = {
   ...Primary.args,
-  classes: "color-danger",
+  classes: 'color-danger',
 };
 
 export const Info = Template.bind({});
 Info.args = {
   ...Primary.args,
-  classes: "color-info",
+  classes: 'color-info',
 };
 
 export const Success = Template.bind({});
 Success.args = {
   ...Primary.args,
-  classes: "color-success",
+  classes: 'color-success',
 };
 
 export const WithDefaultSlot = (args, { argTypes }) => ({
@@ -133,5 +133,5 @@ export const WithDefaultSlot = (args, { argTypes }) => ({
 });
 
 WithDefaultSlot.args = {
-  content: "<div>Custom slot</div>",
+  content: '<div>Custom slot</div>',
 };

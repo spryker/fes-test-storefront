@@ -1,31 +1,31 @@
-import SfCategoryCard from "./SfCategoryCard.vue";
+import SfCategoryCard from './SfCategoryCard.vue';
 
 export default {
-  title: "Components/Molecules/CategoryCard",
+  title: 'Components/Molecules/CategoryCard',
   component: SfCategoryCard,
   argTypes: {
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     count: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     background: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -45,11 +45,11 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  label: "Personal Care",
-  count: "32",
-  link: "#",
+  label: 'Personal Care',
+  count: '32',
+  link: '#',
   background: {
-    mobile: "assets/storybook/SfCategoryCard/category-cardM.jpg",
-    desktop: "assets/storybook/SfCategoryCard/category-cardD.jpg",
+    mobile: 'assets/storybook/SfCategoryCard/category-cardM.jpg',
+    desktop: 'assets/storybook/SfCategoryCard/category-cardD.jpg',
   },
 };

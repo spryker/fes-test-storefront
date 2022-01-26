@@ -37,11 +37,7 @@
               :title="title"
               :description="subtitle"
               :level="headingLevel"
-              class="
-                sf-heading--left sf-heading--no-underline
-                sf-sidebar__title
-                desktop-only
-              "
+              class="sf-heading--left sf-heading--no-underline sf-sidebar__title desktop-only"
             />
           </slot>
           <!--@slot Use this slot to add sticky top content.-->
@@ -60,16 +56,16 @@
   </div>
 </template>
 <script>
-import { focusTrap } from "../../../utilities/directives/";
-import { clickOutside } from "../../../utilities/directives/";
-import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
-import { isClient } from "../../../utilities/helpers";
-import SfBar from "../../molecules/SfBar/SfBar.vue";
-import SfCircleIcon from "../../atoms/SfCircleIcon/SfCircleIcon.vue";
-import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
-import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
+import { focusTrap } from '../../../utilities/directives/';
+import { clickOutside } from '../../../utilities/directives/';
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { isClient } from '../../../utilities/helpers';
+import SfBar from '../../molecules/SfBar/SfBar.vue';
+import SfCircleIcon from '../../atoms/SfCircleIcon/SfCircleIcon.vue';
+import SfOverlay from '../../atoms/SfOverlay/SfOverlay.vue';
+import SfHeading from '../../atoms/SfHeading/SfHeading.vue';
 export default {
-  name: "SfSidebar",
+  name: 'SfSidebar',
   directives: { focusTrap, clickOutside },
   components: {
     SfBar,
@@ -83,14 +79,14 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * The sidebar's subtitle
      */
     subtitle: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * The heading's level
@@ -130,7 +126,7 @@ export default {
   },
   data() {
     return {
-      position: "left",
+      position: 'left',
       staticClass: null,
       className: null,
     };
@@ -140,13 +136,13 @@ export default {
       return this.visible && this.overlay;
     },
     transitionName() {
-      return "sf-slide-" + this.position;
+      return 'sf-slide-' + this.position;
     },
     hasTop() {
-      return this.$slots.hasOwnProperty("content-top");
+      return this.$slots.hasOwnProperty('content-top');
     },
     hasBottom() {
-      return this.$slots.hasOwnProperty("content-bottom");
+      return this.$slots.hasOwnProperty('content-bottom');
     },
   },
   watch: {
@@ -156,14 +152,14 @@ export default {
         if (value) {
           this.$nextTick(() => {
             const sidebarContent = document.getElementsByClassName(
-              "sf-sidebar__content"
+              'sf-sidebar__content',
             )[0];
             disableBodyScroll(sidebarContent);
           });
-          document.addEventListener("keydown", this.keydownHandler);
+          document.addEventListener('keydown', this.keydownHandler);
         } else {
           clearAllBodyScrollLocks();
-          document.removeEventListener("keydown", this.keydownHandler);
+          document.removeEventListener('keydown', this.keydownHandler);
         }
       },
       immediate: true,
@@ -177,13 +173,13 @@ export default {
   },
   methods: {
     close() {
-      this.$emit("close");
+      this.$emit('close');
     },
     checkPersistence() {
       if (!this.persistent) this.close();
     },
     keydownHandler(e) {
-      if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
         this.close();
       }
     },
@@ -199,14 +195,14 @@ export default {
       }
       if (update) {
         this.position =
-          [this.staticClass, this.className].toString().search("--right") > -1
-            ? "right"
-            : "left";
+          [this.staticClass, this.className].toString().search('--right') > -1
+            ? 'right'
+            : 'left';
       }
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfSidebar.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfSidebar.scss';
 </style>

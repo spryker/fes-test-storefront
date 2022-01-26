@@ -1,75 +1,75 @@
-import { SfAccordion, SfList, SfMenuItem } from "@storefront-ui/vue";
+import { SfAccordion, SfList, SfMenuItem } from '@storefront-ui/vue';
 
 const accordions = [
   {
-    header: "Clothing",
+    header: 'Clothing',
     items: [
-      { label: "All", count: "280" },
-      { label: "Skirts", count: "11" },
-      { label: "Dresses", count: "32" },
+      { label: 'All', count: '280' },
+      { label: 'Skirts', count: '11' },
+      { label: 'Dresses', count: '32' },
     ],
   },
   {
-    header: "Accessories",
+    header: 'Accessories',
     items: [
-      { label: "All", count: "80" },
-      { label: "Belts", count: "101" },
-      { label: "Bag", count: "2" },
+      { label: 'All', count: '80' },
+      { label: 'Belts', count: '101' },
+      { label: 'Bag', count: '2' },
     ],
   },
   {
-    header: "Shoes",
+    header: 'Shoes',
     items: [
-      { label: "All", count: "2" },
-      { label: "Trainers", count: "22" },
-      { label: "Sandals", count: "55" },
+      { label: 'All', count: '2' },
+      { label: 'Trainers', count: '22' },
+      { label: 'Sandals', count: '55' },
     ],
   },
 ];
 
 export default {
-  title: "Components/Organisms/Accordion",
+  title: 'Components/Organisms/Accordion',
   component: SfAccordion,
   argTypes: {
     open: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
       description:
         "Opens an accordion item based on title. If 'all' string is passed then all items will be open by default.",
     },
     multiple: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: false,
         },
       },
-      description: "Allows to open multiple accordion items if set to `true`",
+      description: 'Allows to open multiple accordion items if set to `true`',
     },
     transition: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "sf-expand",
+          summary: 'sf-expand',
         },
       },
     },
     showChevron: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: true,
         },
       },
-      description: "Show chevron icon",
+      description: 'Show chevron icon',
     },
   },
 };
@@ -114,25 +114,25 @@ Common.args = {};
 export const OpenOne = Template.bind({});
 OpenOne.args = {
   ...Common.args,
-  open: "Accessories",
+  open: 'Accessories',
 };
 
 export const OpenMultiple = Template.bind({
   argTypes: {
     open: {
-      control: "array",
+      control: 'array',
     },
   },
 });
 
 OpenMultiple.args = {
-  open: ["Clothing", "Shoes"],
+  open: ['Clothing', 'Shoes'],
 };
 
 export const AllOpen = Template.bind({});
 AllOpen.args = {
   ...Common.args,
-  open: "all",
+  open: 'all',
 };
 
 export const HideChevron = Template.bind({});

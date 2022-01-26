@@ -22,16 +22,16 @@
   </section>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../utilities/mobile-observer";
-import { isClient } from "../../../utilities/helpers";
+} from '../../../utilities/mobile-observer';
+import { isClient } from '../../../utilities/helpers';
 
 export default {
-  name: "SfSlidingSection",
+  name: 'SfSlidingSection',
   components: {
     SfIcon,
     SfButton,
@@ -82,11 +82,11 @@ export default {
     },
   },
   mounted() {
-    import("hammerjs").then((h) => {
+    import('hammerjs').then((h) => {
       const Hammer = h.default;
       this.hammer = new Hammer(document, {
         enable: false,
-      }).on("pan", this.touchHandler);
+      }).on('pan', this.touchHandler);
     });
   },
   beforeDestroy() {
@@ -100,14 +100,14 @@ export default {
     },
     scrollLock() {
       window.scrollTo(0, 0);
-      document.body.classList.add("sf-sliding-section--has-scroll-lock");
-      window.addEventListener("touchmove", this.touchPreventDefault, {
+      document.body.classList.add('sf-sliding-section--has-scroll-lock');
+      window.addEventListener('touchmove', this.touchPreventDefault, {
         passive: false,
       });
     },
     scrollUnlock() {
-      document.body.classList.remove("sf-sliding-section--has-scroll-lock");
-      window.removeEventListener("touchmove", this.touchPreventDefault, {
+      document.body.classList.remove('sf-sliding-section--has-scroll-lock');
+      window.removeEventListener('touchmove', this.touchPreventDefault, {
         passive: false,
       });
     },
@@ -116,8 +116,8 @@ export default {
       if (!this.hasStaticHeight && this.$refs.static.offsetHeight > 0) {
         this.hasStaticHeight = true;
         this.$refs.static.style.setProperty(
-          "height",
-          `${this.$refs.static.offsetHeight}px`
+          'height',
+          `${this.$refs.static.offsetHeight}px`,
         );
       }
       if (!this.isActive && isFinal && direction === 8) {
@@ -134,5 +134,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfSlidingSection.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfSlidingSection.scss';
 </style>

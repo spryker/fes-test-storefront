@@ -1,6 +1,6 @@
-import Home from "./Home";
+import Home from './Home';
 export default {
-  title: "Pages/Home",
+  title: 'Pages/Home',
   component: Home,
 };
 

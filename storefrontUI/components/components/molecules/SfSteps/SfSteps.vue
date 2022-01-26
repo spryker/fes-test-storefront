@@ -35,30 +35,30 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import SfStep from "./_internal/SfStep.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-Vue.component("SfStep", SfStep);
+import Vue from 'vue';
+import SfStep from './_internal/SfStep.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+Vue.component('SfStep', SfStep);
 export default {
-  name: "SfSteps",
+  name: 'SfSteps',
   components: {
     SfButton,
   },
   model: {
-    prop: "active",
-    event: "change",
+    prop: 'active',
+    event: 'change',
   },
   provide() {
     const stepsData = {};
-    Object.defineProperty(stepsData, "index", {
+    Object.defineProperty(stepsData, 'index', {
       enumerable: false,
       get: () => this.active,
     });
-    Object.defineProperty(stepsData, "name", {
+    Object.defineProperty(stepsData, 'name', {
       enumerable: false,
       get: () => this.steps[this.active],
     });
-    Object.defineProperty(stepsData, "updateSteps", {
+    Object.defineProperty(stepsData, 'updateSteps', {
       enumerable: false,
       value: this.updateSteps,
     });
@@ -102,8 +102,8 @@ export default {
     },
     progress() {
       return {
-        "--_steps-progress-width": `${100 / this.steps.length}%`,
-        "--_steps-progress-active-step": this.active + 1,
+        '--_steps-progress-width': `${100 / this.steps.length}%`,
+        '--_steps-progress-active-step': this.active + 1,
       };
     },
   },
@@ -120,12 +120,12 @@ export default {
          * @event 'change'
          * @type {Number}
          */
-        this.$emit("change", index);
+        this.$emit('change', index);
       }
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfSteps.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfSteps.scss';
 </style>

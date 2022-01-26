@@ -1,28 +1,28 @@
-import { SfAddToCart } from "@storefront-ui/vue";
+import { SfAddToCart } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Molecules/AddToCart",
+  title: 'Components/Molecules/AddToCart',
   component: SfAddToCart,
   decorators: [
     () => ({ template: '<div style="max-width: 21.25rem"><story /></div>' }),
   ],
   argTypes: {
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: false,
     },
     qty: {
-      control: "number",
+      control: 'number',
       defaultValue: 1,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    click: { action: "Added to cart clicked", table: { category: "Events" } },
-    input: { action: "Quantity changed", table: { category: "Events" } },
+    click: { action: 'Added to cart clicked', table: { category: 'Events' } },
+    input: { action: 'Quantity changed', table: { category: 'Events' } },
   },
 };
 

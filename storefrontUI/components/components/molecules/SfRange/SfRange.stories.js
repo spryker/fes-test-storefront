@@ -1,37 +1,37 @@
-import { SfRange } from "@storefront-ui/vue";
+import { SfRange } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/Range",
+  title: 'Components/Molecules/Range',
   component: SfRange,
   argTypes: {
     value: {
       control: {
-        type: "array",
+        type: 'array',
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: [0, 1],
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      description: "Disabled",
+      description: 'Disabled',
     },
     start: {
       control: {
-        type: "array",
+        type: 'array',
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: [0, 1],
     },
     range: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: {
         min: 0,
@@ -39,97 +39,97 @@ export default {
       },
     },
     step: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: 1,
     },
     connect: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: true,
     },
     direction: {
       control: {
-        type: "radio",
-        options: ["ltr", "rtl"],
+        type: 'radio',
+        options: ['ltr', 'rtl'],
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "ltr",
+      defaultValue: 'ltr',
     },
     orientation: {
       control: {
-        type: "radio",
-        options: ["horizontal", "vertical"],
+        type: 'radio',
+        options: ['horizontal', 'vertical'],
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "horizontal",
+      defaultValue: 'horizontal',
     },
     behaviour: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "drag",
-          "drag-fixed",
-          "tap",
-          "tap-drag",
-          "hover",
-          "unconstrained-tap",
-          "none",
+          'drag',
+          'drag-fixed',
+          'tap',
+          'tap-drag',
+          'hover',
+          'unconstrained-tap',
+          'none',
         ],
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
       description:
-        "For detailed description please see: https://refreshless.com/nouislider/behaviour-option/",
-      defaultValue: "tap-drag",
+        'For detailed description please see: https://refreshless.com/nouislider/behaviour-option/',
+      defaultValue: 'tap-drag',
     },
     tooltips: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: true,
     },
     keyboardSupport: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: true,
     },
     format: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       description:
-        "For details of tooltips number formatting please see: https://refreshless.com/nouislider/number-formatting/",
+        'For details of tooltips number formatting please see: https://refreshless.com/nouislider/number-formatting/',
       defaultValue: {
         to: function (value) {
-          return new Intl.NumberFormat("de-DE", {
-            style: "currency",
-            currency: "EUR",
+          return new Intl.NumberFormat('de-DE', {
+            style: 'currency',
+            currency: 'EUR',
           }).format(value);
         },
         from: function (value) {
-          const parsedValue = new Intl.NumberFormat("de-DE", {
-            style: "currency",
-            currency: "EUR",
+          const parsedValue = new Intl.NumberFormat('de-DE', {
+            style: 'currency',
+            currency: 'EUR',
           }).formatToParts(value);
           return parsedValue[0].value;
         },
       },
     },
-    change: { action: "New value", table: { category: "Events" } },
+    change: { action: 'New value', table: { category: 'Events' } },
   },
 };
 
@@ -179,21 +179,21 @@ OneSlider.args = {
   },
   step: 1,
   connect: true,
-  direction: "ltr",
-  orientation: "horizontal",
-  behaviour: "tap-drag",
+  direction: 'ltr',
+  orientation: 'horizontal',
+  behaviour: 'tap-drag',
   tooltips: true,
   format: {
     to: function (value) {
-      return new Intl.NumberFormat("de-DE", {
-        style: "currency",
-        currency: "EUR",
+      return new Intl.NumberFormat('de-DE', {
+        style: 'currency',
+        currency: 'EUR',
       }).format(value);
     },
     from: function (value) {
-      const parsedValue = new Intl.NumberFormat("de-DE", {
-        style: "currency",
-        currency: "EUR",
+      const parsedValue = new Intl.NumberFormat('de-DE', {
+        style: 'currency',
+        currency: 'EUR',
       }).formatToParts(value);
       return parsedValue[0].value;
     },

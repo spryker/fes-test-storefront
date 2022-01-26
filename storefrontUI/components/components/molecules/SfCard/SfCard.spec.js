@@ -1,9 +1,9 @@
-import { shallowMount } from "@vue/test-utils";
-import SfCard from "./SfCard.vue";
+import { shallowMount } from '@vue/test-utils';
+import SfCard from './SfCard.vue';
 
-describe("SfCard.vue", () => {
-  it("renders a component", () => {
+describe('SfCard.vue', () => {
+  it('renders a component', () => {
     const component = shallowMount(SfCard);
-    expect(component.classes("sf-card")).toBe(true);
+    expect(component.classes('sf-card')).toBe(true);
   });
 });

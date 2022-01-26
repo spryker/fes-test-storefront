@@ -58,12 +58,12 @@
   </li>
 </template>
 <script>
-import SfPrice from "../../../atoms/SfPrice/SfPrice.vue";
-import SfImage from "../../../atoms/SfImage/SfImage.vue";
-import SfQuantitySelector from "../../../atoms/SfQuantitySelector/SfQuantitySelector.vue";
-import SfLink from "../../../atoms/SfLink/SfLink.vue";
+import SfPrice from '../../../atoms/SfPrice/SfPrice.vue';
+import SfImage from '../../../atoms/SfImage/SfImage.vue';
+import SfQuantitySelector from '../../../atoms/SfQuantitySelector/SfQuantitySelector.vue';
+import SfLink from '../../../atoms/SfLink/SfLink.vue';
 export default {
-  name: "SfGroupedProductItem",
+  name: 'SfGroupedProductItem',
   components: {
     SfImage,
     SfPrice,
@@ -71,7 +71,7 @@ export default {
     SfLink,
   },
   model: {
-    prop: "qty",
+    prop: 'qty',
   },
   props: {
     /**
@@ -79,7 +79,7 @@ export default {
      */
     image: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Product image width, without unit
@@ -100,7 +100,7 @@ export default {
      */
     imagePlaceholder: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Product image picture breakpoint
@@ -114,21 +114,21 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Product regular price
      */
     priceRegular: {
       type: [Number, String],
-      default: "",
+      default: '',
     },
     /**
      * Product special price
      */
     priceSpecial: {
       type: [Number, String],
-      default: "",
+      default: '',
     },
     /** Product quantity */
     qty: {
@@ -140,7 +140,7 @@ export default {
      */
     link: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
   },
 };

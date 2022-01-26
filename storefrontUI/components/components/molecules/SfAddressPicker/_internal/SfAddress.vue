@@ -15,11 +15,11 @@
   </SfRadio>
 </template>
 <script>
-import SfRadio from "../../SfRadio/SfRadio.vue";
-import SfIcon from "../../../atoms/SfIcon/SfIcon.vue";
+import SfRadio from '../../SfRadio/SfRadio.vue';
+import SfIcon from '../../../atoms/SfIcon/SfIcon.vue';
 
 export default {
-  name: "SfAddressPicker",
+  name: 'SfAddressPicker',
   components: {
     SfRadio,
     SfIcon,
@@ -32,10 +32,10 @@ export default {
      */
     name: {
       type: String,
-      default: "",
+      default: '',
     },
   },
-  inject: ["getSelectedValue", "setSelectedValue"],
+  inject: ['getSelectedValue', 'setSelectedValue'],
   computed: {
     selected: {
       get() {

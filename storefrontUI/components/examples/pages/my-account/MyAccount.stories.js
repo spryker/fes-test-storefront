@@ -1,6 +1,6 @@
-import MyAccount from "./MyAccount";
+import MyAccount from './MyAccount';
 export default {
-  title: "Pages/MyAccount",
+  title: 'Pages/MyAccount',
   component: MyAccount,
 };
 

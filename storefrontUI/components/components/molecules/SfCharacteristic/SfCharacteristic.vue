@@ -27,9 +27,9 @@
   </div>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
 export default {
-  name: "SfCharacteristic",
+  name: 'SfCharacteristic',
   components: {
     SfIcon,
   },
@@ -37,31 +37,31 @@ export default {
     /** One of predefined SfIcon colors, default is black.  */
     colorIcon: {
       type: String,
-      default: "",
+      default: '',
     },
     /** One of predefined SfIcon sizes.  */
     sizeIcon: {
       type: String,
-      default: "",
+      default: '',
     },
     /** Svg file iconPath  */
     icon: {
       type: [String, Array],
-      default: "",
+      default: '',
     },
     /** Characteristic title  */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /** Characteristic description  */
     description: {
       type: String,
-      default: "",
+      default: '',
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfCharacteristic.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfCharacteristic.scss';
 </style>

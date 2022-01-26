@@ -1,13 +1,13 @@
-import { SfBreadcrumbs } from "@storefront-ui/vue";
+import { SfBreadcrumbs } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Breadcrumbs",
+  title: 'Components/Atoms/Breadcrumbs',
   component: SfBreadcrumbs,
   argTypes: {
     breadcrumbs: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -23,9 +23,9 @@ export const Common = Template.bind({});
 
 Common.args = {
   breadcrumbs: [
-    { text: "Home", link: "#" },
-    { text: "Category", link: "#" },
-    { text: "Pants", link: "#" },
+    { text: 'Home', link: '#' },
+    { text: 'Category', link: '#' },
+    { text: 'Pants', link: '#' },
   ],
 };
 

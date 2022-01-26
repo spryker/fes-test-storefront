@@ -39,9 +39,9 @@
   </div>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
 export default {
-  name: "SfRating",
+  name: 'SfRating',
   inject: {
     components: {
       default: { SfIcon },
@@ -64,7 +64,7 @@ export default {
     },
     icon: {
       type: String,
-      default: "star",
+      default: 'star',
     },
   },
   finalScore(score, max) {
@@ -86,5 +86,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfRating.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfRating.scss';
 </style>

@@ -61,9 +61,9 @@
   </SfTabs>
 </template>
 <script>
-import { SfTabs, SfTable, SfButton } from "@storefront-ui/vue";
+import { SfTabs, SfTable, SfButton } from '@storefront-ui/vue';
 export default {
-  name: "PersonalDetails",
+  name: 'PersonalDetails',
   components: {
     SfTabs,
     SfTable,
@@ -78,11 +78,11 @@ export default {
   data() {
     return {
       tableHeaders: [
-        "Order ID",
-        "Payment date",
-        "Payment method",
-        "Amount",
-        "Status",
+        'Order ID',
+        'Payment date',
+        'Payment method',
+        'Amount',
+        'Status',
       ],
     };
   },
@@ -94,7 +94,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
+@import '~@storefront-ui/vue/styles';
 .no-orders {
   &__title {
     margin: 0 0 var(--spacer-base) 0;
