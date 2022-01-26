@@ -24,6 +24,6 @@
     align-items: center;
   }
   @include for-desktop {
-    --top-bar-padding: 0;
+    --top-bar-padding: 10px;
   }
 }
