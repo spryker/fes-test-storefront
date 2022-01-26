@@ -462,8 +462,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
-
 .sf-header {
   position: relative;
   z-index: calc(var(--header-z-index) + 1);

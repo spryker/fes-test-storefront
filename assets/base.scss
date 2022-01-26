@@ -1,0 +1,20 @@
+.sf-rating {
+  &__icon {
+    --icon-color: #fdbe36;
+  }
+  &__icon--negative {
+    --icon-color: #d1d1d1;
+  }
+}
+
+footer {
+  --c-secondary: #e7eaee;
+
+  .sf-footer-column .sf-list__item {
+    --menu-item-label-color: #8f8f8f;
+  }
+
+  .sf-footer-column__title {
+    color: #4c4c4c;
+  }
+}

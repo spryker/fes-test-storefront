@@ -172,7 +172,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
 .title {
   --heading-title-margin: 0 0 var(--spacer-xl) 0;
   --heading-title-font-weight: var(--font-weight--bold);
