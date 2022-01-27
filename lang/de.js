@@ -22,7 +22,7 @@ export default {
   'Purchase terms': 'Kaufbedingungen',
   Guarantee: 'Garantie',
   Description: 'Beschreibung',
-  'Read reviews': 'Bewertungen lesen',
+  'Read reviews': 'Bewertungen ({count})',
   'Additional Information': 'Zusätzliche Information',
   'Save for later': 'Für später speichern',
   'Add to compare': 'Hinzufügen zum vergleichen',
