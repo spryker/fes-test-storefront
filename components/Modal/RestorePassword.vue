@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ValidationObserver v-slot="{ handleSubmit }" key="forgoteen-password">
+    <ValidationObserver v-slot="{ handleSubmit }" key="forgotten-password">
       <form
         data-cy="svsf-restorePasswordPopUp-form"
         class="form"
