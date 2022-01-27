@@ -275,8 +275,8 @@ export default {
 
 <style lang="scss" scoped>
 .modal {
-  --modal-index: 3;
-  --overlay-z-index: 3;
+  --modal-index: 4;
+  --overlay-z-index: 4;
 }
 .form {
   margin-top: var(--spacer-sm);
