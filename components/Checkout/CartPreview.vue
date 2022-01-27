@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="cart-preview">
     <div class="highlighted">
       <SfHeading
         data-cy="svsf-cartPreview-heading"
-        :level="3"
+        :level="5"
         title="Order summary"
-        class="sf-heading--left sf-heading--no-underline title"
+        class="sf-heading--left sf-heading--no-underline cart-preview__title"
       />
     </div>
     <div class="highlighted">
@@ -13,7 +13,7 @@
         data-cy="svsf-cartPreview-totalItems-property"
         :name="$t('Products')"
         :value="totalItems"
-        class="sf-property--full-width sf-property--large property"
+        class="sf-property--full-width property"
       />
       <SfProperty
         data-cy="svsf-cartPreview-subtotal-property"
@@ -21,7 +21,7 @@
         :value="`${cartGetters.getFormattedPrice(totals.subtotal)}`"
         :class="[
           'sf-property--full-width',
-          'sf-property--large',
+          'property',
           { discounted: totals.special > 0 },
         ]"
       />
@@ -30,14 +30,14 @@
         :name="$t('Shipping')"
         v-if="shippingPrice"
         :value="`${cartGetters.getFormattedPrice(shippingPrice)}`"
-        class="sf-property--full-width sf-property--large"
+        class="sf-property--full-width property"
       />
       <SfProperty
         data-cy="svsf-cartPreview-tax-property"
         :name="$t('Tax')"
         v-if="taxes"
         :value="`${cartGetters.getFormattedPrice(taxes)}`"
-        class="sf-property--full-width sf-property--large"
+        class="sf-property--full-width"
       />
       <template v-if="vouchers.length">
         <SfProperty
@@ -68,7 +68,7 @@
           v-for="discount in discounts"
           :key="discount.id"
           :value="`- ${cartGetters.getFormattedPrice(discount.value)}`"
-          class="sf-property--full-width sf-property--small property"
+          class="sf-property--full-width sf-property--small property cart-preview__discount"
         >
           <template #name>
             <span class="sf-property__name">
@@ -111,7 +111,7 @@
         :value="`${cartGetters.getFormattedPrice(
           totals.total + shippingPrice + taxes,
         )}`"
-        class="sf-property--full-width sf-property--large property-total"
+        class="sf-property--full-width sf-property--large cart-preview__total-price"
       />
       <VoucherCardForm />
     </div>
@@ -223,63 +223,104 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.highlighted {
-  box-sizing: border-box;
-  width: 100%;
-  background-color: var(--c-light);
-  padding: var(--spacer-xl) var(--spacer-xl) 0;
-  &:last-child {
-    padding-bottom: var(--spacer-xl);
-  }
-}
-.total-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--spacer-xl);
-}
-.property {
-  margin-bottom: var(--spacer-base);
-}
-.property-total {
-  margin-top: var(--spacer-xl);
-  padding-top: var(--spacer-lg);
-  font-size: var(--font-size-xl);
-  border-top: var(--c-white) 1px solid;
-  --property-name-font-weight: var(--font-weight--semibold);
-  --property-name-color: var(--c-text);
-}
+.cart-preview {
+  border: 1px solid #DCE0E5;
+  border-radius: 2px;
 
-.characteristic {
-  &:not(:last-child) {
-    margin-bottom: var(--spacer-lg);
+  .sf-heading__title {
+    font-weight: var(--font-weight--medium);
+  }
+
+
+  .highlighted {
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--spacer-lg) var(--spacer-lg) 0;
+
+    &:last-child {
+      padding-bottom: var(--spacer-lg);
+    }
+  }
+
+  .total-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacer-xl);
+  }
+
+  .property {
+    margin-bottom: var(--spacer-sm);
+  }
+
+
+  .characteristic {
+    &:not(:last-child) {
+      margin-bottom: var(--spacer-lg);
+    }
+  }
+
+  .promo-code {
+    display: flex;
+    align-items: flex-start;
+
+    &__button {
+      --button-width: 6.3125rem;
+      --button-height: var(--spacer-lg);
+    }
+
+    &__input {
+      --input-background: var(--c-white);
+      flex: 1;
+    }
+  }
+
+  .discounted {
+    &::v-deep .sf-property__value {
+      color: var(--c-danger);
+      text-decoration: line-through;
+    }
+  }
+
+  .special-price {
+    justify-content: flex-end;
+
+    &::v-deep .sf-property__name {
+      display: none;
+    }
   }
 }
-.promo-code {
-  display: flex;
-  align-items: flex-start;
-  &__button {
-    --button-width: 6.3125rem;
-    --button-height: var(--spacer-lg);
-  }
-  &__input {
-    --input-background: var(--c-white);
-    flex: 1;
-  }
-}
+</style>
 
-.discounted {
-  &::v-deep .sf-property__value {
-    color: var(--c-danger);
-    text-decoration: line-through;
+<style lang="scss">
+.cart-preview {
+  &__discount {
+    .sf-property {
+      &__value {
+        --property-value-color: var(--c-secondary);
+        white-space: nowrap;
+      }
+    }
   }
-}
-
-.special-price {
-  justify-content: flex-end;
-
-  &::v-deep .sf-property__name {
-    display: none;
+  &__total-price {
+    .sf-property {
+      &__name {
+        --property-name-font-weight: var(--font-weight--bold);
+        --property-name-color: var(--c-text);
+      }
+      &__value {
+        --property-value-font-weight: var(--font-weight--bold);
+        --property-value-color: var(--c-text);
+      }
+    }
+  }
+  .sf-property {
+    --property-name-color: #8F8F8F;
+    --property-value-color: #8F8F8F;
+    --property-value-font-weight: var(--font-weight--normal);
+    &__name, &__value {
+      font-size: 15px;
+    }
   }
 }
 </style>

@@ -20,7 +20,16 @@
           data-testid="steps-button"
           @click="stepClick(step)"
         >
-          <span class="sf-steps__title">{{ step.step }}</span>
+          <span class="sf-steps__title">
+            {{ step.step }}
+          </span>
+          <SfIcon
+            v-if="step.done"
+            :icon="circleCheckIcon.path"
+            size="16px"
+            color="var(--c-primary)"
+            :view-box="circleCheckIcon.viewBox"
+          />
         </SfButton>
       </slot>
       <div
@@ -38,10 +47,14 @@
 import Vue from 'vue';
 import SfStep from './_internal/SfStep.vue';
 import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue'
+import { circleCheckIcon } from '~/assets/icons';
+
 Vue.component('SfStep', SfStep);
 export default {
   name: 'SfSteps',
   components: {
+    SfIcon,
     SfButton,
   },
   model: {
@@ -85,6 +98,7 @@ export default {
   data() {
     return {
       steps: [],
+      circleCheckIcon
     };
   },
   computed: {
