@@ -10,6 +10,7 @@
       .form {
         .sf-select {
           height: 54px;
+          margin-bottom: 35px;
           padding: 0;
 
           select.sf-select__dropdown {
@@ -46,6 +47,8 @@
         }
 
         &__element {
+          margin-bottom: 20px;
+
           .sf-input,
           .sf-select {
             &__wrapper,
@@ -54,6 +57,7 @@
               border-radius: 2px;
 
               padding: 5px 5px 0 5px;
+              margin-bottom: 0;
               width: 335px;
 
               input {
