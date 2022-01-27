@@ -213,6 +213,10 @@ function createNuxtHandler(nuxtConfig) {
     console.log('invoke event', event);
     console.log('invoke ctx', ctx);
 
+    if (event.path == '__query_ebPreview') {
+      event.path = '';
+    }
+
     if (!server) {
       await nuxt?.ready();
       server = serverless(nuxt.server.app);
