@@ -209,6 +209,9 @@ function createNuxtHandler(nuxtConfig) {
 
   let server = null;
   return async (event, ctx, callback) => {
+
+    console.log('invoke', event.path, event.queryStringParameters);
+
     if (!server) {
       await nuxt?.ready();
       server = serverless(nuxt.server.app);
