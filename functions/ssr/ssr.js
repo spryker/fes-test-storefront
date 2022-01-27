@@ -208,16 +208,17 @@ function createNuxtHandler(nuxtConfig) {
   });
 
   let server = null;
-  return async (event, ctx, callback) => {
+  return async (event, ctx) => {
 
-    console.log('invoke', event.path, event.queryStringParameters);
+    console.log('invoke event', event);
+    console.log('invoke ctx', ctx);
 
     if (!server) {
       await nuxt?.ready();
       server = serverless(nuxt.server.app);
     }
 
-    const result = await server(event, ctx, callback);
+    const result = await server(event, ctx);
     // const cacheValue = event.queryStringParameters.ebPreview
     //   ? 'no-cache'
     //   : 'public, max-age=31536000';
