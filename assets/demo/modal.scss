@@ -1,96 +1,93 @@
 .modal {
   &__demo-styles {
-    .sf-modal {
-      &__container {
-        width: fit-content;
-      }
+    .sf-modal__container {
+      width: fit-content;
+    }
 
-      &__content {
-        padding: 0;
+    .sf-modal__content {
+      padding: 0;
 
-        .form {
-          &__login {
-            .form__element {
-              & .sf-input,
-              & .sf-select {
-                &__wrapper,
-                &__dropdown {
-                  width: 345px;
-                }
-              }
+      .form {
+        .sf-select {
+          height: 54px;
+          padding: 0;
+
+          &:not(.is-selected) label {
+            font-size: var(--font-size--lg);
+          }
+
+          select.sf-select__dropdown {
+            height: 54px;
+            width: 100%;
+          }
+        }
+
+        &__login {
+          .form__element {
+            .sf-input__wrapper,
+            .sf-select__dropdown {
+              width: 345px;
+            }
+          }
+        }
+
+        &__registration {
+          .form__element {
+            .sf-input__wrapper,
+            .sf-select__dropdown {
+              width: 530px;
             }
           }
 
-          &__registration {
+          .name-inputs {
             .form__element {
-              & .sf-input,
-              & .sf-select {
-                &__wrapper,
-                &__dropdown {
-                  width: 530px;
-                }
-              }
-            }
-
-            .name-inputs {
-              .form__element {
-                & .sf-input,
-                & .sf-select {
-                  &__wrapper,
-                  &__dropdown {
-                    width: 255px;
-                  }
-                }
+              .sf-input__wrapper,
+              .sf-select__dropdown {
+                width: 255px;
               }
             }
           }
+        }
 
-          &__element {
-            &.sf-select {
+        &__element {
+          .sf-input,
+          .sf-select {
+            &__wrapper,
+            &__dropdown {
               border: 1px solid #dce0e5;
               border-radius: 2px;
               padding: 5px 5px 0 5px;
+
+              width: 335px;
+
+              input {
+                border: none;
+                outline: none;
+              }
             }
 
-            & .sf-input,
-            & .sf-select {
-              &__wrapper,
-              &__dropdown {
-                border: 1px solid #dce0e5;
-                border-radius: 2px;
-                padding: 5px 5px 0 5px;
+            &__label {
+              text-transform: uppercase;
 
-                width: 335px;
-
-                input {
-                  border: none;
-                  outline: none;
-                }
-              }
-
-              &__label {
-                text-transform: uppercase;
-
-                &::after {
-                  color: var(--button-background, var(--c-primary));
-                }
+              &::after {
+                color: var(--button-background, var(--c-primary));
               }
             }
           }
-
-          &__button {
-            text-transform: none;
-          }
         }
 
-        .bottom {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          margin: 0;
-          padding: 20px;
+        &__button {
+          text-transform: none;
         }
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        padding: 20px;
       }
     }
 

@@ -20,6 +20,10 @@
   }
 }
 
+.sf-select {
+  --c-secondary-variant: var(--c-link);
+}
+
 footer {
   --c-secondary: #e7eaee;
 

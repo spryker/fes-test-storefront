@@ -233,7 +233,7 @@ export default {
 @import '~/assets/modal';
 
 .form {
-  margin: 0 20px 20px 20px;
+  margin: 20px;
 
   .name-inputs {
     display: flex;
