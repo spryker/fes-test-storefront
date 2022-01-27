@@ -52,7 +52,7 @@
             &__dropdown {
               border: 1px solid #dce0e5;
               border-radius: 2px;
-              
+
               padding: 5px 5px 0 5px;
               width: 335px;
 
@@ -70,6 +70,7 @@
               transform: none;
               text-transform: uppercase;
               font-size: var(--font-size--xs);
+              color: var(--c-link);
 
               &::after {
                 color: var(--button-background, var(--c-primary));
