@@ -224,13 +224,12 @@ export default {
 
 <style lang="scss" scoped>
 .cart-preview {
-  border: 1px solid #DCE0E5;
+  border: 1px solid #dce0e5;
   border-radius: 2px;
 
   .sf-heading__title {
     font-weight: var(--font-weight--medium);
   }
-
 
   .highlighted {
     box-sizing: border-box;
@@ -252,7 +251,6 @@ export default {
   .property {
     margin-bottom: var(--spacer-sm);
   }
-
 
   .characteristic {
     &:not(:last-child) {
@@ -315,10 +313,11 @@ export default {
     }
   }
   .sf-property {
-    --property-name-color: #8F8F8F;
-    --property-value-color: #8F8F8F;
+    --property-name-color: #8f8f8f;
+    --property-value-color: #8f8f8f;
     --property-value-font-weight: var(--font-weight--normal);
-    &__name, &__value {
+    &__name,
+    &__value {
       font-size: 15px;
     }
   }

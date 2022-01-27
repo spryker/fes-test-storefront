@@ -8,17 +8,22 @@
     thumbWidth="70"
     thumbHeight="70"
   >
-    <template #thumbs="{images, active, go}">
+    <template #thumbs="{ images, active, go }">
       <SfButton class="sf-button--pure" @click="scrollUp" v-if="showScroll">
-        <SfIcon :icon="arrowIcon.path" :viewBox="arrowIcon.viewBox" :class="arrowIcon.class" class="up"/>
+        <SfIcon
+          :icon="arrowIcon.path"
+          :viewBox="arrowIcon.viewBox"
+          :class="arrowIcon.class"
+          class="up"
+        />
       </SfButton>
       <div class="sf-gallery__thumbs--scroll" ref="scrollContainer">
         <SfButton
-        v-for="(image, index) in images"
-        :key="'img-' + index"
-        class="sf-button--pure sf-gallery__item"
-        :class="{ 'sf-gallery__item--selected': index === active }"
-        @click="go(index)"
+          v-for="(image, index) in images"
+          :key="'img-' + index"
+          class="sf-button--pure sf-gallery__item"
+          :class="{ 'sf-gallery__item--selected': index === active }"
+          @click="go(index)"
         >
           <SfImage
             class="sf-gallery__thumb"
@@ -28,19 +33,18 @@
         </SfButton>
       </div>
       <SfButton class="sf-button--pure" @click="scrollDown" v-if="showScroll">
-        <SfIcon :icon="arrowIcon.path" :viewBox="arrowIcon.viewBox" :class="arrowIcon.class"/>
+        <SfIcon
+          :icon="arrowIcon.path"
+          :viewBox="arrowIcon.viewBox"
+          :class="arrowIcon.class"
+        />
       </SfButton>
     </template>
   </SfGallery>
 </template>
 
 <script>
-import {
-  SfGallery,
-  SfButton,
-  SfImage,
-  SfIcon
-} from '@storefront-ui/vue';
+import { SfGallery, SfButton, SfImage, SfIcon } from '@storefront-ui/vue';
 import { computed, ref } from '@vue/composition-api';
 import { arrowIcon } from '~/assets/icons';
 
@@ -50,33 +54,35 @@ export default {
   props: {
     images: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   setup(props, context) {
     const scrollContainer = ref(null);
     const showScroll = computed(() => props.images.length > 5);
     const scrollUp = () => {
-      scrollContainer.value.scrollTop -= 90 + scrollContainer.value.scrollTop % 90;
+      scrollContainer.value.scrollTop -=
+        90 + (scrollContainer.value.scrollTop % 90);
     };
 
     const scrollDown = () => {
-      scrollContainer.value.scrollTop += 90 - scrollContainer.value.scrollTop % 90;
+      scrollContainer.value.scrollTop +=
+        90 - (scrollContainer.value.scrollTop % 90);
     };
     return {
       showScroll,
       scrollUp,
       scrollDown,
       scrollContainer,
-      arrowIcon
+      arrowIcon,
     };
   },
   components: {
     SfGallery,
     SfButton,
     SfImage,
-    SfIcon
-  }
+    SfIcon,
+  },
 };
 </script>
 
@@ -115,7 +121,7 @@ export default {
       .arrow-icon {
         --icon-width: 12px;
         --icon-height: 7px;
-        --icon-color: #B2B2B2;
+        --icon-color: #b2b2b2;
 
         &.up {
           transform: scaleY(-1);
@@ -141,7 +147,8 @@ export default {
   &--selected {
     --button-background: var(--c-white);
     &:before {
-      --button-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.04), 0px 18px 18px rgba(0, 0, 0, 0.0474128);
+      --button-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.04),
+        0px 18px 18px rgba(0, 0, 0, 0.0474128);
       --button-box-shadow-opacity: 1;
     }
   }

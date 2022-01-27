@@ -47,7 +47,7 @@
 import Vue from 'vue';
 import SfStep from './_internal/SfStep.vue';
 import SfButton from '../../atoms/SfButton/SfButton.vue';
-import SfIcon from '../../atoms/SfIcon/SfIcon.vue'
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
 import { circleCheckIcon } from '~/assets/icons';
 
 Vue.component('SfStep', SfStep);
@@ -98,7 +98,7 @@ export default {
   data() {
     return {
       steps: [],
-      circleCheckIcon
+      circleCheckIcon,
     };
   },
   computed: {

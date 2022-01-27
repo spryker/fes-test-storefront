@@ -247,7 +247,10 @@
       ></SfHeaderNavigationItem>
     </SfHeaderNavigation>
 
-    <SfOverlay class="header__overlay" :visible="currentMenu !== ''"></SfOverlay>
+    <SfOverlay
+      class="header__overlay"
+      :visible="currentMenu !== ''"
+    ></SfOverlay>
 
     <!-- TODO: delete when SfHeaderNavigation mobile menu will be fixed -->
     <SfMegaMenu
