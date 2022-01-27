@@ -337,7 +337,6 @@ export default {
   &__main {
     @include for-desktop {
       flex: 1;
-      padding: var(--spacer-xl) 0 0 0;
     }
   }
   &__aside {
