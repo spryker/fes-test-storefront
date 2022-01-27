@@ -12,10 +12,6 @@
           height: 54px;
           padding: 0;
 
-          &:not(.is-selected) label {
-            font-size: var(--font-size--lg);
-          }
-
           select.sf-select__dropdown {
             height: 54px;
             width: 100%;
@@ -56,8 +52,8 @@
             &__dropdown {
               border: 1px solid #dce0e5;
               border-radius: 2px;
+              
               padding: 5px 5px 0 5px;
-
               width: 335px;
 
               input {
@@ -67,7 +63,13 @@
             }
 
             &__label {
+              position: absolute;
+              top: -20px;
+              bottom: 0;
+
+              transform: none;
               text-transform: uppercase;
+              font-size: var(--font-size--xs);
 
               &::after {
                 color: var(--button-background, var(--c-primary));
