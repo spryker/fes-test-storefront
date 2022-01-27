@@ -89,18 +89,22 @@ export default {
   flex: 1;
   ::v-deep {
     .sf-gallery__thumbs {
+      --padding: 0 30px;
       --gallery-thumbs-margin: 0 0 0 -30px;
-      padding: 0 30px;
+      padding: var(--padding);
+
       &--scroll {
+        padding: var(--padding);
         gap: 20px;
         display: flex;
-        margin: 20px 0;
+        margin: 20px 0 0 -30px;
         flex-direction: var(--gallery-thumbs-flex-direction);
         overflow: auto;
         scrollbar-width: none;
 
         @include for-desktop {
           height: 450px;
+          width: var(--gallery-thumb-width);
         }
 
         &::-webkit-scrollbar {
@@ -136,7 +140,10 @@ export default {
 
   &--selected {
     --button-background: var(--c-white);
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.04), 0px 18px 18px rgba(0, 0, 0, 0.0474128);
+    &:before {
+      --button-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.04), 0px 18px 18px rgba(0, 0, 0, 0.0474128);
+      --button-box-shadow-opacity: 1;
+    }
   }
 }
 

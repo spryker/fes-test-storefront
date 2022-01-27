@@ -782,6 +782,17 @@ export default {
   background-color: var(--product-light-gray);
   padding: 14px 0;
   margin: 0;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: calc((100vw - 100%) / -2);
+    right: calc((100vw - 100%) / -2);
+    top: 0;
+    bottom: 0;
+    background-color: var(--product-light-gray);
+    z-index: -1;
+  }
 }
 
 .page-center {
@@ -824,11 +835,6 @@ export default {
 </style>
 
 <style lang="scss">
-#layout {
-  margin: 0;
-  max-width: none;
-}
-
 .product__info--options {
   .sf-button--text {
     --button-text-decoration: none;
