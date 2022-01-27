@@ -520,6 +520,7 @@ export default {
 }
 
 .sf-header-navigation {
+  --header-navigation-sidebar-display: none;
   z-index: var(--header-z-index);
   position: relative;
   background-color: var(--c-white);
@@ -545,6 +546,10 @@ export default {
 
     &:hover {
       --c-primary: var(--c-black);
+    }
+
+    ::v-deep > div {
+      transition: all 0.5s;
     }
   }
 
@@ -579,6 +584,7 @@ export default {
     --list-item-color: #4c4c4c;
     --link-color: var(--list-item-color);
     --link-text-decoration: none;
+    transition: all 0.5s;
     &:hover,
     &.selected,
     a:hover {

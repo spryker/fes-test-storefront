@@ -18,3 +18,9 @@ footer {
     color: #4c4c4c;
   }
 }
+
+.sf-header__icons {
+  .sf-badge--number {
+    --badge-background: var(--_c-green-primary);
+  }
+}
