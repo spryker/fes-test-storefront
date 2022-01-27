@@ -247,7 +247,7 @@
       ></SfHeaderNavigationItem>
     </SfHeaderNavigation>
 
-    <SfOverlay :visible="currentMenu !== ''"></SfOverlay>
+    <SfOverlay class="header__overlay" :visible="currentMenu !== ''"></SfOverlay>
 
     <!-- TODO: delete when SfHeaderNavigation mobile menu will be fixed -->
     <SfMegaMenu
@@ -688,5 +688,11 @@ export default {
   .nuxt-link-active {
     font-weight: bold;
   }
+}
+</style>
+
+<style>
+.header__overlay {
+  --overlay-z-index: 1;
 }
 </style>
