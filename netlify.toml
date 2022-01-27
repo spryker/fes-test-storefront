@@ -22,12 +22,5 @@ NODE_VERSION = "14"
 
 [[redirects]]
   from = "/*"
-  query = {ebPreview = ":ebPreview"}
-  to = "/__query_ebPreview"
-  force = true
-  status = 301
-
-[[redirects]]
-  from = "/*"
   to = "/.netlify/builders/ssr"
   status = 200
