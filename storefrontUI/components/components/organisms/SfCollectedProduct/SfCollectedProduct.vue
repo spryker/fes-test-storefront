@@ -25,15 +25,20 @@
             <SfProperty name="Size" value="XS" />
             <SfProperty name="Color" value="white" />
           </slot>
+          <SfQuantitySelector
+            :qty="qty"
+            class="sf-collected-product__quantity-selector"
+            @input="$emit('input', $event)"
+          />
         </div>
       </div>
-      <div class="sf-collected-product__actions">
-        <slot name="actions">
-          <SfButton class="sf-button--text desktop-only"
-            >Save for later</SfButton
-          >
-        </slot>
-      </div>
+      <slot name="actions">
+        <div class="sf-collected-product__actions">
+          <SfButton class="sf-button--text desktop-only">
+            Save for later
+          </SfButton>
+        </div>
+      </slot>
     </div>
     <div class="sf-collected-product__aside">
       <slot name="image" v-bind="{ image, title }">
@@ -44,15 +49,6 @@
           :height="imageHeight"
           class="sf-collected-product__image"
         />
-      </slot>
-      <slot name="input">
-        <div class="sf-collected-product__quantity-wrapper">
-          <SfQuantitySelector
-            :qty="qty"
-            class="sf-collected-product__quantity-selector"
-            @input="$emit('input', $event)"
-          />
-        </div>
       </slot>
     </div>
     <slot name="remove" v-bind="{ removeHandler }">
