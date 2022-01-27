@@ -7,7 +7,7 @@
       class="sf-sidebar--right"
       @close="toggleCartSidebar"
     >
-      <template v-slot:circle-icon="{close, button}">
+      <template v-slot:circle-icon="{ close, button }">
         <SfCircleIcon
           v-if="button"
           icon-size="16px"
@@ -35,7 +35,7 @@
             data-cy="svsf-cartSidebar-totalItems-property"
             class="cart-summary"
           >
-            {{totalItems}} {{ $t('items') }}
+            {{ totalItems }} {{ $t('items') }}
           </span>
           <SfButton
             data-cy="svsf-cartSidebar-clearCart-button"
@@ -188,7 +188,7 @@ import {
 import { useUiState } from '~/composables';
 import { onSSR } from '@vue-storefront/core';
 import Fragment from '~/components/Fragment';
-import { deleteIcon } from '~/assets/icons'
+import { deleteIcon } from '~/assets/icons';
 
 export default {
   name: 'Cart',
@@ -348,7 +348,7 @@ export default {
 }
 
 .collected-product {
-  border: 1px solid #DCE0E5;
+  border: 1px solid #dce0e5;
   border-radius: 2px;
   margin: 0 0 var(--spacer-sm) 0;
   --image-height: auto;
@@ -369,9 +369,10 @@ export default {
     }
     .sf-property {
       --property-name-color: #333333;
-      --property-value-color: #8F8F8F;
+      --property-value-color: #8f8f8f;
       margin: 0 0 var(--spacer-sm) 0;
-      &__name, &__value {
+      &__name,
+      &__value {
         font-size: 15px;
         font-weight: normal;
       }
@@ -428,10 +429,10 @@ export default {
     --button-padding: 0;
     --button-font-weight: var(--font-weight--normal);
     --button-text-transform: none;
-    color: #8F8F8F;
+    color: #8f8f8f;
     font-size: 15px;
     &:hover {
-      color: var(--c-primary)
+      color: var(--c-primary);
     }
   }
 }
