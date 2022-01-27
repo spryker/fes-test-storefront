@@ -1,6 +1,7 @@
 const serverless = require('serverless-http');
 const webpack = require('webpack');
 const { Nuxt } = require('nuxt-start');
+const { builder } = require("@netlify/functions")
 
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
@@ -228,4 +229,4 @@ function createNuxtHandler(nuxtConfig) {
   };
 }
 
-exports.handler = createNuxtHandler(config);
+exports.handler = builder(createNuxtHandler(config));
