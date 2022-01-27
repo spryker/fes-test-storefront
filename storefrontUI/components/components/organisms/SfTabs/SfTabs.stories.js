@@ -1,37 +1,37 @@
-import { SfTabs, SfButton } from "@storefront-ui/vue";
+import { SfTabs, SfButton } from '@storefront-ui/vue';
 export default {
-  title: "Components/Organisms/Tabs",
+  title: 'Components/Organisms/Tabs',
   component: SfTabs,
   argTypes: {
     tabMaxContentHeight: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     tabShowText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     tabHideText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     openTab: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    "click:tab": {
-      action: "Tab clicked",
-      table: { category: "Events" },
+    'click:tab': {
+      action: 'Tab clicked',
+      table: { category: 'Events' },
       description:
-        "This event can be used on SfTabs when there is a need to change tabs in other way than clicking on a particular SfTab. For example by clicking on a button - this example can be found below in a story called `Change Tabs With Buttons`",
+        'This event can be used on SfTabs when there is a need to change tabs in other way than clicking on a particular SfTab. For example by clicking on a button - this example can be found below in a story called `Change Tabs With Buttons`',
     },
   },
 };
@@ -43,17 +43,17 @@ const Template = (args, { argTypes }) => ({
     return {
       tabs: [
         {
-          title: "Description",
+          title: 'Description',
           content:
             "The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses. The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses. The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses. The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses. The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses.",
         },
         {
-          title: "Read reviews",
+          title: 'Read reviews',
           content:
             "The Larissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses.",
         },
         {
-          title: "Additional Information",
+          title: 'Additional Information',
           content:
             "The Marissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses.",
         },
@@ -81,7 +81,7 @@ const Template = (args, { argTypes }) => ({
 export const Common = Template.bind({});
 Common.args = {
   openTab: 1,
-  tabMaxContentHeight: "6.25rem",
+  tabMaxContentHeight: '6.25rem',
 };
 
 export const changeTabsWithButtons = (args, { argTypes }) => ({
@@ -92,17 +92,17 @@ export const changeTabsWithButtons = (args, { argTypes }) => ({
       open: 1,
       tabs: [
         {
-          title: "Description",
+          title: 'Description',
           content:
             "The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses. The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses. The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses. The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses. The Karissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses.",
         },
         {
-          title: "Read reviews",
+          title: 'Read reviews',
           content:
             "The Larissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses.",
         },
         {
-          title: "Additional Information",
+          title: 'Additional Information',
           content:
             "The Marissa V-Neck Tee features a semi-fitted shape that's flattering for every figure. You can hit the gym with confidence while it hugs curves and hides common 'problem' areas. Find stunning women's cocktail dresses and party dresses.",
         },

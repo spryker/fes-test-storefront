@@ -1,58 +1,58 @@
-import { SfSearchBar } from "@storefront-ui/vue";
+import { SfSearchBar } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/SearchBar",
+  title: 'Components/Molecules/SearchBar',
   component: SfSearchBar,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-search-bar--position-center",
-          "sf-search-bar--no-icon",
+          '',
+          'sf-search-bar--position-center',
+          'sf-search-bar--no-icon',
         ],
       },
     },
     placeholder: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
-      description: "Text for placeholder",
+      description: 'Text for placeholder',
     },
     value: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: null,
         },
       },
-      description: "Value that will be displayed in search bar",
+      description: 'Value that will be displayed in search bar',
     },
     iconSize: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      name: "icon.size",
-      description: "Define size of the search icon",
+      name: 'icon.size',
+      description: 'Define size of the search icon',
     },
     iconColor: {
-      control: "color",
+      control: 'color',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      name: "icon.color",
-      description: "Define color of the search icon",
+      name: 'icon.color',
+      description: 'Define color of the search icon',
     },
-    input: { action: "Input changed", table: { category: "Events" } },
-    blur: { action: "Not focus anymore", table: { category: "Events" } },
-    focus: { action: "Focus", table: { category: "Events" } },
-    click: { action: "Button click", table: { category: "Events" } },
+    input: { action: 'Input changed', table: { category: 'Events' } },
+    blur: { action: 'Not focus anymore', table: { category: 'Events' } },
+    focus: { action: 'Focus', table: { category: 'Events' } },
+    click: { action: 'Button click', table: { category: 'Events' } },
   },
 };
 
@@ -89,32 +89,32 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  placeholder: "Search for items",
+  placeholder: 'Search for items',
 };
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   ...Common.args,
-  iconColor: "#43464E",
-  iconSize: "1.25rem",
+  iconColor: '#43464E',
+  iconSize: '1.25rem',
 };
 
 export const WithValue = Template.bind({});
 WithValue.args = {
   ...Common.args,
-  value: "hello",
+  value: 'hello',
 };
 
 export const HideIconCSS = Template.bind({});
 HideIconCSS.args = {
   ...WithIcon.args,
-  classes: "sf-search-bar--no-icon",
+  classes: 'sf-search-bar--no-icon',
 };
 
 export const Centered = Template.bind({});
 Centered.args = {
   ...WithIcon.args,
-  classes: "sf-search-bar--position-center",
+  classes: 'sf-search-bar--position-center',
 };
 
 export const UseIconSlot = (args, { argTypes }) => ({

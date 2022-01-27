@@ -18,9 +18,9 @@
   </section>
 </template>
 <script>
-import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
+import SfHeading from '../../atoms/SfHeading/SfHeading.vue';
 export default {
-  name: "SfSection",
+  name: 'SfSection',
   components: {
     SfHeading,
   },
@@ -30,14 +30,14 @@ export default {
      */
     titleHeading: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Heading subtitle
      */
     subtitleHeading: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Heading tag level
@@ -50,5 +50,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfSection.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfSection.scss';
 </style>

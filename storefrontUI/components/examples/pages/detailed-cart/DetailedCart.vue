@@ -98,10 +98,10 @@ import {
   SfProperty,
   SfHeading,
   SfBreadcrumbs,
-} from "@storefront-ui/vue";
-import { OrderSummary } from "./_internal/index.js";
+} from '@storefront-ui/vue';
+import { OrderSummary } from './_internal/index.js';
 export default {
-  name: "DetailedCart",
+  name: 'DetailedCart',
   components: {
     SfCollectedProduct,
     SfBreadcrumbs,
@@ -115,98 +115,98 @@ export default {
     return {
       breadcrumbs: [
         {
-          text: "Home",
+          text: 'Home',
           route: {
-            link: "#",
+            link: '#',
           },
         },
         {
-          text: "Cart",
+          text: 'Cart',
           route: {
-            link: "#",
+            link: '#',
           },
         },
       ],
       products: [
         {
-          title: "Cream Beach Bag Modern Style",
-          id: "CBB1",
-          image: "assets/storybook/Home/productA.jpg",
-          price: { regular: "50.00" },
+          title: 'Cream Beach Bag Modern Style',
+          id: 'CBB1',
+          image: 'assets/storybook/Home/productA.jpg',
+          price: { regular: '50.00' },
           configuration: [
-            { name: "Size", value: "XS" },
-            { name: "Color", value: "White" },
+            { name: 'Size', value: 'XS' },
+            { name: 'Color', value: 'White' },
           ],
-          qty: "1",
+          qty: '1',
         },
         {
-          title: "Cream Beach Bag Modern Style",
-          id: "CBB2",
-          image: "assets/storybook/Home/productB.jpg",
-          price: { regular: "50.00" },
+          title: 'Cream Beach Bag Modern Style',
+          id: 'CBB2',
+          image: 'assets/storybook/Home/productB.jpg',
+          price: { regular: '50.00' },
           configuration: [
-            { name: "Size", value: "XS" },
-            { name: "Color", value: "White" },
+            { name: 'Size', value: 'XS' },
+            { name: 'Color', value: 'White' },
           ],
-          qty: "2",
+          qty: '2',
         },
         {
-          title: "Cream Beach Bag Modern Style",
-          id: "CBB3",
-          image: "assets/storybook/Home/productC.jpg",
-          price: { regular: "50.00" },
+          title: 'Cream Beach Bag Modern Style',
+          id: 'CBB3',
+          image: 'assets/storybook/Home/productC.jpg',
+          price: { regular: '50.00' },
           configuration: [
-            { name: "Size", value: "XS" },
-            { name: "Color", value: "White" },
+            { name: 'Size', value: 'XS' },
+            { name: 'Color', value: 'White' },
           ],
-          qty: "1",
+          qty: '1',
         },
       ],
       shippingMethods: [
         {
           isOpen: false,
-          price: "Free",
-          delivery: "Delivery from 3 to 7 business days",
-          label: "Pickup in the store",
-          value: "store",
+          price: 'Free',
+          delivery: 'Delivery from 3 to 7 business days',
+          label: 'Pickup in the store',
+          value: 'store',
           description:
-            "Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.",
+            'Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.',
         },
         {
           isOpen: false,
-          price: "$15.90",
-          delivery: "Delivery from 4 to 6 business days",
-          label: "Delivery to home",
-          value: "home",
+          price: '$15.90',
+          delivery: 'Delivery from 4 to 6 business days',
+          label: 'Delivery to home',
+          value: 'home',
           description:
-            "Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.",
+            'Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.',
         },
         {
           isOpen: false,
-          price: "$9.90",
-          delivery: "Delivery from 4 to 6 business days",
-          label: "Paczkomaty InPost",
-          value: "inpost",
+          price: '$9.90',
+          delivery: 'Delivery from 4 to 6 business days',
+          label: 'Paczkomaty InPost',
+          value: 'inpost',
           description:
-            "Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.",
+            'Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.',
         },
         {
           isOpen: false,
-          price: "$11.00",
-          delivery: "Delivery within 48 hours",
-          label: "48 hours coffee",
-          value: "coffee",
+          price: '$11.00',
+          delivery: 'Delivery within 48 hours',
+          label: '48 hours coffee',
+          value: 'coffee',
           description:
-            "Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.",
+            'Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.',
         },
         {
           isOpen: false,
-          price: "$14.00",
-          delivery: "Delivery within 24 hours",
-          label: "Urgent 24h",
-          value: "urgent",
+          price: '$14.00',
+          delivery: 'Delivery within 24 hours',
+          label: 'Urgent 24h',
+          value: 'urgent',
           description:
-            "Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.",
+            'Novelty! From now on you have the option of picking up an order in the selected InPack parceled. Just remember that in the case of orders paid on delivery, only the card payment will be accepted.',
         },
       ],
     };
@@ -215,7 +215,7 @@ export default {
     totalItems() {
       return this.products.reduce(
         (totalItems, product) => totalItems + parseInt(product.qty, 10),
-        0
+        0,
       );
     },
   },
@@ -228,7 +228,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
 #detailed-cart {
   box-sizing: border-box;
   @include for-desktop {

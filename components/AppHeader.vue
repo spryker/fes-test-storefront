@@ -40,16 +40,23 @@
                 :class="userIcon.class"
                 :viewBox="userIcon.viewBox"
               />
-              <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
+              <SfIcon
+                :icon="arrowIcon.path"
+                :class="arrowIcon.class"
+                :viewBox="arrowIcon.viewBox"
+              />
             </div>
             {{ accountName }}
           </SfButton>
           <SfButton class="sf-button--pure sf-header__action">
-          <div class="icon-row">
-            <SfIcon :icon="quickOrderIcon.path"
-            :class="quickOrderIcon.class" :viewBox="quickOrderIcon.viewBox"/>
-          </div>
-          Quick Order
+            <div class="icon-row">
+              <SfIcon
+                :icon="quickOrderIcon.path"
+                :class="quickOrderIcon.class"
+                :viewBox="quickOrderIcon.viewBox"
+              />
+            </div>
+            Quick Order
           </SfButton>
           <SfButton
             data-cy="svsf-appHeader-wishlist-button"
@@ -114,7 +121,7 @@
             @keyup.esc="clearTerm"
             @blur="clearTerm"
           />
-          <SfIcon :icon="searchIcon.path" class="search-icon" size="20px"/>
+          <SfIcon :icon="searchIcon.path" class="search-icon" size="20px" />
           <div
             data-cy="svsf-appHeader-productsPopUp"
             v-if="getAbstractProducts(suggestions).length > 0"
@@ -175,24 +182,31 @@
           @close="currentMenu = ''"
         >
           <SfList data-cy="svsf-appHeader-category-list" class="categories">
-            <SfListItem :data-cy="`svsf-appHeader-category-list-${index}`"
+            <SfListItem
+              :data-cy="`svsf-appHeader-category-list-${index}`"
               v-for="(category, index) in categories"
               :key="index"
               @mouseenter.native="currentCategory = category.label"
               @click.native="currentCategory = category.label"
-              :class="[{selected: currentCategory === category.label}]"
-              >
-                <SfImage src="/nav-icon.png" alt="category icon" width="32" height="32"/>
-                {{ category.label }}
+              :class="[{ selected: currentCategory === category.label }]"
+            >
+              <SfImage
+                src="/nav-icon.png"
+                alt="category icon"
+                width="32"
+                height="32"
+              />
+              {{ category.label }}
             </SfListItem>
           </SfList>
 
-          <SfList :data-cy="`svsf-appHeader-subcategory-list-${index}`"
+          <SfList
+            :data-cy="`svsf-appHeader-subcategory-list-${index}`"
             v-for="(category, index) in categories"
             :key="index"
             class="subcategory"
-            :class="[{hidden: currentCategory !== category.label}]"
-            >
+            :class="[{ hidden: currentCategory !== category.label }]"
+          >
             <SfListItem
               :data-cy="`svsf-appHeader-subcategory-${childIndex}`"
               v-for="(subcategory, childIndex) in category.items"
@@ -206,11 +220,7 @@
               </SfLink>
             </SfListItem>
             <SfListItem>
-              <SfLink
-                :link="localePath(category.url)"
-              >
-                View all
-              </SfLink>
+              <SfLink :link="localePath(category.url)"> View all </SfLink>
             </SfListItem>
           </SfList>
         </SfMegaMenu>
@@ -283,7 +293,7 @@ import {
   SfMegaMenu,
   SfList,
   SfMenuItem,
-  SfLink
+  SfLink,
 } from '@storefront-ui/vue';
 import {
   useCart,
@@ -303,7 +313,14 @@ import { onSSR } from '@vue-storefront/core';
 import { useUiHelpers, useUiState } from '~/composables';
 import LocaleSelector from './LocaleSelector';
 import SearchResults from '~/components/SearchResults';
-import { quickOrderIcon, shoppingListIcon, cartIcon, userIcon, searchIcon, arrowIcon } from '~/assets/icons';
+import {
+  quickOrderIcon,
+  shoppingListIcon,
+  cartIcon,
+  userIcon,
+  searchIcon,
+  arrowIcon,
+} from '~/assets/icons';
 
 export default {
   components: {
@@ -334,9 +351,8 @@ export default {
     const { isAuthenticated, load: loadUser, user } = useUser();
     const { cart, load: loadCart } = useCart();
     const { load: loadWishlist, wishlist } = useWishlist();
-    const { categories, search: searchCategories } = useCategory(
-      'category-tree',
-    );
+    const { categories, search: searchCategories } =
+      useCategory('category-tree');
     const term = ref(getFacetsFromURL().term);
     const blurLock = ref(false);
     const {
@@ -352,8 +368,8 @@ export default {
     });
 
     const wishlistTotalItems = computed(() => {
-        const count = wishlistGetters.getItems(wishlist.value);
-        return count ? count.toString() : null;
+      const count = wishlistGetters.getItems(wishlist.value);
+      return count ? count.toString() : null;
     });
     const cartTotalItems = computed(() => {
       const count = cartGetters.getTotalItems(cart.value);
@@ -365,7 +381,9 @@ export default {
     );
 
     const accountName = computed(() => {
-      return isAuthenticated.value ? `${user.value.attributes.firstName} ${user.value.attributes.lastName}` : 'not logged in';
+      return isAuthenticated.value
+        ? `${user.value.attributes.firstName} ${user.value.attributes.lastName}`
+        : 'not logged in';
     });
 
     // TODO: https://github.com/DivanteLtd/vue-storefront/issues/4927
@@ -437,15 +455,13 @@ export default {
       cartIcon,
       userIcon,
       searchIcon,
-      arrowIcon
+      arrowIcon,
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import '~@storefront-ui/vue/styles';
-
 .sf-header {
   position: relative;
   z-index: calc(var(--header-z-index) + 1);
@@ -514,10 +530,10 @@ export default {
   --header-navigation-item-padding: 0;
   --header-navigation-item-display: block;
   --header-navigation-item-font-size: 16px;
-  --header-navigation-item-color: #8F8F8F;
+  --header-navigation-item-color: #8f8f8f;
   --header-navigation-item-border: none;
   --header-navigation-item-flex: none;
-  --gray: #E3E3E3;
+  --gray: #e3e3e3;
   --font-size--base: 15px;
 
   padding: 25px 0;
@@ -560,12 +576,14 @@ export default {
   }
 
   .sf-list__item {
-    --list-item-color: #4C4C4C;
+    --list-item-color: #4c4c4c;
     --link-color: var(--list-item-color);
     --link-text-decoration: none;
-    &:hover, &.selected, a:hover {
+    &:hover,
+    &.selected,
+    a:hover {
       --list-item-color: var(--c-black);
-      background-color: #F0F0F0;
+      background-color: #f0f0f0;
     }
   }
 }

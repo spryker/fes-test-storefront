@@ -92,11 +92,11 @@
   </nav>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfLink from "../../atoms/SfLink/SfLink.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfLink from '../../atoms/SfLink/SfLink.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfPagination",
+  name: 'SfPagination',
   components: {
     SfIcon,
     SfLink,
@@ -136,7 +136,7 @@ export default {
      */
     pageParamName: {
       type: String,
-      default: "page",
+      default: 'page',
     },
   },
   computed: {
@@ -144,7 +144,7 @@ export default {
       return this.$route;
     },
     componentIs() {
-      return this.hasRouter ? "SfLink" : "SfButton";
+      return this.hasRouter ? 'SfLink' : 'SfButton';
     },
     currentPage() {
       return this.hasRouter
@@ -193,7 +193,7 @@ export default {
       }
       return this.listOfPageNumbers.slice(
         this.currentPage - Math.ceil(this.visible / 2),
-        this.currentPage + Math.floor(this.visible / 2)
+        this.currentPage + Math.floor(this.visible / 2),
       );
     },
     firstVisiblePageNumber() {
@@ -205,7 +205,7 @@ export default {
   },
   methods: {
     go(page) {
-      this.$emit("click", page);
+      this.$emit('click', page);
     },
     getLinkTo(page) {
       const pageNumber = page.toString();
@@ -222,5 +222,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfPagination.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfPagination.scss';
 </style>

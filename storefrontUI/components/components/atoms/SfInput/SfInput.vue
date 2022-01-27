@@ -62,11 +62,11 @@
   </div>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import { focus } from "../../../utilities/directives";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import { focus } from '../../../utilities/directives';
 export default {
-  name: "SfInput",
+  name: 'SfInput',
   directives: {
     focus,
   },
@@ -78,28 +78,28 @@ export default {
      */
     value: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * Form input label
      */
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Form input name
      */
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Form input type
      */
     type: {
       type: String,
-      default: "text",
+      default: 'text',
     },
     /**
      * Validate value of form input
@@ -113,7 +113,7 @@ export default {
      */
     errorMessage: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Native input required attribute
@@ -121,7 +121,7 @@ export default {
     required: {
       type: Boolean,
       default: false,
-      description: "Native input required attribute",
+      description: 'Native input required attribute',
     },
     /**
      * Native input disabled attribute
@@ -129,7 +129,7 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
-      description: "Native input disabled attribute",
+      description: 'Native input disabled attribute',
     },
     /**
      * Status of show password icon display
@@ -142,7 +142,7 @@ export default {
   data() {
     return {
       isPasswordVisible: false,
-      inputType: "",
+      inputType: '',
       isNumberTypeSafari: false,
     };
   },
@@ -150,11 +150,11 @@ export default {
     listeners() {
       return {
         ...this.$listeners,
-        input: (event) => this.$emit("input", event.target.value),
+        input: (event) => this.$emit('input', event.target.value),
       };
     },
     isPassword() {
-      return this.type === "password" && this.hasShowPassword;
+      return this.type === 'password' && this.hasShowPassword;
     },
   },
   watch: {
@@ -163,15 +163,15 @@ export default {
       handler: function (type) {
         let inputType = type;
         // Safari has bug for number input
-        if (typeof window !== "undefined" || typeof document !== "undefined") {
+        if (typeof window !== 'undefined' || typeof document !== 'undefined') {
           const ua = navigator.userAgent.toLocaleLowerCase();
           if (
-            ua.indexOf("safari") !== -1 &&
-            ua.indexOf("chrome") === -1 &&
-            type === "number"
+            ua.indexOf('safari') !== -1 &&
+            ua.indexOf('chrome') === -1 &&
+            type === 'number'
           ) {
             this.isNumberTypeSafari = true;
-            inputType = "text";
+            inputType = 'text';
           }
         }
         this.inputType = inputType;
@@ -182,7 +182,7 @@ export default {
       handler: function (value) {
         if (!this.isNumberTypeSafari) return;
         if (isNaN(value)) {
-          this.$emit("input");
+          this.$emit('input');
         }
       },
     },
@@ -190,11 +190,11 @@ export default {
   methods: {
     switchVisibilityPassword() {
       this.isPasswordVisible = !this.isPasswordVisible;
-      this.inputType = this.isPasswordVisible ? "text" : "password";
+      this.inputType = this.isPasswordVisible ? 'text' : 'password';
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfInput.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfInput.scss';
 </style>

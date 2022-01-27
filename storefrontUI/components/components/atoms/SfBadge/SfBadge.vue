@@ -11,9 +11,9 @@
 </template>
 <script>
 export default {
-  name: "SfBadge",
+  name: 'SfBadge',
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfBadge.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfBadge.scss';
 </style>

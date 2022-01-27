@@ -98,10 +98,8 @@ export default {
   setup() {
     const { isModalOpen, toggleModal } = useUiState();
 
-    const {
-      required: confirmationRequired,
-      confirmed: registrationConfirmed,
-    } = useUserRegistrationConfirmation();
+    const { required: confirmationRequired, confirmed: registrationConfirmed } =
+      useUserRegistrationConfirmation();
 
     const {
       enabled: passwordRestoreEnabled,

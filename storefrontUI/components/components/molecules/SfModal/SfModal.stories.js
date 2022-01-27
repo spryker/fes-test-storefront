@@ -1,39 +1,39 @@
-import { SfModal } from "@storefront-ui/vue";
+import { SfModal } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/Modal",
+  title: 'Components/Molecules/Modal',
   component: SfModal,
   argTypes: {
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     visible: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     overlay: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     cross: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     persistent: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    close: { action: "Close modal clicked", table: { category: "Events" } },
+    close: { action: 'Close modal clicked', table: { category: 'Events' } },
   },
 };
 
@@ -60,7 +60,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  title: "My title",
+  title: 'My title',
   visible: true,
 };
 

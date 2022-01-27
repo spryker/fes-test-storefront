@@ -56,21 +56,21 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import SfContentPage from "./_internal/SfContentPage.vue";
-import SfContentCategory from "./_internal/SfContentCategory.vue";
-Vue.component("SfContentPage", SfContentPage);
-Vue.component("SfContentCategory", SfContentCategory);
-import SfList from "../SfList/SfList.vue";
-import SfMenuItem from "../../molecules/SfMenuItem/SfMenuItem.vue";
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfBar from "../../molecules/SfBar/SfBar.vue";
+import Vue from 'vue';
+import SfContentPage from './_internal/SfContentPage.vue';
+import SfContentCategory from './_internal/SfContentCategory.vue';
+Vue.component('SfContentPage', SfContentPage);
+Vue.component('SfContentCategory', SfContentCategory);
+import SfList from '../SfList/SfList.vue';
+import SfMenuItem from '../../molecules/SfMenuItem/SfMenuItem.vue';
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfBar from '../../molecules/SfBar/SfBar.vue';
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../utilities/mobile-observer";
+} from '../../../utilities/mobile-observer';
 export default {
-  name: "SfContentPages",
+  name: 'SfContentPages',
   components: {
     SfList,
     SfMenuItem,
@@ -83,14 +83,14 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Active page
      */
     active: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -128,7 +128,7 @@ export default {
   },
   provide() {
     const provided = {};
-    Object.defineProperty(provided, "active", {
+    Object.defineProperty(provided, 'active', {
       get: () => this.active,
     });
     return { provided };
@@ -136,10 +136,10 @@ export default {
   watch: {
     isMobile(mobile) {
       if (mobile) {
-        this.$emit("click:change", "");
+        this.$emit('click:change', '');
         return;
       }
-      this.$emit("click:change", this.categories[0].items[0].title);
+      this.$emit('click:change', this.categories[0].items[0].title);
     },
   },
   beforeDestroy() {
@@ -153,11 +153,11 @@ export default {
        * @event click:change
        * @type String
        */
-      this.$emit("click:change", title);
+      this.$emit('click:change', title);
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfContentPages.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfContentPages.scss';
 </style>

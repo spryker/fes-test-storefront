@@ -6,7 +6,11 @@
       @click="isCurModalOpen = !isCurModalOpen"
     >
       {{ currency.selected }}
-      <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
+      <SfIcon
+        :icon="arrowIcon.path"
+        :class="arrowIcon.class"
+        :viewBox="arrowIcon.viewBox"
+      />
     </SfButton>
     <SfBottomModal
       data-cy="svsf-currencySelector-modal"
@@ -80,7 +84,7 @@ export default {
       currency,
       isCurModalOpen,
       setCurrency,
-      arrowIcon
+      arrowIcon,
     };
   },
 };

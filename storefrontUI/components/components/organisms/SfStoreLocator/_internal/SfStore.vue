@@ -64,19 +64,19 @@
   </div>
 </template>
 <script>
-import { focus } from "../../../../utilities/directives";
-import SfImage from "../../../atoms/SfImage/SfImage.vue";
-import SfIcon from "../../../atoms/SfIcon/SfIcon.vue";
-import SfCharacteristic from "../../../molecules/SfCharacteristic/SfCharacteristic.vue";
-import SfButton from "../../../atoms/SfButton/SfButton.vue";
+import { focus } from '../../../../utilities/directives';
+import SfImage from '../../../atoms/SfImage/SfImage.vue';
+import SfIcon from '../../../atoms/SfIcon/SfIcon.vue';
+import SfCharacteristic from '../../../molecules/SfCharacteristic/SfCharacteristic.vue';
+import SfButton from '../../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfStore",
+  name: 'SfStore',
   inject: [
-    "registerStore",
-    "removeStore",
-    "centerOn",
-    "locatorData",
-    "getGeoDistance",
+    'registerStore',
+    'removeStore',
+    'centerOn',
+    'locatorData',
+    'getGeoDistance',
   ],
   components: {
     SfImage,
@@ -99,7 +99,7 @@ export default {
      */
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Url of the picture of the store
@@ -113,7 +113,7 @@ export default {
      */
     address: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Phone number of the store

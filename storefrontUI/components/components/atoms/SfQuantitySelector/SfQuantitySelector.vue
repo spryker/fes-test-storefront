@@ -33,11 +33,11 @@
   </div>
 </template>
 <script>
-import SfInput from "../../atoms/SfInput/SfInput.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import SfInput from '../../atoms/SfInput/SfInput.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 
 export default {
-  name: "SfQuantitySelector",
+  name: 'SfQuantitySelector',
   inject: {
     components: {
       default: {
@@ -47,7 +47,7 @@ export default {
     },
   },
   model: {
-    prop: "qty",
+    prop: 'qty',
   },
   props: {
     /** Quantity */
@@ -66,5 +66,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfQuantitySelector.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfQuantitySelector.scss';
 </style>

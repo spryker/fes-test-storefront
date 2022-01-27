@@ -1,35 +1,35 @@
-import { SfDropdown, SfList, SfButton } from "@storefront-ui/vue";
+import { SfDropdown, SfList, SfButton } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Molecules/Dropdown",
+  title: 'Components/Molecules/Dropdown',
   component: SfDropdown,
   argTypes: {
     classes: {
       control: {
-        type: "select",
-        options: ["sf-dropdown--up", ""],
+        type: 'select',
+        options: ['sf-dropdown--up', ''],
       },
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     isOpen: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     persistent: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    "click:close": { action: "Close dropdown", table: { category: "Events" } },
-    "click:open": { action: "Open dropdown", table: { category: "Events" } },
+    'click:close': { action: 'Close dropdown', table: { category: 'Events' } },
+    'click:open': { action: 'Open dropdown', table: { category: 'Events' } },
   },
 };
 
@@ -57,8 +57,8 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  title: "Choose size",
-  actionList: ["Add to cart", "Add to compare", "Add to wishlist", "Share"],
+  title: 'Choose size',
+  actionList: ['Add to cart', 'Add to compare', 'Add to wishlist', 'Share'],
 };
 
 export const Persistent = Template.bind({});
@@ -77,5 +77,5 @@ IsOpened.args = {
 export const WithUpModifier = Template.bind({});
 WithUpModifier.args = {
   ...Common.args,
-  classes: "sf-dropdown--up",
+  classes: 'sf-dropdown--up',
 };

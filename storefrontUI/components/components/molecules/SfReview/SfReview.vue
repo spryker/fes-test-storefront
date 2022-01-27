@@ -45,11 +45,11 @@
   </section>
 </template>
 <script>
-import SfRating from "../../atoms/SfRating/SfRating.vue";
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import SfRating from '../../atoms/SfRating/SfRating.vue';
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfReview",
+  name: 'SfReview',
   components: {
     SfRating,
     SfIcon,
@@ -61,21 +61,21 @@ export default {
      */
     author: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Date of the review
      */
     date: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Message from the reviewer
      */
     message: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Rating from the reviewer
@@ -103,14 +103,14 @@ export default {
      */
     readMoreText: {
       type: String,
-      default: "Read more",
+      default: 'Read more',
     },
     /**
      * Hide full text message for the review
      */
     hideFullText: {
       type: String,
-      default: "Read less",
+      default: 'Read less',
     },
   },
   data() {
@@ -131,7 +131,7 @@ export default {
     },
     finalMessage() {
       return this.message.length > this.charLimit && !this.isOpen
-        ? this.message.slice(0, this.charLimit) + "..."
+        ? this.message.slice(0, this.charLimit) + '...'
         : this.message;
     },
   },
@@ -143,5 +143,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfReview.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfReview.scss';
 </style>

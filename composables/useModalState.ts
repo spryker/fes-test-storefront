@@ -85,10 +85,8 @@ export default function useModalState(): UseModalState {
     Modals.REGISTRATION,
   );
 
-  const [
-    isRegistrationConfirmationLogin,
-    toggleRegistrationConfirmationLogin,
-  ] = useModal(state, Modals.REGISTRATION_CONFIRMATION_LOGIN);
+  const [isRegistrationConfirmationLogin, toggleRegistrationConfirmationLogin] =
+    useModal(state, Modals.REGISTRATION_CONFIRMATION_LOGIN);
 
   const [
     isRegistrationConfirmationRequired,
@@ -103,10 +101,8 @@ export default function useModalState(): UseModalState {
     Modals.FORGOTTEN_PASSWORD,
   );
 
-  const [
-    isForgottenPasswordRequired,
-    toggleForgottenPasswordRequired,
-  ] = useModal(state, Modals.FORGOTTEN_PASSWORD_REQUIRED);
+  const [isForgottenPasswordRequired, toggleForgottenPasswordRequired] =
+    useModal(state, Modals.FORGOTTEN_PASSWORD_REQUIRED);
 
   /**
    * Restore Password

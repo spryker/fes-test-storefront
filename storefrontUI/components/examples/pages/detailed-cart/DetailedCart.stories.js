@@ -1,6 +1,6 @@
-import DetailedCart from "./DetailedCart";
+import DetailedCart from './DetailedCart';
 export default {
-  title: "Pages/DetailedCart",
+  title: 'Pages/DetailedCart',
   component: DetailedCart,
 };
 

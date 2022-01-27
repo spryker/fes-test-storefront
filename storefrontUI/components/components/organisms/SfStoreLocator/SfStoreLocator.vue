@@ -64,17 +64,17 @@
   </div>
 </template>
 <script>
-import Vue from "vue";
-import { focus } from "../../../utilities/directives";
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfLoader from "../../atoms/SfLoader/SfLoader.vue";
-import SfStore from "./_internal/SfStore.vue";
-Vue.component("SfStore", SfStore);
+import Vue from 'vue';
+import { focus } from '../../../utilities/directives';
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfLoader from '../../atoms/SfLoader/SfLoader.vue';
+import SfStore from './_internal/SfStore.vue';
+Vue.component('SfStore', SfStore);
 export default {
-  name: "SfStoreLocator",
+  name: 'SfStoreLocator',
   provide() {
     const locatorData = {};
-    Object.defineProperty(locatorData, "userPosition", {
+    Object.defineProperty(locatorData, 'userPosition', {
       enumerable: true,
       get: () => this.userPosition,
     });
@@ -101,14 +101,14 @@ export default {
     tileServerUrl: {
       type: String,
       default:
-        "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+        'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
     },
     /**
      * Attribution line of selected tileserver
      */
     tileServerAttribution: {
       type: String,
-      default: "Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ",
+      default: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
     },
     /**
      * Initial center of the map, overridden when the user position is captured, supports sync modifier
@@ -199,20 +199,20 @@ export default {
         return this.zoom;
       },
       set(value) {
-        this.$emit("update:zoom", value);
+        this.$emit('update:zoom', value);
       },
     },
   },
   mounted() {
-    import("leaflet/dist/leaflet.css");
-    import("vue2-leaflet").then(
+    import('leaflet/dist/leaflet.css');
+    import('vue2-leaflet').then(
       ({ LMap, LTileLayer, LMarker, LIcon, LControl, LControlZoom }) => {
-        Vue.component("LMap", LMap);
-        Vue.component("LTileLayer", LTileLayer);
-        Vue.component("LMarker", LMarker);
-        Vue.component("LIcon", LIcon);
-        Vue.component("LControl", LControl);
-        Vue.component("LControlZoom", LControlZoom);
+        Vue.component('LMap', LMap);
+        Vue.component('LTileLayer', LTileLayer);
+        Vue.component('LMarker', LMarker);
+        Vue.component('LIcon', LIcon);
+        Vue.component('LControl', LControl);
+        Vue.component('LControlZoom', LControlZoom);
         this.loaded = true;
         /**
          * Library loaded event, the library is ready and the map is initialising
@@ -220,8 +220,8 @@ export default {
          * @event 'library:loaded'
          * @type null
          */
-        this.$emit("library:loaded");
-      }
+        this.$emit('library:loaded');
+      },
     );
   },
   methods: {
@@ -244,7 +244,7 @@ export default {
        * @type {object}
        */
       this.mapReady = true;
-      this.$emit("map:ready", mapObject);
+      this.$emit('map:ready', mapObject);
       this.locateUser();
     },
     locateUser() {
@@ -267,10 +267,10 @@ export default {
        * @event 'location:errors'
        * @type {object}
        */
-      this.$emit("location:error", error);
+      this.$emit('location:error', error);
     },
     updateCenter(latlng) {
-      this.$emit("update:center", { ...latlng });
+      this.$emit('update:center', { ...latlng });
     },
     centerOn(latlng) {
       this.$refs.map.mapObject.flyTo(latlng, this.flyToStoreZoom);
@@ -295,5 +295,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfStoreLocator.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfStoreLocator.scss';
 </style>

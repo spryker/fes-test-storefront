@@ -1,21 +1,21 @@
-import SfButton from "./../../../src/components/atoms/SfButton/SfButton.vue";
+import SfButton from './../../../src/components/atoms/SfButton/SfButton.vue';
 
 export default {
-  title: "Utilities/Transitions",
+  title: 'Utilities/Transitions',
   argTypes: {
     effect: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "sf-fade",
-          "sf-slide-left",
-          "sf-slide-right",
-          "sf-collapse-top",
-          "sf-collapse-bottom",
+          'sf-fade',
+          'sf-slide-left',
+          'sf-slide-right',
+          'sf-collapse-top',
+          'sf-collapse-bottom',
         ],
       },
       table: {
-        category: "Class",
+        category: 'Class',
       },
     },
   },
@@ -40,25 +40,25 @@ const Template = (args, { argTypes }) => ({
 
 export const FadeInOut = Template.bind({});
 FadeInOut.args = {
-  effect: "sf-fade",
+  effect: 'sf-fade',
 };
 
 export const SlideLeft = Template.bind({});
 SlideLeft.args = {
-  effect: "sf-slide-left",
+  effect: 'sf-slide-left',
 };
 
 export const SlideRight = Template.bind({});
 SlideRight.args = {
-  effect: "sf-slide-right",
+  effect: 'sf-slide-right',
 };
 
 export const CollapseTop = Template.bind({});
 CollapseTop.args = {
-  effect: "sf-collapse-top",
+  effect: 'sf-collapse-top',
 };
 
 export const CollapseBottom = Template.bind({});
 CollapseBottom.args = {
-  effect: "sf-collapse-bottom",
+  effect: 'sf-collapse-bottom',
 };

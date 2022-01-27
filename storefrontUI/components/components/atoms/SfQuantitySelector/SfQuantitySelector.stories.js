@@ -1,7 +1,7 @@
-import { SfQuantitySelector } from "@storefront-ui/vue";
+import { SfQuantitySelector } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/QuantitySelector",
+  title: 'Components/Atoms/QuantitySelector',
   component: SfQuantitySelector,
   decorators: [
     () => ({ template: '<div style="max-width: 375px;"><story /></div>' }),
@@ -9,28 +9,28 @@ export default {
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-quantity-selector--secondary",
-          "sf-quantity-selector--transparent",
+          '',
+          'sf-quantity-selector--secondary',
+          'sf-quantity-selector--transparent',
         ],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     qty: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: 1,
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },

@@ -1,9 +1,9 @@
 <script>
-import { buildImageUrl, getConfig } from "cloudinary-build-url";
-import { placeholderTypes } from "./helpers";
+import { buildImageUrl, getConfig } from 'cloudinary-build-url';
+import { placeholderTypes } from './helpers';
 
 export default {
-  name: "SfCimg",
+  name: 'SfCimg',
   functional: true,
   props: {
     publicId: {
@@ -16,7 +16,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: "",
+      default: '',
       validator: (value) => !value || placeholderTypes[value],
     },
     cloud: {
@@ -30,8 +30,8 @@ export default {
     },
     loading: {
       type: String,
-      default: "lazy",
-      validator: (value) => ["", "lazy", "eager"].includes(value),
+      default: 'lazy',
+      validator: (value) => ['', 'lazy', 'eager'].includes(value),
     },
     alt: {
       type: String,
@@ -42,23 +42,23 @@ export default {
     const props = context.props;
 
     if (!props.publicId) {
-      throw Error("PublicId is required to use this component.");
+      throw Error('PublicId is required to use this component.');
       return;
     }
     if ((!props.cloud || !props.cloud.cloudName) && !getConfig().cloudName) {
-      throw Error("cloudName is required to use this component.");
+      throw Error('cloudName is required to use this component.');
       return;
     }
 
     const progressiveEffect = props.progressive
-      ? [{ flags: "progressive" }]
+      ? [{ flags: 'progressive' }]
       : [];
 
     const chaining = progressiveEffect.concat(props.transformations);
     const options = {
       cloud: props.cloud,
       transformations: {
-        format: props.format || "auto",
+        format: props.format || 'auto',
         chaining,
       },
     };
@@ -66,11 +66,11 @@ export default {
     const placeholderEffects = placeholderTypes[props.placeholder];
     let src = buildImageUrl(props.publicId, options);
 
-    if (typeof window !== "undefined" && placeholderEffects) {
+    if (typeof window !== 'undefined' && placeholderEffects) {
       const image = new Image();
 
       image.onload = () => {
-        context.parent.$refs.cimage.setAttribute("src", image.src);
+        context.parent.$refs.cimage.setAttribute('src', image.src);
       };
 
       image.src = src;
@@ -83,7 +83,7 @@ export default {
     }
 
     return createElement(
-      "img",
+      'img',
       {
         ...context,
         attrs: {
@@ -92,17 +92,17 @@ export default {
           loading: props.loading,
           alt: props.alt,
         },
-        ref: "cimage",
+        ref: 'cimage',
         class: {
           ...context.class,
-          "sf-cimage": true,
+          'sf-cimage': true,
         },
       },
-      context.children
+      context.children,
     );
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfCimage.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfCimage.scss';
 </style>

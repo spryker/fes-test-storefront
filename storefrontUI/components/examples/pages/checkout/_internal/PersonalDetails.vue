@@ -83,9 +83,9 @@ import {
   SfButton,
   SfHeading,
   SfCharacteristic,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 export default {
-  name: "PersonalDetails",
+  name: 'PersonalDetails',
   components: {
     SfInput,
     SfCheckbox,
@@ -100,21 +100,21 @@ export default {
     },
     buttonName: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
     return {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
       createAccount: false,
       characteristics: [
-        { description: "Faster checkout", icon: "clock" },
-        { description: "Earn credits with every purchase", icon: "credits" },
-        { description: "Full rewards program benefits", icon: "rewards" },
-        { description: "Manage your wishlist", icon: "heart" },
+        { description: 'Faster checkout', icon: 'clock' },
+        { description: 'Earn credits with every purchase', icon: 'credits' },
+        { description: 'Full rewards program benefits', icon: 'rewards' },
+        { description: 'Manage your wishlist', icon: 'heart' },
       ],
     };
   },
@@ -128,12 +128,12 @@ export default {
       immediate: true,
     },
     createAccount(value) {
-      if (!value) this.password = "";
+      if (!value) this.password = '';
     },
   },
   methods: {
     updateField(fieldName, fieldValue) {
-      this.$emit("input", {
+      this.$emit('input', {
         ...this.value,
         [fieldName]: fieldValue,
       });
@@ -142,7 +142,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
 .title {
   --heading-padding: var(--spacer-xl) 0 var(--spacer-base);
   --heading-title-font-weight: var(--font-weight--bold);

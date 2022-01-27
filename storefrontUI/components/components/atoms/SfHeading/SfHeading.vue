@@ -28,7 +28,7 @@
 </template>
 <script>
 export default {
-  name: "SfHeading",
+  name: 'SfHeading',
   props: {
     /**
      * Heading level
@@ -42,14 +42,14 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Heading description
      */
     description: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   hasDescription(descriptionProp, slots) {
@@ -58,5 +58,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfHeading.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfHeading.scss';
 </style>

@@ -3,29 +3,29 @@ import {
   SfSelect,
   SfProductOption,
   SfButton,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 
 const selectOptions = {
   size: {
-    label: "Size:",
-    placeholder: "Size: XS",
-    errorMessage: "Please pick a size",
-    options: ["XXS", "XS", "S", "M", "L", "XL", "XXL"].map(
-      (size) => `Size: ${size}`
+    label: 'Size:',
+    placeholder: 'Size: XS',
+    errorMessage: 'Please pick a size',
+    options: ['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL'].map(
+      (size) => `Size: ${size}`,
     ),
   },
   colour: {
-    label: "Colour:",
-    placeholder: "Colour: Brown",
-    errorMessage: "Please pick a colour",
-    options: ["Maroon", "Blue", "Brown", "Mustard", "White", "Black"].map(
-      (colour) => `Colour: ${colour}`
+    label: 'Colour:',
+    placeholder: 'Colour: Brown',
+    errorMessage: 'Please pick a colour',
+    options: ['Maroon', 'Blue', 'Brown', 'Mustard', 'White', 'Black'].map(
+      (colour) => `Colour: ${colour}`,
     ),
   },
 };
 
 export default {
-  title: "Components/Organisms/ProductCardHorizontal",
+  title: 'Components/Organisms/ProductCardHorizontal',
   component: SfProductCardHorizontal,
   decorators: [
     () => ({
@@ -34,110 +34,110 @@ export default {
   ],
   argTypes: {
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     description: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     image: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     imageWidth: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     imageHeight: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     scoreRating: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     reviewsCount: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     maxRating: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     regularPrice: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     specialPrice: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     wishlistIcon: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "heart",
+      defaultValue: 'heart',
     },
     isOnWishlistIcon: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     isOnWishlist: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     showAddToCartButton: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     qty: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
       defaultValue: 1,
     },
-    "click:addToCart": {
-      action: "Add-to-cart clicked",
-      table: { category: "Events" },
+    'click:addToCart': {
+      action: 'Add-to-cart clicked',
+      table: { category: 'Events' },
     },
-    "click:wishlist": {
-      action: "Wishlist clicked",
-      table: { category: "Events" },
+    'click:wishlist': {
+      action: 'Wishlist clicked',
+      table: { category: 'Events' },
     },
   },
 };
@@ -210,29 +210,29 @@ const Template = (args, { argTypes }) => ({
 export const Common = Template.bind({});
 
 Common.args = {
-  title: "Cream Beach Bag",
+  title: 'Cream Beach Bag',
   description:
-    "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-  regularPrice: "$10,99",
+    'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
+  regularPrice: '$10,99',
   scoreRating: 4,
   maxRating: 5,
   reviewsCount: 7,
   showAddToCartButton: true,
-  image: "assets/storybook/SfProductCardHorizontal/productA.jpg",
+  image: 'assets/storybook/SfProductCardHorizontal/productA.jpg',
 };
 
 export const WithMultipleImages = Template.bind({
   argTypes: {
     image: {
-      control: "array",
+      control: 'array',
     },
   },
 });
 WithMultipleImages.args = {
   ...Common.args,
   image: [
-    "/assets/storybook/Home/productB.jpg",
-    "/assets/storybook/Home/productA.jpg",
+    '/assets/storybook/Home/productB.jpg',
+    '/assets/storybook/Home/productA.jpg',
   ],
 };
 

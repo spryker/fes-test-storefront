@@ -1,8 +1,8 @@
-import SfColorPicker from "./SfColorPicker.vue";
-import SfColor from "../../atoms/SfColor/SfColor.vue";
+import SfColorPicker from './SfColorPicker.vue';
+import SfColor from '../../atoms/SfColor/SfColor.vue';
 
 export default {
-  title: "Components/Molecules/ColorPicker",
+  title: 'Components/Molecules/ColorPicker',
   component: SfColorPicker,
   decorators: [
     () => ({
@@ -13,37 +13,37 @@ export default {
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "sf-color-picker--vertical",
-          "sf-color-picker--left sf-color-picker--vertical",
-          "",
+          'sf-color-picker--vertical',
+          'sf-color-picker--left sf-color-picker--vertical',
+          '',
         ],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     hasClose: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     isOpen: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: 0,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    "click:toggle": { action: "Toggle isOpen", table: { category: "Events" } },
+    'click:toggle': { action: 'Toggle isOpen', table: { category: 'Events' } },
   },
 };
 
@@ -65,27 +65,27 @@ const Template = (args, { argTypes }) => ({
 export const Common = Template.bind({});
 Common.args = {
   isOpen: true,
-  label: "Choose color",
+  label: 'Choose color',
   colors: [
-    { label: "Sand", value: "sand", color: "#EDCBB9", selected: false },
-    { label: "Mint", value: "mint", color: "#ABD9D8", selected: false },
+    { label: 'Sand', value: 'sand', color: '#EDCBB9', selected: false },
+    { label: 'Mint', value: 'mint', color: '#ABD9D8', selected: false },
     {
-      label: "Light Gray",
-      value: "light gray",
-      color: "#F1F2F3",
+      label: 'Light Gray',
+      value: 'light gray',
+      color: '#F1F2F3',
       selected: false,
     },
     {
-      label: "Vivid rose",
-      value: "vivid rose",
-      color: "#DB5593",
+      label: 'Vivid rose',
+      value: 'vivid rose',
+      color: '#DB5593',
       selected: false,
     },
-    { label: "Peach", value: "peach", color: "#F59F93", selected: false },
+    { label: 'Peach', value: 'peach', color: '#F59F93', selected: false },
     {
-      label: "Citrus",
-      value: "citrus",
-      color: "#FFEE97",
+      label: 'Citrus',
+      value: 'citrus',
+      color: '#FFEE97',
       selected: false,
     },
   ],
@@ -105,11 +105,11 @@ WithCloseBtn.args = {
 export const VerticalDisplay = Template.bind({});
 VerticalDisplay.args = {
   ...WithCloseBtn.args,
-  classes: "sf-color-picker--vertical",
+  classes: 'sf-color-picker--vertical',
 };
 
 export const VerticalLeftDisplay = Template.bind({});
 VerticalLeftDisplay.args = {
   ...WithCloseBtn.args,
-  classes: "sf-color-picker--left sf-color-picker--vertical",
+  classes: 'sf-color-picker--left sf-color-picker--vertical',
 };

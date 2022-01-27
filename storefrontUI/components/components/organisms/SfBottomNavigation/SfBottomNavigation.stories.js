@@ -1,6 +1,6 @@
-import { SfBottomNavigation, SfCircleIcon, SfIcon } from "@storefront-ui/vue";
+import { SfBottomNavigation, SfCircleIcon, SfIcon } from '@storefront-ui/vue';
 export default {
-  title: "Components/Organisms/BottomNavigation",
+  title: 'Components/Organisms/BottomNavigation',
   component: SfBottomNavigation,
 };
 
@@ -11,25 +11,25 @@ const Template = (args, { argTypes }) => ({
     return {
       items: [
         {
-          icon: "menu",
-          iconActive: "menu",
-          label: "Menu",
+          icon: 'menu',
+          iconActive: 'menu',
+          label: 'Menu',
         },
         {
-          icon: "heart",
-          iconActive: "heart",
-          label: "Heart",
+          icon: 'heart',
+          iconActive: 'heart',
+          label: 'Heart',
         },
         {
-          icon: "account",
-          iconActive: "account",
-          label: "Profile",
+          icon: 'account',
+          iconActive: 'account',
+          label: 'Profile',
         },
       ],
-      currentIcon: "heart",
-      label: "Home",
-      icon: "home",
-      iconActive: "home",
+      currentIcon: 'heart',
+      label: 'Home',
+      icon: 'home',
+      iconActive: 'home',
     };
   },
   template: `

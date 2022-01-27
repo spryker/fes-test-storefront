@@ -10,15 +10,15 @@
   </SfLink>
 </template>
 <script>
-import SfLink from "../../atoms/SfLink/SfLink.vue";
+import SfLink from '../../atoms/SfLink/SfLink.vue';
 
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../utilities/mobile-observer";
+} from '../../../utilities/mobile-observer';
 
 export default {
-  name: "SfCategoryCard",
+  name: 'SfCategoryCard',
   components: {
     SfLink,
   },
@@ -28,14 +28,14 @@ export default {
      */
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Count for card
      */
     count: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * Defines background of card.
@@ -43,14 +43,14 @@ export default {
      */
     background: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
     /**
      * Link for category
      */
     link: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -62,7 +62,7 @@ export default {
     ...mapMobileObserver(),
     style() {
       const background = this.background;
-      if (typeof background === "string") {
+      if (typeof background === 'string') {
         return {
           background: `url('${background}')`,
         };
@@ -84,5 +84,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfCategoryCard.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfCategoryCard.scss';
 </style>

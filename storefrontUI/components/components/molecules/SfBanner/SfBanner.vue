@@ -1,5 +1,9 @@
 <template>
-  <section class="sf-banner" :style="style" v-on="isMobileView ? $listeners : {}">
+  <section
+    class="sf-banner"
+    :style="style"
+    v-on="isMobileView ? $listeners : {}"
+  >
     <component :is="wrapper" class="sf-banner__wrapper" :link="link">
       <slot name="subtitle" v-bind="{ subtitle }">
         <h2 v-if="subtitle" class="sf-banner__subtitle">
@@ -31,14 +35,14 @@
   </section>
 </template>
 <script>
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import SfLink from "../../atoms/SfLink/SfLink.vue";
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfLink from '../../atoms/SfLink/SfLink.vue';
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../utilities/mobile-observer";
+} from '../../../utilities/mobile-observer';
 export default {
-  name: "SfBanner",
+  name: 'SfBanner',
   components: {
     SfButton,
     SfLink,
@@ -49,38 +53,38 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Banner subtitle (at the top)
      */
     subtitle: {
       type: String,
-      default: "",
+      default: '',
     },
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     /** text that will be displayed inside the button. You can replace the button  with "call-to-action" slot */
     buttonText: {
       type: String,
-      default: "",
+      default: '',
     },
     /** link to be used in call to action button if necessary */
     link: {
       type: String,
-      default: "",
+      default: '',
     },
     /** Background color in HEX (eg #FFFFFF) */
     background: {
       type: String,
-      default: "",
+      default: '',
     },
     /** Background image. Influenced by $banner-background-size, $banner-background-position CSS props. */
     image: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -94,16 +98,16 @@ export default {
       const image = this.image;
       const background = this.background;
       return {
-        "--_banner-background-image": image.mobile
+        '--_banner-background-image': image.mobile
           ? `url(${image.mobile})`
           : `url(${image})`,
-        "--_banner-background-desktop-image":
+        '--_banner-background-desktop-image':
           image.desktop && `url(${image.desktop})`,
-        "--_banner-background-color": background,
+        '--_banner-background-color': background,
       };
     },
     wrapper() {
-      return !this.isMobileView ? "div" : this.link ? "SfLink" : "SfButton";
+      return !this.isMobileView ? 'div' : this.link ? 'SfLink' : 'SfButton';
     },
   },
   mounted() {
@@ -115,5 +119,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfBanner.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfBanner.scss';
 </style>

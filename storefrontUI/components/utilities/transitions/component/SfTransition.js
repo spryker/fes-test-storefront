@@ -3,7 +3,7 @@ export default {
   props: {
     transition: {
       type: [String, Boolean],
-      default: "fade",
+      default: 'fade',
     },
     group: {
       type: Boolean,
@@ -12,11 +12,11 @@ export default {
   },
   render(createElement, { data, children, props }) {
     const isOff = props.transition === false;
-    const tag = props.group ? "transition-group" : "transition";
+    const tag = props.group ? 'transition-group' : 'transition';
     return createElement(
       tag,
-      { ...data, attrs: { name: isOff ? "" : props.transition } },
-      children
+      { ...data, attrs: { name: isOff ? '' : props.transition } },
+      children,
     );
   },
 };

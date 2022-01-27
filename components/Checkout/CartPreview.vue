@@ -164,13 +164,8 @@ export default {
   },
   setup() {
     const { state: shippingProvider } = useShippingProvider();
-    const {
-      cart,
-      removeItem,
-      updateQuantity,
-      applyCoupon,
-      removeCoupon,
-    } = useCart();
+    const { cart, removeItem, updateQuantity, applyCoupon, removeCoupon } =
+      useCart();
     const { attributes } = useTax();
     const tax = computed(() => taxGetters.getTaxAmount(attributes.value));
     const listIsHidden = ref(false);

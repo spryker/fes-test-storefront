@@ -1,30 +1,30 @@
-import { SfBadge, SfIcon } from "@storefront-ui/vue";
+import { SfBadge, SfIcon } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Badge",
+  title: 'Components/Atoms/Badge',
   component: SfBadge,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-badge--full-width",
-          "sf-badge--number",
-          "color-primary",
-          "color-secondary",
-          "color-warning",
-          "color-danger",
-          "color-info",
-          "color-success",
+          '',
+          'sf-badge--full-width',
+          'sf-badge--number',
+          'color-primary',
+          'color-secondary',
+          'color-warning',
+          'color-danger',
+          'color-info',
+          'color-success',
         ],
       },
       table: {
-        category: "Modifier classes",
+        category: 'Modifier classes',
       },
     },
     label: {
-      control: "text",
+      control: 'text',
     },
   },
 };
@@ -37,26 +37,26 @@ const Template = (args, { argTypes }) => ({
 
 export const Primary = Template.bind({});
 
-Primary.args = { label: "Limited", classes: "color-primary" };
+Primary.args = { label: 'Limited', classes: 'color-primary' };
 
 export const AsNumber = Template.bind({});
 
-AsNumber.args = { label: "90", classes: "sf-badge--number" };
+AsNumber.args = { label: '90', classes: 'sf-badge--number' };
 
 export const Secondary = Template.bind({});
-Secondary.args = { label: "90", classes: "color-secondary" };
+Secondary.args = { label: '90', classes: 'color-secondary' };
 
 export const Warning = Template.bind({});
-Warning.args = { label: "90", classes: "color-warning" };
+Warning.args = { label: '90', classes: 'color-warning' };
 
 export const Danger = Template.bind({});
-Danger.args = { label: "90", classes: "color-danger" };
+Danger.args = { label: '90', classes: 'color-danger' };
 
 export const Info = Template.bind({});
-Info.args = { label: "90", classes: "color-info" };
+Info.args = { label: '90', classes: 'color-info' };
 
 export const Success = Template.bind({});
-Success.args = { label: "90", classes: "color-success" };
+Success.args = { label: '90', classes: 'color-success' };
 
 export const WithDefaultSlot = (args, { argTypes }) => ({
   components: { SfBadge, SfIcon },
