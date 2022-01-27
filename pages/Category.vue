@@ -799,6 +799,11 @@ export default {
   }
 }
 ::v-deep .sf-product-card {
+  // Resetting max-width to get 3 columns on category listing
+  --product-card-max-width: auto;
+  @include for-desktop {
+    flex: 1 1 33%;
+  }
   &__image-wrapper {
     flex-grow: 1;
     height: 100%;
