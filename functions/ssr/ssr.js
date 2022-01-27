@@ -215,17 +215,18 @@ function createNuxtHandler(nuxtConfig) {
     }
 
     const result = await server(event, ctx, callback);
-    const cacheValue = event.queryStringParameters.ebPreview
-      ? 'no-cache'
-      : 'public, max-age=31536000';
-
-    return {
-      ...result,
-      headers: {
-        ...result.headers,
-        'Cache-Control': cacheValue,
-      },
-    };
+    // const cacheValue = event.queryStringParameters.ebPreview
+    //   ? 'no-cache'
+    //   : 'public, max-age=31536000';
+    //
+    // return {
+    //   ...result,
+    //   headers: {
+    //     ...result.headers,
+    //     'Cache-Control': cacheValue,
+    //   },
+    // };
+    return result;
   };
 }
 
