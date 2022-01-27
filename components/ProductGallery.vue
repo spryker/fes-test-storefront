@@ -24,8 +24,6 @@
             class="sf-gallery__thumb"
             :src="image.mobile.url"
             :alt="image.alt"
-            :width="thumbWidth"
-            :height="thumbHeight"
           />
         </SfButton>
       </div>
