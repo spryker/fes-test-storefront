@@ -348,7 +348,7 @@ export default {
 }
 
 .collected-product {
-  border: 1px solid #dce0e5;
+  border: 1px solid var(--c-gray-outline);
   border-radius: 2px;
   margin: 0 0 var(--spacer-sm) 0;
   --image-height: auto;
