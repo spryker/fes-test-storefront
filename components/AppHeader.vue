@@ -573,7 +573,10 @@ export default {
   }
 
   .subcategory {
-    --list-item-padding: 6px 20px;
+    a {
+      padding: 6px 20px;
+      display: block;
+    }
     flex: 1;
     align-self: normal;
     border-left: 1px solid var(--gray);
