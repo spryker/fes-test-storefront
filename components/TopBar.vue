@@ -1,7 +1,7 @@
 <template>
   <SfTopBar data-cy="svsf-topBar-bar">
     <template #center>
-      <div class="center-wrapper" v-if="!routerHelpers.isCheckout($route.path)">
+      <div class="center-wrapper">
         <span class="container static"
           ><SfIcon
             :icon="checkIcon.path"
