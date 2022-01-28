@@ -42,6 +42,7 @@
             aria-label="Filters"
             @click="toggleFilterSidebar"
           >
+            {{ $t('Filters') }}
             <SfIcon
               data-cy="svsf-categorySection-filter-icon"
               size="18px"
@@ -49,7 +50,6 @@
               icon="filter"
               class="navbar__filters-icon"
             />
-            {{ $t('Filters') }}
           </SfButton>
         </div>
         <div class="navbar__counter">
@@ -594,6 +594,7 @@ export default {
   }
   &__aside,
   &__main {
+    font-size: 14px;
     display: flex;
     align-items: center;
     flex: 1;
@@ -603,7 +604,14 @@ export default {
   }
   &__filters {
     width: 20%;
-    padding-right: 50px;
+    padding-right: 48px;
+    &-button {
+      border: 2px solid var(--c-gray-outline);
+      padding: 9px 16px;
+      width: 100%;
+      justify-content: space-between;
+      font-size: 14px;
+    }
   }
   &__aside {
     flex: 0 0 20%;
@@ -614,9 +622,6 @@ export default {
   &__title {
     --heading-title-font-weight: var(--font-weight--light);
     --heading-title-font-size: var(--font-size--xl);
-  }
-  &__filters-icon {
-    margin: 0 var(--spacer-sm) 0 0;
   }
   &__filters-button {
     --button-color: var(--c-link);
