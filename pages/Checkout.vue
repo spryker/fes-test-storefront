@@ -26,13 +26,7 @@
         <transition name="fade">
           <CartPreview
             data-cy="svsf-checkoutSection-cartPreview"
-            v-if="!isPayment"
             key="order-summary"
-          />
-          <OrderReview
-            data-cy="svsf-checkoutSection-orderReview"
-            v-else
-            @edit="handleEditClick"
           />
         </transition>
       </div>

@@ -1,226 +1,105 @@
 <template>
   <div>
-    <SfHeading
-      :level="3"
-      :title="$t('Payment')"
-      class="sf-heading--left sf-heading--no-underline title"
-    />
-
-    <SfAccordion first-open class="accordion smartphone-only">
-      <SfAccordionItem :header="$t('Personal Details')">
-        <div class="accordion__item">
-          <div class="accordion__content">
-            <p class="content">
-              {{ personalDetails.firstName }} {{ personalDetails.lastName
-              }}<br />
-            </p>
-            <p class="content">
-              {{ personalDetails.email }}
-            </p>
-          </div>
-          <SfButton
-            v-if="!isAuthenticated"
-            data-cy="svsf-checkoutPaymentSection-personalEdit-button"
-            class="sf-button--text color-secondary accordion__edit"
-            @click="$emit('edit', 'personal-details')"
-            >{{ $t('Edit') }}</SfButton
-          >
+    <div class="info">
+      <div class="info__item info__item--half">
+        <div class="info__col info__col--title">
+          {{ $t('Shipping address') }}:
         </div>
-      </SfAccordionItem>
-      <SfAccordionItem v-if="shippingDetails" :header="$t('Shipping details')">
-        <div class="accordion__item">
-          <div class="accordion__content">
-            <p class="content">
-              <span class="content__label">{{ shippingName }}</span
-              ><br />
-              {{ shippingDetails.address1 }}
-              {{ shippingDetails.address2 }}, {{ shippingDetails.zipCode
-              }}<br />
-              {{ shippingDetails.city }}, {{ shippingDetails.country }}
-            </p>
-            <p class="content">{{ shippingDetails.phone }}</p>
-          </div>
+
+        <div class="info__col info__col--content">
+          {{ shippingDetails.firstName }} {{ shippingDetails.lastName }}<br />
+          {{ shippingDetails.zipCode }} {{ shippingDetails.address1 }}, {{ shippingDetails.address2 }}<br />
+          {{ shippingDetails.city }}<br />
+          {{ shippingDetails.country }}<br />
+          {{ shippingDetails.phone }}
+        </div>
+
+        <div class="info__col info__col--right">
           <SfButton
             data-cy="svsf-checkoutPaymentSection-shippingEdit-button"
-            class="sf-button--text color-secondary accordion__edit"
+            class="sf-button--text"
             @click="$emit('edit', 'shipping')"
-            >Edit</SfButton
           >
+            <SfImage
+              src="/icons/edit-grey.svg"
+              alt="Edit"
+              class="info__edit"
+            />
+          </SfButton>
         </div>
-      </SfAccordionItem>
-      <SfAccordionItem v-if="billingDetails" :header="$t('Billing address')">
-        <div class="accordion__item">
-          <div class="accordion__content">
-            <p v-if="billingSameAsShipping" class="content">
-              {{ $t('Same as shipping address') }}
-            </p>
-            <template v-else>
-              <p class="content">
-                {{ billingDetails.address1 }}
-                {{ billingDetails.address2 }}, {{ billingDetails.zipCode
-                }}<br />
-                {{ billingDetails.city }}, {{ billingDetails.country }}
-              </p>
-              <p class="content">{{ billingDetails.phone }}</p>
-            </template>
-          </div>
+      </div>
+      <div class="info__item info__item--half">
+        <div class="info__col info__col--title">
+          {{ $t('Billing address') }}:
+        </div>
+        <div class="info__col info__col--content">
+          <template v-if="billingSameAsShipping" class="content">
+            {{ $t('Same as shipping address') }}
+          </template>
+          <template v-else>
+            <div>
+              {{ billingDetails.firstName }} {{ billingDetails.lastName }}<br />
+              {{ billingDetails.zipCode }} {{ billingDetails.address1 }}, {{ billingDetails.address2 }}<br />
+              {{ billingDetails.city }}<br />
+              {{ billingDetails.country }}<br />
+              {{ billingDetails.phone }}
+            </div>
+          </template>
+        </div>
+        <div class="info__col info__col--right">
           <SfButton
             data-cy="svsf-checkoutPaymentSection-billingEdit-button"
-            class="sf-button--text color-secondary accordion__edit"
+            class="sf-button--text"
             @click="$emit('edit', 'billing')"
-            >{{ $t('Edit') }}</SfButton
-          >
-        </div>
-      </SfAccordionItem>
-    </SfAccordion>
-
-    <SfTable
-      data-cy="svsf-checkoutPaymentSection-overview-table"
-      class="sf-table--bordered table desktop-only"
-    >
-      <SfTableHeading class="table__row">
-        <SfTableHeader class="table__header table__image">{{
-          $t('Item')
-        }}</SfTableHeader>
-        <SfTableHeader
-          v-for="tableHeader in tableHeaders"
-          :key="tableHeader"
-          class="table__header"
-          :class="{ table__description: tableHeader === 'Description' }"
-        >
-          {{ tableHeader }}
-        </SfTableHeader>
-      </SfTableHeading>
-      <SfTableRow
-        v-for="(product, index) in products"
-        :key="index"
-        class="table__row"
-      >
-        <SfTableData class="table__image">
-          <SfImage
-            :src="cartGetters.getItemImage(product)"
-            :alt="cartGetters.getItemName(product)"
-          />
-        </SfTableData>
-        <SfTableData class="table__data table__data--left table__description">
-          <div class="product-title">
-            {{ cartGetters.getItemName(product) }}
-          </div>
-          <div class="product-sku">
-            {{ cartGetters.getItemSku(product) }}
-          </div>
-          <div class="product-attributes">
-            <div
-              v-for="(value, key) in cartGetters.getItemAttributes(product)"
-              :key="key"
             >
-              {{ key }}: <strong>{{ value }}</strong>
+              <SfImage
+                src="/icons/edit-grey.svg"
+                alt="Edit"
+                class="info__edit"
+              />
+            </SfButton>
+        </div>
+      </div>
+      <div class="info__item">
+        <div class="info__col info__col--title">
+          {{ $t('Shipping method') }}:
+        </div>
+
+        <div class="info__col info__col--content">
+          <div class="shipping-title">
+            <SfImage
+              :src="`/icons/${shippingName[0].toLowerCase()}.svg`"
+              :alt="shippingName[0]"
+            />
+            <div>
+              {{ shippingName[0] }}
             </div>
           </div>
-        </SfTableData>
-        <SfTableData class="table__data">{{
-          cartGetters.getItemQty(product)
-        }}</SfTableData>
-        <SfTableData class="table__data price">
-          <SfPrice
-            :regular="
-              cartGetters.getItemPrice(product).regular !== 0
-                ? cartGetters.getFormattedPrice(
-                    cartGetters.getItemPrice(product).regular,
-                  )
-                : ''
-            "
-            :special="
-              cartGetters.getFormattedPrice(
-                cartGetters.getItemPrice(product).special,
-              )
-            "
-            class="product-price"
-          />
-          <SfIcon
-            data-cy="svsf-checkoutPaymentSection-removeFromCart-icon"
-            icon="cross"
-            size="xxs"
-            color="#BEBFC4"
-            role="button"
-            class="button table__remove"
-            @click="removeCartItem({ product })"
-          />
-        </SfTableData>
-      </SfTableRow>
-    </SfTable>
-    <div class="summary">
-      <div class="summary__group">
-        <div class="summary__total">
-          <SfProperty
-            data-cy="svsf-checkoutPaymentSection-subtotal-property-list"
-            :name="$t('Subtotal')"
-            :value="cartGetters.getFormattedPrice(totals.subtotal)"
-            class="sf-property--full-width property"
-          />
-          <SfProperty
-            data-cy="svsf-checkoutPaymentSection-shipping-property-list"
-            :name="$t('Shipping')"
-            :value="cartGetters.getFormattedPrice(shippingPrice)"
-            class="sf-property--full-width property"
-          />
-          <SfProperty
-            data-cy="svsf-checkoutPaymentSection-tax-property-list"
-            v-if="taxes"
-            :name="$t('Tax')"
-            :value="cartGetters.getFormattedPrice(taxes)"
-            class="sf-property--full-width property"
-          />
+
+          {{ shippingName[1] }} - {{ formattedShippingPrice }}
         </div>
 
-        <template v-if="vouchers.length">
-          <SfProperty
-            data-cy="svsf-checkoutPaymentSection-voucher-property-list"
-            :name="$t('Voucher')"
-            v-for="voucher in vouchers"
-            :key="voucher.id"
-            :value="`- ${cartGetters.getFormattedPrice(voucher.value)}`"
-            class="sf-property--full-width sf-property--small property"
+        <div class="info__col info__col--right">
+          <SfButton
+            data-cy="svsf-checkoutPaymentSection-shippingEdit-button"
+            class="sf-button--text"
+            @click="$emit('edit', 'shipping')"
           >
-            <template #name>
-              <span class="sf-property__name">
-                {{ $t('Voucher') }} ({{ voucher.name }})
-              </span>
-            </template>
-          </SfProperty>
-        </template>
-        <template v-if="giftCards.length">
-          <SfProperty
-            data-cy="svsf-checkoutPaymentSection-giftCard-property-list"
-            :name="$t('Gift Card')"
-            v-for="giftCard in giftCards"
-            :key="giftCard.id"
-            :value="`- ${cartGetters.getFormattedPrice(giftCard.value)}`"
-            class="sf-property--full-width sf-property--small property"
-          >
-            <template #name>
-              <span class="sf-property__name">
-                Gift Card ({{ giftCard.name }})
-              </span>
-            </template>
-          </SfProperty>
-        </template>
+            <SfImage
+              src="/icons/edit-grey.svg"
+              alt="Edit"
+              class="info__edit"
+            />
+          </SfButton>
+        </div>
+      </div>
+    </div>
 
-        <SfDivider class="divider" />
-
-        <SfProperty
-          data-cy="svsf-checkoutPaymentSection-totalPrice-property-list"
-          :name="$t('Total price')"
-          :value="totalPrice"
-          class="sf-property--full-width sf-property--large summary__property-total"
-        />
-
+    <div class="summary">
         <VsfPaymentProvider
           data-cy="svsf-checkoutPaymentSection-vsfPaymentProvider"
           @status="isPaymentReady = $event"
         />
-
-        <SfDivider class="divider payment-divider" />
 
         <SfCheckbox
           data-cy="svsf-checkoutPaymentSection-terms-checkbox"
@@ -363,10 +242,18 @@ export default {
         ).regular,
     );
 
+    const formattedShippingPrice = computed(() =>
+      cartGetters.getFormattedPrice(
+        shippingProviderGetters.getSelectedMethodPrice(
+          shippingProvider.state.value,
+        ).regular
+      )
+    );
+
     const shippingName = computed(() =>
       shippingProviderGetters.getSelectedMethodName(
         shippingProvider.state.value,
-      ),
+      ).split(': '),
     );
 
     const vouchers = computed(() => cartGetters.getCoupons(cart.value));
@@ -417,6 +304,7 @@ export default {
       shippingDetails,
       shippingName,
       shippingPrice,
+      formattedShippingPrice,
 
       billingDetails,
       billingSameAsShipping,
@@ -556,5 +444,56 @@ export default {
 
 .payment-divider {
   margin: var(--spacer-xl) 0 0 0;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.875rem;
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+    padding: 1.25rem;
+    margin-bottom: 0.9375rem;
+    background: #F5F5F5;
+    box-sizing: border-box;
+
+    &--half {
+      @media (min-width: $tablet-min) {
+        width: 50%;
+      }
+    }
+  }
+
+  &__col {
+    &--title {
+      padding-right: 0.5rem;
+    }
+
+    &--content {
+      color: #8F8F8F;
+    }
+
+    &--right {
+      margin-left: auto;
+    }
+  }
+}
+
+.shipping-title {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: var(--font-family--primary);
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  & > div {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
 }
 </style>
