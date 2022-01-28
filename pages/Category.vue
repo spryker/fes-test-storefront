@@ -118,6 +118,7 @@
         <SfLoader :class="{ loading }" :loading="loading">
           <SfAccordion
             data-cy="svsf-categorySection-categoryTree-accordion"
+            class="page-filters"
             :open="categoryTree.selectedCategories"
             :showChevron="true"
           >
@@ -134,7 +135,6 @@
               >
                 <SfListItem
                   data-cy="svsf-categorySection-categoryTree-list-item"
-                  class="list__item"
                 >
                   <SfMenuItem
                     data-cy="svsf-categorySection-categoryTree-menu-item"
@@ -144,7 +144,6 @@
                     <template #label>
                       <nuxt-link
                         :to="localePath(th.getCatLink(cat))"
-                        :class="cat.isCurrent ? 'sidebar--cat-selected' : ''"
                         >{{ $t('All') }}</nuxt-link
                       >
                     </template>
@@ -152,7 +151,6 @@
                 </SfListItem>
                 <SfListItem
                   data-cy="svsf-categorySection-categoryTree-list-item"
-                  class="list__item"
                   v-for="(subCat, j) in cat.items"
                   :key="j"
                 >
@@ -160,11 +158,11 @@
                     data-cy="svsf-categorySection-categoryTree-menu-item"
                     :count="subCat.count || ''"
                     :label="subCat.label"
+                    :class="subCat.isCurrent ? 'sidebar--cat-selected' : ''"
                   >
                     <template #label="{ label }">
                       <nuxt-link
                         :to="localePath(th.getCatLink(subCat))"
-                        :class="subCat.isCurrent ? 'sidebar--cat-selected' : ''"
                         >{{ label }}</nuxt-link
                       >
                     </template>
@@ -813,6 +811,35 @@ export default {
     }
     &__list {
       margin: 0 0 0 var(--spacer-sm);
+    }
+  }
+}
+.page-filters {
+  ::v-deep .sf-accordion-item {
+    &__header {
+      --chevron-size: 16px;
+      --accordion-item-header-font-size: 16px;
+      --accordion-item-header-color: var(--product-gray);
+      --accordion-item-header-padding: 0;
+      --chevron-color: var(--product-gray);
+    }
+    &__content {
+      --accordion-item-content-padding: 10px 20px;
+      --c-link: var(--product-gray);
+      --menu-item-count-color: var(--product-gray);
+      --list-item-margin: 0;
+      line-height: 29px;
+      a {
+        text-align: left;
+      }
+      .sidebar--cat-selected {
+        font-weight: 600;
+        --c-link: var(--product-black);
+        --menu-item-count-color: var(--product-black);
+        a {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
