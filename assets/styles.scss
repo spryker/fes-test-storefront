@@ -1,8 +1,9 @@
 // Importing base vsf styling once and for all, don't import it in pages/components!
 @import '@storefront-ui/vue/styles';
-@import "root";
-@import "base";
-@import "icons";
-@import "header";
-@import "cart-sidebar";
-@import "steps";
+@import 'root';
+@import 'base';
+@import 'icons';
+@import 'header';
+@import 'cart-sidebar';
+@import 'steps';
+@import '~/assets/demo/modal.scss';
