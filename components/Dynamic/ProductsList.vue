@@ -165,7 +165,6 @@ export default Vue.extend({
       content.value = res.data ? res.data : res;
       const query = makeQuery(content.value.queryLink);
       const itemsPerPage = Math.ceil(content.value.maxProductsNumber / 12) * 12;
-      console.log('getCategorySlug()', getCategorySlug());
       await search({
         ...query,
         categorySlug: getCategorySlug(),
