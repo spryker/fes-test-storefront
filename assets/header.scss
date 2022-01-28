@@ -7,6 +7,9 @@ body {
   --search-bar-placeholder-color-focus: var(--search-bar-placeholder-color);
   --header-icon-color: #4c4c4c;
   --header-z-index: 3;
+
+  // --header-margin: 0 10px;
+  --header-padding: 10px;
 }
 
 .sf-top-bar__center,
@@ -54,7 +57,7 @@ body {
     --header-navigation-item-display: flex;
 
     &:before {
-      content: "";
+      content: '';
       background: url(/icons/menu.svg);
       position: absolute;
       width: 21px;
