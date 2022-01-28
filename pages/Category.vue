@@ -16,11 +16,14 @@
         />
       </template>
     </SfNotification>
-    <SfBreadcrumbs
-      data-cy="svsf-categorySection-breadcrumbs"
-      class="breadcrumbs desktop-only"
-      :breadcrumbs="breadcrumbs"
-    />
+    <div class="category__heading section">
+      <SfBreadcrumbs
+        data-cy="svsf-categorySection-breadcrumbs"
+        class="breadcrumbs desktop-only"
+        :breadcrumbs="breadcrumbs"
+      />
+      <h1 class="category__title">{{ currentCategory.text }}</h1>
+    </div>
     <LayoutSlot :slotName="slotName" />
     <div class="navbar section">
       <!--      <div class="navbar__aside desktop-only">
@@ -32,21 +35,23 @@
         />
       </div>-->
       <div class="navbar__main">
-        <SfButton
-          data-cy="svsf-categorySection-filters-button"
-          class="sf-button--text navbar__filters-button"
-          aria-label="Filters"
-          @click="toggleFilterSidebar"
-        >
-          <SfIcon
-            data-cy="svsf-categorySection-filter-icon"
-            size="18px"
-            color="dark-secondary"
-            icon="filter"
-            class="navbar__filters-icon"
-          />
-          {{ $t('Filters') }}
-        </SfButton>
+        <div class="navbar__filters">
+          <SfButton
+            data-cy="svsf-categorySection-filters-button"
+            class="sf-button--text navbar__filters-button"
+            aria-label="Filters"
+            @click="toggleFilterSidebar"
+          >
+            {{ $t('Filters') }}
+            <SfIcon
+              data-cy="svsf-categorySection-filter-icon"
+              size="18px"
+              color="dark-secondary"
+              icon="filter"
+              class="navbar__filters-icon"
+            />
+          </SfButton>
+        </div>
         <div class="navbar__counter">
           <span class="navbar__label desktop-only"
             >{{ $t('Products found') }}:
@@ -80,28 +85,34 @@
         </div>
         <div class="navbar__view">
           <span class="navbar__view-label desktop-only">{{ $t('View') }}</span>
-          <SfIcon
-            data-cy="svsf-categorySection-tiles-icon"
+          <span
             class="navbar__view-icon"
-            :color="isCategoryGridView ? 'black' : 'dark-secondary'"
-            icon="tiles"
-            size="12px"
             role="button"
             aria-label="Change to grid view"
-            :aria-pressed="isCategoryGridView"
+            :class="{ active: isCategoryGridView }"
             @click="toggleCategoryGridView"
-          />
-          <SfIcon
-            data-cy="svsf-categorySection-list-icon"
+          >
+            <SfIcon
+              data-cy="svsf-categorySection-tiles-icon"
+              icon="tiles"
+              size="16px"
+              :aria-pressed="isCategoryGridView"
+            />
+          </span>
+          <span
             class="navbar__view-icon"
-            :color="!isCategoryGridView ? 'black' : 'dark-secondary'"
-            icon="list"
-            size="12px"
+            :class="{ active: !isCategoryGridView }"
+            @click="toggleCategoryGridView"
             role="button"
             aria-label="Change to list view"
-            :aria-pressed="!isCategoryGridView"
-            @click="toggleCategoryGridView"
-          />
+          >
+            <SfIcon
+              data-cy="svsf-categorySection-list-icon"
+              icon="list"
+              size="16px"
+              :aria-pressed="!isCategoryGridView"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -111,8 +122,9 @@
         <SfLoader :class="{ loading }" :loading="loading">
           <SfAccordion
             data-cy="svsf-categorySection-categoryTree-accordion"
+            class="page-filters"
             :open="categoryTree.selectedCategories"
-            :showChevron="true"
+            :showChevron="false"
           >
             <SfAccordionItem
               data-cy="svsf-categorySection-categoryTree-accordion-item"
@@ -127,7 +139,6 @@
               >
                 <SfListItem
                   data-cy="svsf-categorySection-categoryTree-list-item"
-                  class="list__item"
                 >
                   <SfMenuItem
                     data-cy="svsf-categorySection-categoryTree-menu-item"
@@ -135,17 +146,14 @@
                     :label="cat.label"
                   >
                     <template #label>
-                      <nuxt-link
-                        :to="localePath(th.getCatLink(cat))"
-                        :class="cat.isCurrent ? 'sidebar--cat-selected' : ''"
-                        >{{ $t('All') }}</nuxt-link
-                      >
+                      <nuxt-link :to="localePath(th.getCatLink(cat))">{{
+                        $t('All')
+                      }}</nuxt-link>
                     </template>
                   </SfMenuItem>
                 </SfListItem>
                 <SfListItem
                   data-cy="svsf-categorySection-categoryTree-list-item"
-                  class="list__item"
                   v-for="(subCat, j) in cat.items"
                   :key="j"
                 >
@@ -153,13 +161,12 @@
                     data-cy="svsf-categorySection-categoryTree-menu-item"
                     :count="subCat.count || ''"
                     :label="subCat.label"
+                    :class="subCat.isCurrent ? 'sidebar--cat-selected' : ''"
                   >
                     <template #label="{ label }">
-                      <nuxt-link
-                        :to="localePath(th.getCatLink(subCat))"
-                        :class="subCat.isCurrent ? 'sidebar--cat-selected' : ''"
-                        >{{ label }}</nuxt-link
-                      >
+                      <nuxt-link :to="localePath(th.getCatLink(subCat))">{{
+                        label
+                      }}</nuxt-link>
                     </template>
                   </SfMenuItem>
                 </SfListItem>
@@ -515,6 +522,7 @@ export default {
       isAuthenticated,
       isAddToCartVisible,
       slotName,
+      currentCategory,
     };
   },
   components: {
@@ -554,17 +562,30 @@ export default {
     }
   }
 }
-.breadcrumbs {
-  padding: var(--spacer-base) 0;
+.category {
+  &__heading {
+    position: relative;
+    padding: var(--spacer-base) 0;
+    &:before {
+      content: '';
+      position: absolute;
+      left: calc((100vw - 100%) / -2);
+      right: calc((100vw - 100%) / -2);
+      top: 0;
+      bottom: 0;
+      background-color: #f5f5f5;
+      z-index: -1;
+    }
+  }
+  &__title {
+    line-height: 0.85;
+    margin-left: -4px;
+    margin-top: 8px;
+  }
 }
 .navbar {
   position: relative;
   display: flex;
-  border: 1px solid var(--c-light);
-  border-width: 0 0 1px 0;
-  @include for-desktop {
-    border-width: 1px 0 1px 0;
-  }
   &.section {
     padding: var(--spacer-sm);
     @include for-desktop {
@@ -573,13 +594,24 @@ export default {
   }
   &__aside,
   &__main {
+    font-size: 14px;
     display: flex;
     align-items: center;
-    padding: var(--spacer-sm) 0;
     flex: 1;
-    padding: 0;
     @include for-desktop {
       padding: 0;
+    }
+  }
+  &__filters {
+    width: 20%;
+    padding-right: 48px;
+    &-button {
+      border: 1px solid var(--c-gray-outline);
+      padding: 9px 16px;
+      width: 100%;
+      justify-content: space-between;
+      font-size: 14px;
+      border-radius: 2px;
     }
   }
   &__aside {
@@ -591,9 +623,6 @@ export default {
   &__title {
     --heading-title-font-weight: var(--font-weight--light);
     --heading-title-font-size: var(--font-size--xl);
-  }
-  &__filters-icon {
-    margin: 0 var(--spacer-sm) 0 0;
   }
   &__filters-button {
     --button-color: var(--c-link);
@@ -624,10 +653,6 @@ export default {
   &__select {
     --select-option-font-size: var(--font-size--base);
     --select-padding: var(--spacer-sm) 0;
-    ::v-deep .sf-select__dropdown {
-      font-size: var(--font-size--base);
-      margin: var(--spacer-2xs) 0 0 0;
-    }
   }
   &__sort {
     display: flex;
@@ -637,8 +662,9 @@ export default {
   &__counter {
     font-family: var(--font-family--secondary);
     margin: auto;
+    flex-grow: 1;
     @include for-desktop {
-      margin: auto 0 auto auto;
+      margin: 0;
     }
   }
   &__view {
@@ -651,10 +677,28 @@ export default {
       order: -1;
     }
     &-icon {
+      --icon-color: var(--c-gray-outline);
+      border: 1px solid var(--c-gray-outline);
       cursor: pointer;
-      margin: 0 var(--spacer-base) 0 0;
+      padding: var(--spacer-xs);
+      transition-property: color, background-color;
+      transition-duration: 0.35s;
+      transition-timing-function: ease;
+      &:nth-child(2) {
+        border-radius: 2px 0 0 2px;
+      }
       &:last-child {
-        margin: 0;
+        margin-left: -1px;
+        margin-right: var(--spacer-base);
+        border-radius: 0 2px 2px 0;
+      }
+      svg {
+        flex-shrink: 0;
+      }
+      &.active,
+      &:hover {
+        background-color: #f0f0f0;
+        --icon-color: #3f3e42;
       }
     }
     &-label {
@@ -676,9 +720,7 @@ export default {
 .sidebar {
   @include for-desktop {
     flex: 0 0 20%;
-    padding: var(--spacer-sm);
-    border: 1px solid var(--c-light);
-    border-width: 0 1px 0 0;
+    padding-right: var(--spacer-sm);
   }
 
   .sf-loader__overlay {
@@ -787,6 +829,35 @@ export default {
     }
   }
 }
+::v-deep .page-filters {
+  .sf-accordion-item {
+    margin: 12px 0;
+    &__header {
+      --accordion-item-header-font-size: 16px;
+      --accordion-item-header-color: var(--product-gray);
+      --accordion-item-header-padding: 0;
+      --chevron-color: var(--product-gray);
+    }
+    &__content {
+      --accordion-item-content-padding: 10px 20px;
+      --c-link: var(--product-gray);
+      --menu-item-count-color: var(--product-gray);
+      --list-item-margin: 0;
+      line-height: 29px;
+      a {
+        text-align: left;
+      }
+      .sidebar--cat-selected {
+        font-weight: 600;
+        --c-link: var(--product-black);
+        --menu-item-count-color: var(--product-black);
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
 .filters {
   &__accordion-item {
     --accordion-item-content-padding: 0;
@@ -799,6 +870,11 @@ export default {
   }
 }
 ::v-deep .sf-product-card {
+  // Resetting max-width to get 3 columns on category listing
+  --product-card-max-width: 33%;
+  @include for-desktop {
+    flex: 1 1 33%;
+  }
   &__image-wrapper {
     flex-grow: 1;
     height: 100%;
@@ -825,6 +901,49 @@ export default {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     white-space: normal;
+  }
+  &__add-button {
+    --circle-icon-position: static;
+    --button-box-shadow: none;
+    --icon-color: var(--c-primary);
+    --icon-size: 1.25rem;
+    --button-size: 2.375rem;
+    --button-background: transperent;
+    --button-border-radius: 2px;
+    --product-card-add-button-transform: none;
+    border: 1px solid var(--c-gray-outline);
+  }
+  &__price {
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    .sf-price {
+      &__old {
+        --price-old-margin: 0;
+        font-size: 15px;
+        position: absolute;
+        top: -16px;
+      }
+      &__special {
+        font-size: 20px;
+      }
+    }
+  }
+  .section__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  &__rating {
+    margin-top: 8px;
+  }
+  .sf-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 2px;
+    --product-card-badge-left: 8px;
   }
 }
 </style>
