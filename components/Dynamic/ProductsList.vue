@@ -198,7 +198,6 @@ export default Vue.extend({
 section {
   --section-margin: 10px;
   --section-content-margin: 0;
-  --product-card-height: auto;
-  // 250px;
+  --product-card-background: transparent;
 }
 </style>

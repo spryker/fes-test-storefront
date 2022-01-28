@@ -32,13 +32,13 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import SfCarouselItem from './_internal/SfCarouselItem.vue';
-import SfArrow from '../../atoms/SfArrow/SfArrow.vue';
-import Glide from '@glidejs/glide';
-Vue.component('SfCarouselItem', SfCarouselItem);
+import Vue from "vue";
+import SfCarouselItem from "./_internal/SfCarouselItem.vue";
+import SfArrow from "../../atoms/SfArrow/SfArrow.vue";
+import Glide from "@glidejs/glide";
+Vue.component("SfCarouselItem", SfCarouselItem);
 export default {
-  name: 'SfCarousel',
+  name: "SfCarousel",
   components: {
     SfArrow,
   },
@@ -53,7 +53,7 @@ export default {
     return {
       glide: null,
       defaultSettings: {
-        type: 'carousel',
+        type: "carousel",
         rewind: true,
         perView: 4,
         slidePerPage: true,
@@ -91,10 +91,10 @@ export default {
       if (size <= glide.settings.perView) {
         glide.settings.perView = size;
         glide.settings.rewind = false;
-        this.$refs.controls.style.display = 'none';
+        this.$refs.controls.style.display = "none";
       }
       glide.mount();
-      glide.on('run.before', (move) => {
+      glide.on("run.before", (move) => {
         const { slidePerPage, rewind, type } = this.mergedOptions;
         if (!slidePerPage) return;
         const { perView } = glide.settings;
@@ -102,25 +102,24 @@ export default {
         const { direction } = move;
         let page, newIndex;
         switch (direction) {
-          case '>':
-          case '<':
+          case ">":
+          case "<":
             page = Math.ceil(glide.index / perView);
-            newIndex =
-              page * perView + (direction === '>' ? perView : -perView);
+            newIndex = page * perView + (direction === ">" ? perView : -perView);
             if (newIndex >= size) {
-              if (type === 'slider' && !rewind) {
+              if (type === "slider" && !rewind) {
                 newIndex = glide.index;
               } else {
                 newIndex = 0;
               }
             } else if (newIndex < 0 || newIndex + perView > size) {
-              if (type === 'slider' && !rewind) {
+              if (type === "slider" && !rewind) {
                 newIndex = glide.index;
               } else {
                 newIndex = size - perView;
               }
             }
-            move.direction = '=';
+            move.direction = "=";
             move.steps = newIndex;
         }
       });
@@ -131,11 +130,11 @@ export default {
     go(direct) {
       if (!this.glide) return;
       switch (direct) {
-        case 'prev':
-          this.glide.go('<');
+        case "prev":
+          this.glide.go("<");
           break;
-        case 'next':
-          this.glide.go('>');
+        case "next":
+          this.glide.go(">");
           break;
       }
     },
@@ -143,5 +142,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import '~@storefront-ui/shared/styles/components/organisms/SfCarousel.scss';
+@import "~@storefront-ui/shared/styles/components/organisms/SfCarousel.scss";
 </style>
