@@ -124,7 +124,7 @@
             data-cy="svsf-categorySection-categoryTree-accordion"
             class="page-filters"
             :open="categoryTree.selectedCategories"
-            :showChevron="true"
+            :showChevron="false"
           >
             <SfAccordionItem
               data-cy="svsf-categorySection-categoryTree-accordion-item"
@@ -146,10 +146,9 @@
                     :label="cat.label"
                   >
                     <template #label>
-                      <nuxt-link
-                        :to="localePath(th.getCatLink(cat))"
-                        >{{ $t('All') }}</nuxt-link
-                      >
+                      <nuxt-link :to="localePath(th.getCatLink(cat))">{{
+                        $t('All')
+                      }}</nuxt-link>
                     </template>
                   </SfMenuItem>
                 </SfListItem>
@@ -165,10 +164,9 @@
                     :class="subCat.isCurrent ? 'sidebar--cat-selected' : ''"
                   >
                     <template #label="{ label }">
-                      <nuxt-link
-                        :to="localePath(th.getCatLink(subCat))"
-                        >{{ label }}</nuxt-link
-                      >
+                      <nuxt-link :to="localePath(th.getCatLink(subCat))">{{
+                        label
+                      }}</nuxt-link>
                     </template>
                   </SfMenuItem>
                 </SfListItem>
@@ -827,10 +825,9 @@ export default {
     }
   }
 }
-.page-filters {
-  ::v-deep .sf-accordion-item {
+::v-deep .page-filters {
+  .sf-accordion-item {
     &__header {
-      --chevron-size: 16px;
       --accordion-item-header-font-size: 16px;
       --accordion-item-header-color: var(--product-gray);
       --accordion-item-header-padding: 0;
