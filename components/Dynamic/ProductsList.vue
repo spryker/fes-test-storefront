@@ -158,7 +158,7 @@ export default Vue.extend({
     });
 
     const getMockProductsQuery = (categoryId, productsType): {q: string}|null => {
-      if (categoryId === 3 && productsType === 'best-sell')
+      if (categoryId === 50 && productsType === 'best-sell')
         return { q: '4165826 5425220 3628514' };
       if (categoryId === 53 && productsType === 'upsell')
         return { q: '4727133 5116532 3788413 3997828' };
