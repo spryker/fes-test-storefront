@@ -676,7 +676,8 @@ export default {
       cursor: pointer;
       padding: var(--spacer-xs);
       &:last-child {
-        margin-left: var(--spacer-sm);
+        margin-left: -2px;
+        margin-right: var(--spacer-base);
       }
       svg {
         flex-shrink: 0;
