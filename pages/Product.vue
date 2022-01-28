@@ -684,7 +684,7 @@ export default {
   &__save {
     --icon-color: var(--c-primary);
     --button-size: 52px;
-    --button-border-color: #dce0e5;
+    --button-border-color: var(--c-gray-outline);
     --button-border-width: 1px;
     display: flex;
     margin: 0;

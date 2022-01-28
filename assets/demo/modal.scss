@@ -53,7 +53,7 @@
           .sf-select {
             &__wrapper,
             &__dropdown {
-              border: 1px solid #dce0e5;
+              border: 1px solid var(--c-gray-outline);
               border-radius: 2px;
 
               margin-bottom: 2px;

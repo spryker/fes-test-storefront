@@ -85,28 +85,32 @@
         </div>
         <div class="navbar__view">
           <span class="navbar__view-label desktop-only">{{ $t('View') }}</span>
-          <span class="navbar__view-icon">
+          <span
+            class="navbar__view-icon"
+            role="button"
+            aria-label="Change to grid view"
+            :class="{ active: isCategoryGridView }"
+            @click="toggleCategoryGridView"
+          >
             <SfIcon
               data-cy="svsf-categorySection-tiles-icon"
-              :color="isCategoryGridView ? 'black' : 'dark-secondary'"
               icon="tiles"
               size="16px"
-              role="button"
-              aria-label="Change to grid view"
               :aria-pressed="isCategoryGridView"
-              @click="toggleCategoryGridView"
             />
           </span>
-          <span class="navbar__view-icon">
+          <span
+            class="navbar__view-icon"
+            :class="{ active: !isCategoryGridView }"
+            @click="toggleCategoryGridView"
+            role="button"
+            aria-label="Change to list view"
+          >
             <SfIcon
               data-cy="svsf-categorySection-list-icon"
-              :color="!isCategoryGridView ? 'black' : 'dark-secondary'"
               icon="list"
               size="16px"
-              role="button"
-              aria-label="Change to list view"
               :aria-pressed="!isCategoryGridView"
-              @click="toggleCategoryGridView"
             />
           </span>
         </div>
@@ -120,7 +124,7 @@
             data-cy="svsf-categorySection-categoryTree-accordion"
             class="page-filters"
             :open="categoryTree.selectedCategories"
-            :showChevron="true"
+            :showChevron="false"
           >
             <SfAccordionItem
               data-cy="svsf-categorySection-categoryTree-accordion-item"
@@ -142,10 +146,9 @@
                     :label="cat.label"
                   >
                     <template #label>
-                      <nuxt-link
-                        :to="localePath(th.getCatLink(cat))"
-                        >{{ $t('All') }}</nuxt-link
-                      >
+                      <nuxt-link :to="localePath(th.getCatLink(cat))">{{
+                        $t('All')
+                      }}</nuxt-link>
                     </template>
                   </SfMenuItem>
                 </SfListItem>
@@ -161,10 +164,9 @@
                     :class="subCat.isCurrent ? 'sidebar--cat-selected' : ''"
                   >
                     <template #label="{ label }">
-                      <nuxt-link
-                        :to="localePath(th.getCatLink(subCat))"
-                        >{{ label }}</nuxt-link
-                      >
+                      <nuxt-link :to="localePath(th.getCatLink(subCat))">{{
+                        label
+                      }}</nuxt-link>
                     </template>
                   </SfMenuItem>
                 </SfListItem>
@@ -604,11 +606,12 @@ export default {
     width: 20%;
     padding-right: 48px;
     &-button {
-      border: 2px solid var(--c-gray-outline);
+      border: 1px solid var(--c-gray-outline);
       padding: 9px 16px;
       width: 100%;
       justify-content: space-between;
       font-size: 14px;
+      border-radius: 2px;
     }
   }
   &__aside {
@@ -674,16 +677,28 @@ export default {
       order: -1;
     }
     &-icon {
-      --icon-color: #dce0e5;
-      border: 2px solid #dce0e5;
+      --icon-color: var(--c-gray-outline);
+      border: 1px solid var(--c-gray-outline);
       cursor: pointer;
       padding: var(--spacer-xs);
+      transition-property: color, background-color;
+      transition-duration: 0.35s;
+      transition-timing-function: ease;
+      &:nth-child(2) {
+        border-radius: 2px 0 0 2px;
+      }
       &:last-child {
-        margin-left: -2px;
+        margin-left: -1px;
         margin-right: var(--spacer-base);
+        border-radius: 0 2px 2px 0;
       }
       svg {
         flex-shrink: 0;
+      }
+      &.active,
+      &:hover {
+        background-color: #f0f0f0;
+        --icon-color: #3f3e42;
       }
     }
     &-label {
@@ -867,10 +882,10 @@ export default {
     }
   }
 }
-.page-filters {
-  ::v-deep .sf-accordion-item {
+::v-deep .page-filters {
+  .sf-accordion-item {
+    margin: 12px 0;
     &__header {
-      --chevron-size: 16px;
       --accordion-item-header-font-size: 16px;
       --accordion-item-header-color: var(--product-gray);
       --accordion-item-header-padding: 0;
@@ -949,7 +964,7 @@ export default {
     --button-background: transperent;
     --button-border-radius: 2px;
     --product-card-add-button-transform: none;
-    border: 1px solid #dce0e5;
+    border: 1px solid var(--c-gray-outline);
   }
   &__price {
     align-items: start;
@@ -976,6 +991,12 @@ export default {
   }
   &__rating {
     margin-top: 8px;
+  }
+  .sf-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 2px;
+    --product-card-badge-left: 8px;
   }
 }
 </style>
