@@ -72,7 +72,6 @@ import {
   onMounted,
   onServerPrefetch,
   onUnmounted,
-  watch,
 } from '@vue/composition-api';
 import { take } from 'rxjs/operators';
 import {
@@ -112,7 +111,6 @@ export default Vue.extend({
     const categoryInject = inject('CURRENT_CATEGORY', {
       category: null,
     });
-    const ipp = inject('IPP', null)
     const categoryLink = computed(() => categoryInject?.category?.link);
     const th = useUiHelpers();
     const contentSubscription = null;
@@ -150,35 +148,37 @@ export default Vue.extend({
           )
         : {};
     };
-    const getCategorySlug = (): string | null => {
-      if (content.value.productsType !== 'best-sell') {
-        return null;
-      }
-      if (categoryLink.value) {
-        return th.getFacetsFromURL(categoryLink.value).categorySlug;
-      }
+    const getCategorySlug = computed(() => {
+      return categoryLink.value
+        ? th.getFacetsFromURL(categoryLink.value).categorySlug
+        : null;
+    });
+
+    const getMockProductsQuery = (categoryId, productsType): {q: string}|null => {
+      if (categoryId === 3 && productsType === 'best-sell')
+        return { q: '4165826 5425220 3628514' };
+      if (categoryId === 53 && productsType === 'upsell')
+        return { q: '4727133 5116532 3788413 3997828' };
+      if (categoryId === 52 && 'cross-sell')
+        return { q: '4705022 4670177 0123012 3186700' };
+
       return null;
     };
 
-    const getMockProductsQuery = (ipp, productsType) => {
-      if(ipp === 12 && productsType === 'best=sell')
-        return { q: '4165826 5425220 3628514' }
-      if(ipp === 36 && productsType === 'upsell')
-        return { q: '4727133 5116532 3788413 3997828' }
-      if(ipp === 36 && 'cross-sell')
-        return { q: '4705022 4670177 0123012 3186700' }
-
-      return {}
-    }
     content$.subscribe(async (res: any) => {
       content.value = res.data ? res.data : res;
       const query = makeQuery(content.value.queryLink);
       const itemsPerPage = Math.ceil(content.value.maxProductsNumber / 12) * 12;
 
+      const mockProductsQuery = getMockProductsQuery(
+        Number(getCategorySlug.value),
+        content.value.productsType,
+      )
+      const categorySearch = mockProductsQuery || { categorySlug: getCategorySlug.value }
+
       await search({
         ...query,
-        ...getMockProductsQuery(ipp, content.value.productsType),
-        categorySlug: getCategorySlug(),
+        ...categorySearch,
         itemsPerPage,
       });
     });

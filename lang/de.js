@@ -125,7 +125,7 @@ export default {
   'Review my order': 'Meine Bestellung überprüfen',
   'Select payment method': 'Zahlungsmethode auswählen',
   'Make an order': 'Bestellung aufgeben',
-  'have_account': 'Sie haben bereits ein Konto?',
+  have_account: 'Sie haben bereits ein Konto?',
   or: 'oder',
   'login in to your account': 'Anmelden bei Ihrem Konto',
   'Create an account': 'Konto erstellen',

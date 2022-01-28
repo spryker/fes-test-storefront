@@ -21,7 +21,7 @@
       class="breadcrumbs desktop-only"
       :breadcrumbs="breadcrumbs"
     />
-    <LayoutSlot :slotName="slotName" />
+    <LayoutSlot v-if="isDataLoaded" :slotName="slotName" />
     <div class="navbar section">
       <!--      <div class="navbar__aside desktop-only">
         <SfHeading
@@ -459,15 +459,17 @@ export default {
       category: currentCategory,
     });
 
-    provide('CURRENT_CATEGORY', slotData);
-    provide('IPP', context.root.$route.query.ipp);
-
+    let isDataLoaded = ref(false);
     onSSR(async () => {
       await search(th.getFacetsFromURL());
+      isDataLoaded.value = true;
     });
     onMounted(async () => {
       await search(th.getFacetsFromURL());
+      isDataLoaded.value = true;
     });
+
+    provide('CURRENT_CATEGORY', slotData);
 
     onUnmounted(() => {
       uiState.isFilterSidebarOpen.value && uiState.toggleFilterSidebar();
@@ -499,6 +501,7 @@ export default {
     const slotName = computed(() => context.root.$route.path);
 
     return {
+      isDataLoaded,
       ...uiState,
       th,
       products,
