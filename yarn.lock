@@ -1398,15 +1398,21 @@
     "@vue-storefront/core" "~2.3.4"
     axios "^0.21.0"
 
+"@spryker-vsf/api@file:./spryker-vsf-api-0.6.0-dev.6.tgz":
+  version "0.6.0-dev.6"
+  resolved "file:./spryker-vsf-api-0.6.0-dev.6.tgz#f62005d424c13f7a86df86b909df90a716642e3a"
+  dependencies:
+    "@vue-storefront/core" "~2.3.4"
+    axios "^0.21.0"
+
 "@spryker-vsf/catalog-search-suggestions@^0.2.0-dev.2":
   version "0.2.0-dev.2"
   resolved "https://registry.yarnpkg.com/@spryker-vsf/catalog-search-suggestions/-/catalog-search-suggestions-0.2.0-dev.2.tgz#5080972640585dd053f64d15ae4dd4572ab1fa1f"
   integrity sha512-p/AUcFsNNaMn12fMBAPUlVFDXgoBQ8TF2AQkIA20QekmJdKKS7yIceze8lh6zKUs2P78OVf8I6wFjDu1ppU9Hg==
 
-"@spryker-vsf/composables@^0.6.0-dev.5":
-  version "0.6.0-dev.5"
-  resolved "https://registry.yarnpkg.com/@spryker-vsf/composables/-/composables-0.6.0-dev.5.tgz#5fd8482ac3bfa5373ecee6e7c520ce9b5a832d69"
-  integrity sha512-xtqyxL8RZeZh5BlxG8ckyhG+9WmjczBZPzfTGQXRxepJAahj6Kt/COjS7RBT7b4QeoEfIy+gpgB2Jvi5j78/6g==
+"@spryker-vsf/composables@file:./spryker-vsf-composables-0.6.0-dev.7.tgz":
+  version "0.6.0-dev.7"
+  resolved "file:./spryker-vsf-composables-0.6.0-dev.7.tgz#ef4f6720d4b8076f4687c978d5878ecba0775ee8"
   dependencies:
     "@spryker-vsf/api" "^0.6.0-dev.5"
     "@vue-storefront/core" "~2.3.4"
