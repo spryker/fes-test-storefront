@@ -9,11 +9,7 @@
       @click:close="cartErrorMessage = null"
     >
       <template #icon>
-        <SfIcon
-          data-cy="svsf-categorySection-error-icon"
-          icon="error"
-          color="white"
-        />
+        <SfIcon data-cy="svsf-categorySection-error-icon" icon="error" color="white" />
       </template>
     </SfNotification>
     <div class="category__heading section">
@@ -24,10 +20,7 @@
       />
       <h1 class="category__title">{{ currentCategory.text }}</h1>
     </div>
-    <LayoutSlot
-      v-if="isDataLoaded"
-      :slotName="slotName"
-    />
+    <LayoutSlot v-if="isDataLoaded" :slotName="slotName" />
     <div class="navbar section">
       <!--      <div class="navbar__aside desktop-only">
         <SfHeading
@@ -45,7 +38,7 @@
             aria-label="Filters"
             @click="toggleFilterSidebar"
           >
-            {{ $t('Filters') }}
+            {{ $t("Filters") }}
             <SfIcon
               data-cy="svsf-categorySection-filter-icon"
               size="18px"
@@ -56,18 +49,16 @@
           </SfButton>
         </div>
         <div class="navbar__counter">
-          <span class="navbar__label desktop-only"
-            >{{ $t('Products found') }}:
-          </span>
+          <span class="navbar__label desktop-only">{{ $t("Products found") }}: </span>
           <span class="desktop-only">
             {{ pagination.totalItems }}
           </span>
           <span class="navbar__label smartphone-only">
-            {{ pagination.totalItems }} {{ $t('Items') }}
+            {{ pagination.totalItems }} {{ $t("Items") }}
           </span>
         </div>
         <div class="navbar__sort desktop-only">
-          <span class="navbar__label">{{ $t('Sort by') }}:</span>
+          <span class="navbar__label">{{ $t("Sort by") }}:</span>
           <SfSelect
             data-cy="svsf-categorySection-sortBy-select"
             class="navbar__select"
@@ -87,7 +78,7 @@
           </SfSelect>
         </div>
         <div class="navbar__view">
-          <span class="navbar__view-label desktop-only">{{ $t('View') }}</span>
+          <span class="navbar__view-label desktop-only">{{ $t("View") }}</span>
           <span
             class="navbar__view-icon"
             role="button"
@@ -136,13 +127,8 @@
               :header="cat.label"
               :isOpen="cat.isCurrent"
             >
-              <SfList
-                data-cy="svsf-categorySection-categoryTree-list"
-                class="list"
-              >
-                <SfListItem
-                  data-cy="svsf-categorySection-categoryTree-list-item"
-                >
+              <SfList data-cy="svsf-categorySection-categoryTree-list" class="list">
+                <SfListItem data-cy="svsf-categorySection-categoryTree-list-item">
                   <SfMenuItem
                     data-cy="svsf-categorySection-categoryTree-menu-item"
                     :count="cat.count || ''"
@@ -150,7 +136,7 @@
                   >
                     <template #label>
                       <nuxt-link :to="localePath(th.getCatLink(cat))">{{
-                        $t('All')
+                        $t("All")
                       }}</nuxt-link>
                     </template>
                   </SfMenuItem>
@@ -194,21 +180,16 @@
             :title="productGetters.getName(product)"
             :image="productGetters.getCoverImage(product)"
             :regular-price="
-              productGetters.getFormattedPrice(
-                productGetters.getPrice(product).regular,
-              )
+              productGetters.getFormattedPrice(productGetters.getPrice(product).regular)
             "
             :special-price="
-              productGetters.getFormattedPrice(
-                productGetters.getPrice(product).special,
-              )
+              productGetters.getFormattedPrice(productGetters.getPrice(product).special)
             "
             :max-rating="5"
             :image-height="189"
             :score-rating="productGetters.getAverageRating(product)"
             :wishlistIcon="
-              productGetters.getProductConcretes(product).length === 1 &&
-              isAuthenticated
+              productGetters.getProductConcretes(product).length === 1 && isAuthenticated
                 ? 'heart'
                 : false
             "
@@ -221,14 +202,10 @@
                 : ''
             "
             @click:add-to-cart="addProductToCart(product)"
-            @click:wishlist="
-              addToWishlist({ product: product.concreteProducts[0] })
-            "
+            @click:wishlist="addToWishlist({ product: product.concreteProducts[0] })"
             :link="
               localePath(
-                `/p/${productGetters.getId(product)}/${productGetters.getSlug(
-                  product,
-                )}`,
+                `/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`
               )
             "
             class="products__product-card"
@@ -250,9 +227,7 @@
             :key="productGetters.getSlug(product)"
             :isAddToCartVisible="isAddToCartVisible(product)"
             @click:add-to-cart="addProductToCart"
-            @click:wishlist="
-              addToWishlist({ product: product.concreteProducts[0] })
-            "
+            @click:wishlist="addToWishlist({ product: product.concreteProducts[0] })"
           />
         </transition-group>
         <SfPagination
@@ -269,9 +244,7 @@
           v-show="pagination.totalPages > 1"
           class="products__pagination__options desktop-only"
         >
-          <span class="products__pagination__label">{{
-            $t('Show on page:')
-          }}</span>
+          <span class="products__pagination__label">{{ $t("Show on page:") }}</span>
           <SfSelect
             data-cy="svsf-categorySection-itemsPerPage-select"
             class="products__items-per-page"
@@ -298,10 +271,7 @@
       :title="$t('Filters')"
       @close="toggleFilterSidebar"
     >
-      <Filters
-        data-cy="svsf-categorySection-filtersSidebar-filters"
-        :facets="facets"
-      >
+      <Filters data-cy="svsf-categorySection-filtersSidebar-filters" :facets="facets">
         <template #categories-mobile>
           <SfAccordionItem
             data-cy="svsf-categorySection-filtersSidebar-accordion-item"
@@ -318,10 +288,7 @@
                 :key="`category-${cat.slug}`"
                 :header="cat.label"
               >
-                <SfList
-                  data-cy="svsf-categorySection-filtersSidebar-list"
-                  class="list"
-                >
+                <SfList data-cy="svsf-categorySection-filtersSidebar-list" class="list">
                   <SfListItem
                     data-cy="svsf-categorySection-filtersSidebar-list-item-label"
                     class="list__item"
@@ -338,7 +305,7 @@
                           :to="localePath(th.getCatLink(cat))"
                           :class="cat.isCurrent ? 'sidebar--cat-selected' : ''"
                         >
-                          {{ $t('All') }}
+                          {{ $t("All") }}
                         </nuxt-link>
                       </template>
                     </SfMenuItem>
@@ -359,9 +326,7 @@
                         <nuxt-link
                           :data-cy="`svsf-categorySection-filtersSidebar-menu-item-${subCat.slug}-link`"
                           :to="localePath(th.getCatLink(subCat))"
-                          :class="
-                            subCat.isCurrent ? 'sidebar--cat-selected' : ''
-                          "
+                          :class="subCat.isCurrent ? 'sidebar--cat-selected' : ''"
                           >{{ label }}</nuxt-link
                         >
                       </template>
@@ -392,7 +357,7 @@ import {
   SfBreadcrumbs,
   SfLoader,
   SfNotification,
-} from '@storefront-ui/vue';
+} from "@storefront-ui/vue";
 import {
   computed,
   onMounted,
@@ -401,7 +366,7 @@ import {
   onUnmounted,
   reactive,
   provide,
-} from '@vue/composition-api';
+} from "@vue/composition-api";
 import {
   useCart,
   useFacet,
@@ -409,16 +374,16 @@ import {
   useWishlist,
   facetGetters,
   productGetters,
-} from '@spryker-vsf/composables';
-import { useUiHelpers, useUiState } from '~/composables';
-import { onSSR } from '@vue-storefront/core';
-import Filters from '../components/Filters';
-import CardHorizontal from '../components/Category/CardHorizontal';
-import LayoutSlot from '@spryker-oryx/vsf/lib/components/LayoutSlot';
+} from "@spryker-vsf/composables";
+import { useUiHelpers, useUiState } from "~/composables";
+import { onSSR } from "@vue-storefront/core";
+import Filters from "../components/Filters";
+import CardHorizontal from "../components/Category/CardHorizontal";
+import LayoutSlot from "@spryker-oryx/vsf/lib/components/LayoutSlot";
 
 export default {
-  name: 'Category',
-  transition: 'fade',
+  name: "Category",
+  transition: "fade",
   setup(props, context) {
     onMounted(() => context.root.$scrollTo(context.root.$el, 2000));
     const th = useUiHelpers();
@@ -426,20 +391,14 @@ export default {
     const { isAuthenticated } = useUser();
     const { cart, addItem: addToCart, isInCart } = useCart();
     const { addItem: addToWishlist } = useWishlist();
-    const { result, search, loading } = useFacet(
-      th.getFacetsFromURL().categorySlug,
-    );
+    const { result, search, loading } = useFacet(th.getFacetsFromURL().categorySlug);
 
     const products = computed(() => facetGetters.getProducts(result.value));
-    const categoryTree = computed(() =>
-      facetGetters.getCategoryTree(result.value),
-    );
-    const breadcrumbs = computed(() =>
-      facetGetters.getBreadcrumbs(result.value),
-    );
+    const categoryTree = computed(() => facetGetters.getCategoryTree(result.value));
+    const breadcrumbs = computed(() => facetGetters.getBreadcrumbs(result.value));
     const sortBy = computed(() => facetGetters.getSortOptions(result.value));
     const facets = computed(() =>
-      facetGetters.getGrouped(result.value, ['color', 'size']),
+      facetGetters.getGrouped(result.value, ["color", "size"])
     );
     const pagination = computed(() => facetGetters.getPagination(result.value));
 
@@ -447,12 +406,12 @@ export default {
     const cartErrorMessage = ref(null);
 
     function makeErrorMessage({ tag, value }) {
-      return tag === 'validate'
+      return tag === "validate"
         ? value.errors
             .map((error) => error.detail)
-            .join(' ')
+            .join(" ")
             .trim() || null
-        : 'Something went wrong, please try again';
+        : "Something went wrong, please try again";
     }
 
     watch(cartError, () => {
@@ -469,7 +428,7 @@ export default {
       category: currentCategory,
     });
 
-    provide('CURRENT_CATEGORY', slotData);
+    provide("CURRENT_CATEGORY", slotData);
 
     let isDataLoaded = ref(false);
     onSSR(async () => {
@@ -574,7 +533,7 @@ export default {
     position: relative;
     padding: var(--spacer-base) 0;
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       left: calc((100vw - 100%) / -2);
       right: calc((100vw - 100%) / -2);
@@ -737,8 +696,7 @@ export default {
   &::v-deep .sf-sidebar__content {
     @include for-mobile {
       height: calc(
-        100% - var(--bottom-navigation-height, 3.75rem) -
-          var(--bar-height, 3.125rem)
+        100% - var(--bottom-navigation-height, 3.75rem) - var(--bar-height, 3.125rem)
       );
     }
   }
@@ -877,10 +835,9 @@ export default {
   }
 }
 ::v-deep .sf-product-card {
-  // Resetting max-width to get 3 columns on category listing
-  --product-card-max-width: 33%;
   @include for-desktop {
-    flex: 1 1 33%;
+    // Resetting max-width to get 3 columns on category listing
+    flex: 1 1 var(--product-card-max-width, 33%);
   }
   &__image-wrapper {
     flex-grow: 1;

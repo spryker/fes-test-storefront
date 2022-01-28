@@ -149,13 +149,13 @@ export default Vue.extend({
         : null;
     });
 
-    const getMockProductsQuery = (categoryId, productsType): {q: string}|null => {
-      if (categoryId === 50 && productsType === 'best-sell')
-        return { q: '4165826 5425220 3628514' };
-      if (categoryId === 53 && productsType === 'upsell')
-        return { q: '4727133 5116532 3788413 3997828' };
-      if (categoryId === 52 && 'cross-sell')
-        return { q: '4705022 4670177 0123012 3186700' };
+    const getMockProductsQuery = (categoryId, productsType): { q: string } | null => {
+      if (categoryId === 50 && productsType === "best-sell")
+        return { q: "4165826 5425220 3628514" };
+      if (categoryId === 53 && productsType === "upsell")
+        return { q: "4727133 5116532 3788413 3997828" };
+      if (categoryId === 52 && "cross-sell")
+        return { q: "4705022 4670177 0123012 3186700" };
 
       return null;
     };
@@ -167,9 +167,11 @@ export default Vue.extend({
 
       const mockProductsQuery = getMockProductsQuery(
         Number(getCategorySlug.value),
-        content.value.productsType,
-      )
-      const categorySearch = mockProductsQuery || { categorySlug: getCategorySlug.value }
+        content.value.productsType
+      );
+      const categorySearch = mockProductsQuery || {
+        categorySlug: getCategorySlug.value,
+      };
 
       await search({
         ...query,
@@ -209,5 +211,6 @@ section {
   --section-margin: 10px;
   --section-content-margin: 0;
   --product-card-background: transparent;
+  --product-card-max-width: 100%;
 }
 </style>
