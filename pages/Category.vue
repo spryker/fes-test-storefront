@@ -721,6 +721,59 @@ export default {
     }
   }
 }
+.sidebar {
+  --sidebar-circle-icon-right: 1.75rem;
+  --sidebar-circle-icon-top: 0;
+  --sidebar-top-padding: 40px 30px 15px;
+  --sidebar-content-padding: 0;
+  ::v-deep {
+    .sf-heading {
+      margin: 15px 0 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--top-bar-background);
+      padding-left: 20px;
+    }
+    .sf-heading__title {
+      --heading-title-font-weight: 400;
+    }
+    .sf-sidebar__circle-icon {
+      --icon-color: var(--product-gray);
+      --button-background: transparent;
+    }
+
+    h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .filters {
+      &__buttons {
+        padding: 15px 30px;
+        margin: 0;
+        --button-border-radius: 2px;
+        --button-text-transform: normal;
+        .color-light {
+          --button-background: transparent;
+          color: var(--product-gray);
+        }
+      }
+      &__item {
+        margin: 5px 20px 0 20px;
+        --filter-label-color: #4C4C4C;
+        --checkbox-size: 18px;
+        --checkbox-border-color: var(--top-bar-background);
+        --checkbox-border-radius: 2px;
+        .sf-checkbox__checkmark:hover {
+          --checkbox-border-color: var(--c-primary);
+          --checkbox-background: var(--c-primary);
+        }
+        width: auto;
+        flex: 1;
+      }
+    }
+  }
+}
 .sidebar-filters {
   --sidebar-title-display: none;
   --sidebar-top-padding: 0;
