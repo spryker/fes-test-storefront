@@ -1,4 +1,33 @@
-@import "../../helpers";
+@import '../../helpers';
+
+.glide__slides.sf-carousel__slides {
+  align-items: stretch;
+}
+
+.sf-product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sf-product-card__image-wrapper {
+  flex: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.sf-product-card__image {
+  display: contents;
+
+  .sf-image {
+    object-fit: contain;
+  }
+}
+
+.sf-carousel-item.glide__slide.carousel__item {
+  height: auto;
+}
+
 .sf-product-card {
   box-sizing: border-box;
   position: relative;
@@ -8,8 +37,9 @@
   height: var(--product-card-height);
   padding: var(--product-card-padding, var(--spacer-xs));
   background-color: var(--product-card-background, var(--c-white));
+
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     top: 0;

@@ -113,11 +113,14 @@ export default Vue.extend({
     });
     const { result, search, loading } = useFacet();
     const products = computed(() => {
+      console.log("compute data", result.value);
       const data = facetGetters.getProducts(result.value);
       if (content.value.productsType === "upsell") {
+        console.log("data!!", data);
         data.reverse();
       }
       if (content.value.maxProductsNumber && Number(content.value.maxProductsNumber)) {
+        console.log("data!!", data);
         return data.slice(0, Number(content.value.maxProductsNumber));
       }
       return data;
@@ -151,6 +154,11 @@ export default Vue.extend({
     };
     content$.subscribe(async (res: any) => {
       content.value = res.data ? res.data : res;
+
+      console.log("query", content.value.queryLink);
+      console.log("categoryLink", th.getFacetsFromURL(categoryLink.value).categorySlug);
+      console.log("categorySlug", categoryLink.value);
+
       const query = makeQuery(content.value.queryLink);
       const itemsPerPage = Math.ceil(content.value.maxProductsNumber / 12) * 12;
       await search({
@@ -190,6 +198,7 @@ export default Vue.extend({
 section {
   --section-margin: 10px;
   --section-content-margin: 0;
-  // margin: 0;
+  --product-card-height: auto;
+  // 250px;
 }
 </style>
