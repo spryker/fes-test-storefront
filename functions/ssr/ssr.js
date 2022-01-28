@@ -197,7 +197,6 @@ const config = {
       }
     },
   },
-  serverMiddleware: ['~/serverMiddleware/previewModeSSR'],
 };
 
 function createNuxtHandler(nuxtConfig) {

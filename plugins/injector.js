@@ -8,7 +8,7 @@ import {
 export default (context, inject) => {
   const PREVIEW_PROVIDER = [];
 
-  if (context.route.query.ebPreview) {
+  if ((!process.server && !context.req) && context.route.query.ebPreview) {
     PREVIEW_PROVIDER.push({
       provide: Services.Experience,
       useClass: ExperiencePreviewService,
