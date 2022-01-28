@@ -460,6 +460,7 @@ export default {
     });
 
     provide('CURRENT_CATEGORY', slotData);
+    provide('IPP', context.root.$route.query.ipp);
 
     onSSR(async () => {
       await search(th.getFacetsFromURL());

@@ -112,6 +112,7 @@ export default Vue.extend({
     const categoryInject = inject('CURRENT_CATEGORY', {
       category: null,
     });
+    const ipp = inject('IPP', null)
     const categoryLink = computed(() => categoryInject?.category?.link);
     const th = useUiHelpers();
     const contentSubscription = null;
@@ -123,9 +124,6 @@ export default Vue.extend({
     const { result, search, loading } = useFacet();
     const products = computed(() => {
       const data = facetGetters.getProducts(result.value);
-      if (content.value.productsType === 'upsell') {
-        data.reverse();
-      }
       if (
         content.value.maxProductsNumber &&
         Number(content.value.maxProductsNumber)
@@ -161,12 +159,25 @@ export default Vue.extend({
       }
       return null;
     };
+
+    const getMockProductsQuery = (ipp, productsType) => {
+      if(ipp === 12 && productsType === 'best=sell')
+        return { q: '4165826 5425220 3628514' }
+      if(ipp === 36 && productsType === 'upsell')
+        return { q: '4727133 5116532 3788413 3997828' }
+      if(ipp === 36 && 'cross-sell')
+        return { q: '4705022 4670177 0123012 3186700' }
+
+      return {}
+    }
     content$.subscribe(async (res: any) => {
       content.value = res.data ? res.data : res;
       const query = makeQuery(content.value.queryLink);
       const itemsPerPage = Math.ceil(content.value.maxProductsNumber / 12) * 12;
+
       await search({
         ...query,
+        ...getMockProductsQuery(ipp, content.value.productsType),
         categorySlug: getCategorySlug(),
         itemsPerPage,
       });
