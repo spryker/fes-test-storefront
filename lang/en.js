@@ -123,7 +123,7 @@ export default {
   'Review my order': 'Review my order',
   'Select payment method': 'Select payment method',
   'Make an order': 'Make an order',
-  'have_account': 'Already have an account?',
+  have_account: 'Already have an account?',
   or: 'or',
   'login in to your account': 'login in to your account',
   'Create an account': 'Create an account',
