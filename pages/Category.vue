@@ -85,28 +85,30 @@
         </div>
         <div class="navbar__view">
           <span class="navbar__view-label desktop-only">{{ $t('View') }}</span>
-          <SfIcon
-            data-cy="svsf-categorySection-tiles-icon"
-            class="navbar__view-icon"
-            :color="isCategoryGridView ? 'black' : 'dark-secondary'"
-            icon="tiles"
-            size="12px"
-            role="button"
-            aria-label="Change to grid view"
-            :aria-pressed="isCategoryGridView"
-            @click="toggleCategoryGridView"
-          />
-          <SfIcon
-            data-cy="svsf-categorySection-list-icon"
-            class="navbar__view-icon"
-            :color="!isCategoryGridView ? 'black' : 'dark-secondary'"
-            icon="list"
-            size="12px"
-            role="button"
-            aria-label="Change to list view"
-            :aria-pressed="!isCategoryGridView"
-            @click="toggleCategoryGridView"
-          />
+          <span class="navbar__view-icon">
+            <SfIcon
+              data-cy="svsf-categorySection-tiles-icon"
+              :color="isCategoryGridView ? 'black' : 'dark-secondary'"
+              icon="tiles"
+              size="16px"
+              role="button"
+              aria-label="Change to grid view"
+              :aria-pressed="isCategoryGridView"
+              @click="toggleCategoryGridView"
+            />
+          </span>
+          <span class="navbar__view-icon">
+            <SfIcon
+              data-cy="svsf-categorySection-list-icon"
+              :color="!isCategoryGridView ? 'black' : 'dark-secondary'"
+              icon="list"
+              size="16px"
+              role="button"
+              aria-label="Change to list view"
+              :aria-pressed="!isCategoryGridView"
+              @click="toggleCategoryGridView"
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -669,10 +671,15 @@ export default {
       order: -1;
     }
     &-icon {
+      --icon-color: #dce0e5;
+      border: 2px solid #dce0e5;
       cursor: pointer;
-      margin: 0 var(--spacer-base) 0 0;
+      padding: var(--spacer-xs);
       &:last-child {
-        margin: 0;
+        margin-left: var(--spacer-sm);
+      }
+      svg {
+        flex-shrink: 0;
       }
     }
     &-label {
