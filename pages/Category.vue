@@ -16,11 +16,14 @@
         />
       </template>
     </SfNotification>
-    <SfBreadcrumbs
-      data-cy="svsf-categorySection-breadcrumbs"
-      class="breadcrumbs desktop-only"
-      :breadcrumbs="breadcrumbs"
-    />
+    <div class="category__heading section">
+      <SfBreadcrumbs
+        data-cy="svsf-categorySection-breadcrumbs"
+        class="breadcrumbs desktop-only"
+        :breadcrumbs="breadcrumbs"
+      />
+      <h1 class="category__title">{{ currentCategory.text }}</h1>
+    </div>
     <LayoutSlot :slotName="slotName" />
     <div class="navbar section">
       <!--      <div class="navbar__aside desktop-only">
@@ -32,21 +35,23 @@
         />
       </div>-->
       <div class="navbar__main">
-        <SfButton
-          data-cy="svsf-categorySection-filters-button"
-          class="sf-button--text navbar__filters-button"
-          aria-label="Filters"
-          @click="toggleFilterSidebar"
-        >
-          <SfIcon
-            data-cy="svsf-categorySection-filter-icon"
-            size="18px"
-            color="dark-secondary"
-            icon="filter"
-            class="navbar__filters-icon"
-          />
-          {{ $t('Filters') }}
-        </SfButton>
+        <div class="navbar__filters">
+          <SfButton
+            data-cy="svsf-categorySection-filters-button"
+            class="sf-button--text navbar__filters-button"
+            aria-label="Filters"
+            @click="toggleFilterSidebar"
+          >
+            <SfIcon
+              data-cy="svsf-categorySection-filter-icon"
+              size="18px"
+              color="dark-secondary"
+              icon="filter"
+              class="navbar__filters-icon"
+            />
+            {{ $t('Filters') }}
+          </SfButton>
+        </div>
         <div class="navbar__counter">
           <span class="navbar__label desktop-only"
             >{{ $t('Products found') }}:
@@ -183,16 +188,8 @@
             :style="{ '--index': i }"
             :title="productGetters.getName(product)"
             :image="productGetters.getCoverImage(product)"
-            :regular-price="
-              productGetters.getFormattedPrice(
-                productGetters.getPrice(product).regular,
-              )
-            "
-            :special-price="
-              productGetters.getFormattedPrice(
-                productGetters.getPrice(product).special,
-              )
-            "
+            :regular-price="240"
+            :special-price="120"
             :max-rating="5"
             :image-height="189"
             :score-rating="productGetters.getAverageRating(product)"
@@ -515,6 +512,7 @@ export default {
       isAuthenticated,
       isAddToCartVisible,
       slotName,
+      currentCategory,
     };
   },
   components: {
@@ -554,17 +552,30 @@ export default {
     }
   }
 }
-.breadcrumbs {
-  padding: var(--spacer-base) 0;
+.category {
+  &__heading {
+    position: relative;
+    padding: var(--spacer-base) 0;
+    &:before {
+      content: '';
+      position: absolute;
+      left: calc((100vw - 100%) / -2);
+      right: calc((100vw - 100%) / -2);
+      top: 0;
+      bottom: 0;
+      background-color: #f5f5f5;
+      z-index: -1;
+    }
+  }
+  &__title {
+    line-height: 0.85;
+    margin-left: -4px;
+    margin-top: 8px;
+  }
 }
 .navbar {
   position: relative;
   display: flex;
-  border: 1px solid var(--c-light);
-  border-width: 0 0 1px 0;
-  @include for-desktop {
-    border-width: 1px 0 1px 0;
-  }
   &.section {
     padding: var(--spacer-sm);
     @include for-desktop {
@@ -575,12 +586,14 @@ export default {
   &__main {
     display: flex;
     align-items: center;
-    padding: var(--spacer-sm) 0;
     flex: 1;
-    padding: 0;
     @include for-desktop {
       padding: 0;
     }
+  }
+  &__filters {
+    width: 20%;
+    padding-right: 50px;
   }
   &__aside {
     flex: 0 0 20%;
@@ -637,8 +650,9 @@ export default {
   &__counter {
     font-family: var(--font-family--secondary);
     margin: auto;
+    flex-grow: 1;
     @include for-desktop {
-      margin: auto 0 auto auto;
+      margin: 0;
     }
   }
   &__view {
@@ -676,9 +690,7 @@ export default {
 .sidebar {
   @include for-desktop {
     flex: 0 0 20%;
-    padding: var(--spacer-sm);
-    border: 1px solid var(--c-light);
-    border-width: 0 1px 0 0;
+    padding-right: var(--spacer-sm);
   }
 
   .sf-loader__overlay {
@@ -800,7 +812,7 @@ export default {
 }
 ::v-deep .sf-product-card {
   // Resetting max-width to get 3 columns on category listing
-  --product-card-max-width: auto;
+  --product-card-max-width: 33%;
   @include for-desktop {
     flex: 1 1 33%;
   }
@@ -830,6 +842,40 @@ export default {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     white-space: normal;
+  }
+  &__add-button {
+    --circle-icon-position: static;
+    --button-box-shadow: none;
+    --icon-color: var(--c-primary);
+    --icon-size: 1.25rem;
+    --button-size: 2.375rem;
+    --button-background: transperent;
+    --button-border-radius: 2px;
+    --product-card-add-button-transform: none;
+    border: 1px solid #dce0e5;
+  }
+  &__price {
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    .sf-price {
+      &__old {
+        --price-old-margin: 0;
+        font-size: 15px;
+        position: absolute;
+        top: -16px;
+      }
+      &__special {
+        font-size: 20px;
+      }
+    }
+  }
+  .section__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
   }
 }
 </style>
