@@ -188,8 +188,16 @@
             :style="{ '--index': i }"
             :title="productGetters.getName(product)"
             :image="productGetters.getCoverImage(product)"
-            :regular-price="240"
-            :special-price="120"
+            :regular-price="
+              productGetters.getFormattedPrice(
+                productGetters.getPrice(product).regular,
+              )
+            "
+            :special-price="
+              productGetters.getFormattedPrice(
+                productGetters.getPrice(product).special,
+              )
+            "
             :max-rating="5"
             :image-height="189"
             :score-rating="productGetters.getAverageRating(product)"
