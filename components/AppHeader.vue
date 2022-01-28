@@ -21,10 +21,7 @@
         </nuxt-link>
       </template>
       <template #aside>
-        <LocaleSelector
-          data-cy="svsf-appHeader-localeSelector"
-          class="smartphone-only"
-        />
+        <LocaleSelector data-cy="svsf-appHeader-localeSelector" class="smartphone-only" />
       </template>
       <template #header-icons>
         <div class="sf-header__icons">
@@ -130,9 +127,7 @@
             @mouseleave="blurLock = false"
           >
             <div
-              :data-cy="`svsf-appHeader-products-${getAbstractProductSku(
-                product,
-              )}`"
+              :data-cy="`svsf-appHeader-products-${getAbstractProductSku(product)}`"
               class="searchbar_suggestions-product"
               v-for="product in getAbstractProducts(suggestions)"
               :key="getAbstractProductSku(product)"
@@ -146,11 +141,7 @@
                   {{ getAbstractProductName(product) }}
                 </p>
                 <p class="searchbar_suggestions-product-price">
-                  {{
-                    productGetters.getFormattedPrice(
-                      getAbstractProductPrice(product),
-                    )
-                  }}
+                  {{ productGetters.getFormattedPrice(getAbstractProductPrice(product)) }}
                 </p>
               </div>
             </div>
@@ -190,12 +181,7 @@
               @click.native="currentCategory = category.label"
               :class="[{ selected: currentCategory === category.label }]"
             >
-              <SfImage
-                src="/nav-icon.png"
-                alt="category icon"
-                width="32"
-                height="32"
-              />
+              <SfImage src="/nav-icon.png" alt="category icon" width="32" height="32" />
               {{ category.label }}
             </SfListItem>
           </SfList>
@@ -294,7 +280,7 @@ import {
   SfList,
   SfMenuItem,
   SfLink,
-} from '@storefront-ui/vue';
+} from "@storefront-ui/vue";
 import {
   useCart,
   useWishlist,
@@ -303,16 +289,16 @@ import {
   useCategory,
   wishlistGetters,
   productGetters,
-} from '@spryker-vsf/composables';
+} from "@spryker-vsf/composables";
 import {
   useCatalogSearchSuggestions,
   catalogSearchSuggestionsGetters as suggestionsGetters,
-} from '@spryker-vsf/catalog-search-suggestions';
-import { computed, onMounted, ref, watch } from '@vue/composition-api';
-import { onSSR } from '@vue-storefront/core';
-import { useUiHelpers, useUiState } from '~/composables';
-import LocaleSelector from './LocaleSelector';
-import SearchResults from '~/components/SearchResults';
+} from "@spryker-vsf/catalog-search-suggestions";
+import { computed, onMounted, ref, watch } from "@vue/composition-api";
+import { onSSR } from "@vue-storefront/core";
+import { useUiHelpers, useUiState } from "~/composables";
+import LocaleSelector from "./LocaleSelector";
+import SearchResults from "~/components/SearchResults";
 import {
   quickOrderIcon,
   shoppingListIcon,
@@ -320,7 +306,7 @@ import {
   userIcon,
   searchIcon,
   arrowIcon,
-} from '~/assets/icons';
+} from "~/assets/icons";
 
 export default {
   components: {
@@ -351,8 +337,7 @@ export default {
     const { isAuthenticated, load: loadUser, user } = useUser();
     const { cart, load: loadCart } = useCart();
     const { load: loadWishlist, wishlist } = useWishlist();
-    const { categories, search: searchCategories } =
-      useCategory('category-tree');
+    const { categories, search: searchCategories } = useCategory("category-tree");
     const term = ref(getFacetsFromURL().term);
     const blurLock = ref(false);
     const {
@@ -363,7 +348,7 @@ export default {
 
     const searchCompletion = computed(function () {
       return suggestionsLoading.value
-        ? ''
+        ? ""
         : suggestionsGetters.getCompletion(suggestions.value, term.value);
     });
 
@@ -377,19 +362,19 @@ export default {
     });
 
     const accountIcon = computed(() =>
-      isAuthenticated.value ? 'profile_fill' : 'profile',
+      isAuthenticated.value ? "profile_fill" : "profile"
     );
 
     const accountName = computed(() => {
       return isAuthenticated.value
         ? `${user.value.attributes.firstName} ${user.value.attributes.lastName}`
-        : 'not logged in';
+        : "not logged in";
     });
 
     // TODO: https://github.com/DivanteLtd/vue-storefront/issues/4927
     const handleAccountClick = async () => {
       if (isAuthenticated.value) {
-        return $router.push('/my-account');
+        return $router.push("/my-account");
       }
 
       toggleModal();
@@ -407,7 +392,7 @@ export default {
     });
 
     function clearTerm() {
-      !blurLock.value && (term.value = '');
+      !blurLock.value && (term.value = "");
     }
 
     function goto(path) {
@@ -421,7 +406,7 @@ export default {
     });
 
     watch(isMobileMenuOpen, () => {
-      const overflow = isMobileMenuOpen.value ? 'hidden' : '';
+      const overflow = isMobileMenuOpen.value ? "hidden" : "";
       Object.assign(document.documentElement.style, { overflow });
     });
 
@@ -437,8 +422,8 @@ export default {
       changeSearchTerm,
       categories,
       term,
-      currentMenu: '',
-      currentCategory: '',
+      currentMenu: "",
+      currentCategory: "",
       isVisible: false,
       clearTerm,
       suggestions,
@@ -698,6 +683,9 @@ export default {
 </style>
 
 <style>
+.sf-header__header {
+  --header-padding: 0 10px;
+}
 .header__overlay {
   --overlay-z-index: 1;
 }
