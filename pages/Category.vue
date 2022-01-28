@@ -24,7 +24,10 @@
       />
       <h1 class="category__title">{{ currentCategory.text }}</h1>
     </div>
-    <LayoutSlot :slotName="slotName" />
+    <LayoutSlot
+      v-if="isDataLoaded"
+      :slotName="slotName"
+    />
     <div class="navbar section">
       <!--      <div class="navbar__aside desktop-only">
         <SfHeading
@@ -468,11 +471,14 @@ export default {
 
     provide('CURRENT_CATEGORY', slotData);
 
+    let isDataLoaded = ref(false);
     onSSR(async () => {
       await search(th.getFacetsFromURL());
+      isDataLoaded.value = true;
     });
     onMounted(async () => {
       await search(th.getFacetsFromURL());
+      isDataLoaded.value = true;
     });
 
     onUnmounted(() => {
@@ -506,6 +512,7 @@ export default {
 
     return {
       ...uiState,
+      isDataLoaded,
       th,
       products,
       categoryTree,

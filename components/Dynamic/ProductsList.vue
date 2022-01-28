@@ -143,27 +143,37 @@ export default Vue.extend({
           )
         : {};
     };
-    const getCategorySlug = (): string | null => {
-      if (content.value.productsType !== "best-sell") {
-        return null;
-      }
-      if (categoryLink.value) {
-        return th.getFacetsFromURL(categoryLink.value).categorySlug;
-      }
+    const getCategorySlug = computed(() => {
+      return categoryLink.value
+        ? th.getFacetsFromURL(categoryLink.value).categorySlug
+        : null;
+    });
+
+    const getMockProductsQuery = (categoryId, productsType): {q: string}|null => {
+      if (categoryId === 50 && productsType === 'best-sell')
+        return { q: '4165826 5425220 3628514' };
+      if (categoryId === 53 && productsType === 'upsell')
+        return { q: '4727133 5116532 3788413 3997828' };
+      if (categoryId === 52 && 'cross-sell')
+        return { q: '4705022 4670177 0123012 3186700' };
+
       return null;
     };
+
     content$.subscribe(async (res: any) => {
       content.value = res.data ? res.data : res;
-
-      console.log("query", content.value.queryLink);
-      console.log("categoryLink", th.getFacetsFromURL(categoryLink.value).categorySlug);
-      console.log("categorySlug", categoryLink.value);
-
       const query = makeQuery(content.value.queryLink);
       const itemsPerPage = Math.ceil(content.value.maxProductsNumber / 12) * 12;
+
+      const mockProductsQuery = getMockProductsQuery(
+        Number(getCategorySlug.value),
+        content.value.productsType,
+      )
+      const categorySearch = mockProductsQuery || { categorySlug: getCategorySlug.value }
+
       await search({
         ...query,
-        categorySlug: getCategorySlug(),
+        ...categorySearch,
         itemsPerPage,
       });
     });
