@@ -1,8 +1,10 @@
 <template>
   <SfSection
-    :title-heading="`${capitalizeFirstLetter(content.productsType)} products (${
-      products.length
-    })`"
+    :title-heading="
+      capitalizeFirstLetter(
+        content.heading || `${content.productsType} products (${products.length})`
+      )
+    "
     class="section"
   >
     <SfLoader :class="{ loading }" :loading="loading">
@@ -16,20 +18,15 @@
             :title="productGetters.getName(product)"
             :image="productGetters.getCoverImage(product)"
             :regular-price="
-              productGetters.getFormattedPrice(
-                productGetters.getPrice(product).regular,
-              )
+              productGetters.getFormattedPrice(productGetters.getPrice(product).regular)
             "
             :special-price="
-              productGetters.getFormattedPrice(
-                productGetters.getPrice(product).special,
-              )
+              productGetters.getFormattedPrice(productGetters.getPrice(product).special)
             "
             :max-rating="5"
             :score-rating="productGetters.getAverageRating(product)"
             :wishlistIcon="
-              productGetters.getProductConcretes(product).length === 1 &&
-              isAuthenticated
+              productGetters.getProductConcretes(product).length === 1 && isAuthenticated
                 ? 'heart'
                 : false
             "
@@ -43,9 +40,7 @@
             "
             :link="
               localePath(
-                `/p/${productGetters.getId(product)}/${productGetters.getSlug(
-                  product,
-                )}`,
+                `/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`
               )
             "
             class="products__product-card"
@@ -57,15 +52,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import {
-  SfProductCard,
-  SfCarousel,
-  SfSection,
-  SfLoader,
-} from '@storefront-ui/vue';
-import { useInjectable } from '@spryker-oryx/vsf';
-import { configureSSR, vsfRef } from '@vue-storefront/core';
+import Vue from "vue";
+import { SfProductCard, SfCarousel, SfSection, SfLoader } from "@storefront-ui/vue";
+import { useInjectable } from "@spryker-oryx/vsf";
+import { configureSSR, vsfRef } from "@vue-storefront/core";
 import {
   computed,
   inject,
@@ -73,18 +63,18 @@ import {
   onServerPrefetch,
   onUnmounted,
   watch,
-} from '@vue/composition-api';
-import { take } from 'rxjs/operators';
+} from "@vue/composition-api";
+import { take } from "rxjs/operators";
 import {
   facetGetters,
   productGetters,
   useFacet,
   useUser,
-} from '@spryker-vsf/composables';
-import { Services } from '@spryker-oryx/experience';
-import { useUiHelpers } from '~/composables';
+} from "@spryker-vsf/composables";
+import { Services } from "@spryker-oryx/experience";
+import { useUiHelpers } from "~/composables";
 export default Vue.extend({
-  name: 'ProductsList',
+  name: "ProductsList",
   props: {
     componentId: {
       type: String,
@@ -105,11 +95,12 @@ export default Vue.extend({
       {
         queryLink: null,
         maxProductsNumber: 0,
-        productsType: '',
+        productsType: "",
+        heading: "",
       },
-      `products-list-content-${props.componentId}`,
+      `products-list-content-${props.componentId}`
     );
-    const categoryInject = inject('CURRENT_CATEGORY', {
+    const categoryInject = inject("CURRENT_CATEGORY", {
       category: null,
     });
     const categoryLink = computed(() => categoryInject?.category?.link);
@@ -122,14 +113,14 @@ export default Vue.extend({
     });
     const { result, search, loading } = useFacet();
     const products = computed(() => {
+      console.log("compute data", result.value);
       const data = facetGetters.getProducts(result.value);
-      if (content.value.productsType === 'upsell') {
+      if (content.value.productsType === "upsell") {
+        console.log("data!!", data);
         data.reverse();
       }
-      if (
-        content.value.maxProductsNumber &&
-        Number(content.value.maxProductsNumber)
-      ) {
+      if (content.value.maxProductsNumber && Number(content.value.maxProductsNumber)) {
+        console.log("data!!", data);
         return data.slice(0, Number(content.value.maxProductsNumber));
       }
       return data;
@@ -148,12 +139,12 @@ export default Vue.extend({
                 .replace(/"/g, '\\"')
                 .replace(/&/g, '","')
                 .replace(/=/g, '":"') +
-              '"}',
+              '"}'
           )
         : {};
     };
     const getCategorySlug = (): string | null => {
-      if (content.value.productsType !== 'best-sell') {
+      if (content.value.productsType !== "best-sell") {
         return null;
       }
       if (categoryLink.value) {
@@ -163,6 +154,11 @@ export default Vue.extend({
     };
     content$.subscribe(async (res: any) => {
       content.value = res.data ? res.data : res;
+
+      console.log("query", content.value.queryLink);
+      console.log("categoryLink", th.getFacetsFromURL(categoryLink.value).categorySlug);
+      console.log("categorySlug", categoryLink.value);
+
       const query = makeQuery(content.value.queryLink);
       const itemsPerPage = Math.ceil(content.value.maxProductsNumber / 12) * 12;
       await search({
@@ -181,7 +177,7 @@ export default Vue.extend({
     };
     const capitalizeFirstLetter = (string: string): string => {
       if (!string) {
-        return '';
+        return "";
       }
       return string.charAt(0).toUpperCase() + string.slice(1);
     };
@@ -198,4 +194,10 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+section {
+  --section-margin: 10px;
+  --section-content-margin: 0;
+  --product-card-background: transparent;
+}
+</style>
