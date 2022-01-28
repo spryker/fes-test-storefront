@@ -645,10 +645,6 @@ export default {
   &__select {
     --select-option-font-size: var(--font-size--base);
     --select-padding: var(--spacer-sm) 0;
-    ::v-deep .sf-select__dropdown {
-      font-size: var(--font-size--base);
-      margin: var(--spacer-2xs) 0 0 0;
-    }
   }
   &__sort {
     display: flex;
@@ -884,6 +880,9 @@ export default {
     align-items: center;
     justify-content: space-between;
     margin-top: 16px;
+  }
+  &__rating {
+    margin-top: 8px;
   }
 }
 </style>
