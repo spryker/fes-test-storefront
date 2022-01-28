@@ -1,3 +1,5 @@
+@import "../fields";
+
 .modal {
   &__demo-styles {
     .sf-modal__container {
@@ -8,16 +10,7 @@
       padding: 0;
 
       .form {
-        .sf-select {
-          height: 54px;
-          margin-bottom: 35px;
-          padding: 0;
-
-          select.sf-select__dropdown {
-            height: 54px;
-            width: 100%;
-          }
-        }
+        @extend %fields;
 
         &__login {
           .form__element {
@@ -47,40 +40,7 @@
         }
 
         &__element {
-          margin-bottom: 20px;
-
-          .sf-input,
-          .sf-select {
-            &__wrapper,
-            &__dropdown {
-              border: 1px solid #dce0e5;
-              border-radius: 2px;
-
-              margin-bottom: 2px;
-              width: 335px;
-
-              input {
-                border: none;
-                outline: none;
-                padding: var(--spacer-sm) 5px var(--spacer-sm) 5px;
-              }
-            }
-
-            &__label {
-              position: absolute;
-              top: -20px;
-              bottom: 0;
-
-              transform: none;
-              text-transform: uppercase;
-              font-size: var(--font-size--xs);
-              color: var(--c-link);
-
-              &::after {
-                color: var(--button-background, var(--c-primary));
-              }
-            }
-          }
+          margin-bottom: var(--spacer-base);
         }
 
         &__button {

@@ -136,6 +136,6 @@ export default {
 @import '~/assets/modal';
 
 .form {
-  margin: 20px 100px 20px 100px
+  margin: 20px 100px 20px 100px;
 }
 </style>
