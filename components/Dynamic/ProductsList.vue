@@ -1,8 +1,10 @@
 <template>
   <SfSection
-    :title-heading="`${capitalizeFirstLetter(content.productsType)} products (${
-      products.length
-    })`"
+    :title-heading="
+      capitalizeFirstLetter(
+        content.heading || `${content.productsType} products (${products.length})`
+      )
+    "
     class="section"
   >
     <SfLoader :class="{ loading }" :loading="loading">
@@ -104,7 +106,8 @@ export default Vue.extend({
       {
         queryLink: null,
         maxProductsNumber: 0,
-        productsType: '',
+        productsType: "",
+        heading: "",
       },
       `products-list-content-${props.componentId}`,
     );
@@ -209,4 +212,10 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+section {
+  --section-margin: 10px;
+  --section-content-margin: 0;
+  --product-card-background: transparent;
+}
+</style>
