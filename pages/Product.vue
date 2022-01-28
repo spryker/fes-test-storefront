@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="product">
-      <ProductGallery :images="productGallery"/>
+      <ProductGallery :images="productGallery" />
       <div class="product__info">
         <div class="product__rating-and-logo">
           <div class="product__rating">
@@ -58,7 +58,7 @@
               {{ totalReviews }}
             </a>
           </div>
-          <SfImage class="brand-logo" src="/brandlogo.png" alt="brand logo"/>
+          <SfImage class="brand-logo" src="/brandlogo.png" alt="brand logo" />
         </div>
         <div>
           <div class="brand">by {{ brand }}</div>
@@ -67,12 +67,8 @@
         <div class="product__info--price">
           <SfPrice
             data-cy="svsf-productSection-price"
-            :regular="
-              '€609.95'
-            "
-            :special="
-              '€499.99'
-            "
+            :regular="'€609.95'"
+            :special="'€499.99'"
           />
         </div>
         <div class="product__info--options">
@@ -133,7 +129,11 @@
                   :disabled="loading || !isProductConfigured"
                   @click="addItemToCart({ product, quantity: parseInt(qty) })"
                 >
-                  <SfIcon :icon="cartPlusIcon.path" :class="cartPlusIcon.class" :viewBox="cartPlusIcon.viewBox"/>
+                  <SfIcon
+                    :icon="cartPlusIcon.path"
+                    :class="cartPlusIcon.class"
+                    :viewBox="cartPlusIcon.viewBox"
+                  />
                   Add to Cart
                 </SfButton>
               </template>
@@ -145,7 +145,11 @@
               :disabled="loading || !isProductConfigured"
               @click="addToWishlist({ product })"
             >
-              <SfIcon :icon="listPlusIcon.path" :class="listPlusIcon.class" :viewBox="listPlusIcon.viewBox"/>
+              <SfIcon
+                :icon="listPlusIcon.path"
+                :class="listPlusIcon.class"
+                :viewBox="listPlusIcon.viewBox"
+              />
             </SfButton>
           </div>
         </div>
@@ -188,7 +192,7 @@
           </SfProperty>
         </SfTab>
         <SfTab
-          :title="$t('Read reviews', {count: totalReviews})"
+          :title="$t('Read reviews', { count: totalReviews })"
           data-cy="svsf-productSection-review-tab"
         >
           <SfReview
@@ -486,7 +490,7 @@ export default {
       starIcon,
       cartPlusIcon,
       listPlusIcon,
-      brand
+      brand,
     };
   },
   components: {
@@ -509,7 +513,7 @@ export default {
     SfButton,
     InstagramFeed,
     RelatedProducts,
-    SfNotification
+    SfNotification,
   },
 };
 </script>
@@ -520,9 +524,9 @@ export default {
   @include for-desktop {
     padding: 0;
   }
-  --product-black: #2F2F2F;
-  --product-light-gray: #F5F5F5;
-  --product-gray: #8F8f8F;
+  --product-black: #2f2f2f;
+  --product-light-gray: #f5f5f5;
+  --product-gray: #8f8f8f;
 }
 .product {
   @include for-desktop {
@@ -543,7 +547,8 @@ export default {
       margin: 0 0 0 30px;
     }
 
-    &--options, &--price {
+    &--options,
+    &--price {
       margin-top: 20px;
     }
 
@@ -679,7 +684,7 @@ export default {
   &__save {
     --icon-color: var(--c-primary);
     --button-size: 52px;
-    --button-border-color: #DCE0E5;
+    --button-border-color: #dce0e5;
     --button-border-width: 1px;
     display: flex;
     margin: 0;
@@ -688,9 +693,9 @@ export default {
     margin-top: 0;
   }
   &__tabs {
-    --tabs-content-border-color: #EAEAEA;
+    --tabs-content-border-color: #eaeaea;
     --tabs-content-font-size: 15px;
-    --tabs-content-color: #4C4C4C;
+    --tabs-content-color: #4c4c4c;
     --h1-font-size: 32px;
     ::v-deep {
       .sf-tabs {
@@ -724,7 +729,7 @@ export default {
     }
   }
   &__property {
-    --property-name-content: "";
+    --property-name-content: '';
     --property-name-font-size: 15px;
     --property-value-font-size: var(--property-name-font-size);
     --property-value-color: var(--c-black);
@@ -814,7 +819,7 @@ export default {
   --breadcrumbs-list-item-seperator: '/';
   --breadcrumbs-font-size: 13px;
   --breadcrumbs-list-item-before-padding: 8px;
-  --breadcrumbs-color: #9EA1A7;
+  --breadcrumbs-color: #9ea1a7;
   --breadcrumbs-list-item-before-color: var(--breadcrumbs-color);
   --link-color: var(--breadcrumbs-color);
   .sf-breadcrumbs__breadcrumb {
@@ -850,7 +855,7 @@ export default {
       background-color: var(--product-light-gray);
       padding: 0 21px;
       height: 48px;
-      border: 2px solid #DCE0E5;
+      border: 2px solid #dce0e5;
       border-radius: 2px;
       font-size: 15px;
       --select-dropdown-color: var(--product-gray);
@@ -873,6 +878,7 @@ export default {
   --button-background: var(--c-white);
   --button-color: var(--product-gray);
   flex-shrink: 0;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.04), 0px 10px 10px rgba(0, 0, 0, 0.0474128);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.04),
+    0px 10px 10px rgba(0, 0, 0, 0.0474128);
 }
 </style>
