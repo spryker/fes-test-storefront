@@ -681,6 +681,9 @@ export default {
       border: 1px solid var(--c-gray-outline);
       cursor: pointer;
       padding: var(--spacer-xs);
+      transition-property: color, background-color;
+      transition-duration: 0.35s;
+      transition-timing-function: ease;
       &:nth-child(2) {
         border-radius: 2px 0 0 2px;
       }
@@ -692,7 +695,8 @@ export default {
       svg {
         flex-shrink: 0;
       }
-      &.active {
+      &.active,
+      &:hover {
         background-color: #f0f0f0;
         --icon-color: #3f3e42;
       }
