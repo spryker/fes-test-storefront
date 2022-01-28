@@ -827,6 +827,7 @@ export default {
 }
 ::v-deep .page-filters {
   .sf-accordion-item {
+    margin: 12px 0;
     &__header {
       --accordion-item-header-font-size: 16px;
       --accordion-item-header-color: var(--product-gray);
