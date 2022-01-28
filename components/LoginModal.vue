@@ -70,7 +70,7 @@
         <div class="bottom">
           <p class="bottom__paragraph">{{ $t('No account') }}</p>
           <SfButton class="sf-button--text" @click="setIsLoginValue(false)">
-            {{ $t('Register today') }}
+            {{ $t('register') }}
           </SfButton>
         </div>
       </div>
@@ -169,6 +169,7 @@
     </transition>
   </SfModal>
 </template>
+
 <script>
 import { ref, watch, reactive } from '@vue/composition-api';
 import {
@@ -274,10 +275,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.modal {
-  --modal-index: 3;
-  --overlay-z-index: 3;
-}
 .form {
   margin-top: var(--spacer-sm);
   &__element {

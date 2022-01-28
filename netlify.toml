@@ -22,5 +22,5 @@ NODE_VERSION = "14"
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/ssr"
+  to = "/.netlify/builders/ssr"
   status = 200

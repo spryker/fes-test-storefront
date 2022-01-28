@@ -7,6 +7,23 @@
   }
 }
 
+.sf-price {
+  --price-align-items: center;
+  --price-flex-direction: row-reverse;
+  --price-justify-content: flex-end;
+  &__old {
+    margin: 0;
+    --price-old-font-size: 15px;
+  }
+  &__special {
+    margin: 0 var(--spacer-xs) 0 0;
+  }
+}
+
+.sf-select {
+  --c-secondary-variant: var(--c-link);
+}
+
 footer {
   --c-secondary: #e7eaee;
 
@@ -16,5 +33,11 @@ footer {
 
   .sf-footer-column__title {
     color: #4c4c4c;
+  }
+}
+
+.sf-header__icons {
+  .sf-badge--number {
+    --badge-background: var(--_c-green-primary);
   }
 }

@@ -40,6 +40,7 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "@netlify/functions": "^0.11.0",
     "@nuxt/types": "~2.14.12",
     "@nuxt/typescript-build": "2.0.4",
     "fse": "^4.0.1",
