@@ -1374,17 +1374,17 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@spryker-oryx/experience@file:./spryker-oryx-experience-0.0.1.tgz":
+"@spryker-oryx/experience@file:./assets/prepublished-packages/spryker-oryx-experience-0.0.1.tgz":
   version "0.0.1"
-  resolved "file:./spryker-oryx-experience-0.0.1.tgz#c53cbb0baca6b05083bad0def8aa7e097b8f2b6f"
+  resolved "file:./assets/prepublished-packages/spryker-oryx-experience-0.0.1.tgz#c53cbb0baca6b05083bad0def8aa7e097b8f2b6f"
 
-"@spryker-oryx/injector@file:./spryker-oryx-injector-0.0.1.tgz":
+"@spryker-oryx/injector@file:./assets/prepublished-packages/spryker-oryx-injector-0.0.1.tgz":
   version "0.0.1"
-  resolved "file:./spryker-oryx-injector-0.0.1.tgz#134946a6e261610ee322cb4dcb73ce97038f9318"
+  resolved "file:./assets/prepublished-packages/spryker-oryx-injector-0.0.1.tgz#134946a6e261610ee322cb4dcb73ce97038f9318"
 
-"@spryker-oryx/vsf@file:./spryker-oryx-vsf-0.0.2.tgz":
+"@spryker-oryx/vsf@file:./assets/prepublished-packages/spryker-oryx-vsf-0.0.2.tgz":
   version "0.0.2"
-  resolved "file:./spryker-oryx-vsf-0.0.2.tgz#ca29c58a313447402299a6f815e1522c532e8bbe"
+  resolved "file:./assets/prepublished-packages/spryker-oryx-vsf-0.0.2.tgz#ca29c58a313447402299a6f815e1522c532e8bbe"
   dependencies:
     "@spryker-vsf/api" "^0.6.0-dev.3"
     "@vue-storefront/core" "^2.3.1"
@@ -1398,9 +1398,9 @@
     "@vue-storefront/core" "~2.3.4"
     axios "^0.21.0"
 
-"@spryker-vsf/api@file:./spryker-vsf-api-0.6.0-dev.6.tgz":
+"@spryker-vsf/api@file:./assets/prepublished-packages/spryker-vsf-api-0.6.0-dev.6.tgz":
   version "0.6.0-dev.6"
-  resolved "file:./spryker-vsf-api-0.6.0-dev.6.tgz#f62005d424c13f7a86df86b909df90a716642e3a"
+  resolved "file:./assets/prepublished-packages/spryker-vsf-api-0.6.0-dev.6.tgz#f62005d424c13f7a86df86b909df90a716642e3a"
   dependencies:
     "@vue-storefront/core" "~2.3.4"
     axios "^0.21.0"
@@ -1410,9 +1410,9 @@
   resolved "https://registry.yarnpkg.com/@spryker-vsf/catalog-search-suggestions/-/catalog-search-suggestions-0.2.0-dev.2.tgz#5080972640585dd053f64d15ae4dd4572ab1fa1f"
   integrity sha512-p/AUcFsNNaMn12fMBAPUlVFDXgoBQ8TF2AQkIA20QekmJdKKS7yIceze8lh6zKUs2P78OVf8I6wFjDu1ppU9Hg==
 
-"@spryker-vsf/composables@file:./spryker-vsf-composables-0.6.0-dev.7.tgz":
+"@spryker-vsf/composables@file:./assets/prepublished-packages/spryker-vsf-composables-0.6.0-dev.7.tgz":
   version "0.6.0-dev.7"
-  resolved "file:./spryker-vsf-composables-0.6.0-dev.7.tgz#ef4f6720d4b8076f4687c978d5878ecba0775ee8"
+  resolved "file:./assets/prepublished-packages/spryker-vsf-composables-0.6.0-dev.7.tgz#ef4f6720d4b8076f4687c978d5878ecba0775ee8"
   dependencies:
     "@spryker-vsf/api" "^0.6.0-dev.5"
     "@vue-storefront/core" "~2.3.4"

@@ -37,7 +37,7 @@
         :name="$t('Tax')"
         v-if="taxes"
         :value="`${cartGetters.getFormattedPrice(taxes)}`"
-        class="sf-property--full-width"
+        class="sf-property--full-width property"
       />
       <template v-if="vouchers.length">
         <SfProperty

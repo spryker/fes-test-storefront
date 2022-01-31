@@ -74,14 +74,14 @@ export default {
   'Continue to payment': 'Weiter zur Zahlung',
   'Order No.': 'Bestellnummer',
   'Successful placed order':
-    'Sie haben die Bestellung erfolgreich aufgegeben. Sie können den Status Ihres Bestellen Sie über unsere Lieferstatusfunktion. Sie erhalten eine Bestellung Bestätigungs-E-Mail mit Details Ihrer Bestellung und einem Link zum Verfolgen der Bestellung Fortschritt.',
+    'Deine Bestellung ist erfolgreich bei uns eingegangen. Die Bestellbestätigung wurde soeben per E-Mail versendet.',
   'Info after order':
     'Sie können sich mit E-Mail und definiertem Passwort in Ihrem Konto anmelden vorhin. Überprüfen Sie in Ihrem Konto Ihre Profildaten Transaktionsverlauf, Abonnement für Newsletter bearbeiten.',
   'Allow order notifications': 'Bestellbenachrichtigungen zulassen',
   Feedback:
     'Ihr Feedback ist uns wichtig. Lassen Sie uns wissen, was wir verbessern können.',
   'Send my feedback': 'Senden Sie mein Feedback',
-  'Go back to shop': 'Zurück zum Einkaufen',
+  'Go back to shop': 'Zurück nach Hause',
   'Read all reviews': 'Alle Bewertungen lesen',
   Color: 'Farbe',
   'Contact details updated':

@@ -1,3 +1,7 @@
+body {
+  background-color: #ffffff;
+}
+
 .sf-rating {
   &__icon {
     --icon-color: #fdbe36;
@@ -23,6 +27,15 @@
 .sf-select {
   --c-secondary-variant: var(--c-link);
   --c-secondary: var(--c-link);
+  &__dropdown {
+    --select-dropdown-color: var(--product-gray);
+    background-color: var(--product-light-gray);
+    font-size: var(--font-size--base);
+    padding: 0 var(--spacer-sm);
+    border: 1px solid var(--c-gray-outline);
+    border-radius: 2px;
+    height: 40px;
+  }
 }
 
 footer {
@@ -40,5 +53,29 @@ footer {
 .sf-header__icons {
   .sf-badge--number {
     --badge-background: var(--_c-green-primary);
+  }
+}
+
+.sf-pagination {
+  &__item {
+    &:not(.prev):not(.next) {
+      border: 1px solid var(--c-gray-outline);
+      padding: 8px 16px;
+      border-radius: 2px;
+      margin: 0 5px;
+    }
+    &.current {
+      background-color: #F0F0F0;
+      pointer-events: none;
+    }
+    .sf-link {
+      color: #4C4C4C;
+      &.nuxt-link-exact-active {
+        --icon-color: #B2B2B2;
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+
   }
 }

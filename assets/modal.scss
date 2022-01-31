@@ -40,7 +40,7 @@
   font-size: var(--h3-font-size);
   font-weight: var(--font-weight--semibold);
   font-family: var(--font-family--secondary);
-  border-top: 1px solid #dce0e5;
+  border-top: 1px solid var(--c-gray-outline);
 
   &__paragraph {
     color: var(--c-primary);
