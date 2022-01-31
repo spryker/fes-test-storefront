@@ -67,8 +67,8 @@
         <div class="product__info--price">
           <SfPrice
             data-cy="svsf-productSection-price"
-            :regular="'€609.95'"
-            :special="'€499.99'"
+            :regular="productGetters.getFormattedPrice(productGetters.getPrice(product).regular)"
+            :special="productGetters.getFormattedPrice(productGetters.getPrice(product).special)"
           />
         </div>
         <div class="product__info--options">
