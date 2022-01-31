@@ -1382,9 +1382,9 @@
   version "0.0.1"
   resolved "file:./spryker-oryx-injector-0.0.1.tgz#134946a6e261610ee322cb4dcb73ce97038f9318"
 
-"@spryker-oryx/vsf@file:./spryker-oryx-vsf-0.0.2.tgz":
-  version "0.0.2"
-  resolved "file:./spryker-oryx-vsf-0.0.2.tgz#ca29c58a313447402299a6f815e1522c532e8bbe"
+"@spryker-oryx/vsf@file:./spryker-oryx-vsf-0.0.3.tgz":
+  version "0.0.3"
+  resolved "file:./spryker-oryx-vsf-0.0.3.tgz#18de9a515c67dd7b90184bfcf15618271a47ba33"
   dependencies:
     "@spryker-vsf/api" "^0.6.0-dev.3"
     "@vue-storefront/core" "^2.3.1"
