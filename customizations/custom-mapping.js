@@ -1,5 +1,5 @@
 export const mapping = {
-  ProductsList: {
-    componentFactory: () => import('./ProductsList.vue'),
-  },
+  // ProductsList: {
+  //   componentFactory: () => import('./ProductsList.vue'),
+  // },
 };

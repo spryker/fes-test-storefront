@@ -1,6 +1,10 @@
 <template>
   <SfSection
-    :title-heading="capitalizeFirstLetter('custom implementation')"
+    :title-heading="
+      capitalizeFirstLetter(
+        content.heading || `${content.productsType} products (${products.length})`
+      )
+    "
     class="section"
   >
     <SfLoader :class="{ loading }" :loading="loading">
@@ -39,6 +43,7 @@
                 `/p/${productGetters.getId(product)}/${productGetters.getSlug(product)}`
               )
             "
+            style="--product-card-max-width: 100%"
             class="products__product-card"
           />
         </SfCarouselItem>
