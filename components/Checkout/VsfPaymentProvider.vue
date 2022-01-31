@@ -6,18 +6,22 @@
       :title="$t('Payment')"
       class="sf-heading--left sf-heading--no-underline title"
     />
-    <template v-for="(method, index) in paymentMethods.list">
-      <div :key="index" class="sf-radio__wrapper" v-bind:class="{ 'is-active': paymentProviderGetters.getSelected(paymentMethods) === paymentProviderGetters.getMethodName(method) }">
-        <SfRadio
-          :data-cy="`svsf-vsfPaymentProvider-paymentMethods-radio-${index}`"
-          :label="paymentProviderGetters.getMethodName(method)"
-          :value="paymentProviderGetters.getMethodName(method)"
-          :description="paymentProviderGetters.getMethodDescription(method)"
-          :selected="paymentProviderGetters.getSelected(paymentMethods)"
-          name="paymentMethod"
-          class="form__radio payment"
-          @input="selectMethod(method)"
-        >
+    <div
+      v-for="method in paymentMethods.list"
+      :key="paymentProviderGetters.getMethodName(method)"
+      class="sf-radio__wrapper"
+      :class="{ 'is-active': paymentProviderGetters.getSelected(paymentMethods) === paymentProviderGetters.getMethodName(method) }"
+    >
+      <SfRadio
+        :data-cy="`svsf-vsfPaymentProvider-paymentMethods-radio-${index}`"
+        :label="paymentProviderGetters.getMethodName(method)"
+        :value="paymentProviderGetters.getMethodName(method)"
+        :description="paymentProviderGetters.getMethodDescription(method)"
+        :selected="paymentProviderGetters.getSelected(paymentMethods)"
+        name="paymentMethod"
+        class="form__radio payment"
+        @input="selectMethod(method)"
+      >
         <template #description>
           <SfImage
             :src="`/icons/${paymentProviderGetters.getMethodName(method).toLowerCase().split(' ').join('_')}.svg`"
@@ -42,8 +46,7 @@
           @save="savePaymentDetails"
         />
       </div>
-      </div>
-    </template>
+    </div>
   </div>
 </template>
 
