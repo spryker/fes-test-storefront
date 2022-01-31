@@ -1,5 +1,5 @@
 export const mapping = {
-  // 'oryx-banner': {
-  //   componentFactory: () => import('./CustomBanner.vue'),
+  // ProductsList: {
+  //   componentFactory: () => import('./ProductsList.vue'),
   // },
 };
