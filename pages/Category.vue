@@ -876,7 +876,7 @@ export default {
       }
     }
     &__product-card-horizontal {
-      margin: var(--spacer-lg) 0;
+      margin: var(--spacer-sm) 0;
     }
     &__product-card {
       flex: 1 1 25%;
@@ -1001,6 +1001,27 @@ export default {
     font-size: 11px;
     border-radius: 2px;
     --product-card-badge-left: 8px;
+  }
+  &-horizontal {
+    padding: 0;
+    border: 1px solid var(--c-gray-outline);
+    &__main {
+      padding: 20px;
+    }
+    &__title {
+      font-weight: bold;
+    }
+    &__description {
+      display: none;
+    }
+    &__image-wrapper {
+      padding: 12px;
+      background-color: #f2f2f2;
+      .sf-image {
+        mix-blend-mode: darken;
+        height: 141px;
+      }
+    }
   }
 }
 </style>
