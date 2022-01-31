@@ -219,43 +219,6 @@
         </SfTab>
       </SfTabs>
     </div>
-    <LayoutSlot v-if="currentCategory" :slotName="slotName" />
-    <RelatedProducts
-      data-cy="svsf-productSection-relatedProducts"
-      v-if="relatedProducts.length"
-      :products="relatedProducts"
-      :loading="relatedLoading"
-      :title="$t('Match it with')"
-    />
-    <InstagramFeed data-cy="svsf-productSection-instagramFeed" />
-    <SfBanner
-      data-cy="svsf-productSection-banner"
-      image="/homepage/bannerD.png"
-      :subtitle="$t('Fashion to Take Away')"
-      :title="$t('Download our application to your mobile')"
-      class="sf-banner--left desktop-only banner-app"
-    >
-      <template #call-to-action>
-        <div class="banner-app__call-to-action">
-          <SfImage
-            data-cy="svsf-productSection-google-image"
-            class="banner-app__image"
-            src="/homepage/google.png"
-            :width="191"
-            :height="51"
-            :alt="$t('Google Play')"
-          />
-          <SfImage
-            data-cy="svsf-productSection-store-image"
-            class="banner-app__image"
-            src="/homepage/apple.png"
-            :width="174"
-            :height="57"
-            :alt="$t('App Store')"
-          />
-        </div>
-      </template>
-    </SfBanner>
   </div>
 </template>
 <script>
