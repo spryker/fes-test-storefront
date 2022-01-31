@@ -1,0 +1,24 @@
+.sf-steps {
+  &__header {
+    --steps-border-width: 2px;
+  }
+
+  &__step {
+    &.current {
+      --steps-step-color: var(--c-text);
+      --step-font-weight: var(--font-weight--medium);
+    }
+    &.is-done {
+      --steps-step-color: var(--c-primary);
+    }
+    &.current, &.is-done {
+      --steps-step-after-background: transparent;
+    }
+    --steps-step-padding: var(--spacer-xs) 0;
+  }
+
+  &__progress {
+    --_steps-progress-width: 0 !important;
+    --_steps-progress-active-step: 0 !important;
+  }
+}

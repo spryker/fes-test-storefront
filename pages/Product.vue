@@ -67,8 +67,8 @@
         <div class="product__info--price">
           <SfPrice
             data-cy="svsf-productSection-price"
-            :regular="'€609.95'"
-            :special="'€499.99'"
+            :regular="productGetters.getFormattedPrice(productGetters.getPrice(product).regular)"
+            :special="productGetters.getFormattedPrice(productGetters.getPrice(product).special)"
           />
         </div>
         <div class="product__info--options">
@@ -219,43 +219,6 @@
         </SfTab>
       </SfTabs>
     </div>
-    <LayoutSlot v-if="currentCategory" :slotName="slotName" />
-    <RelatedProducts
-      data-cy="svsf-productSection-relatedProducts"
-      v-if="relatedProducts.length"
-      :products="relatedProducts"
-      :loading="relatedLoading"
-      :title="$t('Match it with')"
-    />
-    <InstagramFeed data-cy="svsf-productSection-instagramFeed" />
-    <SfBanner
-      data-cy="svsf-productSection-banner"
-      image="/homepage/bannerD.png"
-      :subtitle="$t('Fashion to Take Away')"
-      :title="$t('Download our application to your mobile')"
-      class="sf-banner--left desktop-only banner-app"
-    >
-      <template #call-to-action>
-        <div class="banner-app__call-to-action">
-          <SfImage
-            data-cy="svsf-productSection-google-image"
-            class="banner-app__image"
-            src="/homepage/google.png"
-            :width="191"
-            :height="51"
-            :alt="$t('Google Play')"
-          />
-          <SfImage
-            data-cy="svsf-productSection-store-image"
-            class="banner-app__image"
-            src="/homepage/apple.png"
-            :width="174"
-            :height="57"
-            :alt="$t('App Store')"
-          />
-        </div>
-      </template>
-    </SfBanner>
   </div>
 </template>
 <script>
@@ -684,7 +647,7 @@ export default {
   &__save {
     --icon-color: var(--c-primary);
     --button-size: 52px;
-    --button-border-color: var(--c-gray-outline);
+    --button-border-color: #dce0e5;
     --button-border-width: 1px;
     display: flex;
     margin: 0;
@@ -852,7 +815,13 @@ export default {
     }
 
     &__dropdown {
+      background-color: var(--product-light-gray);
+      padding: 0 21px;
       height: 48px;
+      border: 2px solid #dce0e5;
+      border-radius: 2px;
+      font-size: 15px;
+      --select-dropdown-color: var(--product-gray);
     }
   }
 }

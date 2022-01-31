@@ -23,7 +23,7 @@
         padding: 10px;
         img.sf-image {
           --image-height: 250px;
-
+          mix-blend-mode: darken;
           object-fit: contain;
         }
       }

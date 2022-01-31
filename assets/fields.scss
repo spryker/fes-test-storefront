@@ -1,0 +1,42 @@
+%fields {
+  .sf-input,
+  .sf-select {
+    height: 68px;
+    padding: 0;
+
+    select.sf-select__dropdown {
+      height: 54px;
+      width: 100%;
+    }
+
+    &__wrapper,
+    &__dropdown {
+      height: 54px;
+      border: 1px solid #dce0e5;
+      border-radius: 2px;
+
+      margin-bottom: 2px;
+
+      input {
+        border: none;
+        outline: none;
+        padding: var(--spacer-sm) 5px var(--spacer-sm) 5px;
+      }
+    }
+
+    &__label {
+      position: absolute;
+      top: -20px;
+      bottom: 0;
+
+      transform: none;
+      text-transform: uppercase;
+      font-size: var(--font-size--xs);
+      color: var(--c-link);
+
+      &::after {
+        color: var(--button-background, var(--c-primary));
+      }
+    }
+  }
+}

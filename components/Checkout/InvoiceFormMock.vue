@@ -48,3 +48,17 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import 'assets/fields';
+
+.form {
+  ::v-deep{
+    @extend %fields;
+
+    .sf-input {
+      margin: 2.5rem 0 1.5rem;
+    }
+  }
+}
+</style>

@@ -26,6 +26,7 @@ body {
 
 .sf-select {
   --c-secondary-variant: var(--c-link);
+  --c-secondary: var(--c-link);
   &__dropdown {
     --select-dropdown-color: var(--product-gray);
     background-color: var(--product-light-gray);

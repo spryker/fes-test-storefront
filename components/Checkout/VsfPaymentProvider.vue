@@ -3,37 +3,50 @@
     <SfHeading
       data-cy="svsf-vsfPaymentProvider-heading"
       :level="3"
-      :title="$t('Payment methods')"
+      :title="$t('Payment')"
       class="sf-heading--left sf-heading--no-underline title"
     />
-
-    <SfRadio
-      :data-cy="`svsf-vsfPaymentProvider-paymentMethods-radio-${index}`"
-      v-for="(method, index) in paymentMethods.list"
-      :key="index"
-      :label="paymentProviderGetters.getMethodName(method)"
-      :value="paymentProviderGetters.getMethodName(method)"
-      :description="paymentProviderGetters.getMethodDescription(method)"
-      :selected="paymentProviderGetters.getSelected(paymentMethods)"
-      name="paymentMethod"
-      class="form__radio payment"
-      @input="selectMethod(method)"
+    <div
+      v-for="method in paymentMethods.list"
+      :key="paymentProviderGetters.getMethodName(method)"
+      class="sf-radio__wrapper"
+      :class="{ 'is-active': paymentProviderGetters.getSelected(paymentMethods) === paymentProviderGetters.getMethodName(method) }"
     >
-      <div class="payment__label">
-        {{ paymentProviderGetters.getMethodName(method) }}
+      <SfRadio
+        :data-cy="`svsf-vsfPaymentProvider-paymentMethods-radio-${index}`"
+        :label="paymentProviderGetters.getMethodName(method)"
+        :value="paymentProviderGetters.getMethodName(method)"
+        :description="paymentProviderGetters.getMethodDescription(method)"
+        :selected="paymentProviderGetters.getSelected(paymentMethods)"
+        name="paymentMethod"
+        class="form__radio payment"
+        @input="selectMethod(method)"
+      >
+        <template #description>
+          <SfImage
+            :src="`/icons/${paymentProviderGetters.getMethodName(method).toLowerCase().split(' ').join('_')}.svg`"
+            alt="Edit"
+            class="sf-radio__image"
+          />
+        </template>
+      </SfRadio>
+      <div v-if="paymentProviderGetters.getMethodName(method) === 'Invoice'">
+        <InvoiceFormMock
+          class="form__wrapper"
+          data-cy="svsf-vsfPaymentProvider-invoice-form"
+          v-show="isInvoice"
+          @save="savePaymentDetails"
+        />
       </div>
-    </SfRadio>
-
-    <CreditCardFormMock
-      data-cy="svsf-vsfPaymentProvider-creditCard-form"
-      v-show="isCreditCard"
-      @save="savePaymentDetails"
-    />
-    <InvoiceFormMock
-      data-cy="svsf-vsfPaymentProvider-invoice-form"
-      v-show="isInvoice"
-      @save="savePaymentDetails"
-    />
+      <div v-if="paymentProviderGetters.getMethodName(method) === 'Credit Card'">
+        <CreditCardFormMock
+          class="form__wrapper"
+          data-cy="svsf-vsfPaymentProvider-creditCard-form"
+          v-show="isCreditCard"
+          @save="savePaymentDetails"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -45,6 +58,7 @@ import {
   SfDivider,
   SfInput,
   SfSelect,
+  SfImage,
 } from '@storefront-ui/vue';
 import {
   usePaymentProvider,
@@ -65,6 +79,7 @@ export default {
     SfDivider,
     SfInput,
     SfSelect,
+    SfImage,
     CreditCardFormMock,
     InvoiceFormMock,
     ValidationObserver,
@@ -132,8 +147,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title {
+  margin-bottom: 1rem;
+
+  ::v-deep {
+    h3 {
+      color: #2F2F2F;
+      font-weight: normal;
+    }
+  }
+}
+
 .payment {
-  margin: var(--spacer-sm) 0 0 0;
   &__label {
     display: flex;
     justify-content: space-between;
@@ -147,7 +172,10 @@ export default {
 .form {
   &--payment {
     width: 100%;
-    margin: var(--spacer-xl) 0 var(--spacer-lg);
+    margin: 0;
+  }
+  &__wrapper {
+    margin-top: 1rem;
   }
   &__select {
     --select-option-font-size: var(--font-size--lg);
@@ -214,6 +242,69 @@ export default {
   &__radio-group {
     flex: 0 0 100%;
     margin: 0 0 var(--spacer-2xl) 0;
+  }
+}
+
+.sf-radio {
+  position: relative;
+  color: #8f8f8f;
+  transition: color 0.25s cubic-bezier(1, 0.5, 0.8, 1);
+
+  &:hover {
+    color: #2F2F2F;
+  }
+
+  &.is-active {
+    background: transparent;
+    color: #2F2F2F;
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+
+  &__wrapper {
+    padding: 1.5625rem 1.25rem;
+    margin-bottom: 0.8375rem;
+    border: 1px solid #dce0e5;
+    border-radius: 2px;
+
+    &.is-active {
+      background: transparent;
+      color: #2F2F2F;
+      border-color: var(--c-primary);
+    }
+  }
+
+  ::v-deep {
+    .sf-radio {
+      &__checkmark {
+        width: 1.25rem;
+        height: 1.25rem;
+        border: solid #B2B2B2;
+        border: var(--radio-checkmark-border, var(--radio-checkmark-border-style, solid) var(--radio-checkmark-border-color, #B2B2B2));
+        border-width: 2px;
+        border-width: var(--radio-checkmark-border-width, 2px);
+        border-radius: 100%;
+
+        &.is-active {
+          --radio-checkmark-border-width: 0.375rem;
+          --radio-checkmark-border-color: var(--c-primary);
+        }
+      }
+
+      &__container {
+        padding: 0;
+      }
+
+      &__content {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
   }
 }
 </style>

@@ -233,7 +233,10 @@
       ></SfHeaderNavigationItem>
     </SfHeaderNavigation>
 
-    <SfOverlay class="header__overlay" :visible="currentMenu !== ''"></SfOverlay>
+    <SfOverlay
+      class="header__overlay"
+      :visible="currentMenu !== ''"
+    ></SfOverlay>
 
     <!-- TODO: delete when SfHeaderNavigation mobile menu will be fixed -->
     <SfMegaMenu
@@ -602,6 +605,7 @@ export default {
 
 .searchbar {
   position: relative;
+  height: 52px;
   &_input {
     z-index: 2;
     background-color: var(--c-white);
@@ -685,9 +689,12 @@ export default {
 }
 </style>
 
-<style>
+<style lang="scss">
 .sf-header__header {
   --header-padding: 0 10px;
+  @include for-mobile {
+    --header-padding: 0 10px 20px;
+  }
 }
 .header__overlay {
   --overlay-z-index: 1;
