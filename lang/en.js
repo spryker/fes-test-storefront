@@ -73,14 +73,14 @@ export default {
   'Continue to payment': 'Continue to payment',
   'Order No.': 'Order No.',
   'Successful placed order':
-    'You have successfully placed the order. You can check status of your order by using our delivery status feature. You will receive an order confirmation e-mail with details of your order and a link to track its progress.',
+    'Your order has been placed successfully. You will get the order confirmation email in a few minutes.',
   'Info after order':
     'You can log to your account using e-mail and password defined earlier. On your account you can edit your profile data, check history of transactions, edit subscription to newsletter.',
   'Allow order notifications': 'Allow order notifications',
   Feedback:
     'Your feedback is important to us. Let us know what we could improve.',
   'Send my feedback': 'Send my feedback',
-  'Go back to shop': 'Go back to shop',
+  'Go back to shop': 'Back to home',
   'Read all reviews': 'Read all reviews',
   Color: 'Color',
   'Contact details updated': 'Keep your addresses and contact details updated.',
