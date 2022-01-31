@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>LALALA</h1>
+    <h1>TEST Customization</h1>
     <SfHero v-if="content.items && content.items.length > 0" class="hero">
       <SfHeroItem
         v-for="(hero, i) in content.items"
@@ -17,16 +17,16 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import { SfHero } from '@storefront-ui/vue';
-import { onUnmounted } from '@vue/composition-api';
-import { onSSR, vsfRef } from '@vue-storefront/core';
-import { take } from 'rxjs/operators';
-import { useInjectable } from '@spryker-oryx/vsf';
-import { Services } from '@spryker-oryx/experience';
+import Vue from "vue";
+import { SfHero } from "@storefront-ui/vue";
+import { onUnmounted } from "@vue/composition-api";
+import { onSSR, vsfRef } from "@vue-storefront/core";
+import { take } from "rxjs/operators";
+import { useInjectable } from "@spryker-oryx/vsf";
+import { Services } from "@spryker-oryx/experience";
 
 export default Vue.extend({
-  name: 'Banner',
+  name: "Banner",
   props: {
     componentId: {
       type: String,
