@@ -1,58 +1,58 @@
-import { SfCallToAction } from "@storefront-ui/vue";
-import image from "../../../../public/assets/storybook/Home/newsletter.jpg";
+import { SfCallToAction } from '@storefront-ui/vue';
+import image from '../../../../public/assets/storybook/Home/newsletter.jpg';
 
 export default {
-  title: "Components/Molecules/CallToAction",
+  title: 'Components/Molecules/CallToAction',
   component: SfCallToAction,
   decorators: [
     () => ({ template: '<div style="max-width:1024px;"><story /></div>' }),
   ],
   argTypes: {
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     buttonText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     description: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     background: {
-      control: "color",
+      control: 'color',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     image: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    click: { action: "Button clicked", table: { category: "Events" } },
+    click: { action: 'Button clicked', table: { category: 'Events' } },
   },
   args: {
-    title: "Subscribe to Newsletters",
+    title: 'Subscribe to Newsletters',
     description:
-      "Be aware of upcoming sales and events. Receive gifts and special offers!",
-    buttonText: "Subscribe",
-    image: "",
-    background: "#e1e3e2",
+      'Be aware of upcoming sales and events. Receive gifts and special offers!',
+    buttonText: 'Subscribe',
+    image: '',
+    background: '#e1e3e2',
   },
 };
 
@@ -84,7 +84,7 @@ WithImage.args = {
 
 export const WithLink = Template.bind({});
 WithLink.args = {
-  link: "https://storefrontui.io",
+  link: 'https://storefrontui.io',
 };
 
 export const UseTitleSlot = (args, { argTypes }) => ({

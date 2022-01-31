@@ -1,6 +1,6 @@
-import Static from "./Static";
+import Static from './Static';
 export default {
-  title: "Pages/Static",
+  title: 'Pages/Static',
   component: Static,
 };
 

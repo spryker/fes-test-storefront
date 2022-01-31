@@ -15,11 +15,11 @@
 import {
   mapMobileObserver,
   unMapMobileObserver,
-} from "../../../utilities/mobile-observer";
-import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
-import SfLink from "../../atoms/SfLink/SfLink.vue";
+} from '../../../utilities/mobile-observer';
+import SfHeading from '../../atoms/SfHeading/SfHeading.vue';
+import SfLink from '../../atoms/SfLink/SfLink.vue';
 export default {
-  name: "SfTile",
+  name: 'SfTile',
   components: {
     SfHeading,
     SfLink,
@@ -30,21 +30,21 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Tile background image
      */
     background: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
     /**
      * Link title
      */
     link: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -62,7 +62,7 @@ export default {
       } else {
         return {
           background: `url(${
-            this.background[this.isMobileView ? "mobile" : "desktop"]
+            this.background[this.isMobileView ? 'mobile' : 'desktop']
           })`,
         };
       }
@@ -77,5 +77,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfTile.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfTile.scss';
 </style>

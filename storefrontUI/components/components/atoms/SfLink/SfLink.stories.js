@@ -1,13 +1,13 @@
-import SfLink from "./SfLink.vue";
+import SfLink from './SfLink.vue';
 
 export default {
-  title: "Components/Atoms/Link",
+  title: 'Components/Atoms/Link',
   component: SfLink,
   argTypes: {
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -28,5 +28,5 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  link: "https://www.storefrontui.io/",
+  link: 'https://www.storefrontui.io/',
 };

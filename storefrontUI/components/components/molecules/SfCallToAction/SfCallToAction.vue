@@ -28,9 +28,9 @@
   </section>
 </template>
 <script>
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfCallToAction",
+  name: 'SfCallToAction',
   components: {
     SfButton,
   },
@@ -40,42 +40,42 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Text that will be displayed inside the button.
      */
     buttonText: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      *  CallToAction link. If it's filled in, changes button tag on a tag.
      */
     link: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * CallToAction description.
      */
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Background color.
      */
     background: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Background image.
      */
     image: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
   },
   computed: {
@@ -83,17 +83,17 @@ export default {
       const image = this.image;
       const background = this.background;
       return {
-        "--_call-to-action-background-image": image.mobile
+        '--_call-to-action-background-image': image.mobile
           ? `url(${image.mobile})`
           : `url(${image})`,
-        "--_call-to-action-background-desktop-image":
+        '--_call-to-action-background-desktop-image':
           image.desktop && `url(${image.desktop})`,
-        "--_call-to-action-background-color": background,
+        '--_call-to-action-background-color': background,
       };
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfCallToAction.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfCallToAction.scss';
 </style>

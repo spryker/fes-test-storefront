@@ -4,41 +4,41 @@ import {
   SfImage,
   SfList,
   SfCharacteristic,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Molecules/BottomModal",
+  title: 'Components/Molecules/BottomModal',
   component: SfBottomModal,
   argTypes: {
     transition: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "fade",
+      defaultValue: 'fade',
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     isOpen: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    "click:close": {
-      action: "Close button clicked!",
-      table: { category: "Events" },
+    'click:close': {
+      action: 'Close button clicked!',
+      table: { category: 'Events' },
     },
   },
   args: {
     isOpen: true,
-    title: "Title",
-    transition: "sf-bottom-modal",
-    content: "Your content",
+    title: 'Title',
+    transition: 'sf-bottom-modal',
+    content: 'Your content',
   },
 };
 
@@ -71,24 +71,24 @@ export const Example = (args, { argTypes }) => ({
       isMobile: false,
       open: this.isOpen,
       items: [
-        { country: "Poland", language: "Polish" },
-        { country: "Poland", language: "Polish" },
-        { country: "Poland", language: "Polish" },
+        { country: 'Poland', language: 'Polish' },
+        { country: 'Poland', language: 'Polish' },
+        { country: 'Poland', language: 'Polish' },
       ],
     };
   },
   computed: {
     customStyleForContent() {
-      return this.isMobile ? {} : { display: "flex" };
+      return this.isMobile ? {} : { display: 'flex' };
     },
   },
   mounted() {
     this.isMobile =
       Math.max(document.documentElement.clientWidth, window.innerWidth) <= 1023;
-    window.matchMedia("(max-width: 1023px)").addListener(this.mobileHandler);
+    window.matchMedia('(max-width: 1023px)').addListener(this.mobileHandler);
   },
   beforeDestroy() {
-    window.matchMedia("(max-width: 1023px)").removeListener(this.mobileHandler);
+    window.matchMedia('(max-width: 1023px)').removeListener(this.mobileHandler);
   },
   methods: {
     mobileHandler(event) {

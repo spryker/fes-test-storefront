@@ -1,6 +1,6 @@
-import Product from "./Product";
+import Product from './Product';
 export default {
-  title: "Pages/Product",
+  title: 'Pages/Product',
   component: Product,
 };
 

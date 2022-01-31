@@ -1,0 +1,33 @@
+:root {
+  --font-family--primary: Circular, sans-serif;
+  --font-family--secondary: var(--font-family--primary);
+
+  @include generate-color-variants(--_c-green-primary, #1cb696);
+  @include generate-color-variants(--_c-green-secondary, #17927b);
+
+  @include generate-color-variants(--_c-orange-primary, #eb553c);
+  @include generate-color-variants(--_c-orange-secondary, #dd3317);
+
+  @include assign-color-variants(--c-primary, --_c-green-primary);
+  @include assign-color-variants(--c-primary-variant, --_c-green-secondary);
+
+  @include assign-color-variants(--c-secondary, --_c-orange-primary);
+  @include assign-color-variants(--c-secondary-variant, --_c-orange-secondary);
+
+  --badge-background: var(--_c-orange-primary);
+  --overlay-background: rgba(0, 0, 0, 0.3);
+  --price-old-color: #b2b2b2;
+  --price-special-color: var(--_c-orange-primary);
+  --price-regular-color: #333333;
+  --header-background: #e7eaee;
+  --top-bar-background: #d0d5dc;
+  --overlay-z-index: 5;
+  --sidebar-z-index: 5;
+  --modal-index: 5;
+  --breadcrumbs-list-item-seperator: "/";
+  --breadcrumbs-list-item-before-padding: var(--spacer-xs);
+  --c-gray-outline: #dce0e5;
+  --product-black: #2f2f2f;
+  --product-light-gray: #f5f5f5;
+  --product-gray: #8f8f8f;
+}

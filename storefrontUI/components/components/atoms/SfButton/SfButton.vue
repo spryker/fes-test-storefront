@@ -8,7 +8,7 @@
       {
         'is-disabled--button': $options.buttonActive(
           props.link,
-          props.disabled
+          props.disabled,
         ),
         'is-disabled--link': $options.linkActive(props.link, props.disabled),
       },
@@ -24,10 +24,10 @@
   </component>
 </template>
 <script>
-import { focus } from "../../../utilities/directives";
-import SfLink from "../SfLink/SfLink.vue";
+import { focus } from '../../../utilities/directives';
+import SfLink from '../SfLink/SfLink.vue';
 export default {
-  name: "SfButton",
+  name: 'SfButton',
   inject: {
     components: {
       default: { SfLink },
@@ -49,7 +49,7 @@ export default {
      */
     link: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
   },
   linkActive(link, disabled) {
@@ -61,5 +61,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfButton.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfButton.scss';
 </style>

@@ -41,9 +41,9 @@
   </div>
 </template>
 <script>
-import { focus } from "../../../utilities/directives";
+import { focus } from '../../../utilities/directives';
 export default {
-  name: "SfTextarea",
+  name: 'SfTextarea',
   directives: {
     focus,
   },
@@ -53,21 +53,21 @@ export default {
      */
     value: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * Textarea label.
      */
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Textarea name.
      */
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * The visible width of the text control. It must be a positive integer.
@@ -75,14 +75,14 @@ export default {
      */
     cols: {
       type: [String, Number],
-      default: "20",
+      default: '20',
     },
     /**
      * The number of visible text lines for the control.
      */
     rows: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * The maximum number of characters that the user can enter.
@@ -90,14 +90,14 @@ export default {
      */
     maxlength: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * The minimum number of characters required that the user should enter.
      */
     minlength: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * Indicates how the control wraps text. Possible values are soft, hard, off.
@@ -105,9 +105,9 @@ export default {
      */
     wrap: {
       type: String,
-      default: "soft",
+      default: 'soft',
       validator: (value) => {
-        return ["soft", "hard", "off"].includes(value);
+        return ['soft', 'hard', 'off'].includes(value);
       },
     },
     /**
@@ -129,7 +129,7 @@ export default {
      */
     errorMessage: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Native textarea required attribute.
@@ -137,14 +137,14 @@ export default {
     required: {
       type: Boolean,
       default: false,
-      description: "Native textarea required attribute",
+      description: 'Native textarea required attribute',
     },
     /**
      * Placeholder for textarea.
      */
     placeholder: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Native textarea disabled attribute.
@@ -152,7 +152,7 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
-      description: "Native input disabled attribute",
+      description: 'Native input disabled attribute',
     },
   },
   handleInput(listeners) {
@@ -165,5 +165,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfTextarea.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfTextarea.scss';
 </style>

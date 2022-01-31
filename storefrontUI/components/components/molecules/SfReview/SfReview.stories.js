@@ -1,77 +1,77 @@
-import { SfReview } from "@storefront-ui/vue";
+import { SfReview } from '@storefront-ui/vue';
 export default {
-  title: "Components/Molecules/Review",
+  title: 'Components/Molecules/Review',
   component: SfReview,
   argTypes: {
     author: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
     date: {
-      control: "date",
+      control: 'date',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
     message: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
     rating: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: false,
         },
       },
     },
     maxRating: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: 5,
         },
       },
     },
     charLimit: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: 250,
         },
       },
     },
     readMoreText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "Read more",
+          summary: 'Read more',
         },
       },
     },
     hideFullText: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "Read less",
+          summary: 'Read less',
         },
       },
     },
@@ -94,10 +94,10 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  author: "Jane D.Smith",
-  date: "4 April 2019",
+  author: 'Jane D.Smith',
+  date: '4 April 2019',
   message:
-    "I was looking for a bright light for the kitchen but wanted some item more modern than a strip light. this one is perfect, very bright and looks great. I can comment on interlation as I had an electrition instal it. Would recommend.",
+    'I was looking for a bright light for the kitchen but wanted some item more modern than a strip light. this one is perfect, very bright and looks great. I can comment on interlation as I had an electrition instal it. Would recommend.',
   rating: 4,
 };
 

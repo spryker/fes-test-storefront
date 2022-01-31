@@ -1,2 +1,2 @@
 export const isClient = (() =>
-  typeof window !== "undefined" || typeof document !== "undefined")();
+  typeof window !== 'undefined' || typeof document !== 'undefined')();

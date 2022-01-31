@@ -13,19 +13,19 @@
   </div>
 </template>
 <script>
-import SfMenuItem from "../../../molecules/SfMenuItem/SfMenuItem.vue";
+import SfMenuItem from '../../../molecules/SfMenuItem/SfMenuItem.vue';
 export default {
-  name: "SfMegaMenuColumn",
+  name: 'SfMegaMenuColumn',
   components: {
     SfMenuItem,
   },
   props: {
     title: {
       type: String,
-      default: "",
+      default: '',
     },
   },
-  inject: ["megaMenu"],
+  inject: ['megaMenu'],
   computed: {
     active() {
       return this.megaMenu.active;

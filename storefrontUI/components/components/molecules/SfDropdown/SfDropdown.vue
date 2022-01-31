@@ -33,13 +33,13 @@
   </div>
 </template>
 <script>
-import { clickOutside } from "../../../utilities/directives/";
-import SfOverlay from "../../atoms/SfOverlay/SfOverlay.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import { isClient } from "../../../utilities/helpers";
+import { clickOutside } from '../../../utilities/directives/';
+import SfOverlay from '../../atoms/SfOverlay/SfOverlay.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import { isClient } from '../../../utilities/helpers';
 
 export default {
-  name: "SfDropdown",
+  name: 'SfDropdown',
   components: {
     SfOverlay,
     SfButton,
@@ -60,7 +60,7 @@ export default {
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * If true clicking outside will not dismiss the dropdown
@@ -75,9 +75,9 @@ export default {
       handler(value) {
         if (!isClient) return;
         if (value) {
-          document.addEventListener("keydown", this.keydownHandler);
+          document.addEventListener('keydown', this.keydownHandler);
         } else {
-          document.removeEventListener("keydown", this.keydownHandler);
+          document.removeEventListener('keydown', this.keydownHandler);
         }
       },
       immediate: true,
@@ -85,16 +85,16 @@ export default {
   },
   methods: {
     open() {
-      this.$emit("click:open");
+      this.$emit('click:open');
     },
     close() {
-      this.$emit("click:close");
+      this.$emit('click:close');
     },
     checkPersistence() {
       if (!this.persistent) return this.close();
     },
     keydownHandler(e) {
-      if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
         this.close();
       }
     },
@@ -102,5 +102,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfDropdown.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfDropdown.scss';
 </style>

@@ -1,52 +1,52 @@
-import { SfImage } from "@storefront-ui/vue";
+import { SfImage } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Image",
+  title: 'Components/Atoms/Image',
   component: SfImage,
   argTypes: {
     srcsets: {
-      control: "object",
+      control: 'object',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     src: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     width: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     height: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     placeholder: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     alt: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Attributes",
+        category: 'Attributes',
       },
     },
     loading: {
       control: {
-        type: "select",
-        options: ["", "lazy", "eager"],
+        type: 'select',
+        options: ['', 'lazy', 'eager'],
       },
       table: {
-        category: "Attributes",
+        category: 'Attributes',
       },
     },
   },
@@ -67,22 +67,22 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  src: "/assets/storybook/SfImage/product-216x326.jpg",
-  alt: "Vila stripe maxi shirt dress",
+  src: '/assets/storybook/SfImage/product-216x326.jpg',
+  alt: 'Vila stripe maxi shirt dress',
   srcsets: [
     {
-      src: "/assets/storybook/SfImage/product-109x164.webp",
+      src: '/assets/storybook/SfImage/product-109x164.webp',
       width: 109,
       breakpoint: 480,
     },
     {
-      src: "/assets/storybook/SfImage/product-216x326.jpg",
+      src: '/assets/storybook/SfImage/product-216x326.jpg',
       width: 1200,
       breakpoint: 1200,
     },
     {
-      src: "/assets/storybook/SfImage/product-109x164.webp",
-      width: "400px",
+      src: '/assets/storybook/SfImage/product-109x164.webp',
+      width: '400px',
       breakpoint: 768,
     },
   ],
@@ -93,16 +93,16 @@ Common.args = {
 export const WithSrcOnly = Template.bind({});
 WithSrcOnly.args = {
   ...Common.args,
-  width: "",
-  height: "",
+  width: '',
+  height: '',
   srcsets: [],
 };
 
 export const WithBreakpoints = Template.bind({});
 WithBreakpoints.args = {
   ...Common.args,
-  width: "",
-  height: "",
+  width: '',
+  height: '',
 };
 
 export const WithResolutions = Template.bind({});
@@ -110,15 +110,15 @@ WithResolutions.args = {
   ...WithSrcOnly.args,
   srcsets: [
     {
-      src: "/assets/storybook/SfImage/product-109x164.webp",
+      src: '/assets/storybook/SfImage/product-109x164.webp',
       resolution: 1,
     },
     {
-      src: "/assets/storybook/SfImage/product-216x326.jpg",
+      src: '/assets/storybook/SfImage/product-216x326.jpg',
       resolution: 1.5,
     },
     {
-      src: "/assets/storybook/SfImage/product-109x164.webp",
+      src: '/assets/storybook/SfImage/product-109x164.webp',
       resolution: 2,
     },
   ],
@@ -128,7 +128,7 @@ export const WithPlaceholder = Template.bind({});
 WithPlaceholder.args = {
   ...WithSrcOnly.args,
   placeholder:
-    "https://res.cloudinary.com/mayashavin/image/upload/e_pixelate/v1607977495/StorefrontUI/product-216x326.jpg",
+    'https://res.cloudinary.com/mayashavin/image/upload/e_pixelate/v1607977495/StorefrontUI/product-216x326.jpg',
 };
 
 export const WithAccessibility = Template.bind({});
@@ -160,5 +160,5 @@ export const UseOverlaySlot = (args, { argTypes }) => ({
 });
 UseOverlaySlot.args = {
   ...WithSrcOnly.args,
-  textOverlay: "Custom overlay",
+  textOverlay: 'Custom overlay',
 };

@@ -1,5 +1,5 @@
 import webpack from 'webpack';
-import path from 'path'
+import path from 'path';
 
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
@@ -24,8 +24,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: '/fonts.css'
-      }
+        href: '/fonts.css',
+      },
     ],
   },
   loading: { color: '#fff' },
@@ -125,14 +125,17 @@ export default {
     // middlewareUrl: 'http://localhost:8181',
     spryker: {
       contentBackendUrl:
-        process.env.CONTENT_BACKEND_URL || 'https://eb-demo-server.herokuapp.com',
+        process.env.CONTENT_BACKEND_URL ||
+        'https://eb-demo-server.herokuapp.com',
       currency: {
         default: process.env.CURRENCY_DEFAULT || 'USD',
         options: currencies,
       },
       store: process.env.STORE || 'DE',
       priceMode: process.env.PRICE_MODE || 'GROSS_MODE',
-      enabledLocales: process.env.LOCALES ? process.env.LOCALES.split(',') : ['en_US','de_DE'],
+      enabledLocales: process.env.LOCALES
+        ? process.env.LOCALES.split(',')
+        : ['en_US', 'de_DE'],
     },
   },
   i18n: {
@@ -155,16 +158,9 @@ export default {
       fallbackLocale: 'en_US',
     },
   },
-  css: ["./assets/icons.scss", "./assets/header.scss"],
+  css: ['./assets/styles.scss'],
   styleResources: {
-    scss: [
-      require.resolve('@storefront-ui/shared/styles/_helpers.scss', {
-        paths: [process.cwd()],
-      }),
-      require.resolve('./assets/styles.scss', {
-        paths: [process.cwd()],
-      }),
-    ],
+    scss: '@storefront-ui/shared/styles/_helpers.scss',
   },
   build: {
     transpile: ['vee-validate/dist/rules'],
@@ -181,17 +177,21 @@ export default {
     extend(config) {
       config.resolve.alias['@storefront-ui/vue/styles'] = path.resolve(
         __dirname,
-        './storefrontUI/styles'
+        './storefrontUI/components/css/_all.scss',
+      );
+      config.resolve.alias['@storefront-ui/shared/styles'] = path.resolve(
+        __dirname,
+        './storefrontUI/styles/styles',
       );
       config.resolve.alias['@storefront-ui/vue/src'] = path.resolve(
         __dirname,
-        './storefrontUI/components'
+        './storefrontUI/components',
       );
       config.resolve.alias['@storefront-ui/vue'] = path.resolve(
         __dirname,
-        './storefrontUI/components'
+        './storefrontUI/components',
       );
-    }
+    },
   },
   router: {
     middleware: ['checkout'],

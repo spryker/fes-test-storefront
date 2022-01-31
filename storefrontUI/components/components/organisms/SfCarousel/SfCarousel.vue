@@ -105,8 +105,7 @@ export default {
           case ">":
           case "<":
             page = Math.ceil(glide.index / perView);
-            newIndex =
-              page * perView + (direction === ">" ? perView : -perView);
+            newIndex = page * perView + (direction === ">" ? perView : -perView);
             if (newIndex >= size) {
               if (type === "slider" && !rewind) {
                 newIndex = glide.index;

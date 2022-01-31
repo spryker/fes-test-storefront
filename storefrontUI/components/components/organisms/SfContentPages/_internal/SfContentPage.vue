@@ -6,24 +6,24 @@
 </template>
 <script>
 export default {
-  name: "SfContentPage",
+  name: 'SfContentPage',
   props: {
     /**
      * Page title
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Page nav icon
      */
     icon: {
       type: [String, Array],
-      default: "",
+      default: '',
     },
   },
-  inject: ["provided"],
+  inject: ['provided'],
   computed: {
     isActive() {
       return this.provided.active === this.title;

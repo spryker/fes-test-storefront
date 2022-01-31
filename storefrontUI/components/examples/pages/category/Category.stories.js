@@ -1,6 +1,6 @@
-import Category from "./Category";
+import Category from './Category';
 export default {
-  title: "Pages/Category",
+  title: 'Pages/Category',
   component: Category,
 };
 

@@ -5,20 +5,20 @@
   </div>
 </template>
 <script>
-import SfAddress from "./_internal/SfAddress.vue";
-import Vue from "vue";
+import SfAddress from './_internal/SfAddress.vue';
+import Vue from 'vue';
 
-Vue.component("SfAddress", SfAddress);
+Vue.component('SfAddress', SfAddress);
 export default {
-  name: "SfAddressPicker",
+  name: 'SfAddressPicker',
   model: {
-    prop: "selected",
-    event: "change",
+    prop: 'selected',
+    event: 'change',
   },
   props: {
     selected: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   data() {
@@ -44,11 +44,11 @@ export default {
     setSelectedValue(newVal) {
       const newValue = newVal;
       this.selectedValue = newValue;
-      this.$emit("change", newValue);
+      this.$emit('change', newValue);
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfAddressPicker.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfAddressPicker.scss';
 </style>

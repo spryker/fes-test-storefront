@@ -1,37 +1,37 @@
-import { SfFilter } from "@storefront-ui/vue";
+import { SfFilter } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Molecules/Filter",
+  title: 'Components/Molecules/Filter',
   component: SfFilter,
   decorators: [
     () => ({ template: '<div style="max-width: 22.875rem"><story/></div>' }),
   ],
   argTypes: {
     label: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     count: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     selected: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     color: {
-      control: "color",
+      control: 'color',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    change: { action: "Change color", table: { category: "Events" } },
+    change: { action: 'Change color', table: { category: 'Events' } },
   },
 };
 
@@ -50,7 +50,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  label: "Red",
+  label: 'Red',
   count: 30,
 };
 
@@ -63,7 +63,7 @@ Selected.args = {
 export const AsColorFilter = Template.bind({});
 AsColorFilter.args = {
   ...Common.args,
-  color: "#E69494",
+  color: '#E69494',
 };
 
 export const UseLabelSlot = (args, { argTypes }) => ({

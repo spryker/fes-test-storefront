@@ -28,11 +28,11 @@
   </component>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
-import SfLink from "../../atoms/SfLink/SfLink.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
+import SfLink from '../../atoms/SfLink/SfLink.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfMenuItem",
+  name: 'SfMenuItem',
   components: {
     SfIcon,
     SfLink,
@@ -44,28 +44,28 @@ export default {
      */
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Menu-item icon (visible on mobile)
      */
     icon: {
       type: [String, Array],
-      default: "chevron_right",
+      default: 'chevron_right',
     },
     /**
      * Menu-item count of items
      */
     count: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
     /**
      * Menu-item link (if is empty then SfMenuItem is SfButton)
      */
     link: {
       type: [String, Object],
-      default: "",
+      default: '',
     },
   },
   computed: {
@@ -74,16 +74,16 @@ export default {
       if (this.link) {
         bind.link = this.link;
       } else {
-        bind.class = "sf-button--pure";
+        bind.class = 'sf-button--pure';
       }
       return bind;
     },
     componentIs() {
-      return this.link ? "SfLink" : "SfButton";
+      return this.link ? 'SfLink' : 'SfButton';
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfMenuItem.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfMenuItem.scss';
 </style>

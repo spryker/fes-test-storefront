@@ -7,42 +7,42 @@ import {
   SfMenuItem,
   SfInput,
   SfLink,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Organisms/Footer",
+  title: 'Components/Organisms/Footer',
   component: SfFooter,
   argTypes: {
     open: {
-      control: "array",
+      control: 'array',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     column: {
-      control: "number",
+      control: 'number',
       defaultValue: 4,
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      description: "Number of columns in footer",
+      description: 'Number of columns in footer',
     },
     multiple: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     logo: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -64,25 +64,25 @@ const Template = (args, { argTypes }) => ({
     return {
       columns: [
         {
-          title: "About us",
-          items: ["Who we are", "Quality in the details", "Customer Reviews"],
+          title: 'About us',
+          items: ['Who we are', 'Quality in the details', 'Customer Reviews'],
         },
         {
-          title: "Departments",
-          items: ["Women fashion", "Men fashion", "Kidswear", "Home"],
+          title: 'Departments',
+          items: ['Women fashion', 'Men fashion', 'Kidswear', 'Home'],
         },
         {
-          title: "Help",
-          items: ["Customer service", "Size guide", "Contact us"],
+          title: 'Help',
+          items: ['Customer service', 'Size guide', 'Contact us'],
         },
         {
-          title: "Payment & delivery",
-          items: ["Purchase terms", "Guarantee"],
+          title: 'Payment & delivery',
+          items: ['Purchase terms', 'Guarantee'],
         },
       ],
       social: {
-        title: "Social",
-        pictures: ["facebook", "pinterest", "twitter", "google", "youtube"],
+        title: 'Social',
+        pictures: ['facebook', 'pinterest', 'twitter', 'google', 'youtube'],
       },
     };
   },
@@ -149,7 +149,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  open: ["About us", "Help", "Social"],
-  title: "Storefront UI",
-  logo: "/assets/logo.svg",
+  open: ['About us', 'Help', 'Social'],
+  title: 'Storefront UI',
+  logo: '/assets/logo.svg',
 };

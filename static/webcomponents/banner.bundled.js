@@ -301,13 +301,15 @@ class g extends HTMLElement {
     var e, n;
     const o = this.constructor._$Eh(t, s);
     if (void 0 !== o && !0 === s.reflect) {
-      const r = (null !==
-        (n =
-          null === (e = s.converter) || void 0 === e
-            ? void 0
-            : e.toAttribute) && void 0 !== n
-        ? n
-        : v.toAttribute)(i, s.type);
+      const r = (
+        null !==
+          (n =
+            null === (e = s.converter) || void 0 === e
+              ? void 0
+              : e.toAttribute) && void 0 !== n
+          ? n
+          : v.toAttribute
+      )(i, s.type);
       (this._$Ei = t),
         null == r ? this.removeAttribute(o) : this.setAttribute(o, r),
         (this._$Ei = null);
@@ -454,11 +456,15 @@ const y = globalThis.trustedTypes,
   E = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,
   k = /-->/g,
   T = />/g,
-  j = />|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,
+  j =
+    />|[ 	\n\r](?:([^\s"'>=/]+)([ 	\n\r]*=[ 	\n\r]*(?:[^ 	\n\r"'`<>=]|("|')|))|$)/g,
   R = /'/g,
   U = /"/g,
   M = /^(?:script|style|textarea)$/i,
-  O = ((t) => (i, ...s) => ({ _$litType$: t, strings: i, values: s }))(1),
+  O = (
+    (t) =>
+    (i, ...s) => ({ _$litType$: t, strings: i, values: s })
+  )(1),
   z = Symbol.for('lit-noChange'),
   N = Symbol.for('lit-nothing'),
   I = new WeakMap(),
@@ -619,9 +625,10 @@ class H {
         el: { content: s },
         parts: e,
       } = this._$AD,
-      n = (null !== (i = null == t ? void 0 : t.creationScope) && void 0 !== i
-        ? i
-        : A
+      n = (
+        null !== (i = null == t ? void 0 : t.creationScope) && void 0 !== i
+          ? i
+          : A
       ).importNode(s, !0);
     P.currentNode = n;
     let o = P.nextNode(),

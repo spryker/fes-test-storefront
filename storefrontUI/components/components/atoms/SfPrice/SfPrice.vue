@@ -27,7 +27,7 @@
 </template>
 <script>
 export default {
-  name: "SfPrice",
+  name: 'SfPrice',
   props: {
     /**
      * Regular/old price value. Crossed out if `special` is provided
@@ -47,5 +47,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfPrice.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfPrice.scss';
 </style>

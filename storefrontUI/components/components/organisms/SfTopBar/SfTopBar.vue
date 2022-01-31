@@ -18,9 +18,9 @@
 </template>
 <script>
 export default {
-  name: "SFTopBar",
+  name: 'SFTopBar',
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/organisms/SfTopBar.scss";
+@import '~@storefront-ui/shared/styles/components/organisms/SfTopBar.scss';
 </style>

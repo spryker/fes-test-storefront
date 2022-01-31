@@ -1,12 +1,13 @@
 const serverless = require('serverless-http');
 const webpack = require('webpack');
 const { Nuxt } = require('nuxt-start');
+const { builder } = require("@netlify/functions")
 
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
-    name: currency,
-    label: currency,
-  }))
+      name: currency,
+      label: currency,
+    }))
   : ['USD'];
 
 const config = {
@@ -30,14 +31,12 @@ const config = {
       },
       {
         rel: 'preload',
-        href:
-          'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
         as: 'style',
       },
       {
         rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
         media: 'print',
         onload: "this.media='all'",
         once: true,
@@ -131,23 +130,22 @@ const config = {
       },
     ],
   ],
-  modules: [
-    'vue-scrollto/nuxt',
-    'nuxt-i18n',
-    'cookie-universal-nuxt',
-  ],
+  modules: ['vue-scrollto/nuxt', 'nuxt-i18n', 'cookie-universal-nuxt'],
   publicRuntimeConfig: {
     middlewareUrl: process.env.URL,
     spryker: {
       contentBackendUrl:
-        process.env.CONTENT_BACKEND_URL || 'https://eb-demo-server.herokuapp.com',
+        process.env.CONTENT_BACKEND_URL ||
+        'https://eb-demo-server.herokuapp.com',
       currency: {
         default: process.env.CURRENCY_DEFAULT || 'USD',
         options: currencies,
       },
       store: process.env.STORE || 'DE',
       priceMode: process.env.PRICE_MODE || 'GROSS_MODE',
-      enabledLocales: process.env.LOCALES ? process.env.LOCALES.split(',') : ['en_US','de_DE'],
+      enabledLocales: process.env.LOCALES
+        ? process.env.LOCALES.split(',')
+        : ['en_US', 'de_DE'],
     },
   },
   i18n: {
@@ -202,27 +200,35 @@ const config = {
   serverMiddleware: ['~/serverMiddleware/previewModeSSR'],
 };
 
-exports.handler = async function (event, ctx, callback) {
+function createNuxtHandler(nuxtConfig) {
   const nuxt = new Nuxt({
-    ...config,
+    ...nuxtConfig,
     dev: false,
     _start: true,
   });
 
   let server = null;
+  return async (event, ctx) => {
 
-  if (!server) {
-    await nuxt?.ready();
-    server = serverless(nuxt.server.app);
-  }
+    if (!server) {
+      await nuxt?.ready();
+      server = serverless(nuxt.server.app);
+    }
 
-  const result = await server(event, ctx, callback);
-
-  return {
-    ...result,
-    headers: {
-      ...result.headers,
-      'Cache-Control': 'public, max-age=31536000',
-    },
+    const result = await server(event, ctx);
+    // const cacheValue = event.queryStringParameters.ebPreview
+    //   ? 'no-cache'
+    //   : 'public, max-age=31536000';
+    //
+    // return {
+    //   ...result,
+    //   headers: {
+    //     ...result.headers,
+    //     'Cache-Control': cacheValue,
+    //   },
+    // };
+    return result;
   };
-};
+}
+
+exports.handler = builder(createNuxtHandler(config));

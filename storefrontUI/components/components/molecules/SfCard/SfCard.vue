@@ -23,12 +23,12 @@
   </div>
 </template>
 <script>
-import SfButton from "../../atoms/SfButton/SfButton.vue";
-import SfHeading from "../../atoms/SfHeading/SfHeading.vue";
-import SfImage from "../../atoms/SfImage/SfImage.vue";
+import SfButton from '../../atoms/SfButton/SfButton.vue';
+import SfHeading from '../../atoms/SfHeading/SfHeading.vue';
+import SfImage from '../../atoms/SfImage/SfImage.vue';
 
 export default {
-  name: "SfCard",
+  name: 'SfCard',
   components: {
     SfButton,
     SfHeading,
@@ -40,14 +40,14 @@ export default {
      */
     image: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Card title
      */
     title: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Card title level of heading (form 1 as h1 tag to 6 as h6 tag)
@@ -61,25 +61,25 @@ export default {
      */
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Card link
      */
     link: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Text displayed on button
      */
     buttonText: {
       type: String,
-      default: "",
+      default: '',
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfCard.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfCard.scss';
 </style>

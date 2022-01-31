@@ -1,129 +1,129 @@
-import { SfProductCard } from "@storefront-ui/vue";
+import { SfProductCard } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Organisms/ProductCard",
+  title: 'Components/Organisms/ProductCard',
   component: SfProductCard,
   argTypes: {
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     image: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     imageWidth: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     imageHeight: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     badgeLabel: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     badgeColor: {
-      control: "color",
+      control: 'color',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     scoreRating: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     reviewsCount: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     maxRating: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     regularPrice: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     specialPrice: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     wishlistIcon: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      defaultValue: "heart",
+      defaultValue: 'heart',
     },
     isOnWishlistIcon: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     isOnWishlist: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     showAddToCartButton: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     isAddedToCart: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     addToCartDisabled: {
-      control: "boolean",
+      control: 'boolean',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    "click:addToCart": {
-      action: "Add-to-cart clicked",
-      table: { category: "Events" },
+    'click:addToCart': {
+      action: 'Add-to-cart clicked',
+      table: { category: 'Events' },
     },
-    "click:wishlist": {
-      action: "Wishlist clicked",
-      table: { category: "Events" },
+    'click:wishlist': {
+      action: 'Wishlist clicked',
+      table: { category: 'Events' },
     },
     handleClick: {
-      action: "Card clicked",
-      table: { category: "Events" },
+      action: 'Card clicked',
+      table: { category: 'Events' },
     },
   },
 };
@@ -160,8 +160,8 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  image: "/assets/storybook/Home/productB.jpg",
-  title: "Cotton Sweater",
+  image: '/assets/storybook/Home/productB.jpg',
+  title: 'Cotton Sweater',
   scoreRating: 4,
   maxRating: 5,
   reviewsCount: 7,
@@ -171,14 +171,14 @@ Common.args = {
 export const WithLink = Template.bind({});
 WithLink.args = {
   ...Common.args,
-  link: "https://storefrontui.io",
+  link: 'https://storefrontui.io',
 };
 
 export const WithBadge = Template.bind({});
 WithBadge.args = {
   ...Common.args,
-  badgeColor: "color-primary",
-  badgeLabel: "-50%",
+  badgeColor: 'color-primary',
+  badgeLabel: '-50%',
 };
 
 export const AddedToCart = Template.bind({});
@@ -196,22 +196,22 @@ AddedToWishlist.args = {
 export const WithMultipleImages = Template.bind({
   argTypes: {
     image: {
-      control: "object",
+      control: 'object',
     },
   },
 });
 WithMultipleImages.args = {
   ...Common.args,
   image: [
-    "/assets/storybook/Home/productB.jpg",
-    "/assets/storybook/Home/productA.jpg",
+    '/assets/storybook/Home/productB.jpg',
+    '/assets/storybook/Home/productA.jpg',
   ],
 };
 
 export const WithPriceRange = Template.bind({});
 WithPriceRange.args = {
   ...Common.args,
-  regularPrice: "$3.99 - $19.09",
+  regularPrice: '$3.99 - $19.09',
 };
 
 export const UseImageSlot = (args, { argTypes }) => ({

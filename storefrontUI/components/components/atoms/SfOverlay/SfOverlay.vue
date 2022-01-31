@@ -10,14 +10,14 @@
 </template>
 <script>
 export default {
-  name: "SfOverlay",
+  name: 'SfOverlay',
   props: {
     /**
      * Transition effect to apply when overlay visibility is changed
      */
     transition: {
       type: String,
-      default: "sf-fade",
+      default: 'sf-fade',
     },
     /**
      * Visibility state
@@ -30,5 +30,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfOverlay.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfOverlay.scss';
 </style>

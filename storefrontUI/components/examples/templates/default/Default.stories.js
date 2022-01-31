@@ -1,6 +1,6 @@
-import Default from "./Default";
+import Default from './Default';
 export default {
-  title: "Templates/Default",
+  title: 'Templates/Default',
   component: Default,
 };
 

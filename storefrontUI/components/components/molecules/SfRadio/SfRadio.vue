@@ -46,36 +46,36 @@
   </div>
 </template>
 <script>
-import { focus } from "../../../utilities/directives";
+import { focus } from '../../../utilities/directives';
 export default {
-  name: "SfRadio",
+  name: 'SfRadio',
   directives: {
     focus,
   },
   model: {
-    prop: "selected",
-    event: "input",
+    prop: 'selected',
+    event: 'input',
   },
   props: {
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     value: {
       type: String,
-      default: "",
+      default: '',
     },
     label: {
       type: String,
-      default: "",
+      default: '',
     },
     details: {
       type: String,
-      default: "",
+      default: '',
     },
     description: {
       type: String,
-      default: "",
+      default: '',
     },
     disabled: {
       type: Boolean,
@@ -83,7 +83,7 @@ export default {
     },
     selected: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   computed: {
@@ -93,14 +93,14 @@ export default {
   },
   methods: {
     changeHandler() {
-      this.$emit("change", this.value);
+      this.$emit('change', this.value);
     },
     inputHandler() {
-      this.$emit("input", this.value);
+      this.$emit('input', this.value);
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfRadio.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfRadio.scss';
 </style>

@@ -6,6 +6,6 @@
 </template>
 <script>
 export default {
-  name: "SfListItem",
+  name: 'SfListItem',
 };
 </script>

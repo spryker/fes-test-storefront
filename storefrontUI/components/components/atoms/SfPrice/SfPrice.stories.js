@@ -1,19 +1,19 @@
-import { SfPrice, SfBadge } from "@storefront-ui/vue";
+import { SfPrice, SfBadge } from '@storefront-ui/vue';
 
 export default {
-  title: "Components/Atoms/Price",
+  title: 'Components/Atoms/Price',
   component: SfPrice,
   argTypes: {
     regular: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     special: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
   },
@@ -27,18 +27,18 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  regular: "$200.00",
+  regular: '$200.00',
 };
 
 export const OnlyRegular = Template.bind({});
 OnlyRegular.args = {
-  regular: "$200.00",
+  regular: '$200.00',
 };
 
 export const HasSpecial = Template.bind({});
 HasSpecial.args = {
   ...Common.args,
-  special: "$100.00",
+  special: '$100.00',
 };
 
 export const WithSpecialSlot = (args, { argTypes }) => ({

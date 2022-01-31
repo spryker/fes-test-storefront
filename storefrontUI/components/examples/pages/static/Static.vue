@@ -45,9 +45,9 @@
   </div>
 </template>
 <script>
-import { SfContentPages, SfTabs, SfBreadcrumbs } from "@storefront-ui/vue";
+import { SfContentPages, SfTabs, SfBreadcrumbs } from '@storefront-ui/vue';
 export default {
-  name: "Static",
+  name: 'Static',
   components: {
     SfContentPages,
     SfTabs,
@@ -55,43 +55,43 @@ export default {
   },
   data() {
     return {
-      activePage: "About us",
+      activePage: 'About us',
       breadcrumbs: [
-        { text: "Home", route: { link: "#" } },
-        { text: "Help", route: { link: "#" } },
+        { text: 'Home', route: { link: '#' } },
+        { text: 'Help', route: { link: '#' } },
       ],
       pages: [
         {
-          title: "About us",
+          title: 'About us',
           content: [
             {
-              tabName: "Security",
+              tabName: 'Security',
               tabContent: [
-                "Personal information provided on the website and online credit card transactions are transmitted through a secure server. We are committed to handling your personal information with high standards of information security. We take appropriate physical, electronic, and administrative steps to maintain the security and accuracy of personally identifiable information we collect, including limiting the number of people who have physical access to our database servers, as well as employing electronic security systems and password protections that guard against unauthorized access.",
+                'Personal information provided on the website and online credit card transactions are transmitted through a secure server. We are committed to handling your personal information with high standards of information security. We take appropriate physical, electronic, and administrative steps to maintain the security and accuracy of personally identifiable information we collect, including limiting the number of people who have physical access to our database servers, as well as employing electronic security systems and password protections that guard against unauthorized access.',
               ],
             },
             {
-              tabName: "Privacy Policy",
+              tabName: 'Privacy Policy',
               tabContent: [
                 'This website ("website") is operated by Luma Inc., which includes Luma stores, and Luma Private Sales. This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.',
               ],
             },
             {
-              tabName: "Additional Information",
+              tabName: 'Additional Information',
               tabContent: [
                 'Additional Information / This website ("website") is operated by Luma Inc., which includes Luma stores, and Luma Private Sales.',
-                "This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.",
+                'This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.',
               ],
             },
           ],
         },
         {
-          title: "Customer Service",
+          title: 'Customer Service',
           content: [
             {
-              tabName: "Size guide",
+              tabName: 'Size guide',
               tabContent: [
-                "Size guide / Personal information provided on the website and online credit card transactions are transmitted through a secure server. We are committed to handling your personal information with high standards of information security. We take appropriate physical, electronic, and administrative steps to maintain the security and accuracy of personally identifiable information we collect, including limiting the number of people who have physical access to our database servers, as well as employing electronic security systems and password protections that guard against unauthorized access.",
+                'Size guide / Personal information provided on the website and online credit card transactions are transmitted through a secure server. We are committed to handling your personal information with high standards of information security. We take appropriate physical, electronic, and administrative steps to maintain the security and accuracy of personally identifiable information we collect, including limiting the number of people who have physical access to our database servers, as well as employing electronic security systems and password protections that guard against unauthorized access.',
               ],
             },
             {
@@ -103,32 +103,32 @@ export default {
           ],
         },
         {
-          title: "Store locator",
+          title: 'Store locator',
           content: [
             'Store locator / This website ("website") is operated by Luma Inc., which includes Luma stores, and Luma Private Sales. This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.',
-            "We take appropriate physical, electronic, and administrative steps to maintain the security and accuracy of personally identifiable information we collect, including limiting the number of people who have physical access to our database servers, as well as employing electronic security systems and password protections that guard against unauthorized access.",
+            'We take appropriate physical, electronic, and administrative steps to maintain the security and accuracy of personally identifiable information we collect, including limiting the number of people who have physical access to our database servers, as well as employing electronic security systems and password protections that guard against unauthorized access.',
           ],
         },
         {
-          title: "Delivery",
+          title: 'Delivery',
           content: [
             'Delivery / This website ("website") is operated by Luma Inc., which includes Luma stores, and Luma Private Sales. This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.',
           ],
         },
         {
-          title: "Return policy",
+          title: 'Return policy',
           content: [
             'Return policy / This website ("website") is operated by Luma Inc., which includes Luma stores, and Luma Private Sales. This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.',
           ],
         },
         {
-          title: "Size guide",
+          title: 'Size guide',
           content: [
             'Size guide / This website ("website") is operated by Luma Inc., which includes Luma stores, and Luma Private Sales. This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.',
           ],
         },
         {
-          title: "Contact us",
+          title: 'Contact us',
           content: [
             'Contact us / This website ("website") is operated by Luma Inc., which includes Luma stores, and Luma Private Sales. This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.',
           ],
@@ -144,7 +144,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
 #static {
   box-sizing: border-box;
   @include for-desktop {

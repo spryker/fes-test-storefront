@@ -1,4 +1,4 @@
-import Vue from "vue";
+import Vue from 'vue';
 let observer;
 const isMobileMax = 1023;
 export const onMediaMatch = (e) => {
@@ -7,8 +7,8 @@ export const onMediaMatch = (e) => {
 };
 export const setupListener = () => {
   if (
-    typeof window === "undefined" ||
-    typeof document === "undefined" ||
+    typeof window === 'undefined' ||
+    typeof document === 'undefined' ||
     !window.matchMedia
   ) {
     return;
@@ -21,8 +21,8 @@ export const setupListener = () => {
 };
 export const tearDownListener = () => {
   if (
-    typeof window !== "undefined" &&
-    typeof document !== "undefined" &&
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined' &&
     window.matchMedia
   ) {
     window

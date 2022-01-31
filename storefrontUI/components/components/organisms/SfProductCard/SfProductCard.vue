@@ -1,10 +1,7 @@
 <template>
   <div class="sf-product-card" data-testid="product-card">
     <div class="sf-product-card__image-wrapper">
-      <slot
-        name="image"
-        v-bind="{ image, title, link, imageHeight, imageWidth }"
-      >
+      <slot name="image" v-bind="{ image, title, link, imageHeight, imageWidth }">
         <SfButton
           :link="link"
           class="sf-button--pure sf-product-card__link"
@@ -48,11 +45,7 @@
         @click="toggleIsOnWishlist"
       >
         <slot name="wishlist-icon" v-bind="{ currentWishlistIcon }">
-          <SfIcon
-            :icon="currentWishlistIcon"
-            size="22px"
-            data-test="sf-wishlist-icon"
-          />
+          <SfIcon :icon="currentWishlistIcon" size="22px" data-test="sf-wishlist-icon" />
         </slot>
       </SfButton>
       <template v-if="showAddToCartButton">
@@ -65,41 +58,6 @@
             title,
           }"
         >
-          <SfCircleIcon
-            class="sf-product-card__add-button"
-            :aria-label="`Add to Cart ${title}`"
-            :has-badge="showAddedToCartBadge"
-            :disabled="addToCartDisabled"
-            data-testid="product-add-icon"
-            @click="onAddToCart"
-          >
-            <div class="sf-product-card__add-button--icons">
-              <transition
-                v-if="!isAddingToCart && !isAddedToCart"
-                name="sf-pulse"
-                mode="out-in"
-              >
-                <slot name="add-to-cart-icon">
-                  <SfIcon
-                    key="add_to_cart"
-                    icon="add_to_cart"
-                    size="20px"
-                    color="white"
-                  />
-                </slot>
-              </transition>
-              <transition v-else name="sf-pulse" mode="out-in">
-                <slot name="adding-to-cart-icon">
-                  <SfIcon
-                    key="added_to_cart"
-                    icon="added_to_cart"
-                    size="20px"
-                    color="white"
-                  />
-                </slot>
-              </transition>
-            </div>
-          </SfCircleIcon>
         </slot>
       </template>
     </div>
@@ -115,24 +73,9 @@
         </h3>
       </SfButton>
     </slot>
-    <slot name="price" v-bind="{ specialPrice, regularPrice }">
-      <SfPrice
-        v-if="regularPrice"
-        class="sf-product-card__price"
-        :regular="regularPrice"
-        :special="specialPrice"
-      />
-    </slot>
     <slot name="reviews" v-bind="{ maxRating, scoreRating }">
-      <div
-        v-if="typeof scoreRating === 'number'"
-        class="sf-product-card__reviews"
-      >
-        <SfRating
-          class="sf-product-card__rating"
-          :max="maxRating"
-          :score="scoreRating"
-        />
+      <div v-if="typeof scoreRating === 'number'" class="sf-product-card__reviews">
+        <SfRating class="sf-product-card__rating" :max="maxRating" :score="scoreRating" />
         <SfButton
           v-if="reviewsCount"
           :aria-label="`Read ${reviewsCount} reviews about ${title}`"
@@ -144,6 +87,53 @@
         </SfButton>
       </div>
     </slot>
+    <div class="section__price">
+      <div class="section__price-wrapper">
+        <slot name="price" v-bind="{ specialPrice, regularPrice }">
+          <SfPrice
+            v-if="regularPrice"
+            class="sf-product-card__price"
+            :regular="regularPrice"
+            :special="specialPrice"
+          />
+        </slot>
+      </div>
+      <SfCircleIcon
+        class="sf-product-card__add-button"
+        :aria-label="`Add to Cart ${title}`"
+        :has-badge="showAddedToCartBadge"
+        :disabled="addToCartDisabled"
+        data-testid="product-add-icon"
+        @click="onAddToCart"
+      >
+        <div class="sf-product-card__add-button--icons">
+          <transition
+            v-if="!isAddingToCart && !isAddedToCart"
+            name="sf-pulse"
+            mode="out-in"
+          >
+            <slot name="add-to-cart-icon">
+              <SfIcon
+                key="add_to_cart"
+                :class="cartPlusIcon.class"
+                :icon="cartPlusIcon.path"
+                :viewBox="cartPlusIcon.viewBox"
+              />
+            </slot>
+          </transition>
+          <transition v-else name="sf-pulse" mode="out-in">
+            <slot name="adding-to-cart-icon">
+              <SfIcon
+                key="added_to_cart"
+                icon="added_to_cart"
+                size="20px"
+                color="white"
+              />
+            </slot>
+          </transition>
+        </div>
+      </SfCircleIcon>
+    </div>
   </div>
 </template>
 <script>
@@ -155,6 +145,7 @@ import SfImage from "../../atoms/SfImage/SfImage.vue";
 import SfCircleIcon from "../../atoms/SfCircleIcon/SfCircleIcon.vue";
 import SfBadge from "../../atoms/SfBadge/SfBadge.vue";
 import SfButton from "../../atoms/SfButton/SfButton.vue";
+import { cartPlusIcon } from '~/assets/icons';
 export default {
   name: "SfProductCard",
   components: {
@@ -312,6 +303,7 @@ export default {
   data() {
     return {
       isAddingToCart: false,
+      cartPlusIcon,
     };
   },
   computed: {

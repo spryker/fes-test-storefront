@@ -1,46 +1,8 @@
-html,
-body {
-  --font-family--primary: Circular, sans-serif;
-  --font-family--secondary: var(--font-family--primary);
-
-  @include generate-color-variants(--_c-green-primary, #1cb696);
-  @include generate-color-variants(--_c-green-secondary, #17927b);
-
-  @include generate-color-variants(--_c-orange-primary, #eb553c);
-  @include generate-color-variants(--_c-orange-secondary, #dd3317);
-
-  @include assign-color-variants(--c-primary, --_c-green-primary);
-  @include assign-color-variants(--c-primary-variant, --_c-green-secondary);
-
-  @include assign-color-variants(--c-secondary, --_c-orange-primary);
-  @include assign-color-variants(--c-secondary-variant, --_c-orange-secondary);
-
-  --badge-background: var(--_c-orange-primary);
-  --overlay-background: rgba(0, 0, 0, 0.3);
-  --price-old-color: #b2b2b2;
-  --price-special-color: var(--_c-orange-primary);
-  --price-regular-color: #333333;
-  --header-background: #e7eaee;
-  --top-bar-background: #d0d5dc;
-
-  .sf-rating {
-    &__icon {
-      --icon-color: #fdbe36;
-    }
-    &__icon--negative {
-      --icon-color: #d1d1d1;
-    }
-  }
-
-  footer {
-    --c-secondary: #e7eaee;
-
-    .sf-footer-column .sf-list__item {
-      --menu-item-label-color: #8f8f8f;
-    }
-
-    .sf-footer-column__title {
-      color: #4c4c4c;
-    }
-  }
-}
+// Importing base vsf styling once and for all, don't import it in pages/components!
+@import '@storefront-ui/vue/styles';
+@import 'root';
+@import 'base';
+@import 'icons';
+@import 'header';
+@import 'cart-sidebar';
+@import '~/assets/demo/modal.scss';

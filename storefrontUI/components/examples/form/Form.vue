@@ -66,13 +66,7 @@
       <SfComponentSelect
         v-model="country"
         label="Country"
-        class="
-          form__element
-          form__element--half
-          form__element--half-even
-          form__select
-          sf-component-select--underlined
-        "
+        class="form__element form__element--half form__element--half-even form__select sf-component-select--underlined"
         required
         :valid="countryBlur || validCountry(country)"
         error-message="Please choose your country."
@@ -134,10 +128,7 @@
       <div class="form__action">
         <SfButton type="submit" @click.prevent="submit">Submit</SfButton>
         <SfButton
-          class="
-            sf-button--text
-            form__action-button form__action-button--secondary
-          "
+          class="sf-button--text form__action-button form__action-button--secondary"
           @click="reset"
           >Reset</SfButton
         >
@@ -153,9 +144,9 @@ import {
   SfTextarea,
   SfHeading,
   SfRange,
-} from "@storefront-ui/vue";
+} from '@storefront-ui/vue';
 export default {
-  name: "Default",
+  name: 'Default',
   components: {
     SfButton,
     SfInput,
@@ -168,76 +159,76 @@ export default {
     return {
       valid: false,
       submitted: false,
-      firstName: "",
+      firstName: '',
       firstNameBlur: true,
-      lastName: "",
+      lastName: '',
       lastNameBlur: true,
-      streetName: "",
+      streetName: '',
       streetNameBlur: true,
-      apartment: "",
+      apartment: '',
       apartmentBlur: true,
-      city: "",
+      city: '',
       cityBlur: true,
-      state: "",
+      state: '',
       stateBlur: true,
-      zipCode: "",
+      zipCode: '',
       zipCodeBlur: true,
-      country: "",
+      country: '',
       countryBlur: true,
-      phoneNumber: "",
+      phoneNumber: '',
       phoneNumberBlur: true,
-      email: "",
+      email: '',
       emailBlur: true,
       countries: [
-        "Austria",
-        "Azerbaijan",
-        "Belarus",
-        "Belgium",
-        "Bosnia and Herzegovina",
-        "Bulgaria",
-        "Croatia",
-        "Cyprus",
-        "Czech Republic",
-        "Denmark",
-        "Estonia",
-        "Finland",
-        "France",
-        "Georgia",
-        "Germany",
-        "Greece",
-        "Hungary",
-        "Iceland",
-        "Ireland",
-        "Italy",
-        "Kosovo",
-        "Latvia",
-        "Liechtenstein",
-        "Lithuania",
-        "Luxembourg",
-        "Macedonia",
-        "Malta",
-        "Moldova",
-        "Monaco",
-        "Montenegro",
-        "The Netherlands",
-        "Norway",
-        "Poland",
-        "Portugal",
-        "Romania",
-        "Russia",
-        "San Marino",
-        "Serbia",
-        "Slovakia",
-        "Slovenia",
-        "Spain",
-        "Sweden",
-        "Switzerland",
-        "Turkey",
-        "Ukraine",
-        "United Kingdom",
-        "Vatican City",
+        'Austria',
+        'Azerbaijan',
+        'Belarus',
+        'Belgium',
+        'Bosnia and Herzegovina',
+        'Bulgaria',
+        'Croatia',
+        'Cyprus',
+        'Czech Republic',
+        'Denmark',
+        'Estonia',
+        'Finland',
+        'France',
+        'Georgia',
+        'Germany',
+        'Greece',
+        'Hungary',
+        'Iceland',
+        'Ireland',
+        'Italy',
+        'Kosovo',
+        'Latvia',
+        'Liechtenstein',
+        'Lithuania',
+        'Luxembourg',
+        'Macedonia',
+        'Malta',
+        'Moldova',
+        'Monaco',
+        'Montenegro',
+        'The Netherlands',
+        'Norway',
+        'Poland',
+        'Portugal',
+        'Romania',
+        'Russia',
+        'San Marino',
+        'Serbia',
+        'Slovakia',
+        'Slovenia',
+        'Spain',
+        'Sweden',
+        'Switzerland',
+        'Turkey',
+        'Ukraine',
+        'United Kingdom',
+        'Vatican City',
       ],
-      message: "",
+      message: '',
       messageBlur: true,
       range: [0, 1],
       rangeConfig: {
@@ -248,22 +239,22 @@ export default {
         },
         step: 1,
         connect: true,
-        direction: "ltr",
-        orientation: "horizontal",
-        behaviour: "tap-drag",
+        direction: 'ltr',
+        orientation: 'horizontal',
+        behaviour: 'tap-drag',
         tooltips: true,
         keyboardSupport: true,
         format: {
           to: function (range) {
-            return new Intl.NumberFormat("de-DE", {
-              style: "currency",
-              currency: "EUR",
+            return new Intl.NumberFormat('de-DE', {
+              style: 'currency',
+              currency: 'EUR',
             }).format(range);
           },
           from: function (range) {
-            const parsedValue = new Intl.NumberFormat("de-DE", {
-              style: "currency",
-              currency: "EUR",
+            const parsedValue = new Intl.NumberFormat('de-DE', {
+              style: 'currency',
+              currency: 'EUR',
             }).formatToParts(range);
             return parsedValue[0].value;
           },
@@ -339,22 +330,21 @@ export default {
       }
     },
     reset() {
-      this.email = "";
-      this.phoneNumber = "";
-      this.zipCode = "";
-      this.country = "";
-      this.streetName = "";
-      this.city = "";
-      this.lastName = "";
-      this.firstName = "";
-      this.apartment = "";
-      this.message = "";
+      this.email = '';
+      this.phoneNumber = '';
+      this.zipCode = '';
+      this.country = '';
+      this.streetName = '';
+      this.city = '';
+      this.lastName = '';
+      this.firstName = '';
+      this.apartment = '';
+      this.message = '';
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-@import "~@storefront-ui/vue/styles";
 #form-template {
   box-sizing: border-box;
   padding: 0 var(--spacer-sm);

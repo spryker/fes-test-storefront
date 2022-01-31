@@ -1,87 +1,87 @@
-import { SfCollectedProduct, SfButton } from "@storefront-ui/vue";
+import { SfCollectedProduct, SfButton } from '@storefront-ui/vue';
 export default {
-  title: "Components/Organisms/CollectedProduct",
+  title: 'Components/Organisms/CollectedProduct',
   component: SfCollectedProduct,
   argTypes: {
     classes: {
       control: {
-        type: "select",
-        options: ["sf-collected-product--detailed", ""],
+        type: 'select',
+        options: ['sf-collected-product--detailed', ''],
       },
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     image: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
     imageWidth: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: 140,
         },
       },
     },
     imageHeight: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: 200,
         },
       },
     },
     title: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
     regularPrice: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     specialPrice: {
-      control: "string",
+      control: 'string',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     qty: {
-      control: "number",
+      control: 'number',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
           summary: 1,
         },
       },
     },
     link: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
         defaultValue: {
-          summary: "",
+          summary: '',
         },
       },
     },
-    input: { action: "Quantity changed", table: { category: "Events" } },
-    "click:remove": {
-      action: "Remove product clicked",
-      table: { category: "Events" },
+    input: { action: 'Quantity changed', table: { category: 'Events' } },
+    'click:remove': {
+      action: 'Remove product clicked',
+      table: { category: 'Events' },
     },
   },
 };
@@ -107,21 +107,21 @@ const Template = (args, { argTypes }) => ({
 
 export const Common = Template.bind({});
 Common.args = {
-  image: "/assets/storybook/Home/productB.jpg",
-  title: "Cotton Sweater Modern Style",
-  regularPrice: "$10,99",
+  image: '/assets/storybook/Home/productB.jpg',
+  title: 'Cotton Sweater Modern Style',
+  regularPrice: '$10,99',
 };
 
 export const WithSpecialPrice = Template.bind({});
 WithSpecialPrice.args = {
   ...Common.args,
-  specialPrice: "$0,99",
+  specialPrice: '$0,99',
 };
 
 export const WithLink = Template.bind({});
 WithLink.args = {
   ...Common.args,
-  link: "https://storefrontui.io",
+  link: 'https://storefrontui.io',
 };
 
 export const UseActionsSlot = (args, { argTypes }) => ({

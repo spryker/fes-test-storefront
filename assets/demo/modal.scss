@@ -1,0 +1,115 @@
+.modal {
+  &__demo-styles {
+    .sf-modal__container {
+      width: fit-content;
+    }
+
+    .sf-modal__content {
+      padding: 0;
+
+      .form {
+        .sf-select {
+          height: 54px;
+          margin-bottom: 35px;
+          padding: 0;
+
+          select.sf-select__dropdown {
+            height: 54px;
+            width: 100%;
+          }
+        }
+
+        &__login {
+          .form__element {
+            .sf-input__wrapper,
+            .sf-select__dropdown {
+              width: 345px;
+            }
+          }
+        }
+
+        &__registration {
+          .form__element {
+            .sf-input__wrapper,
+            .sf-select__dropdown {
+              width: 530px;
+            }
+          }
+
+          .name-inputs {
+            .form__element {
+              .sf-input__wrapper,
+              .sf-select__dropdown {
+                width: 255px;
+              }
+            }
+          }
+        }
+
+        &__element {
+          margin-bottom: 20px;
+
+          .sf-input,
+          .sf-select {
+            &__wrapper,
+            &__dropdown {
+              border: 1px solid var(--c-gray-outline);
+              border-radius: 2px;
+
+              margin-bottom: 2px;
+              width: 335px;
+
+              input {
+                border: none;
+                outline: none;
+                padding: var(--spacer-sm) 5px var(--spacer-sm) 5px;
+              }
+            }
+
+            &__label {
+              position: absolute;
+              top: -20px;
+              bottom: 0;
+
+              transform: none;
+              text-transform: uppercase;
+              font-size: var(--font-size--xs);
+              color: var(--c-link);
+
+              &::after {
+                color: var(--button-background, var(--c-primary));
+              }
+            }
+          }
+        }
+
+        &__button {
+          text-transform: none;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        padding: 20px;
+      }
+    }
+
+    .text {
+      &-green {
+        color: var(--c-primary);
+      }
+
+      &-grey {
+        color: #b2b2b2;
+      }
+
+      &-no-decoration {
+        text-decoration: none;
+      }
+    }
+  }
+}

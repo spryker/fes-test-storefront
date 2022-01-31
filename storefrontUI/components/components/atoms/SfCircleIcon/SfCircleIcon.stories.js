@@ -1,55 +1,55 @@
-import { icons } from "@storefront-ui/shared/icons/icons";
-import { SfCircleIcon } from "@storefront-ui/vue";
+import { icons } from '@storefront-ui/shared/icons/icons';
+import { SfCircleIcon } from '@storefront-ui/vue';
 const iconsNames = Object.keys(icons);
 
 export default {
-  title: "Components/Atoms/CircleIcon",
+  title: 'Components/Atoms/CircleIcon',
   component: SfCircleIcon,
   argTypes: {
     classes: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "",
-          "sf-circle-icon--small",
-          "color-primary",
-          "color-secondary",
-          "color-light",
-          "color-warning",
-          "color-danger",
-          "color-info",
-          "color-success",
+          '',
+          'sf-circle-icon--small',
+          'color-primary',
+          'color-secondary',
+          'color-light',
+          'color-warning',
+          'color-danger',
+          'color-info',
+          'color-success',
         ],
       },
-      description: "Modifier classes",
+      description: 'Modifier classes',
       table: {
-        category: "CSS Modifiers",
+        category: 'CSS Modifiers',
       },
     },
     icon: {
       control: {
-        type: "select",
+        type: 'select',
         options: iconsNames,
       },
       table: {
-        category: "Props",
+        category: 'Props',
       },
-      description: "Icon to use",
+      description: 'Icon to use',
     },
     iconSize: {
-      control: "text",
+      control: 'text',
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
       defaultValue: false,
       table: {
-        category: "Props",
+        category: 'Props',
       },
     },
-    onClick: { action: "Circle icon clicked", table: { category: "Events" } },
+    onClick: { action: 'Circle icon clicked', table: { category: 'Events' } },
   },
 };
 
@@ -70,7 +70,7 @@ const Template = (args, { argTypes }) => ({
 
 export const Primary = Template.bind({});
 Primary.args = {
-  icon: "home",
+  icon: 'home',
 };
 
 export const Disabled = Template.bind({});
@@ -82,37 +82,37 @@ Disabled.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Primary.args,
-  classes: "color-secondary",
+  classes: 'color-secondary',
 };
 
 export const Light = Template.bind({});
 Light.args = {
   ...Primary.args,
-  classes: "color-light",
+  classes: 'color-light',
 };
 
 export const Warning = Template.bind({});
 Warning.args = {
   ...Primary.args,
-  classes: "color-warning",
+  classes: 'color-warning',
 };
 
 export const InDanger = Template.bind({});
 InDanger.args = {
   ...Primary.args,
-  classes: "color-danger",
+  classes: 'color-danger',
 };
 
 export const Info = Template.bind({});
 Info.args = {
   ...Primary.args,
-  classes: "color-info",
+  classes: 'color-info',
 };
 
 export const Success = Template.bind({});
 Success.args = {
   ...Primary.args,
-  classes: "color-success",
+  classes: 'color-success',
 };
 
 export const WithDefaultSlot = (args, { argTypes }) => ({
@@ -135,5 +135,5 @@ export const WithDefaultSlot = (args, { argTypes }) => ({
 
 WithDefaultSlot.args = {
   ...Primary.args,
-  iconSize: "20px",
+  iconSize: '20px',
 };

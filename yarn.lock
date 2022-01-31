@@ -962,6 +962,13 @@
   resolved "https://registry.yarnpkg.com/@juggle/resize-observer/-/resize-observer-3.3.1.tgz#b50a781709c81e10701004214340f25475a171a0"
   integrity sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==
 
+"@netlify/functions@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-0.11.0.tgz#224f3bba53809b364d36377ad0b2d3de594f994d"
+  integrity sha512-+WWX081UCkLZYkfh1Ru+PH5HTujNXugeskATGhZLTyS1U3Cqh2gYLArdG1a/vU8WWopu/wjpxEOdWq8/T5Nw5Q==
+  dependencies:
+    is-promise "^4.0.0"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -1367,17 +1374,17 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@spryker-oryx/experience@file:./spryker-oryx-experience-0.0.1.tgz":
+"@spryker-oryx/experience@file:./assets/prepublished-packages/spryker-oryx-experience-0.0.1.tgz":
   version "0.0.1"
-  resolved "file:./spryker-oryx-experience-0.0.1.tgz#c53cbb0baca6b05083bad0def8aa7e097b8f2b6f"
+  resolved "file:./assets/prepublished-packages/spryker-oryx-experience-0.0.1.tgz#c53cbb0baca6b05083bad0def8aa7e097b8f2b6f"
 
-"@spryker-oryx/injector@file:./spryker-oryx-injector-0.0.1.tgz":
+"@spryker-oryx/injector@file:./assets/prepublished-packages/spryker-oryx-injector-0.0.1.tgz":
   version "0.0.1"
-  resolved "file:./spryker-oryx-injector-0.0.1.tgz#134946a6e261610ee322cb4dcb73ce97038f9318"
+  resolved "file:./assets/prepublished-packages/spryker-oryx-injector-0.0.1.tgz#134946a6e261610ee322cb4dcb73ce97038f9318"
 
-"@spryker-oryx/vsf@file:./spryker-oryx-vsf-0.0.2.tgz":
+"@spryker-oryx/vsf@file:./assets/prepublished-packages/spryker-oryx-vsf-0.0.2.tgz":
   version "0.0.2"
-  resolved "file:./spryker-oryx-vsf-0.0.2.tgz#ca29c58a313447402299a6f815e1522c532e8bbe"
+  resolved "file:./assets/prepublished-packages/spryker-oryx-vsf-0.0.2.tgz#ca29c58a313447402299a6f815e1522c532e8bbe"
   dependencies:
     "@spryker-vsf/api" "^0.6.0-dev.3"
     "@vue-storefront/core" "^2.3.1"
@@ -1391,15 +1398,21 @@
     "@vue-storefront/core" "~2.3.4"
     axios "^0.21.0"
 
+"@spryker-vsf/api@file:./assets/prepublished-packages/spryker-vsf-api-0.6.0-dev.6.tgz":
+  version "0.6.0-dev.6"
+  resolved "file:./assets/prepublished-packages/spryker-vsf-api-0.6.0-dev.6.tgz#f62005d424c13f7a86df86b909df90a716642e3a"
+  dependencies:
+    "@vue-storefront/core" "~2.3.4"
+    axios "^0.21.0"
+
 "@spryker-vsf/catalog-search-suggestions@^0.2.0-dev.2":
   version "0.2.0-dev.2"
   resolved "https://registry.yarnpkg.com/@spryker-vsf/catalog-search-suggestions/-/catalog-search-suggestions-0.2.0-dev.2.tgz#5080972640585dd053f64d15ae4dd4572ab1fa1f"
   integrity sha512-p/AUcFsNNaMn12fMBAPUlVFDXgoBQ8TF2AQkIA20QekmJdKKS7yIceze8lh6zKUs2P78OVf8I6wFjDu1ppU9Hg==
 
-"@spryker-vsf/composables@^0.6.0-dev.5":
-  version "0.6.0-dev.5"
-  resolved "https://registry.yarnpkg.com/@spryker-vsf/composables/-/composables-0.6.0-dev.5.tgz#5fd8482ac3bfa5373ecee6e7c520ce9b5a832d69"
-  integrity sha512-xtqyxL8RZeZh5BlxG8ckyhG+9WmjczBZPzfTGQXRxepJAahj6Kt/COjS7RBT7b4QeoEfIy+gpgB2Jvi5j78/6g==
+"@spryker-vsf/composables@file:./assets/prepublished-packages/spryker-vsf-composables-0.6.0-dev.7.tgz":
+  version "0.6.0-dev.7"
+  resolved "file:./assets/prepublished-packages/spryker-vsf-composables-0.6.0-dev.7.tgz#ef4f6720d4b8076f4687c978d5878ecba0775ee8"
   dependencies:
     "@spryker-vsf/api" "^0.6.0-dev.5"
     "@vue-storefront/core" "~2.3.4"
@@ -5703,6 +5716,11 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   dependencies:
     isobject "^3.0.1"
 
+is-promise@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/is-promise/-/is-promise-4.0.0.tgz#42ff9f84206c1991d26debf520dd5c01042dd2f3"
+  integrity sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==
+
 is-regex@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/is-regex/-/is-regex-1.1.4.tgz#eef5663cd59fa4c0ae339505323df6854bb15958"
@@ -7980,7 +7998,7 @@ prepend-http@^1.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
-"prettier@^1.18.2 || ^2.0.0":
+"prettier@^1.18.2 || ^2.0.0", prettier@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
   integrity sha512-vBZcPRUR5MZJwoyi3ZoyQlc1rXeEck8KgeC9AwwOn+exuxLxq5toTRDTSaVrXHxelDMHy9zlicw8u66yxoSUFg==

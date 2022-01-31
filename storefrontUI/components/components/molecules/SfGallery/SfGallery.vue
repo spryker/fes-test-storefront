@@ -65,11 +65,11 @@
   </div>
 </template>
 <script>
-import Glide from "@glidejs/glide";
-import SfImage from "../../atoms/SfImage/SfImage.vue";
-import SfButton from "../../atoms/SfButton/SfButton.vue";
+import Glide from '@glidejs/glide';
+import SfImage from '../../atoms/SfImage/SfImage.vue';
+import SfButton from '../../atoms/SfButton/SfButton.vue';
 export default {
-  name: "SfGallery",
+  name: 'SfGallery',
   components: {
     SfImage,
     SfButton,
@@ -124,7 +124,7 @@ export default {
       type: Object,
       default() {
         return {
-          type: "slider",
+          type: 'slider',
           autoplay: false,
           rewind: false,
           gap: 0,
@@ -150,10 +150,10 @@ export default {
     return {
       positionStatic: {},
       eventHover: {},
-      pictureSelected: "",
+      pictureSelected: '',
       glide: null,
       activeIndex: this.current - 1,
-      style: "",
+      style: '',
     };
   },
   computed: {
@@ -174,7 +174,7 @@ export default {
       // https://glidejs.com/docs/
       if (this.images.length < 1) return;
       const glide = new Glide(this.$refs.glide, this.updatedSliderOptions);
-      glide.on("run", () => {
+      glide.on('run', () => {
         this.go(glide.index);
       });
       glide.mount();
@@ -197,7 +197,7 @@ export default {
           ].$el.getBoundingClientRect();
         }
       }
-      return "";
+      return '';
     },
     go(index) {
       if (!this.glide) return;
@@ -206,7 +206,7 @@ export default {
        * Event for current image change (`v-model`)
        * @type {Event}
        */
-      this.$emit("click", index + 1);
+      this.$emit('click', index + 1);
       if (this.glide) {
         this.glide.go(`=${index}`);
       }
@@ -223,14 +223,14 @@ export default {
         if (this.outsideZoom) {
           this.positionStatic = this.positionObject(index);
           this.$refs.imgZoom.$el.children[0].style.cssText =
-            "top: 0; transform: scale(2);";
+            'top: 0; transform: scale(2);';
           this.$refs.imgZoom.$el.children[0].style.transformOrigin = `${
             $event.clientX - this.positionStatic.x
           }px ${$event.clientY - this.positionStatic.y}px`;
         } else {
           this.positionStatic = this.positionObject(index);
           this.$refs.sfGalleryBigImage[index].$el.children[0].style.cssText =
-            "top: 0; transform: scale(2);";
+            'top: 0; transform: scale(2);';
           this.$refs.sfGalleryBigImage[
             index
           ].$el.children[0].style.transformOrigin = `${
@@ -241,15 +241,15 @@ export default {
     },
     removeZoom(index) {
       if (this.enableZoom) {
-        this.pictureSelected = "";
+        this.pictureSelected = '';
         if (this.outsideZoom) return;
         this.$refs.sfGalleryBigImage[index].$el.children[0].style.transform =
-          "scale(1)";
+          'scale(1)';
       }
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfGallery.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfGallery.scss';
 </style>

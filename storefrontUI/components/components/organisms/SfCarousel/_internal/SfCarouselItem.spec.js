@@ -1,8 +1,8 @@
-import { shallowMount } from "@vue/test-utils";
-import SfCarouselItem from "./SfCarouselItem.vue";
-describe("SfCarouselItem.vue", () => {
-  it("renders a component", () => {
+import { shallowMount } from '@vue/test-utils';
+import SfCarouselItem from './SfCarouselItem.vue';
+describe('SfCarouselItem.vue', () => {
+  it('renders a component', () => {
     const component = shallowMount(SfCarouselItem);
-    expect(component.classes("sf-carousel-item")).toBe(true);
+    expect(component.classes('sf-carousel-item')).toBe(true);
   });
 });

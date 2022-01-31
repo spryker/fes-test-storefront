@@ -1,15 +1,43 @@
 <template>
   <SfTopBar data-cy="svsf-topBar-bar">
     <template #center>
-      <div class="center-wrapper" v-if="!routerHelpers.isCheckout($route.path)">
-        <span class="container static"><SfIcon :icon="checkIcon.path" :class="checkIcon.class" :viewBox="checkIcon.viewBox"/><p>Free Delivery & Returns</p></span>
-        <span class="container static"><SfIcon :icon="checkIcon.path" :class="checkIcon.class" :viewBox="checkIcon.viewBox"/><p>100 Day Returns Policy</p></span>
-        <span class="container static"><SfIcon :icon="checkIcon.path" :class="checkIcon.class" :viewBox="checkIcon.viewBox"/><p>Another use of your shop</p></span>
-        <span class="container"><SfIcon icon="phone" size="15px"/><p>+49 (0) 800 541 214 98</p></span>
+      <div class="center-wrapper">
+        <span class="container static"
+          ><SfIcon
+            :icon="checkIcon.path"
+            :class="checkIcon.class"
+            :viewBox="checkIcon.viewBox"
+          />
+          <p>Free Delivery & Returns</p></span
+        >
+        <span class="container static"
+          ><SfIcon
+            :icon="checkIcon.path"
+            :class="checkIcon.class"
+            :viewBox="checkIcon.viewBox"
+          />
+          <p>100 Day Returns Policy</p></span
+        >
+        <span class="container static"
+          ><SfIcon
+            :icon="checkIcon.path"
+            :class="checkIcon.class"
+            :viewBox="checkIcon.viewBox"
+          />
+          <p>Another use of your shop</p></span
+        >
+        <span class="container"
+          ><SfIcon icon="phone" size="15px" />
+          <p>+49 (0) 800 541 214 98</p></span
+        >
         <div class="container">
           <SfButton class="container__button container__button--selected">
             Gross Prices
-            <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
+            <SfIcon
+              :icon="arrowIcon.path"
+              :class="arrowIcon.class"
+              :viewBox="arrowIcon.viewBox"
+            />
           </SfButton>
         </div>
         <CurrencySelector data-cy="svsf-topBar-currencySelector" />
@@ -17,7 +45,11 @@
         <div class="container">
           <SfButton class="container__button container__button--selected">
             My Company
-            <SfIcon :icon="arrowIcon.path" :class="arrowIcon.class" :viewBox="arrowIcon.viewBox"/>
+            <SfIcon
+              :icon="arrowIcon.path"
+              :class="arrowIcon.class"
+              :viewBox="arrowIcon.viewBox"
+            />
           </SfButton>
         </div>
       </div>
@@ -48,7 +80,7 @@ export default {
       userGetters,
       routerHelpers,
       arrowIcon,
-      checkIcon
+      checkIcon,
     };
   },
 };

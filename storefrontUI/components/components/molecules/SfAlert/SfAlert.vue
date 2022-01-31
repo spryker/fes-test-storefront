@@ -11,9 +11,9 @@
   </div>
 </template>
 <script>
-import SfIcon from "../../atoms/SfIcon/SfIcon.vue";
+import SfIcon from '../../atoms/SfIcon/SfIcon.vue';
 export default {
-  name: "SfAlert",
+  name: 'SfAlert',
   components: {
     SfIcon,
   },
@@ -23,17 +23,17 @@ export default {
      */
     message: {
       type: String,
-      default: "",
+      default: '',
     },
     /**
      * Alert type ("secondary", "info", "success", "warning", "danger"). Check "Knobs" section to see how they look like.
      */
     type: {
       type: String,
-      default: "secondary",
+      default: 'secondary',
       validator: function (value) {
-        return ["secondary", "info", "success", "warning", "danger"].includes(
-          value
+        return ['secondary', 'info', 'success', 'warning', 'danger'].includes(
+          value,
         );
       },
     },
@@ -41,17 +41,17 @@ export default {
   computed: {
     icon() {
       switch (this.type) {
-        case "success":
-          return "added_to_cart";
-        case "danger":
-          return "info_shield";
+        case 'success':
+          return 'added_to_cart';
+        case 'danger':
+          return 'info_shield';
         default:
-          return "info_circle";
+          return 'info_circle';
       }
     },
   },
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/molecules/SfAlert.scss";
+@import '~@storefront-ui/shared/styles/components/molecules/SfAlert.scss';
 </style>

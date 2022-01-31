@@ -1,12 +1,41 @@
 <template>
-  <div class="form">
+  <div>
+    <div class="modal__title">
+      <span class="modal__title-text">{{ $t('register') }}</span>
+    </div>
     <ValidationObserver v-slot="{ handleSubmit }" key="sign-up">
       <form
-        class="form"
+        class="form form__registration"
         data-cy="svsf-registrationPopUp-form"
         @submit.prevent="handleSubmit(handleRegister)"
         autocomplete="off"
       >
+        <div class="name-inputs">
+          <ValidationProvider rules="required" v-slot="{ errors }">
+            <SfInput
+              data-cy="svsf-registrationPopUp-firstName-input"
+              v-model="form.firstName"
+              :valid="!errors[0] && !registerErrors.field.firstName"
+              :errorMessage="errors[0] || registerErrors.field.firstName"
+              name="first-name"
+              :label="$t('First Name')"
+              class="form__element"
+              required
+            />
+          </ValidationProvider>
+          <ValidationProvider rules="required" v-slot="{ errors }">
+            <SfInput
+              data-cy="svsf-registrationPopUp-lastName-input"
+              v-model="form.lastName"
+              :valid="!errors[0] && !registerErrors.field.lastName"
+              :errorMessage="errors[0] || registerErrors.field.lastName"
+              name="last-name"
+              :label="$t('Last Name')"
+              class="form__element"
+              required
+            />
+          </ValidationProvider>
+        </div>
         <ValidationProvider rules="required|email" v-slot="{ errors }">
           <SfInput
             data-cy="svsf-registrationPopUp-email-input"
@@ -14,7 +43,7 @@
             :valid="!errors[0] && !registerErrors.field.email"
             :errorMessage="errors[0] || registerErrors.field.email"
             name="email"
-            :label="$t('Your email')"
+            :label="$t('email')"
             class="form__element"
             required
           />
@@ -38,30 +67,6 @@
               >{{ option }}</SfSelectOption
             >
           </SfSelect>
-        </ValidationProvider>
-        <ValidationProvider rules="required" v-slot="{ errors }">
-          <SfInput
-            data-cy="svsf-registrationPopUp-firstName-input"
-            v-model="form.firstName"
-            :valid="!errors[0] && !registerErrors.field.firstName"
-            :errorMessage="errors[0] || registerErrors.field.firstName"
-            name="first-name"
-            :label="$t('First Name')"
-            class="form__element"
-            required
-          />
-        </ValidationProvider>
-        <ValidationProvider rules="required" v-slot="{ errors }">
-          <SfInput
-            data-cy="svsf-registrationPopUp-lastName-input"
-            v-model="form.lastName"
-            :valid="!errors[0] && !registerErrors.field.lastName"
-            :errorMessage="errors[0] || registerErrors.field.lastName"
-            name="last-name"
-            :label="$t('Last Name')"
-            class="form__element"
-            required
-          />
         </ValidationProvider>
         <ValidationProvider rules="required" v-slot="{ errors }">
           <SfInput
@@ -93,15 +98,23 @@
           :rules="{ required: { allowFalse: false } }"
           v-slot="{ errors }"
         >
-          <SfCheckbox
-            data-cy="svsf-registrationPopUp-acceptedTerms-checkbox"
-            v-model="acceptedTerms"
-            :valid="!errors[0]"
-            :errorMessage="errors[0]"
-            name="accepted-terms"
-            :label="$t('Accept Terms')"
-            class="form__element"
-          />
+          <div class="accept_terms__wrapper">
+            <SfCheckbox
+              data-cy="svsf-registrationPopUp-acceptedTerms-checkbox"
+              v-model="acceptedTerms"
+              :valid="!errors[0]"
+              :errorMessage="errors[0]"
+              name="accepted-terms"
+              :label="$t('I accept')"
+              class="form__element"
+            />
+            <SfLink
+              class="accept_terms__link text-green text-no-decoration"
+              href="#"
+            >
+              {{ $t('terms') }}</SfLink
+            >
+          </div>
         </ValidationProvider>
         <div
           data-cy="svsf-registrationPopUp-error-message"
@@ -124,13 +137,13 @@
         </SfButton>
       </form>
     </ValidationObserver>
-    <div class="action">
-      {{ $t(' or') }}
+    <div class="bottom">
+      <span class="bottom__before-action-text">{{ $t('have_account') }}</span>
       <SfButton
         data-cy="svsf-registrationPopUp-loginPopUp-button"
-        class="sf-button--text"
+        class="sf-button--text bottom__action text-green text-no-decoration"
         @click="toggleLogin"
-        >{{ $t('login in to your account') }}</SfButton
+        >{{ `${$t('Login')}.` }}</SfButton
       >
     </div>
   </div>
@@ -141,6 +154,7 @@ import {
   SfInput,
   SfButton,
   SfCheckbox,
+  SfLink,
   SfLoader,
   SfSelect,
 } from '@storefront-ui/vue';
@@ -160,6 +174,7 @@ export default {
     SfInput,
     SfButton,
     SfCheckbox,
+    SfLink,
     SfLoader,
     ValidationProvider,
     ValidationObserver,
@@ -168,10 +183,8 @@ export default {
   setup() {
     const { register, error, loading } = useUser();
     const { required } = useUserRegistrationConfirmation();
-    const {
-      toggleLogin,
-      toggleRegistrationConfirmationRequired,
-    } = useModalState();
+    const { toggleLogin, toggleRegistrationConfirmationRequired } =
+      useModalState();
 
     const form = ref({});
     const registerErrors = ref(userGetters.mapAuthErrors(null));
@@ -218,4 +231,26 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/modal';
+
+.form {
+  margin: 20px;
+
+  .name-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .accept_terms {
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__link {
+      margin: 1px 0 0 5px;
+      font-size: var(--font-size--base);
+    }
+  }
+}
 </style>

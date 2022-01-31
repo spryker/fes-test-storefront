@@ -5,15 +5,15 @@
 </template>
 <script>
 export default {
-  name: "SfStep",
-  inject: ["stepsData"],
+  name: 'SfStep',
+  inject: ['stepsData'],
   props: {
     /**
      * Name of the step
      */
     name: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   computed: {

@@ -21,10 +21,10 @@
   </component>
 </template>
 <script>
-import SfButton from "../SfButton/SfButton";
-import SfIcon from "../SfIcon/SfIcon";
+import SfButton from '../SfButton/SfButton';
+import SfIcon from '../SfIcon/SfIcon';
 export default {
-  name: "SfArrow",
+  name: 'SfArrow',
   inject: {
     components: {
       default: { SfButton, SfIcon },
@@ -33,5 +33,5 @@ export default {
 };
 </script>
 <style lang="scss">
-@import "~@storefront-ui/shared/styles/components/atoms/SfArrow.scss";
+@import '~@storefront-ui/shared/styles/components/atoms/SfArrow.scss';
 </style>
