@@ -1,5 +1,5 @@
 export const mapping = {
-  // Banner: {
-  //   componentFactory: () => import('./CustomBanner.vue')
-  // }
+  ProductsList: {
+    componentFactory: () => import('./ProductsList.vue'),
+  },
 };
