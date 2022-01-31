@@ -183,7 +183,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import 'assets/fields';
+
 .form {
+  ::v-deep{
+    @extend %fields;
+
+    .sf-input {
+      margin: 0.5rem 0;
+    }
+  }
   &--payment {
     width: 100%;
     margin: var(--spacer-xl) 0 var(--spacer-lg);

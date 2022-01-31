@@ -647,7 +647,7 @@ export default {
   &__save {
     --icon-color: var(--c-primary);
     --button-size: 52px;
-    --button-border-color: var(--c-gray-outline);
+    --button-border-color: #dce0e5;
     --button-border-width: 1px;
     display: flex;
     margin: 0;
@@ -815,7 +815,13 @@ export default {
     }
 
     &__dropdown {
+      background-color: var(--product-light-gray);
+      padding: 0 21px;
       height: 48px;
+      border: 2px solid #dce0e5;
+      border-radius: 2px;
+      font-size: 15px;
+      --select-dropdown-color: var(--product-gray);
     }
   }
 }

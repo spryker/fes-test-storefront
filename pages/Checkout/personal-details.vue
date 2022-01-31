@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="personal-details">
     <div class="log-in desktop-only">
       <SfButton
         data-cy="svsf-checkoutPersonalDetailsSection-sign-button"
@@ -210,6 +210,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'assets/fields';
 .title {
   margin: var(--spacer-xl) 0 var(--spacer-base) 0;
 }
@@ -337,6 +338,15 @@ export default {
   }
   &__button {
     margin: var(--spacer-2xl) 0 0 0;
+  }
+}
+</style>
+<style lang="scss">
+@import 'assets/fields';
+
+.personal-details {
+  .form {
+    @extend %fields;
   }
 }
 </style>

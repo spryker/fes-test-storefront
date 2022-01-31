@@ -26,13 +26,7 @@
         <transition name="fade">
           <CartPreview
             data-cy="svsf-checkoutSection-cartPreview"
-            v-if="!isPayment"
             key="order-summary"
-          />
-          <OrderReview
-            data-cy="svsf-checkoutSection-orderReview"
-            v-else
-            @edit="handleEditClick"
           />
         </transition>
       </div>
@@ -337,7 +331,6 @@ export default {
   &__main {
     @include for-desktop {
       flex: 1;
-      padding: var(--spacer-xl) 0 0 0;
     }
   }
   &__aside {
