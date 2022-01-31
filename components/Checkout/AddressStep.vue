@@ -242,7 +242,7 @@
       <SfButton
         data-cy="svsf-addressStepForm-moveToPayment-button"
         :disabled="
-          invalid || (isAuthenticated && !canAddNewAddress && !currentAddressId)
+          invalid && !sameAsShipping
         "
         class="form__action-button"
         @click="moveToPayment"
