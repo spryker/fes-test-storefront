@@ -3,25 +3,26 @@
     <LazyHydrate when-visible>
       <TopBar class="desktop-only" />
     </LazyHydrate>
-    <LazyHydrate when-idle>
-      <AppHeader />
-    </LazyHydrate>
 
     <div id="layout">
+      <LazyHydrate when-idle>
+        <AppHeader />
+      </LazyHydrate>
+
       <nuxt :key="$route.fullPath" />
 
       <LazyHydrate when-visible>
         <BottomNavigation />
       </LazyHydrate>
 
+      <LazyHydrate when-visible>
+        <AppFooter />
+      </LazyHydrate>
+
       <CartSidebar />
       <WishlistSidebar />
       <Modal />
     </div>
-
-    <LazyHydrate when-visible>
-      <AppFooter />
-    </LazyHydrate>
   </div>
 </template>
 
@@ -50,6 +51,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~@storefront-ui/vue/styles';
+
 #layout {
   box-sizing: border-box;
   @include for-desktop {

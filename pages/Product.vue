@@ -12,66 +12,80 @@
         <SfIcon icon="error" color="white" />
       </template>
     </SfNotification>
-    <div class="product__title">
-      <SfBreadcrumbs
-        data-cy="svsf-productSection-error-message"
-        class="page-center breadcrumbs desktop-only"
-        :breadcrumbs="breadcrumbs"
-      />
-      <div class="page-center product__header">
-        <template v-for="label in productGetters.getBadgeLabels(products)">
-          <SfBadge
-            data-cy="svsf-productSection-badge"
-            :class="label.frontEndReference"
-            :key="label.value"
-          >
-            {{ label.value }}
-          </SfBadge>
-        </template>
-        <SfHeading
-          data-cy="svsf-productSection-heading"
-          :title="productGetters.getName(product)"
-          :level="3"
-          class="sf-heading--no-underline sf-heading--left"
-        />
-        <SfIcon
-          data-cy="svsf-productSection-drag-icon"
-          icon="drag"
-          size="xl"
-          color="gray-secondary"
-          class="product__drag-icon smartphone-only"
-        />
-      </div>
-    </div>
+    <SfBreadcrumbs
+      data-cy="svsf-productSection-error-message"
+      class="breadcrumbs desktop-only"
+      :breadcrumbs="productGetters.getProductBreadcrumbs(products)"
+    />
     <div class="product">
-      <ProductGallery :images="productGallery" />
+      <!-- TODO: replace example images with the getter, wait for SfGallery fix by SFUI team: https://github.com/DivanteLtd/storefront-ui/issues/1074 -->
+      <SfGallery
+        data-cy="svsf-productSection-error-message"
+        class="product__gallery"
+        :images="productGallery"
+      />
       <div class="product__info">
-        <div class="product__rating-and-logo">
-          <div class="product__rating">
-            <SfRating
-              data-cy="svsf-productSection-rating"
-              :score="averageRating"
-              :max="5"
-              :icon="starIcon.path"
-            />
-            <a href="#" class="product__count">
-              {{ totalReviews }}
-            </a>
-          </div>
-          <SfImage class="brand-logo" src="/brandlogo.png" alt="brand logo" />
-        </div>
-        <div>
-          <div class="brand">by {{ brand }}</div>
-          <div class="sku">SKU: {{ productGetters.getId(product) }}</div>
-        </div>
-        <div class="product__info--price">
-          <SfPrice
-            data-cy="svsf-productSection-price"
-            :regular="productGetters.getFormattedPrice(productGetters.getPrice(product).regular)"
-            :special="productGetters.getFormattedPrice(productGetters.getPrice(product).special)"
+        <div class="product__header">
+          <SfHeading
+            data-cy="svsf-productSection-heading"
+            :title="productGetters.getName(product)"
+            :level="3"
+            class="sf-heading--no-underline sf-heading--left"
+          />
+          <template v-for="label in productGetters.getBadgeLabels(products)">
+            <SfBadge
+              data-cy="svsf-productSection-badge"
+              :class="label.frontEndReference"
+              :key="label.value"
+            >
+              {{ label.value }}
+            </SfBadge>
+          </template>
+          <SfIcon
+            data-cy="svsf-productSection-drag-icon"
+            icon="drag"
+            size="xl"
+            color="gray-secondary"
+            class="product__drag-icon smartphone-only"
           />
         </div>
-        <div class="product__info--options">
+        <div class="product__price-and-rating">
+          <SfPrice
+            data-cy="svsf-productSection-price"
+            :regular="
+              productGetters.getFormattedPrice(
+                productGetters.getPrice(product).regular,
+              )
+            "
+            :special="
+              productGetters.getFormattedPrice(
+                productGetters.getPrice(product).special,
+              )
+            "
+          />
+          <div>
+            <div class="product__rating">
+              <SfRating
+                data-cy="svsf-productSection-rating"
+                :score="averageRating"
+                :max="5"
+              />
+              <a v-if="!!totalReviews" href="#" class="product__count">
+                ({{ totalReviews }})
+              </a>
+            </div>
+            <SfButton
+              data-cy="svsf-productSection-readAllReviews-button"
+              class="sf-button--text desktop-only"
+            >
+              {{ $t('Read all reviews') }}
+            </SfButton>
+          </div>
+        </div>
+        <div>
+          <p class="product__description desktop-only">
+            {{ productGetters.getDescription(product) }}
+          </p>
           <template v-for="(optionValue, optionName) in options">
             <template v-if="optionName === 'color'">
               <div class="product__colors desktop-only" :key="optionName">
@@ -116,109 +130,125 @@
               {{ $t('Reset attributes') }}
             </SfButton>
           </template>
-          <div class="product__actions">
-            <SfAddToCart
-              data-cy="svsf-productSection-addToCart"
-              :stock="productGetters.getStock(product)"
-              v-model="qty"
-              :canAddToCart="productGetters.getStock(product) > 0"
-              class="product__add-to-cart"
+          <SfAddToCart
+            data-cy="svsf-productSection-addToCart"
+            :stock="productGetters.getStock(product)"
+            v-model="qty"
+            :disabled="loading || !isProductConfigured"
+            :canAddToCart="productGetters.getStock(product) > 0"
+            @click="addItemToCart({ product, quantity: parseInt(qty) })"
+            class="product__add-to-cart"
+          />
+          <!--
+
+            /**
+             * Disabled due to notification system absence
+             * ...
+             */
+
+            <SfButton
+            data-cy="svsf-productSection-saveLater-button"
+            v-if="isAuthenticated"
+            class="sf-button--text desktop-only product__save"
+            :disabled="loading || !isProductConfigured"
+            @click="addToWishlist({ product })"
+          >
+            {{ $t('Save for later') }}
+          </SfButton>
+          -->
+        </div>
+        <SfTabs
+          data-cy="svsf-productSection-tabs"
+          :openTab="1"
+          class="product__tabs"
+        >
+          <SfTab
+            data-cy="svsf-productSection-properties-tab"
+            :title="$t('Description')"
+          >
+            <SfProperty
+              data-cy="svsf-productSection-properties-property-list"
+              v-for="(property, i) in properties"
+              :key="i"
+              :name="property.name"
+              :value="property.value"
+              class="product__property"
             >
-              <template #add-to-cart-btn>
+              <template v-if="property.name === 'Category'" #value>
                 <SfButton
-                  :disabled="loading || !isProductConfigured"
-                  @click="addItemToCart({ product, quantity: parseInt(qty) })"
+                  data-cy="svsf-productSection-property-button"
+                  class="product__property__button sf-button--text"
                 >
-                  <SfIcon
-                    :icon="cartPlusIcon.path"
-                    :class="cartPlusIcon.class"
-                    :viewBox="cartPlusIcon.viewBox"
-                  />
-                  Add to Cart
+                  {{ property.value }}
                 </SfButton>
               </template>
-            </SfAddToCart>
-            <SfButton
-              data-cy="svsf-productSection-saveLater-button"
-              v-if="isAuthenticated"
-              class="sf-button--text desktop-only product__save"
-              :disabled="loading || !isProductConfigured"
-              @click="addToWishlist({ product })"
-            >
-              <SfIcon
-                :icon="listPlusIcon.path"
-                :class="listPlusIcon.class"
-                :viewBox="listPlusIcon.viewBox"
-              />
-            </SfButton>
-          </div>
-        </div>
-      </div>
-      <SfTabs
-        data-cy="svsf-productSection-tabs"
-        :openTab="1"
-        class="product__tabs"
-      >
-        <SfTab
-          data-cy="svsf-productionSection-properties-tab"
-          :title="$t('Description')"
-        >
-          <h1>{{ $t('Description') }}</h1>
-          <div>
-            {{ productGetters.getDescription(product) }}
-          </div>
-        </SfTab>
-        <SfTab
-          data-cy="svsf-productSection-properties-tab"
-          :title="$t('Details')"
-        >
-          <h1>{{ $t('Details') }}</h1>
-          <SfProperty
-            data-cy="svsf-productSection-properties-property-list"
-            v-for="(property, i) in properties"
-            :key="i"
-            :name="property.name"
-            :value="property.value"
-            class="product__property"
+            </SfProperty>
+          </SfTab>
+          <SfTab
+            :title="$t('Read review')"
+            data-cy="svsf-productSection-review-tab"
           >
-            <template v-if="property.name === 'Category'" #value>
-              <SfButton
-                data-cy="svsf-productSection-property-button"
-                class="product__property__button sf-button--text"
-              >
-                {{ property.value }}
-              </SfButton>
-            </template>
-          </SfProperty>
-        </SfTab>
-        <SfTab
-          :title="$t('Read reviews', { count: totalReviews })"
-          data-cy="svsf-productSection-review-tab"
-        >
-          <SfReview
-            data-cy="svsf-productSection-review"
-            v-for="review in reviews"
-            :key="reviewGetters.getReviewId(review)"
-            :author="reviewGetters.getReviewAuthor(review)"
-            :date="reviewGetters.getReviewDate(review)"
-            :message="reviewGetters.getReviewMessage(review)"
-            :max-rating="5"
-            :rating="reviewGetters.getReviewRating(review)"
-            :char-limit="250"
-            read-more-text="Read more"
-            hide-full-text="Read less"
-            class="product__review"
-          />
-        </SfTab>
-        <SfTab
-          data-cy="svsf-productSection-additional-tab"
-          :title="$t('Additional Information')"
-          class="product__additional-info"
-        >
-          <div>{{ $t('Additional Information') }}</div>
-        </SfTab>
-      </SfTabs>
+            <SfReview
+              data-cy="svsf-productSection-review"
+              v-for="review in reviews"
+              :key="reviewGetters.getReviewId(review)"
+              :author="reviewGetters.getReviewAuthor(review)"
+              :date="reviewGetters.getReviewDate(review)"
+              :message="reviewGetters.getReviewMessage(review)"
+              :max-rating="5"
+              :rating="reviewGetters.getReviewRating(review)"
+              :char-limit="250"
+              read-more-text="Read more"
+              hide-full-text="Read less"
+              class="product__review"
+            />
+          </SfTab>
+          <SfTab
+            data-cy="svsf-productSection-additional-tab"
+            :title="$t('Additional Information')"
+            class="product__additional-info"
+          >
+            <div>{{ $t('Additional Information') }}</div>
+          </SfTab>
+        </SfTabs>
+      </div>
     </div>
+    <RelatedProducts
+      data-cy="svsf-productSection-relatedProducts"
+      v-if="relatedProducts.length"
+      :products="relatedProducts"
+      :loading="relatedLoading"
+      :title="$t('Match it with')"
+    />
+    <InstagramFeed data-cy="svsf-productSection-instagramFeed" />
+    <SfBanner
+      data-cy="svsf-productSection-banner"
+      image="/homepage/bannerD.png"
+      :subtitle="$t('Fashion to Take Away')"
+      :title="$t('Download our application to your mobile')"
+      class="sf-banner--left desktop-only banner-app"
+    >
+      <template #call-to-action>
+        <div class="banner-app__call-to-action">
+          <SfImage
+            data-cy="svsf-productSection-google-image"
+            class="banner-app__image"
+            src="/homepage/google.png"
+            :width="191"
+            :height="51"
+            :alt="$t('Google Play')"
+          />
+          <SfImage
+            data-cy="svsf-productSection-store-image"
+            class="banner-app__image"
+            src="/homepage/apple.png"
+            :width="174"
+            :height="57"
+            :alt="$t('App Store')"
+          />
+        </div>
+      </template>
+    </SfBanner>
   </div>
 </template>
 <script>
@@ -231,6 +261,7 @@ import {
   SfSelect,
   SfAddToCart,
   SfTabs,
+  SfGallery,
   SfIcon,
   SfImage,
   SfBanner,
@@ -243,15 +274,7 @@ import {
 
 import InstagramFeed from '~/components/InstagramFeed.vue';
 import RelatedProducts from '~/components/RelatedProducts.vue';
-import ProductGallery from '~/components/ProductGallery.vue';
-import {
-  ref,
-  computed,
-  watch,
-  onMounted,
-  provide,
-  reactive,
-} from '@vue/composition-api';
+import { ref, computed, watch } from '@vue/composition-api';
 import {
   useProduct,
   useCart,
@@ -263,8 +286,6 @@ import {
 } from '@spryker-vsf/composables';
 import { onSSR } from '@vue-storefront/core';
 import { useUiState } from '~/composables';
-import LayoutSlot from '@spryker-oryx/vsf/lib/components/LayoutSlot';
-import { starIcon, cartPlusIcon, listPlusIcon } from '~/assets/icons';
 
 export default {
   name: 'Product',
@@ -281,8 +302,9 @@ export default {
       loading: relatedLoading,
     } = useProduct('relatedProducts');
     const { addItem, loading, cart, error } = useCart();
-    const { reviews: productReviews, search: searchReviews } =
-      useReview('productReviews');
+    const { reviews: productReviews, search: searchReviews } = useReview(
+      'productReviews',
+    );
     const { addItem: addToWishlist } = useWishlist();
     const { isAuthenticated } = useUser();
 
@@ -324,18 +346,6 @@ export default {
     const categories = computed(() =>
       productGetters.getCategoryIds(product.value),
     );
-
-    const breadcrumbs = computed(() =>
-      productGetters.getProductBreadcrumbs(products.value),
-    );
-    const currentCategory = computed(() => {
-      return breadcrumbs.value[breadcrumbs.value.length - 2];
-    });
-    const slotData = reactive({
-      category: currentCategory,
-    });
-    provide('CURRENT_CATEGORY', slotData);
-
     const reviews = computed(() =>
       reviewGetters.getItems(productReviews.value),
     );
@@ -374,12 +384,6 @@ export default {
       cartError.value = error.value?.addItem ?? null;
     }
 
-    onMounted(async () => {
-      await search({ id });
-      await searchRelatedProducts({ catId: [categories.value[0]], limit: 8 });
-      await searchReviews({ productId: id });
-    });
-
     onSSR(async () => {
       await search({ id });
       await searchRelatedProducts({ catId: [categories.value[0]], limit: 8 });
@@ -403,22 +407,7 @@ export default {
       });
     };
 
-    const slotName = computed(() => context.root.$route.path);
-
-    const brand = computed(() => {
-      const propertiesValue = properties.value;
-      for (let i = 0; i < propertiesValue.length; i++) {
-        if (propertiesValue[i].name.toLowerCase() === 'brand') {
-          return propertiesValue[i].value;
-        }
-      }
-      return 'Unknown';
-    });
-
     return {
-      currentCategory,
-      breadcrumbs,
-      slotName,
       updateFilter,
       resetAttributes,
       addToWishlist,
@@ -450,14 +439,9 @@ export default {
       productGetters,
       productGallery,
       cartErrorMessage,
-      starIcon,
-      cartPlusIcon,
-      listPlusIcon,
-      brand,
     };
   },
   components: {
-    LayoutSlot,
     SfColor,
     SfProperty,
     SfHeading,
@@ -467,7 +451,7 @@ export default {
     SfSelect,
     SfAddToCart,
     SfTabs,
-    ProductGallery,
+    SfGallery,
     SfIcon,
     SfImage,
     SfBanner,
@@ -481,99 +465,55 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '~@storefront-ui/vue/styles';
+
 #product {
   box-sizing: border-box;
   padding: 0 var(--spacer-sm);
   @include for-desktop {
+    max-width: 1272px;
     padding: 0;
+    margin: 0 auto;
   }
-  --product-black: #2f2f2f;
-  --product-light-gray: #f5f5f5;
-  --product-gray: #8f8f8f;
 }
 .product {
   @include for-desktop {
     display: flex;
-    max-width: var(--header-width, 77.5rem);
-    margin: 30px auto 0;
-    flex-wrap: wrap;
-  }
-  &__actions {
-    display: flex;
-    gap: 18px;
-    margin-top: 20px;
   }
   &__info {
     margin: var(--spacer-sm) auto var(--spacer-xs);
     @include for-desktop {
-      flex: 1;
-      margin: 0 0 0 30px;
-    }
-
-    &--options,
-    &--price {
-      margin-top: 20px;
-    }
-
-    &--options {
-      --c-secondary-variant: var(--product-black);
-      --select-label-font-weight: 600;
-    }
-
-    &--price {
-      --price-special-font-size: 24px;
-      .sf-price {
-        --price-align-items: center;
-        gap: 10px;
-        &__old {
-          --price-old-color: var(--product-gray);
-          --price-old-font-size: 18px;
-          order: 1;
-        }
-      }
+      max-width: 32.625rem;
+      margin: 0 0 0 7.5rem;
     }
   }
   &__header {
     --heading-title-color: var(--c-link);
-    --badge-background: var(--c-primary);
-    --heading-title-font-size: 28px;
-    --badge-font-size: 10px;
-    --badge-padding: 3px 12px;
-    --badge-height: auto;
-    --badge-min-width: none;
-    --badge-min-height: none;
     margin: 0 var(--spacer-sm);
     display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 12px;
+    justify-content: space-between;
     @include for-desktop {
       margin: 0 auto;
-    }
-
-    .sf-badge {
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .sf-heading__title {
-      line-height: 35px;
     }
   }
   &__drag-icon {
     animation: moveicon 1s ease-in-out infinite;
   }
-  &__rating-and-logo {
-    display: flex;
-    margin: 22px 0 16px;
-    justify-content: space-between;
+  &__price-and-rating {
+    margin: var(--spacer-xs) var(--spacer-sm) var(--spacer-base);
+    align-items: center;
+    @include for-desktop {
+      display: flex;
+      justify-content: space-between;
+      margin: var(--spacer-sm) 0 var(--spacer-lg) 0;
+    }
   }
   &__rating {
     display: flex;
     align-items: center;
-
-    .sf-rating__icon {
-      --icon-size: 16px !important;
+    margin: var(--spacer-xs) 0;
+    @include for-desktop {
+      justify-content: flex-end;
     }
   }
   &__count {
@@ -584,10 +524,9 @@ export default {
       1.4,
       var(--font-family--secondary)
     );
-    font-size: 13px;
-    color: var(--product-gray);
+    color: var(--c-text);
     text-decoration: none;
-    margin: 0 0 0 6px;
+    margin: 0 0 0 var(--spacer-xs);
   }
   &__description {
     color: var(--c-link);
@@ -625,90 +564,31 @@ export default {
     margin: 0 var(--spacer-2xs);
   }
   &__add-to-cart {
-    --button-border-radius: 2px;
-    --button-height: 52px;
-    --icon-color: var(--c-white);
     margin: var(--spacer-base) var(--spacer-sm) 0;
-    flex: 1;
     @include for-desktop {
-      margin: 0;
-    }
-
-    .sf-button {
-      gap: 12px;
-      flex: 1;
-      &.is-disabled--button {
-        --icon-color: var(--c-text-disabled);
-      }
+      margin: var(--spacer-2xl) 0 0 0;
     }
   }
   &__guide,
   &__compare,
   &__save {
-    --icon-color: var(--c-primary);
-    --button-size: 52px;
-    --button-border-color: #dce0e5;
-    --button-border-width: 1px;
-    display: flex;
-    margin: 0;
+    display: block;
+    margin: var(--spacer-xl) 0 var(--spacer-base) auto;
   }
   &__compare {
     margin-top: 0;
   }
   &__tabs {
-    --tabs-content-border-color: #eaeaea;
-    --tabs-content-font-size: 15px;
-    --tabs-content-color: #4c4c4c;
-    --h1-font-size: 32px;
-    ::v-deep {
-      .sf-tabs {
-        &__title {
-          --tabs-title-font-size: 16px;
-          --tabs-title-color: var(--product-gray);
-          --tabs-title-padding: 12px 40px;
-          --tabs-title-margin: 0 0 -2px;
-          &.is-active {
-            --tabs-title-color: #333;
-            --tabs-title-border-color: var(--c-primary);
-          }
-        }
-        &__content__tab {
-          --tabs-content-tab-padding: 30px 0;
-          width: 670px;
-
-          h1 {
-            line-height: 40px;
-            font-weight: 400;
-            margin-bottom: 15px;
-          }
-        }
-      }
-    }
-    margin: var(--spacer-lg) 0 var(--spacer-2xl);
-    width: 100%;
+    margin: var(--spacer-lg) auto var(--spacer-2xl);
     @include for-desktop {
       margin-top: var(--spacer-2xl) 0 0 0;
       --tabs-content-tab-padding: 3.5rem 0 0 0;
     }
   }
   &__property {
-    --property-name-content: '';
-    --property-name-font-size: 15px;
-    --property-value-font-size: var(--property-name-font-size);
-    --property-value-color: var(--c-black);
-    --property-name-color: var(--product-gray);
-    --property-value-font-weight: 400;
-    padding: 10px 20px;
+    margin: var(--spacer-base) 0;
     &__button {
       --button-font-size: var(--font-size--base);
-    }
-
-    &:nth-child(even) {
-      background-color: var(--product-light-gray);
-    }
-
-    span {
-      flex: 1;
     }
   }
   &__review {
@@ -744,50 +624,20 @@ export default {
       margin: 0;
     }
   }
-}
-
-.product__title {
-  background-color: var(--product-light-gray);
-  padding: 14px 0;
-  margin: 0;
-  position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    left: calc((100vw - 100%) / -2);
-    right: calc((100vw - 100%) / -2);
-    top: 0;
-    bottom: 0;
-    background-color: var(--product-light-gray);
-    z-index: -1;
+  &__gallery {
+    flex: 1;
+    ::v-deep .sf-image {
+      object-fit: contain;
+      @include for-mobile {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
-}
-
-.page-center {
-  max-width: var(--header-width, 77.5rem);
-  margin: 0 auto;
-}
-
-.brand {
-  color: var(--product-black);
-  font-size: 18px;
-}
-
-.sku {
-  color: var(--product-gray);
-  font-size: 14px;
 }
 
 .breadcrumbs {
-  --breadcrumbs-list-item-seperator: '/';
-  --breadcrumbs-font-size: 13px;
-  --breadcrumbs-list-item-before-padding: 8px;
-  --breadcrumbs-color: #9ea1a7;
-  --breadcrumbs-list-item-before-color: var(--breadcrumbs-color);
-  --link-color: var(--breadcrumbs-color);
-  .sf-breadcrumbs__breadcrumb {
-    --link-color: var(--breadcrumbs-color);
-  }
+  margin: var(--spacer-base) auto var(--spacer-lg);
 }
 @keyframes moveicon {
   0% {
@@ -799,49 +649,5 @@ export default {
   100% {
     transform: translate3d(0, 0, 0);
   }
-}
-</style>
-
-<style lang="scss">
-.product__info--options {
-  .sf-button--text {
-    --button-text-decoration: none;
-  }
-  .sf-select {
-    padding-top: 19px;
-
-    &__label {
-      text-transform: uppercase;
-    }
-
-    &__dropdown {
-      background-color: var(--product-light-gray);
-      padding: 0 21px;
-      height: 48px;
-      border: 2px solid #dce0e5;
-      border-radius: 2px;
-      font-size: 15px;
-      --select-dropdown-color: var(--product-gray);
-    }
-  }
-}
-
-.sf-add-to-cart__select-quantity {
-  --quantity-selector-width: 122px;
-  --input-font-size: 16px;
-  --input-color: var(--product-black);
-  margin-inline-end: 10px;
-  border-radius: 2px;
-  padding: 0 10px;
-}
-
-.sf-quantity-selector__button {
-  --button-size: 28px;
-  --button-padding: 0;
-  --button-background: var(--c-white);
-  --button-color: var(--product-gray);
-  flex-shrink: 0;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.04),
-    0px 10px 10px rgba(0, 0, 0, 0.0474128);
 }
 </style>

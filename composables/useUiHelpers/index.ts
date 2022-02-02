@@ -1,6 +1,5 @@
 import { generateParams } from '@spryker-vsf/api';
 import { getCurrentInstance } from '@vue/composition-api';
-import { Route } from 'vue-router';
 import {
   AgnosticCategoryTree,
   AgnosticFacetSearchParams,
@@ -15,11 +14,8 @@ const getContext = () => {
 const useUiHelpers = () => {
   const context = getContext();
 
-  const getFacetsFromURL = (
-    route: Route | string = context.$router.history.current,
-  ): AgnosticFacetSearchParams => {
-    const { params, query } =
-      typeof route === 'string' ? context.$router.resolve(route).route : route;
+  const getFacetsFromURL = (): AgnosticFacetSearchParams => {
+    const { params, query } = context.$router.history.current;
     const categorySlug = Object.keys(params).reduce(
       (prev, curr) => params[curr] || prev,
       params.slug_1,

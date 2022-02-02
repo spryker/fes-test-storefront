@@ -1,11 +1,8 @@
 <template>
   <div>
-    <div class="modal__title">
-      <span class="modal__title-text">{{ $t('Login') }}</span>
-    </div>
     <ValidationObserver v-slot="{ handleSubmit }" key="log-in">
       <form
-        class="form form__login"
+        class="form"
         data-cy="svsf-loginPopUp-form"
         @submit.prevent="handleSubmit(handleLogin)"
       >
@@ -16,7 +13,7 @@
             :valid="!errors[0] && loginErrors.form.length === 0"
             :errorMessage="errors[0]"
             name="email"
-            :label="$t('email')"
+            :label="$t('Your email')"
             class="form__element"
             required
           />
@@ -31,7 +28,6 @@
             :label="$t('Password')"
             type="password"
             class="form__element"
-            hasShowPassword
             required
           />
         </ValidationProvider>
@@ -59,20 +55,19 @@
     <div class="action">
       <SfButton
         data-cy="svsf-loginPopUp-forgottenPasswordPopUp-button"
-        class="sf-button--text text-grey"
+        class="sf-button--text"
         @click="toggleForgottenPassword"
         >{{ $t('Forgotten password?') }}</SfButton
       >
     </div>
     <div class="bottom">
-      <span class="bottom__before-action-text">{{ $t('new_account') }}</span>
+      <p class="bottom__paragraph">{{ $t('Don not have an account yet?') }}</p>
       <SfButton
         data-cy="svsf-loginPopUp-registrationPopUp-button"
-        class="sf-button--text bottom__action text-green text-no-decoration"
+        class="sf-button--text"
         @click="toggleRegistration"
+        >{{ $t('Register today') }}</SfButton
       >
-        {{ `${$t('register')}.` }}
-      </SfButton>
     </div>
   </div>
 </template>
@@ -134,8 +129,4 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/modal';
-
-.form {
-  margin: 20px 100px 20px 100px;
-}
 </style>

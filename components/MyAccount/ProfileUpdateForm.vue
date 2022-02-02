@@ -67,7 +67,7 @@
           :valid="!errors[0] && !fieldErrors.email"
           :errorMessage="errors[0]"
           name="email"
-          :label="$t('email')"
+          :label="$t('Your email')"
         />
       </ValidationProvider>
       <div class="form__element">
@@ -161,6 +161,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~@storefront-ui/vue/styles';
+
 .form {
   @include for-desktop {
     display: flex;

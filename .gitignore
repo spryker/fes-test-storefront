@@ -68,9 +68,6 @@ typings/
 # nuxt.js build output
 .nuxt
 
-# theme
-_theme
-
 # Nuxt generate
 dist
 
@@ -82,7 +79,6 @@ dist
 
 # IDE / Editor
 .idea
-.vscode
 
 # Service worker
 sw.*

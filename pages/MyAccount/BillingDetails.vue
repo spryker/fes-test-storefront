@@ -6,7 +6,8 @@
       :open-tab="1"
       class="tab-orphan"
     >
-      <SfTab :title="isNewAddress ? 'Add the address' : 'Update the address'">
+      <SfTab
+        :title="isNewAddress ? 'Add the address' : 'Update the address'">
         <p class="message">
           {{ $t('Contact details updated') }}
         </p>
@@ -14,12 +15,15 @@
         <BillingAddressForm
           :address="activeAddress"
           :isNew="isNewAddress"
-          @submit="saveAddress"
-        />
+          @submit="saveAddress" />
       </SfTab>
     </SfTabs>
 
-    <SfTabs v-else :open-tab="1" key="address-list" class="tab-orphan">
+    <SfTabs
+      v-else
+      :open-tab="1"
+      key="address-list"
+      class="tab-orphan">
       <SfTab title="Billing details">
         <p class="message">
           {{ $t('Manage billing addresses') }}
@@ -28,8 +32,7 @@
           <div
             v-for="address in addresses"
             :key="userBillingGetters.getId(address)"
-            class="billing"
-          >
+            class="billing">
             <div class="billing__content">
               <div class="billing__address">
                 <UserBillingAddress :address="address" />
@@ -44,20 +47,22 @@
                 class="smartphone-only"
                 @click="removeAddress(address)"
               />
-              <SfButton @click="changeAddress(address)">
+              <SfButton
+                @click="changeAddress(address)">
                 {{ $t('Change') }}
               </SfButton>
 
               <SfButton
                 class="color-light billing__button-delete desktop-only"
-                @click="removeAddress(address)"
-              >
+                @click="removeAddress(address)">
                 {{ $t('Delete') }}
               </SfButton>
             </div>
           </div>
         </transition-group>
-        <SfButton class="action-button" @click="changeAddress()">
+        <SfButton
+          class="action-button"
+          @click="changeAddress()">
           {{ $t('Add new address') }}
         </SfButton>
       </SfTab>
@@ -65,7 +70,11 @@
   </transition>
 </template>
 <script>
-import { SfTabs, SfButton, SfIcon } from '@storefront-ui/vue';
+import {
+  SfTabs,
+  SfButton,
+  SfIcon
+} from '@storefront-ui/vue';
 import UserBillingAddress from '~/components/UserBillingAddress';
 import BillingAddressForm from '~/components/MyAccount/BillingAddressForm';
 import { useUserBilling, userBillingGetters } from '@spryker-vsf/composables';
@@ -79,19 +88,11 @@ export default {
     SfButton,
     SfIcon,
     UserBillingAddress,
-    BillingAddressForm,
+    BillingAddressForm
   },
   setup() {
-    const {
-      billing,
-      load: loadUserBilling,
-      addAddress,
-      deleteAddress,
-      updateAddress,
-    } = useUserBilling();
-    const addresses = computed(() =>
-      userBillingGetters.getAddresses(billing.value),
-    );
+    const { billing, load: loadUserBilling, addAddress, deleteAddress, updateAddress } = useUserBilling();
+    const addresses = computed(() => userBillingGetters.getAddresses(billing.value));
     const edittingAddress = ref(false);
     const activeAddress = ref(undefined);
     const isNewAddress = computed(() => !activeAddress.value);
@@ -101,7 +102,7 @@ export default {
       edittingAddress.value = true;
     };
 
-    const removeAddress = (address) => deleteAddress({ address });
+    const removeAddress = address => deleteAddress({ address });
 
     const saveAddress = async ({ form, onComplete, onError }) => {
       try {
@@ -128,13 +129,14 @@ export default {
       addresses,
       edittingAddress,
       activeAddress,
-      isNewAddress,
+      isNewAddress
     };
-  },
+  }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
+
 .message {
   font-family: var(--font-family--primary);
   line-height: 1.6;

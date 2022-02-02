@@ -7,11 +7,11 @@ module.exports = {
           baseURL:
             process.env.GLUE_BASE_URL ||
             process.env.API_URL ||
-            'https://glue.us.sc-b2b.demo-spryker.com',
+            'http://glue.de.spryker.local',
         },
-        currency: process.env.CURRENCY_DEFAULT || 'USD',
+        currency: process.env.CURRENCY_DEFAULT || 'EUR',
         locale: process.env.LOCALE_DEFAULT || 'en_US',
-        store: process.env.STORE || 'US',
+        store: process.env.STORE || 'DE',
       },
 
       extensions: (extensions) => [

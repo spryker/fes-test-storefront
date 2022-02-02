@@ -7,16 +7,6 @@
       class="sf-sidebar--right"
       @close="toggleCartSidebar"
     >
-      <template v-slot:circle-icon="{ close, button }">
-        <SfCircleIcon
-          v-if="button"
-          icon-size="16px"
-          aria-label="Close sidebar"
-          icon="cross"
-          class="sf-sidebar__circle-icon desktop-only"
-          @click="close"
-        />
-      </template>
       <template #content-top>
         <SfNotification
           data-cy="svsf-cartSidebar-cartError-message"
@@ -31,15 +21,15 @@
           </template>
         </SfNotification>
         <div v-if="totalItems" class="cart-meta">
-          <span
+          <SfProperty
             data-cy="svsf-cartSidebar-totalItems-property"
-            class="cart-summary"
-          >
-            {{ totalItems }} {{ $t('items') }}
-          </span>
+            class="sf-property--large cart-summary desktop-only"
+            :name="$t('Total items')"
+            :value="totalItems"
+          />
           <SfButton
             data-cy="svsf-cartSidebar-clearCart-button"
-            class="clear-cart__button"
+            class="color-light"
             @click="clearCartItems"
           >
             {{ $t('Clear cart') }}
@@ -71,16 +61,19 @@
                 :stock="99999"
                 :qty="cartGetters.getItemQty(product)"
                 @input="updateCartItemQty({ product, quantity: $event })"
+                @click:remove="removeCartItem({ product })"
                 class="collected-product"
               >
                 <template #configuration>
                   <div class="collected-product__properties">
                     <SfProperty
                       :data-cy="`svsf-cartSidebar-configuration-property-${key}`"
-                      v-for="(attribute, key) in cartGetters.getItemAttributes(
-                        product,
-                        ['color', 'brand'],
-                      )"
+                      v-for="(
+                        attribute, key
+                      ) in cartGetters.getItemAttributes(product, [
+                        'color',
+                        'brand',
+                      ])"
                       :key="key"
                       :name="key"
                       :value="attribute"
@@ -98,20 +91,6 @@
                       {{ $t('Save for later') }}
                     </SfButton>
                   </Fragment>
-                </template>
-                <template #remove>
-                  <SfButton
-                    class="sf-button--text collected-product__remove-button desktop-only"
-                    @click="removeCartItem({ product })"
-                  >
-                    <SfIcon
-                      data-cy="svsf-cartSidebar-removeItem-icon"
-                      color="#B2B2B2"
-                      :class="deleteIcon.class"
-                      :icon="deleteIcon.path"
-                      :viewBox="deleteIcon.viewBox"
-                    />
-                  </SfButton>
                 </template>
               </SfCollectedProduct>
             </transition-group>
@@ -138,6 +117,18 @@
       <template #content-bottom>
         <transition name="sf-fade">
           <div v-if="totalItems">
+            <SfProperty
+              data-cy="svsf-cartSidebar-totalPrice-property"
+              :name="$t('Total price')"
+              class="sf-property--full-width sf-property--large my-cart__total-price"
+            >
+              <template #value>
+                <SfPrice
+                  data-cy="svsf-cartSidebar-price"
+                  :regular="cartGetters.getFormattedPrice(totals.total)"
+                />
+              </template>
+            </SfProperty>
             <nuxt-link
               data-cy="svsf-cartSidebar-checkout-link"
               :to="`/checkout/${
@@ -146,7 +137,7 @@
             >
               <SfButton
                 data-cy="svsf-cartSidebar-checkout-button"
-                class="sf-button--full-width color-primary"
+                class="sf-button--full-width color-secondary"
                 @click="toggleCartSidebar"
               >
                 {{ $t('Go to checkout') }}
@@ -168,17 +159,16 @@
 </template>
 <script>
 import {
-  SfCircleIcon,
-  SfIcon,
   SfSidebar,
   SfHeading,
   SfButton,
   SfProperty,
+  SfPrice,
   SfCollectedProduct,
   SfImage,
   SfNotification,
 } from '@storefront-ui/vue';
-import { computed, ref, watch } from '@vue/composition-api';
+import { computed, ref, watch, onMounted } from '@vue/composition-api';
 import {
   useCart,
   useUser,
@@ -186,19 +176,16 @@ import {
   useWishlist,
 } from '@spryker-vsf/composables';
 import { useUiState } from '~/composables';
-import { onSSR } from '@vue-storefront/core';
 import Fragment from '~/components/Fragment';
-import { deleteIcon } from '~/assets/icons';
 
 export default {
   name: 'Cart',
   components: {
-    SfCircleIcon,
-    SfIcon,
     SfSidebar,
     SfButton,
     SfHeading,
     SfProperty,
+    SfPrice,
     SfCollectedProduct,
     SfImage,
     SfNotification,
@@ -264,12 +251,11 @@ export default {
           : null;
     });
 
-    onSSR(async () => {
+    onMounted(async () => {
       await loadCart();
     });
 
     return {
-      deleteIcon,
       isAuthenticated,
       products,
       removeCartItem,
@@ -298,19 +284,17 @@ export default {
   }
 }
 .cart-summary {
-  font-weight: var(--font-weight--medium);
   margin-top: var(--spacer-xl);
 }
 .my-cart {
   flex: 1;
   display: flex;
   flex-direction: column;
-
   &__total-items {
     margin: 0;
   }
   &__total-price {
-    --price-font-size: var(--font-size--lg);
+    --price-font-size: var(--font-size--xl);
     --price-font-weight: var(--font-weight--medium);
     margin: 0 0 var(--spacer-base) 0;
   }
@@ -346,10 +330,7 @@ export default {
 .collected-product-list {
   flex: 1;
 }
-
 .collected-product {
-  border: 1px solid var(--c-gray-outline);
-  border-radius: 2px;
   margin: 0 0 var(--spacer-sm) 0;
   --image-height: auto;
   --collected-product-image-background: #fff;
@@ -360,37 +341,18 @@ export default {
     }
   }
   &__properties {
+    margin: var(--spacer-xs) 0 0 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: flex-start;
     flex: 2;
     &:first-child {
       margin-bottom: 8px;
     }
-    .sf-property {
-      --property-name-color: #333333;
-      --property-value-color: #8f8f8f;
-      margin: 0 0 var(--spacer-sm) 0;
-      &__name,
-      &__value {
-        font-size: 15px;
-        font-weight: normal;
-      }
-    }
   }
   &__actions {
     display: none;
-  }
-  &__remove-button {
-    position: absolute;
-    right: 9px;
-    top: 16px;
-
-    .delete-icon {
-      &:hover {
-        --icon-color: var(--c-primary) !important;
-      }
-    }
   }
   &__save,
   &__compare {
@@ -411,10 +373,10 @@ export default {
     --cp-compare-opacity: 1;
     @include for-desktop {
       --collected-product-configuration-display: flex;
+      .collected-product__properties {
+        display: none;
+      }
     }
-  }
-  &__title {
-    font-weight: 600;
   }
 }
 
@@ -424,16 +386,8 @@ export default {
   align-items: flex-end;
 
   & .sf-button {
-    --button-background: transparent;
-    --button-box-shadow: none;
-    --button-padding: 0;
-    --button-font-weight: var(--font-weight--normal);
-    --button-text-transform: none;
-    color: #8f8f8f;
-    font-size: 15px;
-    &:hover {
-      color: var(--c-primary);
-    }
+    font-size: var(--font-size--xs);
+    padding: var(--spacer-xs) var(--spacer-sm);
   }
 }
 

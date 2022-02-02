@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ValidationObserver v-slot="{ handleSubmit }" key="forgotten-password">
+    <ValidationObserver v-slot="{ handleSubmit }" key="forgoteen-password">
       <form
         data-cy="svsf-forgottenPasswordPopUp-form"
         class="form"
@@ -13,7 +13,7 @@
             :valid="!errors[0] && forgottenErrors.form.length === 0"
             :errorMessage="errors[0]"
             name="email"
-            :label="$t('email')"
+            :label="$t('Your email')"
             class="form__element"
             required
           />

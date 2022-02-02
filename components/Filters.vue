@@ -191,6 +191,8 @@ export default {
 };
 </script>
 <style lang="scss">
+@import '~@storefront-ui/vue/styles';
+
 .filters {
   &__title {
     --heading-title-font-size: var(--font-size--xl);

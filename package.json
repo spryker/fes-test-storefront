@@ -1,50 +1,36 @@
 {
   "name": "@spryker-vsf/theme",
-  "version": "0.5.0-dev.13",
+  "version": "0.5.0-dev.15",
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build -m --standalone",
+    "build": "nuxt build -m",
     "build:analyze": "nuxt build -a -m",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "jest",
-    "prettier": "prettier --write \"**/*.{js,ts,css,s?css,html,vue,json,ya?ml}\""
+    "test": "jest"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.2.1",
-    "@spryker-oryx/experience": "file:./assets/prepublished-packages/spryker-oryx-experience-0.0.1.tgz",
-    "@spryker-oryx/injector": "file:./assets/prepublished-packages/spryker-oryx-injector-0.0.1.tgz",
-    "@spryker-oryx/vsf": "file:./assets/prepublished-packages/spryker-oryx-vsf-0.0.2.tgz",
-    "@spryker-vsf/api": "file:./assets/prepublished-packages/spryker-vsf-api-0.6.0-dev.6.tgz",
+    "@spryker-vsf/api": "^0.6.0-dev.5",
     "@spryker-vsf/catalog-search-suggestions": "^0.2.0-dev.2",
-    "@spryker-vsf/composables": "file:./assets/prepublished-packages/spryker-vsf-composables-0.6.0-dev.7.tgz",
+    "@spryker-vsf/composables": "^0.6.0-dev.6",
     "@spryker-vsf/oidc": "^0.2.0-dev.0",
     "@spryker-vsf/oidc-client": "^0.2.0-dev.5",
     "@storefront-ui/vue": "~0.10.5",
     "@vue-storefront/core": "~2.3.4",
     "@vue-storefront/middleware": "~2.3.4",
     "@vue-storefront/nuxt": "~2.3.4",
-    "@vue-storefront/nuxt-theme": "~2.3.4",
     "cookie-universal-nuxt": "^2.1.5",
     "core-js": "^2.6.12",
-    "cypress": "^9.2.1",
-    "dotenv": "^10.0.0",
     "nuxt": "~2.14.12",
     "nuxt-i18n": "^6.28.1",
-    "nuxt-start": "~2.14.12",
-    "rxjs": "~7.4.0",
-    "serverless-http": "^2.7.0",
     "vee-validate": "^3.4.14",
-    "vue-scrollto": "^2.20.0",
-    "xmlhttprequest": "^1.8.0"
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
-    "@netlify/functions": "^0.11.0",
     "@nuxt/types": "~2.14.12",
-    "@nuxt/typescript-build": "2.0.4",
-    "fse": "^4.0.1",
-    "prettier": "^2.5.1"
+    "@nuxt/typescript-build": "2.0.4"
   },
   "resolutions": {
     "@babel/preset-env": "7.12.13"

@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-dev.15](https://github.com/spryker/vsf-monorepo/compare/@spryker-vsf/theme@0.5.0-dev.14...@spryker-vsf/theme@0.5.0-dev.15) (2022-01-24)
+
+
+### Bug Fixes
+
+* **theme:** fix store ([c4d5cb7](https://github.com/spryker/vsf-monorepo/commit/c4d5cb72bc7f357e4cf6caae550be05e95e9730e))
+
+
+
+
+
+# [0.5.0-dev.14](https://github.com/spryker/vsf-monorepo/compare/@spryker-vsf/theme@0.5.0-dev.13...@spryker-vsf/theme@0.5.0-dev.14) (2022-01-24)
+
+
+### Bug Fixes
+
+* **composables:** add tokens storage fallback ([d7622cd](https://github.com/spryker/vsf-monorepo/commit/d7622cd6339707020733b4b77f104367abe99c20))
+* **theme:** add token storage config ([c9d7867](https://github.com/spryker/vsf-monorepo/commit/c9d7867981691a2a111c6aa67c84b32d64c6098d))
+
+
+
+
+
 # [0.5.0-dev.13](https://github.com/spryker/vsf-monorepo/compare/@spryker-vsf/theme@0.5.0-dev.12...@spryker-vsf/theme@0.5.0-dev.13) (2022-01-06)
 
 

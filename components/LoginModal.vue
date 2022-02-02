@@ -50,8 +50,7 @@
             <div v-if="error.login">
               {{ error.login }}
             </div>
-            <SfButton
-              v-e2e="'login-modal-submit'"
+            <SfButton v-e2e="'login-modal-submit'"
               type="submit"
               class="sf-button--full-width form__button"
               :disabled="loading"
@@ -70,17 +69,13 @@
         <div class="bottom">
           <p class="bottom__paragraph">{{ $t('No account') }}</p>
           <SfButton class="sf-button--text" @click="setIsLoginValue(false)">
-            {{ $t('register') }}
+            {{ $t('Register today') }}
           </SfButton>
         </div>
       </div>
       <div v-else class="form">
         <ValidationObserver v-slot="{ handleSubmit }" key="sign-up">
-          <form
-            class="form"
-            @submit.prevent="handleSubmit(handleRegister)"
-            autocomplete="off"
-          >
+          <form class="form" @submit.prevent="handleSubmit(handleRegister)" autocomplete="off">
             <ValidationProvider rules="required|email" v-slot="{ errors }">
               <SfInput
                 v-e2e="'login-modal-email'"
@@ -126,10 +121,7 @@
                 class="form__element"
               />
             </ValidationProvider>
-            <ValidationProvider
-              :rules="{ required: { allowFalse: false } }"
-              v-slot="{ errors }"
-            >
+            <ValidationProvider :rules="{ required: { allowFalse: false } }" v-slot="{ errors }">
               <SfCheckbox
                 v-e2e="'login-modal-create-account'"
                 v-model="createAccount"
@@ -157,11 +149,7 @@
         </ValidationObserver>
         <div class="action">
           {{ $t('or') }}
-          <SfButton
-            v-e2e="'login-modal-login-to-your-account'"
-            class="sf-button--text"
-            @click="setIsLoginValue(true)"
-          >
+          <SfButton v-e2e="'login-modal-login-to-your-account'" class="sf-button--text" @click="setIsLoginValue(true)">
             {{ $t('login in to your account') }}
           </SfButton>
         </div>
@@ -169,18 +157,9 @@
     </transition>
   </SfModal>
 </template>
-
 <script>
 import { ref, watch, reactive } from '@vue/composition-api';
-import {
-  SfModal,
-  SfInput,
-  SfButton,
-  SfCheckbox,
-  SfLoader,
-  SfAlert,
-  SfBar,
-} from '@storefront-ui/vue';
+import { SfModal, SfInput, SfButton, SfCheckbox, SfLoader, SfAlert, SfBar } from '@storefront-ui/vue';
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
 import { required, email } from 'vee-validate/dist/rules';
 import { useUser } from '@spryker-vsf/composables';
@@ -188,12 +167,12 @@ import { useUiState } from '~/composables';
 
 extend('email', {
   ...email,
-  message: 'Invalid email',
+  message: 'Invalid email'
 });
 
 extend('required', {
   ...required,
-  message: 'This field is required',
+  message: 'This field is required'
 });
 
 export default {
@@ -207,7 +186,7 @@ export default {
     SfAlert,
     ValidationProvider,
     ValidationObserver,
-    SfBar,
+    SfBar
   },
   setup() {
     const { isLoginModalOpen, toggleLoginModal } = useUiState();
@@ -219,7 +198,7 @@ export default {
 
     const error = reactive({
       login: null,
-      register: null,
+      register: null
     });
 
     const resetErrorValues = () => {
@@ -268,13 +247,18 @@ export default {
       toggleLoginModal,
       handleLogin,
       handleRegister,
-      setIsLoginValue,
+      setIsLoginValue
     };
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+
+.modal {
+  --modal-index: 3;
+  --overlay-z-index: 3;
+}
 .form {
   margin-top: var(--spacer-sm);
   &__element {
@@ -286,8 +270,7 @@ export default {
   align-items: center;
   justify-content: center;
   margin: var(--spacer-xl) 0 var(--spacer-xl) 0;
-  font: var(--font-weight--light) var(--font-size--base) / 1.6
-    var(--font-family--secondary);
+  font: var(--font-weight--light) var(--font-size--base) / 1.6 var(--font-family--secondary);
   & > * {
     margin: 0 0 0 var(--spacer-xs);
   }

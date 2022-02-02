@@ -1,5 +1,5 @@
 <template>
-  <div class="personal-details">
+  <div>
     <div class="log-in desktop-only">
       <SfButton
         data-cy="svsf-checkoutPersonalDetailsSection-sign-button"
@@ -89,7 +89,7 @@
           <SfInput
             data-cy="svsf-checkoutPersonalDetailsSection-email-input"
             v-model="personalDetails.email"
-            :label="$t('email')"
+            :label="$t('Your email')"
             name="email"
             :valid="!errors[0]"
             :errorMessage="errors[0]"
@@ -199,7 +199,7 @@ export default {
         { description: 'Faster checkout', icon: 'clock' },
         { description: 'Full rewards program benefits', icon: 'rewards' },
         { description: 'Earn credits with every purchase', icon: 'credits' },
-        { description: 'Manage your wishlist', icon: 'heart' },
+        { description: 'Manage your wishliste', icon: 'heart' },
       ],
       salutations,
       toggleModal,
@@ -210,7 +210,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'assets/fields';
 .title {
   margin: var(--spacer-xl) 0 var(--spacer-base) 0;
 }
@@ -338,15 +337,6 @@ export default {
   }
   &__button {
     margin: var(--spacer-2xl) 0 0 0;
-  }
-}
-</style>
-<style lang="scss">
-@import 'assets/fields';
-
-.personal-details {
-  .form {
-    @extend %fields;
   }
 }
 </style>

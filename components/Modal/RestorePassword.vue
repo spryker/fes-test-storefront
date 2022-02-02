@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ValidationObserver v-slot="{ handleSubmit }" key="forgotten-password">
+    <ValidationObserver v-slot="{ handleSubmit }" key="forgoteen-password">
       <form
         data-cy="svsf-restorePasswordPopUp-form"
         class="form"
@@ -81,8 +81,13 @@ export default {
     ValidationObserver,
   },
   setup() {
-    const { restore, restored, error, loading, cancel } =
-      useUserPasswordRestore();
+    const {
+      restore,
+      restored,
+      error,
+      loading,
+      cancel,
+    } = useUserPasswordRestore();
     const { toggleRestorePasswordLogin, toggleLogin } = useModalState();
 
     const form = ref({});

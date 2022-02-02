@@ -84,8 +84,9 @@ export default {
     };
 
     const setData = (provider) => {
-      selectedMethod.value =
-        shippingProviderGetters.getSelectedMethod(provider);
+      selectedMethod.value = shippingProviderGetters.getSelectedMethod(
+        provider,
+      );
 
       shippingMethods.value = shippingProviderGetters.getMethods(provider);
     };
