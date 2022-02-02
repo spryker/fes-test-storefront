@@ -1,32 +1,36 @@
 const serverless = require('serverless-http');
 const { Nuxt } = require('nuxt-start');
 const config = require('../../nuxt.config');
+const { builder } = require('@netlify/functions');
 
-exports.handler = async function (event, ctx, callback) {
-  const nuxt = new Nuxt({
-    ...config,
-    dev: false,
-    _start: true,
-  });
+function createNuxtHandler(nuxtConfig) {
+    const nuxt = new Nuxt({
+        ...config,
+        dev: false,
+        _start: true,
+    });
 
-  let server = null;
+    let server = null;
+    return async (event, ctx) => {
+        if (!server) {
+            await nuxt?.ready();
+            server = serverless(nuxt.server.app);
+        }
 
-  if (!server) {
-    await nuxt?.ready();
-    server = serverless(nuxt.server.app);
-  }
+        const result = await server(event, ctx);
+        // const cacheValue = event.queryStringParameters.ebPreview
+        //   ? 'no-cache'
+        //   : 'public, max-age=31536000';
+        //
+        // return {
+        //   ...result,
+        //   headers: {
+        //     ...result.headers,
+        //     'Cache-Control': cacheValue,
+        //   },
+        // };
+        return result;
+    };
+}
 
-  const result = await server(event, ctx, callback);
-
-  const cacheValue = event.queryStringParameters.ebPreview
-    ? 'no-cache'
-    : 'public, max-age=31536000';
-
-  return {
-    ...result,
-    headers: {
-      ...result.headers,
-      'Cache-Control': cacheValue,
-    },
-  };
-};
+exports.handler = builder(createNuxtHandler(config));

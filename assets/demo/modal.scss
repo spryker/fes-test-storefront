@@ -1,0 +1,75 @@
+@import "../fields";
+
+.modal {
+  &__demo-styles {
+    .sf-modal__container {
+      width: fit-content;
+    }
+
+    .sf-modal__content {
+      padding: 0;
+
+      .form {
+        @extend %fields;
+
+        &__login {
+          .form__element {
+            .sf-input__wrapper,
+            .sf-select__dropdown {
+              width: 345px;
+            }
+          }
+        }
+
+        &__registration {
+          .form__element {
+            .sf-input__wrapper,
+            .sf-select__dropdown {
+              width: 530px;
+            }
+          }
+
+          .name-inputs {
+            .form__element {
+              .sf-input__wrapper,
+              .sf-select__dropdown {
+                width: 255px;
+              }
+            }
+          }
+        }
+
+        &__element {
+          margin-bottom: var(--spacer-base);
+        }
+
+        &__button {
+          text-transform: none;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        padding: 20px;
+      }
+    }
+
+    .text {
+      &-green {
+        color: var(--c-primary);
+      }
+
+      &-grey {
+        color: #b2b2b2;
+      }
+
+      &-no-decoration {
+        text-decoration: none;
+      }
+    }
+  }
+}

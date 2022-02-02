@@ -2,7 +2,7 @@
   <SfModal
     data-cy="svsf-modal-popUp"
     :visible="isModalOpen"
-    class="modal"
+    :class="{ modal: true, 'modal__demo-styles': isLogin || isRegistration }"
     @close="toggleModal"
   >
     <template #modal-bar>
@@ -10,7 +10,7 @@
         data-cy="svsf-modal-mobile-bar"
         class="sf-modal__bar smartphone-only"
         :close="true"
-        :title="isLogin ? $t('Log in') : $t('Sign in')"
+        :title="isLogin ? $t('Login') : $t('Sign in')"
         @click:close="toggleModal"
       />
     </template>

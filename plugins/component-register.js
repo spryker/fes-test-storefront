@@ -1,4 +1,5 @@
 import { registerComponent } from '@spryker-oryx/vsf';
+import { mapping } from '../customizations/custom-mapping';
 
 export default () => {
   registerComponent('ProductsList', {
@@ -30,4 +31,5 @@ export default () => {
     webComponentScript: '/webcomponents/banner.bundled.js',
     name: 'oryx-banner',
   });
+  Object.keys(mapping).forEach(item => registerComponent(item, mapping[item]));
 };
