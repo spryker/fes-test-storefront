@@ -174,9 +174,6 @@ export default {
   build: {
     transpile: ['vee-validate/dist/rules'],
   },
-  test: {
-    some: 'value',
-  },
   router: {
     middleware: ['checkout'],
     extendRoutes(routes) {
