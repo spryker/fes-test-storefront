@@ -1,6 +1,3 @@
-import webpack from 'webpack';
-import path from 'path';
-
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
       name: currency,
@@ -164,34 +161,6 @@ export default {
   },
   build: {
     transpile: ['vee-validate/dist/rules'],
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.VERSION': JSON.stringify({
-          // eslint-disable-next-line global-require
-          version: require(process.env.PACKAGE_PATH_FOR_NUXT_CONFIG ||
-            './package.json').version,
-          lastCommit: process.env.LAST_COMMIT || '',
-        }),
-      }),
-    ],
-    extend(config) {
-      config.resolve.alias['@storefront-ui/vue/styles'] = path.resolve(
-        __dirname,
-        './storefrontUI/components/css/_all.scss',
-      );
-      config.resolve.alias['@storefront-ui/shared/styles'] = path.resolve(
-        __dirname,
-        './storefrontUI/styles/styles',
-      );
-      config.resolve.alias['@storefront-ui/vue/src'] = path.resolve(
-        __dirname,
-        './storefrontUI/components',
-      );
-      config.resolve.alias['@storefront-ui/vue'] = path.resolve(
-        __dirname,
-        './storefrontUI/components',
-      );
-    },
   },
   router: {
     middleware: ['checkout'],
