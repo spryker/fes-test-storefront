@@ -12,7 +12,9 @@ NODE_VERSION = "14"
   included_files = [
     ".nuxt/**",
     "node_modules/@storefront-ui/**",
-    "serverMiddleware/**"
+    "serverMiddleware/**",
+    "nuxt.config.js",
+    "package.json"
     ]
 
 [[redirects]]

@@ -201,15 +201,27 @@ const config = {
 };
 
 function createNuxtHandler(nuxtConfig) {
-  const nuxt = new Nuxt({
-    ...nuxtConfig,
-    dev: false,
-    _start: true,
-  });
 
   let server = null;
   return async (event, ctx) => {
+
     if (!server) {
+
+      const nuxtConfig = await import('../../nuxt.config.js');
+
+      console.log('we have config', nuxtConfig);
+
+      const nuxt = new Nuxt({
+        ...nuxtConfig,
+        dev: false,
+        _start: true,
+        modules: ['vue-scrollto/nuxt', 'nuxt-i18n', 'cookie-universal-nuxt'],
+        publicRuntimeConfig: {
+          middlewareUrl: process.env.URL,
+          ...nuxtConfig.publicRuntimeConfig
+        }
+      });
+
       await nuxt?.ready();
       server = serverless(nuxt.server.app);
     }
