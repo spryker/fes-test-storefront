@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const netlifyUrl = process.env.URL;
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
       name: currency,
@@ -129,13 +130,13 @@ module.exports = {
     ],
   ],
   modules: [
-    ...(!process.env.URL ? ['@vue-storefront/middleware/nuxt'] : []),
+    ...(!netlifyUrl ? ['@vue-storefront/middleware/nuxt'] : []),
     'vue-scrollto/nuxt',
     'nuxt-i18n',
     'cookie-universal-nuxt',
   ],
   publicRuntimeConfig: {
-    ...(process.env.URL ? { middlewareUrl: process.env.URL } : {}),
+    ...(netlifyUrl ? { middlewareUrl: netlifyUrl } : {}),
     spryker: {
       contentBackendUrl:
         process.env.CONTENT_BACKEND_URL ||
@@ -177,15 +178,6 @@ module.exports = {
   },
   build: {
     transpile: ['vee-validate/dist/rules'],
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.VERSION': JSON.stringify({
-          // eslint-disable-next-line global-require
-          version: '0.5.0-dev.13',
-          lastCommit: process.env.LAST_COMMIT || '',
-        }),
-      }),
-    ],
     extend(config) {
       config.resolve.alias['@storefront-ui/vue/styles'] = path.resolve(
         __dirname,
