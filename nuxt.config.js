@@ -1,6 +1,7 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
+const path = require('path');
 
+const netlifyUrl = process.env.URL;
 const currencies = process.env.CURRENCIES
   ? process.env.CURRENCIES.split(',').map((currency) => ({
       name: currency,
@@ -8,7 +9,7 @@ const currencies = process.env.CURRENCIES
     }))
   : ['USD'];
 
-export default {
+module.exports = {
   head: {
     title: 'Spryker VSF',
     meta: [
@@ -23,8 +24,21 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'crossorigin',
+      },
+      {
+        rel: 'preload',
+        href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        as: 'style',
+      },
+      {
         rel: 'stylesheet',
-        href: '/fonts.css',
+        href: 'https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700|Roboto:300,300i,400,400i,500,700&display=swap',
+        media: 'print',
+        onload: "this.media='all'",
+        once: true,
       },
     ],
   },
@@ -116,13 +130,13 @@ export default {
     ],
   ],
   modules: [
-    '@vue-storefront/middleware/nuxt',
+    ...(!netlifyUrl ? ['@vue-storefront/middleware/nuxt'] : []),
     'vue-scrollto/nuxt',
     'nuxt-i18n',
     'cookie-universal-nuxt',
   ],
   publicRuntimeConfig: {
-    // middlewareUrl: 'http://localhost:8181',
+    ...(netlifyUrl ? { middlewareUrl: netlifyUrl } : {}),
     spryker: {
       contentBackendUrl:
         process.env.CONTENT_BACKEND_URL ||
@@ -164,16 +178,6 @@ export default {
   },
   build: {
     transpile: ['vee-validate/dist/rules'],
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.VERSION': JSON.stringify({
-          // eslint-disable-next-line global-require
-          version: require(process.env.PACKAGE_PATH_FOR_NUXT_CONFIG ||
-            './package.json').version,
-          lastCommit: process.env.LAST_COMMIT || '',
-        }),
-      }),
-    ],
     extend(config) {
       config.resolve.alias['@storefront-ui/vue/styles'] = path.resolve(
         __dirname,
