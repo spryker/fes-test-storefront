@@ -42,27 +42,6 @@
             </h3>
           </SfLink>
         </slot>
-        <!--@slot Use this slot to replace description-->
-        <slot name="description">
-          <p class="sf-product-card-horizontal__description desktop-only">
-            {{ description }}
-          </p>
-        </slot>
-        <!--@slot Use this slot to place content inside configuration-->
-        <div class="sf-product-card-horizontal__configuration">
-          <slot name="configuration" />
-        </div>
-      </div>
-      <div class="sf-product-card-horizontal__actions-wrapper">
-        <!--@slot Use this slot to replace price-->
-        <slot name="price" v-bind="{ specialPrice, regularPrice }">
-          <SfPrice
-            v-if="regularPrice"
-            class="sf-product-card-horizontal__price"
-            :regular="regularPrice"
-            :special="specialPrice"
-          />
-        </slot>
         <!--@slot Use this slot to replace reviews-->
         <slot name="reviews" v-bind="{ maxRating, scoreRating }">
           <div
@@ -85,6 +64,27 @@
             </SfButton>
           </div>
         </slot>
+        <!--@slot Use this slot to replace description-->
+        <slot name="description">
+          <p class="sf-product-card-horizontal__description desktop-only">
+            {{ description }}
+          </p>
+        </slot>
+        <!--@slot Use this slot to place content inside configuration-->
+        <div class="sf-product-card-horizontal__configuration">
+          <slot name="configuration" />
+        </div>
+      </div>
+      <div class="sf-product-card-horizontal__actions-wrapper">
+        <!--@slot Use this slot to replace price-->
+        <slot name="price" v-bind="{ specialPrice, regularPrice }">
+          <SfPrice
+            v-if="regularPrice"
+            class="sf-product-card-horizontal__price"
+            :regular="regularPrice"
+            :special="specialPrice"
+          />
+        </slot>
         <div class="sf-product-card-horizontal__actions">
           <!--@slot Use this slot to place content inside actions-->
           <slot name="actions" />
@@ -94,6 +94,7 @@
           <slot name="add-to-cart">
             <SfAddToCart
               :qty="qty"
+              :hide-qty="true"
               class="sf-product-card-horizontal__add-to-cart desktop-only"
               @input="$emit('input', $event)"
               @click="$emit('click:add-to-cart')"

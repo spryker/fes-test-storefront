@@ -2,6 +2,7 @@
   <div class="sf-add-to-cart">
     <slot name="quantity-select-input" v-bind="{ qty }">
       <SfQuantitySelector
+        v-if="!hideQty"
         :qty="qty"
         aria-label="Quantity"
         :disabled="disabled"
@@ -48,6 +49,9 @@ export default {
     qty: {
       type: [Number, String],
       default: 1,
+    },
+    hideQty: {
+      type: Boolean,
     },
   },
 };
