@@ -48,7 +48,7 @@ export default {
   email: 'Email',
   'Forgotten password?': 'Passwort vergessen?',
   'No account': `Sie haben noch keinen Account?`,
-  new_account: 'Neu bei Spryker B2B?',
+  new_account: 'Neu bei Spryker B2C?',
   register: 'Registrieren',
   'Go to checkout': 'Zur Kasse gehen',
   'Go back shopping': 'Zurück einkaufen',
