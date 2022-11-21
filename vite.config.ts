@@ -1,13 +1,9 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(() => {
   return {
     root: './src',
-    build: {
-      outDir: './dist',
-      emptyOutDir: true,
-      sourcemap: true,
-    },
     envDir: '../',
+    envPrefix: ['FES', 'SCOS', 'STORE'],
   };
 });
