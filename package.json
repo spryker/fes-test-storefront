@@ -4,37 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite -c vite.config.ts"
+    "dev": "vite -c vite.config.ts",
+    "build": "vite build"
   },
   "dependencies": {
-    "@lit-labs/router": "^0.1.1",
-    "@spryker-oryx/auth": "^0.1.0-next.0",
-    "@spryker-oryx/cart": "^0.1.0-next.0",
-    "@spryker-oryx/checkout": "^0.1.0-next.0",
-    "@spryker-oryx/content": "^0.1.0-next.0",
-    "@spryker-oryx/core": "^0.1.0-next.0",
-    "@spryker-oryx/experience": "^0.1.0-next.0",
-    "@spryker-oryx/form": "^0.1.0-next.0",
-    "@spryker-oryx/i18n": "^0.1.0-next.0",
-    "@spryker-oryx/injector": "^0.1.0-next.0",
-    "@spryker-oryx/presets": "^0.1.0-next.0",
-    "@spryker-oryx/product": "^0.1.0-next.0",
-    "@spryker-oryx/search": "^0.1.0-next.0",
-    "@spryker-oryx/site": "^0.1.0-next.0",
-    "@spryker-oryx/storefront": "^0.1.0-next.0",
-    "@spryker-oryx/themes": "^0.1.0-next.0",
-    "@spryker-oryx/ui": "^0.1.0-next.0",
-    "@spryker-oryx/user": "^0.1.0-next.0",
-    "@spryker-oryx/utilities": "^0.1.0-next.0",
-    "@webcomponents/template-shadowroot": "^0.1.0",
-    "abort-controller": "^3.0.0",
-    "cldr-data": "^36.0.1",
-    "css-convert-json": "^1.1.0",
-    "jsonapi-serializer": "^3.6.7",
-    "lit": "^2.4.1",
-    "rxjs": "^7.5.7",
-    "tslib": "^2.4.1",
-    "urlpattern-polyfill": "^6.0.2"
+    "@spryker-oryx/presets": "^0.1.0-next.0"
   },
   "devDependencies": {
     "vite": "^3.0.9"
