@@ -6,9 +6,9 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@spryker-oryx/presets": "^0.1.0-next.0"
+    "@spryker-oryx/presets": "^1.0.0-alpha.0"
   },
   "devDependencies": {
-    "vite": "^3.0.9"
+    "vite": "^3.0.0"
   }
 }
