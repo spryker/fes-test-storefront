@@ -3,7 +3,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite -c vite.config.ts",
-    "build": "vite build"
+    "dev:ssr": "node --experimental-modules --experimental-specifier-resolution=node server/server",
+    "build": "vite build",
+    "build:ssr": "vite build && vite build -c vite.config.server.ts"
   },
   "dependencies": {
     "@spryker-oryx/presets": "^1.0.0-alpha.0"
