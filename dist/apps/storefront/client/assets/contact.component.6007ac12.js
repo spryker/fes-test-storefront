@@ -1,0 +1,4 @@
+import{r as o,y as s,aj as a}from"./index.53aa1d0b.js";import{C as i}from"./component.mixin.c08d8cd0.js";import{i as c}from"./i18n.directive.67a5825a.js";import{e as n,n as m}from"./ref.04429eb5.js";class d extends i(){constructor(){super(...arguments),this.checkoutDataService=o(a),this.formRef=n()}getFormElement(){var e,t;return(t=(e=this.formRef.value)==null?void 0:e.getForm)==null?void 0:t.call(e)}submit(e=!1){const t=this.getFormElement();if(!(t!=null&&t.checkValidity()))return e?t==null||t.reportValidity():this.checkoutDataService.setAddressDetails(null),!1;const r=Object.fromEntries(new FormData(t).entries());return this.checkoutDataService.setContactDetails(r),!0}render(){return s`
+      <p>${c("checkout.contact-details")}</p>
+      <user-contact-form ${m(this.formRef)}></user-contact-form>
+    `}}export{d as CheckoutContactComponent};

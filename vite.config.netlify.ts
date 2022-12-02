@@ -10,7 +10,7 @@ export default defineConfig({
       fileName: 'index',
     },
     emptyOutDir: true,
-    outDir: '../dist/functions/ssr',
+    outDir: '../dist/apps/storefront/functions/ssr',
     rollupOptions: {
       external: [
         'fs',
