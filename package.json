@@ -13,8 +13,5 @@
     "@netlify/functions": "1.0.0",
     "vite": "3.0.9",
     "vite-plugin-static-copy": "^0.12.0"
-  },
-  "dependencies": {
-    "@spryker-oryx/presets": "^1.0.0-alpha.0"
   }
 }
