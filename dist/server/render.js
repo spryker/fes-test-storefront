@@ -30401,8 +30401,12 @@ var storefront = (function (exports) {
         componentsProvider$6,
         {
             provide: 'SCOS_BASE_URL',
-            useFactory: () => getEnvVariable('SCOS_BASE_URL'),
+            useFactory: () => {
+                console.log("SCOS_BASE_URL", globalThis.customEnv);
+                return getEnvVariable('SCOS_BASE_URL');
+            },
         },
+            
         {
             provide: 'STORE',
             useFactory: () => getEnvVariable('STORE'),
@@ -44584,10 +44588,11 @@ var storefront = (function (exports) {
     };
 
     console.log("appBuilder");
-    const app = appBuilder().withFeature(b2cFeatures).withTheme(storefrontTheme);
+    const app = appBuilder().withFeature(b2cFeatures).withTheme(storefrontTheme).create();
+
+    console.log("appBuilder");
     const render = (config) => {
       globalThis.customEnv = {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true};
-      app.create();
       return renderApp(
         {
           ...config,
@@ -62089,7 +62094,6 @@ c1,1,2.5,1,3.5,0l4.8-4.8l4.8,4.8c1,1,2.5,1,3.5,0c1-1,1-2.5,0-3.4L15.5,12l4.8-4.8
         storefrontTokens
     }, Symbol.toStringTag, { value: 'Module' }));
 
-    exports.app = app;
     exports.render = render;
 
     Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: 'Module' } });
