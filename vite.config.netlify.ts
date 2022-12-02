@@ -22,6 +22,7 @@ export default defineConfig({
         'express',
         /^@netlify/,
         'util',
+        /^@lit-labs/,
       ],
     },
   },
