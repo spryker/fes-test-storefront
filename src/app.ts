@@ -7,4 +7,5 @@ console.log('appBuilder');
 export const app = appBuilder()
   .withFeature(b2cFeatures)
   .withTheme(storefrontTheme)
+  .withEnvironment(import.meta.env)
   .create();
