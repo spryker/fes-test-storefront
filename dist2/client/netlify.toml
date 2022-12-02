@@ -1,3 +1,6 @@
+[[plugins]]
+package = "netlify-plugin-debug-cache"
+
 [[redirects]]
   from = "/"
   status = 200
