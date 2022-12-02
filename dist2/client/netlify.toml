@@ -1,6 +1,9 @@
 [[plugins]]
 package = "netlify-plugin-debug-cache"
 
+[functions]
+  node_bundler = "esbuild"
+
 [[redirects]]
   from = "/"
   status = 200

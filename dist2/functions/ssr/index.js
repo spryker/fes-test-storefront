@@ -163,7 +163,7 @@ const storefrontHandler = async (event, context) => {
       entry = '../../server/render.js',
     } = context;
     const originalUrl = new URL(event.rawUrl);
-    const basePath = dirname(fileURLToPath(root));
+    const basePath = dirname(fileURLToPath(import.meta.url));
     const test = getDirectories(resolve(basePath, '../../../dist/client'));
     return {
       statusCode: 200,
