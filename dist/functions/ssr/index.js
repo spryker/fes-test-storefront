@@ -195,7 +195,7 @@ const storefrontHandler = async (event, context) => {
         'Content-Type': 'text/html',
         ...event.headers,
       },
-      body: `${basePath}, ${template}`,
+      body: `${basePath}, ${resolve(basePath, index)}`,
     };
   } catch (e) {
     console.error(e);
