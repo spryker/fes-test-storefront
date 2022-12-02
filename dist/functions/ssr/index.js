@@ -1,5 +1,5 @@
 import { builder as S } from '@netlify/functions';
-import { readFileSync as f } from 'fs';
+import { readFileSync as p } from 'fs';
 import { createRequire as R } from 'module';
 import { dirname as w, resolve as b } from 'path';
 import { fileURLToPath as g } from 'url';
@@ -70,10 +70,10 @@ const y = ({ includeJSBuiltIns: n = !1, props: s = {} }) => {
         this.__definitions = /* @__PURE__ */ new Map();
       }
       define(e, r) {
-        var p;
+        var f;
         this.__definitions.set(e, {
           ctor: r,
-          observedAttributes: (p = r.observedAttributes) != null ? p : [],
+          observedAttributes: (f = r.observedAttributes) != null ? f : [],
         });
       }
       get(e) {
@@ -159,7 +159,7 @@ const A = (n) => {
       });
     a.setTimeout = setTimeout;
     const u = new T(`
-    ${f(b(c, s), 'utf8')};
+    ${p(b(c, s), 'utf8')};
     (() => ${i}.render)();
   `);
     return v(a), u.runInContext(a);
@@ -174,7 +174,7 @@ const A = (n) => {
         } = s,
         u = new URL(n.rawUrl),
         d = w(g(o)),
-        m = f(b(d, i), 'utf8'),
+        m = p(b(d, i), 'utf8'),
         l = await A({
           root: o,
           entry: a,
@@ -201,7 +201,7 @@ const A = (n) => {
   P = S((n, s) =>
     C(n, {
       ...s,
-      root: 'file:///var/task/dist/apps/storefront/functions/ssr/index.js',
+      root: 'file:///var/task/dist/functions/ssr/index.js',
       index: '../../client/index.html',
       entry: '../../server/render.js',
       component: '<root-app></root-app>',

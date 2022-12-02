@@ -5,7 +5,7 @@ export default defineConfig({
   envDir: '../',
   envPrefix: ['FES', 'SCOS', 'STORE'],
   build: {
-    outDir: '../dist/apps/storefront/client',
+    outDir: '../dist/client',
     emptyOutDir: true,
   },
 });

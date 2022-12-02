@@ -12,7 +12,7 @@ export default defineConfig({
       name: 'storefront',
     },
     emptyOutDir: true,
-    outDir: '../dist/apps/storefront/server',
+    outDir: '../dist/server',
     ssr: '../server/render.ts',
   },
   ssr: {
