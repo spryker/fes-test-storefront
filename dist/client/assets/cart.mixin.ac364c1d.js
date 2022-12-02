@@ -1,0 +1,1 @@
+import{_ as o,v as e,g as n}from"./index.7349b146.js";import{C as r}from"./component.mixin.6a3f9f94.js";const s=()=>{class t extends r(){}return o([e({type:String}),n("design:type",String)],t.prototype,"cartId",void 0),t};export{s as C};
