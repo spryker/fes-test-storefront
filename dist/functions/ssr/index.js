@@ -183,10 +183,10 @@ const storefrontHandler = async (event, context) => {
     const originalUrl = new URL(event.rawUrl);
     const basePath = dirname(fileURLToPath(root));
     const template = readFileSync(resolve(basePath, index), 'utf8');
-    const render = serverContext({
-      root,
-      entry,
-    });
+    // const render = serverContext({
+    //   root,
+    //   entry,
+    // });
     // const appHtml = await render({ route: originalUrl });
     // const html = template.replace(component, appHtml);
     return {
@@ -195,7 +195,7 @@ const storefrontHandler = async (event, context) => {
         'Content-Type': 'text/html',
         ...event.headers,
       },
-      body: `${basePath}, ${resolve(basePath, index)}`,
+      body: `${template}`,
     };
   } catch (e) {
     console.error(e);
