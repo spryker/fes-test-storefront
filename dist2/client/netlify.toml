@@ -3,7 +3,6 @@ package = "netlify-plugin-debug-cache"
 
 [functions]
   node_bundler = "esbuild"
-  included_files = ["dist/**"]
 
 [[redirects]]
   from = "/"
