@@ -9572,10 +9572,6 @@ var storefront = (function (exports) {
     }
     Injectable.GlobalKey = Symbol.for('FES.Injectable');
 
-    function getEnvVariable(key) {
-        return {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.[key] ?? globalThis.customEnv?.[key] ?? '';
-    }
-
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function getPropByPath(value, path, delimiter = '.') {
         const paths = path.split(delimiter);
@@ -17961,7 +17957,7 @@ var storefront = (function (exports) {
         componentsProvider$8,
         {
             provide: ContentBackendUrl,
-            useFactory: () => getEnvVariable('FES_CONTENT_BACKEND_URL'),
+            useValue: {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.FES_CONTENT_BACKEND_URL || '',
         },
         {
             provide: ExperienceService,
@@ -30401,15 +30397,11 @@ var storefront = (function (exports) {
         componentsProvider$6,
         {
             provide: 'SCOS_BASE_URL',
-            useFactory: () => {
-                console.log("SCOS_BASE_URL", globalThis.customEnv);
-                return getEnvVariable('SCOS_BASE_URL');
-            },
+            useValue: {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.SCOS_BASE_URL || '',
         },
-            
         {
             provide: 'STORE',
-            useFactory: () => getEnvVariable('STORE'),
+            useValue: {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.STORE || '',
         },
         {
             provide: SemanticLinkService,
@@ -42389,6 +42381,8 @@ var storefront = (function (exports) {
             if (localeId in this.globalizeCaches) {
                 return this.globalizeCaches[localeId];
             }
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             return (this.globalizeCaches[localeId] = Globalize(localeId));
         }
         async init() {
