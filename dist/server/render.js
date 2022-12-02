@@ -16705,6 +16705,7 @@ var storefront = (function (exports) {
     const asyncValue = e$7(AsyncValueDirective);
 
     const AppRef = 'FES.AppRef';
+    const AppEnvironment$1 = 'FES.Environment';
     function isAppPluginBeforeApply(plugin) {
         return (typeof plugin.beforeApply ===
             'function');
@@ -17412,6 +17413,10 @@ var storefront = (function (exports) {
             this.themes.push(...(Array.isArray(theme) ? theme : [theme]));
             return this;
         }
+        withEnvironment(env) {
+            this.withProviders([{ provide: AppEnvironment$1, useValue: env }]);
+            return this;
+        }
         async create() {
             if (this.providers.length) {
                 this.plugins.unshift(new InjectionPlugin(this.providers, this.options?.injector));
@@ -17957,7 +17962,10 @@ var storefront = (function (exports) {
         componentsProvider$8,
         {
             provide: ContentBackendUrl,
-            useValue: 'http://localhost:3013',
+            useFactory: () => 
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            inject(AppEnvironment, Object.create(null)).FES_CONTENT_BACKEND_URL,
         },
         {
             provide: ExperienceService,
@@ -30397,11 +30405,15 @@ var storefront = (function (exports) {
         componentsProvider$6,
         {
             provide: 'SCOS_BASE_URL',
-            useValue: 'https://glue.de.faas-suite-prod.cloud.spryker.toys',
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            useFactory: () => inject(AppEnvironment, Object.create(null)).SCOS_BASE_URL,
         },
         {
             provide: 'STORE',
-            useValue: 'DE',
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            useFactory: () => inject(AppEnvironment, Object.create(null)).STORE,
         },
         {
             provide: SemanticLinkService,
@@ -42381,8 +42393,6 @@ var storefront = (function (exports) {
             if (localeId in this.globalizeCaches) {
                 return this.globalizeCaches[localeId];
             }
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             return (this.globalizeCaches[localeId] = Globalize(localeId));
         }
         async init() {
@@ -42559,9 +42569,9 @@ var storefront = (function (exports) {
             this.processor = processor;
         }
         translate(token, context) {
-            return this.processor
+            return ssrAwaiter(this.processor
                 .interpolate(token, this.normalizeContext(context))
-                .pipe(cjs.shareReplay({ refCount: true, bufferSize: 1 }));
+                .pipe(cjs.shareReplay({ refCount: true, bufferSize: 1 })));
         }
         normalizeContext(context) {
             return cjs.isObservable(context) ? context : cjs.of(context);
@@ -44582,7 +44592,7 @@ var storefront = (function (exports) {
     };
 
     console.log("appBuilder");
-    const app = appBuilder().withFeature(b2cFeatures).withTheme(storefrontTheme).create();
+    const app = appBuilder().withFeature(b2cFeatures).withTheme(storefrontTheme).withEnvironment({"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}).create();
 
     const render = (config) => {
       return renderApp(
@@ -60426,7 +60436,7 @@ var storefront = (function (exports) {
         __metadata("design:type", Object)
     ], AddressListComponent.prototype, "handle$", void 0);
     AddressListComponent = __decorate([
-        hydratable(['mouseover', 'focusin'])
+        hydratable('window:load')
     ], AddressListComponent);
 
     const addressList_component = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({

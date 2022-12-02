@@ -11,7 +11,7 @@ export default defineConfig({
       fileName: 'index',
     },
     emptyOutDir: true,
-    outDir: '../dist2/functions/ssr',
+    outDir: '../dist/functions/ssr',
     rollupOptions: {
       external: [
         'fs',
