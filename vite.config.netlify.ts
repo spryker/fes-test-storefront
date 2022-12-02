@@ -4,6 +4,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 export default defineConfig({
   root: './src',
   build: {
+    minify: false,
     lib: {
       entry: '../server/hosting/netlify.ts',
       formats: ['es'],

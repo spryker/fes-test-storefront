@@ -1,187 +1,193 @@
-import { builder as w } from '@netlify/functions';
-import { readdirSync as b } from 'fs';
+import { builder } from '@netlify/functions';
+import { readdirSync } from 'fs';
 import 'module';
-import { dirname as g, resolve as y } from 'path';
-import { fileURLToPath as S } from 'url';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
 import 'vm';
 /**
  * @license
  * Copyright 2019 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const R = ({ includeJSBuiltIns: s = !1, props: n = {} }) => {
-    const a = /* @__PURE__ */ new WeakMap(),
-      r = (t) => {
-        let e = a.get(t);
-        return e || a.set(t, (e = /* @__PURE__ */ new Map())), e;
-      };
-    class i {}
-    class h extends i {
-      constructor() {
-        super(...arguments), (this._shadowRoot = null);
-      }
-      get attributes() {
-        return Array.from(r(this)).map(([e, o]) => ({
-          name: e,
-          value: o,
-        }));
-      }
-      get shadowRoot() {
-        return this._shadowRoot;
-      }
-      setAttribute(e, o) {
-        r(this).set(e, String(o));
-      }
-      removeAttribute(e) {
-        r(this).delete(e);
-      }
-      hasAttribute(e) {
-        return r(this).has(e);
-      }
-      attachShadow(e) {
-        const o = { host: this };
-        return e && e.mode === 'open' && (this._shadowRoot = o), o;
-      }
-      getAttribute(e) {
-        const o = r(this).get(e);
-        return o === void 0 ? null : o;
-      }
+const getWindow = ({ includeJSBuiltIns = false, props = {} }) => {
+  const attributes = /* @__PURE__ */ new WeakMap();
+  const attributesForElement = (element) => {
+    let attrs = attributes.get(element);
+    if (!attrs) {
+      attributes.set(element, (attrs = /* @__PURE__ */ new Map()));
     }
-    class m {}
-    class d {
-      get adoptedStyleSheets() {
-        return [];
-      }
-      createTreeWalker() {
-        return {};
-      }
-      createTextNode() {
-        return {};
-      }
-      createElement() {
-        return {};
-      }
-    }
-    class u {
-      replace() {}
-    }
-    class l {
-      constructor() {
-        this.__definitions = /* @__PURE__ */ new Map();
-      }
-      define(e, o) {
-        var f;
-        this.__definitions.set(e, {
-          ctor: o,
-          observedAttributes: (f = o.observedAttributes) != null ? f : [],
-        });
-      }
-      get(e) {
-        const o = this.__definitions.get(e);
-        return o && o.ctor;
-      }
-    }
-    const c = {
-      Element: i,
-      HTMLElement: h,
-      Document: d,
-      document: new d(),
-      CSSStyleSheet: u,
-      ShadowRoot: m,
-      CustomElementRegistry: l,
-      customElements: new l(),
-      btoa(t) {
-        return Buffer.from(t, 'binary').toString('base64');
-      },
-      location: new URL('http://localhost'),
-      MutationObserver: class {
-        observe() {}
-      },
-      requestAnimationFrame() {},
-      window: void 0,
-      ...n,
-    };
-    return (
-      (c.window = c),
-      s &&
-        Object.assign(c, {
-          setTimeout() {},
-          clearTimeout() {},
-          Buffer,
-          URL,
-          URLSearchParams,
-          console: {
-            log(...t) {
-              console.log(...t);
-            },
-            info(...t) {
-              console.info(...t);
-            },
-            warn(...t) {
-              console.warn(...t);
-            },
-            debug(...t) {
-              console.debug(...t);
-            },
-            error(...t) {
-              console.error(...t);
-            },
-            assert(t, e) {
-              if (!t) throw new Error(e);
-            },
-          },
-        }),
-      c
-    );
-  },
-  T = (s = {}) => {
-    if (globalThis.window === void 0) {
-      const n = R({ props: s });
-      Object.assign(globalThis, n), (globalThis.window = globalThis);
-    }
+    return attrs;
   };
-T();
-const v = async (s, n) => {
-    const a = (r) =>
-      b(r, { withFileTypes: !0 })
-        .filter((i) => i.isDirectory())
-        .map((i) => i.name)
-        .join(',');
-    try {
-      const {
-          root: r = 'file:///var/task/dist/apps/storefront/functions/ssr/index.js',
-          index: i = '../../client/index.html',
-          component: h = '<root-app></root-app>',
-          entry: m = '../../server/render.js',
-        } = n,
-        d = new URL(s.rawUrl),
-        u = g(S(r)),
-        l = a(y(u, '../'));
-      return {
-        statusCode: 200,
-        headers: {
-          'Content-Type': 'text/html',
-          ...s.headers,
-        },
-        body: l,
-      };
-    } catch (r) {
-      return (
-        console.error(r),
-        {
-          statusCode: 500,
-          body: JSON.stringify({ error: r }),
-        }
-      );
+  class Element {}
+  class HTMLElement extends Element {
+    constructor() {
+      super(...arguments);
+      this._shadowRoot = null;
     }
-  },
-  C = w((s, n) =>
-    v(s, {
-      ...n,
-      root: 'file:///var/task/dist/functions/ssr/index.js',
-      index: '../../client/index.html',
-      entry: '../../server/render.js',
-      component: '<root-app></root-app>',
-    }),
-  );
-export { C as handler };
+    get attributes() {
+      return Array.from(attributesForElement(this)).map(([name, value]) => ({
+        name,
+        value,
+      }));
+    }
+    get shadowRoot() {
+      return this._shadowRoot;
+    }
+    setAttribute(name, value) {
+      attributesForElement(this).set(name, String(value));
+    }
+    removeAttribute(name) {
+      attributesForElement(this).delete(name);
+    }
+    hasAttribute(name) {
+      return attributesForElement(this).has(name);
+    }
+    attachShadow(init) {
+      const shadowRoot = { host: this };
+      if (init && init.mode === 'open') {
+        this._shadowRoot = shadowRoot;
+      }
+      return shadowRoot;
+    }
+    getAttribute(name) {
+      const value = attributesForElement(this).get(name);
+      return value === void 0 ? null : value;
+    }
+  }
+  class ShadowRoot {}
+  class Document {
+    get adoptedStyleSheets() {
+      return [];
+    }
+    createTreeWalker() {
+      return {};
+    }
+    createTextNode() {
+      return {};
+    }
+    createElement() {
+      return {};
+    }
+  }
+  class CSSStyleSheet {
+    replace() {}
+  }
+  class CustomElementRegistry {
+    constructor() {
+      this.__definitions = /* @__PURE__ */ new Map();
+    }
+    define(name, ctor) {
+      var _a;
+      this.__definitions.set(name, {
+        ctor,
+        observedAttributes: (_a = ctor.observedAttributes) != null ? _a : [],
+      });
+    }
+    get(name) {
+      const definition = this.__definitions.get(name);
+      return definition && definition.ctor;
+    }
+  }
+  const window = {
+    Element,
+    HTMLElement,
+    Document,
+    document: new Document(),
+    CSSStyleSheet,
+    ShadowRoot,
+    CustomElementRegistry,
+    customElements: new CustomElementRegistry(),
+    btoa(s) {
+      return Buffer.from(s, 'binary').toString('base64');
+    },
+    location: new URL('http://localhost'),
+    MutationObserver: class {
+      observe() {}
+    },
+    requestAnimationFrame() {},
+    window: void 0,
+    ...props,
+  };
+  window.window = window;
+  if (includeJSBuiltIns) {
+    Object.assign(window, {
+      setTimeout() {},
+      clearTimeout() {},
+      Buffer,
+      URL,
+      URLSearchParams,
+      console: {
+        log(...args) {
+          console.log(...args);
+        },
+        info(...args) {
+          console.info(...args);
+        },
+        warn(...args) {
+          console.warn(...args);
+        },
+        debug(...args) {
+          console.debug(...args);
+        },
+        error(...args) {
+          console.error(...args);
+        },
+        assert(bool, msg) {
+          if (!bool) {
+            throw new Error(msg);
+          }
+        },
+      },
+    });
+  }
+  return window;
+};
+const installWindowOnGlobal = (props = {}) => {
+  if (globalThis.window === void 0) {
+    const window = getWindow({ props });
+    Object.assign(globalThis, window);
+    globalThis.window = globalThis;
+  }
+};
+installWindowOnGlobal();
+const storefrontHandler = async (event, context) => {
+  const getDirectories = (source) =>
+    readdirSync(source, { withFileTypes: true })
+      .map((dirent) => dirent.name)
+      .join(',');
+  try {
+    const {
+      root = 'file:///var/task/dist/apps/storefront/functions/ssr/index.js',
+      index = '../../client/index.html',
+      component = '<root-app></root-app>',
+      entry = '../../server/render.js',
+    } = context;
+    const originalUrl = new URL(event.rawUrl);
+    const basePath = dirname(fileURLToPath(root));
+    const test = getDirectories(resolve(basePath, '../../'));
+    return {
+      statusCode: 200,
+      headers: {
+        'Content-Type': 'text/html',
+        ...event.headers,
+      },
+      body: test,
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: e }),
+    };
+  }
+};
+const handler = builder((event, context) =>
+  storefrontHandler(event, {
+    ...context,
+    root: 'file:///var/task/dist/functions/ssr/index.js',
+    index: '../../client/index.html',
+    entry: '../../server/render.js',
+    component: '<root-app></root-app>',
+  }),
+);
+export { handler };
