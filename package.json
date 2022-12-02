@@ -11,8 +11,8 @@
   },
   "devDependencies": {
     "@netlify/functions": "^1.3.0",
+    "node-fetch": "^3.2.10",
     "vite": "^3.0.0",
-    "vite-plugin-static-copy": "^0.12.0",
-    "node-fetch": "^3.2.10"
+    "vite-plugin-static-copy": "^0.12.0"
   }
 }

@@ -9572,6 +9572,11 @@ var storefront = (function (exports) {
     }
     Injectable.GlobalKey = Symbol.for('FES.Injectable');
 
+    function getEnvVariable(key) {
+        console.log(globalThis.customEnv);
+        return {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.[key] ?? globalThis.customEnv?.[key] ?? '';
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function getPropByPath(value, path, delimiter = '.') {
         const paths = path.split(delimiter);
@@ -17333,6 +17338,7 @@ var storefront = (function (exports) {
             return this;
         }
         async create() {
+            console.log('create');
             const app = this.createApp();
             await this.forEveryPlugin((plugin) => {
                 app.registerPlugin(plugin);
@@ -17957,7 +17963,7 @@ var storefront = (function (exports) {
         componentsProvider$8,
         {
             provide: ContentBackendUrl,
-            useValue: {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.FES_CONTENT_BACKEND_URL || '',
+            useFactory: () => getEnvVariable('FES_CONTENT_BACKEND_URL'),
         },
         {
             provide: ExperienceService,
@@ -29429,6 +29435,7 @@ var storefront = (function (exports) {
     // organize-imports-ignore
     let orchestrator;
     const renderApp = async (config, app) => {
+        console.log('renderApp');
         if (!orchestrator) {
             orchestrator = await app;
         }
@@ -30397,11 +30404,14 @@ var storefront = (function (exports) {
         componentsProvider$6,
         {
             provide: 'SCOS_BASE_URL',
-            useValue: {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.SCOS_BASE_URL || '',
+            useFactory: () => {
+                console.log('we here');
+                return getEnvVariable('SCOS_BASE_URL');
+            },
         },
         {
             provide: 'STORE',
-            useValue: {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.STORE || '',
+            useFactory: () => getEnvVariable('STORE'),
         },
         {
             provide: SemanticLinkService,
@@ -42381,8 +42391,6 @@ var storefront = (function (exports) {
             if (localeId in this.globalizeCaches) {
                 return this.globalizeCaches[localeId];
             }
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             return (this.globalizeCaches[localeId] = Globalize(localeId));
         }
         async init() {
@@ -44581,15 +44589,19 @@ var storefront = (function (exports) {
         designTokens: () => Promise.resolve().then(() => index).then((s) => s.storefrontTokens),
     };
 
-    const app = appBuilder().withFeature(b2cFeatures).withTheme(storefrontTheme).create();
-
-    const render = (config) => renderApp(
-      {
-        ...config,
-        element: y`<root-app></root-app>`
-      },
-      app
-    );
+    console.log("appBuilder");
+    const app = appBuilder().withFeature(b2cFeatures).withTheme(storefrontTheme);
+    const render = (config) => {
+      globalThis.customEnv = {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true};
+      app.create();
+      return renderApp(
+        {
+          ...config,
+          element: y`<root-app></root-app>`
+        },
+        app
+      );
+    };
 
     const styles$s = i$7 `
   :host {
@@ -62083,6 +62095,7 @@ c1,1,2.5,1,3.5,0l4.8-4.8l4.8,4.8c1,1,2.5,1,3.5,0c1-1,1-2.5,0-3.4L15.5,12l4.8-4.8
         storefrontTokens
     }, Symbol.toStringTag, { value: 'Module' }));
 
+    exports.app = app;
     exports.render = render;
 
     Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: 'Module' } });
