@@ -195,7 +195,7 @@ const storefrontHandler = async (event, context) => {
         'Content-Type': 'text/html',
         ...event.headers,
       },
-      body: html,
+      body: `appHtml ${appHtml}`,
     };
   } catch (e) {
     console.error(e);
