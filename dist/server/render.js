@@ -9573,7 +9573,6 @@ var storefront = (function (exports) {
     Injectable.GlobalKey = Symbol.for('FES.Injectable');
 
     function getEnvVariable(key) {
-        console.log(globalThis.customEnv);
         return {"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}?.[key] ?? globalThis.customEnv?.[key] ?? '';
     }
 
@@ -17338,7 +17337,6 @@ var storefront = (function (exports) {
             return this;
         }
         async create() {
-            console.log('create');
             const app = this.createApp();
             await this.forEveryPlugin((plugin) => {
                 app.registerPlugin(plugin);
@@ -29435,7 +29433,6 @@ var storefront = (function (exports) {
     // organize-imports-ignore
     let orchestrator;
     const renderApp = async (config, app) => {
-        console.log('renderApp');
         if (!orchestrator) {
             orchestrator = await app;
         }
@@ -30404,10 +30401,7 @@ var storefront = (function (exports) {
         componentsProvider$6,
         {
             provide: 'SCOS_BASE_URL',
-            useFactory: () => {
-                console.log('we here');
-                return getEnvVariable('SCOS_BASE_URL');
-            },
+            useFactory: () => getEnvVariable('SCOS_BASE_URL'),
         },
         {
             provide: 'STORE',
