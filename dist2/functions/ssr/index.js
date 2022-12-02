@@ -164,7 +164,7 @@ const storefrontHandler = async (event, context) => {
     } = context;
     const originalUrl = new URL(event.rawUrl);
     const basePath = dirname(fileURLToPath(root));
-    const test = getDirectories(resolve(basePath, '../../../dist/client'));
+    const test = getDirectories(resolve(basePath, '../../../../'));
     return {
       statusCode: 200,
       headers: {
