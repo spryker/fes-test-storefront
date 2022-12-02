@@ -187,7 +187,7 @@ const storefrontHandler = async (event, context) => {
       root,
       entry,
     });
-    const appHtml = await render({ route: originalUrl });
+    // const appHtml = await render({ route: originalUrl });
     // const html = template.replace(component, appHtml);
     return {
       statusCode: 200,
@@ -195,7 +195,7 @@ const storefrontHandler = async (event, context) => {
         'Content-Type': 'text/html',
         ...event.headers,
       },
-      body: appHtml,
+      body: `${basePath}, ${template}`,
     };
   } catch (e) {
     console.error(e);
