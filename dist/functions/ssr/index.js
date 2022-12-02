@@ -1,53 +1,53 @@
-import { builder as S } from '@netlify/functions';
-import { readFileSync as p } from 'fs';
-import { createRequire as R } from 'module';
-import { dirname as w, resolve as b } from 'path';
-import { fileURLToPath as g } from 'url';
-import { Script as T, createContext as v } from 'vm';
+import { builder as w } from '@netlify/functions';
+import { readdirSync as b } from 'fs';
+import 'module';
+import { dirname as g, resolve as y } from 'path';
+import { fileURLToPath as S } from 'url';
+import 'vm';
 /**
  * @license
  * Copyright 2019 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const y = ({ includeJSBuiltIns: n = !1, props: s = {} }) => {
-    const o = /* @__PURE__ */ new WeakMap(),
-      i = (t) => {
-        let e = o.get(t);
-        return e || o.set(t, (e = /* @__PURE__ */ new Map())), e;
+const R = ({ includeJSBuiltIns: s = !1, props: n = {} }) => {
+    const a = /* @__PURE__ */ new WeakMap(),
+      r = (t) => {
+        let e = a.get(t);
+        return e || a.set(t, (e = /* @__PURE__ */ new Map())), e;
       };
-    class c {}
-    class a extends c {
+    class i {}
+    class h extends i {
       constructor() {
         super(...arguments), (this._shadowRoot = null);
       }
       get attributes() {
-        return Array.from(i(this)).map(([e, r]) => ({
+        return Array.from(r(this)).map(([e, o]) => ({
           name: e,
-          value: r,
+          value: o,
         }));
       }
       get shadowRoot() {
         return this._shadowRoot;
       }
-      setAttribute(e, r) {
-        i(this).set(e, String(r));
+      setAttribute(e, o) {
+        r(this).set(e, String(o));
       }
       removeAttribute(e) {
-        i(this).delete(e);
+        r(this).delete(e);
       }
       hasAttribute(e) {
-        return i(this).has(e);
+        return r(this).has(e);
       }
       attachShadow(e) {
-        const r = { host: this };
-        return e && e.mode === 'open' && (this._shadowRoot = r), r;
+        const o = { host: this };
+        return e && e.mode === 'open' && (this._shadowRoot = o), o;
       }
       getAttribute(e) {
-        const r = i(this).get(e);
-        return r === void 0 ? null : r;
+        const o = r(this).get(e);
+        return o === void 0 ? null : o;
       }
     }
-    class u {}
+    class m {}
     class d {
       get adoptedStyleSheets() {
         return [];
@@ -62,34 +62,34 @@ const y = ({ includeJSBuiltIns: n = !1, props: s = {} }) => {
         return {};
       }
     }
-    class m {
+    class u {
       replace() {}
     }
-    class h {
+    class l {
       constructor() {
         this.__definitions = /* @__PURE__ */ new Map();
       }
-      define(e, r) {
+      define(e, o) {
         var f;
         this.__definitions.set(e, {
-          ctor: r,
-          observedAttributes: (f = r.observedAttributes) != null ? f : [],
+          ctor: o,
+          observedAttributes: (f = o.observedAttributes) != null ? f : [],
         });
       }
       get(e) {
-        const r = this.__definitions.get(e);
-        return r && r.ctor;
+        const o = this.__definitions.get(e);
+        return o && o.ctor;
       }
     }
-    const l = {
-      Element: c,
-      HTMLElement: a,
+    const c = {
+      Element: i,
+      HTMLElement: h,
       Document: d,
       document: new d(),
-      CSSStyleSheet: m,
-      ShadowRoot: u,
-      CustomElementRegistry: h,
-      customElements: new h(),
+      CSSStyleSheet: u,
+      ShadowRoot: m,
+      CustomElementRegistry: l,
+      customElements: new l(),
       btoa(t) {
         return Buffer.from(t, 'binary').toString('base64');
       },
@@ -99,12 +99,12 @@ const y = ({ includeJSBuiltIns: n = !1, props: s = {} }) => {
       },
       requestAnimationFrame() {},
       window: void 0,
-      ...s,
+      ...n,
     };
     return (
-      (l.window = l),
-      n &&
-        Object.assign(l, {
+      (c.window = c),
+      s &&
+        Object.assign(c, {
           setTimeout() {},
           clearTimeout() {},
           Buffer,
@@ -131,80 +131,57 @@ const y = ({ includeJSBuiltIns: n = !1, props: s = {} }) => {
             },
           },
         }),
-      l
+      c
     );
   },
-  _ = (n = {}) => {
+  T = (s = {}) => {
     if (globalThis.window === void 0) {
-      const s = y({ props: n });
-      Object.assign(globalThis, s), (globalThis.window = globalThis);
+      const n = R({ props: s });
+      Object.assign(globalThis, n), (globalThis.window = globalThis);
     }
   };
-_();
-const A = (n) => {
-    const {
-        entry: s,
-        root: o = import.meta.url,
-        namespace: i = 'storefront',
-      } = n,
-      c = w(g(o)),
-      a = y({
-        includeJSBuiltIns: !0,
-        props: {
-          require: R(o),
-          Event,
-          process,
-          exports: {},
-        },
-      });
-    a.setTimeout = setTimeout;
-    const u = new T(`
-    ${p(b(c, s), 'utf8')};
-    (() => ${i}.render)();
-  `);
-    return v(a), u.runInContext(a);
-  },
-  C = async (n, s) => {
+T();
+const v = async (s, n) => {
+    const a = (r) =>
+      b(r, { withFileTypes: !0 })
+        .filter((i) => i.isDirectory())
+        .map((i) => i.name)
+        .join(',');
     try {
       const {
-          root: o = 'file:///var/task/dist/apps/storefront/functions/ssr/index.js',
+          root: r = 'file:///var/task/dist/apps/storefront/functions/ssr/index.js',
           index: i = '../../client/index.html',
-          component: c = '<root-app></root-app>',
-          entry: a = '../../server/render.js',
-        } = s,
-        u = new URL(n.rawUrl),
-        d = w(g(o)),
-        m = p(b(d, i), 'utf8'),
-        l = await A({
-          root: o,
-          entry: a,
-        })({ route: u }),
-        t = m.replace(c, l);
+          component: h = '<root-app></root-app>',
+          entry: m = '../../server/render.js',
+        } = n,
+        d = new URL(s.rawUrl),
+        u = g(S(r)),
+        l = a(y(u, '../'));
       return {
         statusCode: 200,
         headers: {
           'Content-Type': 'text/html',
-          ...n.headers,
+          ...s.headers,
         },
-        body: t,
+        body: l,
       };
-    } catch (o) {
+    } catch (r) {
       return (
-        console.error(o),
+        console.error(r),
         {
           statusCode: 500,
-          body: JSON.stringify({ error: o }),
+          body: JSON.stringify({ error: r }),
         }
       );
     }
   },
-  P = S((n, s) =>
-    C(n, {
-      ...s,
+  C = w((s, n) =>
+    v(s, {
+      ...n,
       root: 'file:///var/task/dist/functions/ssr/index.js',
       index: '../../client/index.html',
       entry: '../../server/render.js',
       component: '<root-app></root-app>',
     }),
   );
-export { P as handler };
+export { C as handler };
