@@ -181,7 +181,7 @@ const storefrontHandler = async (event, context) => {
       entry = '../../server/render.js',
     } = context;
     const originalUrl = new URL(event.rawUrl);
-    const basePath = dirname(fileURLToPath(import.meta.url));
+    const basePath = dirname(fileURLToPath(root));
     const template = readFileSync(resolve(basePath, index), 'utf8');
     const render = serverContext({
       root,
