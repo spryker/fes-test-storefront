@@ -1,2 +1,0 @@
-import{_ as e,v as o,g as p,d as n}from"./index.d896b0c8.js";const i=()=>{class t extends n{}return e([o(),p("design:type",String)],t.prototype,"uid",void 0),e([o({type:Object,reflect:!0}),p("design:type",Object)],t.prototype,"content",void 0),e([o({type:Object,reflect:!0}),p("design:type",Object)],t.prototype,"options",void 0),t};export{i as C};
-//# sourceMappingURL=component.mixin.09051c71.js.map

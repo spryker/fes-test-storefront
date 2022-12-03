@@ -44583,7 +44583,7 @@ var storefront = (function (exports) {
         designTokens: () => Promise.resolve().then(() => index).then((s) => s.storefrontTokens),
     };
 
-    const app = appBuilder().withEnvironment({"SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","FES_CONTENT_BACKEND_URL":"http://localhost:3013","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}).withFeature(b2cFeatures).withTheme(storefrontTheme).create();
+    const app = appBuilder().withEnvironment({"FES_CONTENT_BACKEND_URL":"https://test-experience-builder.netlify.app/.netlify/functions/server","SCOS_BASE_URL":"https://glue.de.faas-suite-prod.cloud.spryker.toys","STORE":"DE","BASE_URL":"/","MODE":"production","DEV":false,"PROD":true}).withFeature(b2cFeatures).withTheme(storefrontTheme).create();
 
     const render = (config) => renderApp(
       {
