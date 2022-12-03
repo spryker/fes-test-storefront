@@ -18105,131 +18105,6 @@ var storefront = (function (exports) {
 
     /**
      * @license
-     * Copyright 2020 Google LLC
-     * SPDX-License-Identifier: BSD-3-Clause
-     */
-    // This isn't ideal. Setting .innerHTML is not compatible with some
-    // TrustedTypes CSP policies. Discussion at:
-    //     https://github.com/mfreed7/declarative-shadow-dom/issues/3
-    let hasNative;
-    function hasNativeDeclarativeShadowRoots() {
-        if (hasNative === undefined) {
-            const div = document.createElement('div');
-            div.innerHTML = `<div><template shadowroot="open"></template></div>`;
-            hasNative = !!div.firstElementChild.shadowRoot;
-        }
-        return hasNative;
-    }
-
-    /**
-     * @license
-     * Copyright 2019 Google LLC
-     * SPDX-License-Identifier: BSD-3-Clause
-     */
-    const hasNoParentElement = (e) => e.parentElement === null;
-    const isTemplate = (e) => e.tagName === 'TEMPLATE';
-    const isElement$1 = (e) => e.nodeType === Node.ELEMENT_NODE;
-
-    /**
-     * @license
-     * Copyright 2019 Google LLC
-     * SPDX-License-Identifier: BSD-3-Clause
-     */
-    /*
-     * Traverses the DOM to find all <template> elements with a `shadowroot`
-     * attribute and move their content into a ShadowRoot on their parent element.
-     *
-     * This processing is done bottom up so that when top-level <template>
-     * elements are hydrated, their contents are already hydrated and in the
-     * final correct structure of elements and shadow roots.
-     */
-    const hydrateShadowRoots = (root) => {
-        var _a;
-        if (hasNativeDeclarativeShadowRoots()) {
-            return; // nothing to do
-        }
-        // Approaches to try and benchmark:
-        //  - manual walk (current implementation)
-        //  - querySelectorAll
-        //  - TreeWalker
-        // Stack of nested templates that we're currently processing. Use to
-        // remember how to get from a <template>.content DocumentFragment back to
-        // its owner <template>
-        const templateStack = [];
-        let currentNode = root.firstElementChild;
-        // The outer loop traverses down, looking for <template shadowroot>
-        // elements. The inner loop traverses back up, hydrating them in a postorder
-        // traversal.
-        while (currentNode !== root && currentNode !== null) {
-            if (isTemplate(currentNode)) {
-                templateStack.push(currentNode);
-                currentNode = currentNode.content;
-            }
-            else if (currentNode.firstElementChild !== null) {
-                // Traverse down
-                currentNode = currentNode.firstElementChild;
-            }
-            else if (isElement$1(currentNode) && currentNode.nextElementSibling !== null) {
-                // Element is empty, but has a next sibling. Traverse that.
-                currentNode = currentNode.nextElementSibling;
-            }
-            else {
-                // Element is empty and the last child. Traverse to next aunt/grandaunt.
-                // Store templates we hydrate for one loop so that we can remove them
-                // *after* traversing to their successor.
-                let template;
-                while (currentNode !== root && currentNode !== null) {
-                    if (hasNoParentElement(currentNode)) {
-                        // We must be at a <template>'s content fragment.
-                        template = templateStack.pop();
-                        const host = template.parentElement;
-                        const mode = template.getAttribute('shadowroot');
-                        currentNode = template;
-                        if (mode === 'open' || mode === 'closed') {
-                            const delegatesFocus = template.hasAttribute('shadowrootdelegatesfocus');
-                            try {
-                                const shadow = host.attachShadow({ mode, delegatesFocus });
-                                shadow.append(template.content);
-                            }
-                            catch {
-                                // there was already a shadow root.
-                                // TODO(rictic): log an error event?
-                            }
-                        }
-                        else {
-                            template = undefined;
-                        }
-                    }
-                    else {
-                        const nextSibling = currentNode.nextElementSibling;
-                        if (nextSibling != null) {
-                            currentNode = nextSibling;
-                            if (template !== undefined) {
-                                template.parentElement.removeChild(template);
-                            }
-                            break;
-                        }
-                        const nextAunt = (_a = currentNode.parentElement) === null || _a === void 0 ? void 0 : _a.nextElementSibling;
-                        if (nextAunt != null) {
-                            currentNode = nextAunt;
-                            if (template !== undefined) {
-                                template.parentElement.removeChild(template);
-                            }
-                            break;
-                        }
-                        currentNode = currentNode.parentElement;
-                        if (template !== undefined) {
-                            template.parentElement.removeChild(template);
-                            template = undefined;
-                        }
-                    }
-                }
-            }
-        }
-    };
-
-    /**
-     * @license
      * Copyright 2019 Google LLC
      * SPDX-License-Identifier: BSD-3-Clause
      */const{R:i$3,D:a,V:s$1,I:c$1,F:d}=L,f=(e,t,r={})=>{if(void 0!==t._$litPart$)throw Error("container already contains a live render");let n,o;const l=[],i=document.createTreeWalker(t,NodeFilter.SHOW_COMMENT,null,!1);let a;for(;null!==(a=i.nextNode());){const t=a.data;if(t.startsWith("lit-part")){if(0===l.length&&void 0!==n)throw Error("there must be only one root part per container");o=p(e,a,l,r),null!=n||(n=o);}else if(t.startsWith("lit-node"))h$1(a,l,r);else if(t.startsWith("/lit-part")){if(1===l.length&&o!==n)throw Error("internal error");o=u$1(a,o,l);}}console.assert(void 0!==n,"there should be exactly one root part in a render container"),t._$litPart$=n;},p=(t,r,l,d)=>{let f,p;if(0===l.length)p=new c$1(r,null,void 0,d),f=t;else {const e=l[l.length-1];if("template-instance"===e.type)p=new c$1(r,null,e.instance,d),e.instance.u.push(p),f=e.result.values[e.instancePartIndex++],e.templatePartIndex++;else if("iterable"===e.type){p=new c$1(r,null,e.part,d);const t=e.iterator.next();if(t.done)throw f=void 0,e.done=!0,Error("Unhandled shorter than expected iterable");f=t.value,e.part._$AH.push(p);}else p=new c$1(r,null,e.part,d);}if(f=s$1(p,f),f===T)l.push({part:p,type:"leaf"});else if(t$2(f))l.push({part:p,type:"leaf"}),p._$AH=f;else if(n$6(f)){const e="lit-part "+m(f);if(r.data!==e)throw Error("Hydration value mismatch: Unexpected TemplateResult rendered to part");{const e=c$1.prototype._$AC(f),t=new i$3(e,p);l.push({type:"template-instance",instance:t,part:p,templatePartIndex:0,instancePartIndex:0,result:f}),p._$AH=t;}}else a(f)?(l.push({part:p,type:"iterable",value:f,iterator:f[Symbol.iterator](),done:!1}),p._$AH=[]):(l.push({part:p,type:"leaf"}),p._$AH=null==f?"":f);return p},u$1=(e,t,r)=>{if(void 0===t)throw Error("unbalanced part marker");t._$AB=e;const n=r.pop();if("iterable"===n.type&&!n.iterator.next().done)throw Error("unexpected longer than expected iterable");if(r.length>0)return r[r.length-1].part},h$1=(e,t,n)=>{var o;const i=/lit-node (\d+)/.exec(e.data),a=parseInt(i[1]),c=null!==(o=e.previousElementSibling)&&void 0!==o?o:e.parentElement;if(null===c)throw Error("could not find node for attribute parts");c.removeAttribute("defer-hydration");const f=t[t.length-1];if("template-instance"!==f.type)throw Error("internal error");{const e=f.instance;for(;;){const t=e._$AD.parts[f.templatePartIndex];if(void 0===t||t.type!==t$3.ATTRIBUTE&&t.type!==t$3.ELEMENT||t.index!==a)break;if(t.type===t$3.ATTRIBUTE){const o=new t.ctor(c,t.name,t.strings,f.instance,n),i=e$4(o)?f.result.values[f.instancePartIndex]:f.result.values,a=!(o.type===t$3.EVENT||o.type===t$3.PROPERTY);o._$AI(i,o,f.instancePartIndex,a),f.instancePartIndex+=t.strings.length-1,e.u.push(o);}else {const t=new d(c,f.instance,n);s$1(t,f.result.values[f.instancePartIndex++]),e.u.push(t);}f.templatePartIndex++;}}},m=e=>{const t=new Uint32Array(2).fill(5381);for(const r of e.strings)for(let e=0;e<r.length;e++)t[e%2]=33*t[e%2]^r.charCodeAt(e);return btoa(String.fromCharCode(...new Uint8Array(t.buffer)))};
@@ -18240,37 +18115,6 @@ var storefront = (function (exports) {
      * SPDX-License-Identifier: BSD-3-Clause
      */
     globalThis.litElementHydrateSupport=({LitElement:s})=>{const e=Object.getOwnPropertyDescriptor(Object.getPrototypeOf(s),"observedAttributes").get;Object.defineProperty(s,"observedAttributes",{get(){return [...e.call(this),"defer-hydration"]}});const h=s.prototype.attributeChangedCallback;s.prototype.attributeChangedCallback=function(t,i,s){"defer-hydration"===t&&null===s&&n.call(this),h.call(this,t,i,s);};const n=s.prototype.connectedCallback;s.prototype.connectedCallback=function(){this.hasAttribute("defer-hydration")||n.call(this);};const o=s.prototype.createRenderRoot;s.prototype.createRenderRoot=function(){return this.shadowRoot?(this._$AG=!0,this.shadowRoot):o.call(this)};const r=Object.getPrototypeOf(s.prototype).update;s.prototype.update=function(s){const e=this.render();r.call(this,s),this._$AG?(this._$AG=!1,f(e,this.renderRoot,this.renderOptions)):W(e,this.renderRoot,this.renderOptions);};};
-
-    const RootPluginName = 'application$root';
-    class RootPlugin {
-        constructor() {
-            this.rootSelector = '';
-        }
-        getName() {
-            return RootPluginName;
-        }
-        beforeApply() {
-            try {
-                hydrateShadowRoots(document.body);
-            }
-            catch (e) {
-                console.log(e);
-            }
-            // This doesn't get called at the right time by lit-html, so we do it here
-            globalThis.litElementHydrateSupport?.({ LitElement: s$5 });
-        }
-        apply(app) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            this.rootSelector = app.findPlugin(ComponentsPlugin).rootSelector;
-            // TODO - remove when we have app initializers
-            resolve(ErrorService).initialize();
-            if (!document.querySelector(this.rootSelector)?.shadowRoot) {
-                resolve(RouterService).go(window.location.pathname);
-            }
-        }
-        afterApply() {
-        }
-    }
 
     const CURRENT_PAGE = 'currentPage';
     const PREVIOUS_PAGE = 'previousPage';
@@ -19672,7 +19516,7 @@ var storefront = (function (exports) {
     const applicationFeature = {
         providers: applicationProviders,
         components: applicationComponents,
-        plugins: [new RootPlugin()],
+        plugins: [] ,
         options: {
             components: {
                 preload: o$8,
