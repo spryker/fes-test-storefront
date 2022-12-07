@@ -5,7 +5,6 @@ export default defineConfig({
   envDir: '../',
   envPrefix: ['FES', 'SCOS', 'STORE'],
   build: {
-    target: 'esnext',
     lib: {
       entry: '../server/render.ts',
       formats: ['iife'],

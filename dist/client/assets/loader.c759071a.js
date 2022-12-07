@@ -4,4 +4,3 @@ const r=`
   <ellipse opacity="0.4" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 5.87224 13.0723)"/>
   <ellipse opacity="0.3" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 14.0695 19.125)"/>
 `;export{r as default};
-//# sourceMappingURL=loader.c759071a.js.map

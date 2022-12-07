@@ -16,4 +16,3 @@ const o=`
     <circle cx="12" cy="12" r="11.5" stroke="#55C3F0"/>
   </g>
 `;export{o as default};
-//# sourceMappingURL=freezer-category.abb40644.js.map

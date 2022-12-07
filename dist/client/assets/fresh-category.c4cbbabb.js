@@ -7,4 +7,3 @@ const o=`
     <circle cx="12" cy="12" r="11.5" stroke="#8EB826"/>
   </g>
 `;export{o as default};
-//# sourceMappingURL=fresh-category.c4cbbabb.js.map

@@ -6,4 +6,3 @@ const C=`
     <circle cx="12" cy="12" r="11.5" stroke="#FFC800"/>
   </g>
 `;export{C as default};
-//# sourceMappingURL=ambient-category.c67621e8.js.map
