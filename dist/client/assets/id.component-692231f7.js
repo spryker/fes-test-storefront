@@ -1,0 +1,3 @@
+import{j as e,at as t,f as n,_ as a,h as i}from"./index-4d2c92b7.js";import{C as p}from"./content.controller-33ee67c3.js";import{P as d}from"./product.controller-77c96ee5.js";import{P as m}from"./product.mixin-69145c94.js";import"./context.controller-abc20265.js";import"./component.mixin-6d7092a2.js";let o=class extends m(){constructor(){super(...arguments),this.product$=new d(this).getProduct(),this.options$=new p(this).getOptions(),this.data$=e([this.options$,this.product$])}render(){return t`
+      ${n(this.data$,([r,s])=>t`${r.prefix??"SKU"}: ${s?.sku}`)}
+    `}};o=a([i()],o);export{o as ProductIdComponent};

@@ -5,11 +5,6 @@ import { createRequire } from "module";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { Script, createContext } from "vm";
-/**
- * @license
- * Copyright 2019 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
 const getWindow = ({ includeJSBuiltIns = false, props = {} }) => {
   const attributes = /* @__PURE__ */ new WeakMap();
   const attributesForElement = (element) => {
@@ -81,10 +76,9 @@ const getWindow = ({ includeJSBuiltIns = false, props = {} }) => {
       this.__definitions = /* @__PURE__ */ new Map();
     }
     define(name, ctor) {
-      var _a;
       this.__definitions.set(name, {
         ctor,
-        observedAttributes: (_a = ctor.observedAttributes) != null ? _a : []
+        observedAttributes: ctor.observedAttributes ?? []
       });
     }
     get(name) {
