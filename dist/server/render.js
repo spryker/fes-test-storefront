@@ -10491,7 +10491,6 @@ var storefront = function(exports) {
       return Array.isArray(transformer) ? transformer : [transformer];
     }
   }
-  globalThis.global = globalThis;
   function camelize(str) {
     return str.toLowerCase().replace(/[^a-z]+(.)/g, (substring, chr) => chr.toUpperCase());
   }
@@ -13870,6 +13869,7 @@ var storefront = function(exports) {
     Error: error$2
   };
   const TransformerService = "FES.TransformerService";
+  Promise.resolve().then(() => jsonApi_shim);
   class DefaultJsonAPITransformerService {
     constructor(transformer = inject(TransformerService)) {
       this.transformer = transformer;
@@ -34576,6 +34576,10 @@ var storefront = function(exports) {
     },
     app
   );
+  globalThis.global = globalThis;
+  const jsonApi_shim = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null
+  }, Symbol.toStringTag, { value: "Module" }));
   const styles$s = i$7`
   :host {
     display: block;

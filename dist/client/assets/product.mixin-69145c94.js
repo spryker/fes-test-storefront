@@ -1,1 +1,0 @@
-import{_ as o,v as e,g as n}from"./index-4d2c92b7.js";import{C as p}from"./component.mixin-6d7092a2.js";const a=()=>{class t extends p(){}return o([e({type:String}),n("design:type",String)],t.prototype,"sku",void 0),o([e({type:Object}),n("design:type",Object)],t.prototype,"product",void 0),t};export{a as P};
