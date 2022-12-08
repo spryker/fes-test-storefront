@@ -13,17 +13,7 @@ export default defineConfig({
     emptyOutDir: true,
     outDir: '../dist/functions/ssr',
     rollupOptions: {
-      external: [
-        'fs',
-        'path',
-        'url',
-        'module',
-        'vm',
-        /^node/,
-        'express',
-        /^@netlify/,
-        'util',
-      ],
+      external: ['fs', 'path', 'url', 'module', 'vm', /^node/, /^@netlify/],
     },
   },
   plugins: [

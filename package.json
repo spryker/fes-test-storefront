@@ -10,7 +10,7 @@
     "build:netlify": "vite build -c vite.config.netlify.ts"
   },
   "dependencies": {
-    "@spryker-oryx/presets": "*"
+    "@spryker-oryx/presets": "^1.0.0-alpha.0"
   },
   "devDependencies": {
     "vite": "^3.0.9",
