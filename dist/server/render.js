@@ -1,8 +1,12 @@
 var storefront = function(exports) {
-  var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w;
   "use strict";
+  /**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const t$5 = globalThis, e$a = t$5.ShadowRoot && (void 0 === t$5.ShadyCSS || t$5.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype, s$8 = Symbol(), n$b = /* @__PURE__ */ new WeakMap();
-  let o$c = class o {
+  class o$c {
     constructor(t2, e2, n2) {
       if (this._$cssResult$ = true, n2 !== s$8)
         throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");
@@ -20,7 +24,7 @@ var storefront = function(exports) {
     toString() {
       return this.cssText;
     }
-  };
+  }
   const r$5 = (t2) => new o$c("string" == typeof t2 ? t2 : t2 + "", void 0, s$8), i$7 = (t2, ...e2) => {
     const n2 = 1 === t2.length ? t2[0] : e2.reduce((e3, s2, n3) => e3 + ((t3) => {
       if (true === t3._$cssResult$)
@@ -41,6 +45,11 @@ var storefront = function(exports) {
       e2 += s2.cssText;
     return r$5(e2);
   })(t2) : t2;
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   var s$7, e$9;
   const r$4 = globalThis;
   null !== (s$7 = r$4.customElements) && void 0 !== s$7 || (r$4.customElements = { define() {
@@ -76,7 +85,7 @@ var storefront = function(exports) {
   } }, a$3 = (t2, i2) => i2 !== t2 && (i2 == i2 || t2 == t2), d$2 = { attribute: true, type: String, converter: l$7, reflect: false, hasChanged: a$3 }, u$4 = void 0 === r$4.HTMLElement;
   u$4 && (r$4.HTMLElement = class {
   });
-  let c$5 = class c extends HTMLElement {
+  class c$5 extends HTMLElement {
     constructor() {
       super(), this._$Ei = /* @__PURE__ */ new Map(), this.isUpdatePending = false, this.hasUpdated = false, this._$El = null, this.u();
     }
@@ -254,8 +263,13 @@ var storefront = function(exports) {
     }
     firstUpdated(t2) {
     }
-  };
+  }
   c$5.finalized = true, c$5.elementProperties = /* @__PURE__ */ new Map(), c$5.elementStyles = [], c$5.shadowRootOptions = { mode: "open" }, u$4 && delete r$4.HTMLElement, null == n$a || n$a({ ReactiveElement: c$5 }), (null !== (e$9 = r$4.reactiveElementVersions) && void 0 !== e$9 ? e$9 : r$4.reactiveElementVersions = []).push("1.4.2");
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   var t$4;
   const i$6 = globalThis, s$6 = i$6.trustedTypes, e$8 = s$6 ? s$6.createPolicy("lit-html", { createHTML: (t2) => t2 }) : void 0, o$a = `lit$${(Math.random() + "").slice(9)}$`, n$9 = "?" + o$a, l$6 = `<${n$9}>`, h$4 = void 0 === i$6.document ? { createTreeWalker: () => ({}) } : document, r$3 = (t2 = "") => h$4.createComment(t2), d$1 = (t2) => null === t2 || "object" != typeof t2 && "function" != typeof t2, u$3 = Array.isArray, c$4 = (t2) => u$3(t2) || "function" == typeof (null == t2 ? void 0 : t2[Symbol.iterator]), v$1 = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, a$2 = /-->/g, f$2 = />/g, _ = RegExp(`>|[ 	
 \f\r](?:([^\\s"'>=/]+)([ 	
@@ -515,8 +529,13 @@ var storefront = function(exports) {
     }
     return l2._$AI(t2), l2;
   };
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   var l$5, o$9;
-  let s$5 = class s extends c$5 {
+  class s$5 extends c$5 {
     constructor() {
       super(...arguments), this.renderOptions = { host: this }, this._$Do = void 0;
     }
@@ -540,7 +559,7 @@ var storefront = function(exports) {
     render() {
       return T;
     }
-  };
+  }
   s$5.finalized = true, s$5._$litElement$ = true, null === (l$5 = globalThis.litElementHydrateSupport) || void 0 === l$5 || l$5.call(globalThis, { LitElement: s$5 });
   const n$8 = globalThis.litElementPolyfillSupport;
   null == n$8 || n$8({ LitElement: s$5 });
@@ -548,9 +567,19 @@ var storefront = function(exports) {
     t2._$AK(e2, i2);
   }, _$AL: (t2) => t2._$AL };
   (null !== (o$9 = globalThis.litElementVersions) && void 0 !== o$9 ? o$9 : globalThis.litElementVersions = []).push("3.2.2");
+  /**
+   * @license
+   * Copyright 2022 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const o$8 = true;
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const t$3 = { ATTRIBUTE: 1, CHILD: 2, PROPERTY: 3, BOOLEAN_ATTRIBUTE: 4, EVENT: 5, ELEMENT: 6 }, e$7 = (t2) => (...e2) => ({ _$litDirective$: t2, values: e2 });
-  let i$5 = class i {
+  class i$5 {
     constructor(t2) {
     }
     get _$AU() {
@@ -565,8 +594,13 @@ var storefront = function(exports) {
     update(t2, e2) {
       return this.render(...e2);
     }
-  };
-  let e$6 = class e extends i$5 {
+  }
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
+  class e$6 extends i$5 {
     constructor(i2) {
       if (super(i2), this.it = b, i2.type !== t$3.CHILD)
         throw Error(this.constructor.directiveName + "() can only be used in child bindings");
@@ -584,9 +618,14 @@ var storefront = function(exports) {
       const s2 = [r2];
       return s2.raw = s2, this._t = { _$litType$: this.constructor.resultType, strings: s2, values: [] };
     }
-  };
+  }
   e$6.directiveName = "unsafeHTML", e$6.resultType = 1;
   const o$7 = e$7(e$6);
+  /**
+   * @license
+   * Copyright 2020 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const e$5 = Symbol.for(""), l$4 = (t2) => {
     if ((null == t2 ? void 0 : t2.r) === e$5)
       return null == t2 ? void 0 : t2._$litStatic$;
@@ -611,7 +650,7 @@ var storefront = function(exports) {
     const scriptFns = {};
     function findNext(selector, node) {
       function getNextElement(node2) {
-        var _a2;
+        var _a, _b, _c;
         function nextSibling(node3) {
           while (node3 && !node3.nextElementSibling) {
             if (node3.parentElement) {
@@ -625,7 +664,7 @@ var storefront = function(exports) {
           }
           return node3 == null ? void 0 : node3.nextElementSibling;
         }
-        return ((_a2 = node2.shadowRoot) == null ? void 0 : _a2.firstElementChild) ?? node2.firstElementChild ?? nextSibling(node2);
+        return (_c = (_b = (_a = node2.shadowRoot) == null ? void 0 : _a.firstElementChild) != null ? _b : node2.firstElementChild) != null ? _c : nextSibling(node2);
       }
       while (node) {
         node = getNextElement(node);
@@ -646,11 +685,11 @@ var storefront = function(exports) {
   class PrehydrateDirective extends i$5 {
     render(dryFunction, tag) {
       if (components$a[tag]) {
-        return n$7`${o$7(`<script>__dryFn('${tag}');</script>`)}`;
+        return n$7`${o$7(`<script>__dryFn('${tag}');<\/script>`)}`;
       }
       const first2 = Object.keys(components$a).length == 0;
       components$a[tag] = true;
-      return n$7`${o$7(`<script>${first2 ? `const __dryFn=(${dryLogic.toString()})();` : ""}__dryFn('${tag}', ${dryFunction.toString()});</script>`)}`;
+      return n$7`${o$7(`<script>${first2 ? `const __dryFn=(${dryLogic.toString()})();` : ""}__dryFn('${tag}', ${dryFunction.toString()});<\/script>`)}`;
     }
   }
   const prehydrate = e$7(PrehydrateDirective);
@@ -699,7 +738,7 @@ var storefront = function(exports) {
       if (this._locked) {
         throw new Error(`Providing is only possible before the first injection!`);
       }
-      const token = this.isMultiProvider(provider.provide) ? `${provider.provide}ϴ${this.multiCounter++}` : provider.provide;
+      const token = this.isMultiProvider(provider.provide) ? `${provider.provide}\u03F4${this.multiCounter++}` : provider.provide;
       this.providers.set(token, { provider });
     }
     inject(token, defaultInstance) {
@@ -723,8 +762,8 @@ var storefront = function(exports) {
     }
     destroy() {
       this.providers.forEach((provider) => {
-        var _a2, _b2;
-        (_b2 = (_a2 = provider == null ? void 0 : provider.instance) == null ? void 0 : _a2.onDestroy) == null ? void 0 : _b2.call(_a2);
+        var _a, _b;
+        (_b = (_a = provider == null ? void 0 : provider.instance) == null ? void 0 : _a.onDestroy) == null ? void 0 : _b.call(_a);
       });
     }
     getInstance(token) {
@@ -776,7 +815,7 @@ var storefront = function(exports) {
   }
   let _theAppContext;
   function defaultContext() {
-    return _theAppContext ?? "";
+    return _theAppContext != null ? _theAppContext : "";
   }
   function getInjector(context2 = defaultContext()) {
     const registry = getRegistry();
@@ -786,6 +825,7 @@ var storefront = function(exports) {
     throw new Error("No injector found!");
   }
   function createInjector(options) {
+    var _a;
     const isAppInjector = (context3) => {
       if (context3 === 0) {
         if (!_theAppContext) {
@@ -797,7 +837,7 @@ var storefront = function(exports) {
     };
     const { context: context2, parent, providers } = {
       ...options,
-      context: isAppInjector(options.context) ? _theAppContext : options.context ?? ""
+      context: isAppInjector(options.context) ? _theAppContext : (_a = options.context) != null ? _a : ""
     };
     const registry = getRegistry();
     if (registry.has(context2)) {
@@ -807,13 +847,13 @@ var storefront = function(exports) {
     return registry.get(context2);
   }
   function destroyInjector(context2 = "") {
-    var _a2;
+    var _a;
     context2 = context2 === 0 ? _theAppContext : context2;
     const registry = getRegistry();
     if (!registry.has(context2)) {
       return;
     }
-    (_a2 = registry.get(context2)) == null ? void 0 : _a2.destroy();
+    (_a = registry.get(context2)) == null ? void 0 : _a.destroy();
     registry.delete(context2);
     if (context2 === 0) {
       _theAppContext = void 0;
@@ -836,13 +876,7 @@ var storefront = function(exports) {
   function getAugmentedNamespace(n2) {
     var f2 = n2.default;
     if (typeof f2 == "function") {
-      var a2 = function a3() {
-        if (this instanceof a3) {
-          var args2 = [null];
-          args2.push.apply(args2, arguments);
-          var Ctor = Function.bind.apply(f2, args2);
-          return new Ctor();
-        }
+      var a2 = function() {
         return f2.apply(this, arguments);
       };
       a2.prototype = f2.prototype;
@@ -962,7 +996,7 @@ var storefront = function(exports) {
       this._finalizers = null;
     }
     Subscription2.prototype.unsubscribe = function() {
-      var e_1, _a2, e_2, _b2;
+      var e_1, _a, e_2, _b;
       var errors;
       if (!this.closed) {
         this.closed = true;
@@ -979,8 +1013,8 @@ var storefront = function(exports) {
               e_1 = { error: e_1_1 };
             } finally {
               try {
-                if (_parentage_1_1 && !_parentage_1_1.done && (_a2 = _parentage_1.return))
-                  _a2.call(_parentage_1);
+                if (_parentage_1_1 && !_parentage_1_1.done && (_a = _parentage_1.return))
+                  _a.call(_parentage_1);
               } finally {
                 if (e_1)
                   throw e_1.error;
@@ -1019,8 +1053,8 @@ var storefront = function(exports) {
             e_2 = { error: e_2_1 };
           } finally {
             try {
-              if (_finalizers_1_1 && !_finalizers_1_1.done && (_b2 = _finalizers_1.return))
-                _b2.call(_finalizers_1);
+              if (_finalizers_1_1 && !_finalizers_1_1.done && (_b = _finalizers_1.return))
+                _b.call(_finalizers_1);
             } finally {
               if (e_2)
                 throw e_2.error;
@@ -1033,7 +1067,7 @@ var storefront = function(exports) {
       }
     };
     Subscription2.prototype.add = function(teardown) {
-      var _a2;
+      var _a;
       if (teardown && teardown !== this) {
         if (this.closed) {
           execFinalizer$1(teardown);
@@ -1044,7 +1078,7 @@ var storefront = function(exports) {
             }
             teardown._addParent(this);
           }
-          (this._finalizers = (_a2 = this._finalizers) !== null && _a2 !== void 0 ? _a2 : []).push(teardown);
+          (this._finalizers = (_a = this._finalizers) !== null && _a !== void 0 ? _a : []).push(teardown);
         }
       }
     };
@@ -1135,8 +1169,8 @@ var storefront = function(exports) {
     exports2.timeoutProvider = {
       setTimeout: function(handler, timeout2) {
         var args2 = [];
-        for (var _i2 = 2; _i2 < arguments.length; _i2++) {
-          args2[_i2 - 2] = arguments[_i2];
+        for (var _i = 2; _i < arguments.length; _i++) {
+          args2[_i - 2] = arguments[_i];
         }
         var delegate = exports2.timeoutProvider.delegate;
         if (delegate === null || delegate === void 0 ? void 0 : delegate.setTimeout) {
@@ -1207,7 +1241,7 @@ var storefront = function(exports) {
       }
       cb();
       if (isRoot) {
-        var _a2 = context, errorThrown = _a2.errorThrown, error2 = _a2.error;
+        var _a = context, errorThrown = _a.errorThrown, error2 = _a.error;
         context = null;
         if (errorThrown) {
           throw error2;
@@ -1442,8 +1476,8 @@ var storefront = function(exports) {
   var identity_1$f = identity$7;
   function pipe() {
     var fns = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      fns[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      fns[_i] = arguments[_i];
     }
     return pipeFromArray$1(fns);
   }
@@ -1487,7 +1521,7 @@ var storefront = function(exports) {
       var _this = this;
       var subscriber = isSubscriber$1(observerOrNext) ? observerOrNext : new Subscriber_1$3.SafeSubscriber(observerOrNext, error2, complete);
       errorContext_1$1.errorContext(function() {
-        var _a2 = _this, operator = _a2.operator, source = _a2.source;
+        var _a = _this, operator = _a.operator, source = _a.source;
         subscriber.add(operator ? operator.call(subscriber, source) : source ? _this._subscribe(subscriber) : _this._trySubscribe(subscriber));
       });
       return subscriber;
@@ -1519,16 +1553,16 @@ var storefront = function(exports) {
       });
     };
     Observable2.prototype._subscribe = function(subscriber) {
-      var _a2;
-      return (_a2 = this.source) === null || _a2 === void 0 ? void 0 : _a2.subscribe(subscriber);
+      var _a;
+      return (_a = this.source) === null || _a === void 0 ? void 0 : _a.subscribe(subscriber);
     };
     Observable2.prototype[observable_1$2.observable] = function() {
       return this;
     };
     Observable2.prototype.pipe = function() {
       var operations = [];
-      for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-        operations[_i2] = arguments[_i2];
+      for (var _i = 0; _i < arguments.length; _i++) {
+        operations[_i] = arguments[_i];
       }
       return pipe_1$2.pipeFromArray(operations)(this);
     };
@@ -1553,8 +1587,8 @@ var storefront = function(exports) {
   }();
   Observable$2.Observable = Observable$1;
   function getPromiseCtor$1(promiseCtor) {
-    var _a2;
-    return (_a2 = promiseCtor !== null && promiseCtor !== void 0 ? promiseCtor : config_1.config.Promise) !== null && _a2 !== void 0 ? _a2 : Promise;
+    var _a;
+    return (_a = promiseCtor !== null && promiseCtor !== void 0 ? promiseCtor : config_1.config.Promise) !== null && _a !== void 0 ? _a : Promise;
   }
   function isObserver$1(value) {
     return value && isFunction_1$p.isFunction(value.next) && isFunction_1$p.isFunction(value.error) && isFunction_1$p.isFunction(value.complete);
@@ -1650,11 +1684,11 @@ var storefront = function(exports) {
       return _this;
     }
     OperatorSubscriber2.prototype.unsubscribe = function() {
-      var _a2;
+      var _a;
       if (!this.shouldUnsubscribe || this.shouldUnsubscribe()) {
         var closed_1 = this.closed;
         _super.prototype.unsubscribe.call(this);
-        !closed_1 && ((_a2 = this.onFinalize) === null || _a2 === void 0 ? void 0 : _a2.call(this));
+        !closed_1 && ((_a = this.onFinalize) === null || _a === void 0 ? void 0 : _a.call(this));
       }
     };
     return OperatorSubscriber2;
@@ -1836,16 +1870,16 @@ var storefront = function(exports) {
       },
       requestAnimationFrame: function() {
         var args2 = [];
-        for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-          args2[_i2] = arguments[_i2];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args2[_i] = arguments[_i];
         }
         var delegate = exports2.animationFrameProvider.delegate;
         return ((delegate === null || delegate === void 0 ? void 0 : delegate.requestAnimationFrame) || requestAnimationFrame).apply(void 0, __spreadArray2([], __read2(args2)));
       },
       cancelAnimationFrame: function() {
         var args2 = [];
-        for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-          args2[_i2] = arguments[_i2];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args2[_i] = arguments[_i];
         }
         var delegate = exports2.animationFrameProvider.delegate;
         return ((delegate === null || delegate === void 0 ? void 0 : delegate.cancelAnimationFrame) || cancelAnimationFrame).apply(void 0, __spreadArray2([], __read2(args2)));
@@ -1963,23 +1997,23 @@ var storefront = function(exports) {
     Subject2.prototype.next = function(value) {
       var _this = this;
       errorContext_1.errorContext(function() {
-        var e_1, _a2;
+        var e_1, _a;
         _this._throwIfClosed();
         if (!_this.isStopped) {
           if (!_this.currentObservers) {
             _this.currentObservers = Array.from(_this.observers);
           }
           try {
-            for (var _b2 = __values$8(_this.currentObservers), _c2 = _b2.next(); !_c2.done; _c2 = _b2.next()) {
-              var observer = _c2.value;
+            for (var _b = __values$8(_this.currentObservers), _c = _b.next(); !_c.done; _c = _b.next()) {
+              var observer = _c.value;
               observer.next(value);
             }
           } catch (e_1_1) {
             e_1 = { error: e_1_1 };
           } finally {
             try {
-              if (_c2 && !_c2.done && (_a2 = _b2.return))
-                _a2.call(_b2);
+              if (_c && !_c.done && (_a = _b.return))
+                _a.call(_b);
             } finally {
               if (e_1)
                 throw e_1.error;
@@ -2021,8 +2055,8 @@ var storefront = function(exports) {
     };
     Object.defineProperty(Subject2.prototype, "observed", {
       get: function() {
-        var _a2;
-        return ((_a2 = this.observers) === null || _a2 === void 0 ? void 0 : _a2.length) > 0;
+        var _a;
+        return ((_a = this.observers) === null || _a === void 0 ? void 0 : _a.length) > 0;
       },
       enumerable: false,
       configurable: true
@@ -2038,7 +2072,7 @@ var storefront = function(exports) {
     };
     Subject2.prototype._innerSubscribe = function(subscriber) {
       var _this = this;
-      var _a2 = this, hasError = _a2.hasError, isStopped2 = _a2.isStopped, observers = _a2.observers;
+      var _a = this, hasError = _a.hasError, isStopped2 = _a.isStopped, observers = _a.observers;
       if (hasError || isStopped2) {
         return Subscription_1$6.EMPTY_SUBSCRIPTION;
       }
@@ -2050,7 +2084,7 @@ var storefront = function(exports) {
       });
     };
     Subject2.prototype._checkFinalizedStatuses = function(subscriber) {
-      var _a2 = this, hasError = _a2.hasError, thrownError = _a2.thrownError, isStopped2 = _a2.isStopped;
+      var _a = this, hasError = _a.hasError, thrownError = _a.thrownError, isStopped2 = _a.isStopped;
       if (hasError) {
         subscriber.error(thrownError);
       } else if (isStopped2) {
@@ -2077,20 +2111,20 @@ var storefront = function(exports) {
       return _this;
     }
     AnonymousSubject2.prototype.next = function(value) {
-      var _a2, _b2;
-      (_b2 = (_a2 = this.destination) === null || _a2 === void 0 ? void 0 : _a2.next) === null || _b2 === void 0 ? void 0 : _b2.call(_a2, value);
+      var _a, _b;
+      (_b = (_a = this.destination) === null || _a === void 0 ? void 0 : _a.next) === null || _b === void 0 ? void 0 : _b.call(_a, value);
     };
     AnonymousSubject2.prototype.error = function(err) {
-      var _a2, _b2;
-      (_b2 = (_a2 = this.destination) === null || _a2 === void 0 ? void 0 : _a2.error) === null || _b2 === void 0 ? void 0 : _b2.call(_a2, err);
+      var _a, _b;
+      (_b = (_a = this.destination) === null || _a === void 0 ? void 0 : _a.error) === null || _b === void 0 ? void 0 : _b.call(_a, err);
     };
     AnonymousSubject2.prototype.complete = function() {
-      var _a2, _b2;
-      (_b2 = (_a2 = this.destination) === null || _a2 === void 0 ? void 0 : _a2.complete) === null || _b2 === void 0 ? void 0 : _b2.call(_a2);
+      var _a, _b;
+      (_b = (_a = this.destination) === null || _a === void 0 ? void 0 : _a.complete) === null || _b === void 0 ? void 0 : _b.call(_a);
     };
     AnonymousSubject2.prototype._subscribe = function(subscriber) {
-      var _a2, _b2;
-      return (_b2 = (_a2 = this.source) === null || _a2 === void 0 ? void 0 : _a2.subscribe(subscriber)) !== null && _b2 !== void 0 ? _b2 : Subscription_1$6.EMPTY_SUBSCRIPTION;
+      var _a, _b;
+      return (_b = (_a = this.source) === null || _a === void 0 ? void 0 : _a.subscribe(subscriber)) !== null && _b !== void 0 ? _b : Subscription_1$6.EMPTY_SUBSCRIPTION;
     };
     return AnonymousSubject2;
   }(Subject);
@@ -2140,7 +2174,7 @@ var storefront = function(exports) {
       return subscription;
     };
     BehaviorSubject2.prototype.getValue = function() {
-      var _a2 = this, hasError = _a2.hasError, thrownError = _a2.thrownError, _value = _a2._value;
+      var _a = this, hasError = _a.hasError, thrownError = _a.thrownError, _value = _a._value;
       if (hasError) {
         throw thrownError;
       }
@@ -2214,7 +2248,7 @@ var storefront = function(exports) {
       return _this;
     }
     ReplaySubject2.prototype.next = function(value) {
-      var _a2 = this, isStopped2 = _a2.isStopped, _buffer = _a2._buffer, _infiniteTimeWindow = _a2._infiniteTimeWindow, _timestampProvider = _a2._timestampProvider, _windowTime = _a2._windowTime;
+      var _a = this, isStopped2 = _a.isStopped, _buffer = _a._buffer, _infiniteTimeWindow = _a._infiniteTimeWindow, _timestampProvider = _a._timestampProvider, _windowTime = _a._windowTime;
       if (!isStopped2) {
         _buffer.push(value);
         !_infiniteTimeWindow && _buffer.push(_timestampProvider.now() + _windowTime);
@@ -2226,7 +2260,7 @@ var storefront = function(exports) {
       this._throwIfClosed();
       this._trimBuffer();
       var subscription = this._innerSubscribe(subscriber);
-      var _a2 = this, _infiniteTimeWindow = _a2._infiniteTimeWindow, _buffer = _a2._buffer;
+      var _a = this, _infiniteTimeWindow = _a._infiniteTimeWindow, _buffer = _a._buffer;
       var copy2 = _buffer.slice();
       for (var i2 = 0; i2 < copy2.length && !subscriber.closed; i2 += _infiniteTimeWindow ? 1 : 2) {
         subscriber.next(copy2[i2]);
@@ -2235,7 +2269,7 @@ var storefront = function(exports) {
       return subscription;
     };
     ReplaySubject2.prototype._trimBuffer = function() {
-      var _a2 = this, _bufferSize = _a2._bufferSize, _timestampProvider = _a2._timestampProvider, _buffer = _a2._buffer, _infiniteTimeWindow = _a2._infiniteTimeWindow;
+      var _a = this, _bufferSize = _a._bufferSize, _timestampProvider = _a._timestampProvider, _buffer = _a._buffer, _infiniteTimeWindow = _a._infiniteTimeWindow;
       var adjustedBufferSize = (_infiniteTimeWindow ? 1 : 2) * _bufferSize;
       _bufferSize < Infinity && adjustedBufferSize < _buffer.length && _buffer.splice(0, _buffer.length - adjustedBufferSize);
       if (!_infiniteTimeWindow) {
@@ -2285,7 +2319,7 @@ var storefront = function(exports) {
       return _this;
     }
     AsyncSubject2.prototype._checkFinalizedStatuses = function(subscriber) {
-      var _a2 = this, hasError = _a2.hasError, _hasValue = _a2._hasValue, _value = _a2._value, thrownError = _a2.thrownError, isStopped2 = _a2.isStopped, _isComplete = _a2._isComplete;
+      var _a = this, hasError = _a.hasError, _hasValue = _a._hasValue, _value = _a._value, thrownError = _a.thrownError, isStopped2 = _a.isStopped, _isComplete = _a._isComplete;
       if (hasError) {
         subscriber.error(thrownError);
       } else if (isStopped2 || _isComplete) {
@@ -2300,7 +2334,7 @@ var storefront = function(exports) {
       }
     };
     AsyncSubject2.prototype.complete = function() {
-      var _a2 = this, _hasValue = _a2._hasValue, _value = _a2._value, _isComplete = _a2._isComplete;
+      var _a = this, _hasValue = _a._hasValue, _value = _a._value, _isComplete = _a._isComplete;
       if (!_isComplete) {
         this._isComplete = true;
         _hasValue && _super.prototype.next.call(this, _value);
@@ -2382,8 +2416,8 @@ var storefront = function(exports) {
     exports2.intervalProvider = {
       setInterval: function(handler, timeout2) {
         var args2 = [];
-        for (var _i2 = 2; _i2 < arguments.length; _i2++) {
-          args2[_i2 - 2] = arguments[_i2];
+        for (var _i = 2; _i < arguments.length; _i++) {
+          args2[_i - 2] = arguments[_i];
         }
         var delegate = exports2.intervalProvider.delegate;
         if (delegate === null || delegate === void 0 ? void 0 : delegate.setInterval) {
@@ -2495,7 +2529,7 @@ var storefront = function(exports) {
     };
     AsyncAction2.prototype.unsubscribe = function() {
       if (!this.closed) {
-        var _a2 = this, id = _a2.id, scheduler = _a2.scheduler;
+        var _a = this, id = _a.id, scheduler = _a.scheduler;
         var actions2 = scheduler.actions;
         this.work = this.state = this.scheduler = null;
         this.pending = false;
@@ -2579,8 +2613,8 @@ var storefront = function(exports) {
     exports2.immediateProvider = {
       setImmediate: function() {
         var args2 = [];
-        for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-          args2[_i2] = arguments[_i2];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args2[_i] = arguments[_i];
         }
         var delegate = exports2.immediateProvider.delegate;
         return ((delegate === null || delegate === void 0 ? void 0 : delegate.setImmediate) || setImmediate).apply(void 0, __spreadArray2([], __read2(args2)));
@@ -3079,7 +3113,7 @@ var storefront = function(exports) {
       return _this;
     }
     VirtualTimeScheduler2.prototype.flush = function() {
-      var _a2 = this, actions2 = _a2.actions, maxFrames = _a2.maxFrames;
+      var _a = this, actions2 = _a.actions, maxFrames = _a.maxFrames;
       var error2;
       var action;
       while ((action = actions2[0]) && action.delay <= maxFrames) {
@@ -3399,30 +3433,30 @@ var storefront = function(exports) {
   var isFunction_1$h = isFunction$b;
   function readableStreamLikeToAsyncGenerator$1(readableStream) {
     return __asyncGenerator$1(this, arguments, function readableStreamLikeToAsyncGenerator_1() {
-      var reader, _a2, value, done;
-      return __generator$3(this, function(_b2) {
-        switch (_b2.label) {
+      var reader, _a, value, done;
+      return __generator$3(this, function(_b) {
+        switch (_b.label) {
           case 0:
             reader = readableStream.getReader();
-            _b2.label = 1;
+            _b.label = 1;
           case 1:
-            _b2.trys.push([1, , 9, 10]);
-            _b2.label = 2;
+            _b.trys.push([1, , 9, 10]);
+            _b.label = 2;
           case 2:
             return [4, __await$1(reader.read())];
           case 3:
-            _a2 = _b2.sent(), value = _a2.value, done = _a2.done;
+            _a = _b.sent(), value = _a.value, done = _a.done;
             if (!done)
               return [3, 5];
             return [4, __await$1(void 0)];
           case 4:
-            return [2, _b2.sent()];
+            return [2, _b.sent()];
           case 5:
             return [4, __await$1(value)];
           case 6:
-            return [4, _b2.sent()];
+            return [4, _b.sent()];
           case 7:
-            _b2.sent();
+            _b.sent();
             return [3, 2];
           case 8:
             return [3, 10];
@@ -3651,7 +3685,7 @@ var storefront = function(exports) {
   innerFrom$2.fromPromise = fromPromise$1;
   function fromIterable$1(iterable) {
     return new Observable_1$j.Observable(function(subscriber) {
-      var e_1, _a2;
+      var e_1, _a;
       try {
         for (var iterable_1 = __values$7(iterable), iterable_1_1 = iterable_1.next(); !iterable_1_1.done; iterable_1_1 = iterable_1.next()) {
           var value = iterable_1_1.value;
@@ -3664,8 +3698,8 @@ var storefront = function(exports) {
         e_1 = { error: e_1_1 };
       } finally {
         try {
-          if (iterable_1_1 && !iterable_1_1.done && (_a2 = iterable_1.return))
-            _a2.call(iterable_1);
+          if (iterable_1_1 && !iterable_1_1.done && (_a = iterable_1.return))
+            _a.call(iterable_1);
         } finally {
           if (e_1)
             throw e_1.error;
@@ -3689,42 +3723,42 @@ var storefront = function(exports) {
   innerFrom$2.fromReadableStreamLike = fromReadableStreamLike$1;
   function process$2(asyncIterable, subscriber) {
     var asyncIterable_1, asyncIterable_1_1;
-    var e_2, _a2;
+    var e_2, _a;
     return __awaiter$1(this, void 0, void 0, function() {
       var value, e_2_1;
-      return __generator$2(this, function(_b2) {
-        switch (_b2.label) {
+      return __generator$2(this, function(_b) {
+        switch (_b.label) {
           case 0:
-            _b2.trys.push([0, 5, 6, 11]);
+            _b.trys.push([0, 5, 6, 11]);
             asyncIterable_1 = __asyncValues$1(asyncIterable);
-            _b2.label = 1;
+            _b.label = 1;
           case 1:
             return [4, asyncIterable_1.next()];
           case 2:
-            if (!(asyncIterable_1_1 = _b2.sent(), !asyncIterable_1_1.done))
+            if (!(asyncIterable_1_1 = _b.sent(), !asyncIterable_1_1.done))
               return [3, 4];
             value = asyncIterable_1_1.value;
             subscriber.next(value);
             if (subscriber.closed) {
               return [2];
             }
-            _b2.label = 3;
+            _b.label = 3;
           case 3:
             return [3, 1];
           case 4:
             return [3, 11];
           case 5:
-            e_2_1 = _b2.sent();
+            e_2_1 = _b.sent();
             e_2 = { error: e_2_1 };
             return [3, 11];
           case 6:
-            _b2.trys.push([6, , 9, 10]);
-            if (!(asyncIterable_1_1 && !asyncIterable_1_1.done && (_a2 = asyncIterable_1.return)))
+            _b.trys.push([6, , 9, 10]);
+            if (!(asyncIterable_1_1 && !asyncIterable_1_1.done && (_a = asyncIterable_1.return)))
               return [3, 8];
-            return [4, _a2.call(asyncIterable_1)];
+            return [4, _a.call(asyncIterable_1)];
           case 7:
-            _b2.sent();
-            _b2.label = 8;
+            _b.sent();
+            _b.label = 8;
           case 8:
             return [3, 10];
           case 9:
@@ -3858,11 +3892,11 @@ var storefront = function(exports) {
       executeSchedule_1$5.executeSchedule(subscriber, scheduler, function() {
         iterator2 = input[iterator_1.iterator]();
         executeSchedule_1$5.executeSchedule(subscriber, scheduler, function() {
-          var _a2;
+          var _a;
           var value;
           var done;
           try {
-            _a2 = iterator2.next(), value = _a2.value, done = _a2.done;
+            _a = iterator2.next(), value = _a.value, done = _a.done;
           } catch (err) {
             subscriber.error(err);
             return;
@@ -3967,8 +4001,8 @@ var storefront = function(exports) {
   var from_1$6 = from$1;
   function of() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     var scheduler = args_1$c.popScheduler(args2);
     return from_1$6.from(args2, scheduler);
@@ -4014,15 +4048,15 @@ var storefront = function(exports) {
         return observeNotification(this, observer);
       };
       Notification3.prototype.do = function(nextHandler, errorHandler, completeHandler) {
-        var _a2 = this, kind = _a2.kind, value = _a2.value, error2 = _a2.error;
+        var _a = this, kind = _a.kind, value = _a.value, error2 = _a.error;
         return kind === "N" ? nextHandler === null || nextHandler === void 0 ? void 0 : nextHandler(value) : kind === "E" ? errorHandler === null || errorHandler === void 0 ? void 0 : errorHandler(error2) : completeHandler === null || completeHandler === void 0 ? void 0 : completeHandler();
       };
       Notification3.prototype.accept = function(nextOrObserver, error2, complete) {
-        var _a2;
-        return isFunction_12.isFunction((_a2 = nextOrObserver) === null || _a2 === void 0 ? void 0 : _a2.next) ? this.observe(nextOrObserver) : this.do(nextOrObserver, error2, complete);
+        var _a;
+        return isFunction_12.isFunction((_a = nextOrObserver) === null || _a === void 0 ? void 0 : _a.next) ? this.observe(nextOrObserver) : this.do(nextOrObserver, error2, complete);
       };
       Notification3.prototype.toObservable = function() {
-        var _a2 = this, kind = _a2.kind, value = _a2.value, error2 = _a2.error;
+        var _a = this, kind = _a.kind, value = _a.value, error2 = _a.error;
         var result = kind === "N" ? of_12.of(value) : kind === "E" ? throwError_1.throwError(function() {
           return error2;
         }) : kind === "C" ? empty_12.EMPTY : 0;
@@ -4045,12 +4079,12 @@ var storefront = function(exports) {
     }();
     exports2.Notification = Notification2;
     function observeNotification(notification, observer) {
-      var _a2, _b2, _c2;
-      var _d2 = notification, kind = _d2.kind, value = _d2.value, error2 = _d2.error;
+      var _a, _b, _c;
+      var _d = notification, kind = _d.kind, value = _d.value, error2 = _d.error;
       if (typeof kind !== "string") {
         throw new TypeError('Invalid notification, missing "kind"');
       }
-      kind === "N" ? (_a2 = observer.next) === null || _a2 === void 0 ? void 0 : _a2.call(observer, value) : kind === "E" ? (_b2 = observer.error) === null || _b2 === void 0 ? void 0 : _b2.call(observer, error2) : (_c2 = observer.complete) === null || _c2 === void 0 ? void 0 : _c2.call(observer);
+      kind === "N" ? (_a = observer.next) === null || _a === void 0 ? void 0 : _a.call(observer, value) : kind === "E" ? (_b = observer.error) === null || _b === void 0 ? void 0 : _b.call(observer, error2) : (_c = observer.complete) === null || _c === void 0 ? void 0 : _c.call(observer);
     }
     exports2.observeNotification = observeNotification;
   })(Notification);
@@ -4191,7 +4225,7 @@ var storefront = function(exports) {
       };
     });
     function timeout2(config2, schedulerArg) {
-      var _a2 = isDate_12.isValidDate(config2) ? { first: config2 } : typeof config2 === "number" ? { each: config2 } : config2, first2 = _a2.first, each2 = _a2.each, _b2 = _a2.with, _with = _b2 === void 0 ? timeoutErrorFactory : _b2, _c2 = _a2.scheduler, scheduler = _c2 === void 0 ? schedulerArg !== null && schedulerArg !== void 0 ? schedulerArg : async_12.asyncScheduler : _c2, _d2 = _a2.meta, meta = _d2 === void 0 ? null : _d2;
+      var _a = isDate_12.isValidDate(config2) ? { first: config2 } : typeof config2 === "number" ? { each: config2 } : config2, first2 = _a.first, each2 = _a.each, _b = _a.with, _with = _b === void 0 ? timeoutErrorFactory : _b, _c = _a.scheduler, scheduler = _c === void 0 ? schedulerArg !== null && schedulerArg !== void 0 ? schedulerArg : async_12.asyncScheduler : _c, _d = _a.meta, meta = _d === void 0 ? null : _d;
       if (first2 == null && each2 == null) {
         throw new TypeError("No timeout provided.");
       }
@@ -4330,8 +4364,8 @@ var storefront = function(exports) {
       } else {
         return function() {
           var args2 = [];
-          for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-            args2[_i2] = arguments[_i2];
+          for (var _i = 0; _i < arguments.length; _i++) {
+            args2[_i] = arguments[_i];
           }
           return bindCallbackInternals(isNodeStyle, callbackFunc, scheduler).apply(this, args2).pipe(mapOneOrManyArgs_1$6.mapOneOrManyArgs(resultSelector));
         };
@@ -4340,8 +4374,8 @@ var storefront = function(exports) {
     if (scheduler) {
       return function() {
         var args2 = [];
-        for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-          args2[_i2] = arguments[_i2];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args2[_i] = arguments[_i];
         }
         return bindCallbackInternals(isNodeStyle, callbackFunc).apply(this, args2).pipe(subscribeOn_1.subscribeOn(scheduler), observeOn_1.observeOn(scheduler));
       };
@@ -4349,8 +4383,8 @@ var storefront = function(exports) {
     return function() {
       var _this = this;
       var args2 = [];
-      for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-        args2[_i2] = arguments[_i2];
+      for (var _i = 0; _i < arguments.length; _i++) {
+        args2[_i] = arguments[_i];
       }
       var subject = new AsyncSubject_1$1.AsyncSubject();
       var uninitialized = true;
@@ -4363,8 +4397,8 @@ var storefront = function(exports) {
           callbackFunc.apply(_this, __spreadArray$f(__spreadArray$f([], __read$g(args2)), [
             function() {
               var results = [];
-              for (var _i3 = 0; _i3 < arguments.length; _i3++) {
-                results[_i3] = arguments[_i3];
+              for (var _i2 = 0; _i2 < arguments.length; _i2++) {
+                results[_i2] = arguments[_i2];
               }
               if (isNodeStyle) {
                 var err = results.shift();
@@ -4455,12 +4489,12 @@ var storefront = function(exports) {
   var executeSchedule_1$3 = executeSchedule$1;
   function combineLatest$2() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     var scheduler = args_1$b.popScheduler(args2);
     var resultSelector = args_1$b.popResultSelector(args2);
-    var _a2 = argsArgArrayOrObject_1$1.argsArgArrayOrObject(args2), observables = _a2.args, keys2 = _a2.keys;
+    var _a = argsArgArrayOrObject_1$1.argsArgArrayOrObject(args2), observables = _a.args, keys2 = _a.keys;
     if (observables.length === 0) {
       return from_1$5.from([], scheduler);
     }
@@ -4633,8 +4667,8 @@ var storefront = function(exports) {
   var from_1$4 = from$1;
   function concat$2() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     return concatAll_1$1.concatAll()(from_1$4.from(args2, args_1$a.popScheduler(args2)));
   }
@@ -4667,7 +4701,7 @@ var storefront = function(exports) {
       config2 = DEFAULT_CONFIG$1;
     }
     var connection = null;
-    var connector = config2.connector, _a2 = config2.resetOnDisconnect, resetOnDisconnect = _a2 === void 0 ? true : _a2;
+    var connector = config2.connector, _a = config2.resetOnDisconnect, resetOnDisconnect = _a === void 0 ? true : _a;
     var subject = connector();
     var result = new Observable_1$a.Observable(function(subscriber) {
       return subject.subscribe(subscriber);
@@ -4700,11 +4734,11 @@ var storefront = function(exports) {
   var createObject_1 = createObject$1;
   function forkJoin() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     var resultSelector = args_1$9.popResultSelector(args2);
-    var _a2 = argsArgArrayOrObject_1.argsArgArrayOrObject(args2), sources = _a2.args, keys2 = _a2.keys;
+    var _a = argsArgArrayOrObject_1.argsArgArrayOrObject(args2), sources = _a.args, keys2 = _a.keys;
     var result = new Observable_1$9.Observable(function(subscriber) {
       var length = sources.length;
       if (!length) {
@@ -4781,11 +4815,11 @@ var storefront = function(exports) {
     if (resultSelector) {
       return fromEvent(target, eventName, options).pipe(mapOneOrManyArgs_1$3.mapOneOrManyArgs(resultSelector));
     }
-    var _a2 = __read$f(isEventTarget(target) ? eventTargetMethods.map(function(methodName) {
+    var _a = __read$f(isEventTarget(target) ? eventTargetMethods.map(function(methodName) {
       return function(handler) {
         return target[methodName](eventName, handler, options);
       };
-    }) : isNodeStyleEventEmitter(target) ? nodeEventEmitterMethods.map(toCommonHandlerRegistry(target, eventName)) : isJQueryStyleEventEmitter(target) ? jqueryMethods.map(toCommonHandlerRegistry(target, eventName)) : [], 2), add2 = _a2[0], remove2 = _a2[1];
+    }) : isNodeStyleEventEmitter(target) ? nodeEventEmitterMethods.map(toCommonHandlerRegistry(target, eventName)) : isJQueryStyleEventEmitter(target) ? jqueryMethods.map(toCommonHandlerRegistry(target, eventName)) : [], 2), add2 = _a[0], remove2 = _a[1];
     if (!add2) {
       if (isArrayLike_1$1.isArrayLike(target)) {
         return mergeMap_1$5.mergeMap(function(subTarget) {
@@ -4799,8 +4833,8 @@ var storefront = function(exports) {
     return new Observable_1$8.Observable(function(subscriber) {
       var handler = function() {
         var args2 = [];
-        for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-          args2[_i2] = arguments[_i2];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args2[_i] = arguments[_i];
         }
         return subscriber.next(1 < args2.length ? args2 : args2[0]);
       };
@@ -4840,8 +4874,8 @@ var storefront = function(exports) {
     return new Observable_1$7.Observable(function(subscriber) {
       var handler = function() {
         var e2 = [];
-        for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-          e2[_i2] = arguments[_i2];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          e2[_i] = arguments[_i];
         }
         return subscriber.next(e2.length === 1 ? e2[0] : e2);
       };
@@ -4936,11 +4970,11 @@ var storefront = function(exports) {
   var defer_1$1 = defer$1;
   var scheduleIterable_1 = scheduleIterable$1;
   function generate(initialStateOrOptions, condition, iterate, resultSelectorOrScheduler, scheduler) {
-    var _a2, _b2;
+    var _a, _b;
     var resultSelector;
     var initialState;
     if (arguments.length === 1) {
-      _a2 = initialStateOrOptions, initialState = _a2.initialState, condition = _a2.condition, iterate = _a2.iterate, _b2 = _a2.resultSelector, resultSelector = _b2 === void 0 ? identity_1$c.identity : _b2, scheduler = _a2.scheduler;
+      _a = initialStateOrOptions, initialState = _a.initialState, condition = _a.condition, iterate = _a.iterate, _b = _a.resultSelector, resultSelector = _b === void 0 ? identity_1$c.identity : _b, scheduler = _a.scheduler;
     } else {
       initialState = initialStateOrOptions;
       if (!resultSelectorOrScheduler || isScheduler_1$1.isScheduler(resultSelectorOrScheduler)) {
@@ -4952,18 +4986,18 @@ var storefront = function(exports) {
     }
     function gen() {
       var state;
-      return __generator$1(this, function(_a3) {
-        switch (_a3.label) {
+      return __generator$1(this, function(_a2) {
+        switch (_a2.label) {
           case 0:
             state = initialState;
-            _a3.label = 1;
+            _a2.label = 1;
           case 1:
             if (!(!condition || condition(state)))
               return [3, 4];
             return [4, resultSelector(state)];
           case 2:
-            _a3.sent();
-            _a3.label = 3;
+            _a2.sent();
+            _a2.label = 3;
           case 3:
             state = iterate(state);
             return [3, 1];
@@ -5056,8 +5090,8 @@ var storefront = function(exports) {
   var from_1$3 = from$1;
   function merge$3() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     var scheduler = args_1$8.popScheduler(args2);
     var concurrent = args_1$8.popNumber(args2, Infinity);
@@ -5122,8 +5156,8 @@ var storefront = function(exports) {
   var noop_1$c = noop$2;
   function onErrorResumeNext$1() {
     var sources = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      sources[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      sources[_i] = arguments[_i];
     }
     var nextSources = argsOrArgArray_1$5.argsOrArgArray(sources);
     return lift_1$_.operate(function(source, subscriber) {
@@ -5157,8 +5191,8 @@ var storefront = function(exports) {
   var argsOrArgArray_1$4 = argsOrArgArray$1;
   function onErrorResumeNext() {
     var sources = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      sources[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      sources[_i] = arguments[_i];
     }
     return onErrorResumeNext_1.onErrorResumeNext(argsOrArgArray_1$4.argsOrArgArray(sources))(empty_1$6.EMPTY);
   }
@@ -5213,8 +5247,8 @@ var storefront = function(exports) {
   var OperatorSubscriber_1$L = OperatorSubscriber$2;
   function race() {
     var sources = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      sources[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      sources[_i] = arguments[_i];
     }
     sources = argsOrArgArray_1$3.argsOrArgArray(sources);
     return sources.length === 1 ? innerFrom_1$j.innerFrom(sources[0]) : new Observable_1$5.Observable(raceInit(sources));
@@ -5330,8 +5364,8 @@ var storefront = function(exports) {
   var args_1$7 = args;
   function zip$2() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     var resultSelector = args_1$7.popResultSelector(args2);
     var sources = argsOrArgArray_1$2.argsOrArgArray(args2);
@@ -5487,7 +5521,7 @@ var storefront = function(exports) {
       var buffers = [];
       var count2 = 0;
       source.subscribe(OperatorSubscriber_1$H.createOperatorSubscriber(subscriber, function(value) {
-        var e_1, _a2, e_2, _b2;
+        var e_1, _a, e_2, _b;
         var toEmit = null;
         if (count2++ % startBufferEvery === 0) {
           buffers.push([]);
@@ -5505,8 +5539,8 @@ var storefront = function(exports) {
           e_1 = { error: e_1_1 };
         } finally {
           try {
-            if (buffers_1_1 && !buffers_1_1.done && (_a2 = buffers_1.return))
-              _a2.call(buffers_1);
+            if (buffers_1_1 && !buffers_1_1.done && (_a = buffers_1.return))
+              _a.call(buffers_1);
           } finally {
             if (e_1)
               throw e_1.error;
@@ -5523,8 +5557,8 @@ var storefront = function(exports) {
             e_2 = { error: e_2_1 };
           } finally {
             try {
-              if (toEmit_1_1 && !toEmit_1_1.done && (_b2 = toEmit_1.return))
-                _b2.call(toEmit_1);
+              if (toEmit_1_1 && !toEmit_1_1.done && (_b = toEmit_1.return))
+                _b.call(toEmit_1);
             } finally {
               if (e_2)
                 throw e_2.error;
@@ -5532,7 +5566,7 @@ var storefront = function(exports) {
           }
         }
       }, function() {
-        var e_3, _a2;
+        var e_3, _a;
         try {
           for (var buffers_2 = __values$6(buffers), buffers_2_1 = buffers_2.next(); !buffers_2_1.done; buffers_2_1 = buffers_2.next()) {
             var buffer2 = buffers_2_1.value;
@@ -5542,8 +5576,8 @@ var storefront = function(exports) {
           e_3 = { error: e_3_1 };
         } finally {
           try {
-            if (buffers_2_1 && !buffers_2_1.done && (_a2 = buffers_2.return))
-              _a2.call(buffers_2);
+            if (buffers_2_1 && !buffers_2_1.done && (_a = buffers_2.return))
+              _a.call(buffers_2);
           } finally {
             if (e_3)
               throw e_3.error;
@@ -5581,13 +5615,13 @@ var storefront = function(exports) {
   var args_1$6 = args;
   var executeSchedule_1$1 = executeSchedule$1;
   function bufferTime(bufferTimeSpan) {
-    var _a2, _b2;
+    var _a, _b;
     var otherArgs = [];
-    for (var _i2 = 1; _i2 < arguments.length; _i2++) {
-      otherArgs[_i2 - 1] = arguments[_i2];
+    for (var _i = 1; _i < arguments.length; _i++) {
+      otherArgs[_i - 1] = arguments[_i];
     }
-    var scheduler = (_a2 = args_1$6.popScheduler(otherArgs)) !== null && _a2 !== void 0 ? _a2 : async_1$7.asyncScheduler;
-    var bufferCreationInterval = (_b2 = otherArgs[0]) !== null && _b2 !== void 0 ? _b2 : null;
+    var scheduler = (_a = args_1$6.popScheduler(otherArgs)) !== null && _a !== void 0 ? _a : async_1$7.asyncScheduler;
+    var bufferCreationInterval = (_b = otherArgs[0]) !== null && _b !== void 0 ? _b : null;
     var maxBufferSize = otherArgs[1] || Infinity;
     return lift_1$V.operate(function(source, subscriber) {
       var bufferRecords = [];
@@ -5621,7 +5655,7 @@ var storefront = function(exports) {
       }
       startBuffer();
       var bufferTimeSubscriber = OperatorSubscriber_1$G.createOperatorSubscriber(subscriber, function(value) {
-        var e_1, _a3;
+        var e_1, _a2;
         var recordsCopy = bufferRecords.slice();
         try {
           for (var recordsCopy_1 = __values$5(recordsCopy), recordsCopy_1_1 = recordsCopy_1.next(); !recordsCopy_1_1.done; recordsCopy_1_1 = recordsCopy_1.next()) {
@@ -5634,8 +5668,8 @@ var storefront = function(exports) {
           e_1 = { error: e_1_1 };
         } finally {
           try {
-            if (recordsCopy_1_1 && !recordsCopy_1_1.done && (_a3 = recordsCopy_1.return))
-              _a3.call(recordsCopy_1);
+            if (recordsCopy_1_1 && !recordsCopy_1_1.done && (_a2 = recordsCopy_1.return))
+              _a2.call(recordsCopy_1);
           } finally {
             if (e_1)
               throw e_1.error;
@@ -5693,7 +5727,7 @@ var storefront = function(exports) {
         closingSubscription.add(innerFrom_1$f.innerFrom(closingSelector(openValue)).subscribe(OperatorSubscriber_1$F.createOperatorSubscriber(subscriber, emitBuffer, noop_1$a.noop)));
       }, noop_1$a.noop));
       source.subscribe(OperatorSubscriber_1$F.createOperatorSubscriber(subscriber, function(value) {
-        var e_1, _a2;
+        var e_1, _a;
         try {
           for (var buffers_1 = __values$4(buffers), buffers_1_1 = buffers_1.next(); !buffers_1_1.done; buffers_1_1 = buffers_1.next()) {
             var buffer2 = buffers_1_1.value;
@@ -5703,8 +5737,8 @@ var storefront = function(exports) {
           e_1 = { error: e_1_1 };
         } finally {
           try {
-            if (buffers_1_1 && !buffers_1_1.done && (_a2 = buffers_1.return))
-              _a2.call(buffers_1);
+            if (buffers_1_1 && !buffers_1_1.done && (_a = buffers_1.return))
+              _a.call(buffers_1);
           } finally {
             if (e_1)
               throw e_1.error;
@@ -5887,8 +5921,8 @@ var storefront = function(exports) {
   var args_1$5 = args;
   function combineLatest() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     var resultSelector = args_1$5.popResultSelector(args2);
     return resultSelector ? pipe_1.pipe(combineLatest.apply(void 0, __spreadArray$c([], __read$c(args2))), mapOneOrManyArgs_1.mapOneOrManyArgs(resultSelector)) : lift_1$P.operate(function(source, subscriber) {
@@ -5927,8 +5961,8 @@ var storefront = function(exports) {
   var combineLatest_1 = combineLatest$1;
   function combineLatestWith() {
     var otherSources = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      otherSources[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      otherSources[_i] = arguments[_i];
     }
     return combineLatest_1.combineLatest.apply(void 0, __spreadArray$b([], __read$b(otherSources)));
   }
@@ -5991,8 +6025,8 @@ var storefront = function(exports) {
   var from_1$1 = from$1;
   function concat() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     var scheduler = args_1$4.popScheduler(args2);
     return lift_1$O.operate(function(source, subscriber) {
@@ -6031,8 +6065,8 @@ var storefront = function(exports) {
   var concat_1$3 = concat$1;
   function concatWith() {
     var otherSources = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      otherSources[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      otherSources[_i] = arguments[_i];
     }
     return concat_1$3.concat.apply(void 0, __spreadArray$9([], __read$9(otherSources)));
   }
@@ -6419,8 +6453,8 @@ var storefront = function(exports) {
   var of_1 = of$1;
   function endWith() {
     var values = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      values[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      values[_i] = arguments[_i];
     }
     return function(source) {
       return concat_1$1.concat(source, of_1.of.apply(void 0, __spreadArray$8([], __read$8(values))));
@@ -6704,7 +6738,7 @@ var storefront = function(exports) {
         buffer2.push(value);
         count2 < buffer2.length && buffer2.shift();
       }, function() {
-        var e_1, _a2;
+        var e_1, _a;
         try {
           for (var buffer_1 = __values$3(buffer2), buffer_1_1 = buffer_1.next(); !buffer_1_1.done; buffer_1_1 = buffer_1.next()) {
             var value = buffer_1_1.value;
@@ -6714,8 +6748,8 @@ var storefront = function(exports) {
           e_1 = { error: e_1_1 };
         } finally {
           try {
-            if (buffer_1_1 && !buffer_1_1.done && (_a2 = buffer_1.return))
-              _a2.call(buffer_1);
+            if (buffer_1_1 && !buffer_1_1.done && (_a = buffer_1.return))
+              _a.call(buffer_1);
           } finally {
             if (e_1)
               throw e_1.error;
@@ -6865,8 +6899,8 @@ var storefront = function(exports) {
   var from_1 = from$1;
   function merge$1() {
     var args2 = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      args2[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      args2[_i] = arguments[_i];
     }
     var scheduler = args_1$3.popScheduler(args2);
     var concurrent = args_1$3.popNumber(args2, Infinity);
@@ -6907,8 +6941,8 @@ var storefront = function(exports) {
   var merge_1$1 = merge$2;
   function mergeWith() {
     var otherSources = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      otherSources[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      otherSources[_i] = arguments[_i];
     }
     return merge_1$1.merge.apply(void 0, __spreadArray$6([], __read$6(otherSources)));
   }
@@ -6970,8 +7004,8 @@ var storefront = function(exports) {
   var map_1$1 = map$2;
   function pluck() {
     var properties = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      properties[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      properties[_i] = arguments[_i];
     }
     var length = properties.length;
     if (length === 0) {
@@ -7083,8 +7117,8 @@ var storefront = function(exports) {
   var identity_1$6 = identity$7;
   function raceWith() {
     var otherSources = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      otherSources[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      otherSources[_i] = arguments[_i];
     }
     return !otherSources.length ? identity_1$6.identity : lift_1$q.operate(function(source, subscriber) {
       race_1.raceInit(__spreadArray$5([source], __read$5(otherSources)))(subscriber);
@@ -7100,12 +7134,12 @@ var storefront = function(exports) {
   var innerFrom_1$8 = innerFrom$2;
   var timer_1$2 = timer$1;
   function repeat(countOrConfig) {
-    var _a2;
+    var _a;
     var count2 = Infinity;
     var delay2;
     if (countOrConfig != null) {
       if (typeof countOrConfig === "object") {
-        _a2 = countOrConfig.count, count2 = _a2 === void 0 ? Infinity : _a2, delay2 = countOrConfig.delay;
+        _a = countOrConfig.count, count2 = _a === void 0 ? Infinity : _a, delay2 = countOrConfig.delay;
       } else {
         count2 = countOrConfig;
       }
@@ -7219,7 +7253,7 @@ var storefront = function(exports) {
         count: configOrCount
       };
     }
-    var _a2 = config2.count, count2 = _a2 === void 0 ? Infinity : _a2, delay2 = config2.delay, _b2 = config2.resetOnSuccess, resetOnSuccess = _b2 === void 0 ? false : _b2;
+    var _a = config2.count, count2 = _a === void 0 ? Infinity : _a, delay2 = config2.delay, _b = config2.resetOnSuccess, resetOnSuccess = _b === void 0 ? false : _b;
     return count2 <= 0 ? identity_1$5.identity : lift_1$n.operate(function(source, subscriber) {
       var soFar = 0;
       var innerSub;
@@ -7430,9 +7464,9 @@ var storefront = function(exports) {
     if (options === void 0) {
       options = {};
     }
-    var _a2 = options.connector, connector = _a2 === void 0 ? function() {
+    var _a = options.connector, connector = _a === void 0 ? function() {
       return new Subject_1$5.Subject();
-    } : _a2, _b2 = options.resetOnError, resetOnError = _b2 === void 0 ? true : _b2, _c2 = options.resetOnComplete, resetOnComplete = _c2 === void 0 ? true : _c2, _d2 = options.resetOnRefCountZero, resetOnRefCountZero = _d2 === void 0 ? true : _d2;
+    } : _a, _b = options.resetOnError, resetOnError = _b === void 0 ? true : _b, _c = options.resetOnComplete, resetOnComplete = _c === void 0 ? true : _c, _d = options.resetOnRefCountZero, resetOnRefCountZero = _d === void 0 ? true : _d;
     return function(wrapperSource) {
       var connection;
       var resetConnection;
@@ -7493,8 +7527,8 @@ var storefront = function(exports) {
   share$1.share = share;
   function handleReset(reset2, on) {
     var args2 = [];
-    for (var _i2 = 2; _i2 < arguments.length; _i2++) {
-      args2[_i2 - 2] = arguments[_i2];
+    for (var _i = 2; _i < arguments.length; _i++) {
+      args2[_i - 2] = arguments[_i];
     }
     if (on === true) {
       reset2();
@@ -7517,11 +7551,11 @@ var storefront = function(exports) {
   var ReplaySubject_1 = ReplaySubject$1;
   var share_1 = share$1;
   function shareReplay(configOrBufferSize, windowTime2, scheduler) {
-    var _a2, _b2, _c2;
+    var _a, _b, _c;
     var bufferSize;
     var refCount2 = false;
     if (configOrBufferSize && typeof configOrBufferSize === "object") {
-      _a2 = configOrBufferSize.bufferSize, bufferSize = _a2 === void 0 ? Infinity : _a2, _b2 = configOrBufferSize.windowTime, windowTime2 = _b2 === void 0 ? Infinity : _b2, _c2 = configOrBufferSize.refCount, refCount2 = _c2 === void 0 ? false : _c2, scheduler = configOrBufferSize.scheduler;
+      _a = configOrBufferSize.bufferSize, bufferSize = _a === void 0 ? Infinity : _a, _b = configOrBufferSize.windowTime, windowTime2 = _b === void 0 ? Infinity : _b, _c = configOrBufferSize.refCount, refCount2 = _c === void 0 ? false : _c, scheduler = configOrBufferSize.scheduler;
     } else {
       bufferSize = configOrBufferSize !== null && configOrBufferSize !== void 0 ? configOrBufferSize : Infinity;
     }
@@ -7648,8 +7682,8 @@ var storefront = function(exports) {
   var lift_1$d = lift;
   function startWith() {
     var values = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      values[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      values[_i] = arguments[_i];
     }
     var scheduler = args_1$2.popScheduler(values);
     return lift_1$d.operate(function(source, subscriber) {
@@ -7774,29 +7808,29 @@ var storefront = function(exports) {
   function tap(observerOrNext, error2, complete) {
     var tapObserver = isFunction_1$1.isFunction(observerOrNext) || error2 || complete ? { next: observerOrNext, error: error2, complete } : observerOrNext;
     return tapObserver ? lift_1$8.operate(function(source, subscriber) {
-      var _a2;
-      (_a2 = tapObserver.subscribe) === null || _a2 === void 0 ? void 0 : _a2.call(tapObserver);
+      var _a;
+      (_a = tapObserver.subscribe) === null || _a === void 0 ? void 0 : _a.call(tapObserver);
       var isUnsub = true;
       source.subscribe(OperatorSubscriber_1$7.createOperatorSubscriber(subscriber, function(value) {
-        var _a3;
-        (_a3 = tapObserver.next) === null || _a3 === void 0 ? void 0 : _a3.call(tapObserver, value);
+        var _a2;
+        (_a2 = tapObserver.next) === null || _a2 === void 0 ? void 0 : _a2.call(tapObserver, value);
         subscriber.next(value);
       }, function() {
-        var _a3;
+        var _a2;
         isUnsub = false;
-        (_a3 = tapObserver.complete) === null || _a3 === void 0 ? void 0 : _a3.call(tapObserver);
+        (_a2 = tapObserver.complete) === null || _a2 === void 0 ? void 0 : _a2.call(tapObserver);
         subscriber.complete();
       }, function(err) {
-        var _a3;
+        var _a2;
         isUnsub = false;
-        (_a3 = tapObserver.error) === null || _a3 === void 0 ? void 0 : _a3.call(tapObserver, err);
+        (_a2 = tapObserver.error) === null || _a2 === void 0 ? void 0 : _a2.call(tapObserver, err);
         subscriber.error(err);
       }, function() {
-        var _a3, _b2;
+        var _a2, _b;
         if (isUnsub) {
-          (_a3 = tapObserver.unsubscribe) === null || _a3 === void 0 ? void 0 : _a3.call(tapObserver);
+          (_a2 = tapObserver.unsubscribe) === null || _a2 === void 0 ? void 0 : _a2.call(tapObserver);
         }
-        (_b2 = tapObserver.finalize) === null || _b2 === void 0 ? void 0 : _b2.call(tapObserver);
+        (_b = tapObserver.finalize) === null || _b === void 0 ? void 0 : _b.call(tapObserver);
       }));
     }) : identity_1$2.identity;
   }
@@ -8016,7 +8050,7 @@ var storefront = function(exports) {
       var count2 = 0;
       subscriber.next(windows[0].asObservable());
       source.subscribe(OperatorSubscriber_1$4.createOperatorSubscriber(subscriber, function(value) {
-        var e_1, _a2;
+        var e_1, _a;
         try {
           for (var windows_1 = __values$2(windows), windows_1_1 = windows_1.next(); !windows_1_1.done; windows_1_1 = windows_1.next()) {
             var window_1 = windows_1_1.value;
@@ -8026,8 +8060,8 @@ var storefront = function(exports) {
           e_1 = { error: e_1_1 };
         } finally {
           try {
-            if (windows_1_1 && !windows_1_1.done && (_a2 = windows_1.return))
-              _a2.call(windows_1);
+            if (windows_1_1 && !windows_1_1.done && (_a = windows_1.return))
+              _a.call(windows_1);
           } finally {
             if (e_1)
               throw e_1.error;
@@ -8070,13 +8104,13 @@ var storefront = function(exports) {
   var args_1$1 = args;
   var executeSchedule_1 = executeSchedule$1;
   function windowTime(windowTimeSpan) {
-    var _a2, _b2;
+    var _a, _b;
     var otherArgs = [];
-    for (var _i2 = 1; _i2 < arguments.length; _i2++) {
-      otherArgs[_i2 - 1] = arguments[_i2];
+    for (var _i = 1; _i < arguments.length; _i++) {
+      otherArgs[_i - 1] = arguments[_i];
     }
-    var scheduler = (_a2 = args_1$1.popScheduler(otherArgs)) !== null && _a2 !== void 0 ? _a2 : async_1.asyncScheduler;
-    var windowCreationInterval = (_b2 = otherArgs[0]) !== null && _b2 !== void 0 ? _b2 : null;
+    var scheduler = (_a = args_1$1.popScheduler(otherArgs)) !== null && _a !== void 0 ? _a : async_1.asyncScheduler;
+    var windowCreationInterval = (_b = otherArgs[0]) !== null && _b !== void 0 ? _b : null;
     var maxWindowSize = otherArgs[1] || Infinity;
     return lift_1$4.operate(function(source, subscriber) {
       var windowRecords = [];
@@ -8115,8 +8149,8 @@ var storefront = function(exports) {
         return windowRecords.slice().forEach(cb);
       };
       var terminate = function(cb) {
-        loop(function(_a3) {
-          var window2 = _a3.window;
+        loop(function(_a2) {
+          var window2 = _a2.window;
           return cb(window2);
         });
         cb(subscriber);
@@ -8195,7 +8229,7 @@ var storefront = function(exports) {
         closingSubscription.add(closingNotifier.subscribe(OperatorSubscriber_1$2.createOperatorSubscriber(subscriber, closeWindow, noop_1$1.noop, handleError)));
       }, noop_1$1.noop));
       source.subscribe(OperatorSubscriber_1$2.createOperatorSubscriber(subscriber, function(value) {
-        var e_1, _a2;
+        var e_1, _a;
         var windowsCopy = windows.slice();
         try {
           for (var windowsCopy_1 = __values$1(windowsCopy), windowsCopy_1_1 = windowsCopy_1.next(); !windowsCopy_1_1.done; windowsCopy_1_1 = windowsCopy_1.next()) {
@@ -8206,8 +8240,8 @@ var storefront = function(exports) {
           e_1 = { error: e_1_1 };
         } finally {
           try {
-            if (windowsCopy_1_1 && !windowsCopy_1_1.done && (_a2 = windowsCopy_1.return))
-              _a2.call(windowsCopy_1);
+            if (windowsCopy_1_1 && !windowsCopy_1_1.done && (_a = windowsCopy_1.return))
+              _a.call(windowsCopy_1);
           } finally {
             if (e_1)
               throw e_1.error;
@@ -8305,8 +8339,8 @@ var storefront = function(exports) {
   var args_1 = args;
   function withLatestFrom() {
     var inputs = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      inputs[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      inputs[_i] = arguments[_i];
     }
     var project = args_1.popResultSelector(inputs);
     return lift_1$1.operate(function(source, subscriber) {
@@ -8380,8 +8414,8 @@ var storefront = function(exports) {
   var lift_1 = lift;
   function zip() {
     var sources = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      sources[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      sources[_i] = arguments[_i];
     }
     return lift_1.operate(function(source, subscriber) {
       zip_1$1.zip.apply(void 0, __spreadArray$2([source], __read$2(sources))).subscribe(subscriber);
@@ -8419,8 +8453,8 @@ var storefront = function(exports) {
   var zip_1 = zip$1;
   function zipWith() {
     var otherInputs = [];
-    for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-      otherInputs[_i2] = arguments[_i2];
+    for (var _i = 0; _i < arguments.length; _i++) {
+      otherInputs[_i] = arguments[_i];
     }
     return zip_1.zip.apply(void 0, __spreadArray$1([], __read$1(otherInputs)));
   }
@@ -9143,22 +9177,22 @@ var storefront = function(exports) {
       return cjs.combineLatest([
         overrideContext$.pipe(cjs.startWith(void 0)),
         this.triggerContext$.pipe(cjs.startWith(void 0), cjs.switchMap(() => {
-          var _a2;
-          return ((_a2 = this.context) == null ? void 0 : _a2.get(this.host, key)) ?? cjs.of(void 0);
+          var _a, _b;
+          return (_b = (_a = this.context) == null ? void 0 : _a.get(this.host, key)) != null ? _b : cjs.of(void 0);
         }))
-      ]).pipe(cjs.skip(1), cjs.map(([overrideContext, context2]) => overrideContext ?? context2), cjs.distinctUntilChanged());
+      ]).pipe(cjs.skip(1), cjs.map(([overrideContext, context2]) => overrideContext != null ? overrideContext : context2), cjs.distinctUntilChanged());
     }
     provide(key, value) {
-      var _a2, _b2;
+      var _a, _b;
       if (value === void 0) {
-        (_a2 = this.context) == null ? void 0 : _a2.remove(this.host, key);
+        (_a = this.context) == null ? void 0 : _a.remove(this.host, key);
         return;
       }
-      (_b2 = this.context) == null ? void 0 : _b2.provide(this.host, key, value);
+      (_b = this.context) == null ? void 0 : _b.provide(this.host, key, value);
     }
     remove(key) {
-      var _a2;
-      (_a2 = this.context) == null ? void 0 : _a2.remove(this.host, key);
+      var _a;
+      (_a = this.context) == null ? void 0 : _a.remove(this.host, key);
     }
     hostConnected() {
       this.triggerContext$.next();
@@ -9226,7 +9260,7 @@ var storefront = function(exports) {
       return this.manifest.get(element).has(key);
     }
     closestPassShadow(element, selector) {
-      var _a2;
+      var _a;
       const isElement2 = (element2) => {
         return element2 && element2 !== window && element2 !== document;
       };
@@ -9235,12 +9269,12 @@ var storefront = function(exports) {
         if (result) {
           return result;
         }
-        element = (_a2 = element.getRootNode) == null ? void 0 : _a2.call(element).host;
+        element = (_a = element.getRootNode) == null ? void 0 : _a.call(element).host;
       }
       return {};
     }
     closest(element, selector) {
-      var _a2;
+      var _a;
       while (element) {
         const hasElement = this.manifest.has(element);
         if (hasElement) {
@@ -9248,7 +9282,7 @@ var storefront = function(exports) {
             element
           };
         }
-        const hasAttr = (_a2 = element.hasAttribute) == null ? void 0 : _a2.call(element, selector);
+        const hasAttr = (_a = element.hasAttribute) == null ? void 0 : _a.call(element, selector);
         if (hasAttr) {
           return {
             elementWithAttr: element
@@ -9590,7 +9624,7 @@ var storefront = function(exports) {
       this._finalizers = null;
     }
     Subscription2.prototype.unsubscribe = function() {
-      var e_1, _a2, e_2, _b2;
+      var e_1, _a, e_2, _b;
       var errors;
       if (!this.closed) {
         this.closed = true;
@@ -9607,8 +9641,8 @@ var storefront = function(exports) {
               e_1 = { error: e_1_1 };
             } finally {
               try {
-                if (_parentage_1_1 && !_parentage_1_1.done && (_a2 = _parentage_1.return))
-                  _a2.call(_parentage_1);
+                if (_parentage_1_1 && !_parentage_1_1.done && (_a = _parentage_1.return))
+                  _a.call(_parentage_1);
               } finally {
                 if (e_1)
                   throw e_1.error;
@@ -9647,8 +9681,8 @@ var storefront = function(exports) {
             e_2 = { error: e_2_1 };
           } finally {
             try {
-              if (_finalizers_1_1 && !_finalizers_1_1.done && (_b2 = _finalizers_1.return))
-                _b2.call(_finalizers_1);
+              if (_finalizers_1_1 && !_finalizers_1_1.done && (_b = _finalizers_1.return))
+                _b.call(_finalizers_1);
             } finally {
               if (e_2)
                 throw e_2.error;
@@ -9661,7 +9695,7 @@ var storefront = function(exports) {
       }
     };
     Subscription2.prototype.add = function(teardown) {
-      var _a2;
+      var _a;
       if (teardown && teardown !== this) {
         if (this.closed) {
           execFinalizer(teardown);
@@ -9672,7 +9706,7 @@ var storefront = function(exports) {
             }
             teardown._addParent(this);
           }
-          (this._finalizers = (_a2 = this._finalizers) !== null && _a2 !== void 0 ? _a2 : []).push(teardown);
+          (this._finalizers = (_a = this._finalizers) !== null && _a !== void 0 ? _a : []).push(teardown);
         }
       }
     };
@@ -9727,8 +9761,8 @@ var storefront = function(exports) {
   var timeoutProvider = {
     setTimeout: function(handler, timeout2) {
       var args2 = [];
-      for (var _i2 = 2; _i2 < arguments.length; _i2++) {
-        args2[_i2 - 2] = arguments[_i2];
+      for (var _i = 2; _i < arguments.length; _i++) {
+        args2[_i - 2] = arguments[_i];
       }
       var delegate = timeoutProvider.delegate;
       if (delegate === null || delegate === void 0 ? void 0 : delegate.setTimeout) {
@@ -9948,11 +9982,11 @@ var storefront = function(exports) {
       return _this;
     }
     OperatorSubscriber2.prototype.unsubscribe = function() {
-      var _a2;
+      var _a;
       if (!this.shouldUnsubscribe || this.shouldUnsubscribe()) {
         var closed_1 = this.closed;
         _super.prototype.unsubscribe.call(this);
-        !closed_1 && ((_a2 = this.onFinalize) === null || _a2 === void 0 ? void 0 : _a2.call(this));
+        !closed_1 && ((_a = this.onFinalize) === null || _a === void 0 ? void 0 : _a.call(this));
       }
     };
     return OperatorSubscriber2;
@@ -9992,7 +10026,7 @@ var storefront = function(exports) {
       var _this = this;
       var subscriber = isSubscriber(observerOrNext) ? observerOrNext : new SafeSubscriber(observerOrNext, error2, complete);
       errorContext(function() {
-        var _a2 = _this, operator = _a2.operator, source = _a2.source;
+        var _a = _this, operator = _a.operator, source = _a.source;
         subscriber.add(operator ? operator.call(subscriber, source) : source ? _this._subscribe(subscriber) : _this._trySubscribe(subscriber));
       });
       return subscriber;
@@ -10024,16 +10058,16 @@ var storefront = function(exports) {
       });
     };
     Observable2.prototype._subscribe = function(subscriber) {
-      var _a2;
-      return (_a2 = this.source) === null || _a2 === void 0 ? void 0 : _a2.subscribe(subscriber);
+      var _a;
+      return (_a = this.source) === null || _a === void 0 ? void 0 : _a.subscribe(subscriber);
     };
     Observable2.prototype[observable] = function() {
       return this;
     };
     Observable2.prototype.pipe = function() {
       var operations = [];
-      for (var _i2 = 0; _i2 < arguments.length; _i2++) {
-        operations[_i2] = arguments[_i2];
+      for (var _i = 0; _i < arguments.length; _i++) {
+        operations[_i] = arguments[_i];
       }
       return pipeFromArray(operations)(this);
     };
@@ -10057,8 +10091,8 @@ var storefront = function(exports) {
     return Observable2;
   }();
   function getPromiseCtor(promiseCtor) {
-    var _a2;
-    return (_a2 = promiseCtor !== null && promiseCtor !== void 0 ? promiseCtor : config.Promise) !== null && _a2 !== void 0 ? _a2 : Promise;
+    var _a;
+    return (_a = promiseCtor !== null && promiseCtor !== void 0 ? promiseCtor : config.Promise) !== null && _a !== void 0 ? _a : Promise;
   }
   function isObserver(value) {
     return value && isFunction$9(value.next) && isFunction$9(value.error) && isFunction$9(value.complete);
@@ -10093,30 +10127,30 @@ var storefront = function(exports) {
   }
   function readableStreamLikeToAsyncGenerator(readableStream) {
     return __asyncGenerator(this, arguments, function readableStreamLikeToAsyncGenerator_1() {
-      var reader, _a2, value, done;
-      return __generator(this, function(_b2) {
-        switch (_b2.label) {
+      var reader, _a, value, done;
+      return __generator(this, function(_b) {
+        switch (_b.label) {
           case 0:
             reader = readableStream.getReader();
-            _b2.label = 1;
+            _b.label = 1;
           case 1:
-            _b2.trys.push([1, , 9, 10]);
-            _b2.label = 2;
+            _b.trys.push([1, , 9, 10]);
+            _b.label = 2;
           case 2:
             return [4, __await(reader.read())];
           case 3:
-            _a2 = _b2.sent(), value = _a2.value, done = _a2.done;
+            _a = _b.sent(), value = _a.value, done = _a.done;
             if (!done)
               return [3, 5];
             return [4, __await(void 0)];
           case 4:
-            return [2, _b2.sent()];
+            return [2, _b.sent()];
           case 5:
             return [4, __await(value)];
           case 6:
-            return [4, _b2.sent()];
+            return [4, _b.sent()];
           case 7:
-            _b2.sent();
+            _b.sent();
             return [3, 2];
           case 8:
             return [3, 10];
@@ -10189,7 +10223,7 @@ var storefront = function(exports) {
   }
   function fromIterable(iterable) {
     return new Observable(function(subscriber) {
-      var e_1, _a2;
+      var e_1, _a;
       try {
         for (var iterable_1 = __values(iterable), iterable_1_1 = iterable_1.next(); !iterable_1_1.done; iterable_1_1 = iterable_1.next()) {
           var value = iterable_1_1.value;
@@ -10202,8 +10236,8 @@ var storefront = function(exports) {
         e_1 = { error: e_1_1 };
       } finally {
         try {
-          if (iterable_1_1 && !iterable_1_1.done && (_a2 = iterable_1.return))
-            _a2.call(iterable_1);
+          if (iterable_1_1 && !iterable_1_1.done && (_a = iterable_1.return))
+            _a.call(iterable_1);
         } finally {
           if (e_1)
             throw e_1.error;
@@ -10224,42 +10258,42 @@ var storefront = function(exports) {
   }
   function process$1(asyncIterable, subscriber) {
     var asyncIterable_1, asyncIterable_1_1;
-    var e_2, _a2;
+    var e_2, _a;
     return __awaiter(this, void 0, void 0, function() {
       var value, e_2_1;
-      return __generator(this, function(_b2) {
-        switch (_b2.label) {
+      return __generator(this, function(_b) {
+        switch (_b.label) {
           case 0:
-            _b2.trys.push([0, 5, 6, 11]);
+            _b.trys.push([0, 5, 6, 11]);
             asyncIterable_1 = __asyncValues(asyncIterable);
-            _b2.label = 1;
+            _b.label = 1;
           case 1:
             return [4, asyncIterable_1.next()];
           case 2:
-            if (!(asyncIterable_1_1 = _b2.sent(), !asyncIterable_1_1.done))
+            if (!(asyncIterable_1_1 = _b.sent(), !asyncIterable_1_1.done))
               return [3, 4];
             value = asyncIterable_1_1.value;
             subscriber.next(value);
             if (subscriber.closed) {
               return [2];
             }
-            _b2.label = 3;
+            _b.label = 3;
           case 3:
             return [3, 1];
           case 4:
             return [3, 11];
           case 5:
-            e_2_1 = _b2.sent();
+            e_2_1 = _b.sent();
             e_2 = { error: e_2_1 };
             return [3, 11];
           case 6:
-            _b2.trys.push([6, , 9, 10]);
-            if (!(asyncIterable_1_1 && !asyncIterable_1_1.done && (_a2 = asyncIterable_1.return)))
+            _b.trys.push([6, , 9, 10]);
+            if (!(asyncIterable_1_1 && !asyncIterable_1_1.done && (_a = asyncIterable_1.return)))
               return [3, 8];
-            return [4, _a2.call(asyncIterable_1)];
+            return [4, _a.call(asyncIterable_1)];
           case 7:
-            _b2.sent();
-            _b2.label = 8;
+            _b.sent();
+            _b.label = 8;
           case 8:
             return [3, 10];
           case 9:
@@ -10367,22 +10401,22 @@ var storefront = function(exports) {
       this.handler = handler;
     }
     request(url, options = {}) {
-      var _a2;
-      if (!((_a2 = options.headers) == null ? void 0 : _a2["Content-Type"])) {
+      var _a, _b;
+      if (!((_a = options.headers) == null ? void 0 : _a["Content-Type"])) {
         options.headers = {
-          ...options.headers ?? {},
+          ...(_b = options.headers) != null ? _b : {},
           "Content-Type": "application/json"
         };
       }
       return this.handler.handle(url, options).pipe(cjs.switchMap((response) => {
-        var _a3;
+        var _a2, _b2;
         if (!response.ok) {
           this.throwError(response);
         }
         if (options == null ? void 0 : options.parser) {
-          (_a3 = options == null ? void 0 : options.parser) == null ? void 0 : _a3.call(options, response);
+          (_a2 = options == null ? void 0 : options.parser) == null ? void 0 : _a2.call(options, response);
         }
-        const contentType = response.headers.get("content-type") ?? "";
+        const contentType = (_b2 = response.headers.get("content-type")) != null ? _b2 : "";
         if (jsonRegex.test(contentType)) {
           return response.json();
         }
@@ -10574,14 +10608,14 @@ var storefront = function(exports) {
     };
   };
   function hydratableClass(target, mode) {
-    var _a2, _b2;
+    var _a, _b;
     return class extends target {
       constructor(...args2) {
         super();
-        this[_a2] = false;
-        this[_b2] = 0;
+        this[_a] = false;
+        this[_b] = 0;
         {
-          this.setAttribute("hydratable", mode ?? "");
+          this.setAttribute("hydratable", mode != null ? mode : "");
         }
       }
       connectedCallback() {
@@ -10600,7 +10634,7 @@ var storefront = function(exports) {
         super.update(changedProperties2);
         this[HYDRATING] = false;
       }
-      [(_a2 = DEFER_HYDRATION, _b2 = HYDRATION_CALLS, HYDRATE_ON_DEMAND)]() {
+      [(_a = DEFER_HYDRATION, _b = HYDRATION_CALLS, HYDRATE_ON_DEMAND)]() {
         const prototype = Array(this[HYDRATION_CALLS]).fill(null).reduce(Object.getPrototypeOf, this);
         if (prototype[HYDRATE_ON_DEMAND]) {
           this[HYDRATION_CALLS]++;
@@ -10622,8 +10656,8 @@ var storefront = function(exports) {
   function isPromise(object) {
     return typeof (object == null ? void 0 : object.then) === "function";
   }
-  const _Injectable = class {
-    constructor(key, defaultValue, container = globalThis[_Injectable.GlobalKey] ?? (globalThis[_Injectable.GlobalKey] = {})) {
+  class Injectable {
+    constructor(key, defaultValue, container = ((_a) => (_a = globalThis[Injectable.GlobalKey]) != null ? _a : globalThis[Injectable.GlobalKey] = {})()) {
       this.container = container;
       this.key = Symbol.for(key);
       if (defaultValue) {
@@ -10640,11 +10674,8 @@ var storefront = function(exports) {
     inject(value) {
       this.container[this.key] = value;
     }
-  };
-  let Injectable = _Injectable;
-  (() => {
-    _Injectable.GlobalKey = Symbol.for("FES.Injectable");
-  })();
+  }
+  Injectable.GlobalKey = Symbol.for("FES.Injectable");
   function getPropByPath(value, path, delimiter = ".") {
     const paths = path.split(delimiter);
     while (value && paths.length) {
@@ -10840,7 +10871,7 @@ var storefront = function(exports) {
     let ssrAwaiter2 = null;
     try {
       ssrAwaiter2 = inject(SSRAwaiterService);
-    } catch (_e2) {
+    } catch (_e) {
       ssrAwaiter2 = resolve(SSRAwaiterService, null);
     }
     if (!ssrAwaiter2)
@@ -12787,196 +12818,196 @@ var storefront = function(exports) {
   };
   var Inflections_1 = Inflections$1;
   var DEFAULT_APPROXIMATIONS = {
-    "À": "A",
-    "Á": "A",
-    "Â": "A",
-    "Ã": "A",
-    "Ä": "A",
-    "Å": "A",
-    "Æ": "AE",
-    "Ç": "C",
-    "È": "E",
-    "É": "E",
-    "Ê": "E",
-    "Ë": "E",
-    "Ì": "I",
-    "Í": "I",
-    "Î": "I",
-    "Ï": "I",
-    "Ð": "D",
-    "Ñ": "N",
-    "Ò": "O",
-    "Ó": "O",
-    "Ô": "O",
-    "Õ": "O",
-    "Ö": "O",
-    "×": "x",
-    "Ø": "O",
-    "Ù": "U",
-    "Ú": "U",
-    "Û": "U",
-    "Ü": "U",
-    "Ý": "Y",
-    "Þ": "Th",
-    "ß": "ss",
-    "à": "a",
-    "á": "a",
-    "â": "a",
-    "ã": "a",
-    "ä": "a",
-    "å": "a",
-    "æ": "ae",
-    "ç": "c",
-    "è": "e",
-    "é": "e",
-    "ê": "e",
-    "ë": "e",
-    "ì": "i",
-    "í": "i",
-    "î": "i",
-    "ï": "i",
-    "ð": "d",
-    "ñ": "n",
-    "ò": "o",
-    "ó": "o",
-    "ô": "o",
-    "õ": "o",
-    "ö": "o",
-    "ø": "o",
-    "ù": "u",
-    "ú": "u",
-    "û": "u",
-    "ü": "u",
-    "ý": "y",
-    "þ": "th",
-    "ÿ": "y",
-    "Ā": "A",
-    "ā": "a",
-    "Ă": "A",
-    "ă": "a",
-    "Ą": "A",
-    "ą": "a",
-    "Ć": "C",
-    "ć": "c",
-    "Ĉ": "C",
-    "ĉ": "c",
-    "Ċ": "C",
-    "ċ": "c",
-    "Č": "C",
-    "č": "c",
-    "Ď": "D",
-    "ď": "d",
-    "Đ": "D",
-    "đ": "d",
-    "Ē": "E",
-    "ē": "e",
-    "Ĕ": "E",
-    "ĕ": "e",
-    "Ė": "E",
-    "ė": "e",
-    "Ę": "E",
-    "ę": "e",
-    "Ě": "E",
-    "ě": "e",
-    "Ĝ": "G",
-    "ĝ": "g",
-    "Ğ": "G",
-    "ğ": "g",
-    "Ġ": "G",
-    "ġ": "g",
-    "Ģ": "G",
-    "ģ": "g",
-    "Ĥ": "H",
-    "ĥ": "h",
-    "Ħ": "H",
-    "ħ": "h",
-    "Ĩ": "I",
-    "ĩ": "i",
-    "Ī": "I",
-    "ī": "i",
-    "Ĭ": "I",
-    "ĭ": "i",
-    "Į": "I",
-    "į": "i",
-    "İ": "I",
-    "ı": "i",
-    "Ĳ": "IJ",
-    "ĳ": "ij",
-    "Ĵ": "J",
-    "ĵ": "j",
-    "Ķ": "K",
-    "ķ": "k",
-    "ĸ": "k",
-    "Ĺ": "L",
-    "ĺ": "l",
-    "Ļ": "L",
-    "ļ": "l",
-    "Ľ": "L",
-    "ľ": "l",
-    "Ŀ": "L",
-    "ŀ": "l",
-    "Ł": "L",
-    "ł": "l",
-    "Ń": "N",
-    "ń": "n",
-    "Ņ": "N",
-    "ņ": "n",
-    "Ň": "N",
-    "ň": "n",
-    "ŉ": "'n",
-    "Ŋ": "NG",
-    "ŋ": "ng",
-    "Ō": "O",
-    "ō": "o",
-    "Ŏ": "O",
-    "ŏ": "o",
-    "Ő": "O",
-    "ő": "o",
-    "Œ": "OE",
-    "œ": "oe",
-    "Ŕ": "R",
-    "ŕ": "r",
-    "Ŗ": "R",
-    "ŗ": "r",
-    "Ř": "R",
-    "ř": "r",
-    "Ś": "S",
-    "ś": "s",
-    "Ŝ": "S",
-    "ŝ": "s",
-    "Ş": "S",
-    "ş": "s",
-    "Š": "S",
-    "š": "s",
-    "Ţ": "T",
-    "ţ": "t",
-    "Ť": "T",
-    "ť": "t",
-    "Ŧ": "T",
-    "ŧ": "t",
-    "Ũ": "U",
-    "ũ": "u",
-    "Ū": "U",
-    "ū": "u",
-    "Ŭ": "U",
-    "ŭ": "u",
-    "Ů": "U",
-    "ů": "u",
-    "Ű": "U",
-    "ű": "u",
-    "Ų": "U",
-    "ų": "u",
-    "Ŵ": "W",
-    "ŵ": "w",
-    "Ŷ": "Y",
-    "ŷ": "y",
-    "Ÿ": "Y",
-    "Ź": "Z",
-    "ź": "z",
-    "Ż": "Z",
-    "ż": "z",
-    "Ž": "Z",
-    "ž": "z"
+    "\xC0": "A",
+    "\xC1": "A",
+    "\xC2": "A",
+    "\xC3": "A",
+    "\xC4": "A",
+    "\xC5": "A",
+    "\xC6": "AE",
+    "\xC7": "C",
+    "\xC8": "E",
+    "\xC9": "E",
+    "\xCA": "E",
+    "\xCB": "E",
+    "\xCC": "I",
+    "\xCD": "I",
+    "\xCE": "I",
+    "\xCF": "I",
+    "\xD0": "D",
+    "\xD1": "N",
+    "\xD2": "O",
+    "\xD3": "O",
+    "\xD4": "O",
+    "\xD5": "O",
+    "\xD6": "O",
+    "\xD7": "x",
+    "\xD8": "O",
+    "\xD9": "U",
+    "\xDA": "U",
+    "\xDB": "U",
+    "\xDC": "U",
+    "\xDD": "Y",
+    "\xDE": "Th",
+    "\xDF": "ss",
+    "\xE0": "a",
+    "\xE1": "a",
+    "\xE2": "a",
+    "\xE3": "a",
+    "\xE4": "a",
+    "\xE5": "a",
+    "\xE6": "ae",
+    "\xE7": "c",
+    "\xE8": "e",
+    "\xE9": "e",
+    "\xEA": "e",
+    "\xEB": "e",
+    "\xEC": "i",
+    "\xED": "i",
+    "\xEE": "i",
+    "\xEF": "i",
+    "\xF0": "d",
+    "\xF1": "n",
+    "\xF2": "o",
+    "\xF3": "o",
+    "\xF4": "o",
+    "\xF5": "o",
+    "\xF6": "o",
+    "\xF8": "o",
+    "\xF9": "u",
+    "\xFA": "u",
+    "\xFB": "u",
+    "\xFC": "u",
+    "\xFD": "y",
+    "\xFE": "th",
+    "\xFF": "y",
+    "\u0100": "A",
+    "\u0101": "a",
+    "\u0102": "A",
+    "\u0103": "a",
+    "\u0104": "A",
+    "\u0105": "a",
+    "\u0106": "C",
+    "\u0107": "c",
+    "\u0108": "C",
+    "\u0109": "c",
+    "\u010A": "C",
+    "\u010B": "c",
+    "\u010C": "C",
+    "\u010D": "c",
+    "\u010E": "D",
+    "\u010F": "d",
+    "\u0110": "D",
+    "\u0111": "d",
+    "\u0112": "E",
+    "\u0113": "e",
+    "\u0114": "E",
+    "\u0115": "e",
+    "\u0116": "E",
+    "\u0117": "e",
+    "\u0118": "E",
+    "\u0119": "e",
+    "\u011A": "E",
+    "\u011B": "e",
+    "\u011C": "G",
+    "\u011D": "g",
+    "\u011E": "G",
+    "\u011F": "g",
+    "\u0120": "G",
+    "\u0121": "g",
+    "\u0122": "G",
+    "\u0123": "g",
+    "\u0124": "H",
+    "\u0125": "h",
+    "\u0126": "H",
+    "\u0127": "h",
+    "\u0128": "I",
+    "\u0129": "i",
+    "\u012A": "I",
+    "\u012B": "i",
+    "\u012C": "I",
+    "\u012D": "i",
+    "\u012E": "I",
+    "\u012F": "i",
+    "\u0130": "I",
+    "\u0131": "i",
+    "\u0132": "IJ",
+    "\u0133": "ij",
+    "\u0134": "J",
+    "\u0135": "j",
+    "\u0136": "K",
+    "\u0137": "k",
+    "\u0138": "k",
+    "\u0139": "L",
+    "\u013A": "l",
+    "\u013B": "L",
+    "\u013C": "l",
+    "\u013D": "L",
+    "\u013E": "l",
+    "\u013F": "L",
+    "\u0140": "l",
+    "\u0141": "L",
+    "\u0142": "l",
+    "\u0143": "N",
+    "\u0144": "n",
+    "\u0145": "N",
+    "\u0146": "n",
+    "\u0147": "N",
+    "\u0148": "n",
+    "\u0149": "'n",
+    "\u014A": "NG",
+    "\u014B": "ng",
+    "\u014C": "O",
+    "\u014D": "o",
+    "\u014E": "O",
+    "\u014F": "o",
+    "\u0150": "O",
+    "\u0151": "o",
+    "\u0152": "OE",
+    "\u0153": "oe",
+    "\u0154": "R",
+    "\u0155": "r",
+    "\u0156": "R",
+    "\u0157": "r",
+    "\u0158": "R",
+    "\u0159": "r",
+    "\u015A": "S",
+    "\u015B": "s",
+    "\u015C": "S",
+    "\u015D": "s",
+    "\u015E": "S",
+    "\u015F": "s",
+    "\u0160": "S",
+    "\u0161": "s",
+    "\u0162": "T",
+    "\u0163": "t",
+    "\u0164": "T",
+    "\u0165": "t",
+    "\u0166": "T",
+    "\u0167": "t",
+    "\u0168": "U",
+    "\u0169": "u",
+    "\u016A": "U",
+    "\u016B": "u",
+    "\u016C": "U",
+    "\u016D": "u",
+    "\u016E": "U",
+    "\u016F": "u",
+    "\u0170": "U",
+    "\u0171": "u",
+    "\u0172": "U",
+    "\u0173": "u",
+    "\u0174": "W",
+    "\u0175": "w",
+    "\u0176": "Y",
+    "\u0177": "y",
+    "\u0178": "Y",
+    "\u0179": "Z",
+    "\u017A": "z",
+    "\u017B": "Z",
+    "\u017C": "z",
+    "\u017D": "Z",
+    "\u017E": "z"
   };
   var DEFAULT_REPLACEMENT_CHAR = "?";
   function Transliterator$1() {
@@ -13970,8 +14001,8 @@ var storefront = function(exports) {
     const propertyDescriptor = {
       ...reactiveDescriptor,
       set(newValue) {
-        var _a2;
-        (_a2 = reactiveDescriptor.set) == null ? void 0 : _a2.call(this, newValue);
+        var _a;
+        (_a = reactiveDescriptor.set) == null ? void 0 : _a.call(this, newValue);
         if (this[internalSubjectKey]) {
           this[internalSubjectKey].next(newValue);
         }
@@ -14000,8 +14031,8 @@ var storefront = function(exports) {
     return {
       ...context2,
       initializer() {
-        var _a2;
-        const subject$ = (_a2 = context2.initializer) == null ? void 0 : _a2.call(this);
+        var _a;
+        const subject$ = (_a = context2.initializer) == null ? void 0 : _a.call(this);
         throwSubjectError(subject$);
         subject$.next(this[propertyKey]);
         return subject$;
@@ -14012,8 +14043,8 @@ var storefront = function(exports) {
         const propertyDescriptor = {
           ...reactiveDescriptor,
           set(newValue) {
-            var _a2;
-            (_a2 = reactiveDescriptor.set) == null ? void 0 : _a2.call(this, newValue);
+            var _a;
+            (_a = reactiveDescriptor.set) == null ? void 0 : _a.call(this, newValue);
             if (this[subjectKey]) {
               this[subjectKey].next(newValue);
             }
@@ -14029,19 +14060,19 @@ var storefront = function(exports) {
         return name2 !== void 0;
       };
       const subjectKey = isLegacy(context2, name) ? name : context2.key;
-      const propertyKey = property2 ?? subjectKey.slice(0, -1);
+      const propertyKey = property2 != null ? property2 : subjectKey.slice(0, -1);
       return isLegacy(context2, name) ? legacyObserve(context2, subjectKey, propertyKey) : standardObserve(context2, subjectKey, propertyKey);
     };
   }
   class SubscribeController {
     constructor(host) {
-      var _a2, _b2, _c2;
+      var _a, _b, _c;
       this.host = host;
       this.subscriptions = new cjs.Subscription();
       this.observables = /* @__PURE__ */ new Map();
       this.context = resolve("FES.ContextService", null);
       (this.host = host).addController(this);
-      (_c2 = (_b2 = (_a2 = this.context) == null ? void 0 : _a2.rendered$) == null ? void 0 : _b2.subscribe) == null ? void 0 : _c2.call(_b2, () => this.unsubscribe());
+      (_c = (_b = (_a = this.context) == null ? void 0 : _a.rendered$) == null ? void 0 : _b.subscribe) == null ? void 0 : _c.call(_b, () => this.unsubscribe());
     }
     hostConnected() {
       for (const observable$ of this.observables.keys()) {
@@ -14118,8 +14149,8 @@ var storefront = function(exports) {
     return {
       ...context2,
       initializer() {
-        var _a2;
-        const observable$ = (_a2 = context2.initializer) == null ? void 0 : _a2.call(this);
+        var _a;
+        const observable$ = (_a = context2.initializer) == null ? void 0 : _a.call(this);
         controllerCreation(this);
         this[SUBSCRIBE_CONTROLLER].add(observable$, name);
         return observable$;
@@ -14135,6 +14166,11 @@ var storefront = function(exports) {
       return isLegacy(context2, name) ? legacySubscribe(context2, propName) : standardSubscribe(context2, propName);
     };
   }
+  /**
+   * @license
+   * Copyright 2020 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const { I: l$3 } = L, t$2 = (o2) => null === o2 || "object" != typeof o2 && "function" != typeof o2, n$6 = (o2, l2) => void 0 === l2 ? void 0 !== (null == o2 ? void 0 : o2._$litType$) : (null == o2 ? void 0 : o2._$litType$) === l2, v = (o2) => null == o2 ? void 0 : o2._$litDirective$, e$4 = (o2) => void 0 === o2.strings, c$3 = () => document.createComment(""), r$2 = (o2, t2, i2) => {
     var n2;
     const d2 = o2._$AA.parentNode, v2 = void 0 === t2 ? o2._$AB : t2._$AA;
@@ -14166,6 +14202,11 @@ var storefront = function(exports) {
       t2.remove(), t2 = o3;
     }
   };
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const s$2 = (i2, t2) => {
     var e2, o2;
     const r2 = i2._$AN;
@@ -14210,7 +14251,7 @@ var storefront = function(exports) {
     var t2, s2, o2, r2;
     i2.type == t$3.CHILD && (null !== (t2 = (o2 = i2)._$AP) && void 0 !== t2 || (o2._$AP = h$2), null !== (s2 = (r2 = i2)._$AQ) && void 0 !== s2 || (r2._$AQ = n$5));
   };
-  let c$2 = class c extends i$5 {
+  class c$2 extends i$5 {
     constructor() {
       super(...arguments), this._$AN = void 0;
     }
@@ -14233,7 +14274,7 @@ var storefront = function(exports) {
     }
     reconnected() {
     }
-  };
+  }
   class AsyncValueObservableStrategy {
     createSubscription(async2, update) {
       return async2.subscribe({
@@ -14260,14 +14301,14 @@ var storefront = function(exports) {
   const asyncValuePromiseInstance = new AsyncValuePromiseStrategy();
   class AsyncValueDirective extends c$2 {
     constructor(partInfo) {
-      var _a2, _b2;
+      var _a, _b;
       super(partInfo);
       this.object = null;
       this.strategy = null;
       this.subscription = null;
       this.ssrRendered = false;
       this.content = [null];
-      this.ssrRendered = !!((_b2 = (_a2 = partInfo.options) == null ? void 0 : _a2.host) == null ? void 0 : _b2.shadowRoot) && !o$8;
+      this.ssrRendered = !!((_b = (_a = partInfo.options) == null ? void 0 : _a.host) == null ? void 0 : _b.shadowRoot) && !o$8;
     }
     setValue(value) {
       try {
@@ -14315,8 +14356,8 @@ var storefront = function(exports) {
       });
     }
     dispose() {
-      var _a2;
-      (_a2 = this.strategy) == null ? void 0 : _a2.dispose(this.subscription);
+      var _a;
+      (_a = this.strategy) == null ? void 0 : _a.dispose(this.subscription);
       this.object = null;
       this.strategy = null;
       this.subscription = null;
@@ -14376,12 +14417,12 @@ var storefront = function(exports) {
       return this.icons;
     }
     async apply() {
-      var _a2, _b2;
-      const componentOptions = (_a2 = this.app) == null ? void 0 : _a2.findPlugin(ComponentsPlugin).options;
-      const isIconExtended = (_b2 = componentOptions[HOOKS_KEY]) == null ? void 0 : _b2[IconHookToken];
+      var _a, _b, _c;
+      const componentOptions = (_a = this.app) == null ? void 0 : _a.findPlugin(ComponentsPlugin).options;
+      const isIconExtended = (_b = componentOptions[HOOKS_KEY]) == null ? void 0 : _b[IconHookToken];
       if (Object.keys(this.icons).length && !isIconExtended) {
         componentOptions[HOOKS_KEY] = {
-          ...componentOptions[HOOKS_KEY] ?? {},
+          ...(_c = componentOptions[HOOKS_KEY]) != null ? _c : {},
           [IconHookToken]: iconHook
         };
       }
@@ -14399,10 +14440,10 @@ var storefront = function(exports) {
       return this.normalizer(styles2);
     }
     async resolve(componentDef2) {
-      var _a2;
+      var _a;
       const { name, stylesheets = [] } = componentDef2;
       const implementations = [];
-      const componentPlugin = (_a2 = this.app) == null ? void 0 : _a2.findPlugin(ComponentsPlugin);
+      const componentPlugin = (_a = this.app) == null ? void 0 : _a.findPlugin(ComponentsPlugin);
       for (const styles2 of stylesheets) {
         if (!styles2.theme) {
           implementations.push(this.loadThemeImplFn(styles2.rules));
@@ -14421,31 +14462,31 @@ var storefront = function(exports) {
       return themes.length ? themes : null;
     }
     async getIcon(icon) {
-      var _a2;
-      const iconImpl = (_a2 = this.icons) == null ? void 0 : _a2[icon];
+      var _a;
+      const iconImpl = (_a = this.icons) == null ? void 0 : _a[icon];
       if (!iconImpl) {
         return;
       }
       return await this.loadThemeImplFn(iconImpl);
     }
     getIconTemplate(icon) {
-      var _a2;
-      return (_a2 = this.icons) == null ? void 0 : _a2[icon];
+      var _a;
+      return (_a = this.icons) == null ? void 0 : _a[icon];
     }
     getBreakpoints() {
       return this.breakpoints;
     }
     generateMedia(value) {
-      var _a2, _b2, _c2, _d2;
+      var _a, _b, _c, _d;
       const path = value.split(".");
       const isScreen = path[0] === "screen";
       const mediaKey = getPropByPath(this.mediaMapper, isScreen ? "screen" : value);
       const media = (expression) => `@media ${expression}`;
       if (isScreen && this.breakpoints) {
         const dimension = this.breakpoints[path[1]];
-        let expression = ((_a2 = dimension == null ? void 0 : dimension.min) == null ? void 0 : _a2.toString()) ? `(${mediaKey.min}: ${dimension == null ? void 0 : dimension.min}px)` : "";
-        expression += ((_b2 = dimension == null ? void 0 : dimension.min) == null ? void 0 : _b2.toString()) && ((_c2 = dimension == null ? void 0 : dimension.max) == null ? void 0 : _c2.toString()) ? " and " : "";
-        expression += ((_d2 = dimension == null ? void 0 : dimension.max) == null ? void 0 : _d2.toString()) ? `(${mediaKey.max}: ${dimension == null ? void 0 : dimension.max}px)` : "";
+        let expression = ((_a = dimension == null ? void 0 : dimension.min) == null ? void 0 : _a.toString()) ? `(${mediaKey.min}: ${dimension == null ? void 0 : dimension.min}px)` : "";
+        expression += ((_b = dimension == null ? void 0 : dimension.min) == null ? void 0 : _b.toString()) && ((_c = dimension == null ? void 0 : dimension.max) == null ? void 0 : _c.toString()) ? " and " : "";
+        expression += ((_d = dimension == null ? void 0 : dimension.max) == null ? void 0 : _d.toString()) ? `(${mediaKey.max}: ${dimension == null ? void 0 : dimension.max}px)` : "";
         return media(expression);
       }
       return media(`(${mediaKey})`);
@@ -14535,7 +14576,7 @@ var storefront = function(exports) {
     }
     propertiesCollector(themes) {
       for (const { breakpoints, icons } of themes) {
-        const sortableBP = Object.fromEntries(Object.entries(breakpoints ?? {}).sort(([, a2], [, b2]) => a2.min - b2.min));
+        const sortableBP = Object.fromEntries(Object.entries(breakpoints != null ? breakpoints : {}).sort(([, a2], [, b2]) => a2.min - b2.min));
         this.breakpoints = {
           ...this.breakpoints,
           ...sortableBP
@@ -14555,8 +14596,8 @@ var storefront = function(exports) {
     }
     sortByBreakpoints(styles2) {
       styles2.sort((a2, b2) => {
-        var _a2, _b2;
-        return this.breakpointsOrder.indexOf(((_a2 = a2.media) == null ? void 0 : _a2.screen) ?? "") - this.breakpointsOrder.indexOf(((_b2 = b2.media) == null ? void 0 : _b2.screen) ?? "");
+        var _a, _b, _c, _d;
+        return this.breakpointsOrder.indexOf((_b = (_a = a2.media) == null ? void 0 : _a.screen) != null ? _b : "") - this.breakpointsOrder.indexOf((_d = (_c = b2.media) == null ? void 0 : _c.screen) != null ? _d : "");
       });
     }
     normalizer(theme) {
@@ -14606,10 +14647,10 @@ var storefront = function(exports) {
   const ComponentsPluginName = "core$components";
   class ComponentsPlugin {
     constructor(componentsInfo, options) {
-      var _a2;
+      var _a, _b;
       this.options = options;
       this.componentDefMap = /* @__PURE__ */ new Map();
-      this.logger = ((_a2 = this.options) == null ? void 0 : _a2.logger) ?? console;
+      this.logger = (_b = (_a = this.options) == null ? void 0 : _a.logger) != null ? _b : console;
       this.componentMap = /* @__PURE__ */ new Map();
       this.observer = new MutationObserver(this.handleMutations.bind(this));
       this.implMetaPreload = {};
@@ -14624,14 +14665,14 @@ var storefront = function(exports) {
       return ComponentsPluginName;
     }
     async apply(app2) {
-      var _a2;
+      var _a;
       this.theme = app2.findPlugin(ThemePlugin);
       this.rootSelector = typeof this.options.root === "string" ? this.options.root : this.processDef(this.options.root).name;
       if (this.options.preload) {
         await this.preloadComponents();
         return;
       }
-      const rootElement = (_a2 = document.querySelector) == null ? void 0 : _a2.call(document, this.rootSelector);
+      const rootElement = (_a = document.querySelector) == null ? void 0 : _a.call(document, this.rootSelector);
       if (!rootElement) {
         throw new ComponentsPluginError(`Cannot find root element by selector '${this.rootSelector}'!`);
       }
@@ -14752,12 +14793,12 @@ var storefront = function(exports) {
       return observableType;
     }
     applyThemes(name) {
-      var _a2;
+      var _a, _b;
       const { componentType, themes } = this.componentMap.get(name);
       if (!themes) {
         return;
       }
-      const base = componentType.styles ?? [];
+      const base = (_a = componentType.styles) != null ? _a : [];
       const bases = Array.isArray(base) ? base : [base];
       const isThemeData = (theme) => !!theme.styles;
       const stylesheet = themes.filter((theme) => !isThemeData(theme)).flat();
@@ -14779,7 +14820,7 @@ var storefront = function(exports) {
       }
       componentType.styles = innerTheme;
       if (componentType.hasOwnProperty("finalized")) {
-        componentType.elementStyles = (_a2 = componentType.finalizeStyles) == null ? void 0 : _a2.call(componentType, componentType.styles);
+        componentType.elementStyles = (_b = componentType.finalizeStyles) == null ? void 0 : _b.call(componentType, componentType.styles);
       }
     }
     async loadComponentImpl(def, meta) {
@@ -14852,9 +14893,9 @@ var storefront = function(exports) {
       });
     }
     destroy() {
-      var _a2;
+      var _a, _b;
       this.injector = void 0;
-      destroyInjector(((_a2 = this.options) == null ? void 0 : _a2.context) ?? "");
+      destroyInjector((_b = (_a = this.options) == null ? void 0 : _a.context) != null ? _b : "");
     }
   }
   class SimpleApp {
@@ -14884,8 +14925,8 @@ var storefront = function(exports) {
     }
     destroy() {
       this.plugins.forEach((plugin) => {
-        var _a2;
-        (_a2 = plugin.destroy) == null ? void 0 : _a2.call(plugin, this);
+        var _a;
+        (_a = plugin.destroy) == null ? void 0 : _a.call(plugin, this);
       });
       this.plugins.length = 0;
     }
@@ -14932,14 +14973,14 @@ var storefront = function(exports) {
       this.themes = [];
     }
     withOptions(options) {
-      var _a2, _b2;
+      var _a, _b;
       this.options = {
         injector: {
-          ...(_a2 = this.options) == null ? void 0 : _a2.injector,
+          ...(_a = this.options) == null ? void 0 : _a.injector,
           ...options.injector
         },
         components: {
-          ...(_b2 = this.options) == null ? void 0 : _b2.components,
+          ...(_b = this.options) == null ? void 0 : _b.components,
           ...options.components
         }
       };
@@ -14980,15 +15021,15 @@ var storefront = function(exports) {
       return this;
     }
     async create() {
-      var _a2, _b2;
+      var _a, _b;
       if (this.providers.length) {
-        this.plugins.unshift(new InjectionPlugin(this.providers, (_a2 = this.options) == null ? void 0 : _a2.injector));
+        this.plugins.unshift(new InjectionPlugin(this.providers, (_a = this.options) == null ? void 0 : _a.injector));
       }
       if (this.themes.length) {
         this.plugins.unshift(new ThemePlugin(this.themes));
       }
       if (this.componentsInfo.length) {
-        this.plugins.unshift(new ComponentsPlugin(this.componentsInfo, (_b2 = this.options) == null ? void 0 : _b2.components));
+        this.plugins.unshift(new ComponentsPlugin(this.componentsInfo, (_b = this.options) == null ? void 0 : _b.components));
       }
       return super.create();
     }
@@ -15128,13 +15169,15 @@ var storefront = function(exports) {
     }
     reloadContent(uid) {
       this.getComponent({ uid }).pipe(cjs.take(1)).subscribe((component) => {
-        const content2 = (component == null ? void 0 : component.content) ?? {};
+        var _a;
+        const content2 = (_a = component == null ? void 0 : component.content) != null ? _a : {};
         this.dataContent[uid].next(content2);
       });
     }
     reloadOptions(uid) {
       this.getComponent({ uid }).pipe(cjs.take(1)).subscribe((component) => {
-        const options = (component == null ? void 0 : component.options) ?? {};
+        var _a;
+        const options = (_a = component == null ? void 0 : component.options) != null ? _a : {};
         this.dataOptions[uid].next(options);
       });
     }
@@ -15225,10 +15268,11 @@ var storefront = function(exports) {
         perBreakpoint[breakpoint] += `[uid="${id}"]{${rules}}`;
       };
       components2.forEach((component) => {
-        var _a2, _b2, _c2;
-        (_c2 = (_b2 = (_a2 = component.options) == null ? void 0 : _a2.data) == null ? void 0 : _b2.rules) == null ? void 0 : _c2.forEach((rule) => {
+        var _a, _b, _c;
+        (_c = (_b = (_a = component.options) == null ? void 0 : _a.data) == null ? void 0 : _b.rules) == null ? void 0 : _c.forEach((rule) => {
+          var _a2;
           const styles2 = this.getLayoutStyles(rule);
-          const breakpoint = rule.breakpoint ?? this.breakpointService.getSmallest();
+          const breakpoint = (_a2 = rule.breakpoint) != null ? _a2 : this.breakpointService.getSmallest();
           add2(component.id, breakpoint, styles2);
         });
       });
@@ -15245,9 +15289,9 @@ var storefront = function(exports) {
       }).join("");
     }
     getLayoutClasses(data) {
-      var _a2;
+      var _a;
       const ruleSets = [];
-      (_a2 = data == null ? void 0 : data.rules) == null ? void 0 : _a2.forEach((rule) => {
+      (_a = data == null ? void 0 : data.rules) == null ? void 0 : _a.forEach((rule) => {
         ruleSets.push(...this.getClasses(rule));
       });
       if (ruleSets.length === 0) {
@@ -15265,7 +15309,8 @@ var storefront = function(exports) {
         return classes;
       }
       const add2 = (className, required = false) => {
-        const breakpoint = ruleSet.breakpoint ?? this.breakpointService.getSmallest();
+        var _a;
+        const breakpoint = (_a = ruleSet.breakpoint) != null ? _a : this.breakpointService.getSmallest();
         if (required)
           classes.push(`${breakpoint}-${className}`);
       };
@@ -15335,28 +15380,28 @@ var storefront = function(exports) {
       super();
       this.routerService = routerService;
       this.experiencePreviewEvent$ = typeof window !== "undefined" ? cjs.fromEvent(window, "message").pipe(cjs.filter((e2) => {
-        var _a2;
-        return ((_a2 = e2.data) == null ? void 0 : _a2.type) === POST_MESSAGE_TYPE;
+        var _a;
+        return ((_a = e2.data) == null ? void 0 : _a.type) === POST_MESSAGE_TYPE;
       }), cjs.share()) : cjs.EMPTY;
       this.structureDataEvent$ = this.experiencePreviewEvent$.pipe(cjs.filter((e2) => {
-        var _a2;
-        return (_a2 = e2.data) == null ? void 0 : _a2.structure;
+        var _a;
+        return (_a = e2.data) == null ? void 0 : _a.structure;
       }), cjs.map((data) => data.data.structure));
       this.contentDataEvent$ = this.experiencePreviewEvent$.pipe(cjs.filter((e2) => {
-        var _a2;
-        return (_a2 = e2.data) == null ? void 0 : _a2.content;
+        var _a;
+        return (_a = e2.data) == null ? void 0 : _a.content;
       }), cjs.map((data) => data.data.content));
       this.optionsDataEvent$ = this.experiencePreviewEvent$.pipe(cjs.filter((e2) => {
-        var _a2;
-        return (_a2 = e2.data) == null ? void 0 : _a2.options;
+        var _a;
+        return (_a = e2.data) == null ? void 0 : _a.options;
       }), cjs.map((data) => data.data.options));
       this.routeDataEvent$ = this.experiencePreviewEvent$.pipe(cjs.filter((e2) => {
-        var _a2;
-        return (_a2 = e2.data) == null ? void 0 : _a2.route;
+        var _a;
+        return (_a = e2.data) == null ? void 0 : _a.route;
       }), cjs.map((data) => data.data.route));
       this.interactionDataEvent$ = this.experiencePreviewEvent$.pipe(cjs.filter((e2) => {
-        var _a2;
-        return (_a2 = e2.data) == null ? void 0 : _a2.interaction;
+        var _a;
+        return (_a = e2.data) == null ? void 0 : _a.interaction;
       }), cjs.map((data) => data.data.interaction));
       this.structureDataEvent$.subscribe((structure) => {
         if (!this.dataComponent[structure.id]) {
@@ -15436,6 +15481,11 @@ var storefront = function(exports) {
       return this.interactionDataEvent$;
     }
   }
+  /**
+   * @license
+   * Copyright 2018 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const l$1 = (l2) => null != l2 ? l2 : b;
   const componentsProvider$8 = {
     provide: ComponentMapping,
@@ -15456,19 +15506,19 @@ var storefront = function(exports) {
       this.componentMapping = registeredComponents.reduce((acc, components2) => ({ ...acc, ...components2 }), {});
     }
     resolveTag(type) {
-      var _a2, _b2;
-      return ((_b2 = (_a2 = this.componentMapping) == null ? void 0 : _a2[type]) == null ? void 0 : _b2.tag) ?? type;
+      var _a, _b, _c;
+      return (_c = (_b = (_a = this.componentMapping) == null ? void 0 : _a[type]) == null ? void 0 : _b.tag) != null ? _c : type;
     }
     resolveTemplate(type, uid, styleClasses) {
-      var _a2;
-      const component = (_a2 = this.componentMapping) == null ? void 0 : _a2[type];
+      var _a, _b, _c;
+      const component = (_a = this.componentMapping) == null ? void 0 : _a[type];
       if (!component) {
         return void 0;
       }
-      return component.template ? component.template(uid, styleClasses) : n$7`<${o$6(component.tag ?? type)} uid=${uid} class=${styleClasses}></${o$6(component.tag ?? type)}>`;
+      return component.template ? component.template(uid, styleClasses) : n$7`<${o$6((_b = component.tag) != null ? _b : type)} uid=${uid} class=${styleClasses}></${o$6((_c = component.tag) != null ? _c : type)}>`;
     }
     async hydrateOnDemand(element) {
-      var _a2;
+      var _a;
       if (!element.hasAttribute("hydratable")) {
         return;
       }
@@ -15476,7 +15526,7 @@ var storefront = function(exports) {
         await this.componentsPlugin.loadComponent(element.localName);
         customElements.upgrade(element);
       }
-      (_a2 = element[HYDRATE_ON_DEMAND]) == null ? void 0 : _a2.call(element);
+      (_a = element[HYDRATE_ON_DEMAND]) == null ? void 0 : _a.call(element);
     }
   }
   const experienceProviders = [
@@ -15533,7 +15583,10 @@ var storefront = function(exports) {
         if (options !== void 0) {
           return cjs.of(options);
         }
-        return this.observe.get("uid").pipe(cjs.switchMap((uid) => uid && this.experienceContent ? this.experienceContent.getOptions({ uid }).pipe(cjs.map((component) => (component == null ? void 0 : component.data) ?? {})) : cjs.of({})));
+        return this.observe.get("uid").pipe(cjs.switchMap((uid) => uid && this.experienceContent ? this.experienceContent.getOptions({ uid }).pipe(cjs.map((component) => {
+          var _a;
+          return (_a = component == null ? void 0 : component.data) != null ? _a : {};
+        })) : cjs.of({})));
       }));
     }
   }
@@ -15564,6 +15617,11 @@ var storefront = function(exports) {
     providers: experiencePreviewProviders,
     components: [experiencePreviewCompositionComponent]
   };
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const i$4 = (i2, e2) => "method" === e2.kind && e2.descriptor && !("value" in e2.descriptor) ? { ...e2, finisher(n2) {
     n2.createProperty(e2.key, i2);
   } } : { kind: "field", key: Symbol(), placement: "own", descriptor: {}, originalKey: e2.key, initializer() {
@@ -15576,9 +15634,19 @@ var storefront = function(exports) {
       e3.constructor.createProperty(n3, i2);
     })(e2, n2, t2) : i$4(e2, n2);
   }
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   function t$1(t2) {
     return e$3({ ...t2, state: true });
   }
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const o$4 = ({ finisher: e2, descriptor: t2 }) => (o2, n2) => {
     var r2;
     if (void 0 === n2) {
@@ -15592,6 +15660,11 @@ var storefront = function(exports) {
       void 0 !== t2 && Object.defineProperty(o2, n2, t2(n2)), null == e2 || e2(r3, n2);
     }
   };
+  /**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   var l;
   const n$4 = null != (null === (l = globalThis.HTMLSlotElement) || void 0 === l ? void 0 : l.prototype.assignedElements) ? (o2, l2) => o2.assignedElements(l2) : (o2, l2) => o2.assignedNodes(l2).filter((o3) => o3.nodeType === Node.ELEMENT_NODE);
   function e$2(l2) {
@@ -15619,6 +15692,11 @@ var storefront = function(exports) {
     ], Component.prototype, "options", void 0);
     return Component;
   };
+  /**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const { R: i$3, D: a, V: s$1, I: c$1, F: d } = L, f = (e2, t2, r2 = {}) => {
     if (void 0 !== t2._$litPart$)
       throw Error("container already contains a live render");
@@ -15713,6 +15791,11 @@ var storefront = function(exports) {
         t2[e3 % 2] = 33 * t2[e3 % 2] ^ r2.charCodeAt(e3);
     return btoa(String.fromCharCode(...new Uint8Array(t2.buffer)));
   };
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   globalThis.litElementHydrateSupport = ({ LitElement: s2 }) => {
     const e2 = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(s2), "observedAttributes").get;
     Object.defineProperty(s2, "observedAttributes", { get() {
@@ -15748,11 +15831,12 @@ var storefront = function(exports) {
       this.storageService = inject(StorageService);
     }
     go(route, extras) {
-      if (this.router$.value === route && JSON.stringify(this.urlSearchParams$.value) === JSON.stringify((extras == null ? void 0 : extras.queryParams) ?? {})) {
+      var _a, _b, _c;
+      if (this.router$.value === route && JSON.stringify(this.urlSearchParams$.value) === JSON.stringify((_a = extras == null ? void 0 : extras.queryParams) != null ? _a : {})) {
         return;
       }
       this.router$.next(route);
-      this.urlSearchParams$.next((extras == null ? void 0 : extras.queryParams) ?? this.getURLSearchParams() ?? {});
+      this.urlSearchParams$.next((_c = (_b = extras == null ? void 0 : extras.queryParams) != null ? _b : this.getURLSearchParams()) != null ? _c : {});
       this.routerEvents$.next({ route, type: 0 });
     }
     navigate(route) {
@@ -15804,7 +15888,7 @@ var storefront = function(exports) {
       if (!params) {
         return;
       }
-      const encodedParams = Object.fromEntries(Object.entries(params).map(([k2, v2]) => [k2, encodeURIComponent(v2 ?? "")]));
+      const encodedParams = Object.fromEntries(Object.entries(params).map(([k2, v2]) => [k2, encodeURIComponent(v2 != null ? v2 : "")]));
       return new URLSearchParams(encodedParams);
     }
     storeRoute(value) {
@@ -15812,8 +15896,8 @@ var storefront = function(exports) {
       this.storedRoute$.next(value);
     }
     getURLSearchParams() {
-      var _a2;
-      return Object.fromEntries(new URLSearchParams(decodeURIComponent((_a2 = window.location) == null ? void 0 : _a2.search)).entries());
+      var _a;
+      return Object.fromEntries(new URLSearchParams(decodeURIComponent((_a = window.location) == null ? void 0 : _a.search)).entries());
     }
   }
   const applicationProviders = [
@@ -15822,6 +15906,11 @@ var storefront = function(exports) {
       useClass: DefaultRouterService
     }
   ];
+  /**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const t = /* @__PURE__ */ new WeakMap(), i$2 = (i2) => {
     if (((t2) => void 0 !== t2.pattern)(i2))
       return i2.pattern;
@@ -15896,14 +15985,19 @@ var storefront = function(exports) {
       /\d+/.test(s2) && (void 0 === i2 || s2 > i2) && (i2 = s2);
     return i2 && t2[i2];
   };
-  let n$3 = class n extends Event {
+  class n$3 extends Event {
     constructor(t2) {
       super(n$3.eventName, { bubbles: true, composed: true, cancelable: false }), this.routes = t2;
     }
-  };
+  }
   n$3.eventName = "lit-routes-connected";
+  /**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const o$2 = location.origin || location.protocol + "//" + location.host;
-  let i$1 = class i extends s {
+  class i$1 extends s {
     constructor() {
       super(...arguments), this.m = (t2) => {
         const i2 = 0 !== t2.button || t2.metaKey || t2.ctrlKey || t2.shiftKey;
@@ -15927,7 +16021,7 @@ var storefront = function(exports) {
     hostDisconnected() {
       super.hostDisconnected(), window.removeEventListener("click", this.m), window.removeEventListener("popstate", this.R);
     }
-  };
+  }
   class DefaultRouter extends i$1 {
     constructor(host, routes2) {
       super(host, routes2);
@@ -15938,9 +16032,9 @@ var storefront = function(exports) {
       this.host = host;
       this.ssrRendered = !o$8;
       this.routerService.currentRoute().pipe(this.ssrRendered ? cjs.skip(1) : cjs.identity, cjs.tap(async (route) => {
-        var _a2;
+        var _a;
         if (route && route !== "") {
-          const resolve2 = (_a2 = this.ssrAwaiter) == null ? void 0 : _a2.getAwaiter();
+          const resolve2 = (_a = this.ssrAwaiter) == null ? void 0 : _a.getAwaiter();
           await this._goto(route);
           this.routerService.acceptParams(this.params);
           resolve2 == null ? void 0 : resolve2();
@@ -15948,9 +16042,9 @@ var storefront = function(exports) {
       })).subscribe();
     }
     async _goto(pathname) {
-      var _a2, _b2;
-      this.currentPath = (_a2 = window.location) == null ? void 0 : _a2.pathname;
-      this.urlSearchParams = Object.fromEntries(new URLSearchParams(decodeURIComponent((_b2 = window.location) == null ? void 0 : _b2.search)).entries());
+      var _a, _b;
+      this.currentPath = (_a = window.location) == null ? void 0 : _a.pathname;
+      this.urlSearchParams = Object.fromEntries(new URLSearchParams(decodeURIComponent((_b = window.location) == null ? void 0 : _b.search)).entries());
       if (this.ssrRendered && this.host._$needsHydration) {
         return;
       }
@@ -16537,7 +16631,7 @@ var storefront = function(exports) {
     url.hash = input;
     return url.hash.substring(1, url.hash.length);
   }
-  var Parser$2 = class Parser {
+  var Parser$2 = class {
     constructor(input) {
       this.tokenList = [];
       this.internalResult = {};
@@ -16946,7 +17040,7 @@ var storefront = function(exports) {
     }
     return result;
   }
-  var URLPattern$1 = class URLPattern {
+  var URLPattern$1 = class {
     constructor(init = {}, baseURL) {
       this.regexp = {};
       this.keys = {};
@@ -17197,7 +17291,7 @@ var storefront = function(exports) {
     },
     {
       path: "/*",
-      render: () => y`<h1>Error 404</h1>
+      render: () => y`<oryx-heading><h1>Error 404</h1></oryx-heading>
         <p>Page not found</p>`,
       name: "404"
     }
@@ -17214,6 +17308,11 @@ var storefront = function(exports) {
       }
     }
   };
+  /**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const r = { boundAttributeSuffix: L.P, marker: L.A, markerMatch: L.M, HTML_RESULT: L.C, getTemplateHtml: L.L, overrideDirectiveResolve: (t2, e2) => class extends t2 {
     _$AS(t3, r2) {
       return e2(this, r2);
@@ -17224,6 +17323,11 @@ var storefront = function(exports) {
     let a2 = T;
     return t2.j = (t3) => a2 = t3, t2._$AI(r2, t2, i2), a2;
   }, connectedDisconnectable: (t2) => ({ ...t2, _$AU: true }), resolveDirective: L.V, AttributePart: L.H, PropertyPart: L.B, BooleanAttributePart: L.N, EventPart: L.U, ElementPart: L.F };
+  /**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const replacements = {
     "&": "&amp;",
     "<": "&lt;",
@@ -17340,7 +17444,7 @@ var storefront = function(exports) {
     1114110,
     1114111
   ];
-  unicode$3.REPLACEMENT_CHARACTER = "�";
+  unicode$3.REPLACEMENT_CHARACTER = "\uFFFD";
   unicode$3.CODE_POINTS = {
     EOF: -1,
     NULL: 0,
@@ -17464,7 +17568,7 @@ var storefront = function(exports) {
   const ERR$2 = errorCodes;
   const $$7 = unicode$2.CODE_POINTS;
   const DEFAULT_BUFFER_WATERLINE = 1 << 16;
-  let Preprocessor$1 = class Preprocessor {
+  class Preprocessor$1 {
     constructor() {
       this.html = null;
       this.pos = -1;
@@ -17561,7 +17665,7 @@ var storefront = function(exports) {
       }
       this.pos--;
     }
-  };
+  }
   var preprocessor = Preprocessor$1;
   var namedEntityData = new Uint16Array([4, 52, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 106, 303, 412, 810, 1432, 1701, 1796, 1987, 2114, 2360, 2420, 2484, 3170, 3251, 4140, 4393, 4575, 4610, 5106, 5512, 5728, 6117, 6274, 6315, 6345, 6427, 6516, 7002, 7910, 8733, 9323, 9870, 10170, 10631, 10893, 11318, 11386, 11467, 12773, 13092, 14474, 14922, 15448, 15542, 16419, 17666, 18166, 18611, 19004, 19095, 19298, 19397, 4, 16, 69, 77, 97, 98, 99, 102, 103, 108, 109, 110, 111, 112, 114, 115, 116, 117, 140, 150, 158, 169, 176, 194, 199, 210, 216, 222, 226, 242, 256, 266, 283, 294, 108, 105, 103, 5, 198, 1, 59, 148, 1, 198, 80, 5, 38, 1, 59, 156, 1, 38, 99, 117, 116, 101, 5, 193, 1, 59, 167, 1, 193, 114, 101, 118, 101, 59, 1, 258, 4, 2, 105, 121, 182, 191, 114, 99, 5, 194, 1, 59, 189, 1, 194, 59, 1, 1040, 114, 59, 3, 55349, 56580, 114, 97, 118, 101, 5, 192, 1, 59, 208, 1, 192, 112, 104, 97, 59, 1, 913, 97, 99, 114, 59, 1, 256, 100, 59, 1, 10835, 4, 2, 103, 112, 232, 237, 111, 110, 59, 1, 260, 102, 59, 3, 55349, 56632, 112, 108, 121, 70, 117, 110, 99, 116, 105, 111, 110, 59, 1, 8289, 105, 110, 103, 5, 197, 1, 59, 264, 1, 197, 4, 2, 99, 115, 272, 277, 114, 59, 3, 55349, 56476, 105, 103, 110, 59, 1, 8788, 105, 108, 100, 101, 5, 195, 1, 59, 292, 1, 195, 109, 108, 5, 196, 1, 59, 301, 1, 196, 4, 8, 97, 99, 101, 102, 111, 114, 115, 117, 321, 350, 354, 383, 388, 394, 400, 405, 4, 2, 99, 114, 327, 336, 107, 115, 108, 97, 115, 104, 59, 1, 8726, 4, 2, 118, 119, 342, 345, 59, 1, 10983, 101, 100, 59, 1, 8966, 121, 59, 1, 1041, 4, 3, 99, 114, 116, 362, 369, 379, 97, 117, 115, 101, 59, 1, 8757, 110, 111, 117, 108, 108, 105, 115, 59, 1, 8492, 97, 59, 1, 914, 114, 59, 3, 55349, 56581, 112, 102, 59, 3, 55349, 56633, 101, 118, 101, 59, 1, 728, 99, 114, 59, 1, 8492, 109, 112, 101, 113, 59, 1, 8782, 4, 14, 72, 79, 97, 99, 100, 101, 102, 104, 105, 108, 111, 114, 115, 117, 442, 447, 456, 504, 542, 547, 569, 573, 577, 616, 678, 784, 790, 796, 99, 121, 59, 1, 1063, 80, 89, 5, 169, 1, 59, 454, 1, 169, 4, 3, 99, 112, 121, 464, 470, 497, 117, 116, 101, 59, 1, 262, 4, 2, 59, 105, 476, 478, 1, 8914, 116, 97, 108, 68, 105, 102, 102, 101, 114, 101, 110, 116, 105, 97, 108, 68, 59, 1, 8517, 108, 101, 121, 115, 59, 1, 8493, 4, 4, 97, 101, 105, 111, 514, 520, 530, 535, 114, 111, 110, 59, 1, 268, 100, 105, 108, 5, 199, 1, 59, 528, 1, 199, 114, 99, 59, 1, 264, 110, 105, 110, 116, 59, 1, 8752, 111, 116, 59, 1, 266, 4, 2, 100, 110, 553, 560, 105, 108, 108, 97, 59, 1, 184, 116, 101, 114, 68, 111, 116, 59, 1, 183, 114, 59, 1, 8493, 105, 59, 1, 935, 114, 99, 108, 101, 4, 4, 68, 77, 80, 84, 591, 596, 603, 609, 111, 116, 59, 1, 8857, 105, 110, 117, 115, 59, 1, 8854, 108, 117, 115, 59, 1, 8853, 105, 109, 101, 115, 59, 1, 8855, 111, 4, 2, 99, 115, 623, 646, 107, 119, 105, 115, 101, 67, 111, 110, 116, 111, 117, 114, 73, 110, 116, 101, 103, 114, 97, 108, 59, 1, 8754, 101, 67, 117, 114, 108, 121, 4, 2, 68, 81, 658, 671, 111, 117, 98, 108, 101, 81, 117, 111, 116, 101, 59, 1, 8221, 117, 111, 116, 101, 59, 1, 8217, 4, 4, 108, 110, 112, 117, 688, 701, 736, 753, 111, 110, 4, 2, 59, 101, 696, 698, 1, 8759, 59, 1, 10868, 4, 3, 103, 105, 116, 709, 717, 722, 114, 117, 101, 110, 116, 59, 1, 8801, 110, 116, 59, 1, 8751, 111, 117, 114, 73, 110, 116, 101, 103, 114, 97, 108, 59, 1, 8750, 4, 2, 102, 114, 742, 745, 59, 1, 8450, 111, 100, 117, 99, 116, 59, 1, 8720, 110, 116, 101, 114, 67, 108, 111, 99, 107, 119, 105, 115, 101, 67, 111, 110, 116, 111, 117, 114, 73, 110, 116, 101, 103, 114, 97, 108, 59, 1, 8755, 111, 115, 115, 59, 1, 10799, 99, 114, 59, 3, 55349, 56478, 112, 4, 2, 59, 67, 803, 805, 1, 8915, 97, 112, 59, 1, 8781, 4, 11, 68, 74, 83, 90, 97, 99, 101, 102, 105, 111, 115, 834, 850, 855, 860, 865, 888, 903, 916, 921, 1011, 1415, 4, 2, 59, 111, 840, 842, 1, 8517, 116, 114, 97, 104, 100, 59, 1, 10513, 99, 121, 59, 1, 1026, 99, 121, 59, 1, 1029, 99, 121, 59, 1, 1039, 4, 3, 103, 114, 115, 873, 879, 883, 103, 101, 114, 59, 1, 8225, 114, 59, 1, 8609, 104, 118, 59, 1, 10980, 4, 2, 97, 121, 894, 900, 114, 111, 110, 59, 1, 270, 59, 1, 1044, 108, 4, 2, 59, 116, 910, 912, 1, 8711, 97, 59, 1, 916, 114, 59, 3, 55349, 56583, 4, 2, 97, 102, 927, 998, 4, 2, 99, 109, 933, 992, 114, 105, 116, 105, 99, 97, 108, 4, 4, 65, 68, 71, 84, 950, 957, 978, 985, 99, 117, 116, 101, 59, 1, 180, 111, 4, 2, 116, 117, 964, 967, 59, 1, 729, 98, 108, 101, 65, 99, 117, 116, 101, 59, 1, 733, 114, 97, 118, 101, 59, 1, 96, 105, 108, 100, 101, 59, 1, 732, 111, 110, 100, 59, 1, 8900, 102, 101, 114, 101, 110, 116, 105, 97, 108, 68, 59, 1, 8518, 4, 4, 112, 116, 117, 119, 1021, 1026, 1048, 1249, 102, 59, 3, 55349, 56635, 4, 3, 59, 68, 69, 1034, 1036, 1041, 1, 168, 111, 116, 59, 1, 8412, 113, 117, 97, 108, 59, 1, 8784, 98, 108, 101, 4, 6, 67, 68, 76, 82, 85, 86, 1065, 1082, 1101, 1189, 1211, 1236, 111, 110, 116, 111, 117, 114, 73, 110, 116, 101, 103, 114, 97, 108, 59, 1, 8751, 111, 4, 2, 116, 119, 1089, 1092, 59, 1, 168, 110, 65, 114, 114, 111, 119, 59, 1, 8659, 4, 2, 101, 111, 1107, 1141, 102, 116, 4, 3, 65, 82, 84, 1117, 1124, 1136, 114, 114, 111, 119, 59, 1, 8656, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 8660, 101, 101, 59, 1, 10980, 110, 103, 4, 2, 76, 82, 1149, 1177, 101, 102, 116, 4, 2, 65, 82, 1158, 1165, 114, 114, 111, 119, 59, 1, 10232, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 10234, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 10233, 105, 103, 104, 116, 4, 2, 65, 84, 1199, 1206, 114, 114, 111, 119, 59, 1, 8658, 101, 101, 59, 1, 8872, 112, 4, 2, 65, 68, 1218, 1225, 114, 114, 111, 119, 59, 1, 8657, 111, 119, 110, 65, 114, 114, 111, 119, 59, 1, 8661, 101, 114, 116, 105, 99, 97, 108, 66, 97, 114, 59, 1, 8741, 110, 4, 6, 65, 66, 76, 82, 84, 97, 1264, 1292, 1299, 1352, 1391, 1408, 114, 114, 111, 119, 4, 3, 59, 66, 85, 1276, 1278, 1283, 1, 8595, 97, 114, 59, 1, 10515, 112, 65, 114, 114, 111, 119, 59, 1, 8693, 114, 101, 118, 101, 59, 1, 785, 101, 102, 116, 4, 3, 82, 84, 86, 1310, 1323, 1334, 105, 103, 104, 116, 86, 101, 99, 116, 111, 114, 59, 1, 10576, 101, 101, 86, 101, 99, 116, 111, 114, 59, 1, 10590, 101, 99, 116, 111, 114, 4, 2, 59, 66, 1345, 1347, 1, 8637, 97, 114, 59, 1, 10582, 105, 103, 104, 116, 4, 2, 84, 86, 1362, 1373, 101, 101, 86, 101, 99, 116, 111, 114, 59, 1, 10591, 101, 99, 116, 111, 114, 4, 2, 59, 66, 1384, 1386, 1, 8641, 97, 114, 59, 1, 10583, 101, 101, 4, 2, 59, 65, 1399, 1401, 1, 8868, 114, 114, 111, 119, 59, 1, 8615, 114, 114, 111, 119, 59, 1, 8659, 4, 2, 99, 116, 1421, 1426, 114, 59, 3, 55349, 56479, 114, 111, 107, 59, 1, 272, 4, 16, 78, 84, 97, 99, 100, 102, 103, 108, 109, 111, 112, 113, 115, 116, 117, 120, 1466, 1470, 1478, 1489, 1515, 1520, 1525, 1536, 1544, 1593, 1609, 1617, 1650, 1664, 1668, 1677, 71, 59, 1, 330, 72, 5, 208, 1, 59, 1476, 1, 208, 99, 117, 116, 101, 5, 201, 1, 59, 1487, 1, 201, 4, 3, 97, 105, 121, 1497, 1503, 1512, 114, 111, 110, 59, 1, 282, 114, 99, 5, 202, 1, 59, 1510, 1, 202, 59, 1, 1069, 111, 116, 59, 1, 278, 114, 59, 3, 55349, 56584, 114, 97, 118, 101, 5, 200, 1, 59, 1534, 1, 200, 101, 109, 101, 110, 116, 59, 1, 8712, 4, 2, 97, 112, 1550, 1555, 99, 114, 59, 1, 274, 116, 121, 4, 2, 83, 86, 1563, 1576, 109, 97, 108, 108, 83, 113, 117, 97, 114, 101, 59, 1, 9723, 101, 114, 121, 83, 109, 97, 108, 108, 83, 113, 117, 97, 114, 101, 59, 1, 9643, 4, 2, 103, 112, 1599, 1604, 111, 110, 59, 1, 280, 102, 59, 3, 55349, 56636, 115, 105, 108, 111, 110, 59, 1, 917, 117, 4, 2, 97, 105, 1624, 1640, 108, 4, 2, 59, 84, 1631, 1633, 1, 10869, 105, 108, 100, 101, 59, 1, 8770, 108, 105, 98, 114, 105, 117, 109, 59, 1, 8652, 4, 2, 99, 105, 1656, 1660, 114, 59, 1, 8496, 109, 59, 1, 10867, 97, 59, 1, 919, 109, 108, 5, 203, 1, 59, 1675, 1, 203, 4, 2, 105, 112, 1683, 1689, 115, 116, 115, 59, 1, 8707, 111, 110, 101, 110, 116, 105, 97, 108, 69, 59, 1, 8519, 4, 5, 99, 102, 105, 111, 115, 1713, 1717, 1722, 1762, 1791, 121, 59, 1, 1060, 114, 59, 3, 55349, 56585, 108, 108, 101, 100, 4, 2, 83, 86, 1732, 1745, 109, 97, 108, 108, 83, 113, 117, 97, 114, 101, 59, 1, 9724, 101, 114, 121, 83, 109, 97, 108, 108, 83, 113, 117, 97, 114, 101, 59, 1, 9642, 4, 3, 112, 114, 117, 1770, 1775, 1781, 102, 59, 3, 55349, 56637, 65, 108, 108, 59, 1, 8704, 114, 105, 101, 114, 116, 114, 102, 59, 1, 8497, 99, 114, 59, 1, 8497, 4, 12, 74, 84, 97, 98, 99, 100, 102, 103, 111, 114, 115, 116, 1822, 1827, 1834, 1848, 1855, 1877, 1882, 1887, 1890, 1896, 1978, 1984, 99, 121, 59, 1, 1027, 5, 62, 1, 59, 1832, 1, 62, 109, 109, 97, 4, 2, 59, 100, 1843, 1845, 1, 915, 59, 1, 988, 114, 101, 118, 101, 59, 1, 286, 4, 3, 101, 105, 121, 1863, 1869, 1874, 100, 105, 108, 59, 1, 290, 114, 99, 59, 1, 284, 59, 1, 1043, 111, 116, 59, 1, 288, 114, 59, 3, 55349, 56586, 59, 1, 8921, 112, 102, 59, 3, 55349, 56638, 101, 97, 116, 101, 114, 4, 6, 69, 70, 71, 76, 83, 84, 1915, 1933, 1944, 1953, 1959, 1971, 113, 117, 97, 108, 4, 2, 59, 76, 1925, 1927, 1, 8805, 101, 115, 115, 59, 1, 8923, 117, 108, 108, 69, 113, 117, 97, 108, 59, 1, 8807, 114, 101, 97, 116, 101, 114, 59, 1, 10914, 101, 115, 115, 59, 1, 8823, 108, 97, 110, 116, 69, 113, 117, 97, 108, 59, 1, 10878, 105, 108, 100, 101, 59, 1, 8819, 99, 114, 59, 3, 55349, 56482, 59, 1, 8811, 4, 8, 65, 97, 99, 102, 105, 111, 115, 117, 2005, 2012, 2026, 2032, 2036, 2049, 2073, 2089, 82, 68, 99, 121, 59, 1, 1066, 4, 2, 99, 116, 2018, 2023, 101, 107, 59, 1, 711, 59, 1, 94, 105, 114, 99, 59, 1, 292, 114, 59, 1, 8460, 108, 98, 101, 114, 116, 83, 112, 97, 99, 101, 59, 1, 8459, 4, 2, 112, 114, 2055, 2059, 102, 59, 1, 8461, 105, 122, 111, 110, 116, 97, 108, 76, 105, 110, 101, 59, 1, 9472, 4, 2, 99, 116, 2079, 2083, 114, 59, 1, 8459, 114, 111, 107, 59, 1, 294, 109, 112, 4, 2, 68, 69, 2097, 2107, 111, 119, 110, 72, 117, 109, 112, 59, 1, 8782, 113, 117, 97, 108, 59, 1, 8783, 4, 14, 69, 74, 79, 97, 99, 100, 102, 103, 109, 110, 111, 115, 116, 117, 2144, 2149, 2155, 2160, 2171, 2189, 2194, 2198, 2209, 2245, 2307, 2329, 2334, 2341, 99, 121, 59, 1, 1045, 108, 105, 103, 59, 1, 306, 99, 121, 59, 1, 1025, 99, 117, 116, 101, 5, 205, 1, 59, 2169, 1, 205, 4, 2, 105, 121, 2177, 2186, 114, 99, 5, 206, 1, 59, 2184, 1, 206, 59, 1, 1048, 111, 116, 59, 1, 304, 114, 59, 1, 8465, 114, 97, 118, 101, 5, 204, 1, 59, 2207, 1, 204, 4, 3, 59, 97, 112, 2217, 2219, 2238, 1, 8465, 4, 2, 99, 103, 2225, 2229, 114, 59, 1, 298, 105, 110, 97, 114, 121, 73, 59, 1, 8520, 108, 105, 101, 115, 59, 1, 8658, 4, 2, 116, 118, 2251, 2281, 4, 2, 59, 101, 2257, 2259, 1, 8748, 4, 2, 103, 114, 2265, 2271, 114, 97, 108, 59, 1, 8747, 115, 101, 99, 116, 105, 111, 110, 59, 1, 8898, 105, 115, 105, 98, 108, 101, 4, 2, 67, 84, 2293, 2300, 111, 109, 109, 97, 59, 1, 8291, 105, 109, 101, 115, 59, 1, 8290, 4, 3, 103, 112, 116, 2315, 2320, 2325, 111, 110, 59, 1, 302, 102, 59, 3, 55349, 56640, 97, 59, 1, 921, 99, 114, 59, 1, 8464, 105, 108, 100, 101, 59, 1, 296, 4, 2, 107, 109, 2347, 2352, 99, 121, 59, 1, 1030, 108, 5, 207, 1, 59, 2358, 1, 207, 4, 5, 99, 102, 111, 115, 117, 2372, 2386, 2391, 2397, 2414, 4, 2, 105, 121, 2378, 2383, 114, 99, 59, 1, 308, 59, 1, 1049, 114, 59, 3, 55349, 56589, 112, 102, 59, 3, 55349, 56641, 4, 2, 99, 101, 2403, 2408, 114, 59, 3, 55349, 56485, 114, 99, 121, 59, 1, 1032, 107, 99, 121, 59, 1, 1028, 4, 7, 72, 74, 97, 99, 102, 111, 115, 2436, 2441, 2446, 2452, 2467, 2472, 2478, 99, 121, 59, 1, 1061, 99, 121, 59, 1, 1036, 112, 112, 97, 59, 1, 922, 4, 2, 101, 121, 2458, 2464, 100, 105, 108, 59, 1, 310, 59, 1, 1050, 114, 59, 3, 55349, 56590, 112, 102, 59, 3, 55349, 56642, 99, 114, 59, 3, 55349, 56486, 4, 11, 74, 84, 97, 99, 101, 102, 108, 109, 111, 115, 116, 2508, 2513, 2520, 2562, 2585, 2981, 2986, 3004, 3011, 3146, 3167, 99, 121, 59, 1, 1033, 5, 60, 1, 59, 2518, 1, 60, 4, 5, 99, 109, 110, 112, 114, 2532, 2538, 2544, 2548, 2558, 117, 116, 101, 59, 1, 313, 98, 100, 97, 59, 1, 923, 103, 59, 1, 10218, 108, 97, 99, 101, 116, 114, 102, 59, 1, 8466, 114, 59, 1, 8606, 4, 3, 97, 101, 121, 2570, 2576, 2582, 114, 111, 110, 59, 1, 317, 100, 105, 108, 59, 1, 315, 59, 1, 1051, 4, 2, 102, 115, 2591, 2907, 116, 4, 10, 65, 67, 68, 70, 82, 84, 85, 86, 97, 114, 2614, 2663, 2672, 2728, 2735, 2760, 2820, 2870, 2888, 2895, 4, 2, 110, 114, 2620, 2633, 103, 108, 101, 66, 114, 97, 99, 107, 101, 116, 59, 1, 10216, 114, 111, 119, 4, 3, 59, 66, 82, 2644, 2646, 2651, 1, 8592, 97, 114, 59, 1, 8676, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 8646, 101, 105, 108, 105, 110, 103, 59, 1, 8968, 111, 4, 2, 117, 119, 2679, 2692, 98, 108, 101, 66, 114, 97, 99, 107, 101, 116, 59, 1, 10214, 110, 4, 2, 84, 86, 2699, 2710, 101, 101, 86, 101, 99, 116, 111, 114, 59, 1, 10593, 101, 99, 116, 111, 114, 4, 2, 59, 66, 2721, 2723, 1, 8643, 97, 114, 59, 1, 10585, 108, 111, 111, 114, 59, 1, 8970, 105, 103, 104, 116, 4, 2, 65, 86, 2745, 2752, 114, 114, 111, 119, 59, 1, 8596, 101, 99, 116, 111, 114, 59, 1, 10574, 4, 2, 101, 114, 2766, 2792, 101, 4, 3, 59, 65, 86, 2775, 2777, 2784, 1, 8867, 114, 114, 111, 119, 59, 1, 8612, 101, 99, 116, 111, 114, 59, 1, 10586, 105, 97, 110, 103, 108, 101, 4, 3, 59, 66, 69, 2806, 2808, 2813, 1, 8882, 97, 114, 59, 1, 10703, 113, 117, 97, 108, 59, 1, 8884, 112, 4, 3, 68, 84, 86, 2829, 2841, 2852, 111, 119, 110, 86, 101, 99, 116, 111, 114, 59, 1, 10577, 101, 101, 86, 101, 99, 116, 111, 114, 59, 1, 10592, 101, 99, 116, 111, 114, 4, 2, 59, 66, 2863, 2865, 1, 8639, 97, 114, 59, 1, 10584, 101, 99, 116, 111, 114, 4, 2, 59, 66, 2881, 2883, 1, 8636, 97, 114, 59, 1, 10578, 114, 114, 111, 119, 59, 1, 8656, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 8660, 115, 4, 6, 69, 70, 71, 76, 83, 84, 2922, 2936, 2947, 2956, 2962, 2974, 113, 117, 97, 108, 71, 114, 101, 97, 116, 101, 114, 59, 1, 8922, 117, 108, 108, 69, 113, 117, 97, 108, 59, 1, 8806, 114, 101, 97, 116, 101, 114, 59, 1, 8822, 101, 115, 115, 59, 1, 10913, 108, 97, 110, 116, 69, 113, 117, 97, 108, 59, 1, 10877, 105, 108, 100, 101, 59, 1, 8818, 114, 59, 3, 55349, 56591, 4, 2, 59, 101, 2992, 2994, 1, 8920, 102, 116, 97, 114, 114, 111, 119, 59, 1, 8666, 105, 100, 111, 116, 59, 1, 319, 4, 3, 110, 112, 119, 3019, 3110, 3115, 103, 4, 4, 76, 82, 108, 114, 3030, 3058, 3070, 3098, 101, 102, 116, 4, 2, 65, 82, 3039, 3046, 114, 114, 111, 119, 59, 1, 10229, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 10231, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 10230, 101, 102, 116, 4, 2, 97, 114, 3079, 3086, 114, 114, 111, 119, 59, 1, 10232, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 10234, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 10233, 102, 59, 3, 55349, 56643, 101, 114, 4, 2, 76, 82, 3123, 3134, 101, 102, 116, 65, 114, 114, 111, 119, 59, 1, 8601, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 8600, 4, 3, 99, 104, 116, 3154, 3158, 3161, 114, 59, 1, 8466, 59, 1, 8624, 114, 111, 107, 59, 1, 321, 59, 1, 8810, 4, 8, 97, 99, 101, 102, 105, 111, 115, 117, 3188, 3192, 3196, 3222, 3227, 3237, 3243, 3248, 112, 59, 1, 10501, 121, 59, 1, 1052, 4, 2, 100, 108, 3202, 3213, 105, 117, 109, 83, 112, 97, 99, 101, 59, 1, 8287, 108, 105, 110, 116, 114, 102, 59, 1, 8499, 114, 59, 3, 55349, 56592, 110, 117, 115, 80, 108, 117, 115, 59, 1, 8723, 112, 102, 59, 3, 55349, 56644, 99, 114, 59, 1, 8499, 59, 1, 924, 4, 9, 74, 97, 99, 101, 102, 111, 115, 116, 117, 3271, 3276, 3283, 3306, 3422, 3427, 4120, 4126, 4137, 99, 121, 59, 1, 1034, 99, 117, 116, 101, 59, 1, 323, 4, 3, 97, 101, 121, 3291, 3297, 3303, 114, 111, 110, 59, 1, 327, 100, 105, 108, 59, 1, 325, 59, 1, 1053, 4, 3, 103, 115, 119, 3314, 3380, 3415, 97, 116, 105, 118, 101, 4, 3, 77, 84, 86, 3327, 3340, 3365, 101, 100, 105, 117, 109, 83, 112, 97, 99, 101, 59, 1, 8203, 104, 105, 4, 2, 99, 110, 3348, 3357, 107, 83, 112, 97, 99, 101, 59, 1, 8203, 83, 112, 97, 99, 101, 59, 1, 8203, 101, 114, 121, 84, 104, 105, 110, 83, 112, 97, 99, 101, 59, 1, 8203, 116, 101, 100, 4, 2, 71, 76, 3389, 3405, 114, 101, 97, 116, 101, 114, 71, 114, 101, 97, 116, 101, 114, 59, 1, 8811, 101, 115, 115, 76, 101, 115, 115, 59, 1, 8810, 76, 105, 110, 101, 59, 1, 10, 114, 59, 3, 55349, 56593, 4, 4, 66, 110, 112, 116, 3437, 3444, 3460, 3464, 114, 101, 97, 107, 59, 1, 8288, 66, 114, 101, 97, 107, 105, 110, 103, 83, 112, 97, 99, 101, 59, 1, 160, 102, 59, 1, 8469, 4, 13, 59, 67, 68, 69, 71, 72, 76, 78, 80, 82, 83, 84, 86, 3492, 3494, 3517, 3536, 3578, 3657, 3685, 3784, 3823, 3860, 3915, 4066, 4107, 1, 10988, 4, 2, 111, 117, 3500, 3510, 110, 103, 114, 117, 101, 110, 116, 59, 1, 8802, 112, 67, 97, 112, 59, 1, 8813, 111, 117, 98, 108, 101, 86, 101, 114, 116, 105, 99, 97, 108, 66, 97, 114, 59, 1, 8742, 4, 3, 108, 113, 120, 3544, 3552, 3571, 101, 109, 101, 110, 116, 59, 1, 8713, 117, 97, 108, 4, 2, 59, 84, 3561, 3563, 1, 8800, 105, 108, 100, 101, 59, 3, 8770, 824, 105, 115, 116, 115, 59, 1, 8708, 114, 101, 97, 116, 101, 114, 4, 7, 59, 69, 70, 71, 76, 83, 84, 3600, 3602, 3609, 3621, 3631, 3637, 3650, 1, 8815, 113, 117, 97, 108, 59, 1, 8817, 117, 108, 108, 69, 113, 117, 97, 108, 59, 3, 8807, 824, 114, 101, 97, 116, 101, 114, 59, 3, 8811, 824, 101, 115, 115, 59, 1, 8825, 108, 97, 110, 116, 69, 113, 117, 97, 108, 59, 3, 10878, 824, 105, 108, 100, 101, 59, 1, 8821, 117, 109, 112, 4, 2, 68, 69, 3666, 3677, 111, 119, 110, 72, 117, 109, 112, 59, 3, 8782, 824, 113, 117, 97, 108, 59, 3, 8783, 824, 101, 4, 2, 102, 115, 3692, 3724, 116, 84, 114, 105, 97, 110, 103, 108, 101, 4, 3, 59, 66, 69, 3709, 3711, 3717, 1, 8938, 97, 114, 59, 3, 10703, 824, 113, 117, 97, 108, 59, 1, 8940, 115, 4, 6, 59, 69, 71, 76, 83, 84, 3739, 3741, 3748, 3757, 3764, 3777, 1, 8814, 113, 117, 97, 108, 59, 1, 8816, 114, 101, 97, 116, 101, 114, 59, 1, 8824, 101, 115, 115, 59, 3, 8810, 824, 108, 97, 110, 116, 69, 113, 117, 97, 108, 59, 3, 10877, 824, 105, 108, 100, 101, 59, 1, 8820, 101, 115, 116, 101, 100, 4, 2, 71, 76, 3795, 3812, 114, 101, 97, 116, 101, 114, 71, 114, 101, 97, 116, 101, 114, 59, 3, 10914, 824, 101, 115, 115, 76, 101, 115, 115, 59, 3, 10913, 824, 114, 101, 99, 101, 100, 101, 115, 4, 3, 59, 69, 83, 3838, 3840, 3848, 1, 8832, 113, 117, 97, 108, 59, 3, 10927, 824, 108, 97, 110, 116, 69, 113, 117, 97, 108, 59, 1, 8928, 4, 2, 101, 105, 3866, 3881, 118, 101, 114, 115, 101, 69, 108, 101, 109, 101, 110, 116, 59, 1, 8716, 103, 104, 116, 84, 114, 105, 97, 110, 103, 108, 101, 4, 3, 59, 66, 69, 3900, 3902, 3908, 1, 8939, 97, 114, 59, 3, 10704, 824, 113, 117, 97, 108, 59, 1, 8941, 4, 2, 113, 117, 3921, 3973, 117, 97, 114, 101, 83, 117, 4, 2, 98, 112, 3933, 3952, 115, 101, 116, 4, 2, 59, 69, 3942, 3945, 3, 8847, 824, 113, 117, 97, 108, 59, 1, 8930, 101, 114, 115, 101, 116, 4, 2, 59, 69, 3963, 3966, 3, 8848, 824, 113, 117, 97, 108, 59, 1, 8931, 4, 3, 98, 99, 112, 3981, 4e3, 4045, 115, 101, 116, 4, 2, 59, 69, 3990, 3993, 3, 8834, 8402, 113, 117, 97, 108, 59, 1, 8840, 99, 101, 101, 100, 115, 4, 4, 59, 69, 83, 84, 4015, 4017, 4025, 4037, 1, 8833, 113, 117, 97, 108, 59, 3, 10928, 824, 108, 97, 110, 116, 69, 113, 117, 97, 108, 59, 1, 8929, 105, 108, 100, 101, 59, 3, 8831, 824, 101, 114, 115, 101, 116, 4, 2, 59, 69, 4056, 4059, 3, 8835, 8402, 113, 117, 97, 108, 59, 1, 8841, 105, 108, 100, 101, 4, 4, 59, 69, 70, 84, 4080, 4082, 4089, 4100, 1, 8769, 113, 117, 97, 108, 59, 1, 8772, 117, 108, 108, 69, 113, 117, 97, 108, 59, 1, 8775, 105, 108, 100, 101, 59, 1, 8777, 101, 114, 116, 105, 99, 97, 108, 66, 97, 114, 59, 1, 8740, 99, 114, 59, 3, 55349, 56489, 105, 108, 100, 101, 5, 209, 1, 59, 4135, 1, 209, 59, 1, 925, 4, 14, 69, 97, 99, 100, 102, 103, 109, 111, 112, 114, 115, 116, 117, 118, 4170, 4176, 4187, 4205, 4212, 4217, 4228, 4253, 4259, 4292, 4295, 4316, 4337, 4346, 108, 105, 103, 59, 1, 338, 99, 117, 116, 101, 5, 211, 1, 59, 4185, 1, 211, 4, 2, 105, 121, 4193, 4202, 114, 99, 5, 212, 1, 59, 4200, 1, 212, 59, 1, 1054, 98, 108, 97, 99, 59, 1, 336, 114, 59, 3, 55349, 56594, 114, 97, 118, 101, 5, 210, 1, 59, 4226, 1, 210, 4, 3, 97, 101, 105, 4236, 4241, 4246, 99, 114, 59, 1, 332, 103, 97, 59, 1, 937, 99, 114, 111, 110, 59, 1, 927, 112, 102, 59, 3, 55349, 56646, 101, 110, 67, 117, 114, 108, 121, 4, 2, 68, 81, 4272, 4285, 111, 117, 98, 108, 101, 81, 117, 111, 116, 101, 59, 1, 8220, 117, 111, 116, 101, 59, 1, 8216, 59, 1, 10836, 4, 2, 99, 108, 4301, 4306, 114, 59, 3, 55349, 56490, 97, 115, 104, 5, 216, 1, 59, 4314, 1, 216, 105, 4, 2, 108, 109, 4323, 4332, 100, 101, 5, 213, 1, 59, 4330, 1, 213, 101, 115, 59, 1, 10807, 109, 108, 5, 214, 1, 59, 4344, 1, 214, 101, 114, 4, 2, 66, 80, 4354, 4380, 4, 2, 97, 114, 4360, 4364, 114, 59, 1, 8254, 97, 99, 4, 2, 101, 107, 4372, 4375, 59, 1, 9182, 101, 116, 59, 1, 9140, 97, 114, 101, 110, 116, 104, 101, 115, 105, 115, 59, 1, 9180, 4, 9, 97, 99, 102, 104, 105, 108, 111, 114, 115, 4413, 4422, 4426, 4431, 4435, 4438, 4448, 4471, 4561, 114, 116, 105, 97, 108, 68, 59, 1, 8706, 121, 59, 1, 1055, 114, 59, 3, 55349, 56595, 105, 59, 1, 934, 59, 1, 928, 117, 115, 77, 105, 110, 117, 115, 59, 1, 177, 4, 2, 105, 112, 4454, 4467, 110, 99, 97, 114, 101, 112, 108, 97, 110, 101, 59, 1, 8460, 102, 59, 1, 8473, 4, 4, 59, 101, 105, 111, 4481, 4483, 4526, 4531, 1, 10939, 99, 101, 100, 101, 115, 4, 4, 59, 69, 83, 84, 4498, 4500, 4507, 4519, 1, 8826, 113, 117, 97, 108, 59, 1, 10927, 108, 97, 110, 116, 69, 113, 117, 97, 108, 59, 1, 8828, 105, 108, 100, 101, 59, 1, 8830, 109, 101, 59, 1, 8243, 4, 2, 100, 112, 4537, 4543, 117, 99, 116, 59, 1, 8719, 111, 114, 116, 105, 111, 110, 4, 2, 59, 97, 4555, 4557, 1, 8759, 108, 59, 1, 8733, 4, 2, 99, 105, 4567, 4572, 114, 59, 3, 55349, 56491, 59, 1, 936, 4, 4, 85, 102, 111, 115, 4585, 4594, 4599, 4604, 79, 84, 5, 34, 1, 59, 4592, 1, 34, 114, 59, 3, 55349, 56596, 112, 102, 59, 1, 8474, 99, 114, 59, 3, 55349, 56492, 4, 12, 66, 69, 97, 99, 101, 102, 104, 105, 111, 114, 115, 117, 4636, 4642, 4650, 4681, 4704, 4763, 4767, 4771, 5047, 5069, 5081, 5094, 97, 114, 114, 59, 1, 10512, 71, 5, 174, 1, 59, 4648, 1, 174, 4, 3, 99, 110, 114, 4658, 4664, 4668, 117, 116, 101, 59, 1, 340, 103, 59, 1, 10219, 114, 4, 2, 59, 116, 4675, 4677, 1, 8608, 108, 59, 1, 10518, 4, 3, 97, 101, 121, 4689, 4695, 4701, 114, 111, 110, 59, 1, 344, 100, 105, 108, 59, 1, 342, 59, 1, 1056, 4, 2, 59, 118, 4710, 4712, 1, 8476, 101, 114, 115, 101, 4, 2, 69, 85, 4722, 4748, 4, 2, 108, 113, 4728, 4736, 101, 109, 101, 110, 116, 59, 1, 8715, 117, 105, 108, 105, 98, 114, 105, 117, 109, 59, 1, 8651, 112, 69, 113, 117, 105, 108, 105, 98, 114, 105, 117, 109, 59, 1, 10607, 114, 59, 1, 8476, 111, 59, 1, 929, 103, 104, 116, 4, 8, 65, 67, 68, 70, 84, 85, 86, 97, 4792, 4840, 4849, 4905, 4912, 4972, 5022, 5040, 4, 2, 110, 114, 4798, 4811, 103, 108, 101, 66, 114, 97, 99, 107, 101, 116, 59, 1, 10217, 114, 111, 119, 4, 3, 59, 66, 76, 4822, 4824, 4829, 1, 8594, 97, 114, 59, 1, 8677, 101, 102, 116, 65, 114, 114, 111, 119, 59, 1, 8644, 101, 105, 108, 105, 110, 103, 59, 1, 8969, 111, 4, 2, 117, 119, 4856, 4869, 98, 108, 101, 66, 114, 97, 99, 107, 101, 116, 59, 1, 10215, 110, 4, 2, 84, 86, 4876, 4887, 101, 101, 86, 101, 99, 116, 111, 114, 59, 1, 10589, 101, 99, 116, 111, 114, 4, 2, 59, 66, 4898, 4900, 1, 8642, 97, 114, 59, 1, 10581, 108, 111, 111, 114, 59, 1, 8971, 4, 2, 101, 114, 4918, 4944, 101, 4, 3, 59, 65, 86, 4927, 4929, 4936, 1, 8866, 114, 114, 111, 119, 59, 1, 8614, 101, 99, 116, 111, 114, 59, 1, 10587, 105, 97, 110, 103, 108, 101, 4, 3, 59, 66, 69, 4958, 4960, 4965, 1, 8883, 97, 114, 59, 1, 10704, 113, 117, 97, 108, 59, 1, 8885, 112, 4, 3, 68, 84, 86, 4981, 4993, 5004, 111, 119, 110, 86, 101, 99, 116, 111, 114, 59, 1, 10575, 101, 101, 86, 101, 99, 116, 111, 114, 59, 1, 10588, 101, 99, 116, 111, 114, 4, 2, 59, 66, 5015, 5017, 1, 8638, 97, 114, 59, 1, 10580, 101, 99, 116, 111, 114, 4, 2, 59, 66, 5033, 5035, 1, 8640, 97, 114, 59, 1, 10579, 114, 114, 111, 119, 59, 1, 8658, 4, 2, 112, 117, 5053, 5057, 102, 59, 1, 8477, 110, 100, 73, 109, 112, 108, 105, 101, 115, 59, 1, 10608, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 8667, 4, 2, 99, 104, 5087, 5091, 114, 59, 1, 8475, 59, 1, 8625, 108, 101, 68, 101, 108, 97, 121, 101, 100, 59, 1, 10740, 4, 13, 72, 79, 97, 99, 102, 104, 105, 109, 111, 113, 115, 116, 117, 5134, 5150, 5157, 5164, 5198, 5203, 5259, 5265, 5277, 5283, 5374, 5380, 5385, 4, 2, 67, 99, 5140, 5146, 72, 99, 121, 59, 1, 1065, 121, 59, 1, 1064, 70, 84, 99, 121, 59, 1, 1068, 99, 117, 116, 101, 59, 1, 346, 4, 5, 59, 97, 101, 105, 121, 5176, 5178, 5184, 5190, 5195, 1, 10940, 114, 111, 110, 59, 1, 352, 100, 105, 108, 59, 1, 350, 114, 99, 59, 1, 348, 59, 1, 1057, 114, 59, 3, 55349, 56598, 111, 114, 116, 4, 4, 68, 76, 82, 85, 5216, 5227, 5238, 5250, 111, 119, 110, 65, 114, 114, 111, 119, 59, 1, 8595, 101, 102, 116, 65, 114, 114, 111, 119, 59, 1, 8592, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 8594, 112, 65, 114, 114, 111, 119, 59, 1, 8593, 103, 109, 97, 59, 1, 931, 97, 108, 108, 67, 105, 114, 99, 108, 101, 59, 1, 8728, 112, 102, 59, 3, 55349, 56650, 4, 2, 114, 117, 5289, 5293, 116, 59, 1, 8730, 97, 114, 101, 4, 4, 59, 73, 83, 85, 5306, 5308, 5322, 5367, 1, 9633, 110, 116, 101, 114, 115, 101, 99, 116, 105, 111, 110, 59, 1, 8851, 117, 4, 2, 98, 112, 5329, 5347, 115, 101, 116, 4, 2, 59, 69, 5338, 5340, 1, 8847, 113, 117, 97, 108, 59, 1, 8849, 101, 114, 115, 101, 116, 4, 2, 59, 69, 5358, 5360, 1, 8848, 113, 117, 97, 108, 59, 1, 8850, 110, 105, 111, 110, 59, 1, 8852, 99, 114, 59, 3, 55349, 56494, 97, 114, 59, 1, 8902, 4, 4, 98, 99, 109, 112, 5395, 5420, 5475, 5478, 4, 2, 59, 115, 5401, 5403, 1, 8912, 101, 116, 4, 2, 59, 69, 5411, 5413, 1, 8912, 113, 117, 97, 108, 59, 1, 8838, 4, 2, 99, 104, 5426, 5468, 101, 101, 100, 115, 4, 4, 59, 69, 83, 84, 5440, 5442, 5449, 5461, 1, 8827, 113, 117, 97, 108, 59, 1, 10928, 108, 97, 110, 116, 69, 113, 117, 97, 108, 59, 1, 8829, 105, 108, 100, 101, 59, 1, 8831, 84, 104, 97, 116, 59, 1, 8715, 59, 1, 8721, 4, 3, 59, 101, 115, 5486, 5488, 5507, 1, 8913, 114, 115, 101, 116, 4, 2, 59, 69, 5498, 5500, 1, 8835, 113, 117, 97, 108, 59, 1, 8839, 101, 116, 59, 1, 8913, 4, 11, 72, 82, 83, 97, 99, 102, 104, 105, 111, 114, 115, 5536, 5546, 5552, 5567, 5579, 5602, 5607, 5655, 5695, 5701, 5711, 79, 82, 78, 5, 222, 1, 59, 5544, 1, 222, 65, 68, 69, 59, 1, 8482, 4, 2, 72, 99, 5558, 5563, 99, 121, 59, 1, 1035, 121, 59, 1, 1062, 4, 2, 98, 117, 5573, 5576, 59, 1, 9, 59, 1, 932, 4, 3, 97, 101, 121, 5587, 5593, 5599, 114, 111, 110, 59, 1, 356, 100, 105, 108, 59, 1, 354, 59, 1, 1058, 114, 59, 3, 55349, 56599, 4, 2, 101, 105, 5613, 5631, 4, 2, 114, 116, 5619, 5627, 101, 102, 111, 114, 101, 59, 1, 8756, 97, 59, 1, 920, 4, 2, 99, 110, 5637, 5647, 107, 83, 112, 97, 99, 101, 59, 3, 8287, 8202, 83, 112, 97, 99, 101, 59, 1, 8201, 108, 100, 101, 4, 4, 59, 69, 70, 84, 5668, 5670, 5677, 5688, 1, 8764, 113, 117, 97, 108, 59, 1, 8771, 117, 108, 108, 69, 113, 117, 97, 108, 59, 1, 8773, 105, 108, 100, 101, 59, 1, 8776, 112, 102, 59, 3, 55349, 56651, 105, 112, 108, 101, 68, 111, 116, 59, 1, 8411, 4, 2, 99, 116, 5717, 5722, 114, 59, 3, 55349, 56495, 114, 111, 107, 59, 1, 358, 4, 14, 97, 98, 99, 100, 102, 103, 109, 110, 111, 112, 114, 115, 116, 117, 5758, 5789, 5805, 5823, 5830, 5835, 5846, 5852, 5921, 5937, 6089, 6095, 6101, 6108, 4, 2, 99, 114, 5764, 5774, 117, 116, 101, 5, 218, 1, 59, 5772, 1, 218, 114, 4, 2, 59, 111, 5781, 5783, 1, 8607, 99, 105, 114, 59, 1, 10569, 114, 4, 2, 99, 101, 5796, 5800, 121, 59, 1, 1038, 118, 101, 59, 1, 364, 4, 2, 105, 121, 5811, 5820, 114, 99, 5, 219, 1, 59, 5818, 1, 219, 59, 1, 1059, 98, 108, 97, 99, 59, 1, 368, 114, 59, 3, 55349, 56600, 114, 97, 118, 101, 5, 217, 1, 59, 5844, 1, 217, 97, 99, 114, 59, 1, 362, 4, 2, 100, 105, 5858, 5905, 101, 114, 4, 2, 66, 80, 5866, 5892, 4, 2, 97, 114, 5872, 5876, 114, 59, 1, 95, 97, 99, 4, 2, 101, 107, 5884, 5887, 59, 1, 9183, 101, 116, 59, 1, 9141, 97, 114, 101, 110, 116, 104, 101, 115, 105, 115, 59, 1, 9181, 111, 110, 4, 2, 59, 80, 5913, 5915, 1, 8899, 108, 117, 115, 59, 1, 8846, 4, 2, 103, 112, 5927, 5932, 111, 110, 59, 1, 370, 102, 59, 3, 55349, 56652, 4, 8, 65, 68, 69, 84, 97, 100, 112, 115, 5955, 5985, 5996, 6009, 6026, 6033, 6044, 6075, 114, 114, 111, 119, 4, 3, 59, 66, 68, 5967, 5969, 5974, 1, 8593, 97, 114, 59, 1, 10514, 111, 119, 110, 65, 114, 114, 111, 119, 59, 1, 8645, 111, 119, 110, 65, 114, 114, 111, 119, 59, 1, 8597, 113, 117, 105, 108, 105, 98, 114, 105, 117, 109, 59, 1, 10606, 101, 101, 4, 2, 59, 65, 6017, 6019, 1, 8869, 114, 114, 111, 119, 59, 1, 8613, 114, 114, 111, 119, 59, 1, 8657, 111, 119, 110, 97, 114, 114, 111, 119, 59, 1, 8661, 101, 114, 4, 2, 76, 82, 6052, 6063, 101, 102, 116, 65, 114, 114, 111, 119, 59, 1, 8598, 105, 103, 104, 116, 65, 114, 114, 111, 119, 59, 1, 8599, 105, 4, 2, 59, 108, 6082, 6084, 1, 978, 111, 110, 59, 1, 933, 105, 110, 103, 59, 1, 366, 99, 114, 59, 3, 55349, 56496, 105, 108, 100, 101, 59, 1, 360, 109, 108, 5, 220, 1, 59, 6115, 1, 220, 4, 9, 68, 98, 99, 100, 101, 102, 111, 115, 118, 6137, 6143, 6148, 6152, 6166, 6250, 6255, 6261, 6267, 97, 115, 104, 59, 1, 8875, 97, 114, 59, 1, 10987, 121, 59, 1, 1042, 97, 115, 104, 4, 2, 59, 108, 6161, 6163, 1, 8873, 59, 1, 10982, 4, 2, 101, 114, 6172, 6175, 59, 1, 8897, 4, 3, 98, 116, 121, 6183, 6188, 6238, 97, 114, 59, 1, 8214, 4, 2, 59, 105, 6194, 6196, 1, 8214, 99, 97, 108, 4, 4, 66, 76, 83, 84, 6209, 6214, 6220, 6231, 97, 114, 59, 1, 8739, 105, 110, 101, 59, 1, 124, 101, 112, 97, 114, 97, 116, 111, 114, 59, 1, 10072, 105, 108, 100, 101, 59, 1, 8768, 84, 104, 105, 110, 83, 112, 97, 99, 101, 59, 1, 8202, 114, 59, 3, 55349, 56601, 112, 102, 59, 3, 55349, 56653, 99, 114, 59, 3, 55349, 56497, 100, 97, 115, 104, 59, 1, 8874, 4, 5, 99, 101, 102, 111, 115, 6286, 6292, 6298, 6303, 6309, 105, 114, 99, 59, 1, 372, 100, 103, 101, 59, 1, 8896, 114, 59, 3, 55349, 56602, 112, 102, 59, 3, 55349, 56654, 99, 114, 59, 3, 55349, 56498, 4, 4, 102, 105, 111, 115, 6325, 6330, 6333, 6339, 114, 59, 3, 55349, 56603, 59, 1, 926, 112, 102, 59, 3, 55349, 56655, 99, 114, 59, 3, 55349, 56499, 4, 9, 65, 73, 85, 97, 99, 102, 111, 115, 117, 6365, 6370, 6375, 6380, 6391, 6405, 6410, 6416, 6422, 99, 121, 59, 1, 1071, 99, 121, 59, 1, 1031, 99, 121, 59, 1, 1070, 99, 117, 116, 101, 5, 221, 1, 59, 6389, 1, 221, 4, 2, 105, 121, 6397, 6402, 114, 99, 59, 1, 374, 59, 1, 1067, 114, 59, 3, 55349, 56604, 112, 102, 59, 3, 55349, 56656, 99, 114, 59, 3, 55349, 56500, 109, 108, 59, 1, 376, 4, 8, 72, 97, 99, 100, 101, 102, 111, 115, 6445, 6450, 6457, 6472, 6477, 6501, 6505, 6510, 99, 121, 59, 1, 1046, 99, 117, 116, 101, 59, 1, 377, 4, 2, 97, 121, 6463, 6469, 114, 111, 110, 59, 1, 381, 59, 1, 1047, 111, 116, 59, 1, 379, 4, 2, 114, 116, 6483, 6497, 111, 87, 105, 100, 116, 104, 83, 112, 97, 99, 101, 59, 1, 8203, 97, 59, 1, 918, 114, 59, 1, 8488, 112, 102, 59, 1, 8484, 99, 114, 59, 3, 55349, 56501, 4, 16, 97, 98, 99, 101, 102, 103, 108, 109, 110, 111, 112, 114, 115, 116, 117, 119, 6550, 6561, 6568, 6612, 6622, 6634, 6645, 6672, 6699, 6854, 6870, 6923, 6933, 6963, 6974, 6983, 99, 117, 116, 101, 5, 225, 1, 59, 6559, 1, 225, 114, 101, 118, 101, 59, 1, 259, 4, 6, 59, 69, 100, 105, 117, 121, 6582, 6584, 6588, 6591, 6600, 6609, 1, 8766, 59, 3, 8766, 819, 59, 1, 8767, 114, 99, 5, 226, 1, 59, 6598, 1, 226, 116, 101, 5, 180, 1, 59, 6607, 1, 180, 59, 1, 1072, 108, 105, 103, 5, 230, 1, 59, 6620, 1, 230, 4, 2, 59, 114, 6628, 6630, 1, 8289, 59, 3, 55349, 56606, 114, 97, 118, 101, 5, 224, 1, 59, 6643, 1, 224, 4, 2, 101, 112, 6651, 6667, 4, 2, 102, 112, 6657, 6663, 115, 121, 109, 59, 1, 8501, 104, 59, 1, 8501, 104, 97, 59, 1, 945, 4, 2, 97, 112, 6678, 6692, 4, 2, 99, 108, 6684, 6688, 114, 59, 1, 257, 103, 59, 1, 10815, 5, 38, 1, 59, 6697, 1, 38, 4, 2, 100, 103, 6705, 6737, 4, 5, 59, 97, 100, 115, 118, 6717, 6719, 6724, 6727, 6734, 1, 8743, 110, 100, 59, 1, 10837, 59, 1, 10844, 108, 111, 112, 101, 59, 1, 10840, 59, 1, 10842, 4, 7, 59, 101, 108, 109, 114, 115, 122, 6753, 6755, 6758, 6762, 6814, 6835, 6848, 1, 8736, 59, 1, 10660, 101, 59, 1, 8736, 115, 100, 4, 2, 59, 97, 6770, 6772, 1, 8737, 4, 8, 97, 98, 99, 100, 101, 102, 103, 104, 6790, 6793, 6796, 6799, 6802, 6805, 6808, 6811, 59, 1, 10664, 59, 1, 10665, 59, 1, 10666, 59, 1, 10667, 59, 1, 10668, 59, 1, 10669, 59, 1, 10670, 59, 1, 10671, 116, 4, 2, 59, 118, 6821, 6823, 1, 8735, 98, 4, 2, 59, 100, 6830, 6832, 1, 8894, 59, 1, 10653, 4, 2, 112, 116, 6841, 6845, 104, 59, 1, 8738, 59, 1, 197, 97, 114, 114, 59, 1, 9084, 4, 2, 103, 112, 6860, 6865, 111, 110, 59, 1, 261, 102, 59, 3, 55349, 56658, 4, 7, 59, 69, 97, 101, 105, 111, 112, 6886, 6888, 6891, 6897, 6900, 6904, 6908, 1, 8776, 59, 1, 10864, 99, 105, 114, 59, 1, 10863, 59, 1, 8778, 100, 59, 1, 8779, 115, 59, 1, 39, 114, 111, 120, 4, 2, 59, 101, 6917, 6919, 1, 8776, 113, 59, 1, 8778, 105, 110, 103, 5, 229, 1, 59, 6931, 1, 229, 4, 3, 99, 116, 121, 6941, 6946, 6949, 114, 59, 3, 55349, 56502, 59, 1, 42, 109, 112, 4, 2, 59, 101, 6957, 6959, 1, 8776, 113, 59, 1, 8781, 105, 108, 100, 101, 5, 227, 1, 59, 6972, 1, 227, 109, 108, 5, 228, 1, 59, 6981, 1, 228, 4, 2, 99, 105, 6989, 6997, 111, 110, 105, 110, 116, 59, 1, 8755, 110, 116, 59, 1, 10769, 4, 16, 78, 97, 98, 99, 100, 101, 102, 105, 107, 108, 110, 111, 112, 114, 115, 117, 7036, 7041, 7119, 7135, 7149, 7155, 7219, 7224, 7347, 7354, 7463, 7489, 7786, 7793, 7814, 7866, 111, 116, 59, 1, 10989, 4, 2, 99, 114, 7047, 7094, 107, 4, 4, 99, 101, 112, 115, 7058, 7064, 7073, 7080, 111, 110, 103, 59, 1, 8780, 112, 115, 105, 108, 111, 110, 59, 1, 1014, 114, 105, 109, 101, 59, 1, 8245, 105, 109, 4, 2, 59, 101, 7088, 7090, 1, 8765, 113, 59, 1, 8909, 4, 2, 118, 119, 7100, 7105, 101, 101, 59, 1, 8893, 101, 100, 4, 2, 59, 103, 7113, 7115, 1, 8965, 101, 59, 1, 8965, 114, 107, 4, 2, 59, 116, 7127, 7129, 1, 9141, 98, 114, 107, 59, 1, 9142, 4, 2, 111, 121, 7141, 7146, 110, 103, 59, 1, 8780, 59, 1, 1073, 113, 117, 111, 59, 1, 8222, 4, 5, 99, 109, 112, 114, 116, 7167, 7181, 7188, 7193, 7199, 97, 117, 115, 4, 2, 59, 101, 7176, 7178, 1, 8757, 59, 1, 8757, 112, 116, 121, 118, 59, 1, 10672, 115, 105, 59, 1, 1014, 110, 111, 117, 59, 1, 8492, 4, 3, 97, 104, 119, 7207, 7210, 7213, 59, 1, 946, 59, 1, 8502, 101, 101, 110, 59, 1, 8812, 114, 59, 3, 55349, 56607, 103, 4, 7, 99, 111, 115, 116, 117, 118, 119, 7241, 7262, 7288, 7305, 7328, 7335, 7340, 4, 3, 97, 105, 117, 7249, 7253, 7258, 112, 59, 1, 8898, 114, 99, 59, 1, 9711, 112, 59, 1, 8899, 4, 3, 100, 112, 116, 7270, 7275, 7281, 111, 116, 59, 1, 10752, 108, 117, 115, 59, 1, 10753, 105, 109, 101, 115, 59, 1, 10754, 4, 2, 113, 116, 7294, 7300, 99, 117, 112, 59, 1, 10758, 97, 114, 59, 1, 9733, 114, 105, 97, 110, 103, 108, 101, 4, 2, 100, 117, 7318, 7324, 111, 119, 110, 59, 1, 9661, 112, 59, 1, 9651, 112, 108, 117, 115, 59, 1, 10756, 101, 101, 59, 1, 8897, 101, 100, 103, 101, 59, 1, 8896, 97, 114, 111, 119, 59, 1, 10509, 4, 3, 97, 107, 111, 7362, 7436, 7458, 4, 2, 99, 110, 7368, 7432, 107, 4, 3, 108, 115, 116, 7377, 7386, 7394, 111, 122, 101, 110, 103, 101, 59, 1, 10731, 113, 117, 97, 114, 101, 59, 1, 9642, 114, 105, 97, 110, 103, 108, 101, 4, 4, 59, 100, 108, 114, 7411, 7413, 7419, 7425, 1, 9652, 111, 119, 110, 59, 1, 9662, 101, 102, 116, 59, 1, 9666, 105, 103, 104, 116, 59, 1, 9656, 107, 59, 1, 9251, 4, 2, 49, 51, 7442, 7454, 4, 2, 50, 52, 7448, 7451, 59, 1, 9618, 59, 1, 9617, 52, 59, 1, 9619, 99, 107, 59, 1, 9608, 4, 2, 101, 111, 7469, 7485, 4, 2, 59, 113, 7475, 7478, 3, 61, 8421, 117, 105, 118, 59, 3, 8801, 8421, 116, 59, 1, 8976, 4, 4, 112, 116, 119, 120, 7499, 7504, 7517, 7523, 102, 59, 3, 55349, 56659, 4, 2, 59, 116, 7510, 7512, 1, 8869, 111, 109, 59, 1, 8869, 116, 105, 101, 59, 1, 8904, 4, 12, 68, 72, 85, 86, 98, 100, 104, 109, 112, 116, 117, 118, 7549, 7571, 7597, 7619, 7655, 7660, 7682, 7708, 7715, 7721, 7728, 7750, 4, 4, 76, 82, 108, 114, 7559, 7562, 7565, 7568, 59, 1, 9559, 59, 1, 9556, 59, 1, 9558, 59, 1, 9555, 4, 5, 59, 68, 85, 100, 117, 7583, 7585, 7588, 7591, 7594, 1, 9552, 59, 1, 9574, 59, 1, 9577, 59, 1, 9572, 59, 1, 9575, 4, 4, 76, 82, 108, 114, 7607, 7610, 7613, 7616, 59, 1, 9565, 59, 1, 9562, 59, 1, 9564, 59, 1, 9561, 4, 7, 59, 72, 76, 82, 104, 108, 114, 7635, 7637, 7640, 7643, 7646, 7649, 7652, 1, 9553, 59, 1, 9580, 59, 1, 9571, 59, 1, 9568, 59, 1, 9579, 59, 1, 9570, 59, 1, 9567, 111, 120, 59, 1, 10697, 4, 4, 76, 82, 108, 114, 7670, 7673, 7676, 7679, 59, 1, 9557, 59, 1, 9554, 59, 1, 9488, 59, 1, 9484, 4, 5, 59, 68, 85, 100, 117, 7694, 7696, 7699, 7702, 7705, 1, 9472, 59, 1, 9573, 59, 1, 9576, 59, 1, 9516, 59, 1, 9524, 105, 110, 117, 115, 59, 1, 8863, 108, 117, 115, 59, 1, 8862, 105, 109, 101, 115, 59, 1, 8864, 4, 4, 76, 82, 108, 114, 7738, 7741, 7744, 7747, 59, 1, 9563, 59, 1, 9560, 59, 1, 9496, 59, 1, 9492, 4, 7, 59, 72, 76, 82, 104, 108, 114, 7766, 7768, 7771, 7774, 7777, 7780, 7783, 1, 9474, 59, 1, 9578, 59, 1, 9569, 59, 1, 9566, 59, 1, 9532, 59, 1, 9508, 59, 1, 9500, 114, 105, 109, 101, 59, 1, 8245, 4, 2, 101, 118, 7799, 7804, 118, 101, 59, 1, 728, 98, 97, 114, 5, 166, 1, 59, 7812, 1, 166, 4, 4, 99, 101, 105, 111, 7824, 7829, 7834, 7846, 114, 59, 3, 55349, 56503, 109, 105, 59, 1, 8271, 109, 4, 2, 59, 101, 7841, 7843, 1, 8765, 59, 1, 8909, 108, 4, 3, 59, 98, 104, 7855, 7857, 7860, 1, 92, 59, 1, 10693, 115, 117, 98, 59, 1, 10184, 4, 2, 108, 109, 7872, 7885, 108, 4, 2, 59, 101, 7879, 7881, 1, 8226, 116, 59, 1, 8226, 112, 4, 3, 59, 69, 101, 7894, 7896, 7899, 1, 8782, 59, 1, 10926, 4, 2, 59, 113, 7905, 7907, 1, 8783, 59, 1, 8783, 4, 15, 97, 99, 100, 101, 102, 104, 105, 108, 111, 114, 115, 116, 117, 119, 121, 7942, 8021, 8075, 8080, 8121, 8126, 8157, 8279, 8295, 8430, 8446, 8485, 8491, 8707, 8726, 4, 3, 99, 112, 114, 7950, 7956, 8007, 117, 116, 101, 59, 1, 263, 4, 6, 59, 97, 98, 99, 100, 115, 7970, 7972, 7977, 7984, 7998, 8003, 1, 8745, 110, 100, 59, 1, 10820, 114, 99, 117, 112, 59, 1, 10825, 4, 2, 97, 117, 7990, 7994, 112, 59, 1, 10827, 112, 59, 1, 10823, 111, 116, 59, 1, 10816, 59, 3, 8745, 65024, 4, 2, 101, 111, 8013, 8017, 116, 59, 1, 8257, 110, 59, 1, 711, 4, 4, 97, 101, 105, 117, 8031, 8046, 8056, 8061, 4, 2, 112, 114, 8037, 8041, 115, 59, 1, 10829, 111, 110, 59, 1, 269, 100, 105, 108, 5, 231, 1, 59, 8054, 1, 231, 114, 99, 59, 1, 265, 112, 115, 4, 2, 59, 115, 8069, 8071, 1, 10828, 109, 59, 1, 10832, 111, 116, 59, 1, 267, 4, 3, 100, 109, 110, 8088, 8097, 8104, 105, 108, 5, 184, 1, 59, 8095, 1, 184, 112, 116, 121, 118, 59, 1, 10674, 116, 5, 162, 2, 59, 101, 8112, 8114, 1, 162, 114, 100, 111, 116, 59, 1, 183, 114, 59, 3, 55349, 56608, 4, 3, 99, 101, 105, 8134, 8138, 8154, 121, 59, 1, 1095, 99, 107, 4, 2, 59, 109, 8146, 8148, 1, 10003, 97, 114, 107, 59, 1, 10003, 59, 1, 967, 114, 4, 7, 59, 69, 99, 101, 102, 109, 115, 8174, 8176, 8179, 8258, 8261, 8268, 8273, 1, 9675, 59, 1, 10691, 4, 3, 59, 101, 108, 8187, 8189, 8193, 1, 710, 113, 59, 1, 8791, 101, 4, 2, 97, 100, 8200, 8223, 114, 114, 111, 119, 4, 2, 108, 114, 8210, 8216, 101, 102, 116, 59, 1, 8634, 105, 103, 104, 116, 59, 1, 8635, 4, 5, 82, 83, 97, 99, 100, 8235, 8238, 8241, 8246, 8252, 59, 1, 174, 59, 1, 9416, 115, 116, 59, 1, 8859, 105, 114, 99, 59, 1, 8858, 97, 115, 104, 59, 1, 8861, 59, 1, 8791, 110, 105, 110, 116, 59, 1, 10768, 105, 100, 59, 1, 10991, 99, 105, 114, 59, 1, 10690, 117, 98, 115, 4, 2, 59, 117, 8288, 8290, 1, 9827, 105, 116, 59, 1, 9827, 4, 4, 108, 109, 110, 112, 8305, 8326, 8376, 8400, 111, 110, 4, 2, 59, 101, 8313, 8315, 1, 58, 4, 2, 59, 113, 8321, 8323, 1, 8788, 59, 1, 8788, 4, 2, 109, 112, 8332, 8344, 97, 4, 2, 59, 116, 8339, 8341, 1, 44, 59, 1, 64, 4, 3, 59, 102, 108, 8352, 8354, 8358, 1, 8705, 110, 59, 1, 8728, 101, 4, 2, 109, 120, 8365, 8371, 101, 110, 116, 59, 1, 8705, 101, 115, 59, 1, 8450, 4, 2, 103, 105, 8382, 8395, 4, 2, 59, 100, 8388, 8390, 1, 8773, 111, 116, 59, 1, 10861, 110, 116, 59, 1, 8750, 4, 3, 102, 114, 121, 8408, 8412, 8417, 59, 3, 55349, 56660, 111, 100, 59, 1, 8720, 5, 169, 2, 59, 115, 8424, 8426, 1, 169, 114, 59, 1, 8471, 4, 2, 97, 111, 8436, 8441, 114, 114, 59, 1, 8629, 115, 115, 59, 1, 10007, 4, 2, 99, 117, 8452, 8457, 114, 59, 3, 55349, 56504, 4, 2, 98, 112, 8463, 8474, 4, 2, 59, 101, 8469, 8471, 1, 10959, 59, 1, 10961, 4, 2, 59, 101, 8480, 8482, 1, 10960, 59, 1, 10962, 100, 111, 116, 59, 1, 8943, 4, 7, 100, 101, 108, 112, 114, 118, 119, 8507, 8522, 8536, 8550, 8600, 8697, 8702, 97, 114, 114, 4, 2, 108, 114, 8516, 8519, 59, 1, 10552, 59, 1, 10549, 4, 2, 112, 115, 8528, 8532, 114, 59, 1, 8926, 99, 59, 1, 8927, 97, 114, 114, 4, 2, 59, 112, 8545, 8547, 1, 8630, 59, 1, 10557, 4, 6, 59, 98, 99, 100, 111, 115, 8564, 8566, 8573, 8587, 8592, 8596, 1, 8746, 114, 99, 97, 112, 59, 1, 10824, 4, 2, 97, 117, 8579, 8583, 112, 59, 1, 10822, 112, 59, 1, 10826, 111, 116, 59, 1, 8845, 114, 59, 1, 10821, 59, 3, 8746, 65024, 4, 4, 97, 108, 114, 118, 8610, 8623, 8663, 8672, 114, 114, 4, 2, 59, 109, 8618, 8620, 1, 8631, 59, 1, 10556, 121, 4, 3, 101, 118, 119, 8632, 8651, 8656, 113, 4, 2, 112, 115, 8639, 8645, 114, 101, 99, 59, 1, 8926, 117, 99, 99, 59, 1, 8927, 101, 101, 59, 1, 8910, 101, 100, 103, 101, 59, 1, 8911, 101, 110, 5, 164, 1, 59, 8670, 1, 164, 101, 97, 114, 114, 111, 119, 4, 2, 108, 114, 8684, 8690, 101, 102, 116, 59, 1, 8630, 105, 103, 104, 116, 59, 1, 8631, 101, 101, 59, 1, 8910, 101, 100, 59, 1, 8911, 4, 2, 99, 105, 8713, 8721, 111, 110, 105, 110, 116, 59, 1, 8754, 110, 116, 59, 1, 8753, 108, 99, 116, 121, 59, 1, 9005, 4, 19, 65, 72, 97, 98, 99, 100, 101, 102, 104, 105, 106, 108, 111, 114, 115, 116, 117, 119, 122, 8773, 8778, 8783, 8821, 8839, 8854, 8887, 8914, 8930, 8944, 9036, 9041, 9058, 9197, 9227, 9258, 9281, 9297, 9305, 114, 114, 59, 1, 8659, 97, 114, 59, 1, 10597, 4, 4, 103, 108, 114, 115, 8793, 8799, 8805, 8809, 103, 101, 114, 59, 1, 8224, 101, 116, 104, 59, 1, 8504, 114, 59, 1, 8595, 104, 4, 2, 59, 118, 8816, 8818, 1, 8208, 59, 1, 8867, 4, 2, 107, 108, 8827, 8834, 97, 114, 111, 119, 59, 1, 10511, 97, 99, 59, 1, 733, 4, 2, 97, 121, 8845, 8851, 114, 111, 110, 59, 1, 271, 59, 1, 1076, 4, 3, 59, 97, 111, 8862, 8864, 8880, 1, 8518, 4, 2, 103, 114, 8870, 8876, 103, 101, 114, 59, 1, 8225, 114, 59, 1, 8650, 116, 115, 101, 113, 59, 1, 10871, 4, 3, 103, 108, 109, 8895, 8902, 8907, 5, 176, 1, 59, 8900, 1, 176, 116, 97, 59, 1, 948, 112, 116, 121, 118, 59, 1, 10673, 4, 2, 105, 114, 8920, 8926, 115, 104, 116, 59, 1, 10623, 59, 3, 55349, 56609, 97, 114, 4, 2, 108, 114, 8938, 8941, 59, 1, 8643, 59, 1, 8642, 4, 5, 97, 101, 103, 115, 118, 8956, 8986, 8989, 8996, 9001, 109, 4, 3, 59, 111, 115, 8965, 8967, 8983, 1, 8900, 110, 100, 4, 2, 59, 115, 8975, 8977, 1, 8900, 117, 105, 116, 59, 1, 9830, 59, 1, 9830, 59, 1, 168, 97, 109, 109, 97, 59, 1, 989, 105, 110, 59, 1, 8946, 4, 3, 59, 105, 111, 9009, 9011, 9031, 1, 247, 100, 101, 5, 247, 2, 59, 111, 9020, 9022, 1, 247, 110, 116, 105, 109, 101, 115, 59, 1, 8903, 110, 120, 59, 1, 8903, 99, 121, 59, 1, 1106, 99, 4, 2, 111, 114, 9048, 9053, 114, 110, 59, 1, 8990, 111, 112, 59, 1, 8973, 4, 5, 108, 112, 116, 117, 119, 9070, 9076, 9081, 9130, 9144, 108, 97, 114, 59, 1, 36, 102, 59, 3, 55349, 56661, 4, 5, 59, 101, 109, 112, 115, 9093, 9095, 9109, 9116, 9122, 1, 729, 113, 4, 2, 59, 100, 9102, 9104, 1, 8784, 111, 116, 59, 1, 8785, 105, 110, 117, 115, 59, 1, 8760, 108, 117, 115, 59, 1, 8724, 113, 117, 97, 114, 101, 59, 1, 8865, 98, 108, 101, 98, 97, 114, 119, 101, 100, 103, 101, 59, 1, 8966, 110, 4, 3, 97, 100, 104, 9153, 9160, 9172, 114, 114, 111, 119, 59, 1, 8595, 111, 119, 110, 97, 114, 114, 111, 119, 115, 59, 1, 8650, 97, 114, 112, 111, 111, 110, 4, 2, 108, 114, 9184, 9190, 101, 102, 116, 59, 1, 8643, 105, 103, 104, 116, 59, 1, 8642, 4, 2, 98, 99, 9203, 9211, 107, 97, 114, 111, 119, 59, 1, 10512, 4, 2, 111, 114, 9217, 9222, 114, 110, 59, 1, 8991, 111, 112, 59, 1, 8972, 4, 3, 99, 111, 116, 9235, 9248, 9252, 4, 2, 114, 121, 9241, 9245, 59, 3, 55349, 56505, 59, 1, 1109, 108, 59, 1, 10742, 114, 111, 107, 59, 1, 273, 4, 2, 100, 114, 9264, 9269, 111, 116, 59, 1, 8945, 105, 4, 2, 59, 102, 9276, 9278, 1, 9663, 59, 1, 9662, 4, 2, 97, 104, 9287, 9292, 114, 114, 59, 1, 8693, 97, 114, 59, 1, 10607, 97, 110, 103, 108, 101, 59, 1, 10662, 4, 2, 99, 105, 9311, 9315, 121, 59, 1, 1119, 103, 114, 97, 114, 114, 59, 1, 10239, 4, 18, 68, 97, 99, 100, 101, 102, 103, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 120, 9361, 9376, 9398, 9439, 9444, 9447, 9462, 9495, 9531, 9585, 9598, 9614, 9659, 9755, 9771, 9792, 9808, 9826, 4, 2, 68, 111, 9367, 9372, 111, 116, 59, 1, 10871, 116, 59, 1, 8785, 4, 2, 99, 115, 9382, 9392, 117, 116, 101, 5, 233, 1, 59, 9390, 1, 233, 116, 101, 114, 59, 1, 10862, 4, 4, 97, 105, 111, 121, 9408, 9414, 9430, 9436, 114, 111, 110, 59, 1, 283, 114, 4, 2, 59, 99, 9421, 9423, 1, 8790, 5, 234, 1, 59, 9428, 1, 234, 108, 111, 110, 59, 1, 8789, 59, 1, 1101, 111, 116, 59, 1, 279, 59, 1, 8519, 4, 2, 68, 114, 9453, 9458, 111, 116, 59, 1, 8786, 59, 3, 55349, 56610, 4, 3, 59, 114, 115, 9470, 9472, 9482, 1, 10906, 97, 118, 101, 5, 232, 1, 59, 9480, 1, 232, 4, 2, 59, 100, 9488, 9490, 1, 10902, 111, 116, 59, 1, 10904, 4, 4, 59, 105, 108, 115, 9505, 9507, 9515, 9518, 1, 10905, 110, 116, 101, 114, 115, 59, 1, 9191, 59, 1, 8467, 4, 2, 59, 100, 9524, 9526, 1, 10901, 111, 116, 59, 1, 10903, 4, 3, 97, 112, 115, 9539, 9544, 9564, 99, 114, 59, 1, 275, 116, 121, 4, 3, 59, 115, 118, 9554, 9556, 9561, 1, 8709, 101, 116, 59, 1, 8709, 59, 1, 8709, 112, 4, 2, 49, 59, 9571, 9583, 4, 2, 51, 52, 9577, 9580, 59, 1, 8196, 59, 1, 8197, 1, 8195, 4, 2, 103, 115, 9591, 9594, 59, 1, 331, 112, 59, 1, 8194, 4, 2, 103, 112, 9604, 9609, 111, 110, 59, 1, 281, 102, 59, 3, 55349, 56662, 4, 3, 97, 108, 115, 9622, 9635, 9640, 114, 4, 2, 59, 115, 9629, 9631, 1, 8917, 108, 59, 1, 10723, 117, 115, 59, 1, 10865, 105, 4, 3, 59, 108, 118, 9649, 9651, 9656, 1, 949, 111, 110, 59, 1, 949, 59, 1, 1013, 4, 4, 99, 115, 117, 118, 9669, 9686, 9716, 9747, 4, 2, 105, 111, 9675, 9680, 114, 99, 59, 1, 8790, 108, 111, 110, 59, 1, 8789, 4, 2, 105, 108, 9692, 9696, 109, 59, 1, 8770, 97, 110, 116, 4, 2, 103, 108, 9705, 9710, 116, 114, 59, 1, 10902, 101, 115, 115, 59, 1, 10901, 4, 3, 97, 101, 105, 9724, 9729, 9734, 108, 115, 59, 1, 61, 115, 116, 59, 1, 8799, 118, 4, 2, 59, 68, 9741, 9743, 1, 8801, 68, 59, 1, 10872, 112, 97, 114, 115, 108, 59, 1, 10725, 4, 2, 68, 97, 9761, 9766, 111, 116, 59, 1, 8787, 114, 114, 59, 1, 10609, 4, 3, 99, 100, 105, 9779, 9783, 9788, 114, 59, 1, 8495, 111, 116, 59, 1, 8784, 109, 59, 1, 8770, 4, 2, 97, 104, 9798, 9801, 59, 1, 951, 5, 240, 1, 59, 9806, 1, 240, 4, 2, 109, 114, 9814, 9822, 108, 5, 235, 1, 59, 9820, 1, 235, 111, 59, 1, 8364, 4, 3, 99, 105, 112, 9834, 9838, 9843, 108, 59, 1, 33, 115, 116, 59, 1, 8707, 4, 2, 101, 111, 9849, 9859, 99, 116, 97, 116, 105, 111, 110, 59, 1, 8496, 110, 101, 110, 116, 105, 97, 108, 101, 59, 1, 8519, 4, 12, 97, 99, 101, 102, 105, 106, 108, 110, 111, 112, 114, 115, 9896, 9910, 9914, 9921, 9954, 9960, 9967, 9989, 9994, 10027, 10036, 10164, 108, 108, 105, 110, 103, 100, 111, 116, 115, 101, 113, 59, 1, 8786, 121, 59, 1, 1092, 109, 97, 108, 101, 59, 1, 9792, 4, 3, 105, 108, 114, 9929, 9935, 9950, 108, 105, 103, 59, 1, 64259, 4, 2, 105, 108, 9941, 9945, 103, 59, 1, 64256, 105, 103, 59, 1, 64260, 59, 3, 55349, 56611, 108, 105, 103, 59, 1, 64257, 108, 105, 103, 59, 3, 102, 106, 4, 3, 97, 108, 116, 9975, 9979, 9984, 116, 59, 1, 9837, 105, 103, 59, 1, 64258, 110, 115, 59, 1, 9649, 111, 102, 59, 1, 402, 4, 2, 112, 114, 1e4, 10005, 102, 59, 3, 55349, 56663, 4, 2, 97, 107, 10011, 10016, 108, 108, 59, 1, 8704, 4, 2, 59, 118, 10022, 10024, 1, 8916, 59, 1, 10969, 97, 114, 116, 105, 110, 116, 59, 1, 10765, 4, 2, 97, 111, 10042, 10159, 4, 2, 99, 115, 10048, 10155, 4, 6, 49, 50, 51, 52, 53, 55, 10062, 10102, 10114, 10135, 10139, 10151, 4, 6, 50, 51, 52, 53, 54, 56, 10076, 10083, 10086, 10093, 10096, 10099, 5, 189, 1, 59, 10081, 1, 189, 59, 1, 8531, 5, 188, 1, 59, 10091, 1, 188, 59, 1, 8533, 59, 1, 8537, 59, 1, 8539, 4, 2, 51, 53, 10108, 10111, 59, 1, 8532, 59, 1, 8534, 4, 3, 52, 53, 56, 10122, 10129, 10132, 5, 190, 1, 59, 10127, 1, 190, 59, 1, 8535, 59, 1, 8540, 53, 59, 1, 8536, 4, 2, 54, 56, 10145, 10148, 59, 1, 8538, 59, 1, 8541, 56, 59, 1, 8542, 108, 59, 1, 8260, 119, 110, 59, 1, 8994, 99, 114, 59, 3, 55349, 56507, 4, 17, 69, 97, 98, 99, 100, 101, 102, 103, 105, 106, 108, 110, 111, 114, 115, 116, 118, 10206, 10217, 10247, 10254, 10268, 10273, 10358, 10363, 10374, 10380, 10385, 10406, 10458, 10464, 10470, 10497, 10610, 4, 2, 59, 108, 10212, 10214, 1, 8807, 59, 1, 10892, 4, 3, 99, 109, 112, 10225, 10231, 10244, 117, 116, 101, 59, 1, 501, 109, 97, 4, 2, 59, 100, 10239, 10241, 1, 947, 59, 1, 989, 59, 1, 10886, 114, 101, 118, 101, 59, 1, 287, 4, 2, 105, 121, 10260, 10265, 114, 99, 59, 1, 285, 59, 1, 1075, 111, 116, 59, 1, 289, 4, 4, 59, 108, 113, 115, 10283, 10285, 10288, 10308, 1, 8805, 59, 1, 8923, 4, 3, 59, 113, 115, 10296, 10298, 10301, 1, 8805, 59, 1, 8807, 108, 97, 110, 116, 59, 1, 10878, 4, 4, 59, 99, 100, 108, 10318, 10320, 10324, 10345, 1, 10878, 99, 59, 1, 10921, 111, 116, 4, 2, 59, 111, 10332, 10334, 1, 10880, 4, 2, 59, 108, 10340, 10342, 1, 10882, 59, 1, 10884, 4, 2, 59, 101, 10351, 10354, 3, 8923, 65024, 115, 59, 1, 10900, 114, 59, 3, 55349, 56612, 4, 2, 59, 103, 10369, 10371, 1, 8811, 59, 1, 8921, 109, 101, 108, 59, 1, 8503, 99, 121, 59, 1, 1107, 4, 4, 59, 69, 97, 106, 10395, 10397, 10400, 10403, 1, 8823, 59, 1, 10898, 59, 1, 10917, 59, 1, 10916, 4, 4, 69, 97, 101, 115, 10416, 10419, 10434, 10453, 59, 1, 8809, 112, 4, 2, 59, 112, 10426, 10428, 1, 10890, 114, 111, 120, 59, 1, 10890, 4, 2, 59, 113, 10440, 10442, 1, 10888, 4, 2, 59, 113, 10448, 10450, 1, 10888, 59, 1, 8809, 105, 109, 59, 1, 8935, 112, 102, 59, 3, 55349, 56664, 97, 118, 101, 59, 1, 96, 4, 2, 99, 105, 10476, 10480, 114, 59, 1, 8458, 109, 4, 3, 59, 101, 108, 10489, 10491, 10494, 1, 8819, 59, 1, 10894, 59, 1, 10896, 5, 62, 6, 59, 99, 100, 108, 113, 114, 10512, 10514, 10527, 10532, 10538, 10545, 1, 62, 4, 2, 99, 105, 10520, 10523, 59, 1, 10919, 114, 59, 1, 10874, 111, 116, 59, 1, 8919, 80, 97, 114, 59, 1, 10645, 117, 101, 115, 116, 59, 1, 10876, 4, 5, 97, 100, 101, 108, 115, 10557, 10574, 10579, 10599, 10605, 4, 2, 112, 114, 10563, 10570, 112, 114, 111, 120, 59, 1, 10886, 114, 59, 1, 10616, 111, 116, 59, 1, 8919, 113, 4, 2, 108, 113, 10586, 10592, 101, 115, 115, 59, 1, 8923, 108, 101, 115, 115, 59, 1, 10892, 101, 115, 115, 59, 1, 8823, 105, 109, 59, 1, 8819, 4, 2, 101, 110, 10616, 10626, 114, 116, 110, 101, 113, 113, 59, 3, 8809, 65024, 69, 59, 3, 8809, 65024, 4, 10, 65, 97, 98, 99, 101, 102, 107, 111, 115, 121, 10653, 10658, 10713, 10718, 10724, 10760, 10765, 10786, 10850, 10875, 114, 114, 59, 1, 8660, 4, 4, 105, 108, 109, 114, 10668, 10674, 10678, 10684, 114, 115, 112, 59, 1, 8202, 102, 59, 1, 189, 105, 108, 116, 59, 1, 8459, 4, 2, 100, 114, 10690, 10695, 99, 121, 59, 1, 1098, 4, 3, 59, 99, 119, 10703, 10705, 10710, 1, 8596, 105, 114, 59, 1, 10568, 59, 1, 8621, 97, 114, 59, 1, 8463, 105, 114, 99, 59, 1, 293, 4, 3, 97, 108, 114, 10732, 10748, 10754, 114, 116, 115, 4, 2, 59, 117, 10741, 10743, 1, 9829, 105, 116, 59, 1, 9829, 108, 105, 112, 59, 1, 8230, 99, 111, 110, 59, 1, 8889, 114, 59, 3, 55349, 56613, 115, 4, 2, 101, 119, 10772, 10779, 97, 114, 111, 119, 59, 1, 10533, 97, 114, 111, 119, 59, 1, 10534, 4, 5, 97, 109, 111, 112, 114, 10798, 10803, 10809, 10839, 10844, 114, 114, 59, 1, 8703, 116, 104, 116, 59, 1, 8763, 107, 4, 2, 108, 114, 10816, 10827, 101, 102, 116, 97, 114, 114, 111, 119, 59, 1, 8617, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 8618, 102, 59, 3, 55349, 56665, 98, 97, 114, 59, 1, 8213, 4, 3, 99, 108, 116, 10858, 10863, 10869, 114, 59, 3, 55349, 56509, 97, 115, 104, 59, 1, 8463, 114, 111, 107, 59, 1, 295, 4, 2, 98, 112, 10881, 10887, 117, 108, 108, 59, 1, 8259, 104, 101, 110, 59, 1, 8208, 4, 15, 97, 99, 101, 102, 103, 105, 106, 109, 110, 111, 112, 113, 115, 116, 117, 10925, 10936, 10958, 10977, 10990, 11001, 11039, 11045, 11101, 11192, 11220, 11226, 11237, 11285, 11299, 99, 117, 116, 101, 5, 237, 1, 59, 10934, 1, 237, 4, 3, 59, 105, 121, 10944, 10946, 10955, 1, 8291, 114, 99, 5, 238, 1, 59, 10953, 1, 238, 59, 1, 1080, 4, 2, 99, 120, 10964, 10968, 121, 59, 1, 1077, 99, 108, 5, 161, 1, 59, 10975, 1, 161, 4, 2, 102, 114, 10983, 10986, 59, 1, 8660, 59, 3, 55349, 56614, 114, 97, 118, 101, 5, 236, 1, 59, 10999, 1, 236, 4, 4, 59, 105, 110, 111, 11011, 11013, 11028, 11034, 1, 8520, 4, 2, 105, 110, 11019, 11024, 110, 116, 59, 1, 10764, 116, 59, 1, 8749, 102, 105, 110, 59, 1, 10716, 116, 97, 59, 1, 8489, 108, 105, 103, 59, 1, 307, 4, 3, 97, 111, 112, 11053, 11092, 11096, 4, 3, 99, 103, 116, 11061, 11065, 11088, 114, 59, 1, 299, 4, 3, 101, 108, 112, 11073, 11076, 11082, 59, 1, 8465, 105, 110, 101, 59, 1, 8464, 97, 114, 116, 59, 1, 8465, 104, 59, 1, 305, 102, 59, 1, 8887, 101, 100, 59, 1, 437, 4, 5, 59, 99, 102, 111, 116, 11113, 11115, 11121, 11136, 11142, 1, 8712, 97, 114, 101, 59, 1, 8453, 105, 110, 4, 2, 59, 116, 11129, 11131, 1, 8734, 105, 101, 59, 1, 10717, 100, 111, 116, 59, 1, 305, 4, 5, 59, 99, 101, 108, 112, 11154, 11156, 11161, 11179, 11186, 1, 8747, 97, 108, 59, 1, 8890, 4, 2, 103, 114, 11167, 11173, 101, 114, 115, 59, 1, 8484, 99, 97, 108, 59, 1, 8890, 97, 114, 104, 107, 59, 1, 10775, 114, 111, 100, 59, 1, 10812, 4, 4, 99, 103, 112, 116, 11202, 11206, 11211, 11216, 121, 59, 1, 1105, 111, 110, 59, 1, 303, 102, 59, 3, 55349, 56666, 97, 59, 1, 953, 114, 111, 100, 59, 1, 10812, 117, 101, 115, 116, 5, 191, 1, 59, 11235, 1, 191, 4, 2, 99, 105, 11243, 11248, 114, 59, 3, 55349, 56510, 110, 4, 5, 59, 69, 100, 115, 118, 11261, 11263, 11266, 11271, 11282, 1, 8712, 59, 1, 8953, 111, 116, 59, 1, 8949, 4, 2, 59, 118, 11277, 11279, 1, 8948, 59, 1, 8947, 59, 1, 8712, 4, 2, 59, 105, 11291, 11293, 1, 8290, 108, 100, 101, 59, 1, 297, 4, 2, 107, 109, 11305, 11310, 99, 121, 59, 1, 1110, 108, 5, 239, 1, 59, 11316, 1, 239, 4, 6, 99, 102, 109, 111, 115, 117, 11332, 11346, 11351, 11357, 11363, 11380, 4, 2, 105, 121, 11338, 11343, 114, 99, 59, 1, 309, 59, 1, 1081, 114, 59, 3, 55349, 56615, 97, 116, 104, 59, 1, 567, 112, 102, 59, 3, 55349, 56667, 4, 2, 99, 101, 11369, 11374, 114, 59, 3, 55349, 56511, 114, 99, 121, 59, 1, 1112, 107, 99, 121, 59, 1, 1108, 4, 8, 97, 99, 102, 103, 104, 106, 111, 115, 11404, 11418, 11433, 11438, 11445, 11450, 11455, 11461, 112, 112, 97, 4, 2, 59, 118, 11413, 11415, 1, 954, 59, 1, 1008, 4, 2, 101, 121, 11424, 11430, 100, 105, 108, 59, 1, 311, 59, 1, 1082, 114, 59, 3, 55349, 56616, 114, 101, 101, 110, 59, 1, 312, 99, 121, 59, 1, 1093, 99, 121, 59, 1, 1116, 112, 102, 59, 3, 55349, 56668, 99, 114, 59, 3, 55349, 56512, 4, 23, 65, 66, 69, 72, 97, 98, 99, 100, 101, 102, 103, 104, 106, 108, 109, 110, 111, 112, 114, 115, 116, 117, 118, 11515, 11538, 11544, 11555, 11560, 11721, 11780, 11818, 11868, 12136, 12160, 12171, 12203, 12208, 12246, 12275, 12327, 12509, 12523, 12569, 12641, 12732, 12752, 4, 3, 97, 114, 116, 11523, 11528, 11532, 114, 114, 59, 1, 8666, 114, 59, 1, 8656, 97, 105, 108, 59, 1, 10523, 97, 114, 114, 59, 1, 10510, 4, 2, 59, 103, 11550, 11552, 1, 8806, 59, 1, 10891, 97, 114, 59, 1, 10594, 4, 9, 99, 101, 103, 109, 110, 112, 113, 114, 116, 11580, 11586, 11594, 11600, 11606, 11624, 11627, 11636, 11694, 117, 116, 101, 59, 1, 314, 109, 112, 116, 121, 118, 59, 1, 10676, 114, 97, 110, 59, 1, 8466, 98, 100, 97, 59, 1, 955, 103, 4, 3, 59, 100, 108, 11615, 11617, 11620, 1, 10216, 59, 1, 10641, 101, 59, 1, 10216, 59, 1, 10885, 117, 111, 5, 171, 1, 59, 11634, 1, 171, 114, 4, 8, 59, 98, 102, 104, 108, 112, 115, 116, 11655, 11657, 11669, 11673, 11677, 11681, 11685, 11690, 1, 8592, 4, 2, 59, 102, 11663, 11665, 1, 8676, 115, 59, 1, 10527, 115, 59, 1, 10525, 107, 59, 1, 8617, 112, 59, 1, 8619, 108, 59, 1, 10553, 105, 109, 59, 1, 10611, 108, 59, 1, 8610, 4, 3, 59, 97, 101, 11702, 11704, 11709, 1, 10923, 105, 108, 59, 1, 10521, 4, 2, 59, 115, 11715, 11717, 1, 10925, 59, 3, 10925, 65024, 4, 3, 97, 98, 114, 11729, 11734, 11739, 114, 114, 59, 1, 10508, 114, 107, 59, 1, 10098, 4, 2, 97, 107, 11745, 11758, 99, 4, 2, 101, 107, 11752, 11755, 59, 1, 123, 59, 1, 91, 4, 2, 101, 115, 11764, 11767, 59, 1, 10635, 108, 4, 2, 100, 117, 11774, 11777, 59, 1, 10639, 59, 1, 10637, 4, 4, 97, 101, 117, 121, 11790, 11796, 11811, 11815, 114, 111, 110, 59, 1, 318, 4, 2, 100, 105, 11802, 11807, 105, 108, 59, 1, 316, 108, 59, 1, 8968, 98, 59, 1, 123, 59, 1, 1083, 4, 4, 99, 113, 114, 115, 11828, 11832, 11845, 11864, 97, 59, 1, 10550, 117, 111, 4, 2, 59, 114, 11840, 11842, 1, 8220, 59, 1, 8222, 4, 2, 100, 117, 11851, 11857, 104, 97, 114, 59, 1, 10599, 115, 104, 97, 114, 59, 1, 10571, 104, 59, 1, 8626, 4, 5, 59, 102, 103, 113, 115, 11880, 11882, 12008, 12011, 12031, 1, 8804, 116, 4, 5, 97, 104, 108, 114, 116, 11895, 11913, 11935, 11947, 11996, 114, 114, 111, 119, 4, 2, 59, 116, 11905, 11907, 1, 8592, 97, 105, 108, 59, 1, 8610, 97, 114, 112, 111, 111, 110, 4, 2, 100, 117, 11925, 11931, 111, 119, 110, 59, 1, 8637, 112, 59, 1, 8636, 101, 102, 116, 97, 114, 114, 111, 119, 115, 59, 1, 8647, 105, 103, 104, 116, 4, 3, 97, 104, 115, 11959, 11974, 11984, 114, 114, 111, 119, 4, 2, 59, 115, 11969, 11971, 1, 8596, 59, 1, 8646, 97, 114, 112, 111, 111, 110, 115, 59, 1, 8651, 113, 117, 105, 103, 97, 114, 114, 111, 119, 59, 1, 8621, 104, 114, 101, 101, 116, 105, 109, 101, 115, 59, 1, 8907, 59, 1, 8922, 4, 3, 59, 113, 115, 12019, 12021, 12024, 1, 8804, 59, 1, 8806, 108, 97, 110, 116, 59, 1, 10877, 4, 5, 59, 99, 100, 103, 115, 12043, 12045, 12049, 12070, 12083, 1, 10877, 99, 59, 1, 10920, 111, 116, 4, 2, 59, 111, 12057, 12059, 1, 10879, 4, 2, 59, 114, 12065, 12067, 1, 10881, 59, 1, 10883, 4, 2, 59, 101, 12076, 12079, 3, 8922, 65024, 115, 59, 1, 10899, 4, 5, 97, 100, 101, 103, 115, 12095, 12103, 12108, 12126, 12131, 112, 112, 114, 111, 120, 59, 1, 10885, 111, 116, 59, 1, 8918, 113, 4, 2, 103, 113, 12115, 12120, 116, 114, 59, 1, 8922, 103, 116, 114, 59, 1, 10891, 116, 114, 59, 1, 8822, 105, 109, 59, 1, 8818, 4, 3, 105, 108, 114, 12144, 12150, 12156, 115, 104, 116, 59, 1, 10620, 111, 111, 114, 59, 1, 8970, 59, 3, 55349, 56617, 4, 2, 59, 69, 12166, 12168, 1, 8822, 59, 1, 10897, 4, 2, 97, 98, 12177, 12198, 114, 4, 2, 100, 117, 12184, 12187, 59, 1, 8637, 4, 2, 59, 108, 12193, 12195, 1, 8636, 59, 1, 10602, 108, 107, 59, 1, 9604, 99, 121, 59, 1, 1113, 4, 5, 59, 97, 99, 104, 116, 12220, 12222, 12227, 12235, 12241, 1, 8810, 114, 114, 59, 1, 8647, 111, 114, 110, 101, 114, 59, 1, 8990, 97, 114, 100, 59, 1, 10603, 114, 105, 59, 1, 9722, 4, 2, 105, 111, 12252, 12258, 100, 111, 116, 59, 1, 320, 117, 115, 116, 4, 2, 59, 97, 12267, 12269, 1, 9136, 99, 104, 101, 59, 1, 9136, 4, 4, 69, 97, 101, 115, 12285, 12288, 12303, 12322, 59, 1, 8808, 112, 4, 2, 59, 112, 12295, 12297, 1, 10889, 114, 111, 120, 59, 1, 10889, 4, 2, 59, 113, 12309, 12311, 1, 10887, 4, 2, 59, 113, 12317, 12319, 1, 10887, 59, 1, 8808, 105, 109, 59, 1, 8934, 4, 8, 97, 98, 110, 111, 112, 116, 119, 122, 12345, 12359, 12364, 12421, 12446, 12467, 12474, 12490, 4, 2, 110, 114, 12351, 12355, 103, 59, 1, 10220, 114, 59, 1, 8701, 114, 107, 59, 1, 10214, 103, 4, 3, 108, 109, 114, 12373, 12401, 12409, 101, 102, 116, 4, 2, 97, 114, 12382, 12389, 114, 114, 111, 119, 59, 1, 10229, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 10231, 97, 112, 115, 116, 111, 59, 1, 10236, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 10230, 112, 97, 114, 114, 111, 119, 4, 2, 108, 114, 12433, 12439, 101, 102, 116, 59, 1, 8619, 105, 103, 104, 116, 59, 1, 8620, 4, 3, 97, 102, 108, 12454, 12458, 12462, 114, 59, 1, 10629, 59, 3, 55349, 56669, 117, 115, 59, 1, 10797, 105, 109, 101, 115, 59, 1, 10804, 4, 2, 97, 98, 12480, 12485, 115, 116, 59, 1, 8727, 97, 114, 59, 1, 95, 4, 3, 59, 101, 102, 12498, 12500, 12506, 1, 9674, 110, 103, 101, 59, 1, 9674, 59, 1, 10731, 97, 114, 4, 2, 59, 108, 12517, 12519, 1, 40, 116, 59, 1, 10643, 4, 5, 97, 99, 104, 109, 116, 12535, 12540, 12548, 12561, 12564, 114, 114, 59, 1, 8646, 111, 114, 110, 101, 114, 59, 1, 8991, 97, 114, 4, 2, 59, 100, 12556, 12558, 1, 8651, 59, 1, 10605, 59, 1, 8206, 114, 105, 59, 1, 8895, 4, 6, 97, 99, 104, 105, 113, 116, 12583, 12589, 12594, 12597, 12614, 12635, 113, 117, 111, 59, 1, 8249, 114, 59, 3, 55349, 56513, 59, 1, 8624, 109, 4, 3, 59, 101, 103, 12606, 12608, 12611, 1, 8818, 59, 1, 10893, 59, 1, 10895, 4, 2, 98, 117, 12620, 12623, 59, 1, 91, 111, 4, 2, 59, 114, 12630, 12632, 1, 8216, 59, 1, 8218, 114, 111, 107, 59, 1, 322, 5, 60, 8, 59, 99, 100, 104, 105, 108, 113, 114, 12660, 12662, 12675, 12680, 12686, 12692, 12698, 12705, 1, 60, 4, 2, 99, 105, 12668, 12671, 59, 1, 10918, 114, 59, 1, 10873, 111, 116, 59, 1, 8918, 114, 101, 101, 59, 1, 8907, 109, 101, 115, 59, 1, 8905, 97, 114, 114, 59, 1, 10614, 117, 101, 115, 116, 59, 1, 10875, 4, 2, 80, 105, 12711, 12716, 97, 114, 59, 1, 10646, 4, 3, 59, 101, 102, 12724, 12726, 12729, 1, 9667, 59, 1, 8884, 59, 1, 9666, 114, 4, 2, 100, 117, 12739, 12746, 115, 104, 97, 114, 59, 1, 10570, 104, 97, 114, 59, 1, 10598, 4, 2, 101, 110, 12758, 12768, 114, 116, 110, 101, 113, 113, 59, 3, 8808, 65024, 69, 59, 3, 8808, 65024, 4, 14, 68, 97, 99, 100, 101, 102, 104, 105, 108, 110, 111, 112, 115, 117, 12803, 12809, 12893, 12908, 12914, 12928, 12933, 12937, 13011, 13025, 13032, 13049, 13052, 13069, 68, 111, 116, 59, 1, 8762, 4, 4, 99, 108, 112, 114, 12819, 12827, 12849, 12887, 114, 5, 175, 1, 59, 12825, 1, 175, 4, 2, 101, 116, 12833, 12836, 59, 1, 9794, 4, 2, 59, 101, 12842, 12844, 1, 10016, 115, 101, 59, 1, 10016, 4, 2, 59, 115, 12855, 12857, 1, 8614, 116, 111, 4, 4, 59, 100, 108, 117, 12869, 12871, 12877, 12883, 1, 8614, 111, 119, 110, 59, 1, 8615, 101, 102, 116, 59, 1, 8612, 112, 59, 1, 8613, 107, 101, 114, 59, 1, 9646, 4, 2, 111, 121, 12899, 12905, 109, 109, 97, 59, 1, 10793, 59, 1, 1084, 97, 115, 104, 59, 1, 8212, 97, 115, 117, 114, 101, 100, 97, 110, 103, 108, 101, 59, 1, 8737, 114, 59, 3, 55349, 56618, 111, 59, 1, 8487, 4, 3, 99, 100, 110, 12945, 12954, 12985, 114, 111, 5, 181, 1, 59, 12952, 1, 181, 4, 4, 59, 97, 99, 100, 12964, 12966, 12971, 12976, 1, 8739, 115, 116, 59, 1, 42, 105, 114, 59, 1, 10992, 111, 116, 5, 183, 1, 59, 12983, 1, 183, 117, 115, 4, 3, 59, 98, 100, 12995, 12997, 13e3, 1, 8722, 59, 1, 8863, 4, 2, 59, 117, 13006, 13008, 1, 8760, 59, 1, 10794, 4, 2, 99, 100, 13017, 13021, 112, 59, 1, 10971, 114, 59, 1, 8230, 112, 108, 117, 115, 59, 1, 8723, 4, 2, 100, 112, 13038, 13044, 101, 108, 115, 59, 1, 8871, 102, 59, 3, 55349, 56670, 59, 1, 8723, 4, 2, 99, 116, 13058, 13063, 114, 59, 3, 55349, 56514, 112, 111, 115, 59, 1, 8766, 4, 3, 59, 108, 109, 13077, 13079, 13087, 1, 956, 116, 105, 109, 97, 112, 59, 1, 8888, 97, 112, 59, 1, 8888, 4, 24, 71, 76, 82, 86, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 108, 109, 111, 112, 114, 115, 116, 117, 118, 119, 13142, 13165, 13217, 13229, 13247, 13330, 13359, 13414, 13420, 13508, 13513, 13579, 13602, 13626, 13631, 13762, 13767, 13855, 13936, 13995, 14214, 14285, 14312, 14432, 4, 2, 103, 116, 13148, 13152, 59, 3, 8921, 824, 4, 2, 59, 118, 13158, 13161, 3, 8811, 8402, 59, 3, 8811, 824, 4, 3, 101, 108, 116, 13173, 13200, 13204, 102, 116, 4, 2, 97, 114, 13181, 13188, 114, 114, 111, 119, 59, 1, 8653, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 8654, 59, 3, 8920, 824, 4, 2, 59, 118, 13210, 13213, 3, 8810, 8402, 59, 3, 8810, 824, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 8655, 4, 2, 68, 100, 13235, 13241, 97, 115, 104, 59, 1, 8879, 97, 115, 104, 59, 1, 8878, 4, 5, 98, 99, 110, 112, 116, 13259, 13264, 13270, 13275, 13308, 108, 97, 59, 1, 8711, 117, 116, 101, 59, 1, 324, 103, 59, 3, 8736, 8402, 4, 5, 59, 69, 105, 111, 112, 13287, 13289, 13293, 13298, 13302, 1, 8777, 59, 3, 10864, 824, 100, 59, 3, 8779, 824, 115, 59, 1, 329, 114, 111, 120, 59, 1, 8777, 117, 114, 4, 2, 59, 97, 13316, 13318, 1, 9838, 108, 4, 2, 59, 115, 13325, 13327, 1, 9838, 59, 1, 8469, 4, 2, 115, 117, 13336, 13344, 112, 5, 160, 1, 59, 13342, 1, 160, 109, 112, 4, 2, 59, 101, 13352, 13355, 3, 8782, 824, 59, 3, 8783, 824, 4, 5, 97, 101, 111, 117, 121, 13371, 13385, 13391, 13407, 13411, 4, 2, 112, 114, 13377, 13380, 59, 1, 10819, 111, 110, 59, 1, 328, 100, 105, 108, 59, 1, 326, 110, 103, 4, 2, 59, 100, 13399, 13401, 1, 8775, 111, 116, 59, 3, 10861, 824, 112, 59, 1, 10818, 59, 1, 1085, 97, 115, 104, 59, 1, 8211, 4, 7, 59, 65, 97, 100, 113, 115, 120, 13436, 13438, 13443, 13466, 13472, 13478, 13494, 1, 8800, 114, 114, 59, 1, 8663, 114, 4, 2, 104, 114, 13450, 13454, 107, 59, 1, 10532, 4, 2, 59, 111, 13460, 13462, 1, 8599, 119, 59, 1, 8599, 111, 116, 59, 3, 8784, 824, 117, 105, 118, 59, 1, 8802, 4, 2, 101, 105, 13484, 13489, 97, 114, 59, 1, 10536, 109, 59, 3, 8770, 824, 105, 115, 116, 4, 2, 59, 115, 13503, 13505, 1, 8708, 59, 1, 8708, 114, 59, 3, 55349, 56619, 4, 4, 69, 101, 115, 116, 13523, 13527, 13563, 13568, 59, 3, 8807, 824, 4, 3, 59, 113, 115, 13535, 13537, 13559, 1, 8817, 4, 3, 59, 113, 115, 13545, 13547, 13551, 1, 8817, 59, 3, 8807, 824, 108, 97, 110, 116, 59, 3, 10878, 824, 59, 3, 10878, 824, 105, 109, 59, 1, 8821, 4, 2, 59, 114, 13574, 13576, 1, 8815, 59, 1, 8815, 4, 3, 65, 97, 112, 13587, 13592, 13597, 114, 114, 59, 1, 8654, 114, 114, 59, 1, 8622, 97, 114, 59, 1, 10994, 4, 3, 59, 115, 118, 13610, 13612, 13623, 1, 8715, 4, 2, 59, 100, 13618, 13620, 1, 8956, 59, 1, 8954, 59, 1, 8715, 99, 121, 59, 1, 1114, 4, 7, 65, 69, 97, 100, 101, 115, 116, 13647, 13652, 13656, 13661, 13665, 13737, 13742, 114, 114, 59, 1, 8653, 59, 3, 8806, 824, 114, 114, 59, 1, 8602, 114, 59, 1, 8229, 4, 4, 59, 102, 113, 115, 13675, 13677, 13703, 13725, 1, 8816, 116, 4, 2, 97, 114, 13684, 13691, 114, 114, 111, 119, 59, 1, 8602, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 8622, 4, 3, 59, 113, 115, 13711, 13713, 13717, 1, 8816, 59, 3, 8806, 824, 108, 97, 110, 116, 59, 3, 10877, 824, 4, 2, 59, 115, 13731, 13734, 3, 10877, 824, 59, 1, 8814, 105, 109, 59, 1, 8820, 4, 2, 59, 114, 13748, 13750, 1, 8814, 105, 4, 2, 59, 101, 13757, 13759, 1, 8938, 59, 1, 8940, 105, 100, 59, 1, 8740, 4, 2, 112, 116, 13773, 13778, 102, 59, 3, 55349, 56671, 5, 172, 3, 59, 105, 110, 13787, 13789, 13829, 1, 172, 110, 4, 4, 59, 69, 100, 118, 13800, 13802, 13806, 13812, 1, 8713, 59, 3, 8953, 824, 111, 116, 59, 3, 8949, 824, 4, 3, 97, 98, 99, 13820, 13823, 13826, 59, 1, 8713, 59, 1, 8951, 59, 1, 8950, 105, 4, 2, 59, 118, 13836, 13838, 1, 8716, 4, 3, 97, 98, 99, 13846, 13849, 13852, 59, 1, 8716, 59, 1, 8958, 59, 1, 8957, 4, 3, 97, 111, 114, 13863, 13892, 13899, 114, 4, 4, 59, 97, 115, 116, 13874, 13876, 13883, 13888, 1, 8742, 108, 108, 101, 108, 59, 1, 8742, 108, 59, 3, 11005, 8421, 59, 3, 8706, 824, 108, 105, 110, 116, 59, 1, 10772, 4, 3, 59, 99, 101, 13907, 13909, 13914, 1, 8832, 117, 101, 59, 1, 8928, 4, 2, 59, 99, 13920, 13923, 3, 10927, 824, 4, 2, 59, 101, 13929, 13931, 1, 8832, 113, 59, 3, 10927, 824, 4, 4, 65, 97, 105, 116, 13946, 13951, 13971, 13982, 114, 114, 59, 1, 8655, 114, 114, 4, 3, 59, 99, 119, 13961, 13963, 13967, 1, 8603, 59, 3, 10547, 824, 59, 3, 8605, 824, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 8603, 114, 105, 4, 2, 59, 101, 13990, 13992, 1, 8939, 59, 1, 8941, 4, 7, 99, 104, 105, 109, 112, 113, 117, 14011, 14036, 14060, 14080, 14085, 14090, 14106, 4, 4, 59, 99, 101, 114, 14021, 14023, 14028, 14032, 1, 8833, 117, 101, 59, 1, 8929, 59, 3, 10928, 824, 59, 3, 55349, 56515, 111, 114, 116, 4, 2, 109, 112, 14045, 14050, 105, 100, 59, 1, 8740, 97, 114, 97, 108, 108, 101, 108, 59, 1, 8742, 109, 4, 2, 59, 101, 14067, 14069, 1, 8769, 4, 2, 59, 113, 14075, 14077, 1, 8772, 59, 1, 8772, 105, 100, 59, 1, 8740, 97, 114, 59, 1, 8742, 115, 117, 4, 2, 98, 112, 14098, 14102, 101, 59, 1, 8930, 101, 59, 1, 8931, 4, 3, 98, 99, 112, 14114, 14157, 14171, 4, 4, 59, 69, 101, 115, 14124, 14126, 14130, 14133, 1, 8836, 59, 3, 10949, 824, 59, 1, 8840, 101, 116, 4, 2, 59, 101, 14141, 14144, 3, 8834, 8402, 113, 4, 2, 59, 113, 14151, 14153, 1, 8840, 59, 3, 10949, 824, 99, 4, 2, 59, 101, 14164, 14166, 1, 8833, 113, 59, 3, 10928, 824, 4, 4, 59, 69, 101, 115, 14181, 14183, 14187, 14190, 1, 8837, 59, 3, 10950, 824, 59, 1, 8841, 101, 116, 4, 2, 59, 101, 14198, 14201, 3, 8835, 8402, 113, 4, 2, 59, 113, 14208, 14210, 1, 8841, 59, 3, 10950, 824, 4, 4, 103, 105, 108, 114, 14224, 14228, 14238, 14242, 108, 59, 1, 8825, 108, 100, 101, 5, 241, 1, 59, 14236, 1, 241, 103, 59, 1, 8824, 105, 97, 110, 103, 108, 101, 4, 2, 108, 114, 14254, 14269, 101, 102, 116, 4, 2, 59, 101, 14263, 14265, 1, 8938, 113, 59, 1, 8940, 105, 103, 104, 116, 4, 2, 59, 101, 14279, 14281, 1, 8939, 113, 59, 1, 8941, 4, 2, 59, 109, 14291, 14293, 1, 957, 4, 3, 59, 101, 115, 14301, 14303, 14308, 1, 35, 114, 111, 59, 1, 8470, 112, 59, 1, 8199, 4, 9, 68, 72, 97, 100, 103, 105, 108, 114, 115, 14332, 14338, 14344, 14349, 14355, 14369, 14376, 14408, 14426, 97, 115, 104, 59, 1, 8877, 97, 114, 114, 59, 1, 10500, 112, 59, 3, 8781, 8402, 97, 115, 104, 59, 1, 8876, 4, 2, 101, 116, 14361, 14365, 59, 3, 8805, 8402, 59, 3, 62, 8402, 110, 102, 105, 110, 59, 1, 10718, 4, 3, 65, 101, 116, 14384, 14389, 14393, 114, 114, 59, 1, 10498, 59, 3, 8804, 8402, 4, 2, 59, 114, 14399, 14402, 3, 60, 8402, 105, 101, 59, 3, 8884, 8402, 4, 2, 65, 116, 14414, 14419, 114, 114, 59, 1, 10499, 114, 105, 101, 59, 3, 8885, 8402, 105, 109, 59, 3, 8764, 8402, 4, 3, 65, 97, 110, 14440, 14445, 14468, 114, 114, 59, 1, 8662, 114, 4, 2, 104, 114, 14452, 14456, 107, 59, 1, 10531, 4, 2, 59, 111, 14462, 14464, 1, 8598, 119, 59, 1, 8598, 101, 97, 114, 59, 1, 10535, 4, 18, 83, 97, 99, 100, 101, 102, 103, 104, 105, 108, 109, 111, 112, 114, 115, 116, 117, 118, 14512, 14515, 14535, 14560, 14597, 14603, 14618, 14643, 14657, 14662, 14701, 14741, 14747, 14769, 14851, 14877, 14907, 14916, 59, 1, 9416, 4, 2, 99, 115, 14521, 14531, 117, 116, 101, 5, 243, 1, 59, 14529, 1, 243, 116, 59, 1, 8859, 4, 2, 105, 121, 14541, 14557, 114, 4, 2, 59, 99, 14548, 14550, 1, 8858, 5, 244, 1, 59, 14555, 1, 244, 59, 1, 1086, 4, 5, 97, 98, 105, 111, 115, 14572, 14577, 14583, 14587, 14591, 115, 104, 59, 1, 8861, 108, 97, 99, 59, 1, 337, 118, 59, 1, 10808, 116, 59, 1, 8857, 111, 108, 100, 59, 1, 10684, 108, 105, 103, 59, 1, 339, 4, 2, 99, 114, 14609, 14614, 105, 114, 59, 1, 10687, 59, 3, 55349, 56620, 4, 3, 111, 114, 116, 14626, 14630, 14640, 110, 59, 1, 731, 97, 118, 101, 5, 242, 1, 59, 14638, 1, 242, 59, 1, 10689, 4, 2, 98, 109, 14649, 14654, 97, 114, 59, 1, 10677, 59, 1, 937, 110, 116, 59, 1, 8750, 4, 4, 97, 99, 105, 116, 14672, 14677, 14693, 14698, 114, 114, 59, 1, 8634, 4, 2, 105, 114, 14683, 14687, 114, 59, 1, 10686, 111, 115, 115, 59, 1, 10683, 110, 101, 59, 1, 8254, 59, 1, 10688, 4, 3, 97, 101, 105, 14709, 14714, 14719, 99, 114, 59, 1, 333, 103, 97, 59, 1, 969, 4, 3, 99, 100, 110, 14727, 14733, 14736, 114, 111, 110, 59, 1, 959, 59, 1, 10678, 117, 115, 59, 1, 8854, 112, 102, 59, 3, 55349, 56672, 4, 3, 97, 101, 108, 14755, 14759, 14764, 114, 59, 1, 10679, 114, 112, 59, 1, 10681, 117, 115, 59, 1, 8853, 4, 7, 59, 97, 100, 105, 111, 115, 118, 14785, 14787, 14792, 14831, 14837, 14841, 14848, 1, 8744, 114, 114, 59, 1, 8635, 4, 4, 59, 101, 102, 109, 14802, 14804, 14817, 14824, 1, 10845, 114, 4, 2, 59, 111, 14811, 14813, 1, 8500, 102, 59, 1, 8500, 5, 170, 1, 59, 14822, 1, 170, 5, 186, 1, 59, 14829, 1, 186, 103, 111, 102, 59, 1, 8886, 114, 59, 1, 10838, 108, 111, 112, 101, 59, 1, 10839, 59, 1, 10843, 4, 3, 99, 108, 111, 14859, 14863, 14873, 114, 59, 1, 8500, 97, 115, 104, 5, 248, 1, 59, 14871, 1, 248, 108, 59, 1, 8856, 105, 4, 2, 108, 109, 14884, 14893, 100, 101, 5, 245, 1, 59, 14891, 1, 245, 101, 115, 4, 2, 59, 97, 14901, 14903, 1, 8855, 115, 59, 1, 10806, 109, 108, 5, 246, 1, 59, 14914, 1, 246, 98, 97, 114, 59, 1, 9021, 4, 12, 97, 99, 101, 102, 104, 105, 108, 109, 111, 114, 115, 117, 14948, 14992, 14996, 15033, 15038, 15068, 15090, 15189, 15192, 15222, 15427, 15441, 114, 4, 4, 59, 97, 115, 116, 14959, 14961, 14976, 14989, 1, 8741, 5, 182, 2, 59, 108, 14968, 14970, 1, 182, 108, 101, 108, 59, 1, 8741, 4, 2, 105, 108, 14982, 14986, 109, 59, 1, 10995, 59, 1, 11005, 59, 1, 8706, 121, 59, 1, 1087, 114, 4, 5, 99, 105, 109, 112, 116, 15009, 15014, 15019, 15024, 15027, 110, 116, 59, 1, 37, 111, 100, 59, 1, 46, 105, 108, 59, 1, 8240, 59, 1, 8869, 101, 110, 107, 59, 1, 8241, 114, 59, 3, 55349, 56621, 4, 3, 105, 109, 111, 15046, 15057, 15063, 4, 2, 59, 118, 15052, 15054, 1, 966, 59, 1, 981, 109, 97, 116, 59, 1, 8499, 110, 101, 59, 1, 9742, 4, 3, 59, 116, 118, 15076, 15078, 15087, 1, 960, 99, 104, 102, 111, 114, 107, 59, 1, 8916, 59, 1, 982, 4, 2, 97, 117, 15096, 15119, 110, 4, 2, 99, 107, 15103, 15115, 107, 4, 2, 59, 104, 15110, 15112, 1, 8463, 59, 1, 8462, 118, 59, 1, 8463, 115, 4, 9, 59, 97, 98, 99, 100, 101, 109, 115, 116, 15140, 15142, 15148, 15151, 15156, 15168, 15171, 15179, 15184, 1, 43, 99, 105, 114, 59, 1, 10787, 59, 1, 8862, 105, 114, 59, 1, 10786, 4, 2, 111, 117, 15162, 15165, 59, 1, 8724, 59, 1, 10789, 59, 1, 10866, 110, 5, 177, 1, 59, 15177, 1, 177, 105, 109, 59, 1, 10790, 119, 111, 59, 1, 10791, 59, 1, 177, 4, 3, 105, 112, 117, 15200, 15208, 15213, 110, 116, 105, 110, 116, 59, 1, 10773, 102, 59, 3, 55349, 56673, 110, 100, 5, 163, 1, 59, 15220, 1, 163, 4, 10, 59, 69, 97, 99, 101, 105, 110, 111, 115, 117, 15244, 15246, 15249, 15253, 15258, 15334, 15347, 15367, 15416, 15421, 1, 8826, 59, 1, 10931, 112, 59, 1, 10935, 117, 101, 59, 1, 8828, 4, 2, 59, 99, 15264, 15266, 1, 10927, 4, 6, 59, 97, 99, 101, 110, 115, 15280, 15282, 15290, 15299, 15303, 15329, 1, 8826, 112, 112, 114, 111, 120, 59, 1, 10935, 117, 114, 108, 121, 101, 113, 59, 1, 8828, 113, 59, 1, 10927, 4, 3, 97, 101, 115, 15311, 15319, 15324, 112, 112, 114, 111, 120, 59, 1, 10937, 113, 113, 59, 1, 10933, 105, 109, 59, 1, 8936, 105, 109, 59, 1, 8830, 109, 101, 4, 2, 59, 115, 15342, 15344, 1, 8242, 59, 1, 8473, 4, 3, 69, 97, 115, 15355, 15358, 15362, 59, 1, 10933, 112, 59, 1, 10937, 105, 109, 59, 1, 8936, 4, 3, 100, 102, 112, 15375, 15378, 15404, 59, 1, 8719, 4, 3, 97, 108, 115, 15386, 15392, 15398, 108, 97, 114, 59, 1, 9006, 105, 110, 101, 59, 1, 8978, 117, 114, 102, 59, 1, 8979, 4, 2, 59, 116, 15410, 15412, 1, 8733, 111, 59, 1, 8733, 105, 109, 59, 1, 8830, 114, 101, 108, 59, 1, 8880, 4, 2, 99, 105, 15433, 15438, 114, 59, 3, 55349, 56517, 59, 1, 968, 110, 99, 115, 112, 59, 1, 8200, 4, 6, 102, 105, 111, 112, 115, 117, 15462, 15467, 15472, 15478, 15485, 15491, 114, 59, 3, 55349, 56622, 110, 116, 59, 1, 10764, 112, 102, 59, 3, 55349, 56674, 114, 105, 109, 101, 59, 1, 8279, 99, 114, 59, 3, 55349, 56518, 4, 3, 97, 101, 111, 15499, 15520, 15534, 116, 4, 2, 101, 105, 15506, 15515, 114, 110, 105, 111, 110, 115, 59, 1, 8461, 110, 116, 59, 1, 10774, 115, 116, 4, 2, 59, 101, 15528, 15530, 1, 63, 113, 59, 1, 8799, 116, 5, 34, 1, 59, 15540, 1, 34, 4, 21, 65, 66, 72, 97, 98, 99, 100, 101, 102, 104, 105, 108, 109, 110, 111, 112, 114, 115, 116, 117, 120, 15586, 15609, 15615, 15620, 15796, 15855, 15893, 15931, 15977, 16001, 16039, 16183, 16204, 16222, 16228, 16285, 16312, 16318, 16363, 16408, 16416, 4, 3, 97, 114, 116, 15594, 15599, 15603, 114, 114, 59, 1, 8667, 114, 59, 1, 8658, 97, 105, 108, 59, 1, 10524, 97, 114, 114, 59, 1, 10511, 97, 114, 59, 1, 10596, 4, 7, 99, 100, 101, 110, 113, 114, 116, 15636, 15651, 15656, 15664, 15687, 15696, 15770, 4, 2, 101, 117, 15642, 15646, 59, 3, 8765, 817, 116, 101, 59, 1, 341, 105, 99, 59, 1, 8730, 109, 112, 116, 121, 118, 59, 1, 10675, 103, 4, 4, 59, 100, 101, 108, 15675, 15677, 15680, 15683, 1, 10217, 59, 1, 10642, 59, 1, 10661, 101, 59, 1, 10217, 117, 111, 5, 187, 1, 59, 15694, 1, 187, 114, 4, 11, 59, 97, 98, 99, 102, 104, 108, 112, 115, 116, 119, 15721, 15723, 15727, 15739, 15742, 15746, 15750, 15754, 15758, 15763, 15767, 1, 8594, 112, 59, 1, 10613, 4, 2, 59, 102, 15733, 15735, 1, 8677, 115, 59, 1, 10528, 59, 1, 10547, 115, 59, 1, 10526, 107, 59, 1, 8618, 112, 59, 1, 8620, 108, 59, 1, 10565, 105, 109, 59, 1, 10612, 108, 59, 1, 8611, 59, 1, 8605, 4, 2, 97, 105, 15776, 15781, 105, 108, 59, 1, 10522, 111, 4, 2, 59, 110, 15788, 15790, 1, 8758, 97, 108, 115, 59, 1, 8474, 4, 3, 97, 98, 114, 15804, 15809, 15814, 114, 114, 59, 1, 10509, 114, 107, 59, 1, 10099, 4, 2, 97, 107, 15820, 15833, 99, 4, 2, 101, 107, 15827, 15830, 59, 1, 125, 59, 1, 93, 4, 2, 101, 115, 15839, 15842, 59, 1, 10636, 108, 4, 2, 100, 117, 15849, 15852, 59, 1, 10638, 59, 1, 10640, 4, 4, 97, 101, 117, 121, 15865, 15871, 15886, 15890, 114, 111, 110, 59, 1, 345, 4, 2, 100, 105, 15877, 15882, 105, 108, 59, 1, 343, 108, 59, 1, 8969, 98, 59, 1, 125, 59, 1, 1088, 4, 4, 99, 108, 113, 115, 15903, 15907, 15914, 15927, 97, 59, 1, 10551, 100, 104, 97, 114, 59, 1, 10601, 117, 111, 4, 2, 59, 114, 15922, 15924, 1, 8221, 59, 1, 8221, 104, 59, 1, 8627, 4, 3, 97, 99, 103, 15939, 15966, 15970, 108, 4, 4, 59, 105, 112, 115, 15950, 15952, 15957, 15963, 1, 8476, 110, 101, 59, 1, 8475, 97, 114, 116, 59, 1, 8476, 59, 1, 8477, 116, 59, 1, 9645, 5, 174, 1, 59, 15975, 1, 174, 4, 3, 105, 108, 114, 15985, 15991, 15997, 115, 104, 116, 59, 1, 10621, 111, 111, 114, 59, 1, 8971, 59, 3, 55349, 56623, 4, 2, 97, 111, 16007, 16028, 114, 4, 2, 100, 117, 16014, 16017, 59, 1, 8641, 4, 2, 59, 108, 16023, 16025, 1, 8640, 59, 1, 10604, 4, 2, 59, 118, 16034, 16036, 1, 961, 59, 1, 1009, 4, 3, 103, 110, 115, 16047, 16167, 16171, 104, 116, 4, 6, 97, 104, 108, 114, 115, 116, 16063, 16081, 16103, 16130, 16143, 16155, 114, 114, 111, 119, 4, 2, 59, 116, 16073, 16075, 1, 8594, 97, 105, 108, 59, 1, 8611, 97, 114, 112, 111, 111, 110, 4, 2, 100, 117, 16093, 16099, 111, 119, 110, 59, 1, 8641, 112, 59, 1, 8640, 101, 102, 116, 4, 2, 97, 104, 16112, 16120, 114, 114, 111, 119, 115, 59, 1, 8644, 97, 114, 112, 111, 111, 110, 115, 59, 1, 8652, 105, 103, 104, 116, 97, 114, 114, 111, 119, 115, 59, 1, 8649, 113, 117, 105, 103, 97, 114, 114, 111, 119, 59, 1, 8605, 104, 114, 101, 101, 116, 105, 109, 101, 115, 59, 1, 8908, 103, 59, 1, 730, 105, 110, 103, 100, 111, 116, 115, 101, 113, 59, 1, 8787, 4, 3, 97, 104, 109, 16191, 16196, 16201, 114, 114, 59, 1, 8644, 97, 114, 59, 1, 8652, 59, 1, 8207, 111, 117, 115, 116, 4, 2, 59, 97, 16214, 16216, 1, 9137, 99, 104, 101, 59, 1, 9137, 109, 105, 100, 59, 1, 10990, 4, 4, 97, 98, 112, 116, 16238, 16252, 16257, 16278, 4, 2, 110, 114, 16244, 16248, 103, 59, 1, 10221, 114, 59, 1, 8702, 114, 107, 59, 1, 10215, 4, 3, 97, 102, 108, 16265, 16269, 16273, 114, 59, 1, 10630, 59, 3, 55349, 56675, 117, 115, 59, 1, 10798, 105, 109, 101, 115, 59, 1, 10805, 4, 2, 97, 112, 16291, 16304, 114, 4, 2, 59, 103, 16298, 16300, 1, 41, 116, 59, 1, 10644, 111, 108, 105, 110, 116, 59, 1, 10770, 97, 114, 114, 59, 1, 8649, 4, 4, 97, 99, 104, 113, 16328, 16334, 16339, 16342, 113, 117, 111, 59, 1, 8250, 114, 59, 3, 55349, 56519, 59, 1, 8625, 4, 2, 98, 117, 16348, 16351, 59, 1, 93, 111, 4, 2, 59, 114, 16358, 16360, 1, 8217, 59, 1, 8217, 4, 3, 104, 105, 114, 16371, 16377, 16383, 114, 101, 101, 59, 1, 8908, 109, 101, 115, 59, 1, 8906, 105, 4, 4, 59, 101, 102, 108, 16394, 16396, 16399, 16402, 1, 9657, 59, 1, 8885, 59, 1, 9656, 116, 114, 105, 59, 1, 10702, 108, 117, 104, 97, 114, 59, 1, 10600, 59, 1, 8478, 4, 19, 97, 98, 99, 100, 101, 102, 104, 105, 108, 109, 111, 112, 113, 114, 115, 116, 117, 119, 122, 16459, 16466, 16472, 16572, 16590, 16672, 16687, 16746, 16844, 16850, 16924, 16963, 16988, 17115, 17121, 17154, 17206, 17614, 17656, 99, 117, 116, 101, 59, 1, 347, 113, 117, 111, 59, 1, 8218, 4, 10, 59, 69, 97, 99, 101, 105, 110, 112, 115, 121, 16494, 16496, 16499, 16513, 16518, 16531, 16536, 16556, 16564, 16569, 1, 8827, 59, 1, 10932, 4, 2, 112, 114, 16505, 16508, 59, 1, 10936, 111, 110, 59, 1, 353, 117, 101, 59, 1, 8829, 4, 2, 59, 100, 16524, 16526, 1, 10928, 105, 108, 59, 1, 351, 114, 99, 59, 1, 349, 4, 3, 69, 97, 115, 16544, 16547, 16551, 59, 1, 10934, 112, 59, 1, 10938, 105, 109, 59, 1, 8937, 111, 108, 105, 110, 116, 59, 1, 10771, 105, 109, 59, 1, 8831, 59, 1, 1089, 111, 116, 4, 3, 59, 98, 101, 16582, 16584, 16587, 1, 8901, 59, 1, 8865, 59, 1, 10854, 4, 7, 65, 97, 99, 109, 115, 116, 120, 16606, 16611, 16634, 16642, 16646, 16652, 16668, 114, 114, 59, 1, 8664, 114, 4, 2, 104, 114, 16618, 16622, 107, 59, 1, 10533, 4, 2, 59, 111, 16628, 16630, 1, 8600, 119, 59, 1, 8600, 116, 5, 167, 1, 59, 16640, 1, 167, 105, 59, 1, 59, 119, 97, 114, 59, 1, 10537, 109, 4, 2, 105, 110, 16659, 16665, 110, 117, 115, 59, 1, 8726, 59, 1, 8726, 116, 59, 1, 10038, 114, 4, 2, 59, 111, 16679, 16682, 3, 55349, 56624, 119, 110, 59, 1, 8994, 4, 4, 97, 99, 111, 121, 16697, 16702, 16716, 16739, 114, 112, 59, 1, 9839, 4, 2, 104, 121, 16708, 16713, 99, 121, 59, 1, 1097, 59, 1, 1096, 114, 116, 4, 2, 109, 112, 16724, 16729, 105, 100, 59, 1, 8739, 97, 114, 97, 108, 108, 101, 108, 59, 1, 8741, 5, 173, 1, 59, 16744, 1, 173, 4, 2, 103, 109, 16752, 16770, 109, 97, 4, 3, 59, 102, 118, 16762, 16764, 16767, 1, 963, 59, 1, 962, 59, 1, 962, 4, 8, 59, 100, 101, 103, 108, 110, 112, 114, 16788, 16790, 16795, 16806, 16817, 16828, 16832, 16838, 1, 8764, 111, 116, 59, 1, 10858, 4, 2, 59, 113, 16801, 16803, 1, 8771, 59, 1, 8771, 4, 2, 59, 69, 16812, 16814, 1, 10910, 59, 1, 10912, 4, 2, 59, 69, 16823, 16825, 1, 10909, 59, 1, 10911, 101, 59, 1, 8774, 108, 117, 115, 59, 1, 10788, 97, 114, 114, 59, 1, 10610, 97, 114, 114, 59, 1, 8592, 4, 4, 97, 101, 105, 116, 16860, 16883, 16891, 16904, 4, 2, 108, 115, 16866, 16878, 108, 115, 101, 116, 109, 105, 110, 117, 115, 59, 1, 8726, 104, 112, 59, 1, 10803, 112, 97, 114, 115, 108, 59, 1, 10724, 4, 2, 100, 108, 16897, 16900, 59, 1, 8739, 101, 59, 1, 8995, 4, 2, 59, 101, 16910, 16912, 1, 10922, 4, 2, 59, 115, 16918, 16920, 1, 10924, 59, 3, 10924, 65024, 4, 3, 102, 108, 112, 16932, 16938, 16958, 116, 99, 121, 59, 1, 1100, 4, 2, 59, 98, 16944, 16946, 1, 47, 4, 2, 59, 97, 16952, 16954, 1, 10692, 114, 59, 1, 9023, 102, 59, 3, 55349, 56676, 97, 4, 2, 100, 114, 16970, 16985, 101, 115, 4, 2, 59, 117, 16978, 16980, 1, 9824, 105, 116, 59, 1, 9824, 59, 1, 8741, 4, 3, 99, 115, 117, 16996, 17028, 17089, 4, 2, 97, 117, 17002, 17015, 112, 4, 2, 59, 115, 17009, 17011, 1, 8851, 59, 3, 8851, 65024, 112, 4, 2, 59, 115, 17022, 17024, 1, 8852, 59, 3, 8852, 65024, 117, 4, 2, 98, 112, 17035, 17062, 4, 3, 59, 101, 115, 17043, 17045, 17048, 1, 8847, 59, 1, 8849, 101, 116, 4, 2, 59, 101, 17056, 17058, 1, 8847, 113, 59, 1, 8849, 4, 3, 59, 101, 115, 17070, 17072, 17075, 1, 8848, 59, 1, 8850, 101, 116, 4, 2, 59, 101, 17083, 17085, 1, 8848, 113, 59, 1, 8850, 4, 3, 59, 97, 102, 17097, 17099, 17112, 1, 9633, 114, 4, 2, 101, 102, 17106, 17109, 59, 1, 9633, 59, 1, 9642, 59, 1, 9642, 97, 114, 114, 59, 1, 8594, 4, 4, 99, 101, 109, 116, 17131, 17136, 17142, 17148, 114, 59, 3, 55349, 56520, 116, 109, 110, 59, 1, 8726, 105, 108, 101, 59, 1, 8995, 97, 114, 102, 59, 1, 8902, 4, 2, 97, 114, 17160, 17172, 114, 4, 2, 59, 102, 17167, 17169, 1, 9734, 59, 1, 9733, 4, 2, 97, 110, 17178, 17202, 105, 103, 104, 116, 4, 2, 101, 112, 17188, 17197, 112, 115, 105, 108, 111, 110, 59, 1, 1013, 104, 105, 59, 1, 981, 115, 59, 1, 175, 4, 5, 98, 99, 109, 110, 112, 17218, 17351, 17420, 17423, 17427, 4, 9, 59, 69, 100, 101, 109, 110, 112, 114, 115, 17238, 17240, 17243, 17248, 17261, 17267, 17279, 17285, 17291, 1, 8834, 59, 1, 10949, 111, 116, 59, 1, 10941, 4, 2, 59, 100, 17254, 17256, 1, 8838, 111, 116, 59, 1, 10947, 117, 108, 116, 59, 1, 10945, 4, 2, 69, 101, 17273, 17276, 59, 1, 10955, 59, 1, 8842, 108, 117, 115, 59, 1, 10943, 97, 114, 114, 59, 1, 10617, 4, 3, 101, 105, 117, 17299, 17335, 17339, 116, 4, 3, 59, 101, 110, 17308, 17310, 17322, 1, 8834, 113, 4, 2, 59, 113, 17317, 17319, 1, 8838, 59, 1, 10949, 101, 113, 4, 2, 59, 113, 17330, 17332, 1, 8842, 59, 1, 10955, 109, 59, 1, 10951, 4, 2, 98, 112, 17345, 17348, 59, 1, 10965, 59, 1, 10963, 99, 4, 6, 59, 97, 99, 101, 110, 115, 17366, 17368, 17376, 17385, 17389, 17415, 1, 8827, 112, 112, 114, 111, 120, 59, 1, 10936, 117, 114, 108, 121, 101, 113, 59, 1, 8829, 113, 59, 1, 10928, 4, 3, 97, 101, 115, 17397, 17405, 17410, 112, 112, 114, 111, 120, 59, 1, 10938, 113, 113, 59, 1, 10934, 105, 109, 59, 1, 8937, 105, 109, 59, 1, 8831, 59, 1, 8721, 103, 59, 1, 9834, 4, 13, 49, 50, 51, 59, 69, 100, 101, 104, 108, 109, 110, 112, 115, 17455, 17462, 17469, 17476, 17478, 17481, 17496, 17509, 17524, 17530, 17536, 17548, 17554, 5, 185, 1, 59, 17460, 1, 185, 5, 178, 1, 59, 17467, 1, 178, 5, 179, 1, 59, 17474, 1, 179, 1, 8835, 59, 1, 10950, 4, 2, 111, 115, 17487, 17491, 116, 59, 1, 10942, 117, 98, 59, 1, 10968, 4, 2, 59, 100, 17502, 17504, 1, 8839, 111, 116, 59, 1, 10948, 115, 4, 2, 111, 117, 17516, 17520, 108, 59, 1, 10185, 98, 59, 1, 10967, 97, 114, 114, 59, 1, 10619, 117, 108, 116, 59, 1, 10946, 4, 2, 69, 101, 17542, 17545, 59, 1, 10956, 59, 1, 8843, 108, 117, 115, 59, 1, 10944, 4, 3, 101, 105, 117, 17562, 17598, 17602, 116, 4, 3, 59, 101, 110, 17571, 17573, 17585, 1, 8835, 113, 4, 2, 59, 113, 17580, 17582, 1, 8839, 59, 1, 10950, 101, 113, 4, 2, 59, 113, 17593, 17595, 1, 8843, 59, 1, 10956, 109, 59, 1, 10952, 4, 2, 98, 112, 17608, 17611, 59, 1, 10964, 59, 1, 10966, 4, 3, 65, 97, 110, 17622, 17627, 17650, 114, 114, 59, 1, 8665, 114, 4, 2, 104, 114, 17634, 17638, 107, 59, 1, 10534, 4, 2, 59, 111, 17644, 17646, 1, 8601, 119, 59, 1, 8601, 119, 97, 114, 59, 1, 10538, 108, 105, 103, 5, 223, 1, 59, 17664, 1, 223, 4, 13, 97, 98, 99, 100, 101, 102, 104, 105, 111, 112, 114, 115, 119, 17694, 17709, 17714, 17737, 17742, 17749, 17754, 17860, 17905, 17957, 17964, 18090, 18122, 4, 2, 114, 117, 17700, 17706, 103, 101, 116, 59, 1, 8982, 59, 1, 964, 114, 107, 59, 1, 9140, 4, 3, 97, 101, 121, 17722, 17728, 17734, 114, 111, 110, 59, 1, 357, 100, 105, 108, 59, 1, 355, 59, 1, 1090, 111, 116, 59, 1, 8411, 108, 114, 101, 99, 59, 1, 8981, 114, 59, 3, 55349, 56625, 4, 4, 101, 105, 107, 111, 17764, 17805, 17836, 17851, 4, 2, 114, 116, 17770, 17786, 101, 4, 2, 52, 102, 17777, 17780, 59, 1, 8756, 111, 114, 101, 59, 1, 8756, 97, 4, 3, 59, 115, 118, 17795, 17797, 17802, 1, 952, 121, 109, 59, 1, 977, 59, 1, 977, 4, 2, 99, 110, 17811, 17831, 107, 4, 2, 97, 115, 17818, 17826, 112, 112, 114, 111, 120, 59, 1, 8776, 105, 109, 59, 1, 8764, 115, 112, 59, 1, 8201, 4, 2, 97, 115, 17842, 17846, 112, 59, 1, 8776, 105, 109, 59, 1, 8764, 114, 110, 5, 254, 1, 59, 17858, 1, 254, 4, 3, 108, 109, 110, 17868, 17873, 17901, 100, 101, 59, 1, 732, 101, 115, 5, 215, 3, 59, 98, 100, 17884, 17886, 17898, 1, 215, 4, 2, 59, 97, 17892, 17894, 1, 8864, 114, 59, 1, 10801, 59, 1, 10800, 116, 59, 1, 8749, 4, 3, 101, 112, 115, 17913, 17917, 17953, 97, 59, 1, 10536, 4, 4, 59, 98, 99, 102, 17927, 17929, 17934, 17939, 1, 8868, 111, 116, 59, 1, 9014, 105, 114, 59, 1, 10993, 4, 2, 59, 111, 17945, 17948, 3, 55349, 56677, 114, 107, 59, 1, 10970, 97, 59, 1, 10537, 114, 105, 109, 101, 59, 1, 8244, 4, 3, 97, 105, 112, 17972, 17977, 18082, 100, 101, 59, 1, 8482, 4, 7, 97, 100, 101, 109, 112, 115, 116, 17993, 18051, 18056, 18059, 18066, 18072, 18076, 110, 103, 108, 101, 4, 5, 59, 100, 108, 113, 114, 18009, 18011, 18017, 18032, 18035, 1, 9653, 111, 119, 110, 59, 1, 9663, 101, 102, 116, 4, 2, 59, 101, 18026, 18028, 1, 9667, 113, 59, 1, 8884, 59, 1, 8796, 105, 103, 104, 116, 4, 2, 59, 101, 18045, 18047, 1, 9657, 113, 59, 1, 8885, 111, 116, 59, 1, 9708, 59, 1, 8796, 105, 110, 117, 115, 59, 1, 10810, 108, 117, 115, 59, 1, 10809, 98, 59, 1, 10701, 105, 109, 101, 59, 1, 10811, 101, 122, 105, 117, 109, 59, 1, 9186, 4, 3, 99, 104, 116, 18098, 18111, 18116, 4, 2, 114, 121, 18104, 18108, 59, 3, 55349, 56521, 59, 1, 1094, 99, 121, 59, 1, 1115, 114, 111, 107, 59, 1, 359, 4, 2, 105, 111, 18128, 18133, 120, 116, 59, 1, 8812, 104, 101, 97, 100, 4, 2, 108, 114, 18143, 18154, 101, 102, 116, 97, 114, 114, 111, 119, 59, 1, 8606, 105, 103, 104, 116, 97, 114, 114, 111, 119, 59, 1, 8608, 4, 18, 65, 72, 97, 98, 99, 100, 102, 103, 104, 108, 109, 111, 112, 114, 115, 116, 117, 119, 18204, 18209, 18214, 18234, 18250, 18268, 18292, 18308, 18319, 18343, 18379, 18397, 18413, 18504, 18547, 18553, 18584, 18603, 114, 114, 59, 1, 8657, 97, 114, 59, 1, 10595, 4, 2, 99, 114, 18220, 18230, 117, 116, 101, 5, 250, 1, 59, 18228, 1, 250, 114, 59, 1, 8593, 114, 4, 2, 99, 101, 18241, 18245, 121, 59, 1, 1118, 118, 101, 59, 1, 365, 4, 2, 105, 121, 18256, 18265, 114, 99, 5, 251, 1, 59, 18263, 1, 251, 59, 1, 1091, 4, 3, 97, 98, 104, 18276, 18281, 18287, 114, 114, 59, 1, 8645, 108, 97, 99, 59, 1, 369, 97, 114, 59, 1, 10606, 4, 2, 105, 114, 18298, 18304, 115, 104, 116, 59, 1, 10622, 59, 3, 55349, 56626, 114, 97, 118, 101, 5, 249, 1, 59, 18317, 1, 249, 4, 2, 97, 98, 18325, 18338, 114, 4, 2, 108, 114, 18332, 18335, 59, 1, 8639, 59, 1, 8638, 108, 107, 59, 1, 9600, 4, 2, 99, 116, 18349, 18374, 4, 2, 111, 114, 18355, 18369, 114, 110, 4, 2, 59, 101, 18363, 18365, 1, 8988, 114, 59, 1, 8988, 111, 112, 59, 1, 8975, 114, 105, 59, 1, 9720, 4, 2, 97, 108, 18385, 18390, 99, 114, 59, 1, 363, 5, 168, 1, 59, 18395, 1, 168, 4, 2, 103, 112, 18403, 18408, 111, 110, 59, 1, 371, 102, 59, 3, 55349, 56678, 4, 6, 97, 100, 104, 108, 115, 117, 18427, 18434, 18445, 18470, 18475, 18494, 114, 114, 111, 119, 59, 1, 8593, 111, 119, 110, 97, 114, 114, 111, 119, 59, 1, 8597, 97, 114, 112, 111, 111, 110, 4, 2, 108, 114, 18457, 18463, 101, 102, 116, 59, 1, 8639, 105, 103, 104, 116, 59, 1, 8638, 117, 115, 59, 1, 8846, 105, 4, 3, 59, 104, 108, 18484, 18486, 18489, 1, 965, 59, 1, 978, 111, 110, 59, 1, 965, 112, 97, 114, 114, 111, 119, 115, 59, 1, 8648, 4, 3, 99, 105, 116, 18512, 18537, 18542, 4, 2, 111, 114, 18518, 18532, 114, 110, 4, 2, 59, 101, 18526, 18528, 1, 8989, 114, 59, 1, 8989, 111, 112, 59, 1, 8974, 110, 103, 59, 1, 367, 114, 105, 59, 1, 9721, 99, 114, 59, 3, 55349, 56522, 4, 3, 100, 105, 114, 18561, 18566, 18572, 111, 116, 59, 1, 8944, 108, 100, 101, 59, 1, 361, 105, 4, 2, 59, 102, 18579, 18581, 1, 9653, 59, 1, 9652, 4, 2, 97, 109, 18590, 18595, 114, 114, 59, 1, 8648, 108, 5, 252, 1, 59, 18601, 1, 252, 97, 110, 103, 108, 101, 59, 1, 10663, 4, 15, 65, 66, 68, 97, 99, 100, 101, 102, 108, 110, 111, 112, 114, 115, 122, 18643, 18648, 18661, 18667, 18847, 18851, 18857, 18904, 18909, 18915, 18931, 18937, 18943, 18949, 18996, 114, 114, 59, 1, 8661, 97, 114, 4, 2, 59, 118, 18656, 18658, 1, 10984, 59, 1, 10985, 97, 115, 104, 59, 1, 8872, 4, 2, 110, 114, 18673, 18679, 103, 114, 116, 59, 1, 10652, 4, 7, 101, 107, 110, 112, 114, 115, 116, 18695, 18704, 18711, 18720, 18742, 18754, 18810, 112, 115, 105, 108, 111, 110, 59, 1, 1013, 97, 112, 112, 97, 59, 1, 1008, 111, 116, 104, 105, 110, 103, 59, 1, 8709, 4, 3, 104, 105, 114, 18728, 18732, 18735, 105, 59, 1, 981, 59, 1, 982, 111, 112, 116, 111, 59, 1, 8733, 4, 2, 59, 104, 18748, 18750, 1, 8597, 111, 59, 1, 1009, 4, 2, 105, 117, 18760, 18766, 103, 109, 97, 59, 1, 962, 4, 2, 98, 112, 18772, 18791, 115, 101, 116, 110, 101, 113, 4, 2, 59, 113, 18784, 18787, 3, 8842, 65024, 59, 3, 10955, 65024, 115, 101, 116, 110, 101, 113, 4, 2, 59, 113, 18803, 18806, 3, 8843, 65024, 59, 3, 10956, 65024, 4, 2, 104, 114, 18816, 18822, 101, 116, 97, 59, 1, 977, 105, 97, 110, 103, 108, 101, 4, 2, 108, 114, 18834, 18840, 101, 102, 116, 59, 1, 8882, 105, 103, 104, 116, 59, 1, 8883, 121, 59, 1, 1074, 97, 115, 104, 59, 1, 8866, 4, 3, 101, 108, 114, 18865, 18884, 18890, 4, 3, 59, 98, 101, 18873, 18875, 18880, 1, 8744, 97, 114, 59, 1, 8891, 113, 59, 1, 8794, 108, 105, 112, 59, 1, 8942, 4, 2, 98, 116, 18896, 18901, 97, 114, 59, 1, 124, 59, 1, 124, 114, 59, 3, 55349, 56627, 116, 114, 105, 59, 1, 8882, 115, 117, 4, 2, 98, 112, 18923, 18927, 59, 3, 8834, 8402, 59, 3, 8835, 8402, 112, 102, 59, 3, 55349, 56679, 114, 111, 112, 59, 1, 8733, 116, 114, 105, 59, 1, 8883, 4, 2, 99, 117, 18955, 18960, 114, 59, 3, 55349, 56523, 4, 2, 98, 112, 18966, 18981, 110, 4, 2, 69, 101, 18973, 18977, 59, 3, 10955, 65024, 59, 3, 8842, 65024, 110, 4, 2, 69, 101, 18988, 18992, 59, 3, 10956, 65024, 59, 3, 8843, 65024, 105, 103, 122, 97, 103, 59, 1, 10650, 4, 7, 99, 101, 102, 111, 112, 114, 115, 19020, 19026, 19061, 19066, 19072, 19075, 19089, 105, 114, 99, 59, 1, 373, 4, 2, 100, 105, 19032, 19055, 4, 2, 98, 103, 19038, 19043, 97, 114, 59, 1, 10847, 101, 4, 2, 59, 113, 19050, 19052, 1, 8743, 59, 1, 8793, 101, 114, 112, 59, 1, 8472, 114, 59, 3, 55349, 56628, 112, 102, 59, 3, 55349, 56680, 59, 1, 8472, 4, 2, 59, 101, 19081, 19083, 1, 8768, 97, 116, 104, 59, 1, 8768, 99, 114, 59, 3, 55349, 56524, 4, 14, 99, 100, 102, 104, 105, 108, 109, 110, 111, 114, 115, 117, 118, 119, 19125, 19146, 19152, 19157, 19173, 19176, 19192, 19197, 19202, 19236, 19252, 19269, 19286, 19291, 4, 3, 97, 105, 117, 19133, 19137, 19142, 112, 59, 1, 8898, 114, 99, 59, 1, 9711, 112, 59, 1, 8899, 116, 114, 105, 59, 1, 9661, 114, 59, 3, 55349, 56629, 4, 2, 65, 97, 19163, 19168, 114, 114, 59, 1, 10234, 114, 114, 59, 1, 10231, 59, 1, 958, 4, 2, 65, 97, 19182, 19187, 114, 114, 59, 1, 10232, 114, 114, 59, 1, 10229, 97, 112, 59, 1, 10236, 105, 115, 59, 1, 8955, 4, 3, 100, 112, 116, 19210, 19215, 19230, 111, 116, 59, 1, 10752, 4, 2, 102, 108, 19221, 19225, 59, 3, 55349, 56681, 117, 115, 59, 1, 10753, 105, 109, 101, 59, 1, 10754, 4, 2, 65, 97, 19242, 19247, 114, 114, 59, 1, 10233, 114, 114, 59, 1, 10230, 4, 2, 99, 113, 19258, 19263, 114, 59, 3, 55349, 56525, 99, 117, 112, 59, 1, 10758, 4, 2, 112, 116, 19275, 19281, 108, 117, 115, 59, 1, 10756, 114, 105, 59, 1, 9651, 101, 101, 59, 1, 8897, 101, 100, 103, 101, 59, 1, 8896, 4, 8, 97, 99, 101, 102, 105, 111, 115, 117, 19316, 19335, 19349, 19357, 19362, 19367, 19373, 19379, 99, 4, 2, 117, 121, 19323, 19332, 116, 101, 5, 253, 1, 59, 19330, 1, 253, 59, 1, 1103, 4, 2, 105, 121, 19341, 19346, 114, 99, 59, 1, 375, 59, 1, 1099, 110, 5, 165, 1, 59, 19355, 1, 165, 114, 59, 3, 55349, 56630, 99, 121, 59, 1, 1111, 112, 102, 59, 3, 55349, 56682, 99, 114, 59, 3, 55349, 56526, 4, 2, 99, 109, 19385, 19389, 121, 59, 1, 1102, 108, 5, 255, 1, 59, 19395, 1, 255, 4, 10, 97, 99, 100, 101, 102, 104, 105, 111, 115, 119, 19419, 19426, 19441, 19446, 19462, 19467, 19472, 19480, 19486, 19492, 99, 117, 116, 101, 59, 1, 378, 4, 2, 97, 121, 19432, 19438, 114, 111, 110, 59, 1, 382, 59, 1, 1079, 111, 116, 59, 1, 380, 4, 2, 101, 116, 19452, 19458, 116, 114, 102, 59, 1, 8488, 97, 59, 1, 950, 114, 59, 3, 55349, 56631, 99, 121, 59, 1, 1078, 103, 114, 97, 114, 114, 59, 1, 8669, 112, 102, 59, 3, 55349, 56683, 99, 114, 59, 3, 55349, 56527, 4, 2, 106, 110, 19498, 19501, 59, 1, 8205, 106, 59, 1, 8204]);
   const Preprocessor = preprocessor;
@@ -17740,7 +17844,7 @@ var storefront = function(exports) {
     }
     return -1;
   }
-  let Tokenizer$4 = class Tokenizer {
+  class Tokenizer$4 {
     constructor() {
       this.preprocessor = new Preprocessor();
       this.tokenQueue = [];
@@ -19290,7 +19394,7 @@ var storefront = function(exports) {
       this._flushCodePointsConsumedAsCharacterReference();
       this._reconsumeInState(this.returnState);
     }
-  };
+  }
   Tokenizer$4.CHARACTER_TOKEN = "CHARACTER_TOKEN";
   Tokenizer$4.NULL_CHARACTER_TOKEN = "NULL_CHARACTER_TOKEN";
   Tokenizer$4.WHITESPACE_CHARACTER_TOKEN = "WHITESPACE_CHARACTER_TOKEN";
@@ -19637,7 +19741,7 @@ var storefront = function(exports) {
     }
     return false;
   }
-  let OpenElementStack$1 = class OpenElementStack {
+  class OpenElementStack$1 {
     constructor(document2, treeAdapter) {
       this.stackTop = -1;
       this.items = [];
@@ -19890,10 +19994,10 @@ var storefront = function(exports) {
         this.pop();
       }
     }
-  };
+  }
   var openElementStack = OpenElementStack$1;
   const NOAH_ARK_CAPACITY = 3;
-  let FormattingElementList$1 = class FormattingElementList {
+  class FormattingElementList$1 {
     constructor(treeAdapter) {
       this.length = 0;
       this.entries = [];
@@ -20016,11 +20120,11 @@ var storefront = function(exports) {
       }
       return null;
     }
-  };
+  }
   FormattingElementList$1.MARKER_ENTRY = "MARKER_ENTRY";
   FormattingElementList$1.ELEMENT_ENTRY = "ELEMENT_ENTRY";
   var formattingElementList = FormattingElementList$1;
-  let Mixin$9 = class Mixin {
+  class Mixin$9 {
     constructor(host) {
       const originalMethods = {};
       const overriddenMethods = this._getOverriddenMethods(this, originalMethods);
@@ -20034,7 +20138,7 @@ var storefront = function(exports) {
     _getOverriddenMethods() {
       throw new Error("Not implemented");
     }
-  };
+  }
   Mixin$9.install = function(host, Ctor, opts) {
     if (!host.__mixins) {
       host.__mixins = [];
@@ -20050,7 +20154,7 @@ var storefront = function(exports) {
   };
   var mixin = Mixin$9;
   const Mixin$8 = mixin;
-  let PositionTrackingPreprocessorMixin$2 = class PositionTrackingPreprocessorMixin extends Mixin$8 {
+  class PositionTrackingPreprocessorMixin$2 extends Mixin$8 {
     constructor(preprocessor2) {
       super(preprocessor2);
       this.preprocessor = preprocessor2;
@@ -20093,12 +20197,12 @@ var storefront = function(exports) {
         }
       };
     }
-  };
+  }
   var preprocessorMixin$1 = PositionTrackingPreprocessorMixin$2;
   const Mixin$7 = mixin;
   const Tokenizer$3 = tokenizer;
   const PositionTrackingPreprocessorMixin$1 = preprocessorMixin$1;
-  let LocationInfoTokenizerMixin$2 = class LocationInfoTokenizerMixin extends Mixin$7 {
+  class LocationInfoTokenizerMixin$2 extends Mixin$7 {
     constructor(tokenizer2) {
       super(tokenizer2);
       this.tokenizer = tokenizer2;
@@ -20202,10 +20306,10 @@ var storefront = function(exports) {
       });
       return methods;
     }
-  };
+  }
   var tokenizerMixin$1 = LocationInfoTokenizerMixin$2;
   const Mixin$6 = mixin;
-  let LocationInfoOpenElementStackMixin$1 = class LocationInfoOpenElementStackMixin extends Mixin$6 {
+  class LocationInfoOpenElementStackMixin$1 extends Mixin$6 {
     constructor(stack, opts) {
       super(stack);
       this.onItemPop = opts.onItemPop;
@@ -20228,7 +20332,7 @@ var storefront = function(exports) {
         }
       };
     }
-  };
+  }
   var openElementStackMixin = LocationInfoOpenElementStackMixin$1;
   const Mixin$5 = mixin;
   const Tokenizer$2 = tokenizer;
@@ -20236,7 +20340,7 @@ var storefront = function(exports) {
   const LocationInfoOpenElementStackMixin = openElementStackMixin;
   const HTML$3 = html;
   const $$3 = HTML$3.TAG_NAMES;
-  let LocationInfoParserMixin$1 = class LocationInfoParserMixin extends Mixin$5 {
+  class LocationInfoParserMixin$1 extends Mixin$5 {
     constructor(parser2) {
       super(parser2);
       this.parser = parser2;
@@ -20377,10 +20481,10 @@ var storefront = function(exports) {
         }
       };
     }
-  };
+  }
   var parserMixin$1 = LocationInfoParserMixin$1;
   const Mixin$4 = mixin;
-  let ErrorReportingMixinBase$3 = class ErrorReportingMixinBase extends Mixin$4 {
+  class ErrorReportingMixinBase$3 extends Mixin$4 {
     constructor(host, opts) {
       super(host);
       this.posTracker = null;
@@ -20411,12 +20515,12 @@ var storefront = function(exports) {
         }
       };
     }
-  };
+  }
   var mixinBase = ErrorReportingMixinBase$3;
   const ErrorReportingMixinBase$2 = mixinBase;
   const PositionTrackingPreprocessorMixin = preprocessorMixin$1;
   const Mixin$3 = mixin;
-  let ErrorReportingPreprocessorMixin$1 = class ErrorReportingPreprocessorMixin extends ErrorReportingMixinBase$2 {
+  class ErrorReportingPreprocessorMixin$1 extends ErrorReportingMixinBase$2 {
     constructor(preprocessor2, opts) {
       super(preprocessor2, opts);
       this.posTracker = Mixin$3.install(preprocessor2, PositionTrackingPreprocessorMixin);
@@ -20428,24 +20532,24 @@ var storefront = function(exports) {
         super._reportError(code);
       }
     }
-  };
+  }
   var preprocessorMixin = ErrorReportingPreprocessorMixin$1;
   const ErrorReportingMixinBase$1 = mixinBase;
   const ErrorReportingPreprocessorMixin = preprocessorMixin;
   const Mixin$2 = mixin;
-  let ErrorReportingTokenizerMixin$1 = class ErrorReportingTokenizerMixin extends ErrorReportingMixinBase$1 {
+  class ErrorReportingTokenizerMixin$1 extends ErrorReportingMixinBase$1 {
     constructor(tokenizer2, opts) {
       super(tokenizer2, opts);
       const preprocessorMixin2 = Mixin$2.install(tokenizer2.preprocessor, ErrorReportingPreprocessorMixin, opts);
       this.posTracker = preprocessorMixin2.posTracker;
     }
-  };
+  }
   var tokenizerMixin = ErrorReportingTokenizerMixin$1;
   const ErrorReportingMixinBase = mixinBase;
   const ErrorReportingTokenizerMixin = tokenizerMixin;
   const LocationInfoTokenizerMixin = tokenizerMixin$1;
   const Mixin$1 = mixin;
-  let ErrorReportingParserMixin$1 = class ErrorReportingParserMixin extends ErrorReportingMixinBase {
+  class ErrorReportingParserMixin$1 extends ErrorReportingMixinBase {
     constructor(parser2, opts) {
       super(parser2, opts);
       this.opts = opts;
@@ -20479,7 +20583,7 @@ var storefront = function(exports) {
         }
       };
     }
-  };
+  }
   var parserMixin = ErrorReportingParserMixin$1;
   var _default = {};
   const { DOCUMENT_MODE: DOCUMENT_MODE$1 } = html;
@@ -21320,7 +21424,7 @@ var storefront = function(exports) {
       [Tokenizer.EOF_TOKEN]: stopParsing
     }
   };
-  let Parser$1 = class Parser {
+  class Parser$1 {
     constructor(options) {
       this.options = mergeOptions$1(DEFAULT_OPTIONS$1, options);
       this.treeAdapter = this.options.treeAdapter;
@@ -21719,7 +21823,7 @@ var storefront = function(exports) {
       const ns = this.treeAdapter.getNamespaceURI(element);
       return HTML$1.SPECIAL_ELEMENTS[ns][tn];
     }
-  };
+  }
   var parser = Parser$1;
   function aaObtainFormattingElementEntry(p2, token) {
     let formattingElementEntry = p2.activeFormattingElements.getElementEntryInScopeWithTagName(token.tagName);
@@ -23262,7 +23366,7 @@ var storefront = function(exports) {
   const DOUBLE_QUOTE_REGEX = /"/g;
   const LT_REGEX = /</g;
   const GT_REGEX = />/g;
-  let Serializer$1 = class Serializer {
+  class Serializer$1 {
     constructor(node, options) {
       this.options = mergeOptions(DEFAULT_OPTIONS, options);
       this.treeAdapter = this.options.treeAdapter;
@@ -23345,7 +23449,7 @@ var storefront = function(exports) {
       const name = this.treeAdapter.getDocumentTypeNodeName(node);
       this.html += "<" + doctype.serializeContent(name, null, null) + ">";
     }
-  };
+  }
   Serializer$1.escapeString = function(str, attrMode) {
     str = str.replace(AMP_REGEX, "&amp;").replace(NBSP_REGEX, "&nbsp;");
     if (attrMode) {
@@ -23375,6 +23479,11 @@ var storefront = function(exports) {
     const serializer2 = new Serializer(node, options);
     return serializer2.serialize();
   };
+  /**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const parseFragment = lib.parseFragment;
   function isElement(node) {
     return node.tagName !== void 0;
@@ -23384,7 +23493,8 @@ var storefront = function(exports) {
   }
   const defaultChildNodes = (node) => node.childNodes;
   const traverse = (node, visitor, parent) => {
-    const getChildNodes = visitor.getChildNodes ?? defaultChildNodes;
+    var _a;
+    const getChildNodes = (_a = visitor.getChildNodes) != null ? _a : defaultChildNodes;
     let visitChildren = true;
     if (typeof visitor.pre === "function") {
       visitChildren = visitor.pre(node, parent);
@@ -23401,6 +23511,11 @@ var storefront = function(exports) {
       visitor.post(node, parent);
     }
   };
+  /**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   class i extends i$5 {
     render() {
     }
@@ -23415,6 +23530,11 @@ var storefront = function(exports) {
     var r2;
     return null === (r2 = v(e2)) || void 0 === r2 ? void 0 : r2.o;
   };
+  /**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const reflectedAttributesSource = [
     ["accept", ["input"]],
     [["accept-charset", "acceptCharset"], ["form"]],
@@ -23573,7 +23693,17 @@ var storefront = function(exports) {
       return reflectedAttributes.get("*").get(propertyName);
     }
   };
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const e$1 = { attributeToProperty: h$3._$AK, changedProperties: h$3._$AL };
+  /**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const { attributeToProperty, changedProperties } = e$1;
   class LitElementRenderer extends ElementRenderer {
     constructor(tagName) {
@@ -23584,8 +23714,8 @@ var storefront = function(exports) {
       return ctor["_$litElement$"];
     }
     connectedCallback() {
-      var _a2;
-      (_a2 = this.element) == null ? void 0 : _a2.willUpdate(changedProperties(this.element));
+      var _a;
+      (_a = this.element) == null ? void 0 : _a.willUpdate(changedProperties(this.element));
       c$5.prototype.update.call(this.element);
     }
     attributeChangedCallback(name, _old, value) {
@@ -23603,8 +23733,8 @@ var storefront = function(exports) {
       yield* render$1(this.element.render(), renderInfo);
     }
     *renderLight(renderInfo) {
-      var _a2;
-      const value = (_a2 = this.element) == null ? void 0 : _a2.renderLight();
+      var _a;
+      const value = (_a = this.element) == null ? void 0 : _a.renderLight();
       if (value) {
         yield* render$1(value, renderInfo);
       } else {
@@ -23828,7 +23958,7 @@ var storefront = function(exports) {
     yield `<!--/lit-part-->`;
   }
   function* renderTemplateResult(result, renderInfo) {
-    var _a2;
+    var _a;
     const ops = getTemplateOpcodes(result);
     let partIndex = 0;
     for (const op of ops) {
@@ -23879,7 +24009,7 @@ var storefront = function(exports) {
             instance.setAttribute(name, value);
           }
           renderInfo.customElementInstanceStack.push(instance);
-          (_a2 = renderInfo.customElementRendered) == null ? void 0 : _a2.call(renderInfo, op.tagName);
+          (_a = renderInfo.customElementRendered) == null ? void 0 : _a.call(renderInfo, op.tagName);
           break;
         }
         case "custom-element-attributes": {
@@ -23952,9 +24082,9 @@ var storefront = function(exports) {
   function* renderAttributePart(instance, op, value) {
     if (value !== b) {
       if (instance !== void 0) {
-        instance.setAttribute(op.name, String(value ?? ""));
+        instance.setAttribute(op.name, String(value != null ? value : ""));
       } else {
-        yield `${op.name}="${escapeHtml(String(value ?? ""))}"`;
+        yield `${op.name}="${escapeHtml(String(value != null ? value : ""))}"`;
       }
     }
   }
@@ -24446,7 +24576,7 @@ var storefront = function(exports) {
       value: "AbortSignal"
     });
   }
-  let AbortController$1 = class AbortController {
+  class AbortController$1 {
     constructor() {
       signals.set(this, createAbortSignal());
     }
@@ -24456,7 +24586,7 @@ var storefront = function(exports) {
     abort() {
       abortSignal(getSignal(this));
     }
-  };
+  }
   const signals = /* @__PURE__ */ new WeakMap();
   function getSignal(controller) {
     const signal = signals.get(controller);
@@ -24561,15 +24691,15 @@ var storefront = function(exports) {
   const generateID = (num = 1) => Array.from({ length: Math.abs(Number(num)) || 1 }, getRandomString).join("-").toUpperCase();
   const AuthAdapter = "FES.AuthAdapter";
   const queryAssignedElements = (host, options = {}) => {
-    var _a2;
+    var _a;
     const { selector, slot } = options;
     const slotSelector = `slot${slot ? `[name=${slot}]` : ":not([name])"}`;
-    const slotEl = (_a2 = host.renderRoot) == null ? void 0 : _a2.querySelector(slotSelector);
+    const slotEl = (_a = host.renderRoot) == null ? void 0 : _a.querySelector(slotSelector);
     const elements = slotEl == null ? void 0 : slotEl.assignedElements(options);
     if (selector && elements) {
       return elements.filter((node) => node.matches(selector));
     }
-    return elements ?? [];
+    return elements != null ? elements : [];
   };
   const queryFirstAssigned = (host, options = {}) => {
     const elements = queryAssignedElements(host, options);
@@ -24679,8 +24809,8 @@ var storefront = function(exports) {
     }
     logout() {
       return this.accessToken.remove().pipe(cjs.switchMap((ret) => {
-        var _a2, _b2;
-        return ((_b2 = (_a2 = this.adapter).revoke) == null ? void 0 : _b2.call(_a2)) ?? cjs.of(ret);
+        var _a, _b, _c;
+        return (_c = (_b = (_a = this.adapter).revoke) == null ? void 0 : _b.call(_a)) != null ? _c : cjs.of(ret);
       }));
     }
     isAuthenticated() {
@@ -24774,15 +24904,15 @@ var storefront = function(exports) {
       return this.identity.get().pipe(cjs.take(1), cjs.switchMap((identity2) => handle(url, this.optionsWithHeaders(identity2, options))));
     }
     optionsWithHeaders(identity2, options) {
-      var _a2, _b2;
+      var _a, _b;
       if (!identity2.anonymous && identity2.token) {
-        (_a2 = options.headers) == null ? true : delete _a2["X-Anonymous-Customer-Unique-Id"];
+        (_a = options.headers) == null ? true : delete _a["X-Anonymous-Customer-Unique-Id"];
         options.headers = {
           ...options.headers,
           ["Authorization"]: `${identity2.token.tokenType} ${identity2.token.accessToken}`
         };
       } else {
-        (_b2 = options.headers) == null ? true : delete _b2["Authorization"];
+        (_b = options.headers) == null ? true : delete _b["Authorization"];
         options.headers = {
           ...options.headers,
           ["X-Anonymous-Customer-Unique-Id"]: identity2.id
@@ -24979,7 +25109,10 @@ var storefront = function(exports) {
       return this.stores$;
     }
     get() {
-      return this.store$.pipe(cjs.switchMap((store) => !store ? this.getAll().pipe(cjs.map((stores) => stores.find((store2) => store2.id === this.store) ?? null)) : cjs.of(store)));
+      return this.store$.pipe(cjs.switchMap((store) => !store ? this.getAll().pipe(cjs.map((stores) => {
+        var _a;
+        return (_a = stores.find((store2) => store2.id === this.store)) != null ? _a : null;
+      })) : cjs.of(store)));
     }
   }
   const StoreService = "FES.StoreService";
@@ -24992,7 +25125,10 @@ var storefront = function(exports) {
       return this.storeService.get().pipe(cjs.filter((response) => !!response), cjs.map((response) => response.countries));
     }
     get() {
-      return cjs.combineLatest([this.getAll(), this.country$]).pipe(cjs.map(([countries, country]) => countries.find((c2) => c2.iso2Code === country) ?? null));
+      return cjs.combineLatest([this.getAll(), this.country$]).pipe(cjs.map(([countries, country]) => {
+        var _a;
+        return (_a = countries.find((c2) => c2.iso2Code === country)) != null ? _a : null;
+      }));
     }
     set(value) {
       this.country$.next(value);
@@ -25021,6 +25157,11 @@ var storefront = function(exports) {
     name: "oryx-notification",
     impl: () => Promise.resolve().then(() => notification_component).then((m2) => m2.NotificationComponent)
   });
+  /**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   function n$1(n2, o2, r2) {
     return n2 ? o2() : null == r2 ? void 0 : r2();
   }
@@ -25153,7 +25294,7 @@ var storefront = function(exports) {
     color: var(--oryx-color-neutral-300);
   }
 `;
-  const _NotificationComponent = class extends s$5 {
+  class NotificationComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.closable = false;
@@ -25182,11 +25323,8 @@ var storefront = function(exports) {
         `)}
     `;
     }
-  };
-  let NotificationComponent = _NotificationComponent;
-  (() => {
-    _NotificationComponent.styles = [notificationBaseStyles, notificationStyles];
-  })();
+  }
+  NotificationComponent.styles = [notificationBaseStyles, notificationStyles];
   __decorate([
     e$3({ type: String, reflect: true }),
     __metadata("design:type", String)
@@ -25234,7 +25372,8 @@ var storefront = function(exports) {
       this.notificationService = notificationService;
     }
     handle(error2) {
-      const message2 = (typeof error2 === "object" && (error2 == null ? void 0 : error2.message)) ?? String(error2);
+      var _a;
+      const message2 = (_a = typeof error2 === "object" && (error2 == null ? void 0 : error2.message)) != null ? _a : String(error2);
       this.notificationService.push({
         type: Types.ERROR,
         content: "Error",
@@ -25317,19 +25456,28 @@ var storefront = function(exports) {
   class DefaultSemanticLinkService {
     constructor() {
       this.types = {
-        [SemanticLinkType.ProductList]: (link2) => `/search${link2.params ? `?${this.getUrlParams(link2.params)}` : encodeURIComponent(link2.id ?? "")}`,
-        [SemanticLinkType.Page]: (link2) => `/${encodeURIComponent(link2.id ?? "")}`,
-        [SemanticLinkType.Product]: (link2) => `/product/${encodeURIComponent(link2.id ?? "")}`,
+        [SemanticLinkType.ProductList]: (link2) => {
+          var _a;
+          return `/search${link2.params ? `?${this.getUrlParams(link2.params)}` : encodeURIComponent((_a = link2.id) != null ? _a : "")}`;
+        },
+        [SemanticLinkType.Page]: (link2) => {
+          var _a;
+          return `/${encodeURIComponent((_a = link2.id) != null ? _a : "")}`;
+        },
+        [SemanticLinkType.Product]: (link2) => {
+          var _a;
+          return `/product/${encodeURIComponent((_a = link2.id) != null ? _a : "")}`;
+        },
         [SemanticLinkType.Category]: (link2) => `/category/${link2.id}${link2.params ? `?${this.getUrlParams(link2.params)}` : ""}`,
         [SemanticLinkType.Checkout]: () => "/checkout"
       };
     }
     get(link2) {
-      var _a2, _b2;
+      var _a, _b;
       if (!this.types[link2.type]) {
         return cjs.throwError(() => new Error("Link type is not supported"));
       }
-      return cjs.of((_b2 = (_a2 = this.types)[link2.type]) == null ? void 0 : _b2.call(_a2, link2));
+      return cjs.of((_b = (_a = this.types)[link2.type]) == null ? void 0 : _b.call(_a, link2));
     }
     getUrlParams(params) {
       const encodedParams = Object.fromEntries(Object.entries(params).map(([k2, v2]) => [k2, encodeURIComponent(v2)]));
@@ -25429,27 +25577,33 @@ var storefront = function(exports) {
       }))))) : cjs.of(null)));
     }
     cumulateQuantity(cart2) {
-      var _a2;
-      return ((_a2 = cart2 == null ? void 0 : cart2.products) == null ? void 0 : _a2.reduce((acc, { quantity }) => acc + quantity, 0)) ?? null;
+      var _a, _b;
+      return (_b = (_a = cart2 == null ? void 0 : cart2.products) == null ? void 0 : _a.reduce((acc, { quantity }) => acc + quantity, 0)) != null ? _b : null;
     }
     formatDiscounts(cart2) {
-      return cjs.of(cart2).pipe(cjs.switchMap((cart3) => (cart3.discounts ?? []).reduce((acc$, discount) => acc$.pipe(cjs.switchMap((acc) => this.pricingService.format(-discount.amount).pipe(cjs.filter((amount) => amount !== null), cjs.map((amount) => [...acc, { ...discount, amount }])))), cjs.of([]))));
+      return cjs.of(cart2).pipe(cjs.switchMap((cart3) => {
+        var _a;
+        return ((_a = cart3.discounts) != null ? _a : []).reduce((acc$, discount) => acc$.pipe(cjs.switchMap((acc) => this.pricingService.format(-discount.amount).pipe(cjs.filter((amount) => amount !== null), cjs.map((amount) => [...acc, { ...discount, amount }])))), cjs.of([]));
+      }));
     }
     formatTotals(cart2) {
-      return cjs.of(cart2).pipe(cjs.switchMap((cart3) => Object.entries(cart3.totals ?? {}).reduce((acc$, [priceType, price]) => {
-        return acc$.pipe(cjs.switchMap((acc) => {
-          if (!price) {
-            return cjs.of({ ...acc });
-          }
-          if (priceType === "discountTotal") {
-            price = -price;
-          }
-          return this.pricingService.format(price).pipe(cjs.map((formattedPrice) => ({
-            ...acc,
-            [priceType]: formattedPrice
-          })));
-        }));
-      }, cjs.of({}))));
+      return cjs.of(cart2).pipe(cjs.switchMap((cart3) => {
+        var _a;
+        return Object.entries((_a = cart3.totals) != null ? _a : {}).reduce((acc$, [priceType, price]) => {
+          return acc$.pipe(cjs.switchMap((acc) => {
+            if (!price) {
+              return cjs.of({ ...acc });
+            }
+            if (priceType === "discountTotal") {
+              price = -price;
+            }
+            return this.pricingService.format(price).pipe(cjs.map((formattedPrice) => ({
+              ...acc,
+              [priceType]: formattedPrice
+            })));
+          }));
+        }, cjs.of({}));
+      }));
     }
   }
   const CartAdapter = "FES.CartAdapter";
@@ -25479,9 +25633,10 @@ var storefront = function(exports) {
   })(PriceMode || (PriceMode = {}));
   const CartNormalizer = "FES.CartNormalizer*";
   function cartAttributesNormalizer(data) {
+    var _a;
     const guestItemsKey = camelize(ApiCartModel.Includes.GuestCartItems);
     const itemsKey = camelize(ApiCartModel.Includes.Items);
-    const products2 = data[itemsKey] ?? data[guestItemsKey];
+    const products2 = (_a = data[itemsKey]) != null ? _a : data[guestItemsKey];
     delete data[itemsKey];
     delete data[guestItemsKey];
     return {
@@ -25647,11 +25802,17 @@ var storefront = function(exports) {
     }
     getTotals(data) {
       const cart$ = (data == null ? void 0 : data.cartId) ? this.carts.get(data.cartId).value$ : this.activeCart$;
-      return cart$.pipe(cjs.map((cart2) => (cart2 == null ? void 0 : cart2.totals) ?? null));
+      return cart$.pipe(cjs.map((cart2) => {
+        var _a;
+        return (_a = cart2 == null ? void 0 : cart2.totals) != null ? _a : null;
+      }));
     }
     getEntries(data) {
       const cart$ = (data == null ? void 0 : data.cartId) ? this.carts.get(data.cartId).value$ : this.activeCart$;
-      return cart$.pipe(cjs.map((cart2) => (cart2 == null ? void 0 : cart2.products) ?? []));
+      return cart$.pipe(cjs.map((cart2) => {
+        var _a;
+        return (_a = cart2 == null ? void 0 : cart2.products) != null ? _a : [];
+      }));
     }
     isEmpty(data) {
       return this.getEntries(data).pipe(cjs.map((entries) => !(entries == null ? void 0 : entries.length)));
@@ -25660,7 +25821,7 @@ var storefront = function(exports) {
       this.loading$.next(true);
       this.load();
       return this.activeCartId$.pipe(cjs.take(1), cjs.switchMap((activeId) => this.adapter.addEntry({
-        cartId: cartId ?? activeId,
+        cartId: cartId != null ? cartId : activeId,
         attributes
       })), cjs.tap((cart2) => {
         const isNoCarts = this.carts.size === 0;
@@ -25684,10 +25845,10 @@ var storefront = function(exports) {
       this.loading$.next(true);
       this.load();
       return this.activeCartId$.pipe(cjs.take(1), cjs.switchMap((activeId) => this.adapter.deleteEntry({
-        cartId: cartId ?? activeId,
+        cartId: cartId != null ? cartId : activeId,
         groupKey
       }).pipe(cjs.switchMap(() => this.adapter.get({
-        cartId: cartId ?? activeId
+        cartId: cartId != null ? cartId : activeId
       })))), cjs.tap((cart2) => {
         const cachedCart = this.carts.get(cart2.id);
         cachedCart == null ? void 0 : cachedCart.value$.next(cart2);
@@ -25703,7 +25864,7 @@ var storefront = function(exports) {
       this.load();
       return this.activeCartId$.pipe(cjs.take(1), cjs.switchMap((activeId) => this.adapter.updateEntry({
         groupKey,
-        cartId: cartId ?? activeId,
+        cartId: cartId != null ? cartId : activeId,
         attributes
       })), cjs.tap((cart2) => {
         const cachedCart = this.carts.get(cart2.id);
@@ -25717,7 +25878,7 @@ var storefront = function(exports) {
     }
     updateError(error2, cartId) {
       this.activeCartId$.pipe(cjs.take(1)).subscribe((activeCartId) => {
-        const id = cartId ?? activeCartId;
+        const id = cartId != null ? cartId : activeCartId;
         const cachedCart = this.carts.get(id);
         cachedCart.error$.next(error2);
       });
@@ -25791,9 +25952,9 @@ var storefront = function(exports) {
       }
     ]
   });
-  const checkoutPaymentSelectorComponent = componentDef({
-    name: "oryx-checkout-payment-selector",
-    impl: () => Promise.resolve().then(() => paymentSelector_component).then((m2) => m2.CheckoutPaymentSelectorComponent)
+  const checkoutPaymentComponent = componentDef({
+    name: "checkout-payment",
+    impl: () => Promise.resolve().then(() => payment_component).then((m2) => m2.CheckoutPaymentComponent)
   });
   const checkoutShipmentComponent = componentDef({
     name: "checkout-shipment",
@@ -25808,7 +25969,7 @@ var storefront = function(exports) {
     checkoutGuestComponent,
     checkoutLinkComponent,
     checkoutLoginComponent,
-    checkoutPaymentSelectorComponent,
+    checkoutPaymentComponent,
     checkoutShipmentComponent
   }, Symbol.toStringTag, { value: "Module" }));
   const CheckoutDataService = "FES.CheckoutDataService";
@@ -25851,34 +26012,36 @@ var storefront = function(exports) {
   })(CheckoutStepType || (CheckoutStepType = {}));
   const PaymentsNormalizer = "FES.PaymentsNormalizer*";
   function paymentsNormalizer(data) {
-    var _a2;
+    var _a, _b;
     if (!data) {
       return [];
     }
     const paymentsKey = camelize(ApiCheckoutModel.Includes.PaymentMethods);
-    return ((_a2 = data[paymentsKey]) == null ? void 0 : _a2.map((payment) => {
+    return (_b = (_a = data[paymentsKey]) == null ? void 0 : _a.map((payment) => {
       const { paymentMethodName, paymentProviderName, ...paymentData } = payment;
       return {
         ...paymentData,
         name: paymentMethodName,
         provider: paymentProviderName
       };
-    }).sort((a2, b2) => a2.provider.toLowerCase() < b2.provider.toLowerCase() ? -1 : a2.provider.toLowerCase() > b2.provider.toLowerCase() ? 1 : 0)) ?? [];
+    }).sort((a2, b2) => a2.provider.toLowerCase() < b2.provider.toLowerCase() ? -1 : a2.provider.toLowerCase() > b2.provider.toLowerCase() ? 1 : 0)) != null ? _b : [];
   }
   const ShipmentsNormalizer = "FES.ShipmentsNormalizer*";
   function shipmentsNormalizer(data) {
+    var _a;
     if (!data) {
       return [];
     }
     const shipmentsKey = camelize(ApiCheckoutModel.Includes.Shipments);
-    const shipments = data[shipmentsKey] ?? [];
+    const shipments = (_a = data[shipmentsKey]) != null ? _a : [];
     return shipments.map((shipment) => {
+      var _a2;
       const methods = {};
       if (typeof shipment === "object" && shipment.shipmentMethods) {
         for (let i2 = 0; i2 < shipment.shipmentMethods.length; i2++) {
           const method = shipment.shipmentMethods[i2];
           const carrier2 = method.carrierName;
-          methods[carrier2] = [...methods[carrier2] ?? [], method];
+          methods[carrier2] = [...(_a2 = methods[carrier2]) != null ? _a2 : [], method];
         }
       }
       delete shipment.shipmentMethods;
@@ -25922,17 +26085,18 @@ var storefront = function(exports) {
   ];
   const CheckoutSerializer = "FES.CheckoutSerializers*";
   function checkoutAttributesSerializer(data) {
-    var _a2, _b2;
+    var _a, _b, _c;
     const attributes = { ...data.attributes };
-    const shipmentMethods = ((_a2 = attributes == null ? void 0 : attributes.carriers) == null ? void 0 : _a2.reduce((acc, carrier2) => [
+    const shipmentMethods = (_b = (_a = attributes == null ? void 0 : attributes.carriers) == null ? void 0 : _a.reduce((acc, carrier2) => [
       ...acc,
       ...carrier2.shipmentMethods
-    ], [])) ?? [];
+    ], [])) != null ? _b : [];
     delete attributes.carriers;
-    const shipments = (_b2 = attributes == null ? void 0 : attributes.shipments) == null ? void 0 : _b2.map((shipment) => {
+    const shipments = (_c = attributes == null ? void 0 : attributes.shipments) == null ? void 0 : _c.map((shipment) => {
+      var _a2;
       return {
         ...shipment,
-        selectedShipmentMethod: shipment.selectedShipmentMethod ?? defaultSelectedShipmentMethod
+        selectedShipmentMethod: (_a2 = shipment.selectedShipmentMethod) != null ? _a2 : defaultSelectedShipmentMethod
       };
     });
     return {
@@ -25998,11 +26162,11 @@ var storefront = function(exports) {
           class=${l$1(layoutClasses)}
         ></checkout-shipment>`
       },
-      ["oryx-checkout-payment-selector"]: {
-        template: (uid, layoutClasses) => y`<oryx-checkout-payment-selector
+      ["checkout-payment"]: {
+        template: (uid, layoutClasses) => y`<checkout-payment
           uid="${uid}"
           class=${l$1(layoutClasses)}
-        ></oryx-checkout-payment-selector>`
+        ></checkout-payment>`
       },
       ["oryx-checkout-composition"]: {
         template: (uid, layoutClasses) => y`<oryx-checkout-composition
@@ -26019,6 +26183,7 @@ var storefront = function(exports) {
       this.contactDetails$ = new cjs.BehaviorSubject(null);
       this.addressDetails$ = new cjs.BehaviorSubject(null);
       this.shipmentDetails$ = new cjs.BehaviorSubject(null);
+      this.paymentDetails$ = new cjs.BehaviorSubject(null);
       this.getPersistedData();
     }
     isGuestCheckout() {
@@ -26056,20 +26221,39 @@ var storefront = function(exports) {
     setShipmentDetails(shipmentDetails) {
       this.shipmentDetails$.next(shipmentDetails);
     }
+    getPaymentDetails() {
+      return this.paymentDetails$;
+    }
+    setPaymentDetails(paymentDetails) {
+      this.paymentDetails$.next(paymentDetails);
+    }
     getPersistedData() {
       this.storage.get(guestCheckoutStorageKey, "session").subscribe((isGuestCheckout) => this.isGuestCheckout$.next(!!isGuestCheckout));
     }
   }
   class DefaultCheckoutPaymentService {
-    constructor(cartService = inject(CartService), adapter = inject(CheckoutAdapter)) {
+    constructor(cartService = inject(CartService), adapter = inject(CheckoutAdapter), dataService = inject(CheckoutDataService)) {
       this.cartService = cartService;
       this.adapter = adapter;
+      this.dataService = dataService;
     }
     getMethods() {
       return this.cartService.getCart().pipe(cjs.take(1), cjs.switchMap((cart2) => !cart2 ? cjs.of(null) : this.adapter.get({
         cartId: cart2.id,
         include: [ApiCheckoutModel.Includes.PaymentMethods]
-      })), cjs.map((data) => (data == null ? void 0 : data.paymentMethods) ?? null));
+      })), cjs.map((data) => {
+        var _a;
+        return (_a = data == null ? void 0 : data.paymentMethods) != null ? _a : null;
+      }));
+    }
+    setPaymentMethod(name) {
+      return this.getMethods().pipe(cjs.map((methods) => {
+        const payment = methods == null ? void 0 : methods.find((method) => method.name === name);
+        if (payment) {
+          this.dataService.setPaymentDetails(payment);
+        }
+        return void 0;
+      }));
     }
   }
   class DefaultCheckoutShipmentService {
@@ -26098,7 +26282,8 @@ var storefront = function(exports) {
     }
     getCarriers() {
       return this.getShipment().pipe(cjs.map((shipment) => {
-        return (shipment == null ? void 0 : shipment.carriers) ?? [];
+        var _a;
+        return (_a = shipment == null ? void 0 : shipment.carriers) != null ? _a : [];
       }));
     }
     handleShipmentData(data) {
@@ -26111,8 +26296,8 @@ var storefront = function(exports) {
     }
     getSelectedShipmentMethod() {
       return this.getShipment().pipe(cjs.map((shipment) => {
-        var _a2;
-        return ((_a2 = shipment == null ? void 0 : shipment.selectedShipmentMethod) == null ? void 0 : _a2.id) ? Number(shipment.selectedShipmentMethod.id) : 0;
+        var _a;
+        return ((_a = shipment == null ? void 0 : shipment.selectedShipmentMethod) == null ? void 0 : _a.id) ? Number(shipment.selectedShipmentMethod.id) : 0;
       }));
     }
     setShipmentMethod(method) {
@@ -26417,6 +26602,11 @@ var storefront = function(exports) {
       useClass: ServerStorageService
     }
   ];
+  /**
+   * @license
+   * Copyright 2018 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const o$1 = e$7(class extends i$5 {
     constructor(t2) {
       var i2;
@@ -26445,6 +26635,11 @@ var storefront = function(exports) {
       return T;
     }
   });
+  /**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const u = (e2, s2, t2) => {
     const r2 = /* @__PURE__ */ new Map();
     for (let l2 = s2; l2 <= t2; l2++)
@@ -26601,7 +26796,7 @@ var storefront = function(exports) {
       return `${label}${required ? " *" : ""}`;
     }
     buildTextField(field, value) {
-      var _a2;
+      var _a, _b, _c;
       return y`
       <oryx-input
         .label=${this.buildRequiredLabel(field.label, field.required)}
@@ -26610,10 +26805,10 @@ var storefront = function(exports) {
       >
         <input
           .name=${field.id}
-          .value=${value ?? ""}
+          .value=${value != null ? value : ""}
           minlength=${l$1(field.min)}
           maxlength=${l$1(field.max)}
-          .type=${((_a2 = field.attributes) == null ? void 0 : _a2.type) ?? field.type ?? "text"}
+          .type=${(_c = (_b = (_a = field.attributes) == null ? void 0 : _a.type) != null ? _b : field.type) != null ? _c : "text"}
           ?required=${field.required}
         />
       </oryx-input>
@@ -26628,7 +26823,7 @@ var storefront = function(exports) {
       >
         <input
           .name=${field.id}
-          .value=${value ?? ""}
+          .value=${value != null ? value : ""}
           type="number"
           min=${l$1(field.min)}
           max=${l$1(field.max)}
@@ -26659,7 +26854,7 @@ var storefront = function(exports) {
       >
         <textarea
           .name=${field.id}
-          .value=${value ?? ""}
+          .value=${value != null ? value : ""}
           ?required=${field.required}
         ></textarea>
       </oryx-input>
@@ -26674,7 +26869,7 @@ var storefront = function(exports) {
         <input
           type="color"
           .name=${field.id}
-          .value=${value ?? ""}
+          .value=${value != null ? value : ""}
           ?required=${field.required}
         />
       </oryx-input>
@@ -26694,13 +26889,13 @@ var storefront = function(exports) {
     `;
     }
     buildToggleButton(field, value) {
-      var _a2;
+      var _a;
       return y`
       <oryx-input-list
         .heading=${this.buildRequiredLabel(field.label, field.required)}
         class=${this.getClassMap(field)}
       >
-        ${(_a2 = field.options) == null ? void 0 : _a2.map((option) => y`
+        ${(_a = field.options) == null ? void 0 : _a.map((option) => y`
             <oryx-toggle-icon>
               <input
                 type="radio"
@@ -26719,7 +26914,7 @@ var storefront = function(exports) {
     `;
     }
     buildSelect(field, value) {
-      var _a2;
+      var _a;
       return y`
       <oryx-select
         .label=${this.buildRequiredLabel(field.label, field.required)}
@@ -26732,8 +26927,9 @@ var storefront = function(exports) {
           ?required=${field.required}
         >
           <option></option>
-          ${(_a2 = field.options) == null ? void 0 : _a2.map((option) => {
-        const text = (option == null ? void 0 : option.text) ?? (option == null ? void 0 : option.value);
+          ${(_a = field.options) == null ? void 0 : _a.map((option) => {
+        var _a2;
+        const text = (_a2 = option == null ? void 0 : option.text) != null ? _a2 : option == null ? void 0 : option.value;
         return y`<option
               value=${option.value}
               ?selected=${option.value === value}
@@ -26789,6 +26985,10 @@ var storefront = function(exports) {
       return cldr.exports;
     hasRequiredCldr = 1;
     (function(module) {
+      /*!
+       * CLDR JavaScript Library v0.5.4 2020-10-22T15:56Z MIT license © Rafael Xavier
+       * http://git.io/h4lmVg
+       */
       (function(root2, factory) {
         {
           module.exports = factory();
@@ -27117,12 +27317,22 @@ var storefront = function(exports) {
       return event.exports;
     hasRequiredEvent = 1;
     (function(module) {
+      /*!
+       * CLDR JavaScript Library v0.5.4 2020-10-22T15:56Z MIT license © Rafael Xavier
+       * http://git.io/h4lmVg
+       */
       (function(factory) {
         {
           module.exports = factory(requireCldr());
         }
       })(function(Cldr) {
         var pathNormalize = Cldr._pathNormalize, validatePresence = Cldr._validatePresence, validateType = Cldr._validateType;
+        /*!
+         * EventEmitter v4.2.7 - git.io/ee
+         * Oliver Caldwell
+         * MIT license
+         * @preserve
+         */
         var EventEmitter;
         EventEmitter = function() {
           function EventEmitter2() {
@@ -27371,13 +27581,17 @@ var storefront = function(exports) {
     })(event);
     return event.exports;
   }
-  var supplemental$2 = { exports: {} };
+  var supplemental = { exports: {} };
   var hasRequiredSupplemental;
   function requireSupplemental() {
     if (hasRequiredSupplemental)
-      return supplemental$2.exports;
+      return supplemental.exports;
     hasRequiredSupplemental = 1;
     (function(module) {
+      /*!
+       * CLDR JavaScript Library v0.5.4 2020-10-22T15:56Z MIT license © Rafael Xavier
+       * http://git.io/h4lmVg
+       */
       (function(factory) {
         {
           module.exports = factory(requireCldr());
@@ -27417,8 +27631,8 @@ var storefront = function(exports) {
         };
         return Cldr;
       });
-    })(supplemental$2);
-    return supplemental$2.exports;
+    })(supplemental);
+    return supplemental.exports;
   }
   var unresolved = { exports: {} };
   var hasRequiredUnresolved;
@@ -27427,6 +27641,10 @@ var storefront = function(exports) {
       return unresolved.exports;
     hasRequiredUnresolved = 1;
     (function(module) {
+      /*!
+       * CLDR JavaScript Library v0.5.4 2020-10-22T15:56Z MIT license © Rafael Xavier
+       * http://git.io/h4lmVg
+       */
       (function(factory) {
         {
           module.exports = factory(requireCldr());
@@ -27511,6 +27729,10 @@ var storefront = function(exports) {
       return node_main.exports;
     hasRequiredNode_main = 1;
     (function(module) {
+      /*!
+       * CLDR JavaScript Library v0.5.4 2020-10-22T15:56Z MIT license © Rafael Xavier
+       * http://git.io/h4lmVg
+       */
       module.exports = requireCldr();
       requireEvent();
       requireSupplemental();
@@ -27519,6 +27741,10 @@ var storefront = function(exports) {
     return node_main.exports;
   }
   (function(module, exports2) {
+    /*!
+     * Globalize v1.7.0 2021-08-02T11:53Z Released under the MIT license
+     * http://git.io/TrdQbw
+     */
     (function(root2, factory) {
       {
         module.exports = factory(requireNode_main());
@@ -27760,6 +27986,10 @@ var storefront = function(exports) {
   })(globalize);
   var message = { exports: {} };
   (function(module, exports2) {
+    /*!
+     * Globalize v1.7.0 2021-08-02T11:53Z Released under the MIT license
+     * http://git.io/TrdQbw
+     */
     (function(root2, factory) {
       {
         module.exports = factory(requireNode_main(), globalize.exports);
@@ -27824,7 +28054,7 @@ var storefront = function(exports) {
               return s2;
             }, peg$c41 = function(chars) {
               return chars.join("");
-            }, peg$c42 = /^[^{}#\\\0-\x1F \t\n\r]/, peg$c43 = { type: "class", value: "[^{}#\\\\\\0-\\x1F \\t\\n\\r]", description: "[^{}#\\\\\\0-\\x1F \\t\\n\\r]" }, peg$c44 = function(x2) {
+            }, peg$c42 = /^[^{}#\\\0-\x1F \t\n\r]/, peg$c43 = { type: "class", value: "[^{}#\\\\\\0-\\x1F\x7F \\t\\n\\r]", description: "[^{}#\\\\\\0-\\x1F\x7F \\t\\n\\r]" }, peg$c44 = function(x2) {
               return x2;
             }, peg$c45 = "\\\\", peg$c46 = { type: "literal", value: "\\\\", description: '"\\\\\\\\"' }, peg$c47 = function() {
               return "\\";
@@ -28983,6 +29213,11 @@ var storefront = function(exports) {
             parse: parse2
           };
         }().parse;
+        /** @file messageformat.js - ICU PluralFormat + SelectFormat for JavaScript
+         *  @author Alex Sexton - @SlexAxton
+         *  @version 0.3.0-1
+         *  @copyright 2012-2015 Alex Sexton, Eemeli Aro, and Contributors
+         *  @license To use or fork, MIT. To contribute back, Dojo CLA  */
         function propname(key, obj) {
           if (/^[A-Z_$][0-9A-Z_$]*$/i.test(key)) {
             return obj ? obj + "." + key : key;
@@ -29328,6 +29563,10 @@ var storefront = function(exports) {
   })(message);
   var number = { exports: {} };
   (function(module, exports2) {
+    /*!
+     * Globalize v1.7.0 2021-08-02T11:53Z Released under the MIT license
+     * http://git.io/TrdQbw
+     */
     (function(root2, factory) {
       {
         module.exports = factory(requireNode_main(), globalize.exports);
@@ -29486,7 +29725,7 @@ var storefront = function(exports) {
         "+": "plusSign",
         "-": "minusSign",
         "E": "exponential",
-        "‰": "perMille"
+        "\u2030": "perMille"
       };
       var numberSymbolMap = function(cldr2) {
         var symbol, symbolMap = {};
@@ -29663,7 +29902,7 @@ var storefront = function(exports) {
         prefixNSuffix = "" + prefix + suffix;
         if (prefixNSuffix.indexOf("%") !== -1) {
           number2 /= 100;
-        } else if (prefixNSuffix.indexOf("‰") !== -1) {
+        } else if (prefixNSuffix.indexOf("\u2030") !== -1) {
           number2 /= 1e3;
         }
         if (negative) {
@@ -29891,7 +30130,7 @@ var storefront = function(exports) {
               partsPush(parts, "literal", removeLiteralQuotes(literal));
               return;
             }
-            if (character === "¤") {
+            if (character === "\xA4") {
               partsPush(parts, "currency", character);
               return;
             }
@@ -29925,7 +30164,7 @@ var storefront = function(exports) {
         }
         if (pattern.indexOf("%") !== -1) {
           number2 *= 100;
-        } else if (pattern.indexOf("‰") !== -1) {
+        } else if (pattern.indexOf("\u2030") !== -1) {
           number2 *= 1e3;
         }
         var compactPattern, compactDigits, compactProperties, divisor, numberExponent, pluralForm;
@@ -30115,6 +30354,10 @@ var storefront = function(exports) {
   })(number);
   var plural = { exports: {} };
   (function(module, exports2) {
+    /*!
+     * Globalize v1.7.0 2021-08-02T11:53Z Released under the MIT license
+     * http://git.io/TrdQbw
+     */
     (function(root2, factory) {
       {
         module.exports = factory(requireNode_main(), globalize.exports);
@@ -30398,6 +30641,17 @@ var storefront = function(exports) {
     });
   })(plural);
   var currency = { exports: {} };
+  /*!
+   * Globalize v1.7.0
+   *
+   * https://github.com/globalizejs/globalize
+   *
+   * Copyright OpenJS Foundation and other contributors
+   * Released under the MIT license
+   * https://jquery.org/license
+   *
+   * Date: 2021-08-02T11:53Z
+   */
   (function(module, exports2) {
     (function(root2, factory) {
       {
@@ -30493,7 +30747,7 @@ var storefront = function(exports) {
           options.style === "accounting" ? "accounting" : "standard"
         ]);
         pattern = currencySupplementalOverride(currency2, pattern, cldr2).split(";").map(function(pattern2) {
-          return pattern2.split("¤").map(function(part, i2) {
+          return pattern2.split("\xA4").map(function(part, i2) {
             var currencyMatch = regexp[currencySpacing[i2].currencyMatch], surroundingMatch = regexp[currencySpacing[i2].surroundingMatch], insertBetween = "";
             currencyMatch = currencyMatch.test(symbol.charAt(i2 ? symbol.length - 1 : 0));
             surroundingMatch = surroundingMatch.test(
@@ -30503,7 +30757,7 @@ var storefront = function(exports) {
               insertBetween = currencySpacing[i2].insertBetween;
             }
             return (i2 ? insertBetween : "") + part + (i2 ? "" : insertBetween);
-          }).join("¤");
+          }).join("\xA4");
         }).join(";");
         return {
           pattern,
@@ -30646,6 +30900,10 @@ var storefront = function(exports) {
   })(currency);
   var date = { exports: {} };
   (function(module, exports2) {
+    /*!
+     * Globalize v1.7.0 2021-08-02T11:53Z Released under the MIT license
+     * http://git.io/TrdQbw
+     */
     (function(root2, factory) {
       {
         module.exports = factory(requireNode_main(), globalize.exports);
@@ -32476,6 +32734,10 @@ var storefront = function(exports) {
   })(date);
   var relativeTime = { exports: {} };
   (function(module, exports2) {
+    /*!
+     * Globalize v1.7.0 2021-08-02T11:53Z Released under the MIT license
+     * http://git.io/TrdQbw
+     */
     (function(root2, factory) {
       {
         module.exports = factory(requireNode_main(), globalize.exports);
@@ -32549,6 +32811,10 @@ var storefront = function(exports) {
   })(relativeTime);
   var unit = { exports: {} };
   (function(module, exports2) {
+    /*!
+     * Globalize v1.7.0 2021-08-02T11:53Z Released under the MIT license
+     * http://git.io/TrdQbw
+     */
     (function(root2, factory) {
       {
         module.exports = factory(requireNode_main(), globalize.exports);
@@ -32657,12 +32923,23 @@ var storefront = function(exports) {
       return Globalize2;
     });
   })(unit);
+  /*!
+   * Globalize v1.7.0
+   *
+   * https://github.com/globalizejs/globalize
+   *
+   * Copyright OpenJS Foundation and other contributors
+   * Released under the MIT license
+   * https://jquery.org/license
+   *
+   * Date: 2021-08-02T11:53Z
+   */
   (function(module) {
     module.exports = globalize.exports;
   })(nodeMain);
   const Globalize = /* @__PURE__ */ getDefaultExportFromCjs(nodeMain.exports);
-  const _GlobalizeService = class {
-    constructor(cldrImporters = [..._GlobalizeService.MinimalCldrImportets]) {
+  class GlobalizeService {
+    constructor(cldrImporters = [...GlobalizeService.MinimalCldrImporters]) {
       this.cldrImporters = cldrImporters;
       this.globalizeCaches = /* @__PURE__ */ Object.create(null);
     }
@@ -32717,42 +32994,40 @@ var storefront = function(exports) {
       this.loadStatus = void 0;
       this.dropCaches();
     }
-  };
-  let GlobalizeService = _GlobalizeService;
-  (() => {
-    _GlobalizeService.MinimalCldrImportets = [
-      () => Promise.resolve().then(() => likelySubtags$1).then((m2) => m2.default),
-      () => Promise.resolve().then(() => plurals$1).then((m2) => m2.default)
-    ];
-  })();
+  }
+  GlobalizeService.MinimalCldrImporters = [
+    () => Promise.resolve().then(() => likelySubtags$1).then((m2) => m2.default),
+    () => Promise.resolve().then(() => plurals$1).then((m2) => m2.default)
+  ];
   const DefaultI18nLoaderConfig = "FES.DefaultI18nLoaderConfig";
   class DefaultI18nLoader {
     constructor(config2 = inject(DefaultI18nLoaderConfig, null), globalizeService = inject(GlobalizeService)) {
-      var _a2;
+      var _a;
       this.config = config2;
       this.globalizeService = globalizeService;
       this.cache = /* @__PURE__ */ Object.create(null);
-      this.load = ((_a2 = this.config) == null ? void 0 : _a2.skipCache) ? this.loadWithoutCache : this.loadWithCache;
+      this.load = ((_a = this.config) == null ? void 0 : _a.skipCache) ? this.loadWithoutCache : this.loadWithCache;
     }
     async loadWithCache(localeId) {
-      this.cache[localeId] = this.cache[localeId] ?? await this.loadWithoutCache(localeId);
+      var _a;
+      this.cache[localeId] = (_a = this.cache[localeId]) != null ? _a : await this.loadWithoutCache(localeId);
       return this.cache[localeId];
     }
     async loadWithoutCache(localeId) {
       const locales = await this.globalizeService.resolveLocales(localeId);
       const dataBundles = await Promise.all(locales.map((locale2) => {
-        var _a2, _b2;
-        return ((_b2 = (_a2 = this.config) == null ? void 0 : _a2.load) == null ? void 0 : _b2.call(_a2, locale2).then((m2) => [locale2, m2.default]).catch(() => [locale2, {}])) ?? [locale2, {}];
+        var _a, _b, _c;
+        return (_c = (_b = (_a = this.config) == null ? void 0 : _a.load) == null ? void 0 : _b.call(_a, locale2).then((m2) => [locale2, m2.default]).catch(() => [locale2, {}])) != null ? _c : [locale2, {}];
       }));
       return Object.fromEntries(dataBundles);
     }
   }
   class DefaultI18nInjectable {
     constructor(options) {
-      var _a2, _b2;
+      var _a, _b, _c, _d;
       this.options = options;
-      this.tokenPropStart = ((_a2 = this.options) == null ? void 0 : _a2.tokenPropStart) ?? "\\<";
-      this.tokenPropEnd = ((_b2 = this.options) == null ? void 0 : _b2.tokenPropEnd) ?? "\\>";
+      this.tokenPropStart = (_b = (_a = this.options) == null ? void 0 : _a.tokenPropStart) != null ? _b : "\\<";
+      this.tokenPropEnd = (_d = (_c = this.options) == null ? void 0 : _c.tokenPropEnd) != null ? _d : "\\>";
       this.tokenPropRegex = new RegExp(`${this.tokenPropStart}([^${this.tokenPropEnd}]+)${this.tokenPropEnd}`, "g");
     }
     translate(token, context2) {
@@ -32881,7 +33156,7 @@ var storefront = function(exports) {
           return "info";
       }
     };
-    return (data ?? []).map((label) => ({
+    return (data != null ? data : []).map((label) => ({
       name: label.name,
       appearance: normalizeAppearance(label)
     }));
@@ -32906,9 +33181,10 @@ var storefront = function(exports) {
   }
   const PriceNormalizer = "FES.PriceNormalizer*";
   function priceNormalizer(data) {
-    var _a2, _b2;
+    var _a, _b;
     const normalize = (data2) => {
-      const value = (data2 == null ? void 0 : data2.grossAmount) ?? (data2 == null ? void 0 : data2.netAmount);
+      var _a2;
+      const value = (_a2 = data2 == null ? void 0 : data2.grossAmount) != null ? _a2 : data2 == null ? void 0 : data2.netAmount;
       if (!data2 || !value) {
         return;
       }
@@ -32919,8 +33195,8 @@ var storefront = function(exports) {
       };
     };
     return {
-      defaultPrice: normalize((_a2 = data == null ? void 0 : data.prices) == null ? void 0 : _a2.find((price) => price.priceTypeName === "DEFAULT")),
-      originalPrice: normalize((_b2 = data == null ? void 0 : data.prices) == null ? void 0 : _b2.find((price) => price.priceTypeName === "ORIGINAL"))
+      defaultPrice: normalize((_a = data == null ? void 0 : data.prices) == null ? void 0 : _a.find((price) => price.priceTypeName === "DEFAULT")),
+      originalPrice: normalize((_b = data == null ? void 0 : data.prices) == null ? void 0 : _b.find((price) => price.priceTypeName === "ORIGINAL"))
     };
   }
   const ProductNormalizer = "FES.ProductNormalizer*";
@@ -33029,14 +33305,14 @@ var storefront = function(exports) {
     };
     const parseCategoryTree = (categoryTree, valuesList) => {
       return categoryTree.reduce((treeList, treeItem) => {
-        var _a2;
+        var _a;
         if (!treeItem.docCount) {
           return treeList;
         }
         const parsedTree = {
           ...valuesList.find((valueList) => valueList.value === treeItem.nodeId),
           name: treeItem.name,
-          children: ((_a2 = treeItem.children) == null ? void 0 : _a2.length) ? parseCategoryTree(treeItem.children, valuesList) : []
+          children: ((_a = treeItem.children) == null ? void 0 : _a.length) ? parseCategoryTree(treeItem.children, valuesList) : []
         };
         return [...treeList, parsedTree];
       }, []);
@@ -33082,10 +33358,11 @@ var storefront = function(exports) {
     getKey(qualifier) {
       const qualifierKeys = Object.keys(qualifier);
       return qualifierKeys.length ? qualifierKeys.reduce((params, key) => {
+        var _a;
         const qualifierKey = key;
         const param = qualifier[qualifierKey];
         if (param) {
-          params.push(`${this.alias[qualifierKey] ?? qualifierKey}=${param}`);
+          params.push(`${(_a = this.alias[qualifierKey]) != null ? _a : qualifierKey}=${param}`);
         }
         return params;
       }, []).join("&") : "";
@@ -33102,8 +33379,8 @@ var storefront = function(exports) {
       this.productEndpoint = "concrete-products";
     }
     getKey(qualifier) {
-      var _a2, _b2;
-      return (qualifier.sku ?? "") + ((_b2 = (_a2 = qualifier.include) == null ? void 0 : _a2.sort()) == null ? void 0 : _b2.join(""));
+      var _a, _b, _c;
+      return ((_a = qualifier.sku) != null ? _a : "") + ((_c = (_b = qualifier.include) == null ? void 0 : _b.sort()) == null ? void 0 : _c.join(""));
     }
     get({ sku, include }) {
       include = [
@@ -33111,7 +33388,7 @@ var storefront = function(exports) {
         "concrete-product-prices",
         "concrete-product-availabilities",
         "product-labels",
-        ...include ?? []
+        ...include != null ? include : []
       ].filter((type, index2, arr) => arr.indexOf(type) === index2);
       return this.http.get(`${this.SCOS_BASE_URL}/${this.productEndpoint}/${sku}${include ? "?include=" : ""}${(include == null ? void 0 : include.join(",")) || ""}`).pipe(this.transformer.do(ProductNormalizer));
     }
@@ -33264,13 +33541,13 @@ var storefront = function(exports) {
       this.sortedMediaConfigSizes = {};
     }
     resolveSources(image2, format) {
-      var _a2;
+      var _a;
       if (!image2 || !format) {
         return [];
       }
       const config2 = this.mediaConfig[format];
       const sources = [];
-      (_a2 = config2 == null ? void 0 : config2.sizes) == null ? void 0 : _a2.forEach(({ size, context: context2 }) => {
+      (_a = config2 == null ? void 0 : config2.sizes) == null ? void 0 : _a.forEach(({ size, context: context2 }) => {
         const url = image2[size];
         if (url && this.compliesWithContext(context2)) {
           sources.push({ url, size, context: context2 });
@@ -33308,9 +33585,9 @@ var storefront = function(exports) {
       return source;
     }
     getSortedSizes(format) {
-      var _a2, _b2;
+      var _a, _b;
       if (!this.sortedMediaConfigSizes[format]) {
-        this.sortedMediaConfigSizes[format] = (_b2 = (_a2 = this.mediaConfig[format]) == null ? void 0 : _a2.sizes) == null ? void 0 : _b2.map((format2) => format2.size).sort((a2, b2) => sizes.indexOf(a2) - sizes.indexOf(b2));
+        this.sortedMediaConfigSizes[format] = (_b = (_a = this.mediaConfig[format]) == null ? void 0 : _a.sizes) == null ? void 0 : _b.map((format2) => format2.size).sort((a2, b2) => sizes.indexOf(a2) - sizes.indexOf(b2));
       }
       return this.sortedMediaConfigSizes[format];
     }
@@ -33325,8 +33602,8 @@ var storefront = function(exports) {
       return (context2 == null ? void 0 : context2.connection) !== "fast" || this.hasFastConnection();
     }
     hasFastConnection() {
-      var _a2, _b2;
-      const effectiveType = (_b2 = (_a2 = window == null ? void 0 : window.navigator) == null ? void 0 : _a2.connection) == null ? void 0 : _b2.effectiveType;
+      var _a, _b;
+      const effectiveType = (_b = (_a = window == null ? void 0 : window.navigator) == null ? void 0 : _a.connection) == null ? void 0 : _b.effectiveType;
       return !effectiveType || ["4g", "5g"].includes(effectiveType);
     }
   }
@@ -33475,11 +33752,11 @@ var storefront = function(exports) {
           return cjs.of(product);
         }
         return this.context.get("sku", this.observe.get("sku")).pipe(cjs.switchMap((sku, index2) => {
-          var _a2;
+          var _a, _b;
           if (!sku) {
             return cjs.of(null);
           }
-          return ((_a2 = this.productService) == null ? void 0 : _a2.get({ sku, include: this.include }).pipe(index2 ? cjs.startWith(null) : cjs.identity)) ?? cjs.of(null);
+          return (_b = (_a = this.productService) == null ? void 0 : _a.get({ sku, include: this.include }).pipe(index2 ? cjs.startWith(null) : cjs.identity)) != null ? _b : cjs.of(null);
         }));
       }));
     }
@@ -33672,7 +33949,7 @@ var storefront = function(exports) {
       this.queryEndpoint = "catalog-search-suggestions";
     }
     getKey({ query }) {
-      return query ?? "";
+      return query != null ? query : "";
     }
     get({ query }) {
       return this.http.get(`${this.SCOS_BASE_URL}/${this.queryEndpoint}?q=${query}&include=abstract-products,concrete-products,concrete-product-image-sets,concrete-product-prices`).pipe(this.transformer.do(SuggestionNormalizer));
@@ -33738,7 +34015,10 @@ var storefront = function(exports) {
       this.productListService = productListService;
     }
     get() {
-      return this.productListService.get().pipe(cjs.map((pl) => (pl == null ? void 0 : pl.facets) ?? []));
+      return this.productListService.get().pipe(cjs.map((pl) => {
+        var _a;
+        return (_a = pl == null ? void 0 : pl.facets) != null ? _a : [];
+      }));
     }
   }
   const FacetListService = "FES.FacetListService";
@@ -33763,9 +34043,291 @@ var storefront = function(exports) {
     providers: searchProviders,
     components: searchComponents
   };
+  const defaultBreakpoints = {
+    ["sm"]: {
+      min: 0
+    },
+    ["md"]: {
+      min: 768
+    },
+    ["lg"]: {
+      min: 1024
+    }
+  };
+  const smScreen = {
+    ["screen"]: "sm"
+  };
+  const mdScreen = {
+    ["screen"]: "md"
+  };
+  const lgScreen = {
+    ["screen"]: "lg"
+  };
+  const buttonStyles = i$7`
+  :host {
+    --oryx-icon-size: 13.3px;
+    --_color-text: var(--oryx-color-canvas-100);
+    --_color-accent: var(--oryx-color-primary-300);
+    --_color-active: var(--oryx-color-primary-400);
+
+    display: flex;
+    align-items: baseline;
+    transition: var(--oryx-transition-time);
+  }
+
+  ::slotted(*) {
+    all: unset;
+    display: flex;
+    flex: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: var(--_margin, 11px 26px);
+    line-height: 24px;
+    color: var(--_color-text);
+    background-color: var(--_color-accent);
+    border: var(--oryx-border-thin) solid var(--_color-accent);
+    border-radius: var(--oryx-border-radius);
+    cursor: pointer;
+    transition: var(--oryx-transition-time);
+    position: relative;
+  }
+
+  :host([size='medium']) {
+    --_margin: 8px 19px;
+  }
+
+  :host([size='small']) {
+    --_margin: 6px 15px;
+  }
+
+  :host([size='large'][icon]:not([type='text'])) {
+    --_margin: 11px 15px;
+  }
+
+  :host([size='medium'][icon]:not([type='text'])) {
+    --_margin: 8px 15px;
+  }
+
+  :host([size='small'][icon]:not([type='text'])) {
+    --_margin: 6px 15px;
+  }
+
+  ::slotted(:hover:not(:active)) {
+    box-shadow: var(--oryx-elevation-1) var(--oryx-elevation-color);
+  }
+
+  ::slotted(*:active) {
+    background-color: var(--_color-active);
+    border-color: var(--_color-active);
+  }
+
+  ::slotted(*:focus-visible:not(:active):not([disabled])) {
+    border-color: var(--oryx-color-canvas-100);
+    box-shadow: 0 0 4px var(--oryx-color-focus);
+  }
+
+  :host([outline]) {
+    --oryx-icon-color: var(--oryx-color-primary-300);
+    --_color-text: var(--oryx-color-primary-300);
+    --_color-accent: var(--oryx-color-primary-300);
+    --_color-active: var(--oryx-color-canvas-200);
+  }
+
+  :host([outline]) ::slotted(*:not([disabled])) {
+    background-color: var(--oryx-color-canvas-100);
+  }
+
+  :host([outline]) ::slotted(*:active) {
+    border-color: var(--_color-accent);
+    background-color: var(--_color-active);
+  }
+
+  :host([outline][type='critical']) {
+    --oryx-icon-color: var(--oryx-color-error-300);
+    --_color-text: var(--oryx-color-error-300);
+    --_color-accent: var(--oryx-color-error-300);
+    --_color-active: var(--oryx-color-canvas-200);
+  }
+
+  :host([type='secondary']) {
+    --oryx-icon-color: var(--oryx-color-neutral-400);
+    --_color-text: var(--oryx-color-neutral-400);
+    --_color-accent: var(--oryx-color-neutral-200);
+    --_color-active: var(--oryx-color-canvas-200);
+  }
+
+  :host([type='secondary']) ::slotted(*),
+  :host([type='secondary']) ::slotted(*:active) {
+    border-color: var(--oryx-color-neutral-200);
+  }
+
+  :host([outline]) ::slotted(*:focus-visible:not(:active):not([disabled])) {
+    border-color: var(--oryx-color-canvas-100);
+  }
+
+  :host([outline])
+    ::slotted(*:focus-visible:not(:active):not([disabled]))::before {
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    border: 1px solid var(--_color-accent);
+  }
+
+  :host([type='secondary'])
+    ::slotted(*:focus-visible:not(:active):not([disabled])) {
+    border-color: var(--oryx-color-canvas-100);
+  }
+
+  :host([type='critical']) {
+    --_color-accent: var(--oryx-color-error-300);
+    --_color-active: var(--oryx-color-error-400);
+  }
+
+  :host([type='text']) ::slotted(*) {
+    border-radius: var(--oryx-border-radius-small);
+    box-shadow: none;
+    line-height: 22px;
+    padding: 0 2px;
+  }
+
+  :host([type='text']) {
+    --_margin: 4px 2px;
+    --oryx-icon-color: var(--oryx-color-neutral-300);
+    --_color-text: var(--oryx-color-ink);
+    --_color-accent: transparent;
+    --_color-active: var(--oryx-color-canvas-100);
+  }
+
+  :host([type='text']) ::slotted(*:hover) {
+    --oryx-icon-color: var(--oryx-color-primary-300);
+    --_color-text: var(--oryx-color-primary-300);
+  }
+
+  :host([type='text']) ::slotted(*:active) {
+    --oryx-icon-color: var(--oryx-color-primary-400);
+    --_color-text: var(--oryx-color-primary-400);
+  }
+
+  :host([type='text']) ::slotted([disabled]) {
+    --oryx-icon-color: var(--oryx-color-neutral-200);
+    --_color-text: var(--oryx-color-neutral-200);
+    --_color-accent: var(--oryx-color-canvas-100);
+  }
+
+  :host([type='text']:not([loading]))
+    ::slotted(*:focus-visible:not(:active):not([disabled])) {
+    --oryx-icon-color: var(--oryx-color-primary-300);
+    --_color-text: var(--oryx-color-primary-300);
+  }
+
+  ::slotted([disabled]) {
+    --oryx-icon-color: var(--oryx-color-neutral-300);
+    --_color-text: var(--oryx-color-neutral-300);
+    --_color-accent: var(--oryx-color-canvas-500);
+
+    position: relative;
+    pointer-events: none;
+  }
+
+  :host(:is([loading], [confirmed])) ::slotted(*) {
+    --oryx-icon-color: transparent;
+
+    position: relative;
+    pointer-events: none;
+    background-color: var(--oryx-color-canvas-100);
+    border-color: var(--oryx-color-primary-200);
+    color: transparent;
+    user-select: none;
+  }
+
+  :host(:is([loading], [confirmed])) ::slotted(*)::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+  }
+
+  :host([loading]) ::slotted(*)::before {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2317b497"%3E%3Cg%3E%3Cellipse opacity="0.7" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 11.925 4.87503)" /%3E%3Cellipse rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 20.1242 10.9278)" /%3E%3Cellipse opacity="0.4" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 5.87224 13.0723)" /%3E%3Cellipse opacity="0.3" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 14.0695 19.125)" /%3E%3CanimateTransform attributeName="transform" type="rotate" from="0 12 12" to="-360 12 12" dur="3s" repeatCount="indefinite" /%3E%3C/g%3E%3C/svg%3E');
+  }
+
+  :host([confirmed]) ::slotted(*)::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317b497'%3E%3Cpath d='M20.4357 8.37056L10.6396 18.4215C10.2624 18.8065 9.77177 19 9.27917 19C8.78657 19 8.29398 18.8065 7.91876 18.4215L3.56427 13.9538C2.81191 13.1838 2.81191 11.9341 3.56427 11.1622C4.31664 10.3902 5.53274 10.3902 6.2851 11.1622L9.27917 14.2341L17.7149 5.57895C18.4673 4.80702 19.6834 4.80702 20.4357 5.57895C21.1881 6.35089 21.1881 7.59863 20.4357 8.37056Z'/%3E%3C/svg%3E");
+  }
+
+  :host([loading][type='text']) ::slotted(*) {
+    --oryx-icon-color: transparent;
+
+    color: var(--oryx-color-neutral-300);
+    background-color: transparent;
+    border-color: var(--oryx-color-canvas-100);
+  }
+
+  :host([loading][type='text']) ::slotted(*)::before {
+    position: relative;
+    width: 16px;
+    height: 16px;
+  }
+
+  :host([loading][type='text'][icon]) ::slotted(*)::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: left center;
+  }
+
+  :host([type='secondary'][loading]) ::slotted(*) {
+    background-color: var(--oryx-color-canvas-100);
+    border-color: var(--oryx-color-neutral-200);
+  }
+
+  :host([type='critical'][loading]) ::slotted(*)::before {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red"%3E%3Cg%3E%3Cellipse opacity="0.7" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 11.925 4.87503)" /%3E%3Cellipse rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 20.1242 10.9278)" /%3E%3Cellipse opacity="0.4" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 5.87224 13.0723)" /%3E%3Cellipse opacity="0.3" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 14.0695 19.125)" /%3E%3CanimateTransform attributeName="transform" type="rotate" from="0 12 12" to="-360 12 12" dur="3s" repeatCount="indefinite" /%3E%3C/g%3E%3C/svg%3E');
+  }
+
+  :host([type='critical'][loading]) ::slotted(*) {
+    background-color: var(--oryx-color-pink-light);
+    border-color: #f9d3ce;
+  }
+
+  :host([outline][type='critical'][loading]) ::slotted(*) {
+    background-color: var(--oryx-color-canvas-100);
+    border-color: #f9d3ce;
+  }
+`;
+  const smallScreen$1 = i$7`
+  :host {
+    font-size: 1.143em;
+    font-weight: 600;
+  }
+`;
+  const mediumScreen$d = i$7`
+  :host {
+    font-size: 1em;
+    font-weight: var(--oryx-typography-font-weight);
+  }
+`;
+  const buttonScreenStyles = [
+    {
+      media: smScreen,
+      css: smallScreen$1
+    },
+    {
+      media: mdScreen,
+      css: mediumScreen$d
+    }
+  ];
   const buttonComponent = componentDef({
     name: "oryx-button",
-    impl: () => Promise.resolve().then(() => button_component).then((m2) => m2.ButtonComponent)
+    impl: () => Promise.resolve().then(() => button_component).then((m2) => m2.ButtonComponent),
+    stylesheets: [{ rules: buttonScreenStyles }]
   });
   const iconButtonComponent = componentDef({
     name: "oryx-icon-button",
@@ -33972,9 +34534,14 @@ var storefront = function(exports) {
       }
     ]
   });
-  const headlineComponent = componentDef({
-    name: "oryx-headline",
-    impl: () => Promise.resolve().then(() => headline_component).then((m2) => m2.HeadlineComponent)
+  const headingComponent = componentDef({
+    name: "oryx-heading",
+    impl: () => Promise.resolve().then(() => heading_component).then((m2) => m2.HeadingComponent),
+    stylesheets: [
+      {
+        rules: () => Promise.resolve().then(() => heading_styles).then((m2) => m2.headlineScreenStyles)
+      }
+    ]
   });
   const textComponent = componentDef({
     name: "oryx-text",
@@ -34022,7 +34589,7 @@ var storefront = function(exports) {
     popoverComponent,
     searchboxComponent,
     typeheadComponent,
-    headlineComponent,
+    headingComponent,
     textComponent,
     tileComponent
   }, Symbol.toStringTag, { value: "Module" }));
@@ -34299,26 +34866,6 @@ var storefront = function(exports) {
     new I18nFeature(),
     { providers: coreServerProviders }
   ];
-  const defaultBreakpoints = {
-    ["sm"]: {
-      min: 0
-    },
-    ["md"]: {
-      min: 768
-    },
-    ["lg"]: {
-      min: 1024
-    }
-  };
-  const smScreen = {
-    ["screen"]: "sm"
-  };
-  const mdScreen = {
-    ["screen"]: "md"
-  };
-  const lgScreen = {
-    ["screen"]: "lg"
-  };
   var IconTypes;
   (function(IconTypes2) {
     IconTypes2["Add"] = "add";
@@ -34576,22 +35123,15 @@ var storefront = function(exports) {
     },
     app
   );
-  const styles$s = i$7`
+  const styles$r = i$7`
   :host {
     display: block;
-    font-family: var(--oryx-font);
-    font-size: var(--oryx-font-size-base);
-    font-weight: var(--oryx-font-weight-medium);
+    font-family: var(--oryx-typography-font-face);
+    font-size: var(--oryx-typography-font-size);
+    font-weight: var(--oryx-typography-font-weight);
     letter-spacing: 0.005em;
     color: var(--oryx-color-ink);
     background-color: var(--oryx-color-canvas-100);
-  }
-
-  @media (max-width: 767px) {
-    :host {
-      --oryx-font-size-base: 16px;
-      --oryx-font-weight-medium: 600;
-    }
   }
 
   ::placeholder {
@@ -34617,7 +35157,7 @@ var storefront = function(exports) {
     color: var(--oryx-color-canvas-100, #ffffff);
   }
 `;
-  let RootAppComponent = (_a = class extends s$5 {
+  let RootAppComponent = class RootAppComponent extends s$5 {
     constructor() {
       super();
       this.context = new ContextController(this);
@@ -34635,9 +35175,8 @@ var storefront = function(exports) {
           ${this._routes.outlet()}
           <experience-composition uid="footer"></experience-composition>`)}`;
     }
-  }, (() => {
-    _a.styles = styles$s;
-  })(), _a);
+  };
+  RootAppComponent.styles = styles$r;
   RootAppComponent = __decorate([
     hydratable(),
     __metadata("design:paramtypes", [])
@@ -34826,7 +35365,7 @@ var storefront = function(exports) {
     layoutScreenStyles,
     stickyLayout
   }, Symbol.toStringTag, { value: "Module" }));
-  let ExperienceCompositionComponent = (_b = class extends ComponentMixin() {
+  let ExperienceCompositionComponent = class ExperienceCompositionComponent extends ComponentMixin() {
     constructor() {
       super();
       this.uid = "";
@@ -34840,12 +35379,15 @@ var storefront = function(exports) {
       this.isHydrated = false;
       this.layoutBuilder = resolve(LayoutBuilder);
       this.components$ = cjs.combineLatest([this.uid$, this.route$]).pipe(cjs.switchMap(([uid, route], index2) => {
-        var _a2;
+        var _a;
         if (index2 > 0) {
           this.isHydrated = true;
         }
-        return ((_a2 = this.experienceService) == null ? void 0 : _a2.getComponent({ uid, route })) || cjs.of({});
-      }), cjs.map((component) => (component == null ? void 0 : component.components) ?? []));
+        return ((_a = this.experienceService) == null ? void 0 : _a.getComponent({ uid, route })) || cjs.of({});
+      }), cjs.map((component) => {
+        var _a;
+        return (_a = component == null ? void 0 : component.components) != null ? _a : [];
+      }));
       this.hasSSR = !!this.renderRoot;
     }
     isEmpty() {
@@ -34880,15 +35422,14 @@ var storefront = function(exports) {
       return y``;
     }
     getLayoutClasses(component) {
-      var _a2;
-      if (!((_a2 = component.options) == null ? void 0 : _a2.data)) {
+      var _a;
+      if (!((_a = component.options) == null ? void 0 : _a.data)) {
         return void 0;
       }
       return this.layoutBuilder.getLayoutClasses(component.options.data);
     }
-  }, (() => {
-    _b.styles = layoutStyles;
-  })(), _b);
+  };
+  ExperienceCompositionComponent.styles = layoutStyles;
   __decorate([
     t$1(),
     __metadata("design:type", Array)
@@ -34949,11 +35490,11 @@ var storefront = function(exports) {
   }
 `;
   const EB_PREVIEW_FOCUS_CLASS = "eb-preview-focus";
-  const _ExperienceCompositionPreviewComponent = class extends ExperienceCompositionComponent {
+  class ExperienceCompositionPreviewComponent extends ExperienceCompositionComponent {
     constructor() {
-      var _a2;
+      var _a;
       super(...arguments);
-      this.interaction$ = (_a2 = this.experienceService) == null ? void 0 : _a2.getInteractionData();
+      this.interaction$ = (_a = this.experienceService) == null ? void 0 : _a.getInteractionData();
       this.interactionMouseEvent$ = this.interaction$.pipe(cjs.filter((data) => data.action === "mouseover" || data.action === "mouseout"));
       this.interactionClickEvent$ = this.interaction$.pipe(cjs.filter((data) => data.action === "click"), cjs.tap((data) => {
       }));
@@ -34982,11 +35523,8 @@ var storefront = function(exports) {
           ${this.addInlineStyles(components2)}`, () => y`Loading...`)}
     `;
     }
-  };
-  let ExperienceCompositionPreviewComponent = _ExperienceCompositionPreviewComponent;
-  (() => {
-    _ExperienceCompositionPreviewComponent.styles = [...layoutStyles, previewStyles];
-  })();
+  }
+  ExperienceCompositionPreviewComponent.styles = [...layoutStyles, previewStyles];
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -34995,7 +35533,7 @@ var storefront = function(exports) {
     __proto__: null,
     ExperienceCompositionPreviewComponent
   }, Symbol.toStringTag, { value: "Module" }));
-  const styles$r = i$7`
+  const styles$q = i$7`
   oryx-card form > * {
     margin: 10px 0;
   }
@@ -35006,7 +35544,7 @@ var storefront = function(exports) {
     justify-content: space-between;
   }
 `;
-  let AuthLoginComponent = (_c = class extends ComponentMixin() {
+  let AuthLoginComponent = class AuthLoginComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.contentController = new ContentController(this);
@@ -35065,9 +35603,10 @@ var storefront = function(exports) {
     }
     render() {
       return y`${asyncValue(this.data$, ([options, loading, success2]) => {
+        var _a;
         return y`<oryx-card>
       <h1 slot="header">
-        ${(options == null ? void 0 : options.title) ?? "Access your account"}
+        ${(_a = options == null ? void 0 : options.title) != null ? _a : "Access your account"}
       </h1>
       ${success2 ? "" : y`<oryx-notification type="error">
               The email or/and password entered is not valid. Please try again.
@@ -35087,9 +35626,8 @@ var storefront = function(exports) {
     </oryx-card>`;
       })}`;
     }
-  }, (() => {
-    _c.styles = styles$r;
-  })(), _c);
+  };
+  AuthLoginComponent.styles = styles$q;
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -35172,254 +35710,12 @@ var storefront = function(exports) {
     ButtonType2["Critical"] = "critical";
     ButtonType2["Text"] = "text";
   })(ButtonType || (ButtonType = {}));
-  const buttonStyles = i$7`
-  :host {
-    --oryx-icon-size: 13.3px;
-    --_color-text: var(--oryx-color-canvas-100);
-    --_color-accent: var(--oryx-color-primary-300);
-    --_color-active: var(--oryx-color-primary-400);
-
-    display: flex;
-    align-items: baseline;
-    transition: var(--oryx-transition-time);
-  }
-
-  ::slotted(*) {
-    all: unset;
-    display: flex;
-    flex: 100%;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    padding: var(--_margin, 11px 26px);
-    line-height: 24px;
-    color: var(--_color-text);
-    background-color: var(--_color-accent);
-    border: var(--oryx-border-thin) solid var(--_color-accent);
-    border-radius: var(--oryx-border-radius);
-    cursor: pointer;
-    transition: var(--oryx-transition-time);
-    position: relative;
-  }
-
-  :host([size='medium']) {
-    --_margin: 8px 19px;
-  }
-
-  :host([size='small']) {
-    --_margin: 6px 15px;
-  }
-
-  :host([size='large'][icon]:not([type='text'])) {
-    --_margin: 11px 15px;
-  }
-
-  :host([size='medium'][icon]:not([type='text'])) {
-    --_margin: 8px 15px;
-  }
-
-  :host([size='small'][icon]:not([type='text'])) {
-    --_margin: 6px 15px;
-  }
-
-  ::slotted(:hover:not(:active)) {
-    box-shadow: var(--oryx-elevation-1) var(--oryx-elevation-color);
-  }
-
-  ::slotted(*:active) {
-    background-color: var(--_color-active);
-    border-color: var(--_color-active);
-  }
-
-  ::slotted(*:focus-visible:not(:active):not([disabled])) {
-    border-color: var(--oryx-color-canvas-100);
-    box-shadow: 0 0 4px var(--oryx-color-focus);
-  }
-
-  :host([outline]) {
-    --oryx-icon-color: var(--oryx-color-primary-300);
-    --_color-text: var(--oryx-color-primary-300);
-    --_color-accent: var(--oryx-color-primary-300);
-    --_color-active: var(--oryx-color-canvas-200);
-  }
-
-  :host([outline]) ::slotted(*:not([disabled])) {
-    background-color: var(--oryx-color-canvas-100);
-  }
-
-  :host([outline]) ::slotted(*:active) {
-    border-color: var(--_color-accent);
-    background-color: var(--_color-active);
-  }
-
-  :host([outline][type='critical']) {
-    --oryx-icon-color: var(--oryx-color-error-300);
-    --_color-text: var(--oryx-color-error-300);
-    --_color-accent: var(--oryx-color-error-300);
-    --_color-active: var(--oryx-color-canvas-200);
-  }
-
-  :host([type='secondary']) {
-    --oryx-icon-color: var(--oryx-color-neutral-400);
-    --_color-text: var(--oryx-color-neutral-400);
-    --_color-accent: var(--oryx-color-neutral-200);
-    --_color-active: var(--oryx-color-canvas-200);
-  }
-
-  :host([type='secondary']) ::slotted(*),
-  :host([type='secondary']) ::slotted(*:active) {
-    border-color: var(--oryx-color-neutral-200);
-  }
-
-  :host([outline]) ::slotted(*:focus-visible:not(:active):not([disabled])) {
-    border-color: var(--oryx-color-canvas-100);
-  }
-
-  :host([outline])
-    ::slotted(*:focus-visible:not(:active):not([disabled]))::before {
-    content: '';
-    position: absolute;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    border: 1px solid var(--_color-accent);
-  }
-
-  :host([type='secondary'])
-    ::slotted(*:focus-visible:not(:active):not([disabled])) {
-    border-color: var(--oryx-color-canvas-100);
-  }
-
-  :host([type='critical']) {
-    --_color-accent: var(--oryx-color-error-300);
-    --_color-active: var(--oryx-color-error-400);
-  }
-
-  :host([type='text']) ::slotted(*) {
-    border-radius: var(--oryx-border-radius-small);
-    box-shadow: none;
-    line-height: 22px;
-    padding: 0 2px;
-  }
-
-  :host([type='text']) {
-    --_margin: 4px 2px;
-    --oryx-icon-color: var(--oryx-color-neutral-300);
-    --_color-text: var(--oryx-color-ink);
-    --_color-accent: transparent;
-    --_color-active: var(--oryx-color-canvas-100);
-  }
-
-  :host([type='text']) ::slotted(*:hover) {
-    --oryx-icon-color: var(--oryx-color-primary-300);
-    --_color-text: var(--oryx-color-primary-300);
-  }
-
-  :host([type='text']) ::slotted(*:active) {
-    --oryx-icon-color: var(--oryx-color-primary-400);
-    --_color-text: var(--oryx-color-primary-400);
-  }
-
-  :host([type='text']) ::slotted([disabled]) {
-    --oryx-icon-color: var(--oryx-color-neutral-200);
-    --_color-text: var(--oryx-color-neutral-200);
-    --_color-accent: var(--oryx-color-canvas-100);
-  }
-
-  :host([type='text']:not([loading]))
-    ::slotted(*:focus-visible:not(:active):not([disabled])) {
-    --oryx-icon-color: var(--oryx-color-primary-300);
-    --_color-text: var(--oryx-color-primary-300);
-  }
-
-  ::slotted([disabled]) {
-    --oryx-icon-color: var(--oryx-color-neutral-300);
-    --_color-text: var(--oryx-color-neutral-300);
-    --_color-accent: var(--oryx-color-canvas-500);
-
-    position: relative;
-    pointer-events: none;
-  }
-
-  :host(:is([loading], [confirmed])) ::slotted(*) {
-    --oryx-icon-color: transparent;
-
-    position: relative;
-    pointer-events: none;
-    background-color: var(--oryx-color-canvas-100);
-    border-color: var(--oryx-color-primary-200);
-    color: transparent;
-    user-select: none;
-  }
-
-  :host(:is([loading], [confirmed])) ::slotted(*)::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 16px;
-  }
-
-  :host([loading]) ::slotted(*)::before {
-    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2317b497"%3E%3Cg%3E%3Cellipse opacity="0.7" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 11.925 4.87503)" /%3E%3Cellipse rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 20.1242 10.9278)" /%3E%3Cellipse opacity="0.4" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 5.87224 13.0723)" /%3E%3Cellipse opacity="0.3" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 14.0695 19.125)" /%3E%3CanimateTransform attributeName="transform" type="rotate" from="0 12 12" to="-360 12 12" dur="3s" repeatCount="indefinite" /%3E%3C/g%3E%3C/svg%3E');
-  }
-
-  :host([confirmed]) ::slotted(*)::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2317b497'%3E%3Cpath d='M20.4357 8.37056L10.6396 18.4215C10.2624 18.8065 9.77177 19 9.27917 19C8.78657 19 8.29398 18.8065 7.91876 18.4215L3.56427 13.9538C2.81191 13.1838 2.81191 11.9341 3.56427 11.1622C4.31664 10.3902 5.53274 10.3902 6.2851 11.1622L9.27917 14.2341L17.7149 5.57895C18.4673 4.80702 19.6834 4.80702 20.4357 5.57895C21.1881 6.35089 21.1881 7.59863 20.4357 8.37056Z'/%3E%3C/svg%3E");
-  }
-
-  :host([loading][type='text']) ::slotted(*) {
-    --oryx-icon-color: transparent;
-
-    color: var(--oryx-color-neutral-300);
-    background-color: transparent;
-    border-color: var(--oryx-color-canvas-100);
-  }
-
-  :host([loading][type='text']) ::slotted(*)::before {
-    position: relative;
-    width: 16px;
-    height: 16px;
-  }
-
-  :host([loading][type='text'][icon]) ::slotted(*)::before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-position: left center;
-  }
-
-  :host([type='secondary'][loading]) ::slotted(*) {
-    background-color: var(--oryx-color-canvas-100);
-    border-color: var(--oryx-color-neutral-200);
-  }
-
-  :host([type='critical'][loading]) ::slotted(*)::before {
-    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red"%3E%3Cg%3E%3Cellipse opacity="0.7" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 11.925 4.87503)" /%3E%3Cellipse rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 20.1242 10.9278)" /%3E%3Cellipse opacity="0.4" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 5.87224 13.0723)" /%3E%3Cellipse opacity="0.3" rx="3.48584" ry="3.4859" transform="matrix(0.80444 0.594034 -0.593986 0.804475 14.0695 19.125)" /%3E%3CanimateTransform attributeName="transform" type="rotate" from="0 12 12" to="-360 12 12" dur="3s" repeatCount="indefinite" /%3E%3C/g%3E%3C/svg%3E');
-  }
-
-  :host([type='critical'][loading]) ::slotted(*) {
-    background-color: var(--oryx-color-pink-light);
-    border-color: #f9d3ce;
-  }
-
-  :host([outline][type='critical'][loading]) ::slotted(*) {
-    background-color: var(--oryx-color-canvas-100);
-    border-color: #f9d3ce;
-  }
-`;
-  const _ButtonComponent = class extends s$5 {
+  class ButtonComponent extends s$5 {
     render() {
       return y`<slot ?inert=${this.loading}></slot>`;
     }
-  };
-  let ButtonComponent = _ButtonComponent;
-  (() => {
-    _ButtonComponent.styles = buttonStyles;
-  })();
+  }
+  ButtonComponent.styles = buttonStyles;
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", String)
@@ -35444,6 +35740,11 @@ var storefront = function(exports) {
     __proto__: null,
     ButtonComponent
   }, Symbol.toStringTag, { value: "Module" }));
+  /**
+   * @license
+   * Copyright 2020 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   */
   const e = () => new o();
   class o {
   }
@@ -35476,7 +35777,7 @@ var storefront = function(exports) {
       this.rt(this.ct);
     }
   });
-  const styles$q = i$7`
+  const styles$p = i$7`
   :host {
     display: flex;
     flex-wrap: wrap;
@@ -35497,7 +35798,7 @@ var storefront = function(exports) {
     height: 28px;
   }
 `;
-  let CartAddComponent = (_d = class extends ProductComponentMixin() {
+  let CartAddComponent = class CartAddComponent extends ProductComponentMixin() {
     constructor() {
       super(...arguments);
       this.cartService = resolve(CartService);
@@ -35569,20 +35870,19 @@ var storefront = function(exports) {
       return maxAvailable !== void 0 && maxAvailable < minOrderQuantity ? 0 : minOrderQuantity;
     }
     calculateMax(product, entries) {
-      var _a2, _b2;
+      var _a, _b;
       const cumulatedEntryCount = entries.filter((entry) => entry.sku === (product == null ? void 0 : product.sku)).map((entry) => entry.quantity).reduce((a2, b2) => a2 + b2, 0);
-      return ((_a2 = product == null ? void 0 : product.availability) == null ? void 0 : _a2.quantity) ? ((_b2 = product == null ? void 0 : product.availability) == null ? void 0 : _b2.quantity) - cumulatedEntryCount : void 0;
+      return ((_a = product == null ? void 0 : product.availability) == null ? void 0 : _a.quantity) ? ((_b = product == null ? void 0 : product.availability) == null ? void 0 : _b.quantity) - cumulatedEntryCount : void 0;
     }
     onUpdate(e2) {
       this.isQuantityInvalid$.next(!!e2.detail.isInvalid);
     }
     onSubmit(e2) {
-      var _a2, _b2;
-      this.triggerEntry$.next(((_a2 = e2.detail) == null ? void 0 : _a2.quantity) ?? ((_b2 = this.quantityInputRef.value) == null ? void 0 : _b2.value) ?? 1);
+      var _a, _b, _c, _d;
+      this.triggerEntry$.next((_d = (_c = (_a = e2.detail) == null ? void 0 : _a.quantity) != null ? _c : (_b = this.quantityInputRef.value) == null ? void 0 : _b.value) != null ? _d : 1);
     }
-  }, (() => {
-    _d.styles = styles$q;
-  })(), _d);
+  };
+  CartAddComponent.styles = styles$p;
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -35596,7 +35896,7 @@ var storefront = function(exports) {
       return CartAddComponent;
     }
   }, Symbol.toStringTag, { value: "Module" }));
-  const styles$p = i$7`
+  const styles$o = i$7`
   :host,
   oryx-collapsible::part(content) {
     display: flex;
@@ -35631,7 +35931,7 @@ var storefront = function(exports) {
     margin-inline-start: var(--oryx-space-2);
   }
 `;
-  let CartEntriesComponent = (_e = class extends CartComponentMixin() {
+  let CartEntriesComponent = class CartEntriesComponent extends CartComponentMixin() {
     constructor() {
       super(...arguments);
       this.cartService = resolve(CartService);
@@ -35640,10 +35940,13 @@ var storefront = function(exports) {
       this.options$ = this.contentController.getOptions();
       this.currentlyUpdated$ = new cjs.BehaviorSubject(null);
       this.loading$ = this.cartService.getLoadingState();
-      this.entries$ = this.options$.pipe(cjs.switchMap(({ cartId }) => this.cartService.getEntries({ cartId }).pipe(cjs.switchMap((entries) => (entries == null ? void 0 : entries.reduce((acc$, entry) => acc$.pipe(cjs.switchMap((acc) => this.productService.get({ sku: entry.sku }).pipe(cjs.map((product) => [
-        ...acc,
-        { ...entry, availability: product == null ? void 0 : product.availability }
-      ])))), cjs.of([]))) ?? cjs.of([])), cjs.tap(() => {
+      this.entries$ = this.options$.pipe(cjs.switchMap(({ cartId }) => this.cartService.getEntries({ cartId }).pipe(cjs.switchMap((entries) => {
+        var _a;
+        return (_a = entries == null ? void 0 : entries.reduce((acc$, entry) => acc$.pipe(cjs.switchMap((acc) => this.productService.get({ sku: entry.sku }).pipe(cjs.map((product) => [
+          ...acc,
+          { ...entry, availability: product == null ? void 0 : product.availability }
+        ])))), cjs.of([]))) != null ? _a : cjs.of([]);
+      }), cjs.tap(() => {
         this.currentlyUpdated$.next(null);
       }))));
       this.entriesData$ = cjs.combineLatest([
@@ -35728,9 +36031,8 @@ var storefront = function(exports) {
       })}
     `;
     }
-  }, (() => {
-    _e.styles = styles$p;
-  })(), _e);
+  };
+  CartEntriesComponent.styles = styles$o;
   CartEntriesComponent = __decorate([
     hydratable("window:load")
   ], CartEntriesComponent);
@@ -35757,7 +36059,7 @@ var storefront = function(exports) {
     margin-bottom: var(--oryx-space-2);
   }
 `;
-  const mediumScreen$b = i$7`
+  const mediumScreen$c = i$7`
   oryx-notification {
     flex-direction: row;
     align-items: center;
@@ -35771,7 +36073,7 @@ var storefront = function(exports) {
   const confirmationScreenStyles = [
     {
       media: mdScreen,
-      css: mediumScreen$b
+      css: mediumScreen$c
     }
   ];
   const confirmation_styles = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -35779,7 +36081,7 @@ var storefront = function(exports) {
     confirmationBaseStyles,
     confirmationScreenStyles
   }, Symbol.toStringTag, { value: "Module" }));
-  const _CartEntryConfirmationComponent = class extends s$5 {
+  class CartEntryConfirmationComponent extends s$5 {
     onRemove() {
       this.dispatchEvent(new CustomEvent("remove"));
     }
@@ -35806,11 +36108,8 @@ var storefront = function(exports) {
       </oryx-notification>
     `;
     }
-  };
-  let CartEntryConfirmationComponent = _CartEntryConfirmationComponent;
-  (() => {
-    _CartEntryConfirmationComponent.styles = confirmationBaseStyles;
-  })();
+  }
+  CartEntryConfirmationComponent.styles = confirmationBaseStyles;
   const confirmation_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     CartEntryConfirmationComponent
@@ -35889,7 +36188,7 @@ var storefront = function(exports) {
     color: var(--oryx-color-neutral-400);
   }
 `;
-  const mediumScreen$a = i$7`
+  const mediumScreen$b = i$7`
   h3 {
     font-size: 14px;
     line-height: inherit;
@@ -35921,7 +36220,7 @@ var storefront = function(exports) {
   const contentScreenStyles = [
     {
       media: mdScreen,
-      css: mediumScreen$a
+      css: mediumScreen$b
     },
     {
       media: lgScreen,
@@ -35933,23 +36232,23 @@ var storefront = function(exports) {
     contentBaseStyles,
     contentScreenStyles
   }, Symbol.toStringTag, { value: "Module" }));
-  const _CartEntryContentComponent = class extends ComponentMixin() {
+  class CartEntryContentComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.quantityInputRef = e();
     }
     updated() {
-      var _a2, _b2, _c2, _d2, _e2;
-      if (!((_a2 = this.options) == null ? void 0 : _a2.updating) && !((_b2 = this.options) == null ? void 0 : _b2.confirmationRequired) && this.quantityInputRef.value && ((_c2 = this.quantityInputRef.value) == null ? void 0 : _c2.value) !== ((_d2 = this.options) == null ? void 0 : _d2.quantity)) {
-        this.quantityInputRef.value.value = (_e2 = this.options) == null ? void 0 : _e2.quantity;
+      var _a, _b, _c, _d, _e;
+      if (!((_a = this.options) == null ? void 0 : _a.updating) && !((_b = this.options) == null ? void 0 : _b.confirmationRequired) && this.quantityInputRef.value && ((_c = this.quantityInputRef.value) == null ? void 0 : _c.value) !== ((_d = this.options) == null ? void 0 : _d.quantity)) {
+        this.quantityInputRef.value.value = (_e = this.options) == null ? void 0 : _e.quantity;
       }
     }
     getDecreaseIcon() {
-      var _a2, _b2;
-      return ((_a2 = this.options) == null ? void 0 : _a2.removeByQuantity) === RemoveByQuantity.ShowBin && ((_b2 = this.options) == null ? void 0 : _b2.quantity) === 1 ? "trash" : void 0;
+      var _a, _b;
+      return ((_a = this.options) == null ? void 0 : _a.removeByQuantity) === RemoveByQuantity.ShowBin && ((_b = this.options) == null ? void 0 : _b.quantity) === 1 ? "trash" : void 0;
     }
     render() {
-      var _a2, _b2, _c2, _d2, _e2, _f2, _g2;
+      var _a, _b, _c, _d, _e, _f, _g;
       return y`
       <product-title .options=${{ link: true }}></product-title>
 
@@ -35967,8 +36266,8 @@ var storefront = function(exports) {
           <span>Product config section</span>
 
           <cart-entry-price
-            .price="${(_b2 = (_a2 = this.options) == null ? void 0 : _a2.calculations) == null ? void 0 : _b2.unitPrice}"
-            ?loading="${(_c2 = this.options) == null ? void 0 : _c2.updating}"
+            .price="${(_b = (_a = this.options) == null ? void 0 : _a.calculations) == null ? void 0 : _b.unitPrice}"
+            ?loading="${(_c = this.options) == null ? void 0 : _c.updating}"
           >
             <!-- TODO: replace by tooltip -->
             <oryx-icon type="inputError"></oryx-icon>
@@ -35977,32 +36276,32 @@ var storefront = function(exports) {
         </div>
 
         <div class="col">
-          ${n$1(!((_d2 = this.options) == null ? void 0 : _d2.readonly), () => {
-        var _a3, _b3, _c3, _d3, _e3;
+          ${n$1(!((_d = this.options) == null ? void 0 : _d.readonly), () => {
+        var _a2, _b2, _c2, _d2, _e2, _f2;
         return y`
               <oryx-cart-quantity-input
                 ${n(this.quantityInputRef)}
-                min=${!((_a3 = this.options) == null ? void 0 : _a3.removeByQuantity) ? 1 : 0}
-                max=${((_c3 = (_b3 = this.options) == null ? void 0 : _b3.availability) == null ? void 0 : _c3.quantity) ?? Infinity}
-                .value=${(_d3 = this.options) == null ? void 0 : _d3.quantity}
-                ?disabled=${this.disabled || ((_e3 = this.options) == null ? void 0 : _e3.disabled)}
-                decreaseIcon=${l$1(this.getDecreaseIcon())}
+                min=${!((_a2 = this.options) == null ? void 0 : _a2.removeByQuantity) ? 1 : 0}
+                max=${(_d2 = (_c2 = (_b2 = this.options) == null ? void 0 : _b2.availability) == null ? void 0 : _c2.quantity) != null ? _d2 : Infinity}
+                .value=${(_e2 = this.options) == null ? void 0 : _e2.quantity}
+                ?disabled=${this.disabled || ((_f2 = this.options) == null ? void 0 : _f2.disabled)}
+                .decreaseIcon=${this.getDecreaseIcon()}
                 submitOnChange
               ></oryx-cart-quantity-input>
             `;
       }, () => {
-        var _a3;
+        var _a2;
         return y`
               <div class="readonly-quantity">
                 <span>Quantity</span>
-                <span>${(_a3 = this.options) == null ? void 0 : _a3.quantity}</span>
+                <span>${(_a2 = this.options) == null ? void 0 : _a2.quantity}</span>
               </div>
             `;
       })}
 
           <cart-entry-price
-            .price="${(_f2 = (_e2 = this.options) == null ? void 0 : _e2.calculations) == null ? void 0 : _f2.sumPrice}"
-            ?loading="${(_g2 = this.options) == null ? void 0 : _g2.updating}"
+            .price="${(_f = (_e = this.options) == null ? void 0 : _e.calculations) == null ? void 0 : _f.sumPrice}"
+            ?loading="${(_g = this.options) == null ? void 0 : _g.updating}"
           >
             Subtotal
           </cart-entry-price>
@@ -36010,11 +36309,8 @@ var storefront = function(exports) {
       </section>
     `;
     }
-  };
-  let CartEntryContentComponent = _CartEntryContentComponent;
-  (() => {
-    _CartEntryContentComponent.styles = contentBaseStyles;
-  })();
+  }
+  CartEntryContentComponent.styles = contentBaseStyles;
   __decorate([
     e$3({ type: Boolean }),
     __metadata("design:type", Boolean)
@@ -36065,7 +36361,7 @@ var storefront = function(exports) {
     margin-inline-end: var(--oryx-space);
   }
 `;
-  const mediumScreen$9 = i$7`
+  const mediumScreen$a = i$7`
   :host {
     margin-inline-end: calc(-1 * var(--oryx-space-4));
   }
@@ -36077,7 +36373,7 @@ var storefront = function(exports) {
   const optionsScreenStyles = [
     {
       media: mdScreen,
-      css: mediumScreen$9
+      css: mediumScreen$a
     }
   ];
   const options_styles = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -36085,13 +36381,13 @@ var storefront = function(exports) {
     optionsBaseStyles,
     optionsScreenStyles
   }, Symbol.toStringTag, { value: "Module" }));
-  const _CartEntryOptionsComponent = class extends ComponentMixin() {
+  class CartEntryOptionsComponent extends ComponentMixin() {
     onToggle(state) {
       this.dispatchEvent(new CustomEvent("toggle", { detail: { state } }));
     }
     render() {
-      var _a2;
-      const selectedProductOptions = (_a2 = this.options) == null ? void 0 : _a2.selectedProductOptions;
+      var _a;
+      const selectedProductOptions = (_a = this.options) == null ? void 0 : _a.selectedProductOptions;
       return y`
       <span>
         Product options (${selectedProductOptions == null ? void 0 : selectedProductOptions.length}):
@@ -36105,23 +36401,20 @@ var storefront = function(exports) {
       <!-- TODO: Replace by product-options -->
       <ul>
         ${selectedProductOptions == null ? void 0 : selectedProductOptions.map(({ optionName, price }) => {
-        var _a3;
+        var _a2;
         return y`<li>
             <span>${optionName}</span>
             <cart-entry-price
               .price="${price}"
-              ?loading="${(_a3 = this.options) == null ? void 0 : _a3.updating}"
+              ?loading="${(_a2 = this.options) == null ? void 0 : _a2.updating}"
             ></cart-entry-price>
           </li>`;
       })}
       </ul>
     `;
     }
-  };
-  let CartEntryOptionsComponent = _CartEntryOptionsComponent;
-  (() => {
-    _CartEntryOptionsComponent.styles = optionsBaseStyles;
-  })();
+  }
+  CartEntryOptionsComponent.styles = optionsBaseStyles;
   __decorate([
     e$3({ type: Boolean, attribute: "show-options" }),
     __metadata("design:type", Boolean)
@@ -36166,7 +36459,7 @@ var storefront = function(exports) {
     display: block;
   }
 `;
-  const _CartEntryPriceComponent = class extends s$5 {
+  class CartEntryPriceComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.loading = false;
@@ -36180,11 +36473,8 @@ var storefront = function(exports) {
       ${asyncValue(this.formattedPrice$, (value) => y`<span part="price">${value}</span>`)}
     `;
     }
-  };
-  let CartEntryPriceComponent = _CartEntryPriceComponent;
-  (() => {
-    _CartEntryPriceComponent.styles = cartEntryPriceStyles;
-  })();
+  }
+  CartEntryPriceComponent.styles = cartEntryPriceStyles;
   __decorate([
     e$3(),
     __metadata("design:type", Number)
@@ -36219,21 +36509,18 @@ var storefront = function(exports) {
     font-weight: 600;
   }
 `;
-  const _CartEntryTotalsComponent = class extends ComponentMixin() {
+  class CartEntryTotalsComponent extends ComponentMixin() {
     render() {
-      var _a2, _b2, _c2;
-      const price = (_b2 = (_a2 = this.options) == null ? void 0 : _a2.calculations) == null ? void 0 : _b2.sumPriceToPayAggregation;
+      var _a, _b, _c;
+      const price = (_b = (_a = this.options) == null ? void 0 : _a.calculations) == null ? void 0 : _b.sumPriceToPayAggregation;
       return y`
-      <cart-entry-price .price="${price}" ?loading="${(_c2 = this.options) == null ? void 0 : _c2.updating}">
+      <cart-entry-price .price="${price}" ?loading="${(_c = this.options) == null ? void 0 : _c.updating}">
         Total price
       </cart-entry-price>
     `;
     }
-  };
-  let CartEntryTotalsComponent = _CartEntryTotalsComponent;
-  (() => {
-    _CartEntryTotalsComponent.styles = cartEntryTotalsStyles;
-  })();
+  }
+  CartEntryTotalsComponent.styles = cartEntryTotalsStyles;
   const totals_component$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     CartEntryTotalsComponent
@@ -36274,7 +36561,7 @@ var storefront = function(exports) {
     align-self: center;
   }
 `;
-  const mediumScreen$8 = i$7`
+  const mediumScreen$9 = i$7`
   .entry {
     flex-direction: row;
     align-items: flex-start;
@@ -36291,10 +36578,10 @@ var storefront = function(exports) {
   const screenStyles$b = [
     {
       media: mdScreen,
-      css: mediumScreen$8
+      css: mediumScreen$9
     }
   ];
-  const styles$o = i$7`
+  const styles$n = i$7`
   :host {
     border-radius: var(--oryx-border-radius-small);
     border: 2px solid var(--oryx-color-canvas-300);
@@ -36305,9 +36592,9 @@ var storefront = function(exports) {
     __proto__: null,
     baseStyles: baseStyles$a,
     screenStyles: screenStyles$b,
-    styles: styles$o
+    styles: styles$n
   }, Symbol.toStringTag, { value: "Module" }));
-  const _CartEntryComponent = class extends ComponentMixin() {
+  class CartEntryComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.context = new ContextController(this);
@@ -36365,18 +36652,21 @@ var storefront = function(exports) {
                 @remove=${() => this.onRemove(entry2.silentRemove || confirmationRequired)}
                 @cancel=${this.onCancelRemoving}
               ></cart-entry-confirmation>
-            `, () => y`
+            `, () => {
+            var _a;
+            return y`
               <oryx-icon-button>
                 <button
                   @click=${() => this.onRemove(entry2.silentRemove || confirmationRequired)}
                   aria-label="remove"
                 >
                   <oryx-icon
-                    .type=${entry2.removeButtonIcon ?? "close"}
+                    .type=${(_a = entry2.removeButtonIcon) != null ? _a : "close"}
                   ></oryx-icon>
                 </button>
               </oryx-icon-button>
-            `)}`;
+            `;
+          })}`;
         })}
 
         <div class="entry">
@@ -36409,11 +36699,8 @@ var storefront = function(exports) {
       `;
       })}`;
     }
-  };
-  let CartEntryComponent = _CartEntryComponent;
-  (() => {
-    _CartEntryComponent.styles = [baseStyles$a, styles$o];
-  })();
+  }
+  CartEntryComponent.styles = [baseStyles$a, styles$n];
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -36422,7 +36709,7 @@ var storefront = function(exports) {
     __proto__: null,
     CartEntryComponent
   }, Symbol.toStringTag, { value: "Module" }));
-  const styles$n = i$7`
+  const styles$m = i$7`
   a {
     display: inline-flex;
     padding: 8px;
@@ -36518,7 +36805,7 @@ var storefront = function(exports) {
     }
   }
 `;
-  let MiniCartComponent = (_f = class extends CartComponentMixin() {
+  let MiniCartComponent = class MiniCartComponent extends CartComponentMixin() {
     constructor() {
       super(...arguments);
       this.contentController = new ContentController(this);
@@ -36528,7 +36815,8 @@ var storefront = function(exports) {
         this.cartController.getTotalQuantity(),
         this.contentController.getOptions()
       ]).pipe(cjs.map(([cartQuantity, options]) => {
-        return options.quantity ?? cartQuantity;
+        var _a;
+        return (_a = options.quantity) != null ? _a : cartQuantity;
       }));
     }
     render() {
@@ -36544,9 +36832,8 @@ var storefront = function(exports) {
       </a>
     `;
     }
-  }, (() => {
-    _f.styles = styles$n;
-  })(), _f);
+  };
+  MiniCartComponent.styles = styles$m;
   MiniCartComponent = __decorate([
     hydratable("window:load")
   ], MiniCartComponent);
@@ -36558,7 +36845,7 @@ var storefront = function(exports) {
   }, Symbol.toStringTag, { value: "Module" }));
   const UPDATE_EVENT = "update";
   const SUBMIT_EVENT = "submit";
-  const styles$m = i$7`
+  const styles$l = i$7`
   :host {
     --oryx-icon-size: 22px;
 
@@ -36651,7 +36938,7 @@ var storefront = function(exports) {
     text-transform: unset;
   }
 `;
-  const mediumScreen$7 = i$7`
+  const mediumScreen$8 = i$7`
   :host {
     --oryx-icon-size: 18px;
   }
@@ -36659,15 +36946,15 @@ var storefront = function(exports) {
   const screenStyles$a = [
     {
       media: mdScreen,
-      css: mediumScreen$7
+      css: mediumScreen$8
     }
   ];
   const quantityInput_styles = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    styles: styles$m,
+    styles: styles$l,
     screenStyles: screenStyles$a
   }, Symbol.toStringTag, { value: "Module" }));
-  let QuantityInputComponent = (_g = class extends s$5 {
+  let QuantityInputComponent = class QuantityInputComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.min = 1;
@@ -36675,11 +36962,10 @@ var storefront = function(exports) {
       this.submitOnChange = false;
       this.disabled = false;
       this.hasError = false;
-      this.decreaseIcon = IconTypes.Decrease;
-      this.increaseIcon = IconTypes.Increase;
       this.inputRef = e();
     }
     render() {
+      var _a, _b;
       return y`
       <button
         @click=${this.decrease}
@@ -36688,7 +36974,7 @@ var storefront = function(exports) {
         ?disabled=${this.isMinDisabled()}
         part="decrease"
       >
-        <oryx-icon .type=${this.decreaseIcon}></oryx-icon>
+        <oryx-icon .type=${(_a = this.decreaseIcon) != null ? _a : IconTypes.Decrease}></oryx-icon>
       </button>
       <oryx-input ?hasError=${this.hasError}>
         <input
@@ -36714,20 +37000,20 @@ var storefront = function(exports) {
         ?disabled=${this.isMaxDisabled()}
         part="increase"
       >
-        <oryx-icon .type=${this.increaseIcon}></oryx-icon>
+        <oryx-icon .type=${(_b = this.increaseIcon) != null ? _b : IconTypes.Increase}></oryx-icon>
       </button>
     `;
     }
     focus() {
-      var _a2;
-      (_a2 = this.input) == null ? void 0 : _a2.focus();
+      var _a;
+      (_a = this.input) == null ? void 0 : _a.focus();
     }
     firstUpdated() {
       this.checkValidity();
     }
     getValue() {
-      var _a2, _b2;
-      return ((_a2 = this.value) == null ? void 0 : _a2.toString()) ?? ((_b2 = this.min) == null ? void 0 : _b2.toString()) ?? "1";
+      var _a, _b, _c, _d;
+      return (_d = (_c = (_a = this.value) == null ? void 0 : _a.toString()) != null ? _c : (_b = this.min) == null ? void 0 : _b.toString()) != null ? _d : "1";
     }
     onFocus() {
       this.checkValidity();
@@ -36759,7 +37045,7 @@ var storefront = function(exports) {
       }
     }
     updateValue(value) {
-      this.value = Number(value ?? this.input.value);
+      this.value = Number(value != null ? value : this.input.value);
       this.checkValidity();
     }
     checkValidity() {
@@ -36785,9 +37071,8 @@ var storefront = function(exports) {
     get input() {
       return this.inputRef.value;
     }
-  }, (() => {
-    _g.styles = styles$m;
-  })(), _g);
+  };
+  QuantityInputComponent.styles = styles$l;
   __decorate([
     e$3({ type: Number }),
     __metadata("design:type", Object)
@@ -36818,11 +37103,11 @@ var storefront = function(exports) {
   ], QuantityInputComponent.prototype, "hasError", void 0);
   __decorate([
     e$3(),
-    __metadata("design:type", Object)
+    __metadata("design:type", String)
   ], QuantityInputComponent.prototype, "decreaseIcon", void 0);
   __decorate([
     e$3(),
-    __metadata("design:type", Object)
+    __metadata("design:type", String)
   ], QuantityInputComponent.prototype, "increaseIcon", void 0);
   QuantityInputComponent = __decorate([
     hydratable(["window:load"])
@@ -36833,87 +37118,81 @@ var storefront = function(exports) {
       return QuantityInputComponent;
     }
   }, Symbol.toStringTag, { value: "Module" }));
-  const styles$l = i$7`
+  const styles$k = i$7`
   :host {
     --oryx-icon-size-small: 15px;
-
-    background-color: var(--oryx-color-canvas-200);
-    border-radius: var(--oryx-border-radius-small);
-    font-size: var(--oryx-font-size-medium);
-    line-height: 1.5;
   }
 
-  h4 {
-    padding-top: var(--oryx-space-4);
+  h2 {
+    margin-bottom: var(--oryx-space-4);
   }
 
-  :host > * {
+  h2,
+  section > * {
     padding-inline: var(--oryx-space-4);
   }
 
-  :host > dl:last-child {
-    margin-top: var(--oryx-space-2);
-    padding-top: var(--oryx-space-3);
-    padding-bottom: var(--oryx-space-4);
-    border-top: solid 1px var(--oryx-color-canvas-500);
-    font-weight: 600;
-  }
-
-  :host > dl:last-child dd {
-    font-size: var(--oryx-font-size-large);
-  }
-
-  small {
+  section {
     display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--oryx-color-neutral-200);
+    flex-direction: column;
+    row-gap: var(--oryx-space-4);
+    background-color: var(--oryx-color-canvas-200);
+    padding-block: var(--oryx-space-4);
+    border-radius: var(--oryx-border-radius-small);
   }
 
-  small.tax-message {
-    font-size: var(--oryx-font-size-medium);
-    font-weight: 500;
-    display: block;
+  section > oryx-heading {
+    display: flex;
+    justify-content: space-between;
   }
 
-  h4,
-  dl,
-  dt,
-  dd,
-  p {
-    margin: 0;
-  }
-
-  dl {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: var(--oryx-space-2);
-  }
-
-  dd {
-    justify-self: end;
+  section > oryx-heading > span {
     text-align: end;
   }
 
-  [slot='aside'],
-  oryx-collapsible dd {
+  .summary,
+  .summary + oryx-heading {
+    padding-top: var(--oryx-space-2);
+    border-top: solid 1px var(--oryx-color-canvas-500);
+  }
+
+  small {
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--oryx-color-neutral-300);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    row-gap: var(--oryx-space-2);
+    list-style: none;
+    color: var(--oryx-color-neutral-300);
+    margin: 0;
+  }
+
+  li {
+    display: contents;
+  }
+
+  oryx-collapsible > ul {
+    padding: var(--oryx-space-2) 0 0 0;
+  }
+
+  :not(oryx-collapsible) > ul {
+    margin-top: -10px;
+    padding-inline: var(--oryx-space-4);
+  }
+
+  .discount oryx-heading[slot='aside'],
+  .discounts span:last-child {
     color: var(--oryx-color-highlight-300);
-  }
-
-  dl,
-  oryx-collapsible {
-    margin-top: var(--oryx-space-4);
-  }
-
-  oryx-collapsible :is(dt, dd) {
-    font-size: 1rem;
-  }
-
-  oryx-collapsible dl {
-    margin-top: var(--oryx-space-2);
+    white-space: nowrap;
   }
 `;
-  let CartTotalsComponent = (_h = class extends CartComponentMixin() {
+  let CartTotalsComponent = class CartTotalsComponent extends CartComponentMixin() {
     constructor() {
       super(...arguments);
       this.cartTotals$ = cjs.combineLatest([
@@ -36928,58 +37207,69 @@ var storefront = function(exports) {
           return y``;
         }
         return y`
-          <h4>Summary</h4>
-          ${this.renderSubtotal(options, totals)}
-          ${this.renderDiscounts(options, totals)}
-          ${this.renderExpense(options, totals)}
-          ${this.renderTax(options, totals)}
-          ${this.renderDelivery(options, totals)}
-          ${this.renderSummary(options, totals)}
+          <oryx-heading md-mimic="h4">
+            <h2>${i18n("cart.totals.summary")}</h2>
+          </oryx-heading>
+          <section>
+            ${this.renderSubtotal(options, totals)}
+            ${this.renderDiscounts(options, totals)}
+            ${this.renderExpense(options, totals)}
+            ${this.renderTax(options, totals)}
+            ${this.renderDelivery(options, totals)}
+            ${this.renderSummary(options, totals)}
+          </section>
         `;
       })}
     `;
     }
     renderSubtotal(options, totals) {
-      var _a2;
-      return !options.hideSubtotal ? this.renderSection("subtotal", y`
-            Subtotal
-            <span
-              >(${totals.itemsQuantity}
-              item${totals.itemsQuantity === 1 ? "" : "s"})</span
-            >
-          `, String((_a2 = totals.calculations) == null ? void 0 : _a2.subtotal)) : y``;
+      var _a;
+      return !options.hideSubtotal ? this.renderSection("subtotal", y`${i18n("cart.totals.subtotal")}`, String((_a = totals.calculations) == null ? void 0 : _a.subtotal)) : y``;
     }
     renderDiscounts(options, totals) {
-      return y`
-      ${n$1(!options.hideDiscounts && totals.calculations.discountTotal, () => {
-        var _a2;
-        return y`
-          <oryx-collapsible
-            class="discounts"
-            appearance="${"inline"}"
-            header="Discounts"
-            ?open=${!options.collapseDiscounts}
-          >
-            <span slot="aside">${totals.calculations.discountTotal}</span>
-
-            ${(_a2 = totals == null ? void 0 : totals.discounts) == null ? void 0 : _a2.map(({ displayName, amount }) => this.renderSection("discount", displayName, amount))}
-          </oryx-collapsible>
-        `;
-      })}
-    `;
+      var _a, _b;
+      if (options.hideDiscounts || !totals.calculations.discountTotal) {
+        return y``;
+      }
+      const heading = this.renderSection("discounts", y`${i18n("cart.totals.discount")}`, String(totals.calculations.discountTotal));
+      if (options.discountRowsAppearance === "none" || !((_a = totals.discounts) == null ? void 0 : _a.length)) {
+        return heading;
+      }
+      const rows = y`<ul class="discounts">
+      ${(_b = totals.discounts) == null ? void 0 : _b.map(({ displayName, amount }) => y`<li>
+            <span>${displayName}</span>
+            <span>${amount}</span>
+          </li>`)}
+    </ul>`;
+      if (options.discountRowsAppearance === "inline") {
+        return y`${heading}${rows}`;
+      }
+      return y`<oryx-collapsible
+      class="discount"
+      appearance="${"inline"}"
+      ?open=${options.discountRowsAppearance !== "collapsed"}
+    >
+      <oryx-heading slot="header" md-mimic="h6">
+        <h3>${i18n("cart.totals.discount")}</h3>
+      </oryx-heading>
+      <oryx-heading slot="aside" md-mimic="h6" mimic="h3">
+        ${totals.calculations.discountTotal}
+      </oryx-heading>
+      ${rows}
+    </oryx-collapsible>`;
     }
     renderExpense(options, totals) {
-      return totals.calculations.expenseTotal && !options.hideExpense ? this.renderSection("expense", "Expense", String(totals.calculations.expenseTotal)) : y``;
+      return totals.calculations.expenseTotal && !options.hideExpense ? this.renderSection("expense", y`${i18n("cart.totals.expense")}`, String(totals.calculations.expenseTotal)) : y``;
     }
     renderTax(options, totals) {
       return totals.calculations.taxTotal && !options.hideTaxAmount ? this.renderSection("tax", "Tax", String(totals.calculations.taxTotal)) : y``;
     }
     renderDelivery(options, totals) {
-      return options.hideDelivery ? y`` : this.renderSection("delivery", "Delivery", y`
+      return options.hideDelivery ? y`` : this.renderSection("delivery", y`${i18n("cart.totals.delivery")}`, y`
             <small class="delivery-message">
-              ${(options == null ? void 0 : options.deliveryMessage) ?? ""}
+              ${l$1(options == null ? void 0 : options.deliveryMessage)}
               <oryx-icon-button size="small">
-                <a href="#" title="Click here to read about delivery options">
+                <a href="#" title=${i18n("cart.totals.delivery-message")}>
                   <oryx-icon type="info"></oryx-icon>
                 </a>
               </oryx-icon-button>
@@ -36987,22 +37277,21 @@ var storefront = function(exports) {
           `);
     }
     renderSummary(options, totals) {
-      return this.renderSection("summary", "Total", y` ${totals.calculations.priceToPay}
+      return this.renderSection("summary", y`${i18n("cart.totals.total")}`, y` ${totals.calculations.priceToPay}
       ${n$1(!options.hideTaxMessage, () => y`<small class="tax-message">
-            ${totals.priceMode === PriceMode.GrossMode ? "incl. tax" : "excl. tax"}
+            ${totals.priceMode === PriceMode.GrossMode ? i18n("cart.totals.tax-included") : i18n("cart.totals.tax-excluded")}
           </small>`)}`);
     }
-    renderSection(type, title, content2) {
+    renderSection(type, title, value) {
       return y`
-      <dl class=${type}>
-        <dt>${title}</dt>
-        <dd>${content2}</dd>
-      </dl>
+      <oryx-heading md-mimic="h6" mimic="h3" class=${type}>
+        <h3>${title}</h3>
+        <span>${value}</span>
+      </oryx-heading>
     `;
     }
-  }, (() => {
-    _h.styles = styles$l;
-  })(), _h);
+  };
+  CartTotalsComponent.styles = styles$k;
   CartTotalsComponent = __decorate([
     hydratable("window:load")
   ], CartTotalsComponent);
@@ -37085,8 +37374,8 @@ var storefront = function(exports) {
   }
 `;
   const createKey = (registry) => {
-    var _a2;
-    return String(Number(((_a2 = registry.filter(({ key }) => !!key).sort((a2, b2) => Number(b2.key) - Number(a2.key))[0]) == null ? void 0 : _a2.key) || Date.now()) + 1);
+    var _a;
+    return String(Number(((_a = registry.filter(({ key }) => !!key).sort((a2, b2) => Number(b2.key) - Number(a2.key))[0]) == null ? void 0 : _a.key) || Date.now()) + 1);
   };
   class RegistryController {
     constructor(host) {
@@ -37156,8 +37445,8 @@ var storefront = function(exports) {
       });
     }
     notificationIsVisible(targetKey) {
-      var _a2;
-      return Boolean((_a2 = this.registry.find(({ key }) => key === targetKey)) == null ? void 0 : _a2.visible);
+      var _a;
+      return Boolean((_a = this.registry.find(({ key }) => key === targetKey)) == null ? void 0 : _a.visible);
     }
     ensureNotificationMountedState() {
       if (this.registry.some(({ key, _mounted }) => key && !_mounted)) {
@@ -37181,7 +37470,7 @@ var storefront = function(exports) {
     closable: true,
     floating: true
   };
-  const _NotificationCenterComponent = class extends s$5 {
+  class NotificationCenterComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.registryController = new RegistryController(this);
@@ -37221,11 +37510,8 @@ var storefront = function(exports) {
       ${c(this.registry, ({ key }) => key, (item) => this.renderNotification(item))}
     `;
     }
-  };
-  let NotificationCenterComponent = _NotificationCenterComponent;
-  (() => {
-    _NotificationCenterComponent.styles = [notificationCenterBaseStyles];
-  })();
+  }
+  NotificationCenterComponent.styles = [notificationCenterBaseStyles];
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", String)
@@ -37271,18 +37557,21 @@ var storefront = function(exports) {
       this.options$ = this.contentController.getOptions();
       this.centerRef = e();
       this.notification$ = this.siteNotificationService.get().pipe(cjs.filter((notification) => !!notification), cjs.tap(async (notification) => {
-        var _a2, _b2;
+        var _a, _b;
         if (!(this.centerRef.value && "open" in this.centerRef.value)) {
           await customElements.whenDefined("oryx-notification-center");
         }
-        (_b2 = (_a2 = this.centerRef.value) == null ? void 0 : _a2.open) == null ? void 0 : _b2.call(_a2, notification);
+        (_b = (_a = this.centerRef.value) == null ? void 0 : _a.open) == null ? void 0 : _b.call(_a, notification);
       }));
     }
     render() {
-      return y`${asyncValue(this.options$, (options) => y`<oryx-notification-center
-        position="${options.position ?? "top-end"}"
+      return y`${asyncValue(this.options$, (options) => {
+        var _a;
+        return y`<oryx-notification-center
+        position="${(_a = options.position) != null ? _a : "top-end"}"
         ${n(this.centerRef)}
-      ></oryx-notification-center>`)}`;
+      ></oryx-notification-center>`;
+      })}`;
     }
   };
   __decorate([
@@ -37308,8 +37597,8 @@ var storefront = function(exports) {
       this.formRef = e();
     }
     getFormElement() {
-      var _a2, _b2;
-      return (_b2 = (_a2 = this.formRef.value) == null ? void 0 : _a2.getForm) == null ? void 0 : _b2.call(_a2);
+      var _a, _b;
+      return (_b = (_a = this.formRef.value) == null ? void 0 : _a.getForm) == null ? void 0 : _b.call(_a);
     }
     submit(report = false) {
       const form = this.getFormElement();
@@ -37332,7 +37621,9 @@ var storefront = function(exports) {
       return y`${asyncValue(this.addresses$, (addresses) => {
         if (!(addresses == null ? void 0 : addresses.length)) {
           return y`
-          <p>${i18n("checkout.address-details")}</p>
+          <oryx-heading .tag=${"subtitle"}>
+            ${i18n("checkout.address-details")}
+          </oryx-heading>
           <oryx-address-form ${n(this.formRef)}></oryx-address-form>
         `;
         }
@@ -37353,26 +37644,14 @@ var storefront = function(exports) {
     __proto__: null,
     CheckoutAddressComponent
   }, Symbol.toStringTag, { value: "Module" }));
-  const styles$k = i$7`
-  header {
+  const compositionStyles = i$7`
+  oryx-heading {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-block-end: var(--oryx-space-4);
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 22px;
-    line-height: 30px;
-    font-weight: 500;
-  }
-
-  oryx-card {
-    margin: 15px 0;
+    align-items: center;
   }
 `;
-  let CheckoutCompositionComponent = (_i = class extends ComponentMixin() {
+  let CheckoutCompositionComponent = class CheckoutCompositionComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.checkoutDataService = resolve(CheckoutDataService);
@@ -37391,9 +37670,8 @@ var storefront = function(exports) {
     }
     renderGuestCheckoutHeading() {
       return y`
-      <header>
-        <h1>${i18n("checkout.guest-checkout")}</h1>
-
+      <oryx-heading>
+        <h3>${i18n("checkout.guest-checkout")}</h3>
         <oryx-button type="text">
           <button
             @click=${() => {
@@ -37403,13 +37681,15 @@ var storefront = function(exports) {
             ${i18n("checkout.checkout-as-register")}
           </button>
         </oryx-button>
-      </header>
+      </oryx-heading>
     `;
     }
     renderStep(step) {
       switch (step) {
         case CheckoutStepType.Shipping:
           return y`<checkout-shipment></checkout-shipment>`;
+        case CheckoutStepType.Payment:
+          return y`<checkout-payment></checkout-payment>`;
         default:
           return y``;
       }
@@ -37447,9 +37727,8 @@ var storefront = function(exports) {
         `;
       })}`;
     }
-  }, (() => {
-    _i.styles = styles$k;
-  })(), _i);
+  };
+  CheckoutCompositionComponent.styles = compositionStyles;
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -37470,8 +37749,8 @@ var storefront = function(exports) {
       this.formRef = e();
     }
     getFormElement() {
-      var _a2, _b2;
-      return (_b2 = (_a2 = this.formRef.value) == null ? void 0 : _a2.getForm) == null ? void 0 : _b2.call(_a2);
+      var _a, _b;
+      return (_b = (_a = this.formRef.value) == null ? void 0 : _a.getForm) == null ? void 0 : _b.call(_a);
     }
     submit(report = false) {
       const form = this.getFormElement();
@@ -37489,7 +37768,10 @@ var storefront = function(exports) {
     }
     render() {
       return y`
-      <p>${i18n("checkout.contact-details")}</p>
+      <oryx-heading .tag=${"subtitle"}>
+        ${i18n("checkout.contact-details")}
+      </oryx-heading>
+
       <user-contact-form ${n(this.formRef)}></user-contact-form>
     `;
     }
@@ -37503,7 +37785,7 @@ var storefront = function(exports) {
     margin-block-end: 30px;
   }
 `;
-  const _CheckoutDeliveryComponent = class extends ComponentMixin() {
+  class CheckoutDeliveryComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.isAuthenticated$ = resolve(AuthService).isAuthenticated();
@@ -37539,7 +37821,9 @@ var storefront = function(exports) {
     }
     render() {
       return y`${asyncValue(this.isAuthenticated$, (isAuthenticated) => y`
-        <h3>${i18n("checkout.delivery-details")}</h3>
+        <oryx-heading>
+          <h5>${i18n("checkout.delivery-details")}</h5>
+        </oryx-heading>
 
         <section>
           ${n$1(!isAuthenticated, () => y`<checkout-contact></checkout-contact>`)}
@@ -37555,11 +37839,8 @@ var storefront = function(exports) {
         </oryx-button>
       `)}`;
     }
-  };
-  let CheckoutDeliveryComponent = _CheckoutDeliveryComponent;
-  (() => {
-    _CheckoutDeliveryComponent.styles = styles$j;
-  })();
+  }
+  CheckoutDeliveryComponent.styles = styles$j;
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -37589,9 +37870,7 @@ var storefront = function(exports) {
       this.handleTrigger$.next();
     }
     render() {
-      return y`<oryx-card>
-      <h2 slot="header">Guest checkout</h2>
-
+      return y`<oryx-card .header=${i18n("checkout.guest-checkout")}>
       <slot name="content">
         You can checkout without creating an account. You will have a chance to
         create an account later.
@@ -37621,7 +37900,7 @@ var storefront = function(exports) {
     display: contents;
   }
 `;
-  let CheckoutLinkComponent = (_j = class extends ComponentMixin() {
+  let CheckoutLinkComponent = class CheckoutLinkComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.contentController = new ContentController(this);
@@ -37651,9 +37930,8 @@ var storefront = function(exports) {
       })}
     `;
     }
-  }, (() => {
-    _j.styles = styles$i;
-  })(), _j);
+  };
+  CheckoutLinkComponent.styles = styles$i;
   CheckoutLinkComponent = __decorate([
     hydratable(["window:load"])
   ], CheckoutLinkComponent);
@@ -37681,7 +37959,7 @@ var storefront = function(exports) {
     layoutScreenStyles,
     stickyLayout
   }, Symbol.toStringTag, { value: "Module" }));
-  let CheckoutLoginComponent = (_k = class extends CheckoutComponentMixin() {
+  let CheckoutLoginComponent = class CheckoutLoginComponent extends CheckoutComponentMixin() {
     constructor() {
       super(...arguments);
       this.data$ = cjs.combineLatest([
@@ -37709,9 +37987,8 @@ var storefront = function(exports) {
       })}
       `)}`;
     }
-  }, (() => {
-    _k.styles = layoutStyles;
-  })(), _k);
+  };
+  CheckoutLoginComponent.styles = layoutStyles;
   CheckoutLoginComponent = __decorate([
     hydratable("window:load")
   ], CheckoutLoginComponent);
@@ -37739,12 +38016,26 @@ var storefront = function(exports) {
     padding: 20px;
   }
 `;
-  let CheckoutPaymentSelectorComponent = (_l = class extends ComponentMixin() {
+  let CheckoutPaymentComponent = class CheckoutPaymentComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.service = resolve(CheckoutPaymentService);
+      this.orchestrationService = resolve(CheckoutOrchestrationService);
       this.methods$ = this.service.getMethods();
       this.currentMethod$ = new cjs.BehaviorSubject(null);
+      this.submitTrigger$ = this.orchestrationService.getTrigger(CheckoutStepType.Payment).pipe(cjs.tap((trigger) => {
+        if (trigger === CheckoutTrigger.Check) {
+          this.orchestrationService.report(CheckoutStepType.Payment, this.submit());
+        }
+      }));
+    }
+    submit() {
+      const selected = this.renderRoot.querySelector("input[checked]");
+      if (selected) {
+        this.service.setPaymentMethod(selected.value);
+        return true;
+      }
+      return false;
     }
     render() {
       return y`${asyncValue(cjs.combineLatest([this.methods$, this.currentMethod$]), ([methods, currentMethod]) => (methods == null ? void 0 : methods.length) ? y`${methods.map((method, i2) => this.renderMethod(method, currentMethod ? currentMethod === method.name : i2 === 0))}` : this.renderEmpty())}`;
@@ -37758,6 +38049,7 @@ var storefront = function(exports) {
           ?checked="${selected}"
           @change="${() => {
         this.currentMethod$.next(method.name);
+        this.orchestrationService.report(CheckoutStepType.Payment, true);
       }}"
         />
         ${method.name}
@@ -37774,16 +38066,19 @@ var storefront = function(exports) {
       ${i18n("checkout.payment.no-methods-available")}
     </p>`;
     }
-  }, (() => {
-    _l.styles = styles$h;
-  })(), _l);
-  CheckoutPaymentSelectorComponent = __decorate([
+  };
+  CheckoutPaymentComponent.styles = styles$h;
+  __decorate([
+    subscribe(),
+    __metadata("design:type", Object)
+  ], CheckoutPaymentComponent.prototype, "submitTrigger$", void 0);
+  CheckoutPaymentComponent = __decorate([
     hydratable("window:load")
-  ], CheckoutPaymentSelectorComponent);
-  const paymentSelector_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  ], CheckoutPaymentComponent);
+  const payment_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    get CheckoutPaymentSelectorComponent() {
-      return CheckoutPaymentSelectorComponent;
+    get CheckoutPaymentComponent() {
+      return CheckoutPaymentComponent;
     }
   }, Symbol.toStringTag, { value: "Module" }));
   const styles$g = i$7`
@@ -37800,12 +38095,6 @@ var storefront = function(exports) {
     line-height: 22px;
 
     --oryx-icon-size: 40px;
-  }
-
-  h3 {
-    line-height: 24px;
-    margin: 0;
-    font-size: var(--oryx-font-size-medium);
   }
 
   oryx-radio {
@@ -37835,7 +38124,7 @@ var storefront = function(exports) {
     margin-inline-start: calc(var(--oryx-radio-size, 18px) + 8px);
   }
 `;
-  let CheckoutShipmentComponent = (_m = class extends ComponentMixin() {
+  let CheckoutShipmentComponent = class CheckoutShipmentComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.shipmentService = resolve(CheckoutShipmentService);
@@ -37894,12 +38183,11 @@ var storefront = function(exports) {
         this.carriers$,
         this.selectedShipmentMethod$,
         this.currentMethod$
-      ]), ([carriers, selectedShipmentMethod, currentMethod]) => !(carriers == null ? void 0 : carriers.length) ? this.renderEmpty() : y`${carriers.map((carrier2, i2) => y`${n$1(carriers.length > 1, () => y`<h3>${carrier2.name}</h3>`)}
+      ]), ([carriers, selectedShipmentMethod, currentMethod]) => !(carriers == null ? void 0 : carriers.length) ? this.renderEmpty() : y`${carriers.map((carrier2, i2) => y`${n$1(carriers.length > 1, () => y`<oryx-heading><h5>${carrier2.name}</h5></oryx-heading>`)}
               ${carrier2.shipmentMethods.map((item, j) => this.renderMethod(item, currentMethod ? currentMethod === item.id : selectedShipmentMethod === 0 ? i2 === 0 && j === 0 : selectedShipmentMethod == item.id))}`)}`)}`;
     }
-  }, (() => {
-    _m.styles = styles$g;
-  })(), _m);
+  };
+  CheckoutShipmentComponent.styles = styles$g;
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -37960,7 +38248,7 @@ var storefront = function(exports) {
     margin: 0;
   }
 `;
-  let BannerComponent = (_n = class extends ComponentMixin() {
+  let BannerComponent = class BannerComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.contentController = new ContentController(this);
@@ -37974,7 +38262,7 @@ var storefront = function(exports) {
         <oryx-image .src=${content2 == null ? void 0 : content2.image} .alt=${options.alt}></oryx-image>
         <div class="overlay">
           ${n$1(content2 == null ? void 0 : content2.title, () => y`<h1 aria-label="title">${content2 == null ? void 0 : content2.title}</h1>`)}
-          ${n$1(content2 == null ? void 0 : content2.content, () => y`<h2>${content2 == null ? void 0 : content2.content}</h2>`)}
+          ${n$1(content2 == null ? void 0 : content2.content, () => y`<oryx-heading><h2>${content2 == null ? void 0 : content2.content}</h2></oryx-heading>`)}
         </div>
       `;
         return y` ${n$1(options.link, () => y`<a
@@ -37986,9 +38274,8 @@ var storefront = function(exports) {
         </a>`, () => y`${contents}`)}`;
       })}`;
     }
-  }, (() => {
-    _n.styles = styles$f;
-  })(), _n);
+  };
+  BannerComponent.styles = styles$f;
   BannerComponent = __decorate([
     hydratable("click")
   ], BannerComponent);
@@ -38035,21 +38322,21 @@ var storefront = function(exports) {
     }
     render() {
       return y`${asyncValue(this.data$, ([options, link2]) => {
-        var _a2, _b2;
+        var _a, _b;
         if (!link2) {
           return y``;
         }
         if (options.button) {
           return y`<oryx-button
           part="wrapper"
-          icon="${l$1((_a2 = options.icon) == null ? void 0 : _a2.trim())}"
+          icon="${l$1((_a = options.icon) == null ? void 0 : _a.trim())}"
         >
           ${this.renderLink(link2, options)}
         </oryx-button>`;
         }
         return y`<oryx-link
         part="wrapper"
-        icon="${l$1((_b2 = options.icon) == null ? void 0 : _b2.trim())}"
+        icon="${l$1((_b = options.icon) == null ? void 0 : _b.trim())}"
         ?disabled=${options == null ? void 0 : options.disabled}
       >
         ${this.renderLink(link2, options)}
@@ -38061,2765 +38348,2761 @@ var storefront = function(exports) {
     __proto__: null,
     ContentLinkComponent
   }, Symbol.toStringTag, { value: "Module" }));
-  const supplemental$1 = {
-    version: {
-      _unicodeVersion: "12.1.0",
-      _cldrVersion: "36"
-    },
-    likelySubtags: {
-      aa: "aa-Latn-ET",
-      aai: "aai-Latn-ZZ",
-      aak: "aak-Latn-ZZ",
-      aau: "aau-Latn-ZZ",
-      ab: "ab-Cyrl-GE",
-      abi: "abi-Latn-ZZ",
-      abq: "abq-Cyrl-ZZ",
-      abr: "abr-Latn-GH",
-      abt: "abt-Latn-ZZ",
-      aby: "aby-Latn-ZZ",
-      acd: "acd-Latn-ZZ",
-      ace: "ace-Latn-ID",
-      ach: "ach-Latn-UG",
-      ada: "ada-Latn-GH",
-      ade: "ade-Latn-ZZ",
-      adj: "adj-Latn-ZZ",
-      adp: "adp-Tibt-BT",
-      ady: "ady-Cyrl-RU",
-      adz: "adz-Latn-ZZ",
-      ae: "ae-Avst-IR",
-      aeb: "aeb-Arab-TN",
-      aey: "aey-Latn-ZZ",
-      af: "af-Latn-ZA",
-      agc: "agc-Latn-ZZ",
-      agd: "agd-Latn-ZZ",
-      agg: "agg-Latn-ZZ",
-      agm: "agm-Latn-ZZ",
-      ago: "ago-Latn-ZZ",
-      agq: "agq-Latn-CM",
-      aha: "aha-Latn-ZZ",
-      ahl: "ahl-Latn-ZZ",
-      aho: "aho-Ahom-IN",
-      ajg: "ajg-Latn-ZZ",
-      ak: "ak-Latn-GH",
-      akk: "akk-Xsux-IQ",
-      ala: "ala-Latn-ZZ",
-      ali: "ali-Latn-ZZ",
-      aln: "aln-Latn-XK",
-      alt: "alt-Cyrl-RU",
-      am: "am-Ethi-ET",
-      amm: "amm-Latn-ZZ",
-      amn: "amn-Latn-ZZ",
-      amo: "amo-Latn-NG",
-      amp: "amp-Latn-ZZ",
-      an: "an-Latn-ES",
-      anc: "anc-Latn-ZZ",
-      ank: "ank-Latn-ZZ",
-      ann: "ann-Latn-ZZ",
-      any: "any-Latn-ZZ",
-      aoj: "aoj-Latn-ZZ",
-      aom: "aom-Latn-ZZ",
-      aoz: "aoz-Latn-ID",
-      apc: "apc-Arab-ZZ",
-      apd: "apd-Arab-TG",
-      ape: "ape-Latn-ZZ",
-      apr: "apr-Latn-ZZ",
-      aps: "aps-Latn-ZZ",
-      apz: "apz-Latn-ZZ",
-      ar: "ar-Arab-EG",
-      arc: "arc-Armi-IR",
-      "arc-Nbat": "arc-Nbat-JO",
-      "arc-Palm": "arc-Palm-SY",
-      arh: "arh-Latn-ZZ",
-      arn: "arn-Latn-CL",
-      aro: "aro-Latn-BO",
-      arq: "arq-Arab-DZ",
-      ars: "ars-Arab-SA",
-      ary: "ary-Arab-MA",
-      arz: "arz-Arab-EG",
-      as: "as-Beng-IN",
-      asa: "asa-Latn-TZ",
-      ase: "ase-Sgnw-US",
-      asg: "asg-Latn-ZZ",
-      aso: "aso-Latn-ZZ",
-      ast: "ast-Latn-ES",
-      ata: "ata-Latn-ZZ",
-      atg: "atg-Latn-ZZ",
-      atj: "atj-Latn-CA",
-      auy: "auy-Latn-ZZ",
-      av: "av-Cyrl-RU",
-      avl: "avl-Arab-ZZ",
-      avn: "avn-Latn-ZZ",
-      avt: "avt-Latn-ZZ",
-      avu: "avu-Latn-ZZ",
-      awa: "awa-Deva-IN",
-      awb: "awb-Latn-ZZ",
-      awo: "awo-Latn-ZZ",
-      awx: "awx-Latn-ZZ",
-      ay: "ay-Latn-BO",
-      ayb: "ayb-Latn-ZZ",
-      az: "az-Latn-AZ",
-      "az-Arab": "az-Arab-IR",
-      "az-IQ": "az-Arab-IQ",
-      "az-IR": "az-Arab-IR",
-      "az-RU": "az-Cyrl-RU",
-      ba: "ba-Cyrl-RU",
-      bal: "bal-Arab-PK",
-      ban: "ban-Latn-ID",
-      bap: "bap-Deva-NP",
-      bar: "bar-Latn-AT",
-      bas: "bas-Latn-CM",
-      bav: "bav-Latn-ZZ",
-      bax: "bax-Bamu-CM",
-      bba: "bba-Latn-ZZ",
-      bbb: "bbb-Latn-ZZ",
-      bbc: "bbc-Latn-ID",
-      bbd: "bbd-Latn-ZZ",
-      bbj: "bbj-Latn-CM",
-      bbp: "bbp-Latn-ZZ",
-      bbr: "bbr-Latn-ZZ",
-      bcf: "bcf-Latn-ZZ",
-      bch: "bch-Latn-ZZ",
-      bci: "bci-Latn-CI",
-      bcm: "bcm-Latn-ZZ",
-      bcn: "bcn-Latn-ZZ",
-      bco: "bco-Latn-ZZ",
-      bcq: "bcq-Ethi-ZZ",
-      bcu: "bcu-Latn-ZZ",
-      bdd: "bdd-Latn-ZZ",
-      be: "be-Cyrl-BY",
-      bef: "bef-Latn-ZZ",
-      beh: "beh-Latn-ZZ",
-      bej: "bej-Arab-SD",
-      bem: "bem-Latn-ZM",
-      bet: "bet-Latn-ZZ",
-      bew: "bew-Latn-ID",
-      bex: "bex-Latn-ZZ",
-      bez: "bez-Latn-TZ",
-      bfd: "bfd-Latn-CM",
-      bfq: "bfq-Taml-IN",
-      bft: "bft-Arab-PK",
-      bfy: "bfy-Deva-IN",
-      bg: "bg-Cyrl-BG",
-      bgc: "bgc-Deva-IN",
-      bgn: "bgn-Arab-PK",
-      bgx: "bgx-Grek-TR",
-      bhb: "bhb-Deva-IN",
-      bhg: "bhg-Latn-ZZ",
-      bhi: "bhi-Deva-IN",
-      bhl: "bhl-Latn-ZZ",
-      bho: "bho-Deva-IN",
-      bhy: "bhy-Latn-ZZ",
-      bi: "bi-Latn-VU",
-      bib: "bib-Latn-ZZ",
-      big: "big-Latn-ZZ",
-      bik: "bik-Latn-PH",
-      bim: "bim-Latn-ZZ",
-      bin: "bin-Latn-NG",
-      bio: "bio-Latn-ZZ",
-      biq: "biq-Latn-ZZ",
-      bjh: "bjh-Latn-ZZ",
-      bji: "bji-Ethi-ZZ",
-      bjj: "bjj-Deva-IN",
-      bjn: "bjn-Latn-ID",
-      bjo: "bjo-Latn-ZZ",
-      bjr: "bjr-Latn-ZZ",
-      bjt: "bjt-Latn-SN",
-      bjz: "bjz-Latn-ZZ",
-      bkc: "bkc-Latn-ZZ",
-      bkm: "bkm-Latn-CM",
-      bkq: "bkq-Latn-ZZ",
-      bku: "bku-Latn-PH",
-      bkv: "bkv-Latn-ZZ",
-      blt: "blt-Tavt-VN",
-      bm: "bm-Latn-ML",
-      bmh: "bmh-Latn-ZZ",
-      bmk: "bmk-Latn-ZZ",
-      bmq: "bmq-Latn-ML",
-      bmu: "bmu-Latn-ZZ",
-      bn: "bn-Beng-BD",
-      bng: "bng-Latn-ZZ",
-      bnm: "bnm-Latn-ZZ",
-      bnp: "bnp-Latn-ZZ",
-      bo: "bo-Tibt-CN",
-      boj: "boj-Latn-ZZ",
-      bom: "bom-Latn-ZZ",
-      bon: "bon-Latn-ZZ",
-      bpy: "bpy-Beng-IN",
-      bqc: "bqc-Latn-ZZ",
-      bqi: "bqi-Arab-IR",
-      bqp: "bqp-Latn-ZZ",
-      bqv: "bqv-Latn-CI",
-      br: "br-Latn-FR",
-      bra: "bra-Deva-IN",
-      brh: "brh-Arab-PK",
-      brx: "brx-Deva-IN",
-      brz: "brz-Latn-ZZ",
-      bs: "bs-Latn-BA",
-      bsj: "bsj-Latn-ZZ",
-      bsq: "bsq-Bass-LR",
-      bss: "bss-Latn-CM",
-      bst: "bst-Ethi-ZZ",
-      bto: "bto-Latn-PH",
-      btt: "btt-Latn-ZZ",
-      btv: "btv-Deva-PK",
-      bua: "bua-Cyrl-RU",
-      buc: "buc-Latn-YT",
-      bud: "bud-Latn-ZZ",
-      bug: "bug-Latn-ID",
-      buk: "buk-Latn-ZZ",
-      bum: "bum-Latn-CM",
-      buo: "buo-Latn-ZZ",
-      bus: "bus-Latn-ZZ",
-      buu: "buu-Latn-ZZ",
-      bvb: "bvb-Latn-GQ",
-      bwd: "bwd-Latn-ZZ",
-      bwr: "bwr-Latn-ZZ",
-      bxh: "bxh-Latn-ZZ",
-      bye: "bye-Latn-ZZ",
-      byn: "byn-Ethi-ER",
-      byr: "byr-Latn-ZZ",
-      bys: "bys-Latn-ZZ",
-      byv: "byv-Latn-CM",
-      byx: "byx-Latn-ZZ",
-      bza: "bza-Latn-ZZ",
-      bze: "bze-Latn-ML",
-      bzf: "bzf-Latn-ZZ",
-      bzh: "bzh-Latn-ZZ",
-      bzw: "bzw-Latn-ZZ",
-      ca: "ca-Latn-ES",
-      can: "can-Latn-ZZ",
-      cbj: "cbj-Latn-ZZ",
-      cch: "cch-Latn-NG",
-      ccp: "ccp-Cakm-BD",
-      ce: "ce-Cyrl-RU",
-      ceb: "ceb-Latn-PH",
-      cfa: "cfa-Latn-ZZ",
-      cgg: "cgg-Latn-UG",
-      ch: "ch-Latn-GU",
-      chk: "chk-Latn-FM",
-      chm: "chm-Cyrl-RU",
-      cho: "cho-Latn-US",
-      chp: "chp-Latn-CA",
-      chr: "chr-Cher-US",
-      cic: "cic-Latn-US",
-      cja: "cja-Arab-KH",
-      cjm: "cjm-Cham-VN",
-      cjv: "cjv-Latn-ZZ",
-      ckb: "ckb-Arab-IQ",
-      ckl: "ckl-Latn-ZZ",
-      cko: "cko-Latn-ZZ",
-      cky: "cky-Latn-ZZ",
-      cla: "cla-Latn-ZZ",
-      cme: "cme-Latn-ZZ",
-      cmg: "cmg-Soyo-MN",
-      co: "co-Latn-FR",
-      cop: "cop-Copt-EG",
-      cps: "cps-Latn-PH",
-      cr: "cr-Cans-CA",
-      crh: "crh-Cyrl-UA",
-      crj: "crj-Cans-CA",
-      crk: "crk-Cans-CA",
-      crl: "crl-Cans-CA",
-      crm: "crm-Cans-CA",
-      crs: "crs-Latn-SC",
-      cs: "cs-Latn-CZ",
-      csb: "csb-Latn-PL",
-      csw: "csw-Cans-CA",
-      ctd: "ctd-Pauc-MM",
-      cu: "cu-Cyrl-RU",
-      "cu-Glag": "cu-Glag-BG",
-      cv: "cv-Cyrl-RU",
-      cy: "cy-Latn-GB",
-      da: "da-Latn-DK",
-      dad: "dad-Latn-ZZ",
-      daf: "daf-Latn-ZZ",
-      dag: "dag-Latn-ZZ",
-      dah: "dah-Latn-ZZ",
-      dak: "dak-Latn-US",
-      dar: "dar-Cyrl-RU",
-      dav: "dav-Latn-KE",
-      dbd: "dbd-Latn-ZZ",
-      dbq: "dbq-Latn-ZZ",
-      dcc: "dcc-Arab-IN",
-      ddn: "ddn-Latn-ZZ",
-      de: "de-Latn-DE",
-      ded: "ded-Latn-ZZ",
-      den: "den-Latn-CA",
-      dga: "dga-Latn-ZZ",
-      dgh: "dgh-Latn-ZZ",
-      dgi: "dgi-Latn-ZZ",
-      dgl: "dgl-Arab-ZZ",
-      dgr: "dgr-Latn-CA",
-      dgz: "dgz-Latn-ZZ",
-      dia: "dia-Latn-ZZ",
-      dje: "dje-Latn-NE",
-      dnj: "dnj-Latn-CI",
-      dob: "dob-Latn-ZZ",
-      doi: "doi-Arab-IN",
-      dop: "dop-Latn-ZZ",
-      dow: "dow-Latn-ZZ",
-      drh: "drh-Mong-CN",
-      dri: "dri-Latn-ZZ",
-      drs: "drs-Ethi-ZZ",
-      dsb: "dsb-Latn-DE",
-      dtm: "dtm-Latn-ML",
-      dtp: "dtp-Latn-MY",
-      dts: "dts-Latn-ZZ",
-      dty: "dty-Deva-NP",
-      dua: "dua-Latn-CM",
-      duc: "duc-Latn-ZZ",
-      dud: "dud-Latn-ZZ",
-      dug: "dug-Latn-ZZ",
-      dv: "dv-Thaa-MV",
-      dva: "dva-Latn-ZZ",
-      dww: "dww-Latn-ZZ",
-      dyo: "dyo-Latn-SN",
-      dyu: "dyu-Latn-BF",
-      dz: "dz-Tibt-BT",
-      dzg: "dzg-Latn-ZZ",
-      ebu: "ebu-Latn-KE",
-      ee: "ee-Latn-GH",
-      efi: "efi-Latn-NG",
-      egl: "egl-Latn-IT",
-      egy: "egy-Egyp-EG",
-      eka: "eka-Latn-ZZ",
-      eky: "eky-Kali-MM",
-      el: "el-Grek-GR",
-      ema: "ema-Latn-ZZ",
-      emi: "emi-Latn-ZZ",
-      en: "en-Latn-US",
-      "en-Shaw": "en-Shaw-GB",
-      enn: "enn-Latn-ZZ",
-      enq: "enq-Latn-ZZ",
-      eo: "eo-Latn-001",
-      eri: "eri-Latn-ZZ",
-      es: "es-Latn-ES",
-      esg: "esg-Gonm-IN",
-      esu: "esu-Latn-US",
-      et: "et-Latn-EE",
-      etr: "etr-Latn-ZZ",
-      ett: "ett-Ital-IT",
-      etu: "etu-Latn-ZZ",
-      etx: "etx-Latn-ZZ",
-      eu: "eu-Latn-ES",
-      ewo: "ewo-Latn-CM",
-      ext: "ext-Latn-ES",
-      fa: "fa-Arab-IR",
-      faa: "faa-Latn-ZZ",
-      fab: "fab-Latn-ZZ",
-      fag: "fag-Latn-ZZ",
-      fai: "fai-Latn-ZZ",
-      fan: "fan-Latn-GQ",
-      ff: "ff-Latn-SN",
-      "ff-Adlm": "ff-Adlm-GN",
-      ffi: "ffi-Latn-ZZ",
-      ffm: "ffm-Latn-ML",
-      fi: "fi-Latn-FI",
-      fia: "fia-Arab-SD",
-      fil: "fil-Latn-PH",
-      fit: "fit-Latn-SE",
-      fj: "fj-Latn-FJ",
-      flr: "flr-Latn-ZZ",
-      fmp: "fmp-Latn-ZZ",
-      fo: "fo-Latn-FO",
-      fod: "fod-Latn-ZZ",
-      fon: "fon-Latn-BJ",
-      "for": "for-Latn-ZZ",
-      fpe: "fpe-Latn-ZZ",
-      fqs: "fqs-Latn-ZZ",
-      fr: "fr-Latn-FR",
-      frc: "frc-Latn-US",
-      frp: "frp-Latn-FR",
-      frr: "frr-Latn-DE",
-      frs: "frs-Latn-DE",
-      fub: "fub-Arab-CM",
-      fud: "fud-Latn-WF",
-      fue: "fue-Latn-ZZ",
-      fuf: "fuf-Latn-GN",
-      fuh: "fuh-Latn-ZZ",
-      fuq: "fuq-Latn-NE",
-      fur: "fur-Latn-IT",
-      fuv: "fuv-Latn-NG",
-      fuy: "fuy-Latn-ZZ",
-      fvr: "fvr-Latn-SD",
-      fy: "fy-Latn-NL",
-      ga: "ga-Latn-IE",
-      gaa: "gaa-Latn-GH",
-      gaf: "gaf-Latn-ZZ",
-      gag: "gag-Latn-MD",
-      gah: "gah-Latn-ZZ",
-      gaj: "gaj-Latn-ZZ",
-      gam: "gam-Latn-ZZ",
-      gan: "gan-Hans-CN",
-      gaw: "gaw-Latn-ZZ",
-      gay: "gay-Latn-ID",
-      gba: "gba-Latn-ZZ",
-      gbf: "gbf-Latn-ZZ",
-      gbm: "gbm-Deva-IN",
-      gby: "gby-Latn-ZZ",
-      gbz: "gbz-Arab-IR",
-      gcr: "gcr-Latn-GF",
-      gd: "gd-Latn-GB",
-      gde: "gde-Latn-ZZ",
-      gdn: "gdn-Latn-ZZ",
-      gdr: "gdr-Latn-ZZ",
-      geb: "geb-Latn-ZZ",
-      gej: "gej-Latn-ZZ",
-      gel: "gel-Latn-ZZ",
-      gez: "gez-Ethi-ET",
-      gfk: "gfk-Latn-ZZ",
-      ggn: "ggn-Deva-NP",
-      ghs: "ghs-Latn-ZZ",
-      gil: "gil-Latn-KI",
-      gim: "gim-Latn-ZZ",
-      gjk: "gjk-Arab-PK",
-      gjn: "gjn-Latn-ZZ",
-      gju: "gju-Arab-PK",
-      gkn: "gkn-Latn-ZZ",
-      gkp: "gkp-Latn-ZZ",
-      gl: "gl-Latn-ES",
-      glk: "glk-Arab-IR",
-      gmm: "gmm-Latn-ZZ",
-      gmv: "gmv-Ethi-ZZ",
-      gn: "gn-Latn-PY",
-      gnd: "gnd-Latn-ZZ",
-      gng: "gng-Latn-ZZ",
-      god: "god-Latn-ZZ",
-      gof: "gof-Ethi-ZZ",
-      goi: "goi-Latn-ZZ",
-      gom: "gom-Deva-IN",
-      gon: "gon-Telu-IN",
-      gor: "gor-Latn-ID",
-      gos: "gos-Latn-NL",
-      got: "got-Goth-UA",
-      grb: "grb-Latn-ZZ",
-      grc: "grc-Cprt-CY",
-      "grc-Linb": "grc-Linb-GR",
-      grt: "grt-Beng-IN",
-      grw: "grw-Latn-ZZ",
-      gsw: "gsw-Latn-CH",
-      gu: "gu-Gujr-IN",
-      gub: "gub-Latn-BR",
-      guc: "guc-Latn-CO",
-      gud: "gud-Latn-ZZ",
-      gur: "gur-Latn-GH",
-      guw: "guw-Latn-ZZ",
-      gux: "gux-Latn-ZZ",
-      guz: "guz-Latn-KE",
-      gv: "gv-Latn-IM",
-      gvf: "gvf-Latn-ZZ",
-      gvr: "gvr-Deva-NP",
-      gvs: "gvs-Latn-ZZ",
-      gwc: "gwc-Arab-ZZ",
-      gwi: "gwi-Latn-CA",
-      gwt: "gwt-Arab-ZZ",
-      gyi: "gyi-Latn-ZZ",
-      ha: "ha-Latn-NG",
-      "ha-CM": "ha-Arab-CM",
-      "ha-SD": "ha-Arab-SD",
-      hag: "hag-Latn-ZZ",
-      hak: "hak-Hans-CN",
-      ham: "ham-Latn-ZZ",
-      haw: "haw-Latn-US",
-      haz: "haz-Arab-AF",
-      hbb: "hbb-Latn-ZZ",
-      hdy: "hdy-Ethi-ZZ",
-      he: "he-Hebr-IL",
-      hhy: "hhy-Latn-ZZ",
-      hi: "hi-Deva-IN",
-      hia: "hia-Latn-ZZ",
-      hif: "hif-Latn-FJ",
-      hig: "hig-Latn-ZZ",
-      hih: "hih-Latn-ZZ",
-      hil: "hil-Latn-PH",
-      hla: "hla-Latn-ZZ",
-      hlu: "hlu-Hluw-TR",
-      hmd: "hmd-Plrd-CN",
-      hmt: "hmt-Latn-ZZ",
-      hnd: "hnd-Arab-PK",
-      hne: "hne-Deva-IN",
-      hnj: "hnj-Hmng-LA",
-      hnn: "hnn-Latn-PH",
-      hno: "hno-Arab-PK",
-      ho: "ho-Latn-PG",
-      hoc: "hoc-Deva-IN",
-      hoj: "hoj-Deva-IN",
-      hot: "hot-Latn-ZZ",
-      hr: "hr-Latn-HR",
-      hsb: "hsb-Latn-DE",
-      hsn: "hsn-Hans-CN",
-      ht: "ht-Latn-HT",
-      hu: "hu-Latn-HU",
-      hui: "hui-Latn-ZZ",
-      hy: "hy-Armn-AM",
-      hz: "hz-Latn-NA",
-      ia: "ia-Latn-001",
-      ian: "ian-Latn-ZZ",
-      iar: "iar-Latn-ZZ",
-      iba: "iba-Latn-MY",
-      ibb: "ibb-Latn-NG",
-      iby: "iby-Latn-ZZ",
-      ica: "ica-Latn-ZZ",
-      ich: "ich-Latn-ZZ",
-      id: "id-Latn-ID",
-      idd: "idd-Latn-ZZ",
-      idi: "idi-Latn-ZZ",
-      idu: "idu-Latn-ZZ",
-      ife: "ife-Latn-TG",
-      ig: "ig-Latn-NG",
-      igb: "igb-Latn-ZZ",
-      ige: "ige-Latn-ZZ",
-      ii: "ii-Yiii-CN",
-      ijj: "ijj-Latn-ZZ",
-      ik: "ik-Latn-US",
-      ikk: "ikk-Latn-ZZ",
-      ikt: "ikt-Latn-CA",
-      ikw: "ikw-Latn-ZZ",
-      ikx: "ikx-Latn-ZZ",
-      ilo: "ilo-Latn-PH",
-      imo: "imo-Latn-ZZ",
-      "in": "in-Latn-ID",
-      inh: "inh-Cyrl-RU",
-      io: "io-Latn-001",
-      iou: "iou-Latn-ZZ",
-      iri: "iri-Latn-ZZ",
-      is: "is-Latn-IS",
-      it: "it-Latn-IT",
-      iu: "iu-Cans-CA",
-      iw: "iw-Hebr-IL",
-      iwm: "iwm-Latn-ZZ",
-      iws: "iws-Latn-ZZ",
-      izh: "izh-Latn-RU",
-      izi: "izi-Latn-ZZ",
-      ja: "ja-Jpan-JP",
-      jab: "jab-Latn-ZZ",
-      jam: "jam-Latn-JM",
-      jbo: "jbo-Latn-001",
-      jbu: "jbu-Latn-ZZ",
-      jen: "jen-Latn-ZZ",
-      jgk: "jgk-Latn-ZZ",
-      jgo: "jgo-Latn-CM",
-      ji: "ji-Hebr-UA",
-      jib: "jib-Latn-ZZ",
-      jmc: "jmc-Latn-TZ",
-      jml: "jml-Deva-NP",
-      jra: "jra-Latn-ZZ",
-      jut: "jut-Latn-DK",
-      jv: "jv-Latn-ID",
-      jw: "jw-Latn-ID",
-      ka: "ka-Geor-GE",
-      kaa: "kaa-Cyrl-UZ",
-      kab: "kab-Latn-DZ",
-      kac: "kac-Latn-MM",
-      kad: "kad-Latn-ZZ",
-      kai: "kai-Latn-ZZ",
-      kaj: "kaj-Latn-NG",
-      kam: "kam-Latn-KE",
-      kao: "kao-Latn-ML",
-      kbd: "kbd-Cyrl-RU",
-      kbm: "kbm-Latn-ZZ",
-      kbp: "kbp-Latn-ZZ",
-      kbq: "kbq-Latn-ZZ",
-      kbx: "kbx-Latn-ZZ",
-      kby: "kby-Arab-NE",
-      kcg: "kcg-Latn-NG",
-      kck: "kck-Latn-ZW",
-      kcl: "kcl-Latn-ZZ",
-      kct: "kct-Latn-ZZ",
-      kde: "kde-Latn-TZ",
-      kdh: "kdh-Arab-TG",
-      kdl: "kdl-Latn-ZZ",
-      kdt: "kdt-Thai-TH",
-      kea: "kea-Latn-CV",
-      ken: "ken-Latn-CM",
-      kez: "kez-Latn-ZZ",
-      kfo: "kfo-Latn-CI",
-      kfr: "kfr-Deva-IN",
-      kfy: "kfy-Deva-IN",
-      kg: "kg-Latn-CD",
-      kge: "kge-Latn-ID",
-      kgf: "kgf-Latn-ZZ",
-      kgp: "kgp-Latn-BR",
-      kha: "kha-Latn-IN",
-      khb: "khb-Talu-CN",
-      khn: "khn-Deva-IN",
-      khq: "khq-Latn-ML",
-      khs: "khs-Latn-ZZ",
-      kht: "kht-Mymr-IN",
-      khw: "khw-Arab-PK",
-      khz: "khz-Latn-ZZ",
-      ki: "ki-Latn-KE",
-      kij: "kij-Latn-ZZ",
-      kiu: "kiu-Latn-TR",
-      kiw: "kiw-Latn-ZZ",
-      kj: "kj-Latn-NA",
-      kjd: "kjd-Latn-ZZ",
-      kjg: "kjg-Laoo-LA",
-      kjs: "kjs-Latn-ZZ",
-      kjy: "kjy-Latn-ZZ",
-      kk: "kk-Cyrl-KZ",
-      "kk-AF": "kk-Arab-AF",
-      "kk-Arab": "kk-Arab-CN",
-      "kk-CN": "kk-Arab-CN",
-      "kk-IR": "kk-Arab-IR",
-      "kk-MN": "kk-Arab-MN",
-      kkc: "kkc-Latn-ZZ",
-      kkj: "kkj-Latn-CM",
-      kl: "kl-Latn-GL",
-      kln: "kln-Latn-KE",
-      klq: "klq-Latn-ZZ",
-      klt: "klt-Latn-ZZ",
-      klx: "klx-Latn-ZZ",
-      km: "km-Khmr-KH",
-      kmb: "kmb-Latn-AO",
-      kmh: "kmh-Latn-ZZ",
-      kmo: "kmo-Latn-ZZ",
-      kms: "kms-Latn-ZZ",
-      kmu: "kmu-Latn-ZZ",
-      kmw: "kmw-Latn-ZZ",
-      kn: "kn-Knda-IN",
-      knf: "knf-Latn-GW",
-      knp: "knp-Latn-ZZ",
-      ko: "ko-Kore-KR",
-      koi: "koi-Cyrl-RU",
-      kok: "kok-Deva-IN",
-      kol: "kol-Latn-ZZ",
-      kos: "kos-Latn-FM",
-      koz: "koz-Latn-ZZ",
-      kpe: "kpe-Latn-LR",
-      kpf: "kpf-Latn-ZZ",
-      kpo: "kpo-Latn-ZZ",
-      kpr: "kpr-Latn-ZZ",
-      kpx: "kpx-Latn-ZZ",
-      kqb: "kqb-Latn-ZZ",
-      kqf: "kqf-Latn-ZZ",
-      kqs: "kqs-Latn-ZZ",
-      kqy: "kqy-Ethi-ZZ",
-      kr: "kr-Latn-ZZ",
-      krc: "krc-Cyrl-RU",
-      kri: "kri-Latn-SL",
-      krj: "krj-Latn-PH",
-      krl: "krl-Latn-RU",
-      krs: "krs-Latn-ZZ",
-      kru: "kru-Deva-IN",
-      ks: "ks-Arab-IN",
-      ksb: "ksb-Latn-TZ",
-      ksd: "ksd-Latn-ZZ",
-      ksf: "ksf-Latn-CM",
-      ksh: "ksh-Latn-DE",
-      ksj: "ksj-Latn-ZZ",
-      ksr: "ksr-Latn-ZZ",
-      ktb: "ktb-Ethi-ZZ",
-      ktm: "ktm-Latn-ZZ",
-      kto: "kto-Latn-ZZ",
-      ktr: "ktr-Latn-MY",
-      ku: "ku-Latn-TR",
-      "ku-Arab": "ku-Arab-IQ",
-      "ku-LB": "ku-Arab-LB",
-      kub: "kub-Latn-ZZ",
-      kud: "kud-Latn-ZZ",
-      kue: "kue-Latn-ZZ",
-      kuj: "kuj-Latn-ZZ",
-      kum: "kum-Cyrl-RU",
-      kun: "kun-Latn-ZZ",
-      kup: "kup-Latn-ZZ",
-      kus: "kus-Latn-ZZ",
-      kv: "kv-Cyrl-RU",
-      kvg: "kvg-Latn-ZZ",
-      kvr: "kvr-Latn-ID",
-      kvx: "kvx-Arab-PK",
-      kw: "kw-Latn-GB",
-      kwj: "kwj-Latn-ZZ",
-      kwo: "kwo-Latn-ZZ",
-      kwq: "kwq-Latn-ZZ",
-      kxa: "kxa-Latn-ZZ",
-      kxc: "kxc-Ethi-ZZ",
-      kxe: "kxe-Latn-ZZ",
-      kxm: "kxm-Thai-TH",
-      kxp: "kxp-Arab-PK",
-      kxw: "kxw-Latn-ZZ",
-      kxz: "kxz-Latn-ZZ",
-      ky: "ky-Cyrl-KG",
-      "ky-Arab": "ky-Arab-CN",
-      "ky-CN": "ky-Arab-CN",
-      "ky-Latn": "ky-Latn-TR",
-      "ky-TR": "ky-Latn-TR",
-      kye: "kye-Latn-ZZ",
-      kyx: "kyx-Latn-ZZ",
-      kzj: "kzj-Latn-MY",
-      kzr: "kzr-Latn-ZZ",
-      kzt: "kzt-Latn-MY",
-      la: "la-Latn-VA",
-      lab: "lab-Lina-GR",
-      lad: "lad-Hebr-IL",
-      lag: "lag-Latn-TZ",
-      lah: "lah-Arab-PK",
-      laj: "laj-Latn-UG",
-      las: "las-Latn-ZZ",
-      lb: "lb-Latn-LU",
-      lbe: "lbe-Cyrl-RU",
-      lbu: "lbu-Latn-ZZ",
-      lbw: "lbw-Latn-ID",
-      lcm: "lcm-Latn-ZZ",
-      lcp: "lcp-Thai-CN",
-      ldb: "ldb-Latn-ZZ",
-      led: "led-Latn-ZZ",
-      lee: "lee-Latn-ZZ",
-      lem: "lem-Latn-ZZ",
-      lep: "lep-Lepc-IN",
-      leq: "leq-Latn-ZZ",
-      leu: "leu-Latn-ZZ",
-      lez: "lez-Cyrl-RU",
-      lg: "lg-Latn-UG",
-      lgg: "lgg-Latn-ZZ",
-      li: "li-Latn-NL",
-      lia: "lia-Latn-ZZ",
-      lid: "lid-Latn-ZZ",
-      lif: "lif-Deva-NP",
-      "lif-Limb": "lif-Limb-IN",
-      lig: "lig-Latn-ZZ",
-      lih: "lih-Latn-ZZ",
-      lij: "lij-Latn-IT",
-      lis: "lis-Lisu-CN",
-      ljp: "ljp-Latn-ID",
-      lki: "lki-Arab-IR",
-      lkt: "lkt-Latn-US",
-      lle: "lle-Latn-ZZ",
-      lln: "lln-Latn-ZZ",
-      lmn: "lmn-Telu-IN",
-      lmo: "lmo-Latn-IT",
-      lmp: "lmp-Latn-ZZ",
-      ln: "ln-Latn-CD",
-      lns: "lns-Latn-ZZ",
-      lnu: "lnu-Latn-ZZ",
-      lo: "lo-Laoo-LA",
-      loj: "loj-Latn-ZZ",
-      lok: "lok-Latn-ZZ",
-      lol: "lol-Latn-CD",
-      lor: "lor-Latn-ZZ",
-      los: "los-Latn-ZZ",
-      loz: "loz-Latn-ZM",
-      lrc: "lrc-Arab-IR",
-      lt: "lt-Latn-LT",
-      ltg: "ltg-Latn-LV",
-      lu: "lu-Latn-CD",
-      lua: "lua-Latn-CD",
-      luo: "luo-Latn-KE",
-      luy: "luy-Latn-KE",
-      luz: "luz-Arab-IR",
-      lv: "lv-Latn-LV",
-      lwl: "lwl-Thai-TH",
-      lzh: "lzh-Hans-CN",
-      lzz: "lzz-Latn-TR",
-      mad: "mad-Latn-ID",
-      maf: "maf-Latn-CM",
-      mag: "mag-Deva-IN",
-      mai: "mai-Deva-IN",
-      mak: "mak-Latn-ID",
-      man: "man-Latn-GM",
-      "man-GN": "man-Nkoo-GN",
-      "man-Nkoo": "man-Nkoo-GN",
-      mas: "mas-Latn-KE",
-      maw: "maw-Latn-ZZ",
-      maz: "maz-Latn-MX",
-      mbh: "mbh-Latn-ZZ",
-      mbo: "mbo-Latn-ZZ",
-      mbq: "mbq-Latn-ZZ",
-      mbu: "mbu-Latn-ZZ",
-      mbw: "mbw-Latn-ZZ",
-      mci: "mci-Latn-ZZ",
-      mcp: "mcp-Latn-ZZ",
-      mcq: "mcq-Latn-ZZ",
-      mcr: "mcr-Latn-ZZ",
-      mcu: "mcu-Latn-ZZ",
-      mda: "mda-Latn-ZZ",
-      mde: "mde-Arab-ZZ",
-      mdf: "mdf-Cyrl-RU",
-      mdh: "mdh-Latn-PH",
-      mdj: "mdj-Latn-ZZ",
-      mdr: "mdr-Latn-ID",
-      mdx: "mdx-Ethi-ZZ",
-      med: "med-Latn-ZZ",
-      mee: "mee-Latn-ZZ",
-      mek: "mek-Latn-ZZ",
-      men: "men-Latn-SL",
-      mer: "mer-Latn-KE",
-      met: "met-Latn-ZZ",
-      meu: "meu-Latn-ZZ",
-      mfa: "mfa-Arab-TH",
-      mfe: "mfe-Latn-MU",
-      mfn: "mfn-Latn-ZZ",
-      mfo: "mfo-Latn-ZZ",
-      mfq: "mfq-Latn-ZZ",
-      mg: "mg-Latn-MG",
-      mgh: "mgh-Latn-MZ",
-      mgl: "mgl-Latn-ZZ",
-      mgo: "mgo-Latn-CM",
-      mgp: "mgp-Deva-NP",
-      mgy: "mgy-Latn-TZ",
-      mh: "mh-Latn-MH",
-      mhi: "mhi-Latn-ZZ",
-      mhl: "mhl-Latn-ZZ",
-      mi: "mi-Latn-NZ",
-      mif: "mif-Latn-ZZ",
-      min: "min-Latn-ID",
-      mis: "mis-Hatr-IQ",
-      "mis-Medf": "mis-Medf-NG",
-      miw: "miw-Latn-ZZ",
-      mk: "mk-Cyrl-MK",
-      mki: "mki-Arab-ZZ",
-      mkl: "mkl-Latn-ZZ",
-      mkp: "mkp-Latn-ZZ",
-      mkw: "mkw-Latn-ZZ",
-      ml: "ml-Mlym-IN",
-      mle: "mle-Latn-ZZ",
-      mlp: "mlp-Latn-ZZ",
-      mls: "mls-Latn-SD",
-      mmo: "mmo-Latn-ZZ",
-      mmu: "mmu-Latn-ZZ",
-      mmx: "mmx-Latn-ZZ",
-      mn: "mn-Cyrl-MN",
-      "mn-CN": "mn-Mong-CN",
-      "mn-Mong": "mn-Mong-CN",
-      mna: "mna-Latn-ZZ",
-      mnf: "mnf-Latn-ZZ",
-      mni: "mni-Beng-IN",
-      mnw: "mnw-Mymr-MM",
-      mo: "mo-Latn-RO",
-      moa: "moa-Latn-ZZ",
-      moe: "moe-Latn-CA",
-      moh: "moh-Latn-CA",
-      mos: "mos-Latn-BF",
-      mox: "mox-Latn-ZZ",
-      mpp: "mpp-Latn-ZZ",
-      mps: "mps-Latn-ZZ",
-      mpt: "mpt-Latn-ZZ",
-      mpx: "mpx-Latn-ZZ",
-      mql: "mql-Latn-ZZ",
-      mr: "mr-Deva-IN",
-      mrd: "mrd-Deva-NP",
-      mrj: "mrj-Cyrl-RU",
-      mro: "mro-Mroo-BD",
-      ms: "ms-Latn-MY",
-      "ms-CC": "ms-Arab-CC",
-      "ms-ID": "ms-Arab-ID",
-      mt: "mt-Latn-MT",
-      mtc: "mtc-Latn-ZZ",
-      mtf: "mtf-Latn-ZZ",
-      mti: "mti-Latn-ZZ",
-      mtr: "mtr-Deva-IN",
-      mua: "mua-Latn-CM",
-      mur: "mur-Latn-ZZ",
-      mus: "mus-Latn-US",
-      mva: "mva-Latn-ZZ",
-      mvn: "mvn-Latn-ZZ",
-      mvy: "mvy-Arab-PK",
-      mwk: "mwk-Latn-ML",
-      mwr: "mwr-Deva-IN",
-      mwv: "mwv-Latn-ID",
-      mww: "mww-Hmnp-US",
-      mxc: "mxc-Latn-ZW",
-      mxm: "mxm-Latn-ZZ",
-      my: "my-Mymr-MM",
-      myk: "myk-Latn-ZZ",
-      mym: "mym-Ethi-ZZ",
-      myv: "myv-Cyrl-RU",
-      myw: "myw-Latn-ZZ",
-      myx: "myx-Latn-UG",
-      myz: "myz-Mand-IR",
-      mzk: "mzk-Latn-ZZ",
-      mzm: "mzm-Latn-ZZ",
-      mzn: "mzn-Arab-IR",
-      mzp: "mzp-Latn-ZZ",
-      mzw: "mzw-Latn-ZZ",
-      mzz: "mzz-Latn-ZZ",
-      na: "na-Latn-NR",
-      nac: "nac-Latn-ZZ",
-      naf: "naf-Latn-ZZ",
-      nak: "nak-Latn-ZZ",
-      nan: "nan-Hans-CN",
-      nap: "nap-Latn-IT",
-      naq: "naq-Latn-NA",
-      nas: "nas-Latn-ZZ",
-      nb: "nb-Latn-NO",
-      nca: "nca-Latn-ZZ",
-      nce: "nce-Latn-ZZ",
-      ncf: "ncf-Latn-ZZ",
-      nch: "nch-Latn-MX",
-      nco: "nco-Latn-ZZ",
-      ncu: "ncu-Latn-ZZ",
-      nd: "nd-Latn-ZW",
-      ndc: "ndc-Latn-MZ",
-      nds: "nds-Latn-DE",
-      ne: "ne-Deva-NP",
-      neb: "neb-Latn-ZZ",
-      "new": "new-Deva-NP",
-      nex: "nex-Latn-ZZ",
-      nfr: "nfr-Latn-ZZ",
-      ng: "ng-Latn-NA",
-      nga: "nga-Latn-ZZ",
-      ngb: "ngb-Latn-ZZ",
-      ngl: "ngl-Latn-MZ",
-      nhb: "nhb-Latn-ZZ",
-      nhe: "nhe-Latn-MX",
-      nhw: "nhw-Latn-MX",
-      nif: "nif-Latn-ZZ",
-      nii: "nii-Latn-ZZ",
-      nij: "nij-Latn-ID",
-      nin: "nin-Latn-ZZ",
-      niu: "niu-Latn-NU",
-      niy: "niy-Latn-ZZ",
-      niz: "niz-Latn-ZZ",
-      njo: "njo-Latn-IN",
-      nkg: "nkg-Latn-ZZ",
-      nko: "nko-Latn-ZZ",
-      nl: "nl-Latn-NL",
-      nmg: "nmg-Latn-CM",
-      nmz: "nmz-Latn-ZZ",
-      nn: "nn-Latn-NO",
-      nnf: "nnf-Latn-ZZ",
-      nnh: "nnh-Latn-CM",
-      nnk: "nnk-Latn-ZZ",
-      nnm: "nnm-Latn-ZZ",
-      nnp: "nnp-Wcho-IN",
-      no: "no-Latn-NO",
-      nod: "nod-Lana-TH",
-      noe: "noe-Deva-IN",
-      non: "non-Runr-SE",
-      nop: "nop-Latn-ZZ",
-      nou: "nou-Latn-ZZ",
-      nqo: "nqo-Nkoo-GN",
-      nr: "nr-Latn-ZA",
-      nrb: "nrb-Latn-ZZ",
-      nsk: "nsk-Cans-CA",
-      nsn: "nsn-Latn-ZZ",
-      nso: "nso-Latn-ZA",
-      nss: "nss-Latn-ZZ",
-      ntm: "ntm-Latn-ZZ",
-      ntr: "ntr-Latn-ZZ",
-      nui: "nui-Latn-ZZ",
-      nup: "nup-Latn-ZZ",
-      nus: "nus-Latn-SS",
-      nuv: "nuv-Latn-ZZ",
-      nux: "nux-Latn-ZZ",
-      nv: "nv-Latn-US",
-      nwb: "nwb-Latn-ZZ",
-      nxq: "nxq-Latn-CN",
-      nxr: "nxr-Latn-ZZ",
-      ny: "ny-Latn-MW",
-      nym: "nym-Latn-TZ",
-      nyn: "nyn-Latn-UG",
-      nzi: "nzi-Latn-GH",
-      oc: "oc-Latn-FR",
-      ogc: "ogc-Latn-ZZ",
-      okr: "okr-Latn-ZZ",
-      okv: "okv-Latn-ZZ",
-      om: "om-Latn-ET",
-      ong: "ong-Latn-ZZ",
-      onn: "onn-Latn-ZZ",
-      ons: "ons-Latn-ZZ",
-      opm: "opm-Latn-ZZ",
-      or: "or-Orya-IN",
-      oro: "oro-Latn-ZZ",
-      oru: "oru-Arab-ZZ",
-      os: "os-Cyrl-GE",
-      osa: "osa-Osge-US",
-      ota: "ota-Arab-ZZ",
-      otk: "otk-Orkh-MN",
-      ozm: "ozm-Latn-ZZ",
-      pa: "pa-Guru-IN",
-      "pa-Arab": "pa-Arab-PK",
-      "pa-PK": "pa-Arab-PK",
-      pag: "pag-Latn-PH",
-      pal: "pal-Phli-IR",
-      "pal-Phlp": "pal-Phlp-CN",
-      pam: "pam-Latn-PH",
-      pap: "pap-Latn-AW",
-      pau: "pau-Latn-PW",
-      pbi: "pbi-Latn-ZZ",
-      pcd: "pcd-Latn-FR",
-      pcm: "pcm-Latn-NG",
-      pdc: "pdc-Latn-US",
-      pdt: "pdt-Latn-CA",
-      ped: "ped-Latn-ZZ",
-      peo: "peo-Xpeo-IR",
-      pex: "pex-Latn-ZZ",
-      pfl: "pfl-Latn-DE",
-      phl: "phl-Arab-ZZ",
-      phn: "phn-Phnx-LB",
-      pil: "pil-Latn-ZZ",
-      pip: "pip-Latn-ZZ",
-      pka: "pka-Brah-IN",
-      pko: "pko-Latn-KE",
-      pl: "pl-Latn-PL",
-      pla: "pla-Latn-ZZ",
-      pms: "pms-Latn-IT",
-      png: "png-Latn-ZZ",
-      pnn: "pnn-Latn-ZZ",
-      pnt: "pnt-Grek-GR",
-      pon: "pon-Latn-FM",
-      ppa: "ppa-Deva-IN",
-      ppo: "ppo-Latn-ZZ",
-      pra: "pra-Khar-PK",
-      prd: "prd-Arab-IR",
-      prg: "prg-Latn-001",
-      ps: "ps-Arab-AF",
-      pss: "pss-Latn-ZZ",
-      pt: "pt-Latn-BR",
-      ptp: "ptp-Latn-ZZ",
-      puu: "puu-Latn-GA",
-      pwa: "pwa-Latn-ZZ",
-      qu: "qu-Latn-PE",
-      quc: "quc-Latn-GT",
-      qug: "qug-Latn-EC",
-      rai: "rai-Latn-ZZ",
-      raj: "raj-Deva-IN",
-      rao: "rao-Latn-ZZ",
-      rcf: "rcf-Latn-RE",
-      rej: "rej-Latn-ID",
-      rel: "rel-Latn-ZZ",
-      res: "res-Latn-ZZ",
-      rgn: "rgn-Latn-IT",
-      rhg: "rhg-Arab-MM",
-      ria: "ria-Latn-IN",
-      rif: "rif-Tfng-MA",
-      "rif-NL": "rif-Latn-NL",
-      rjs: "rjs-Deva-NP",
-      rkt: "rkt-Beng-BD",
-      rm: "rm-Latn-CH",
-      rmf: "rmf-Latn-FI",
-      rmo: "rmo-Latn-CH",
-      rmt: "rmt-Arab-IR",
-      rmu: "rmu-Latn-SE",
-      rn: "rn-Latn-BI",
-      rna: "rna-Latn-ZZ",
-      rng: "rng-Latn-MZ",
-      ro: "ro-Latn-RO",
-      rob: "rob-Latn-ID",
-      rof: "rof-Latn-TZ",
-      roo: "roo-Latn-ZZ",
-      rro: "rro-Latn-ZZ",
-      rtm: "rtm-Latn-FJ",
-      ru: "ru-Cyrl-RU",
-      rue: "rue-Cyrl-UA",
-      rug: "rug-Latn-SB",
-      rw: "rw-Latn-RW",
-      rwk: "rwk-Latn-TZ",
-      rwo: "rwo-Latn-ZZ",
-      ryu: "ryu-Kana-JP",
-      sa: "sa-Deva-IN",
-      saf: "saf-Latn-GH",
-      sah: "sah-Cyrl-RU",
-      saq: "saq-Latn-KE",
-      sas: "sas-Latn-ID",
-      sat: "sat-Latn-IN",
-      sav: "sav-Latn-SN",
-      saz: "saz-Saur-IN",
-      sba: "sba-Latn-ZZ",
-      sbe: "sbe-Latn-ZZ",
-      sbp: "sbp-Latn-TZ",
-      sc: "sc-Latn-IT",
-      sck: "sck-Deva-IN",
-      scl: "scl-Arab-ZZ",
-      scn: "scn-Latn-IT",
-      sco: "sco-Latn-GB",
-      scs: "scs-Latn-CA",
-      sd: "sd-Arab-PK",
-      "sd-Deva": "sd-Deva-IN",
-      "sd-Khoj": "sd-Khoj-IN",
-      "sd-Sind": "sd-Sind-IN",
-      sdc: "sdc-Latn-IT",
-      sdh: "sdh-Arab-IR",
-      se: "se-Latn-NO",
-      sef: "sef-Latn-CI",
-      seh: "seh-Latn-MZ",
-      sei: "sei-Latn-MX",
-      ses: "ses-Latn-ML",
-      sg: "sg-Latn-CF",
-      sga: "sga-Ogam-IE",
-      sgs: "sgs-Latn-LT",
-      sgw: "sgw-Ethi-ZZ",
-      sgz: "sgz-Latn-ZZ",
-      shi: "shi-Tfng-MA",
-      shk: "shk-Latn-ZZ",
-      shn: "shn-Mymr-MM",
-      shu: "shu-Arab-ZZ",
-      si: "si-Sinh-LK",
-      sid: "sid-Latn-ET",
-      sig: "sig-Latn-ZZ",
-      sil: "sil-Latn-ZZ",
-      sim: "sim-Latn-ZZ",
-      sjr: "sjr-Latn-ZZ",
-      sk: "sk-Latn-SK",
-      skc: "skc-Latn-ZZ",
-      skr: "skr-Arab-PK",
-      sks: "sks-Latn-ZZ",
-      sl: "sl-Latn-SI",
-      sld: "sld-Latn-ZZ",
-      sli: "sli-Latn-PL",
-      sll: "sll-Latn-ZZ",
-      sly: "sly-Latn-ID",
-      sm: "sm-Latn-WS",
-      sma: "sma-Latn-SE",
-      smj: "smj-Latn-SE",
-      smn: "smn-Latn-FI",
-      smp: "smp-Samr-IL",
-      smq: "smq-Latn-ZZ",
-      sms: "sms-Latn-FI",
-      sn: "sn-Latn-ZW",
-      snc: "snc-Latn-ZZ",
-      snk: "snk-Latn-ML",
-      snp: "snp-Latn-ZZ",
-      snx: "snx-Latn-ZZ",
-      sny: "sny-Latn-ZZ",
-      so: "so-Latn-SO",
-      sog: "sog-Sogd-UZ",
-      sok: "sok-Latn-ZZ",
-      soq: "soq-Latn-ZZ",
-      sou: "sou-Thai-TH",
-      soy: "soy-Latn-ZZ",
-      spd: "spd-Latn-ZZ",
-      spl: "spl-Latn-ZZ",
-      sps: "sps-Latn-ZZ",
-      sq: "sq-Latn-AL",
-      sr: "sr-Cyrl-RS",
-      "sr-ME": "sr-Latn-ME",
-      "sr-RO": "sr-Latn-RO",
-      "sr-RU": "sr-Latn-RU",
-      "sr-TR": "sr-Latn-TR",
-      srb: "srb-Sora-IN",
-      srn: "srn-Latn-SR",
-      srr: "srr-Latn-SN",
-      srx: "srx-Deva-IN",
-      ss: "ss-Latn-ZA",
-      ssd: "ssd-Latn-ZZ",
-      ssg: "ssg-Latn-ZZ",
-      ssy: "ssy-Latn-ER",
-      st: "st-Latn-ZA",
-      stk: "stk-Latn-ZZ",
-      stq: "stq-Latn-DE",
-      su: "su-Latn-ID",
-      sua: "sua-Latn-ZZ",
-      sue: "sue-Latn-ZZ",
-      suk: "suk-Latn-TZ",
-      sur: "sur-Latn-ZZ",
-      sus: "sus-Latn-GN",
-      sv: "sv-Latn-SE",
-      sw: "sw-Latn-TZ",
-      swb: "swb-Arab-YT",
-      swc: "swc-Latn-CD",
-      swg: "swg-Latn-DE",
-      swp: "swp-Latn-ZZ",
-      swv: "swv-Deva-IN",
-      sxn: "sxn-Latn-ID",
-      sxw: "sxw-Latn-ZZ",
-      syl: "syl-Beng-BD",
-      syr: "syr-Syrc-IQ",
-      szl: "szl-Latn-PL",
-      ta: "ta-Taml-IN",
-      taj: "taj-Deva-NP",
-      tal: "tal-Latn-ZZ",
-      tan: "tan-Latn-ZZ",
-      taq: "taq-Latn-ZZ",
-      tbc: "tbc-Latn-ZZ",
-      tbd: "tbd-Latn-ZZ",
-      tbf: "tbf-Latn-ZZ",
-      tbg: "tbg-Latn-ZZ",
-      tbo: "tbo-Latn-ZZ",
-      tbw: "tbw-Latn-PH",
-      tbz: "tbz-Latn-ZZ",
-      tci: "tci-Latn-ZZ",
-      tcy: "tcy-Knda-IN",
-      tdd: "tdd-Tale-CN",
-      tdg: "tdg-Deva-NP",
-      tdh: "tdh-Deva-NP",
-      tdu: "tdu-Latn-MY",
-      te: "te-Telu-IN",
-      ted: "ted-Latn-ZZ",
-      tem: "tem-Latn-SL",
-      teo: "teo-Latn-UG",
-      tet: "tet-Latn-TL",
-      tfi: "tfi-Latn-ZZ",
-      tg: "tg-Cyrl-TJ",
-      "tg-Arab": "tg-Arab-PK",
-      "tg-PK": "tg-Arab-PK",
-      tgc: "tgc-Latn-ZZ",
-      tgo: "tgo-Latn-ZZ",
-      tgu: "tgu-Latn-ZZ",
-      th: "th-Thai-TH",
-      thl: "thl-Deva-NP",
-      thq: "thq-Deva-NP",
-      thr: "thr-Deva-NP",
-      ti: "ti-Ethi-ET",
-      tif: "tif-Latn-ZZ",
-      tig: "tig-Ethi-ER",
-      tik: "tik-Latn-ZZ",
-      tim: "tim-Latn-ZZ",
-      tio: "tio-Latn-ZZ",
-      tiv: "tiv-Latn-NG",
-      tk: "tk-Latn-TM",
-      tkl: "tkl-Latn-TK",
-      tkr: "tkr-Latn-AZ",
-      tkt: "tkt-Deva-NP",
-      tl: "tl-Latn-PH",
-      tlf: "tlf-Latn-ZZ",
-      tlx: "tlx-Latn-ZZ",
-      tly: "tly-Latn-AZ",
-      tmh: "tmh-Latn-NE",
-      tmy: "tmy-Latn-ZZ",
-      tn: "tn-Latn-ZA",
-      tnh: "tnh-Latn-ZZ",
-      to: "to-Latn-TO",
-      tof: "tof-Latn-ZZ",
-      tog: "tog-Latn-MW",
-      toq: "toq-Latn-ZZ",
-      tpi: "tpi-Latn-PG",
-      tpm: "tpm-Latn-ZZ",
-      tpz: "tpz-Latn-ZZ",
-      tqo: "tqo-Latn-ZZ",
-      tr: "tr-Latn-TR",
-      tru: "tru-Latn-TR",
-      trv: "trv-Latn-TW",
-      trw: "trw-Arab-ZZ",
-      ts: "ts-Latn-ZA",
-      tsd: "tsd-Grek-GR",
-      tsf: "tsf-Deva-NP",
-      tsg: "tsg-Latn-PH",
-      tsj: "tsj-Tibt-BT",
-      tsw: "tsw-Latn-ZZ",
-      tt: "tt-Cyrl-RU",
-      ttd: "ttd-Latn-ZZ",
-      tte: "tte-Latn-ZZ",
-      ttj: "ttj-Latn-UG",
-      ttr: "ttr-Latn-ZZ",
-      tts: "tts-Thai-TH",
-      ttt: "ttt-Latn-AZ",
-      tuh: "tuh-Latn-ZZ",
-      tul: "tul-Latn-ZZ",
-      tum: "tum-Latn-MW",
-      tuq: "tuq-Latn-ZZ",
-      tvd: "tvd-Latn-ZZ",
-      tvl: "tvl-Latn-TV",
-      tvu: "tvu-Latn-ZZ",
-      twh: "twh-Latn-ZZ",
-      twq: "twq-Latn-NE",
-      txg: "txg-Tang-CN",
-      ty: "ty-Latn-PF",
-      tya: "tya-Latn-ZZ",
-      tyv: "tyv-Cyrl-RU",
-      tzm: "tzm-Latn-MA",
-      ubu: "ubu-Latn-ZZ",
-      udm: "udm-Cyrl-RU",
-      ug: "ug-Arab-CN",
-      "ug-Cyrl": "ug-Cyrl-KZ",
-      "ug-KZ": "ug-Cyrl-KZ",
-      "ug-MN": "ug-Cyrl-MN",
-      uga: "uga-Ugar-SY",
-      uk: "uk-Cyrl-UA",
-      uli: "uli-Latn-FM",
-      umb: "umb-Latn-AO",
-      und: "en-Latn-US",
-      "und-002": "en-Latn-NG",
-      "und-003": "en-Latn-US",
-      "und-005": "pt-Latn-BR",
-      "und-009": "en-Latn-AU",
-      "und-011": "en-Latn-NG",
-      "und-013": "es-Latn-MX",
-      "und-014": "sw-Latn-TZ",
-      "und-015": "ar-Arab-EG",
-      "und-017": "sw-Latn-CD",
-      "und-018": "en-Latn-ZA",
-      "und-019": "en-Latn-US",
-      "und-021": "en-Latn-US",
-      "und-029": "es-Latn-CU",
-      "und-030": "zh-Hans-CN",
-      "und-034": "hi-Deva-IN",
-      "und-035": "id-Latn-ID",
-      "und-039": "it-Latn-IT",
-      "und-053": "en-Latn-AU",
-      "und-054": "en-Latn-PG",
-      "und-057": "en-Latn-GU",
-      "und-061": "sm-Latn-WS",
-      "und-142": "zh-Hans-CN",
-      "und-143": "uz-Latn-UZ",
-      "und-145": "ar-Arab-SA",
-      "und-150": "ru-Cyrl-RU",
-      "und-151": "ru-Cyrl-RU",
-      "und-154": "en-Latn-GB",
-      "und-155": "de-Latn-DE",
-      "und-202": "en-Latn-NG",
-      "und-419": "es-Latn-419",
-      "und-AD": "ca-Latn-AD",
-      "und-Adlm": "ff-Adlm-GN",
-      "und-AE": "ar-Arab-AE",
-      "und-AF": "fa-Arab-AF",
-      "und-Aghb": "lez-Aghb-RU",
-      "und-Ahom": "aho-Ahom-IN",
-      "und-AL": "sq-Latn-AL",
-      "und-AM": "hy-Armn-AM",
-      "und-AO": "pt-Latn-AO",
-      "und-AQ": "und-Latn-AQ",
-      "und-AR": "es-Latn-AR",
-      "und-Arab": "ar-Arab-EG",
-      "und-Arab-CC": "ms-Arab-CC",
-      "und-Arab-CN": "ug-Arab-CN",
-      "und-Arab-GB": "ks-Arab-GB",
-      "und-Arab-ID": "ms-Arab-ID",
-      "und-Arab-IN": "ur-Arab-IN",
-      "und-Arab-KH": "cja-Arab-KH",
-      "und-Arab-MM": "rhg-Arab-MM",
-      "und-Arab-MN": "kk-Arab-MN",
-      "und-Arab-MU": "ur-Arab-MU",
-      "und-Arab-NG": "ha-Arab-NG",
-      "und-Arab-PK": "ur-Arab-PK",
-      "und-Arab-TG": "apd-Arab-TG",
-      "und-Arab-TH": "mfa-Arab-TH",
-      "und-Arab-TJ": "fa-Arab-TJ",
-      "und-Arab-TR": "az-Arab-TR",
-      "und-Arab-YT": "swb-Arab-YT",
-      "und-Armi": "arc-Armi-IR",
-      "und-Armn": "hy-Armn-AM",
-      "und-AS": "sm-Latn-AS",
-      "und-AT": "de-Latn-AT",
-      "und-Avst": "ae-Avst-IR",
-      "und-AW": "nl-Latn-AW",
-      "und-AX": "sv-Latn-AX",
-      "und-AZ": "az-Latn-AZ",
-      "und-BA": "bs-Latn-BA",
-      "und-Bali": "ban-Bali-ID",
-      "und-Bamu": "bax-Bamu-CM",
-      "und-Bass": "bsq-Bass-LR",
-      "und-Batk": "bbc-Batk-ID",
-      "und-BD": "bn-Beng-BD",
-      "und-BE": "nl-Latn-BE",
-      "und-Beng": "bn-Beng-BD",
-      "und-BF": "fr-Latn-BF",
-      "und-BG": "bg-Cyrl-BG",
-      "und-BH": "ar-Arab-BH",
-      "und-Bhks": "sa-Bhks-IN",
-      "und-BI": "rn-Latn-BI",
-      "und-BJ": "fr-Latn-BJ",
-      "und-BL": "fr-Latn-BL",
-      "und-BN": "ms-Latn-BN",
-      "und-BO": "es-Latn-BO",
-      "und-Bopo": "zh-Bopo-TW",
-      "und-BQ": "pap-Latn-BQ",
-      "und-BR": "pt-Latn-BR",
-      "und-Brah": "pka-Brah-IN",
-      "und-Brai": "fr-Brai-FR",
-      "und-BT": "dz-Tibt-BT",
-      "und-Bugi": "bug-Bugi-ID",
-      "und-Buhd": "bku-Buhd-PH",
-      "und-BV": "und-Latn-BV",
-      "und-BY": "be-Cyrl-BY",
-      "und-Cakm": "ccp-Cakm-BD",
-      "und-Cans": "cr-Cans-CA",
-      "und-Cari": "xcr-Cari-TR",
-      "und-CD": "sw-Latn-CD",
-      "und-CF": "fr-Latn-CF",
-      "und-CG": "fr-Latn-CG",
-      "und-CH": "de-Latn-CH",
-      "und-Cham": "cjm-Cham-VN",
-      "und-Cher": "chr-Cher-US",
-      "und-CI": "fr-Latn-CI",
-      "und-CL": "es-Latn-CL",
-      "und-CM": "fr-Latn-CM",
-      "und-CN": "zh-Hans-CN",
-      "und-CO": "es-Latn-CO",
-      "und-Copt": "cop-Copt-EG",
-      "und-CP": "und-Latn-CP",
-      "und-Cprt": "grc-Cprt-CY",
-      "und-CR": "es-Latn-CR",
-      "und-CU": "es-Latn-CU",
-      "und-CV": "pt-Latn-CV",
-      "und-CW": "pap-Latn-CW",
-      "und-CY": "el-Grek-CY",
-      "und-Cyrl": "ru-Cyrl-RU",
-      "und-Cyrl-AL": "mk-Cyrl-AL",
-      "und-Cyrl-BA": "sr-Cyrl-BA",
-      "und-Cyrl-GE": "ab-Cyrl-GE",
-      "und-Cyrl-GR": "mk-Cyrl-GR",
-      "und-Cyrl-MD": "uk-Cyrl-MD",
-      "und-Cyrl-RO": "bg-Cyrl-RO",
-      "und-Cyrl-SK": "uk-Cyrl-SK",
-      "und-Cyrl-TR": "kbd-Cyrl-TR",
-      "und-Cyrl-XK": "sr-Cyrl-XK",
-      "und-CZ": "cs-Latn-CZ",
-      "und-DE": "de-Latn-DE",
-      "und-Deva": "hi-Deva-IN",
-      "und-Deva-BT": "ne-Deva-BT",
-      "und-Deva-FJ": "hif-Deva-FJ",
-      "und-Deva-MU": "bho-Deva-MU",
-      "und-Deva-PK": "btv-Deva-PK",
-      "und-DJ": "aa-Latn-DJ",
-      "und-DK": "da-Latn-DK",
-      "und-DO": "es-Latn-DO",
-      "und-Dogr": "doi-Dogr-IN",
-      "und-Dupl": "fr-Dupl-FR",
-      "und-DZ": "ar-Arab-DZ",
-      "und-EA": "es-Latn-EA",
-      "und-EC": "es-Latn-EC",
-      "und-EE": "et-Latn-EE",
-      "und-EG": "ar-Arab-EG",
-      "und-Egyp": "egy-Egyp-EG",
-      "und-EH": "ar-Arab-EH",
-      "und-Elba": "sq-Elba-AL",
-      "und-Elym": "arc-Elym-IR",
-      "und-ER": "ti-Ethi-ER",
-      "und-ES": "es-Latn-ES",
-      "und-ET": "am-Ethi-ET",
-      "und-Ethi": "am-Ethi-ET",
-      "und-EU": "en-Latn-GB",
-      "und-EZ": "de-Latn-EZ",
-      "und-FI": "fi-Latn-FI",
-      "und-FO": "fo-Latn-FO",
-      "und-FR": "fr-Latn-FR",
-      "und-GA": "fr-Latn-GA",
-      "und-GE": "ka-Geor-GE",
-      "und-Geor": "ka-Geor-GE",
-      "und-GF": "fr-Latn-GF",
-      "und-GH": "ak-Latn-GH",
-      "und-GL": "kl-Latn-GL",
-      "und-Glag": "cu-Glag-BG",
-      "und-GN": "fr-Latn-GN",
-      "und-Gong": "wsg-Gong-IN",
-      "und-Gonm": "esg-Gonm-IN",
-      "und-Goth": "got-Goth-UA",
-      "und-GP": "fr-Latn-GP",
-      "und-GQ": "es-Latn-GQ",
-      "und-GR": "el-Grek-GR",
-      "und-Gran": "sa-Gran-IN",
-      "und-Grek": "el-Grek-GR",
-      "und-Grek-TR": "bgx-Grek-TR",
-      "und-GS": "und-Latn-GS",
-      "und-GT": "es-Latn-GT",
-      "und-Gujr": "gu-Gujr-IN",
-      "und-Guru": "pa-Guru-IN",
-      "und-GW": "pt-Latn-GW",
-      "und-Hanb": "zh-Hanb-TW",
-      "und-Hang": "ko-Hang-KR",
-      "und-Hani": "zh-Hani-CN",
-      "und-Hano": "hnn-Hano-PH",
-      "und-Hans": "zh-Hans-CN",
-      "und-Hant": "zh-Hant-TW",
-      "und-Hatr": "mis-Hatr-IQ",
-      "und-Hebr": "he-Hebr-IL",
-      "und-Hebr-CA": "yi-Hebr-CA",
-      "und-Hebr-GB": "yi-Hebr-GB",
-      "und-Hebr-SE": "yi-Hebr-SE",
-      "und-Hebr-UA": "yi-Hebr-UA",
-      "und-Hebr-US": "yi-Hebr-US",
-      "und-Hira": "ja-Hira-JP",
-      "und-HK": "zh-Hant-HK",
-      "und-Hluw": "hlu-Hluw-TR",
-      "und-HM": "und-Latn-HM",
-      "und-Hmng": "hnj-Hmng-LA",
-      "und-Hmnp": "mww-Hmnp-US",
-      "und-HN": "es-Latn-HN",
-      "und-HR": "hr-Latn-HR",
-      "und-HT": "ht-Latn-HT",
-      "und-HU": "hu-Latn-HU",
-      "und-Hung": "hu-Hung-HU",
-      "und-IC": "es-Latn-IC",
-      "und-ID": "id-Latn-ID",
-      "und-IL": "he-Hebr-IL",
-      "und-IN": "hi-Deva-IN",
-      "und-IQ": "ar-Arab-IQ",
-      "und-IR": "fa-Arab-IR",
-      "und-IS": "is-Latn-IS",
-      "und-IT": "it-Latn-IT",
-      "und-Ital": "ett-Ital-IT",
-      "und-Jamo": "ko-Jamo-KR",
-      "und-Java": "jv-Java-ID",
-      "und-JO": "ar-Arab-JO",
-      "und-JP": "ja-Jpan-JP",
-      "und-Jpan": "ja-Jpan-JP",
-      "und-Kali": "eky-Kali-MM",
-      "und-Kana": "ja-Kana-JP",
-      "und-KE": "sw-Latn-KE",
-      "und-KG": "ky-Cyrl-KG",
-      "und-KH": "km-Khmr-KH",
-      "und-Khar": "pra-Khar-PK",
-      "und-Khmr": "km-Khmr-KH",
-      "und-Khoj": "sd-Khoj-IN",
-      "und-KM": "ar-Arab-KM",
-      "und-Knda": "kn-Knda-IN",
-      "und-Kore": "ko-Kore-KR",
-      "und-KP": "ko-Kore-KP",
-      "und-KR": "ko-Kore-KR",
-      "und-Kthi": "bho-Kthi-IN",
-      "und-KW": "ar-Arab-KW",
-      "und-KZ": "ru-Cyrl-KZ",
-      "und-LA": "lo-Laoo-LA",
-      "und-Lana": "nod-Lana-TH",
-      "und-Laoo": "lo-Laoo-LA",
-      "und-Latn-AF": "tk-Latn-AF",
-      "und-Latn-AM": "ku-Latn-AM",
-      "und-Latn-CN": "za-Latn-CN",
-      "und-Latn-CY": "tr-Latn-CY",
-      "und-Latn-DZ": "fr-Latn-DZ",
-      "und-Latn-ET": "en-Latn-ET",
-      "und-Latn-GE": "ku-Latn-GE",
-      "und-Latn-IR": "tk-Latn-IR",
-      "und-Latn-KM": "fr-Latn-KM",
-      "und-Latn-MA": "fr-Latn-MA",
-      "und-Latn-MK": "sq-Latn-MK",
-      "und-Latn-MM": "kac-Latn-MM",
-      "und-Latn-MO": "pt-Latn-MO",
-      "und-Latn-MR": "fr-Latn-MR",
-      "und-Latn-RU": "krl-Latn-RU",
-      "und-Latn-SY": "fr-Latn-SY",
-      "und-Latn-TN": "fr-Latn-TN",
-      "und-Latn-TW": "trv-Latn-TW",
-      "und-Latn-UA": "pl-Latn-UA",
-      "und-LB": "ar-Arab-LB",
-      "und-Lepc": "lep-Lepc-IN",
-      "und-LI": "de-Latn-LI",
-      "und-Limb": "lif-Limb-IN",
-      "und-Lina": "lab-Lina-GR",
-      "und-Linb": "grc-Linb-GR",
-      "und-Lisu": "lis-Lisu-CN",
-      "und-LK": "si-Sinh-LK",
-      "und-LS": "st-Latn-LS",
-      "und-LT": "lt-Latn-LT",
-      "und-LU": "fr-Latn-LU",
-      "und-LV": "lv-Latn-LV",
-      "und-LY": "ar-Arab-LY",
-      "und-Lyci": "xlc-Lyci-TR",
-      "und-Lydi": "xld-Lydi-TR",
-      "und-MA": "ar-Arab-MA",
-      "und-Mahj": "hi-Mahj-IN",
-      "und-Maka": "mak-Maka-ID",
-      "und-Mand": "myz-Mand-IR",
-      "und-Mani": "xmn-Mani-CN",
-      "und-Marc": "bo-Marc-CN",
-      "und-MC": "fr-Latn-MC",
-      "und-MD": "ro-Latn-MD",
-      "und-ME": "sr-Latn-ME",
-      "und-Medf": "mis-Medf-NG",
-      "und-Mend": "men-Mend-SL",
-      "und-Merc": "xmr-Merc-SD",
-      "und-Mero": "xmr-Mero-SD",
-      "und-MF": "fr-Latn-MF",
-      "und-MG": "mg-Latn-MG",
-      "und-MK": "mk-Cyrl-MK",
-      "und-ML": "bm-Latn-ML",
-      "und-Mlym": "ml-Mlym-IN",
-      "und-MM": "my-Mymr-MM",
-      "und-MN": "mn-Cyrl-MN",
-      "und-MO": "zh-Hant-MO",
-      "und-Modi": "mr-Modi-IN",
-      "und-Mong": "mn-Mong-CN",
-      "und-MQ": "fr-Latn-MQ",
-      "und-MR": "ar-Arab-MR",
-      "und-Mroo": "mro-Mroo-BD",
-      "und-MT": "mt-Latn-MT",
-      "und-Mtei": "mni-Mtei-IN",
-      "und-MU": "mfe-Latn-MU",
-      "und-Mult": "skr-Mult-PK",
-      "und-MV": "dv-Thaa-MV",
-      "und-MX": "es-Latn-MX",
-      "und-MY": "ms-Latn-MY",
-      "und-Mymr": "my-Mymr-MM",
-      "und-Mymr-IN": "kht-Mymr-IN",
-      "und-Mymr-TH": "mnw-Mymr-TH",
-      "und-MZ": "pt-Latn-MZ",
-      "und-NA": "af-Latn-NA",
-      "und-Nand": "sa-Nand-IN",
-      "und-Narb": "xna-Narb-SA",
-      "und-Nbat": "arc-Nbat-JO",
-      "und-NC": "fr-Latn-NC",
-      "und-NE": "ha-Latn-NE",
-      "und-Newa": "new-Newa-NP",
-      "und-NI": "es-Latn-NI",
-      "und-Nkoo": "man-Nkoo-GN",
-      "und-NL": "nl-Latn-NL",
-      "und-NO": "nb-Latn-NO",
-      "und-NP": "ne-Deva-NP",
-      "und-Nshu": "zhx-Nshu-CN",
-      "und-Ogam": "sga-Ogam-IE",
-      "und-Olck": "sat-Olck-IN",
-      "und-OM": "ar-Arab-OM",
-      "und-Orkh": "otk-Orkh-MN",
-      "und-Orya": "or-Orya-IN",
-      "und-Osge": "osa-Osge-US",
-      "und-Osma": "so-Osma-SO",
-      "und-PA": "es-Latn-PA",
-      "und-Palm": "arc-Palm-SY",
-      "und-Pauc": "ctd-Pauc-MM",
-      "und-PE": "es-Latn-PE",
-      "und-Perm": "kv-Perm-RU",
-      "und-PF": "fr-Latn-PF",
-      "und-PG": "tpi-Latn-PG",
-      "und-PH": "fil-Latn-PH",
-      "und-Phag": "lzh-Phag-CN",
-      "und-Phli": "pal-Phli-IR",
-      "und-Phlp": "pal-Phlp-CN",
-      "und-Phnx": "phn-Phnx-LB",
-      "und-PK": "ur-Arab-PK",
-      "und-PL": "pl-Latn-PL",
-      "und-Plrd": "hmd-Plrd-CN",
-      "und-PM": "fr-Latn-PM",
-      "und-PR": "es-Latn-PR",
-      "und-Prti": "xpr-Prti-IR",
-      "und-PS": "ar-Arab-PS",
-      "und-PT": "pt-Latn-PT",
-      "und-PW": "pau-Latn-PW",
-      "und-PY": "gn-Latn-PY",
-      "und-QA": "ar-Arab-QA",
-      "und-QO": "en-Latn-DG",
-      "und-RE": "fr-Latn-RE",
-      "und-Rjng": "rej-Rjng-ID",
-      "und-RO": "ro-Latn-RO",
-      "und-Rohg": "rhg-Rohg-MM",
-      "und-RS": "sr-Cyrl-RS",
-      "und-RU": "ru-Cyrl-RU",
-      "und-Runr": "non-Runr-SE",
-      "und-RW": "rw-Latn-RW",
-      "und-SA": "ar-Arab-SA",
-      "und-Samr": "smp-Samr-IL",
-      "und-Sarb": "xsa-Sarb-YE",
-      "und-Saur": "saz-Saur-IN",
-      "und-SC": "fr-Latn-SC",
-      "und-SD": "ar-Arab-SD",
-      "und-SE": "sv-Latn-SE",
-      "und-Sgnw": "ase-Sgnw-US",
-      "und-Shaw": "en-Shaw-GB",
-      "und-Shrd": "sa-Shrd-IN",
-      "und-SI": "sl-Latn-SI",
-      "und-Sidd": "sa-Sidd-IN",
-      "und-Sind": "sd-Sind-IN",
-      "und-Sinh": "si-Sinh-LK",
-      "und-SJ": "nb-Latn-SJ",
-      "und-SK": "sk-Latn-SK",
-      "und-SM": "it-Latn-SM",
-      "und-SN": "fr-Latn-SN",
-      "und-SO": "so-Latn-SO",
-      "und-Sogd": "sog-Sogd-UZ",
-      "und-Sogo": "sog-Sogo-UZ",
-      "und-Sora": "srb-Sora-IN",
-      "und-Soyo": "cmg-Soyo-MN",
-      "und-SR": "nl-Latn-SR",
-      "und-ST": "pt-Latn-ST",
-      "und-Sund": "su-Sund-ID",
-      "und-SV": "es-Latn-SV",
-      "und-SY": "ar-Arab-SY",
-      "und-Sylo": "syl-Sylo-BD",
-      "und-Syrc": "syr-Syrc-IQ",
-      "und-Tagb": "tbw-Tagb-PH",
-      "und-Takr": "doi-Takr-IN",
-      "und-Tale": "tdd-Tale-CN",
-      "und-Talu": "khb-Talu-CN",
-      "und-Taml": "ta-Taml-IN",
-      "und-Tang": "txg-Tang-CN",
-      "und-Tavt": "blt-Tavt-VN",
-      "und-TD": "fr-Latn-TD",
-      "und-Telu": "te-Telu-IN",
-      "und-TF": "fr-Latn-TF",
-      "und-Tfng": "zgh-Tfng-MA",
-      "und-TG": "fr-Latn-TG",
-      "und-Tglg": "fil-Tglg-PH",
-      "und-TH": "th-Thai-TH",
-      "und-Thaa": "dv-Thaa-MV",
-      "und-Thai": "th-Thai-TH",
-      "und-Thai-CN": "lcp-Thai-CN",
-      "und-Thai-KH": "kdt-Thai-KH",
-      "und-Thai-LA": "kdt-Thai-LA",
-      "und-Tibt": "bo-Tibt-CN",
-      "und-Tirh": "mai-Tirh-IN",
-      "und-TJ": "tg-Cyrl-TJ",
-      "und-TK": "tkl-Latn-TK",
-      "und-TL": "pt-Latn-TL",
-      "und-TM": "tk-Latn-TM",
-      "und-TN": "ar-Arab-TN",
-      "und-TO": "to-Latn-TO",
-      "und-TR": "tr-Latn-TR",
-      "und-TV": "tvl-Latn-TV",
-      "und-TW": "zh-Hant-TW",
-      "und-TZ": "sw-Latn-TZ",
-      "und-UA": "uk-Cyrl-UA",
-      "und-UG": "sw-Latn-UG",
-      "und-Ugar": "uga-Ugar-SY",
-      "und-UY": "es-Latn-UY",
-      "und-UZ": "uz-Latn-UZ",
-      "und-VA": "it-Latn-VA",
-      "und-Vaii": "vai-Vaii-LR",
-      "und-VE": "es-Latn-VE",
-      "und-VN": "vi-Latn-VN",
-      "und-VU": "bi-Latn-VU",
-      "und-Wara": "hoc-Wara-IN",
-      "und-Wcho": "nnp-Wcho-IN",
-      "und-WF": "fr-Latn-WF",
-      "und-WS": "sm-Latn-WS",
-      "und-XK": "sq-Latn-XK",
-      "und-Xpeo": "peo-Xpeo-IR",
-      "und-Xsux": "akk-Xsux-IQ",
-      "und-YE": "ar-Arab-YE",
-      "und-Yiii": "ii-Yiii-CN",
-      "und-YT": "fr-Latn-YT",
-      "und-Zanb": "cmg-Zanb-MN",
-      "und-ZW": "sn-Latn-ZW",
-      unr: "unr-Beng-IN",
-      "unr-Deva": "unr-Deva-NP",
-      "unr-NP": "unr-Deva-NP",
-      unx: "unx-Beng-IN",
-      uok: "uok-Latn-ZZ",
-      ur: "ur-Arab-PK",
-      uri: "uri-Latn-ZZ",
-      urt: "urt-Latn-ZZ",
-      urw: "urw-Latn-ZZ",
-      usa: "usa-Latn-ZZ",
-      utr: "utr-Latn-ZZ",
-      uvh: "uvh-Latn-ZZ",
-      uvl: "uvl-Latn-ZZ",
-      uz: "uz-Latn-UZ",
-      "uz-AF": "uz-Arab-AF",
-      "uz-Arab": "uz-Arab-AF",
-      "uz-CN": "uz-Cyrl-CN",
-      vag: "vag-Latn-ZZ",
-      vai: "vai-Vaii-LR",
-      van: "van-Latn-ZZ",
-      ve: "ve-Latn-ZA",
-      vec: "vec-Latn-IT",
-      vep: "vep-Latn-RU",
-      vi: "vi-Latn-VN",
-      vic: "vic-Latn-SX",
-      viv: "viv-Latn-ZZ",
-      vls: "vls-Latn-BE",
-      vmf: "vmf-Latn-DE",
-      vmw: "vmw-Latn-MZ",
-      vo: "vo-Latn-001",
-      vot: "vot-Latn-RU",
-      vro: "vro-Latn-EE",
-      vun: "vun-Latn-TZ",
-      vut: "vut-Latn-ZZ",
-      wa: "wa-Latn-BE",
-      wae: "wae-Latn-CH",
-      waj: "waj-Latn-ZZ",
-      wal: "wal-Ethi-ET",
-      wan: "wan-Latn-ZZ",
-      war: "war-Latn-PH",
-      wbp: "wbp-Latn-AU",
-      wbq: "wbq-Telu-IN",
-      wbr: "wbr-Deva-IN",
-      wci: "wci-Latn-ZZ",
-      wer: "wer-Latn-ZZ",
-      wgi: "wgi-Latn-ZZ",
-      whg: "whg-Latn-ZZ",
-      wib: "wib-Latn-ZZ",
-      wiu: "wiu-Latn-ZZ",
-      wiv: "wiv-Latn-ZZ",
-      wja: "wja-Latn-ZZ",
-      wji: "wji-Latn-ZZ",
-      wls: "wls-Latn-WF",
-      wmo: "wmo-Latn-ZZ",
-      wnc: "wnc-Latn-ZZ",
-      wni: "wni-Arab-KM",
-      wnu: "wnu-Latn-ZZ",
-      wo: "wo-Latn-SN",
-      wob: "wob-Latn-ZZ",
-      wos: "wos-Latn-ZZ",
-      wrs: "wrs-Latn-ZZ",
-      wsg: "wsg-Gong-IN",
-      wsk: "wsk-Latn-ZZ",
-      wtm: "wtm-Deva-IN",
-      wuu: "wuu-Hans-CN",
-      wuv: "wuv-Latn-ZZ",
-      wwa: "wwa-Latn-ZZ",
-      xav: "xav-Latn-BR",
-      xbi: "xbi-Latn-ZZ",
-      xcr: "xcr-Cari-TR",
-      xes: "xes-Latn-ZZ",
-      xh: "xh-Latn-ZA",
-      xla: "xla-Latn-ZZ",
-      xlc: "xlc-Lyci-TR",
-      xld: "xld-Lydi-TR",
-      xmf: "xmf-Geor-GE",
-      xmn: "xmn-Mani-CN",
-      xmr: "xmr-Merc-SD",
-      xna: "xna-Narb-SA",
-      xnr: "xnr-Deva-IN",
-      xog: "xog-Latn-UG",
-      xon: "xon-Latn-ZZ",
-      xpr: "xpr-Prti-IR",
-      xrb: "xrb-Latn-ZZ",
-      xsa: "xsa-Sarb-YE",
-      xsi: "xsi-Latn-ZZ",
-      xsm: "xsm-Latn-ZZ",
-      xsr: "xsr-Deva-NP",
-      xwe: "xwe-Latn-ZZ",
-      yam: "yam-Latn-ZZ",
-      yao: "yao-Latn-MZ",
-      yap: "yap-Latn-FM",
-      yas: "yas-Latn-ZZ",
-      yat: "yat-Latn-ZZ",
-      yav: "yav-Latn-CM",
-      yay: "yay-Latn-ZZ",
-      yaz: "yaz-Latn-ZZ",
-      yba: "yba-Latn-ZZ",
-      ybb: "ybb-Latn-CM",
-      yby: "yby-Latn-ZZ",
-      yer: "yer-Latn-ZZ",
-      ygr: "ygr-Latn-ZZ",
-      ygw: "ygw-Latn-ZZ",
-      yi: "yi-Hebr-001",
-      yko: "yko-Latn-ZZ",
-      yle: "yle-Latn-ZZ",
-      ylg: "ylg-Latn-ZZ",
-      yll: "yll-Latn-ZZ",
-      yml: "yml-Latn-ZZ",
-      yo: "yo-Latn-NG",
-      yon: "yon-Latn-ZZ",
-      yrb: "yrb-Latn-ZZ",
-      yre: "yre-Latn-ZZ",
-      yrl: "yrl-Latn-BR",
-      yss: "yss-Latn-ZZ",
-      yua: "yua-Latn-MX",
-      yue: "yue-Hant-HK",
-      "yue-CN": "yue-Hans-CN",
-      "yue-Hans": "yue-Hans-CN",
-      yuj: "yuj-Latn-ZZ",
-      yut: "yut-Latn-ZZ",
-      yuw: "yuw-Latn-ZZ",
-      za: "za-Latn-CN",
-      zag: "zag-Latn-SD",
-      zdj: "zdj-Arab-KM",
-      zea: "zea-Latn-NL",
-      zgh: "zgh-Tfng-MA",
-      zh: "zh-Hans-CN",
-      "zh-AU": "zh-Hant-AU",
-      "zh-BN": "zh-Hant-BN",
-      "zh-Bopo": "zh-Bopo-TW",
-      "zh-GB": "zh-Hant-GB",
-      "zh-GF": "zh-Hant-GF",
-      "zh-Hanb": "zh-Hanb-TW",
-      "zh-Hant": "zh-Hant-TW",
-      "zh-HK": "zh-Hant-HK",
-      "zh-ID": "zh-Hant-ID",
-      "zh-MO": "zh-Hant-MO",
-      "zh-MY": "zh-Hant-MY",
-      "zh-PA": "zh-Hant-PA",
-      "zh-PF": "zh-Hant-PF",
-      "zh-PH": "zh-Hant-PH",
-      "zh-SR": "zh-Hant-SR",
-      "zh-TH": "zh-Hant-TH",
-      "zh-TW": "zh-Hant-TW",
-      "zh-US": "zh-Hant-US",
-      "zh-VN": "zh-Hant-VN",
-      zhx: "zhx-Nshu-CN",
-      zia: "zia-Latn-ZZ",
-      zlm: "zlm-Latn-TG",
-      zmi: "zmi-Latn-MY",
-      zne: "zne-Latn-ZZ",
-      zu: "zu-Latn-ZA",
-      zza: "zza-Latn-TR"
-    }
-  };
   const likelySubtags = {
-    supplemental: supplemental$1
-  };
-  const likelySubtags$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-    __proto__: null,
-    supplemental: supplemental$1,
-    default: likelySubtags
-  }, Symbol.toStringTag, { value: "Module" }));
-  const supplemental = {
-    version: {
-      _unicodeVersion: "12.1.0",
-      _cldrVersion: "36"
-    },
-    "plurals-type-cardinal": {
-      af: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ak: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      am: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      an: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ar: {
-        "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-few": "n % 100 = 3..10 @integer 3~10, 103~110, 1003, … @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 103.0, 1003.0, …",
-        "pluralRule-count-many": "n % 100 = 11..99 @integer 11~26, 111, 1011, … @decimal 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 111.0, 1011.0, …",
-        "pluralRule-count-other": " @integer 100~102, 200~202, 300~302, 400~402, 500~502, 600, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ars: {
-        "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-few": "n % 100 = 3..10 @integer 3~10, 103~110, 1003, … @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 103.0, 1003.0, …",
-        "pluralRule-count-many": "n % 100 = 11..99 @integer 11~26, 111, 1011, … @decimal 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 111.0, 1011.0, …",
-        "pluralRule-count-other": " @integer 100~102, 200~202, 300~302, 400~402, 500~502, 600, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      as: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      asa: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ast: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      az: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      be: {
-        "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 1.0, 21.0, 31.0, 41.0, 51.0, 61.0, 71.0, 81.0, 101.0, 1001.0, …",
-        "pluralRule-count-few": "n % 10 = 2..4 and n % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, … @decimal 2.0, 3.0, 4.0, 22.0, 23.0, 24.0, 32.0, 33.0, 102.0, 1002.0, …",
-        "pluralRule-count-many": "n % 10 = 0 or n % 10 = 5..9 or n % 100 = 11..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": "   @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.1, 1000.1, …"
-      },
-      bem: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      bez: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      bg: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      bho: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      bm: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      bn: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      bo: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      br: {
-        "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11,71,91 @integer 1, 21, 31, 41, 51, 61, 81, 101, 1001, … @decimal 1.0, 21.0, 31.0, 41.0, 51.0, 61.0, 81.0, 101.0, 1001.0, …",
-        "pluralRule-count-two": "n % 10 = 2 and n % 100 != 12,72,92 @integer 2, 22, 32, 42, 52, 62, 82, 102, 1002, … @decimal 2.0, 22.0, 32.0, 42.0, 52.0, 62.0, 82.0, 102.0, 1002.0, …",
-        "pluralRule-count-few": "n % 10 = 3..4,9 and n % 100 != 10..19,70..79,90..99 @integer 3, 4, 9, 23, 24, 29, 33, 34, 39, 43, 44, 49, 103, 1003, … @decimal 3.0, 4.0, 9.0, 23.0, 24.0, 29.0, 33.0, 34.0, 103.0, 1003.0, …",
-        "pluralRule-count-many": "n != 0 and n % 1000000 = 0 @integer 1000000, … @decimal 1000000.0, 1000000.00, 1000000.000, …",
-        "pluralRule-count-other": " @integer 0, 5~8, 10~20, 100, 1000, 10000, 100000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, …"
-      },
-      brx: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      bs: {
-        "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, … @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ca: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ce: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ceb: {
-        "pluralRule-count-one": "v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 != 4,6,9 @integer 0~3, 5, 7, 8, 10~13, 15, 17, 18, 20, 21, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.3, 0.5, 0.7, 0.8, 1.0~1.3, 1.5, 1.7, 1.8, 2.0, 2.1, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 4, 6, 9, 14, 16, 19, 24, 26, 104, 1004, … @decimal 0.4, 0.6, 0.9, 1.4, 1.6, 1.9, 2.4, 2.6, 10.4, 100.4, 1000.4, …"
-      },
-      cgg: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      chr: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ckb: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      cs: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-few": "i = 2..4 and v = 0 @integer 2~4",
-        "pluralRule-count-many": "v != 0   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …"
-      },
-      cy: {
-        "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-few": "n = 3 @integer 3 @decimal 3.0, 3.00, 3.000, 3.0000",
-        "pluralRule-count-many": "n = 6 @integer 6 @decimal 6.0, 6.00, 6.000, 6.0000",
-        "pluralRule-count-other": " @integer 4, 5, 7~20, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      da: {
-        "pluralRule-count-one": "n = 1 or t != 0 and i = 0,1 @integer 1 @decimal 0.1~1.6",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 2.0~3.4, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      de: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      dsb: {
-        "pluralRule-count-one": "v = 0 and i % 100 = 1 or f % 100 = 1 @integer 1, 101, 201, 301, 401, 501, 601, 701, 1001, … @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-two": "v = 0 and i % 100 = 2 or f % 100 = 2 @integer 2, 102, 202, 302, 402, 502, 602, 702, 1002, … @decimal 0.2, 1.2, 2.2, 3.2, 4.2, 5.2, 6.2, 7.2, 10.2, 100.2, 1000.2, …",
-        "pluralRule-count-few": "v = 0 and i % 100 = 3..4 or f % 100 = 3..4 @integer 3, 4, 103, 104, 203, 204, 303, 304, 403, 404, 503, 504, 603, 604, 703, 704, 1003, … @decimal 0.3, 0.4, 1.3, 1.4, 2.3, 2.4, 3.3, 3.4, 4.3, 4.4, 5.3, 5.4, 6.3, 6.4, 7.3, 7.4, 10.3, 100.3, 1000.3, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      dv: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      dz: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ee: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      el: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      en: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      eo: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      es: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      et: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      eu: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      fa: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ff: {
-        "pluralRule-count-one": "i = 0,1 @integer 0, 1 @decimal 0.0~1.5",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      fi: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      fil: {
-        "pluralRule-count-one": "v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 != 4,6,9 @integer 0~3, 5, 7, 8, 10~13, 15, 17, 18, 20, 21, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.3, 0.5, 0.7, 0.8, 1.0~1.3, 1.5, 1.7, 1.8, 2.0, 2.1, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 4, 6, 9, 14, 16, 19, 24, 26, 104, 1004, … @decimal 0.4, 0.6, 0.9, 1.4, 1.6, 1.9, 2.4, 2.6, 10.4, 100.4, 1000.4, …"
-      },
-      fo: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      fr: {
-        "pluralRule-count-one": "i = 0,1 @integer 0, 1 @decimal 0.0~1.5",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      fur: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      fy: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ga: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-few": "n = 3..6 @integer 3~6 @decimal 3.0, 4.0, 5.0, 6.0, 3.00, 4.00, 5.00, 6.00, 3.000, 4.000, 5.000, 6.000, 3.0000, 4.0000, 5.0000, 6.0000",
-        "pluralRule-count-many": "n = 7..10 @integer 7~10 @decimal 7.0, 8.0, 9.0, 10.0, 7.00, 8.00, 9.00, 10.00, 7.000, 8.000, 9.000, 10.000, 7.0000, 8.0000, 9.0000, 10.0000",
-        "pluralRule-count-other": " @integer 0, 11~25, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      gd: {
-        "pluralRule-count-one": "n = 1,11 @integer 1, 11 @decimal 1.0, 11.0, 1.00, 11.00, 1.000, 11.000, 1.0000",
-        "pluralRule-count-two": "n = 2,12 @integer 2, 12 @decimal 2.0, 12.0, 2.00, 12.00, 2.000, 12.000, 2.0000",
-        "pluralRule-count-few": "n = 3..10,13..19 @integer 3~10, 13~19 @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 3.00",
-        "pluralRule-count-other": " @integer 0, 20~34, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      gl: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      gsw: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      gu: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      guw: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      gv: {
-        "pluralRule-count-one": "v = 0 and i % 10 = 1 @integer 1, 11, 21, 31, 41, 51, 61, 71, 101, 1001, …",
-        "pluralRule-count-two": "v = 0 and i % 10 = 2 @integer 2, 12, 22, 32, 42, 52, 62, 72, 102, 1002, …",
-        "pluralRule-count-few": "v = 0 and i % 100 = 0,20,40,60,80 @integer 0, 20, 40, 60, 80, 100, 120, 140, 1000, 10000, 100000, 1000000, …",
-        "pluralRule-count-many": "v != 0   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 3~10, 13~19, 23, 103, 1003, …"
-      },
-      ha: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      haw: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      he: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-two": "i = 2 and v = 0 @integer 2",
-        "pluralRule-count-many": "v = 0 and n != 0..10 and n % 10 = 0 @integer 20, 30, 40, 50, 60, 70, 80, 90, 100, 1000, 10000, 100000, 1000000, …",
-        "pluralRule-count-other": " @integer 0, 3~17, 101, 1001, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      hi: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      hr: {
-        "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, … @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      hsb: {
-        "pluralRule-count-one": "v = 0 and i % 100 = 1 or f % 100 = 1 @integer 1, 101, 201, 301, 401, 501, 601, 701, 1001, … @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-two": "v = 0 and i % 100 = 2 or f % 100 = 2 @integer 2, 102, 202, 302, 402, 502, 602, 702, 1002, … @decimal 0.2, 1.2, 2.2, 3.2, 4.2, 5.2, 6.2, 7.2, 10.2, 100.2, 1000.2, …",
-        "pluralRule-count-few": "v = 0 and i % 100 = 3..4 or f % 100 = 3..4 @integer 3, 4, 103, 104, 203, 204, 303, 304, 403, 404, 503, 504, 603, 604, 703, 704, 1003, … @decimal 0.3, 0.4, 1.3, 1.4, 2.3, 2.4, 3.3, 3.4, 4.3, 4.4, 5.3, 5.4, 6.3, 6.4, 7.3, 7.4, 10.3, 100.3, 1000.3, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      hu: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      hy: {
-        "pluralRule-count-one": "i = 0,1 @integer 0, 1 @decimal 0.0~1.5",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ia: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      id: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ig: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ii: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      "in": {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      io: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      is: {
-        "pluralRule-count-one": "t = 0 and i % 10 = 1 and i % 100 != 11 or t != 0 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1~1.6, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      it: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      iu: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      iw: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-two": "i = 2 and v = 0 @integer 2",
-        "pluralRule-count-many": "v = 0 and n != 0..10 and n % 10 = 0 @integer 20, 30, 40, 50, 60, 70, 80, 90, 100, 1000, 10000, 100000, 1000000, …",
-        "pluralRule-count-other": " @integer 0, 3~17, 101, 1001, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ja: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      jbo: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      jgo: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ji: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      jmc: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      jv: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      jw: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ka: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kab: {
-        "pluralRule-count-one": "i = 0,1 @integer 0, 1 @decimal 0.0~1.5",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kaj: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kcg: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kde: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kea: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kk: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kkj: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kl: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      km: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kn: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ko: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ks: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ksb: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ksh: {
-        "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ku: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      kw: {
-        "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n % 100 = 2,22,42,62,82 or n % 1000 = 0 and n % 100000 = 1000..20000,40000,60000,80000 or n != 0 and n % 1000000 = 100000 @integer 2, 22, 42, 62, 82, 102, 122, 142, 1000, 10000, 100000, … @decimal 2.0, 22.0, 42.0, 62.0, 82.0, 102.0, 122.0, 142.0, 1000.0, 10000.0, 100000.0, …",
-        "pluralRule-count-few": "n % 100 = 3,23,43,63,83 @integer 3, 23, 43, 63, 83, 103, 123, 143, 1003, … @decimal 3.0, 23.0, 43.0, 63.0, 83.0, 103.0, 123.0, 143.0, 1003.0, …",
-        "pluralRule-count-many": "n != 1 and n % 100 = 1,21,41,61,81 @integer 21, 41, 61, 81, 101, 121, 141, 161, 1001, … @decimal 21.0, 41.0, 61.0, 81.0, 101.0, 121.0, 141.0, 161.0, 1001.0, …",
-        "pluralRule-count-other": " @integer 4~19, 100, 1004, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.1, 1000000.0, …"
-      },
-      ky: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      lag: {
-        "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
-        "pluralRule-count-one": "i = 0,1 and n != 0 @integer 1 @decimal 0.1~1.6",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      lb: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      lg: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      lkt: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ln: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      lo: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      lt: {
-        "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11..19 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 1.0, 21.0, 31.0, 41.0, 51.0, 61.0, 71.0, 81.0, 101.0, 1001.0, …",
-        "pluralRule-count-few": "n % 10 = 2..9 and n % 100 != 11..19 @integer 2~9, 22~29, 102, 1002, … @decimal 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 22.0, 102.0, 1002.0, …",
-        "pluralRule-count-many": "f != 0   @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-other": " @integer 0, 10~20, 30, 40, 50, 60, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      lv: {
-        "pluralRule-count-zero": "n % 10 = 0 or n % 100 = 11..19 or v = 2 and f % 100 = 11..19 @integer 0, 10~20, 30, 40, 50, 60, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11 or v = 2 and f % 10 = 1 and f % 100 != 11 or v != 2 and f % 10 = 1 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.0, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-other": " @integer 2~9, 22~29, 102, 1002, … @decimal 0.2~0.9, 1.2~1.9, 10.2, 100.2, 1000.2, …"
-      },
-      mas: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      mg: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      mgo: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      mk: {
-        "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 0.2~1.0, 1.2~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ml: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      mn: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      mo: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-few": "v != 0 or n = 0 or n % 100 = 2..19 @integer 0, 2~16, 102, 1002, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 20~35, 100, 1000, 10000, 100000, 1000000, …"
-      },
-      mr: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ms: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      mt: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-few": "n = 0 or n % 100 = 2..10 @integer 0, 2~10, 102~107, 1002, … @decimal 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0, 102.0, 1002.0, …",
-        "pluralRule-count-many": "n % 100 = 11..19 @integer 11~19, 111~117, 1011, … @decimal 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 111.0, 1011.0, …",
-        "pluralRule-count-other": " @integer 20~35, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      my: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nah: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      naq: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nb: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nd: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ne: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nl: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nn: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nnh: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      no: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nqo: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nr: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nso: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ny: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      nyn: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      om: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      or: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      os: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      osa: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      pa: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      pap: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      pl: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, …",
-        "pluralRule-count-many": "v = 0 and i != 1 and i % 10 = 0..1 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 12..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …",
-        "pluralRule-count-other": "   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      prg: {
-        "pluralRule-count-zero": "n % 10 = 0 or n % 100 = 11..19 or v = 2 and f % 100 = 11..19 @integer 0, 10~20, 30, 40, 50, 60, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11 or v = 2 and f % 10 = 1 and f % 100 != 11 or v != 2 and f % 10 = 1 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.0, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-other": " @integer 2~9, 22~29, 102, 1002, … @decimal 0.2~0.9, 1.2~1.9, 10.2, 100.2, 1000.2, …"
-      },
-      ps: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      pt: {
-        "pluralRule-count-one": "i = 0..1 @integer 0, 1 @decimal 0.0~1.5",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      "pt-PT": {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      rm: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ro: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-few": "v != 0 or n = 0 or n % 100 = 2..19 @integer 0, 2~16, 102, 1002, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 20~35, 100, 1000, 10000, 100000, 1000000, …"
-      },
-      rof: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      root: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ru: {
-        "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, …",
-        "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, …",
-        "pluralRule-count-many": "v = 0 and i % 10 = 0 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 11..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …",
-        "pluralRule-count-other": "   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      rwk: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sah: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      saq: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sc: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      scn: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sd: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sdh: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      se: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      seh: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ses: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sg: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sh: {
-        "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, … @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      shi: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-few": "n = 2..10 @integer 2~10 @decimal 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 2.00, 3.00, 4.00, 5.00, 6.00, 7.00, 8.00",
-        "pluralRule-count-other": " @integer 11~26, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~1.9, 2.1~2.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      si: {
-        "pluralRule-count-one": "n = 0,1 or i = 0 and f = 1 @integer 0, 1 @decimal 0.0, 0.1, 1.0, 0.00, 0.01, 1.00, 0.000, 0.001, 1.000, 0.0000, 0.0001, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.2~0.9, 1.1~1.8, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sk: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-few": "i = 2..4 and v = 0 @integer 2~4",
-        "pluralRule-count-many": "v != 0   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …"
-      },
-      sl: {
-        "pluralRule-count-one": "v = 0 and i % 100 = 1 @integer 1, 101, 201, 301, 401, 501, 601, 701, 1001, …",
-        "pluralRule-count-two": "v = 0 and i % 100 = 2 @integer 2, 102, 202, 302, 402, 502, 602, 702, 1002, …",
-        "pluralRule-count-few": "v = 0 and i % 100 = 3..4 or v != 0 @integer 3, 4, 103, 104, 203, 204, 303, 304, 403, 404, 503, 504, 603, 604, 703, 704, 1003, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …"
-      },
-      sma: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      smi: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      smj: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      smn: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sms: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
-        "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sn: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      so: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sq: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sr: {
-        "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, … @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, …",
-        "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, … @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, …",
-        "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ss: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ssy: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      st: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      su: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sv: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      sw: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      syr: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ta: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      te: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      teo: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      th: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ti: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      tig: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      tk: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      tl: {
-        "pluralRule-count-one": "v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 != 4,6,9 @integer 0~3, 5, 7, 8, 10~13, 15, 17, 18, 20, 21, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.3, 0.5, 0.7, 0.8, 1.0~1.3, 1.5, 1.7, 1.8, 2.0, 2.1, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …",
-        "pluralRule-count-other": " @integer 4, 6, 9, 14, 16, 19, 24, 26, 104, 1004, … @decimal 0.4, 0.6, 0.9, 1.4, 1.6, 1.9, 2.4, 2.6, 10.4, 100.4, 1000.4, …"
-      },
-      tn: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      to: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      tr: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ts: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      tzm: {
-        "pluralRule-count-one": "n = 0..1 or n = 11..99 @integer 0, 1, 11~24 @decimal 0.0, 1.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0",
-        "pluralRule-count-other": " @integer 2~10, 100~106, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ug: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      uk: {
-        "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, …",
-        "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, …",
-        "pluralRule-count-many": "v = 0 and i % 10 = 0 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 11..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, …",
-        "pluralRule-count-other": "   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ur: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      uz: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      ve: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      vi: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      vo: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      vun: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      wa: {
-        "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      wae: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      wo: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      xh: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      xog: {
-        "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      yi: {
-        "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
-        "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      yo: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      yue: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      zh: {
-        "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, … @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
-      },
-      zu: {
-        "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
-        "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, … @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, …"
+    supplemental: {
+      version: {
+        _unicodeVersion: "12.1.0",
+        _cldrVersion: "36"
+      },
+      likelySubtags: {
+        aa: "aa-Latn-ET",
+        aai: "aai-Latn-ZZ",
+        aak: "aak-Latn-ZZ",
+        aau: "aau-Latn-ZZ",
+        ab: "ab-Cyrl-GE",
+        abi: "abi-Latn-ZZ",
+        abq: "abq-Cyrl-ZZ",
+        abr: "abr-Latn-GH",
+        abt: "abt-Latn-ZZ",
+        aby: "aby-Latn-ZZ",
+        acd: "acd-Latn-ZZ",
+        ace: "ace-Latn-ID",
+        ach: "ach-Latn-UG",
+        ada: "ada-Latn-GH",
+        ade: "ade-Latn-ZZ",
+        adj: "adj-Latn-ZZ",
+        adp: "adp-Tibt-BT",
+        ady: "ady-Cyrl-RU",
+        adz: "adz-Latn-ZZ",
+        ae: "ae-Avst-IR",
+        aeb: "aeb-Arab-TN",
+        aey: "aey-Latn-ZZ",
+        af: "af-Latn-ZA",
+        agc: "agc-Latn-ZZ",
+        agd: "agd-Latn-ZZ",
+        agg: "agg-Latn-ZZ",
+        agm: "agm-Latn-ZZ",
+        ago: "ago-Latn-ZZ",
+        agq: "agq-Latn-CM",
+        aha: "aha-Latn-ZZ",
+        ahl: "ahl-Latn-ZZ",
+        aho: "aho-Ahom-IN",
+        ajg: "ajg-Latn-ZZ",
+        ak: "ak-Latn-GH",
+        akk: "akk-Xsux-IQ",
+        ala: "ala-Latn-ZZ",
+        ali: "ali-Latn-ZZ",
+        aln: "aln-Latn-XK",
+        alt: "alt-Cyrl-RU",
+        am: "am-Ethi-ET",
+        amm: "amm-Latn-ZZ",
+        amn: "amn-Latn-ZZ",
+        amo: "amo-Latn-NG",
+        amp: "amp-Latn-ZZ",
+        an: "an-Latn-ES",
+        anc: "anc-Latn-ZZ",
+        ank: "ank-Latn-ZZ",
+        ann: "ann-Latn-ZZ",
+        any: "any-Latn-ZZ",
+        aoj: "aoj-Latn-ZZ",
+        aom: "aom-Latn-ZZ",
+        aoz: "aoz-Latn-ID",
+        apc: "apc-Arab-ZZ",
+        apd: "apd-Arab-TG",
+        ape: "ape-Latn-ZZ",
+        apr: "apr-Latn-ZZ",
+        aps: "aps-Latn-ZZ",
+        apz: "apz-Latn-ZZ",
+        ar: "ar-Arab-EG",
+        arc: "arc-Armi-IR",
+        "arc-Nbat": "arc-Nbat-JO",
+        "arc-Palm": "arc-Palm-SY",
+        arh: "arh-Latn-ZZ",
+        arn: "arn-Latn-CL",
+        aro: "aro-Latn-BO",
+        arq: "arq-Arab-DZ",
+        ars: "ars-Arab-SA",
+        ary: "ary-Arab-MA",
+        arz: "arz-Arab-EG",
+        as: "as-Beng-IN",
+        asa: "asa-Latn-TZ",
+        ase: "ase-Sgnw-US",
+        asg: "asg-Latn-ZZ",
+        aso: "aso-Latn-ZZ",
+        ast: "ast-Latn-ES",
+        ata: "ata-Latn-ZZ",
+        atg: "atg-Latn-ZZ",
+        atj: "atj-Latn-CA",
+        auy: "auy-Latn-ZZ",
+        av: "av-Cyrl-RU",
+        avl: "avl-Arab-ZZ",
+        avn: "avn-Latn-ZZ",
+        avt: "avt-Latn-ZZ",
+        avu: "avu-Latn-ZZ",
+        awa: "awa-Deva-IN",
+        awb: "awb-Latn-ZZ",
+        awo: "awo-Latn-ZZ",
+        awx: "awx-Latn-ZZ",
+        ay: "ay-Latn-BO",
+        ayb: "ayb-Latn-ZZ",
+        az: "az-Latn-AZ",
+        "az-Arab": "az-Arab-IR",
+        "az-IQ": "az-Arab-IQ",
+        "az-IR": "az-Arab-IR",
+        "az-RU": "az-Cyrl-RU",
+        ba: "ba-Cyrl-RU",
+        bal: "bal-Arab-PK",
+        ban: "ban-Latn-ID",
+        bap: "bap-Deva-NP",
+        bar: "bar-Latn-AT",
+        bas: "bas-Latn-CM",
+        bav: "bav-Latn-ZZ",
+        bax: "bax-Bamu-CM",
+        bba: "bba-Latn-ZZ",
+        bbb: "bbb-Latn-ZZ",
+        bbc: "bbc-Latn-ID",
+        bbd: "bbd-Latn-ZZ",
+        bbj: "bbj-Latn-CM",
+        bbp: "bbp-Latn-ZZ",
+        bbr: "bbr-Latn-ZZ",
+        bcf: "bcf-Latn-ZZ",
+        bch: "bch-Latn-ZZ",
+        bci: "bci-Latn-CI",
+        bcm: "bcm-Latn-ZZ",
+        bcn: "bcn-Latn-ZZ",
+        bco: "bco-Latn-ZZ",
+        bcq: "bcq-Ethi-ZZ",
+        bcu: "bcu-Latn-ZZ",
+        bdd: "bdd-Latn-ZZ",
+        be: "be-Cyrl-BY",
+        bef: "bef-Latn-ZZ",
+        beh: "beh-Latn-ZZ",
+        bej: "bej-Arab-SD",
+        bem: "bem-Latn-ZM",
+        bet: "bet-Latn-ZZ",
+        bew: "bew-Latn-ID",
+        bex: "bex-Latn-ZZ",
+        bez: "bez-Latn-TZ",
+        bfd: "bfd-Latn-CM",
+        bfq: "bfq-Taml-IN",
+        bft: "bft-Arab-PK",
+        bfy: "bfy-Deva-IN",
+        bg: "bg-Cyrl-BG",
+        bgc: "bgc-Deva-IN",
+        bgn: "bgn-Arab-PK",
+        bgx: "bgx-Grek-TR",
+        bhb: "bhb-Deva-IN",
+        bhg: "bhg-Latn-ZZ",
+        bhi: "bhi-Deva-IN",
+        bhl: "bhl-Latn-ZZ",
+        bho: "bho-Deva-IN",
+        bhy: "bhy-Latn-ZZ",
+        bi: "bi-Latn-VU",
+        bib: "bib-Latn-ZZ",
+        big: "big-Latn-ZZ",
+        bik: "bik-Latn-PH",
+        bim: "bim-Latn-ZZ",
+        bin: "bin-Latn-NG",
+        bio: "bio-Latn-ZZ",
+        biq: "biq-Latn-ZZ",
+        bjh: "bjh-Latn-ZZ",
+        bji: "bji-Ethi-ZZ",
+        bjj: "bjj-Deva-IN",
+        bjn: "bjn-Latn-ID",
+        bjo: "bjo-Latn-ZZ",
+        bjr: "bjr-Latn-ZZ",
+        bjt: "bjt-Latn-SN",
+        bjz: "bjz-Latn-ZZ",
+        bkc: "bkc-Latn-ZZ",
+        bkm: "bkm-Latn-CM",
+        bkq: "bkq-Latn-ZZ",
+        bku: "bku-Latn-PH",
+        bkv: "bkv-Latn-ZZ",
+        blt: "blt-Tavt-VN",
+        bm: "bm-Latn-ML",
+        bmh: "bmh-Latn-ZZ",
+        bmk: "bmk-Latn-ZZ",
+        bmq: "bmq-Latn-ML",
+        bmu: "bmu-Latn-ZZ",
+        bn: "bn-Beng-BD",
+        bng: "bng-Latn-ZZ",
+        bnm: "bnm-Latn-ZZ",
+        bnp: "bnp-Latn-ZZ",
+        bo: "bo-Tibt-CN",
+        boj: "boj-Latn-ZZ",
+        bom: "bom-Latn-ZZ",
+        bon: "bon-Latn-ZZ",
+        bpy: "bpy-Beng-IN",
+        bqc: "bqc-Latn-ZZ",
+        bqi: "bqi-Arab-IR",
+        bqp: "bqp-Latn-ZZ",
+        bqv: "bqv-Latn-CI",
+        br: "br-Latn-FR",
+        bra: "bra-Deva-IN",
+        brh: "brh-Arab-PK",
+        brx: "brx-Deva-IN",
+        brz: "brz-Latn-ZZ",
+        bs: "bs-Latn-BA",
+        bsj: "bsj-Latn-ZZ",
+        bsq: "bsq-Bass-LR",
+        bss: "bss-Latn-CM",
+        bst: "bst-Ethi-ZZ",
+        bto: "bto-Latn-PH",
+        btt: "btt-Latn-ZZ",
+        btv: "btv-Deva-PK",
+        bua: "bua-Cyrl-RU",
+        buc: "buc-Latn-YT",
+        bud: "bud-Latn-ZZ",
+        bug: "bug-Latn-ID",
+        buk: "buk-Latn-ZZ",
+        bum: "bum-Latn-CM",
+        buo: "buo-Latn-ZZ",
+        bus: "bus-Latn-ZZ",
+        buu: "buu-Latn-ZZ",
+        bvb: "bvb-Latn-GQ",
+        bwd: "bwd-Latn-ZZ",
+        bwr: "bwr-Latn-ZZ",
+        bxh: "bxh-Latn-ZZ",
+        bye: "bye-Latn-ZZ",
+        byn: "byn-Ethi-ER",
+        byr: "byr-Latn-ZZ",
+        bys: "bys-Latn-ZZ",
+        byv: "byv-Latn-CM",
+        byx: "byx-Latn-ZZ",
+        bza: "bza-Latn-ZZ",
+        bze: "bze-Latn-ML",
+        bzf: "bzf-Latn-ZZ",
+        bzh: "bzh-Latn-ZZ",
+        bzw: "bzw-Latn-ZZ",
+        ca: "ca-Latn-ES",
+        can: "can-Latn-ZZ",
+        cbj: "cbj-Latn-ZZ",
+        cch: "cch-Latn-NG",
+        ccp: "ccp-Cakm-BD",
+        ce: "ce-Cyrl-RU",
+        ceb: "ceb-Latn-PH",
+        cfa: "cfa-Latn-ZZ",
+        cgg: "cgg-Latn-UG",
+        ch: "ch-Latn-GU",
+        chk: "chk-Latn-FM",
+        chm: "chm-Cyrl-RU",
+        cho: "cho-Latn-US",
+        chp: "chp-Latn-CA",
+        chr: "chr-Cher-US",
+        cic: "cic-Latn-US",
+        cja: "cja-Arab-KH",
+        cjm: "cjm-Cham-VN",
+        cjv: "cjv-Latn-ZZ",
+        ckb: "ckb-Arab-IQ",
+        ckl: "ckl-Latn-ZZ",
+        cko: "cko-Latn-ZZ",
+        cky: "cky-Latn-ZZ",
+        cla: "cla-Latn-ZZ",
+        cme: "cme-Latn-ZZ",
+        cmg: "cmg-Soyo-MN",
+        co: "co-Latn-FR",
+        cop: "cop-Copt-EG",
+        cps: "cps-Latn-PH",
+        cr: "cr-Cans-CA",
+        crh: "crh-Cyrl-UA",
+        crj: "crj-Cans-CA",
+        crk: "crk-Cans-CA",
+        crl: "crl-Cans-CA",
+        crm: "crm-Cans-CA",
+        crs: "crs-Latn-SC",
+        cs: "cs-Latn-CZ",
+        csb: "csb-Latn-PL",
+        csw: "csw-Cans-CA",
+        ctd: "ctd-Pauc-MM",
+        cu: "cu-Cyrl-RU",
+        "cu-Glag": "cu-Glag-BG",
+        cv: "cv-Cyrl-RU",
+        cy: "cy-Latn-GB",
+        da: "da-Latn-DK",
+        dad: "dad-Latn-ZZ",
+        daf: "daf-Latn-ZZ",
+        dag: "dag-Latn-ZZ",
+        dah: "dah-Latn-ZZ",
+        dak: "dak-Latn-US",
+        dar: "dar-Cyrl-RU",
+        dav: "dav-Latn-KE",
+        dbd: "dbd-Latn-ZZ",
+        dbq: "dbq-Latn-ZZ",
+        dcc: "dcc-Arab-IN",
+        ddn: "ddn-Latn-ZZ",
+        de: "de-Latn-DE",
+        ded: "ded-Latn-ZZ",
+        den: "den-Latn-CA",
+        dga: "dga-Latn-ZZ",
+        dgh: "dgh-Latn-ZZ",
+        dgi: "dgi-Latn-ZZ",
+        dgl: "dgl-Arab-ZZ",
+        dgr: "dgr-Latn-CA",
+        dgz: "dgz-Latn-ZZ",
+        dia: "dia-Latn-ZZ",
+        dje: "dje-Latn-NE",
+        dnj: "dnj-Latn-CI",
+        dob: "dob-Latn-ZZ",
+        doi: "doi-Arab-IN",
+        dop: "dop-Latn-ZZ",
+        dow: "dow-Latn-ZZ",
+        drh: "drh-Mong-CN",
+        dri: "dri-Latn-ZZ",
+        drs: "drs-Ethi-ZZ",
+        dsb: "dsb-Latn-DE",
+        dtm: "dtm-Latn-ML",
+        dtp: "dtp-Latn-MY",
+        dts: "dts-Latn-ZZ",
+        dty: "dty-Deva-NP",
+        dua: "dua-Latn-CM",
+        duc: "duc-Latn-ZZ",
+        dud: "dud-Latn-ZZ",
+        dug: "dug-Latn-ZZ",
+        dv: "dv-Thaa-MV",
+        dva: "dva-Latn-ZZ",
+        dww: "dww-Latn-ZZ",
+        dyo: "dyo-Latn-SN",
+        dyu: "dyu-Latn-BF",
+        dz: "dz-Tibt-BT",
+        dzg: "dzg-Latn-ZZ",
+        ebu: "ebu-Latn-KE",
+        ee: "ee-Latn-GH",
+        efi: "efi-Latn-NG",
+        egl: "egl-Latn-IT",
+        egy: "egy-Egyp-EG",
+        eka: "eka-Latn-ZZ",
+        eky: "eky-Kali-MM",
+        el: "el-Grek-GR",
+        ema: "ema-Latn-ZZ",
+        emi: "emi-Latn-ZZ",
+        en: "en-Latn-US",
+        "en-Shaw": "en-Shaw-GB",
+        enn: "enn-Latn-ZZ",
+        enq: "enq-Latn-ZZ",
+        eo: "eo-Latn-001",
+        eri: "eri-Latn-ZZ",
+        es: "es-Latn-ES",
+        esg: "esg-Gonm-IN",
+        esu: "esu-Latn-US",
+        et: "et-Latn-EE",
+        etr: "etr-Latn-ZZ",
+        ett: "ett-Ital-IT",
+        etu: "etu-Latn-ZZ",
+        etx: "etx-Latn-ZZ",
+        eu: "eu-Latn-ES",
+        ewo: "ewo-Latn-CM",
+        ext: "ext-Latn-ES",
+        fa: "fa-Arab-IR",
+        faa: "faa-Latn-ZZ",
+        fab: "fab-Latn-ZZ",
+        fag: "fag-Latn-ZZ",
+        fai: "fai-Latn-ZZ",
+        fan: "fan-Latn-GQ",
+        ff: "ff-Latn-SN",
+        "ff-Adlm": "ff-Adlm-GN",
+        ffi: "ffi-Latn-ZZ",
+        ffm: "ffm-Latn-ML",
+        fi: "fi-Latn-FI",
+        fia: "fia-Arab-SD",
+        fil: "fil-Latn-PH",
+        fit: "fit-Latn-SE",
+        fj: "fj-Latn-FJ",
+        flr: "flr-Latn-ZZ",
+        fmp: "fmp-Latn-ZZ",
+        fo: "fo-Latn-FO",
+        fod: "fod-Latn-ZZ",
+        fon: "fon-Latn-BJ",
+        for: "for-Latn-ZZ",
+        fpe: "fpe-Latn-ZZ",
+        fqs: "fqs-Latn-ZZ",
+        fr: "fr-Latn-FR",
+        frc: "frc-Latn-US",
+        frp: "frp-Latn-FR",
+        frr: "frr-Latn-DE",
+        frs: "frs-Latn-DE",
+        fub: "fub-Arab-CM",
+        fud: "fud-Latn-WF",
+        fue: "fue-Latn-ZZ",
+        fuf: "fuf-Latn-GN",
+        fuh: "fuh-Latn-ZZ",
+        fuq: "fuq-Latn-NE",
+        fur: "fur-Latn-IT",
+        fuv: "fuv-Latn-NG",
+        fuy: "fuy-Latn-ZZ",
+        fvr: "fvr-Latn-SD",
+        fy: "fy-Latn-NL",
+        ga: "ga-Latn-IE",
+        gaa: "gaa-Latn-GH",
+        gaf: "gaf-Latn-ZZ",
+        gag: "gag-Latn-MD",
+        gah: "gah-Latn-ZZ",
+        gaj: "gaj-Latn-ZZ",
+        gam: "gam-Latn-ZZ",
+        gan: "gan-Hans-CN",
+        gaw: "gaw-Latn-ZZ",
+        gay: "gay-Latn-ID",
+        gba: "gba-Latn-ZZ",
+        gbf: "gbf-Latn-ZZ",
+        gbm: "gbm-Deva-IN",
+        gby: "gby-Latn-ZZ",
+        gbz: "gbz-Arab-IR",
+        gcr: "gcr-Latn-GF",
+        gd: "gd-Latn-GB",
+        gde: "gde-Latn-ZZ",
+        gdn: "gdn-Latn-ZZ",
+        gdr: "gdr-Latn-ZZ",
+        geb: "geb-Latn-ZZ",
+        gej: "gej-Latn-ZZ",
+        gel: "gel-Latn-ZZ",
+        gez: "gez-Ethi-ET",
+        gfk: "gfk-Latn-ZZ",
+        ggn: "ggn-Deva-NP",
+        ghs: "ghs-Latn-ZZ",
+        gil: "gil-Latn-KI",
+        gim: "gim-Latn-ZZ",
+        gjk: "gjk-Arab-PK",
+        gjn: "gjn-Latn-ZZ",
+        gju: "gju-Arab-PK",
+        gkn: "gkn-Latn-ZZ",
+        gkp: "gkp-Latn-ZZ",
+        gl: "gl-Latn-ES",
+        glk: "glk-Arab-IR",
+        gmm: "gmm-Latn-ZZ",
+        gmv: "gmv-Ethi-ZZ",
+        gn: "gn-Latn-PY",
+        gnd: "gnd-Latn-ZZ",
+        gng: "gng-Latn-ZZ",
+        god: "god-Latn-ZZ",
+        gof: "gof-Ethi-ZZ",
+        goi: "goi-Latn-ZZ",
+        gom: "gom-Deva-IN",
+        gon: "gon-Telu-IN",
+        gor: "gor-Latn-ID",
+        gos: "gos-Latn-NL",
+        got: "got-Goth-UA",
+        grb: "grb-Latn-ZZ",
+        grc: "grc-Cprt-CY",
+        "grc-Linb": "grc-Linb-GR",
+        grt: "grt-Beng-IN",
+        grw: "grw-Latn-ZZ",
+        gsw: "gsw-Latn-CH",
+        gu: "gu-Gujr-IN",
+        gub: "gub-Latn-BR",
+        guc: "guc-Latn-CO",
+        gud: "gud-Latn-ZZ",
+        gur: "gur-Latn-GH",
+        guw: "guw-Latn-ZZ",
+        gux: "gux-Latn-ZZ",
+        guz: "guz-Latn-KE",
+        gv: "gv-Latn-IM",
+        gvf: "gvf-Latn-ZZ",
+        gvr: "gvr-Deva-NP",
+        gvs: "gvs-Latn-ZZ",
+        gwc: "gwc-Arab-ZZ",
+        gwi: "gwi-Latn-CA",
+        gwt: "gwt-Arab-ZZ",
+        gyi: "gyi-Latn-ZZ",
+        ha: "ha-Latn-NG",
+        "ha-CM": "ha-Arab-CM",
+        "ha-SD": "ha-Arab-SD",
+        hag: "hag-Latn-ZZ",
+        hak: "hak-Hans-CN",
+        ham: "ham-Latn-ZZ",
+        haw: "haw-Latn-US",
+        haz: "haz-Arab-AF",
+        hbb: "hbb-Latn-ZZ",
+        hdy: "hdy-Ethi-ZZ",
+        he: "he-Hebr-IL",
+        hhy: "hhy-Latn-ZZ",
+        hi: "hi-Deva-IN",
+        hia: "hia-Latn-ZZ",
+        hif: "hif-Latn-FJ",
+        hig: "hig-Latn-ZZ",
+        hih: "hih-Latn-ZZ",
+        hil: "hil-Latn-PH",
+        hla: "hla-Latn-ZZ",
+        hlu: "hlu-Hluw-TR",
+        hmd: "hmd-Plrd-CN",
+        hmt: "hmt-Latn-ZZ",
+        hnd: "hnd-Arab-PK",
+        hne: "hne-Deva-IN",
+        hnj: "hnj-Hmng-LA",
+        hnn: "hnn-Latn-PH",
+        hno: "hno-Arab-PK",
+        ho: "ho-Latn-PG",
+        hoc: "hoc-Deva-IN",
+        hoj: "hoj-Deva-IN",
+        hot: "hot-Latn-ZZ",
+        hr: "hr-Latn-HR",
+        hsb: "hsb-Latn-DE",
+        hsn: "hsn-Hans-CN",
+        ht: "ht-Latn-HT",
+        hu: "hu-Latn-HU",
+        hui: "hui-Latn-ZZ",
+        hy: "hy-Armn-AM",
+        hz: "hz-Latn-NA",
+        ia: "ia-Latn-001",
+        ian: "ian-Latn-ZZ",
+        iar: "iar-Latn-ZZ",
+        iba: "iba-Latn-MY",
+        ibb: "ibb-Latn-NG",
+        iby: "iby-Latn-ZZ",
+        ica: "ica-Latn-ZZ",
+        ich: "ich-Latn-ZZ",
+        id: "id-Latn-ID",
+        idd: "idd-Latn-ZZ",
+        idi: "idi-Latn-ZZ",
+        idu: "idu-Latn-ZZ",
+        ife: "ife-Latn-TG",
+        ig: "ig-Latn-NG",
+        igb: "igb-Latn-ZZ",
+        ige: "ige-Latn-ZZ",
+        ii: "ii-Yiii-CN",
+        ijj: "ijj-Latn-ZZ",
+        ik: "ik-Latn-US",
+        ikk: "ikk-Latn-ZZ",
+        ikt: "ikt-Latn-CA",
+        ikw: "ikw-Latn-ZZ",
+        ikx: "ikx-Latn-ZZ",
+        ilo: "ilo-Latn-PH",
+        imo: "imo-Latn-ZZ",
+        in: "in-Latn-ID",
+        inh: "inh-Cyrl-RU",
+        io: "io-Latn-001",
+        iou: "iou-Latn-ZZ",
+        iri: "iri-Latn-ZZ",
+        is: "is-Latn-IS",
+        it: "it-Latn-IT",
+        iu: "iu-Cans-CA",
+        iw: "iw-Hebr-IL",
+        iwm: "iwm-Latn-ZZ",
+        iws: "iws-Latn-ZZ",
+        izh: "izh-Latn-RU",
+        izi: "izi-Latn-ZZ",
+        ja: "ja-Jpan-JP",
+        jab: "jab-Latn-ZZ",
+        jam: "jam-Latn-JM",
+        jbo: "jbo-Latn-001",
+        jbu: "jbu-Latn-ZZ",
+        jen: "jen-Latn-ZZ",
+        jgk: "jgk-Latn-ZZ",
+        jgo: "jgo-Latn-CM",
+        ji: "ji-Hebr-UA",
+        jib: "jib-Latn-ZZ",
+        jmc: "jmc-Latn-TZ",
+        jml: "jml-Deva-NP",
+        jra: "jra-Latn-ZZ",
+        jut: "jut-Latn-DK",
+        jv: "jv-Latn-ID",
+        jw: "jw-Latn-ID",
+        ka: "ka-Geor-GE",
+        kaa: "kaa-Cyrl-UZ",
+        kab: "kab-Latn-DZ",
+        kac: "kac-Latn-MM",
+        kad: "kad-Latn-ZZ",
+        kai: "kai-Latn-ZZ",
+        kaj: "kaj-Latn-NG",
+        kam: "kam-Latn-KE",
+        kao: "kao-Latn-ML",
+        kbd: "kbd-Cyrl-RU",
+        kbm: "kbm-Latn-ZZ",
+        kbp: "kbp-Latn-ZZ",
+        kbq: "kbq-Latn-ZZ",
+        kbx: "kbx-Latn-ZZ",
+        kby: "kby-Arab-NE",
+        kcg: "kcg-Latn-NG",
+        kck: "kck-Latn-ZW",
+        kcl: "kcl-Latn-ZZ",
+        kct: "kct-Latn-ZZ",
+        kde: "kde-Latn-TZ",
+        kdh: "kdh-Arab-TG",
+        kdl: "kdl-Latn-ZZ",
+        kdt: "kdt-Thai-TH",
+        kea: "kea-Latn-CV",
+        ken: "ken-Latn-CM",
+        kez: "kez-Latn-ZZ",
+        kfo: "kfo-Latn-CI",
+        kfr: "kfr-Deva-IN",
+        kfy: "kfy-Deva-IN",
+        kg: "kg-Latn-CD",
+        kge: "kge-Latn-ID",
+        kgf: "kgf-Latn-ZZ",
+        kgp: "kgp-Latn-BR",
+        kha: "kha-Latn-IN",
+        khb: "khb-Talu-CN",
+        khn: "khn-Deva-IN",
+        khq: "khq-Latn-ML",
+        khs: "khs-Latn-ZZ",
+        kht: "kht-Mymr-IN",
+        khw: "khw-Arab-PK",
+        khz: "khz-Latn-ZZ",
+        ki: "ki-Latn-KE",
+        kij: "kij-Latn-ZZ",
+        kiu: "kiu-Latn-TR",
+        kiw: "kiw-Latn-ZZ",
+        kj: "kj-Latn-NA",
+        kjd: "kjd-Latn-ZZ",
+        kjg: "kjg-Laoo-LA",
+        kjs: "kjs-Latn-ZZ",
+        kjy: "kjy-Latn-ZZ",
+        kk: "kk-Cyrl-KZ",
+        "kk-AF": "kk-Arab-AF",
+        "kk-Arab": "kk-Arab-CN",
+        "kk-CN": "kk-Arab-CN",
+        "kk-IR": "kk-Arab-IR",
+        "kk-MN": "kk-Arab-MN",
+        kkc: "kkc-Latn-ZZ",
+        kkj: "kkj-Latn-CM",
+        kl: "kl-Latn-GL",
+        kln: "kln-Latn-KE",
+        klq: "klq-Latn-ZZ",
+        klt: "klt-Latn-ZZ",
+        klx: "klx-Latn-ZZ",
+        km: "km-Khmr-KH",
+        kmb: "kmb-Latn-AO",
+        kmh: "kmh-Latn-ZZ",
+        kmo: "kmo-Latn-ZZ",
+        kms: "kms-Latn-ZZ",
+        kmu: "kmu-Latn-ZZ",
+        kmw: "kmw-Latn-ZZ",
+        kn: "kn-Knda-IN",
+        knf: "knf-Latn-GW",
+        knp: "knp-Latn-ZZ",
+        ko: "ko-Kore-KR",
+        koi: "koi-Cyrl-RU",
+        kok: "kok-Deva-IN",
+        kol: "kol-Latn-ZZ",
+        kos: "kos-Latn-FM",
+        koz: "koz-Latn-ZZ",
+        kpe: "kpe-Latn-LR",
+        kpf: "kpf-Latn-ZZ",
+        kpo: "kpo-Latn-ZZ",
+        kpr: "kpr-Latn-ZZ",
+        kpx: "kpx-Latn-ZZ",
+        kqb: "kqb-Latn-ZZ",
+        kqf: "kqf-Latn-ZZ",
+        kqs: "kqs-Latn-ZZ",
+        kqy: "kqy-Ethi-ZZ",
+        kr: "kr-Latn-ZZ",
+        krc: "krc-Cyrl-RU",
+        kri: "kri-Latn-SL",
+        krj: "krj-Latn-PH",
+        krl: "krl-Latn-RU",
+        krs: "krs-Latn-ZZ",
+        kru: "kru-Deva-IN",
+        ks: "ks-Arab-IN",
+        ksb: "ksb-Latn-TZ",
+        ksd: "ksd-Latn-ZZ",
+        ksf: "ksf-Latn-CM",
+        ksh: "ksh-Latn-DE",
+        ksj: "ksj-Latn-ZZ",
+        ksr: "ksr-Latn-ZZ",
+        ktb: "ktb-Ethi-ZZ",
+        ktm: "ktm-Latn-ZZ",
+        kto: "kto-Latn-ZZ",
+        ktr: "ktr-Latn-MY",
+        ku: "ku-Latn-TR",
+        "ku-Arab": "ku-Arab-IQ",
+        "ku-LB": "ku-Arab-LB",
+        kub: "kub-Latn-ZZ",
+        kud: "kud-Latn-ZZ",
+        kue: "kue-Latn-ZZ",
+        kuj: "kuj-Latn-ZZ",
+        kum: "kum-Cyrl-RU",
+        kun: "kun-Latn-ZZ",
+        kup: "kup-Latn-ZZ",
+        kus: "kus-Latn-ZZ",
+        kv: "kv-Cyrl-RU",
+        kvg: "kvg-Latn-ZZ",
+        kvr: "kvr-Latn-ID",
+        kvx: "kvx-Arab-PK",
+        kw: "kw-Latn-GB",
+        kwj: "kwj-Latn-ZZ",
+        kwo: "kwo-Latn-ZZ",
+        kwq: "kwq-Latn-ZZ",
+        kxa: "kxa-Latn-ZZ",
+        kxc: "kxc-Ethi-ZZ",
+        kxe: "kxe-Latn-ZZ",
+        kxm: "kxm-Thai-TH",
+        kxp: "kxp-Arab-PK",
+        kxw: "kxw-Latn-ZZ",
+        kxz: "kxz-Latn-ZZ",
+        ky: "ky-Cyrl-KG",
+        "ky-Arab": "ky-Arab-CN",
+        "ky-CN": "ky-Arab-CN",
+        "ky-Latn": "ky-Latn-TR",
+        "ky-TR": "ky-Latn-TR",
+        kye: "kye-Latn-ZZ",
+        kyx: "kyx-Latn-ZZ",
+        kzj: "kzj-Latn-MY",
+        kzr: "kzr-Latn-ZZ",
+        kzt: "kzt-Latn-MY",
+        la: "la-Latn-VA",
+        lab: "lab-Lina-GR",
+        lad: "lad-Hebr-IL",
+        lag: "lag-Latn-TZ",
+        lah: "lah-Arab-PK",
+        laj: "laj-Latn-UG",
+        las: "las-Latn-ZZ",
+        lb: "lb-Latn-LU",
+        lbe: "lbe-Cyrl-RU",
+        lbu: "lbu-Latn-ZZ",
+        lbw: "lbw-Latn-ID",
+        lcm: "lcm-Latn-ZZ",
+        lcp: "lcp-Thai-CN",
+        ldb: "ldb-Latn-ZZ",
+        led: "led-Latn-ZZ",
+        lee: "lee-Latn-ZZ",
+        lem: "lem-Latn-ZZ",
+        lep: "lep-Lepc-IN",
+        leq: "leq-Latn-ZZ",
+        leu: "leu-Latn-ZZ",
+        lez: "lez-Cyrl-RU",
+        lg: "lg-Latn-UG",
+        lgg: "lgg-Latn-ZZ",
+        li: "li-Latn-NL",
+        lia: "lia-Latn-ZZ",
+        lid: "lid-Latn-ZZ",
+        lif: "lif-Deva-NP",
+        "lif-Limb": "lif-Limb-IN",
+        lig: "lig-Latn-ZZ",
+        lih: "lih-Latn-ZZ",
+        lij: "lij-Latn-IT",
+        lis: "lis-Lisu-CN",
+        ljp: "ljp-Latn-ID",
+        lki: "lki-Arab-IR",
+        lkt: "lkt-Latn-US",
+        lle: "lle-Latn-ZZ",
+        lln: "lln-Latn-ZZ",
+        lmn: "lmn-Telu-IN",
+        lmo: "lmo-Latn-IT",
+        lmp: "lmp-Latn-ZZ",
+        ln: "ln-Latn-CD",
+        lns: "lns-Latn-ZZ",
+        lnu: "lnu-Latn-ZZ",
+        lo: "lo-Laoo-LA",
+        loj: "loj-Latn-ZZ",
+        lok: "lok-Latn-ZZ",
+        lol: "lol-Latn-CD",
+        lor: "lor-Latn-ZZ",
+        los: "los-Latn-ZZ",
+        loz: "loz-Latn-ZM",
+        lrc: "lrc-Arab-IR",
+        lt: "lt-Latn-LT",
+        ltg: "ltg-Latn-LV",
+        lu: "lu-Latn-CD",
+        lua: "lua-Latn-CD",
+        luo: "luo-Latn-KE",
+        luy: "luy-Latn-KE",
+        luz: "luz-Arab-IR",
+        lv: "lv-Latn-LV",
+        lwl: "lwl-Thai-TH",
+        lzh: "lzh-Hans-CN",
+        lzz: "lzz-Latn-TR",
+        mad: "mad-Latn-ID",
+        maf: "maf-Latn-CM",
+        mag: "mag-Deva-IN",
+        mai: "mai-Deva-IN",
+        mak: "mak-Latn-ID",
+        man: "man-Latn-GM",
+        "man-GN": "man-Nkoo-GN",
+        "man-Nkoo": "man-Nkoo-GN",
+        mas: "mas-Latn-KE",
+        maw: "maw-Latn-ZZ",
+        maz: "maz-Latn-MX",
+        mbh: "mbh-Latn-ZZ",
+        mbo: "mbo-Latn-ZZ",
+        mbq: "mbq-Latn-ZZ",
+        mbu: "mbu-Latn-ZZ",
+        mbw: "mbw-Latn-ZZ",
+        mci: "mci-Latn-ZZ",
+        mcp: "mcp-Latn-ZZ",
+        mcq: "mcq-Latn-ZZ",
+        mcr: "mcr-Latn-ZZ",
+        mcu: "mcu-Latn-ZZ",
+        mda: "mda-Latn-ZZ",
+        mde: "mde-Arab-ZZ",
+        mdf: "mdf-Cyrl-RU",
+        mdh: "mdh-Latn-PH",
+        mdj: "mdj-Latn-ZZ",
+        mdr: "mdr-Latn-ID",
+        mdx: "mdx-Ethi-ZZ",
+        med: "med-Latn-ZZ",
+        mee: "mee-Latn-ZZ",
+        mek: "mek-Latn-ZZ",
+        men: "men-Latn-SL",
+        mer: "mer-Latn-KE",
+        met: "met-Latn-ZZ",
+        meu: "meu-Latn-ZZ",
+        mfa: "mfa-Arab-TH",
+        mfe: "mfe-Latn-MU",
+        mfn: "mfn-Latn-ZZ",
+        mfo: "mfo-Latn-ZZ",
+        mfq: "mfq-Latn-ZZ",
+        mg: "mg-Latn-MG",
+        mgh: "mgh-Latn-MZ",
+        mgl: "mgl-Latn-ZZ",
+        mgo: "mgo-Latn-CM",
+        mgp: "mgp-Deva-NP",
+        mgy: "mgy-Latn-TZ",
+        mh: "mh-Latn-MH",
+        mhi: "mhi-Latn-ZZ",
+        mhl: "mhl-Latn-ZZ",
+        mi: "mi-Latn-NZ",
+        mif: "mif-Latn-ZZ",
+        min: "min-Latn-ID",
+        mis: "mis-Hatr-IQ",
+        "mis-Medf": "mis-Medf-NG",
+        miw: "miw-Latn-ZZ",
+        mk: "mk-Cyrl-MK",
+        mki: "mki-Arab-ZZ",
+        mkl: "mkl-Latn-ZZ",
+        mkp: "mkp-Latn-ZZ",
+        mkw: "mkw-Latn-ZZ",
+        ml: "ml-Mlym-IN",
+        mle: "mle-Latn-ZZ",
+        mlp: "mlp-Latn-ZZ",
+        mls: "mls-Latn-SD",
+        mmo: "mmo-Latn-ZZ",
+        mmu: "mmu-Latn-ZZ",
+        mmx: "mmx-Latn-ZZ",
+        mn: "mn-Cyrl-MN",
+        "mn-CN": "mn-Mong-CN",
+        "mn-Mong": "mn-Mong-CN",
+        mna: "mna-Latn-ZZ",
+        mnf: "mnf-Latn-ZZ",
+        mni: "mni-Beng-IN",
+        mnw: "mnw-Mymr-MM",
+        mo: "mo-Latn-RO",
+        moa: "moa-Latn-ZZ",
+        moe: "moe-Latn-CA",
+        moh: "moh-Latn-CA",
+        mos: "mos-Latn-BF",
+        mox: "mox-Latn-ZZ",
+        mpp: "mpp-Latn-ZZ",
+        mps: "mps-Latn-ZZ",
+        mpt: "mpt-Latn-ZZ",
+        mpx: "mpx-Latn-ZZ",
+        mql: "mql-Latn-ZZ",
+        mr: "mr-Deva-IN",
+        mrd: "mrd-Deva-NP",
+        mrj: "mrj-Cyrl-RU",
+        mro: "mro-Mroo-BD",
+        ms: "ms-Latn-MY",
+        "ms-CC": "ms-Arab-CC",
+        "ms-ID": "ms-Arab-ID",
+        mt: "mt-Latn-MT",
+        mtc: "mtc-Latn-ZZ",
+        mtf: "mtf-Latn-ZZ",
+        mti: "mti-Latn-ZZ",
+        mtr: "mtr-Deva-IN",
+        mua: "mua-Latn-CM",
+        mur: "mur-Latn-ZZ",
+        mus: "mus-Latn-US",
+        mva: "mva-Latn-ZZ",
+        mvn: "mvn-Latn-ZZ",
+        mvy: "mvy-Arab-PK",
+        mwk: "mwk-Latn-ML",
+        mwr: "mwr-Deva-IN",
+        mwv: "mwv-Latn-ID",
+        mww: "mww-Hmnp-US",
+        mxc: "mxc-Latn-ZW",
+        mxm: "mxm-Latn-ZZ",
+        my: "my-Mymr-MM",
+        myk: "myk-Latn-ZZ",
+        mym: "mym-Ethi-ZZ",
+        myv: "myv-Cyrl-RU",
+        myw: "myw-Latn-ZZ",
+        myx: "myx-Latn-UG",
+        myz: "myz-Mand-IR",
+        mzk: "mzk-Latn-ZZ",
+        mzm: "mzm-Latn-ZZ",
+        mzn: "mzn-Arab-IR",
+        mzp: "mzp-Latn-ZZ",
+        mzw: "mzw-Latn-ZZ",
+        mzz: "mzz-Latn-ZZ",
+        na: "na-Latn-NR",
+        nac: "nac-Latn-ZZ",
+        naf: "naf-Latn-ZZ",
+        nak: "nak-Latn-ZZ",
+        nan: "nan-Hans-CN",
+        nap: "nap-Latn-IT",
+        naq: "naq-Latn-NA",
+        nas: "nas-Latn-ZZ",
+        nb: "nb-Latn-NO",
+        nca: "nca-Latn-ZZ",
+        nce: "nce-Latn-ZZ",
+        ncf: "ncf-Latn-ZZ",
+        nch: "nch-Latn-MX",
+        nco: "nco-Latn-ZZ",
+        ncu: "ncu-Latn-ZZ",
+        nd: "nd-Latn-ZW",
+        ndc: "ndc-Latn-MZ",
+        nds: "nds-Latn-DE",
+        ne: "ne-Deva-NP",
+        neb: "neb-Latn-ZZ",
+        new: "new-Deva-NP",
+        nex: "nex-Latn-ZZ",
+        nfr: "nfr-Latn-ZZ",
+        ng: "ng-Latn-NA",
+        nga: "nga-Latn-ZZ",
+        ngb: "ngb-Latn-ZZ",
+        ngl: "ngl-Latn-MZ",
+        nhb: "nhb-Latn-ZZ",
+        nhe: "nhe-Latn-MX",
+        nhw: "nhw-Latn-MX",
+        nif: "nif-Latn-ZZ",
+        nii: "nii-Latn-ZZ",
+        nij: "nij-Latn-ID",
+        nin: "nin-Latn-ZZ",
+        niu: "niu-Latn-NU",
+        niy: "niy-Latn-ZZ",
+        niz: "niz-Latn-ZZ",
+        njo: "njo-Latn-IN",
+        nkg: "nkg-Latn-ZZ",
+        nko: "nko-Latn-ZZ",
+        nl: "nl-Latn-NL",
+        nmg: "nmg-Latn-CM",
+        nmz: "nmz-Latn-ZZ",
+        nn: "nn-Latn-NO",
+        nnf: "nnf-Latn-ZZ",
+        nnh: "nnh-Latn-CM",
+        nnk: "nnk-Latn-ZZ",
+        nnm: "nnm-Latn-ZZ",
+        nnp: "nnp-Wcho-IN",
+        no: "no-Latn-NO",
+        nod: "nod-Lana-TH",
+        noe: "noe-Deva-IN",
+        non: "non-Runr-SE",
+        nop: "nop-Latn-ZZ",
+        nou: "nou-Latn-ZZ",
+        nqo: "nqo-Nkoo-GN",
+        nr: "nr-Latn-ZA",
+        nrb: "nrb-Latn-ZZ",
+        nsk: "nsk-Cans-CA",
+        nsn: "nsn-Latn-ZZ",
+        nso: "nso-Latn-ZA",
+        nss: "nss-Latn-ZZ",
+        ntm: "ntm-Latn-ZZ",
+        ntr: "ntr-Latn-ZZ",
+        nui: "nui-Latn-ZZ",
+        nup: "nup-Latn-ZZ",
+        nus: "nus-Latn-SS",
+        nuv: "nuv-Latn-ZZ",
+        nux: "nux-Latn-ZZ",
+        nv: "nv-Latn-US",
+        nwb: "nwb-Latn-ZZ",
+        nxq: "nxq-Latn-CN",
+        nxr: "nxr-Latn-ZZ",
+        ny: "ny-Latn-MW",
+        nym: "nym-Latn-TZ",
+        nyn: "nyn-Latn-UG",
+        nzi: "nzi-Latn-GH",
+        oc: "oc-Latn-FR",
+        ogc: "ogc-Latn-ZZ",
+        okr: "okr-Latn-ZZ",
+        okv: "okv-Latn-ZZ",
+        om: "om-Latn-ET",
+        ong: "ong-Latn-ZZ",
+        onn: "onn-Latn-ZZ",
+        ons: "ons-Latn-ZZ",
+        opm: "opm-Latn-ZZ",
+        or: "or-Orya-IN",
+        oro: "oro-Latn-ZZ",
+        oru: "oru-Arab-ZZ",
+        os: "os-Cyrl-GE",
+        osa: "osa-Osge-US",
+        ota: "ota-Arab-ZZ",
+        otk: "otk-Orkh-MN",
+        ozm: "ozm-Latn-ZZ",
+        pa: "pa-Guru-IN",
+        "pa-Arab": "pa-Arab-PK",
+        "pa-PK": "pa-Arab-PK",
+        pag: "pag-Latn-PH",
+        pal: "pal-Phli-IR",
+        "pal-Phlp": "pal-Phlp-CN",
+        pam: "pam-Latn-PH",
+        pap: "pap-Latn-AW",
+        pau: "pau-Latn-PW",
+        pbi: "pbi-Latn-ZZ",
+        pcd: "pcd-Latn-FR",
+        pcm: "pcm-Latn-NG",
+        pdc: "pdc-Latn-US",
+        pdt: "pdt-Latn-CA",
+        ped: "ped-Latn-ZZ",
+        peo: "peo-Xpeo-IR",
+        pex: "pex-Latn-ZZ",
+        pfl: "pfl-Latn-DE",
+        phl: "phl-Arab-ZZ",
+        phn: "phn-Phnx-LB",
+        pil: "pil-Latn-ZZ",
+        pip: "pip-Latn-ZZ",
+        pka: "pka-Brah-IN",
+        pko: "pko-Latn-KE",
+        pl: "pl-Latn-PL",
+        pla: "pla-Latn-ZZ",
+        pms: "pms-Latn-IT",
+        png: "png-Latn-ZZ",
+        pnn: "pnn-Latn-ZZ",
+        pnt: "pnt-Grek-GR",
+        pon: "pon-Latn-FM",
+        ppa: "ppa-Deva-IN",
+        ppo: "ppo-Latn-ZZ",
+        pra: "pra-Khar-PK",
+        prd: "prd-Arab-IR",
+        prg: "prg-Latn-001",
+        ps: "ps-Arab-AF",
+        pss: "pss-Latn-ZZ",
+        pt: "pt-Latn-BR",
+        ptp: "ptp-Latn-ZZ",
+        puu: "puu-Latn-GA",
+        pwa: "pwa-Latn-ZZ",
+        qu: "qu-Latn-PE",
+        quc: "quc-Latn-GT",
+        qug: "qug-Latn-EC",
+        rai: "rai-Latn-ZZ",
+        raj: "raj-Deva-IN",
+        rao: "rao-Latn-ZZ",
+        rcf: "rcf-Latn-RE",
+        rej: "rej-Latn-ID",
+        rel: "rel-Latn-ZZ",
+        res: "res-Latn-ZZ",
+        rgn: "rgn-Latn-IT",
+        rhg: "rhg-Arab-MM",
+        ria: "ria-Latn-IN",
+        rif: "rif-Tfng-MA",
+        "rif-NL": "rif-Latn-NL",
+        rjs: "rjs-Deva-NP",
+        rkt: "rkt-Beng-BD",
+        rm: "rm-Latn-CH",
+        rmf: "rmf-Latn-FI",
+        rmo: "rmo-Latn-CH",
+        rmt: "rmt-Arab-IR",
+        rmu: "rmu-Latn-SE",
+        rn: "rn-Latn-BI",
+        rna: "rna-Latn-ZZ",
+        rng: "rng-Latn-MZ",
+        ro: "ro-Latn-RO",
+        rob: "rob-Latn-ID",
+        rof: "rof-Latn-TZ",
+        roo: "roo-Latn-ZZ",
+        rro: "rro-Latn-ZZ",
+        rtm: "rtm-Latn-FJ",
+        ru: "ru-Cyrl-RU",
+        rue: "rue-Cyrl-UA",
+        rug: "rug-Latn-SB",
+        rw: "rw-Latn-RW",
+        rwk: "rwk-Latn-TZ",
+        rwo: "rwo-Latn-ZZ",
+        ryu: "ryu-Kana-JP",
+        sa: "sa-Deva-IN",
+        saf: "saf-Latn-GH",
+        sah: "sah-Cyrl-RU",
+        saq: "saq-Latn-KE",
+        sas: "sas-Latn-ID",
+        sat: "sat-Latn-IN",
+        sav: "sav-Latn-SN",
+        saz: "saz-Saur-IN",
+        sba: "sba-Latn-ZZ",
+        sbe: "sbe-Latn-ZZ",
+        sbp: "sbp-Latn-TZ",
+        sc: "sc-Latn-IT",
+        sck: "sck-Deva-IN",
+        scl: "scl-Arab-ZZ",
+        scn: "scn-Latn-IT",
+        sco: "sco-Latn-GB",
+        scs: "scs-Latn-CA",
+        sd: "sd-Arab-PK",
+        "sd-Deva": "sd-Deva-IN",
+        "sd-Khoj": "sd-Khoj-IN",
+        "sd-Sind": "sd-Sind-IN",
+        sdc: "sdc-Latn-IT",
+        sdh: "sdh-Arab-IR",
+        se: "se-Latn-NO",
+        sef: "sef-Latn-CI",
+        seh: "seh-Latn-MZ",
+        sei: "sei-Latn-MX",
+        ses: "ses-Latn-ML",
+        sg: "sg-Latn-CF",
+        sga: "sga-Ogam-IE",
+        sgs: "sgs-Latn-LT",
+        sgw: "sgw-Ethi-ZZ",
+        sgz: "sgz-Latn-ZZ",
+        shi: "shi-Tfng-MA",
+        shk: "shk-Latn-ZZ",
+        shn: "shn-Mymr-MM",
+        shu: "shu-Arab-ZZ",
+        si: "si-Sinh-LK",
+        sid: "sid-Latn-ET",
+        sig: "sig-Latn-ZZ",
+        sil: "sil-Latn-ZZ",
+        sim: "sim-Latn-ZZ",
+        sjr: "sjr-Latn-ZZ",
+        sk: "sk-Latn-SK",
+        skc: "skc-Latn-ZZ",
+        skr: "skr-Arab-PK",
+        sks: "sks-Latn-ZZ",
+        sl: "sl-Latn-SI",
+        sld: "sld-Latn-ZZ",
+        sli: "sli-Latn-PL",
+        sll: "sll-Latn-ZZ",
+        sly: "sly-Latn-ID",
+        sm: "sm-Latn-WS",
+        sma: "sma-Latn-SE",
+        smj: "smj-Latn-SE",
+        smn: "smn-Latn-FI",
+        smp: "smp-Samr-IL",
+        smq: "smq-Latn-ZZ",
+        sms: "sms-Latn-FI",
+        sn: "sn-Latn-ZW",
+        snc: "snc-Latn-ZZ",
+        snk: "snk-Latn-ML",
+        snp: "snp-Latn-ZZ",
+        snx: "snx-Latn-ZZ",
+        sny: "sny-Latn-ZZ",
+        so: "so-Latn-SO",
+        sog: "sog-Sogd-UZ",
+        sok: "sok-Latn-ZZ",
+        soq: "soq-Latn-ZZ",
+        sou: "sou-Thai-TH",
+        soy: "soy-Latn-ZZ",
+        spd: "spd-Latn-ZZ",
+        spl: "spl-Latn-ZZ",
+        sps: "sps-Latn-ZZ",
+        sq: "sq-Latn-AL",
+        sr: "sr-Cyrl-RS",
+        "sr-ME": "sr-Latn-ME",
+        "sr-RO": "sr-Latn-RO",
+        "sr-RU": "sr-Latn-RU",
+        "sr-TR": "sr-Latn-TR",
+        srb: "srb-Sora-IN",
+        srn: "srn-Latn-SR",
+        srr: "srr-Latn-SN",
+        srx: "srx-Deva-IN",
+        ss: "ss-Latn-ZA",
+        ssd: "ssd-Latn-ZZ",
+        ssg: "ssg-Latn-ZZ",
+        ssy: "ssy-Latn-ER",
+        st: "st-Latn-ZA",
+        stk: "stk-Latn-ZZ",
+        stq: "stq-Latn-DE",
+        su: "su-Latn-ID",
+        sua: "sua-Latn-ZZ",
+        sue: "sue-Latn-ZZ",
+        suk: "suk-Latn-TZ",
+        sur: "sur-Latn-ZZ",
+        sus: "sus-Latn-GN",
+        sv: "sv-Latn-SE",
+        sw: "sw-Latn-TZ",
+        swb: "swb-Arab-YT",
+        swc: "swc-Latn-CD",
+        swg: "swg-Latn-DE",
+        swp: "swp-Latn-ZZ",
+        swv: "swv-Deva-IN",
+        sxn: "sxn-Latn-ID",
+        sxw: "sxw-Latn-ZZ",
+        syl: "syl-Beng-BD",
+        syr: "syr-Syrc-IQ",
+        szl: "szl-Latn-PL",
+        ta: "ta-Taml-IN",
+        taj: "taj-Deva-NP",
+        tal: "tal-Latn-ZZ",
+        tan: "tan-Latn-ZZ",
+        taq: "taq-Latn-ZZ",
+        tbc: "tbc-Latn-ZZ",
+        tbd: "tbd-Latn-ZZ",
+        tbf: "tbf-Latn-ZZ",
+        tbg: "tbg-Latn-ZZ",
+        tbo: "tbo-Latn-ZZ",
+        tbw: "tbw-Latn-PH",
+        tbz: "tbz-Latn-ZZ",
+        tci: "tci-Latn-ZZ",
+        tcy: "tcy-Knda-IN",
+        tdd: "tdd-Tale-CN",
+        tdg: "tdg-Deva-NP",
+        tdh: "tdh-Deva-NP",
+        tdu: "tdu-Latn-MY",
+        te: "te-Telu-IN",
+        ted: "ted-Latn-ZZ",
+        tem: "tem-Latn-SL",
+        teo: "teo-Latn-UG",
+        tet: "tet-Latn-TL",
+        tfi: "tfi-Latn-ZZ",
+        tg: "tg-Cyrl-TJ",
+        "tg-Arab": "tg-Arab-PK",
+        "tg-PK": "tg-Arab-PK",
+        tgc: "tgc-Latn-ZZ",
+        tgo: "tgo-Latn-ZZ",
+        tgu: "tgu-Latn-ZZ",
+        th: "th-Thai-TH",
+        thl: "thl-Deva-NP",
+        thq: "thq-Deva-NP",
+        thr: "thr-Deva-NP",
+        ti: "ti-Ethi-ET",
+        tif: "tif-Latn-ZZ",
+        tig: "tig-Ethi-ER",
+        tik: "tik-Latn-ZZ",
+        tim: "tim-Latn-ZZ",
+        tio: "tio-Latn-ZZ",
+        tiv: "tiv-Latn-NG",
+        tk: "tk-Latn-TM",
+        tkl: "tkl-Latn-TK",
+        tkr: "tkr-Latn-AZ",
+        tkt: "tkt-Deva-NP",
+        tl: "tl-Latn-PH",
+        tlf: "tlf-Latn-ZZ",
+        tlx: "tlx-Latn-ZZ",
+        tly: "tly-Latn-AZ",
+        tmh: "tmh-Latn-NE",
+        tmy: "tmy-Latn-ZZ",
+        tn: "tn-Latn-ZA",
+        tnh: "tnh-Latn-ZZ",
+        to: "to-Latn-TO",
+        tof: "tof-Latn-ZZ",
+        tog: "tog-Latn-MW",
+        toq: "toq-Latn-ZZ",
+        tpi: "tpi-Latn-PG",
+        tpm: "tpm-Latn-ZZ",
+        tpz: "tpz-Latn-ZZ",
+        tqo: "tqo-Latn-ZZ",
+        tr: "tr-Latn-TR",
+        tru: "tru-Latn-TR",
+        trv: "trv-Latn-TW",
+        trw: "trw-Arab-ZZ",
+        ts: "ts-Latn-ZA",
+        tsd: "tsd-Grek-GR",
+        tsf: "tsf-Deva-NP",
+        tsg: "tsg-Latn-PH",
+        tsj: "tsj-Tibt-BT",
+        tsw: "tsw-Latn-ZZ",
+        tt: "tt-Cyrl-RU",
+        ttd: "ttd-Latn-ZZ",
+        tte: "tte-Latn-ZZ",
+        ttj: "ttj-Latn-UG",
+        ttr: "ttr-Latn-ZZ",
+        tts: "tts-Thai-TH",
+        ttt: "ttt-Latn-AZ",
+        tuh: "tuh-Latn-ZZ",
+        tul: "tul-Latn-ZZ",
+        tum: "tum-Latn-MW",
+        tuq: "tuq-Latn-ZZ",
+        tvd: "tvd-Latn-ZZ",
+        tvl: "tvl-Latn-TV",
+        tvu: "tvu-Latn-ZZ",
+        twh: "twh-Latn-ZZ",
+        twq: "twq-Latn-NE",
+        txg: "txg-Tang-CN",
+        ty: "ty-Latn-PF",
+        tya: "tya-Latn-ZZ",
+        tyv: "tyv-Cyrl-RU",
+        tzm: "tzm-Latn-MA",
+        ubu: "ubu-Latn-ZZ",
+        udm: "udm-Cyrl-RU",
+        ug: "ug-Arab-CN",
+        "ug-Cyrl": "ug-Cyrl-KZ",
+        "ug-KZ": "ug-Cyrl-KZ",
+        "ug-MN": "ug-Cyrl-MN",
+        uga: "uga-Ugar-SY",
+        uk: "uk-Cyrl-UA",
+        uli: "uli-Latn-FM",
+        umb: "umb-Latn-AO",
+        und: "en-Latn-US",
+        "und-002": "en-Latn-NG",
+        "und-003": "en-Latn-US",
+        "und-005": "pt-Latn-BR",
+        "und-009": "en-Latn-AU",
+        "und-011": "en-Latn-NG",
+        "und-013": "es-Latn-MX",
+        "und-014": "sw-Latn-TZ",
+        "und-015": "ar-Arab-EG",
+        "und-017": "sw-Latn-CD",
+        "und-018": "en-Latn-ZA",
+        "und-019": "en-Latn-US",
+        "und-021": "en-Latn-US",
+        "und-029": "es-Latn-CU",
+        "und-030": "zh-Hans-CN",
+        "und-034": "hi-Deva-IN",
+        "und-035": "id-Latn-ID",
+        "und-039": "it-Latn-IT",
+        "und-053": "en-Latn-AU",
+        "und-054": "en-Latn-PG",
+        "und-057": "en-Latn-GU",
+        "und-061": "sm-Latn-WS",
+        "und-142": "zh-Hans-CN",
+        "und-143": "uz-Latn-UZ",
+        "und-145": "ar-Arab-SA",
+        "und-150": "ru-Cyrl-RU",
+        "und-151": "ru-Cyrl-RU",
+        "und-154": "en-Latn-GB",
+        "und-155": "de-Latn-DE",
+        "und-202": "en-Latn-NG",
+        "und-419": "es-Latn-419",
+        "und-AD": "ca-Latn-AD",
+        "und-Adlm": "ff-Adlm-GN",
+        "und-AE": "ar-Arab-AE",
+        "und-AF": "fa-Arab-AF",
+        "und-Aghb": "lez-Aghb-RU",
+        "und-Ahom": "aho-Ahom-IN",
+        "und-AL": "sq-Latn-AL",
+        "und-AM": "hy-Armn-AM",
+        "und-AO": "pt-Latn-AO",
+        "und-AQ": "und-Latn-AQ",
+        "und-AR": "es-Latn-AR",
+        "und-Arab": "ar-Arab-EG",
+        "und-Arab-CC": "ms-Arab-CC",
+        "und-Arab-CN": "ug-Arab-CN",
+        "und-Arab-GB": "ks-Arab-GB",
+        "und-Arab-ID": "ms-Arab-ID",
+        "und-Arab-IN": "ur-Arab-IN",
+        "und-Arab-KH": "cja-Arab-KH",
+        "und-Arab-MM": "rhg-Arab-MM",
+        "und-Arab-MN": "kk-Arab-MN",
+        "und-Arab-MU": "ur-Arab-MU",
+        "und-Arab-NG": "ha-Arab-NG",
+        "und-Arab-PK": "ur-Arab-PK",
+        "und-Arab-TG": "apd-Arab-TG",
+        "und-Arab-TH": "mfa-Arab-TH",
+        "und-Arab-TJ": "fa-Arab-TJ",
+        "und-Arab-TR": "az-Arab-TR",
+        "und-Arab-YT": "swb-Arab-YT",
+        "und-Armi": "arc-Armi-IR",
+        "und-Armn": "hy-Armn-AM",
+        "und-AS": "sm-Latn-AS",
+        "und-AT": "de-Latn-AT",
+        "und-Avst": "ae-Avst-IR",
+        "und-AW": "nl-Latn-AW",
+        "und-AX": "sv-Latn-AX",
+        "und-AZ": "az-Latn-AZ",
+        "und-BA": "bs-Latn-BA",
+        "und-Bali": "ban-Bali-ID",
+        "und-Bamu": "bax-Bamu-CM",
+        "und-Bass": "bsq-Bass-LR",
+        "und-Batk": "bbc-Batk-ID",
+        "und-BD": "bn-Beng-BD",
+        "und-BE": "nl-Latn-BE",
+        "und-Beng": "bn-Beng-BD",
+        "und-BF": "fr-Latn-BF",
+        "und-BG": "bg-Cyrl-BG",
+        "und-BH": "ar-Arab-BH",
+        "und-Bhks": "sa-Bhks-IN",
+        "und-BI": "rn-Latn-BI",
+        "und-BJ": "fr-Latn-BJ",
+        "und-BL": "fr-Latn-BL",
+        "und-BN": "ms-Latn-BN",
+        "und-BO": "es-Latn-BO",
+        "und-Bopo": "zh-Bopo-TW",
+        "und-BQ": "pap-Latn-BQ",
+        "und-BR": "pt-Latn-BR",
+        "und-Brah": "pka-Brah-IN",
+        "und-Brai": "fr-Brai-FR",
+        "und-BT": "dz-Tibt-BT",
+        "und-Bugi": "bug-Bugi-ID",
+        "und-Buhd": "bku-Buhd-PH",
+        "und-BV": "und-Latn-BV",
+        "und-BY": "be-Cyrl-BY",
+        "und-Cakm": "ccp-Cakm-BD",
+        "und-Cans": "cr-Cans-CA",
+        "und-Cari": "xcr-Cari-TR",
+        "und-CD": "sw-Latn-CD",
+        "und-CF": "fr-Latn-CF",
+        "und-CG": "fr-Latn-CG",
+        "und-CH": "de-Latn-CH",
+        "und-Cham": "cjm-Cham-VN",
+        "und-Cher": "chr-Cher-US",
+        "und-CI": "fr-Latn-CI",
+        "und-CL": "es-Latn-CL",
+        "und-CM": "fr-Latn-CM",
+        "und-CN": "zh-Hans-CN",
+        "und-CO": "es-Latn-CO",
+        "und-Copt": "cop-Copt-EG",
+        "und-CP": "und-Latn-CP",
+        "und-Cprt": "grc-Cprt-CY",
+        "und-CR": "es-Latn-CR",
+        "und-CU": "es-Latn-CU",
+        "und-CV": "pt-Latn-CV",
+        "und-CW": "pap-Latn-CW",
+        "und-CY": "el-Grek-CY",
+        "und-Cyrl": "ru-Cyrl-RU",
+        "und-Cyrl-AL": "mk-Cyrl-AL",
+        "und-Cyrl-BA": "sr-Cyrl-BA",
+        "und-Cyrl-GE": "ab-Cyrl-GE",
+        "und-Cyrl-GR": "mk-Cyrl-GR",
+        "und-Cyrl-MD": "uk-Cyrl-MD",
+        "und-Cyrl-RO": "bg-Cyrl-RO",
+        "und-Cyrl-SK": "uk-Cyrl-SK",
+        "und-Cyrl-TR": "kbd-Cyrl-TR",
+        "und-Cyrl-XK": "sr-Cyrl-XK",
+        "und-CZ": "cs-Latn-CZ",
+        "und-DE": "de-Latn-DE",
+        "und-Deva": "hi-Deva-IN",
+        "und-Deva-BT": "ne-Deva-BT",
+        "und-Deva-FJ": "hif-Deva-FJ",
+        "und-Deva-MU": "bho-Deva-MU",
+        "und-Deva-PK": "btv-Deva-PK",
+        "und-DJ": "aa-Latn-DJ",
+        "und-DK": "da-Latn-DK",
+        "und-DO": "es-Latn-DO",
+        "und-Dogr": "doi-Dogr-IN",
+        "und-Dupl": "fr-Dupl-FR",
+        "und-DZ": "ar-Arab-DZ",
+        "und-EA": "es-Latn-EA",
+        "und-EC": "es-Latn-EC",
+        "und-EE": "et-Latn-EE",
+        "und-EG": "ar-Arab-EG",
+        "und-Egyp": "egy-Egyp-EG",
+        "und-EH": "ar-Arab-EH",
+        "und-Elba": "sq-Elba-AL",
+        "und-Elym": "arc-Elym-IR",
+        "und-ER": "ti-Ethi-ER",
+        "und-ES": "es-Latn-ES",
+        "und-ET": "am-Ethi-ET",
+        "und-Ethi": "am-Ethi-ET",
+        "und-EU": "en-Latn-GB",
+        "und-EZ": "de-Latn-EZ",
+        "und-FI": "fi-Latn-FI",
+        "und-FO": "fo-Latn-FO",
+        "und-FR": "fr-Latn-FR",
+        "und-GA": "fr-Latn-GA",
+        "und-GE": "ka-Geor-GE",
+        "und-Geor": "ka-Geor-GE",
+        "und-GF": "fr-Latn-GF",
+        "und-GH": "ak-Latn-GH",
+        "und-GL": "kl-Latn-GL",
+        "und-Glag": "cu-Glag-BG",
+        "und-GN": "fr-Latn-GN",
+        "und-Gong": "wsg-Gong-IN",
+        "und-Gonm": "esg-Gonm-IN",
+        "und-Goth": "got-Goth-UA",
+        "und-GP": "fr-Latn-GP",
+        "und-GQ": "es-Latn-GQ",
+        "und-GR": "el-Grek-GR",
+        "und-Gran": "sa-Gran-IN",
+        "und-Grek": "el-Grek-GR",
+        "und-Grek-TR": "bgx-Grek-TR",
+        "und-GS": "und-Latn-GS",
+        "und-GT": "es-Latn-GT",
+        "und-Gujr": "gu-Gujr-IN",
+        "und-Guru": "pa-Guru-IN",
+        "und-GW": "pt-Latn-GW",
+        "und-Hanb": "zh-Hanb-TW",
+        "und-Hang": "ko-Hang-KR",
+        "und-Hani": "zh-Hani-CN",
+        "und-Hano": "hnn-Hano-PH",
+        "und-Hans": "zh-Hans-CN",
+        "und-Hant": "zh-Hant-TW",
+        "und-Hatr": "mis-Hatr-IQ",
+        "und-Hebr": "he-Hebr-IL",
+        "und-Hebr-CA": "yi-Hebr-CA",
+        "und-Hebr-GB": "yi-Hebr-GB",
+        "und-Hebr-SE": "yi-Hebr-SE",
+        "und-Hebr-UA": "yi-Hebr-UA",
+        "und-Hebr-US": "yi-Hebr-US",
+        "und-Hira": "ja-Hira-JP",
+        "und-HK": "zh-Hant-HK",
+        "und-Hluw": "hlu-Hluw-TR",
+        "und-HM": "und-Latn-HM",
+        "und-Hmng": "hnj-Hmng-LA",
+        "und-Hmnp": "mww-Hmnp-US",
+        "und-HN": "es-Latn-HN",
+        "und-HR": "hr-Latn-HR",
+        "und-HT": "ht-Latn-HT",
+        "und-HU": "hu-Latn-HU",
+        "und-Hung": "hu-Hung-HU",
+        "und-IC": "es-Latn-IC",
+        "und-ID": "id-Latn-ID",
+        "und-IL": "he-Hebr-IL",
+        "und-IN": "hi-Deva-IN",
+        "und-IQ": "ar-Arab-IQ",
+        "und-IR": "fa-Arab-IR",
+        "und-IS": "is-Latn-IS",
+        "und-IT": "it-Latn-IT",
+        "und-Ital": "ett-Ital-IT",
+        "und-Jamo": "ko-Jamo-KR",
+        "und-Java": "jv-Java-ID",
+        "und-JO": "ar-Arab-JO",
+        "und-JP": "ja-Jpan-JP",
+        "und-Jpan": "ja-Jpan-JP",
+        "und-Kali": "eky-Kali-MM",
+        "und-Kana": "ja-Kana-JP",
+        "und-KE": "sw-Latn-KE",
+        "und-KG": "ky-Cyrl-KG",
+        "und-KH": "km-Khmr-KH",
+        "und-Khar": "pra-Khar-PK",
+        "und-Khmr": "km-Khmr-KH",
+        "und-Khoj": "sd-Khoj-IN",
+        "und-KM": "ar-Arab-KM",
+        "und-Knda": "kn-Knda-IN",
+        "und-Kore": "ko-Kore-KR",
+        "und-KP": "ko-Kore-KP",
+        "und-KR": "ko-Kore-KR",
+        "und-Kthi": "bho-Kthi-IN",
+        "und-KW": "ar-Arab-KW",
+        "und-KZ": "ru-Cyrl-KZ",
+        "und-LA": "lo-Laoo-LA",
+        "und-Lana": "nod-Lana-TH",
+        "und-Laoo": "lo-Laoo-LA",
+        "und-Latn-AF": "tk-Latn-AF",
+        "und-Latn-AM": "ku-Latn-AM",
+        "und-Latn-CN": "za-Latn-CN",
+        "und-Latn-CY": "tr-Latn-CY",
+        "und-Latn-DZ": "fr-Latn-DZ",
+        "und-Latn-ET": "en-Latn-ET",
+        "und-Latn-GE": "ku-Latn-GE",
+        "und-Latn-IR": "tk-Latn-IR",
+        "und-Latn-KM": "fr-Latn-KM",
+        "und-Latn-MA": "fr-Latn-MA",
+        "und-Latn-MK": "sq-Latn-MK",
+        "und-Latn-MM": "kac-Latn-MM",
+        "und-Latn-MO": "pt-Latn-MO",
+        "und-Latn-MR": "fr-Latn-MR",
+        "und-Latn-RU": "krl-Latn-RU",
+        "und-Latn-SY": "fr-Latn-SY",
+        "und-Latn-TN": "fr-Latn-TN",
+        "und-Latn-TW": "trv-Latn-TW",
+        "und-Latn-UA": "pl-Latn-UA",
+        "und-LB": "ar-Arab-LB",
+        "und-Lepc": "lep-Lepc-IN",
+        "und-LI": "de-Latn-LI",
+        "und-Limb": "lif-Limb-IN",
+        "und-Lina": "lab-Lina-GR",
+        "und-Linb": "grc-Linb-GR",
+        "und-Lisu": "lis-Lisu-CN",
+        "und-LK": "si-Sinh-LK",
+        "und-LS": "st-Latn-LS",
+        "und-LT": "lt-Latn-LT",
+        "und-LU": "fr-Latn-LU",
+        "und-LV": "lv-Latn-LV",
+        "und-LY": "ar-Arab-LY",
+        "und-Lyci": "xlc-Lyci-TR",
+        "und-Lydi": "xld-Lydi-TR",
+        "und-MA": "ar-Arab-MA",
+        "und-Mahj": "hi-Mahj-IN",
+        "und-Maka": "mak-Maka-ID",
+        "und-Mand": "myz-Mand-IR",
+        "und-Mani": "xmn-Mani-CN",
+        "und-Marc": "bo-Marc-CN",
+        "und-MC": "fr-Latn-MC",
+        "und-MD": "ro-Latn-MD",
+        "und-ME": "sr-Latn-ME",
+        "und-Medf": "mis-Medf-NG",
+        "und-Mend": "men-Mend-SL",
+        "und-Merc": "xmr-Merc-SD",
+        "und-Mero": "xmr-Mero-SD",
+        "und-MF": "fr-Latn-MF",
+        "und-MG": "mg-Latn-MG",
+        "und-MK": "mk-Cyrl-MK",
+        "und-ML": "bm-Latn-ML",
+        "und-Mlym": "ml-Mlym-IN",
+        "und-MM": "my-Mymr-MM",
+        "und-MN": "mn-Cyrl-MN",
+        "und-MO": "zh-Hant-MO",
+        "und-Modi": "mr-Modi-IN",
+        "und-Mong": "mn-Mong-CN",
+        "und-MQ": "fr-Latn-MQ",
+        "und-MR": "ar-Arab-MR",
+        "und-Mroo": "mro-Mroo-BD",
+        "und-MT": "mt-Latn-MT",
+        "und-Mtei": "mni-Mtei-IN",
+        "und-MU": "mfe-Latn-MU",
+        "und-Mult": "skr-Mult-PK",
+        "und-MV": "dv-Thaa-MV",
+        "und-MX": "es-Latn-MX",
+        "und-MY": "ms-Latn-MY",
+        "und-Mymr": "my-Mymr-MM",
+        "und-Mymr-IN": "kht-Mymr-IN",
+        "und-Mymr-TH": "mnw-Mymr-TH",
+        "und-MZ": "pt-Latn-MZ",
+        "und-NA": "af-Latn-NA",
+        "und-Nand": "sa-Nand-IN",
+        "und-Narb": "xna-Narb-SA",
+        "und-Nbat": "arc-Nbat-JO",
+        "und-NC": "fr-Latn-NC",
+        "und-NE": "ha-Latn-NE",
+        "und-Newa": "new-Newa-NP",
+        "und-NI": "es-Latn-NI",
+        "und-Nkoo": "man-Nkoo-GN",
+        "und-NL": "nl-Latn-NL",
+        "und-NO": "nb-Latn-NO",
+        "und-NP": "ne-Deva-NP",
+        "und-Nshu": "zhx-Nshu-CN",
+        "und-Ogam": "sga-Ogam-IE",
+        "und-Olck": "sat-Olck-IN",
+        "und-OM": "ar-Arab-OM",
+        "und-Orkh": "otk-Orkh-MN",
+        "und-Orya": "or-Orya-IN",
+        "und-Osge": "osa-Osge-US",
+        "und-Osma": "so-Osma-SO",
+        "und-PA": "es-Latn-PA",
+        "und-Palm": "arc-Palm-SY",
+        "und-Pauc": "ctd-Pauc-MM",
+        "und-PE": "es-Latn-PE",
+        "und-Perm": "kv-Perm-RU",
+        "und-PF": "fr-Latn-PF",
+        "und-PG": "tpi-Latn-PG",
+        "und-PH": "fil-Latn-PH",
+        "und-Phag": "lzh-Phag-CN",
+        "und-Phli": "pal-Phli-IR",
+        "und-Phlp": "pal-Phlp-CN",
+        "und-Phnx": "phn-Phnx-LB",
+        "und-PK": "ur-Arab-PK",
+        "und-PL": "pl-Latn-PL",
+        "und-Plrd": "hmd-Plrd-CN",
+        "und-PM": "fr-Latn-PM",
+        "und-PR": "es-Latn-PR",
+        "und-Prti": "xpr-Prti-IR",
+        "und-PS": "ar-Arab-PS",
+        "und-PT": "pt-Latn-PT",
+        "und-PW": "pau-Latn-PW",
+        "und-PY": "gn-Latn-PY",
+        "und-QA": "ar-Arab-QA",
+        "und-QO": "en-Latn-DG",
+        "und-RE": "fr-Latn-RE",
+        "und-Rjng": "rej-Rjng-ID",
+        "und-RO": "ro-Latn-RO",
+        "und-Rohg": "rhg-Rohg-MM",
+        "und-RS": "sr-Cyrl-RS",
+        "und-RU": "ru-Cyrl-RU",
+        "und-Runr": "non-Runr-SE",
+        "und-RW": "rw-Latn-RW",
+        "und-SA": "ar-Arab-SA",
+        "und-Samr": "smp-Samr-IL",
+        "und-Sarb": "xsa-Sarb-YE",
+        "und-Saur": "saz-Saur-IN",
+        "und-SC": "fr-Latn-SC",
+        "und-SD": "ar-Arab-SD",
+        "und-SE": "sv-Latn-SE",
+        "und-Sgnw": "ase-Sgnw-US",
+        "und-Shaw": "en-Shaw-GB",
+        "und-Shrd": "sa-Shrd-IN",
+        "und-SI": "sl-Latn-SI",
+        "und-Sidd": "sa-Sidd-IN",
+        "und-Sind": "sd-Sind-IN",
+        "und-Sinh": "si-Sinh-LK",
+        "und-SJ": "nb-Latn-SJ",
+        "und-SK": "sk-Latn-SK",
+        "und-SM": "it-Latn-SM",
+        "und-SN": "fr-Latn-SN",
+        "und-SO": "so-Latn-SO",
+        "und-Sogd": "sog-Sogd-UZ",
+        "und-Sogo": "sog-Sogo-UZ",
+        "und-Sora": "srb-Sora-IN",
+        "und-Soyo": "cmg-Soyo-MN",
+        "und-SR": "nl-Latn-SR",
+        "und-ST": "pt-Latn-ST",
+        "und-Sund": "su-Sund-ID",
+        "und-SV": "es-Latn-SV",
+        "und-SY": "ar-Arab-SY",
+        "und-Sylo": "syl-Sylo-BD",
+        "und-Syrc": "syr-Syrc-IQ",
+        "und-Tagb": "tbw-Tagb-PH",
+        "und-Takr": "doi-Takr-IN",
+        "und-Tale": "tdd-Tale-CN",
+        "und-Talu": "khb-Talu-CN",
+        "und-Taml": "ta-Taml-IN",
+        "und-Tang": "txg-Tang-CN",
+        "und-Tavt": "blt-Tavt-VN",
+        "und-TD": "fr-Latn-TD",
+        "und-Telu": "te-Telu-IN",
+        "und-TF": "fr-Latn-TF",
+        "und-Tfng": "zgh-Tfng-MA",
+        "und-TG": "fr-Latn-TG",
+        "und-Tglg": "fil-Tglg-PH",
+        "und-TH": "th-Thai-TH",
+        "und-Thaa": "dv-Thaa-MV",
+        "und-Thai": "th-Thai-TH",
+        "und-Thai-CN": "lcp-Thai-CN",
+        "und-Thai-KH": "kdt-Thai-KH",
+        "und-Thai-LA": "kdt-Thai-LA",
+        "und-Tibt": "bo-Tibt-CN",
+        "und-Tirh": "mai-Tirh-IN",
+        "und-TJ": "tg-Cyrl-TJ",
+        "und-TK": "tkl-Latn-TK",
+        "und-TL": "pt-Latn-TL",
+        "und-TM": "tk-Latn-TM",
+        "und-TN": "ar-Arab-TN",
+        "und-TO": "to-Latn-TO",
+        "und-TR": "tr-Latn-TR",
+        "und-TV": "tvl-Latn-TV",
+        "und-TW": "zh-Hant-TW",
+        "und-TZ": "sw-Latn-TZ",
+        "und-UA": "uk-Cyrl-UA",
+        "und-UG": "sw-Latn-UG",
+        "und-Ugar": "uga-Ugar-SY",
+        "und-UY": "es-Latn-UY",
+        "und-UZ": "uz-Latn-UZ",
+        "und-VA": "it-Latn-VA",
+        "und-Vaii": "vai-Vaii-LR",
+        "und-VE": "es-Latn-VE",
+        "und-VN": "vi-Latn-VN",
+        "und-VU": "bi-Latn-VU",
+        "und-Wara": "hoc-Wara-IN",
+        "und-Wcho": "nnp-Wcho-IN",
+        "und-WF": "fr-Latn-WF",
+        "und-WS": "sm-Latn-WS",
+        "und-XK": "sq-Latn-XK",
+        "und-Xpeo": "peo-Xpeo-IR",
+        "und-Xsux": "akk-Xsux-IQ",
+        "und-YE": "ar-Arab-YE",
+        "und-Yiii": "ii-Yiii-CN",
+        "und-YT": "fr-Latn-YT",
+        "und-Zanb": "cmg-Zanb-MN",
+        "und-ZW": "sn-Latn-ZW",
+        unr: "unr-Beng-IN",
+        "unr-Deva": "unr-Deva-NP",
+        "unr-NP": "unr-Deva-NP",
+        unx: "unx-Beng-IN",
+        uok: "uok-Latn-ZZ",
+        ur: "ur-Arab-PK",
+        uri: "uri-Latn-ZZ",
+        urt: "urt-Latn-ZZ",
+        urw: "urw-Latn-ZZ",
+        usa: "usa-Latn-ZZ",
+        utr: "utr-Latn-ZZ",
+        uvh: "uvh-Latn-ZZ",
+        uvl: "uvl-Latn-ZZ",
+        uz: "uz-Latn-UZ",
+        "uz-AF": "uz-Arab-AF",
+        "uz-Arab": "uz-Arab-AF",
+        "uz-CN": "uz-Cyrl-CN",
+        vag: "vag-Latn-ZZ",
+        vai: "vai-Vaii-LR",
+        van: "van-Latn-ZZ",
+        ve: "ve-Latn-ZA",
+        vec: "vec-Latn-IT",
+        vep: "vep-Latn-RU",
+        vi: "vi-Latn-VN",
+        vic: "vic-Latn-SX",
+        viv: "viv-Latn-ZZ",
+        vls: "vls-Latn-BE",
+        vmf: "vmf-Latn-DE",
+        vmw: "vmw-Latn-MZ",
+        vo: "vo-Latn-001",
+        vot: "vot-Latn-RU",
+        vro: "vro-Latn-EE",
+        vun: "vun-Latn-TZ",
+        vut: "vut-Latn-ZZ",
+        wa: "wa-Latn-BE",
+        wae: "wae-Latn-CH",
+        waj: "waj-Latn-ZZ",
+        wal: "wal-Ethi-ET",
+        wan: "wan-Latn-ZZ",
+        war: "war-Latn-PH",
+        wbp: "wbp-Latn-AU",
+        wbq: "wbq-Telu-IN",
+        wbr: "wbr-Deva-IN",
+        wci: "wci-Latn-ZZ",
+        wer: "wer-Latn-ZZ",
+        wgi: "wgi-Latn-ZZ",
+        whg: "whg-Latn-ZZ",
+        wib: "wib-Latn-ZZ",
+        wiu: "wiu-Latn-ZZ",
+        wiv: "wiv-Latn-ZZ",
+        wja: "wja-Latn-ZZ",
+        wji: "wji-Latn-ZZ",
+        wls: "wls-Latn-WF",
+        wmo: "wmo-Latn-ZZ",
+        wnc: "wnc-Latn-ZZ",
+        wni: "wni-Arab-KM",
+        wnu: "wnu-Latn-ZZ",
+        wo: "wo-Latn-SN",
+        wob: "wob-Latn-ZZ",
+        wos: "wos-Latn-ZZ",
+        wrs: "wrs-Latn-ZZ",
+        wsg: "wsg-Gong-IN",
+        wsk: "wsk-Latn-ZZ",
+        wtm: "wtm-Deva-IN",
+        wuu: "wuu-Hans-CN",
+        wuv: "wuv-Latn-ZZ",
+        wwa: "wwa-Latn-ZZ",
+        xav: "xav-Latn-BR",
+        xbi: "xbi-Latn-ZZ",
+        xcr: "xcr-Cari-TR",
+        xes: "xes-Latn-ZZ",
+        xh: "xh-Latn-ZA",
+        xla: "xla-Latn-ZZ",
+        xlc: "xlc-Lyci-TR",
+        xld: "xld-Lydi-TR",
+        xmf: "xmf-Geor-GE",
+        xmn: "xmn-Mani-CN",
+        xmr: "xmr-Merc-SD",
+        xna: "xna-Narb-SA",
+        xnr: "xnr-Deva-IN",
+        xog: "xog-Latn-UG",
+        xon: "xon-Latn-ZZ",
+        xpr: "xpr-Prti-IR",
+        xrb: "xrb-Latn-ZZ",
+        xsa: "xsa-Sarb-YE",
+        xsi: "xsi-Latn-ZZ",
+        xsm: "xsm-Latn-ZZ",
+        xsr: "xsr-Deva-NP",
+        xwe: "xwe-Latn-ZZ",
+        yam: "yam-Latn-ZZ",
+        yao: "yao-Latn-MZ",
+        yap: "yap-Latn-FM",
+        yas: "yas-Latn-ZZ",
+        yat: "yat-Latn-ZZ",
+        yav: "yav-Latn-CM",
+        yay: "yay-Latn-ZZ",
+        yaz: "yaz-Latn-ZZ",
+        yba: "yba-Latn-ZZ",
+        ybb: "ybb-Latn-CM",
+        yby: "yby-Latn-ZZ",
+        yer: "yer-Latn-ZZ",
+        ygr: "ygr-Latn-ZZ",
+        ygw: "ygw-Latn-ZZ",
+        yi: "yi-Hebr-001",
+        yko: "yko-Latn-ZZ",
+        yle: "yle-Latn-ZZ",
+        ylg: "ylg-Latn-ZZ",
+        yll: "yll-Latn-ZZ",
+        yml: "yml-Latn-ZZ",
+        yo: "yo-Latn-NG",
+        yon: "yon-Latn-ZZ",
+        yrb: "yrb-Latn-ZZ",
+        yre: "yre-Latn-ZZ",
+        yrl: "yrl-Latn-BR",
+        yss: "yss-Latn-ZZ",
+        yua: "yua-Latn-MX",
+        yue: "yue-Hant-HK",
+        "yue-CN": "yue-Hans-CN",
+        "yue-Hans": "yue-Hans-CN",
+        yuj: "yuj-Latn-ZZ",
+        yut: "yut-Latn-ZZ",
+        yuw: "yuw-Latn-ZZ",
+        za: "za-Latn-CN",
+        zag: "zag-Latn-SD",
+        zdj: "zdj-Arab-KM",
+        zea: "zea-Latn-NL",
+        zgh: "zgh-Tfng-MA",
+        zh: "zh-Hans-CN",
+        "zh-AU": "zh-Hant-AU",
+        "zh-BN": "zh-Hant-BN",
+        "zh-Bopo": "zh-Bopo-TW",
+        "zh-GB": "zh-Hant-GB",
+        "zh-GF": "zh-Hant-GF",
+        "zh-Hanb": "zh-Hanb-TW",
+        "zh-Hant": "zh-Hant-TW",
+        "zh-HK": "zh-Hant-HK",
+        "zh-ID": "zh-Hant-ID",
+        "zh-MO": "zh-Hant-MO",
+        "zh-MY": "zh-Hant-MY",
+        "zh-PA": "zh-Hant-PA",
+        "zh-PF": "zh-Hant-PF",
+        "zh-PH": "zh-Hant-PH",
+        "zh-SR": "zh-Hant-SR",
+        "zh-TH": "zh-Hant-TH",
+        "zh-TW": "zh-Hant-TW",
+        "zh-US": "zh-Hant-US",
+        "zh-VN": "zh-Hant-VN",
+        zhx: "zhx-Nshu-CN",
+        zia: "zia-Latn-ZZ",
+        zlm: "zlm-Latn-TG",
+        zmi: "zmi-Latn-MY",
+        zne: "zne-Latn-ZZ",
+        zu: "zu-Latn-ZA",
+        zza: "zza-Latn-TR"
       }
     }
   };
+  const likelySubtags$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    default: likelySubtags
+  }, Symbol.toStringTag, { value: "Module" }));
   const plurals = {
-    supplemental
+    supplemental: {
+      version: {
+        _unicodeVersion: "12.1.0",
+        _cldrVersion: "36"
+      },
+      "plurals-type-cardinal": {
+        af: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ak: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        am: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        an: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ar: {
+          "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-few": "n % 100 = 3..10 @integer 3~10, 103~110, 1003, \u2026 @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 103.0, 1003.0, \u2026",
+          "pluralRule-count-many": "n % 100 = 11..99 @integer 11~26, 111, 1011, \u2026 @decimal 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 111.0, 1011.0, \u2026",
+          "pluralRule-count-other": " @integer 100~102, 200~202, 300~302, 400~402, 500~502, 600, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ars: {
+          "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-few": "n % 100 = 3..10 @integer 3~10, 103~110, 1003, \u2026 @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 103.0, 1003.0, \u2026",
+          "pluralRule-count-many": "n % 100 = 11..99 @integer 11~26, 111, 1011, \u2026 @decimal 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 111.0, 1011.0, \u2026",
+          "pluralRule-count-other": " @integer 100~102, 200~202, 300~302, 400~402, 500~502, 600, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        as: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        asa: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ast: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        az: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        be: {
+          "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 1.0, 21.0, 31.0, 41.0, 51.0, 61.0, 71.0, 81.0, 101.0, 1001.0, \u2026",
+          "pluralRule-count-few": "n % 10 = 2..4 and n % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, \u2026 @decimal 2.0, 3.0, 4.0, 22.0, 23.0, 24.0, 32.0, 33.0, 102.0, 1002.0, \u2026",
+          "pluralRule-count-many": "n % 10 = 0 or n % 10 = 5..9 or n % 100 = 11..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": "   @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.1, 1000.1, \u2026"
+        },
+        bem: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        bez: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        bg: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        bho: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        bm: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        bn: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        bo: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        br: {
+          "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11,71,91 @integer 1, 21, 31, 41, 51, 61, 81, 101, 1001, \u2026 @decimal 1.0, 21.0, 31.0, 41.0, 51.0, 61.0, 81.0, 101.0, 1001.0, \u2026",
+          "pluralRule-count-two": "n % 10 = 2 and n % 100 != 12,72,92 @integer 2, 22, 32, 42, 52, 62, 82, 102, 1002, \u2026 @decimal 2.0, 22.0, 32.0, 42.0, 52.0, 62.0, 82.0, 102.0, 1002.0, \u2026",
+          "pluralRule-count-few": "n % 10 = 3..4,9 and n % 100 != 10..19,70..79,90..99 @integer 3, 4, 9, 23, 24, 29, 33, 34, 39, 43, 44, 49, 103, 1003, \u2026 @decimal 3.0, 4.0, 9.0, 23.0, 24.0, 29.0, 33.0, 34.0, 103.0, 1003.0, \u2026",
+          "pluralRule-count-many": "n != 0 and n % 1000000 = 0 @integer 1000000, \u2026 @decimal 1000000.0, 1000000.00, 1000000.000, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~8, 10~20, 100, 1000, 10000, 100000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, \u2026"
+        },
+        brx: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        bs: {
+          "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, \u2026 @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ca: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ce: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ceb: {
+          "pluralRule-count-one": "v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 != 4,6,9 @integer 0~3, 5, 7, 8, 10~13, 15, 17, 18, 20, 21, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.3, 0.5, 0.7, 0.8, 1.0~1.3, 1.5, 1.7, 1.8, 2.0, 2.1, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 4, 6, 9, 14, 16, 19, 24, 26, 104, 1004, \u2026 @decimal 0.4, 0.6, 0.9, 1.4, 1.6, 1.9, 2.4, 2.6, 10.4, 100.4, 1000.4, \u2026"
+        },
+        cgg: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        chr: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ckb: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        cs: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-few": "i = 2..4 and v = 0 @integer 2~4",
+          "pluralRule-count-many": "v != 0   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026"
+        },
+        cy: {
+          "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-few": "n = 3 @integer 3 @decimal 3.0, 3.00, 3.000, 3.0000",
+          "pluralRule-count-many": "n = 6 @integer 6 @decimal 6.0, 6.00, 6.000, 6.0000",
+          "pluralRule-count-other": " @integer 4, 5, 7~20, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        da: {
+          "pluralRule-count-one": "n = 1 or t != 0 and i = 0,1 @integer 1 @decimal 0.1~1.6",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 2.0~3.4, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        de: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        dsb: {
+          "pluralRule-count-one": "v = 0 and i % 100 = 1 or f % 100 = 1 @integer 1, 101, 201, 301, 401, 501, 601, 701, 1001, \u2026 @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-two": "v = 0 and i % 100 = 2 or f % 100 = 2 @integer 2, 102, 202, 302, 402, 502, 602, 702, 1002, \u2026 @decimal 0.2, 1.2, 2.2, 3.2, 4.2, 5.2, 6.2, 7.2, 10.2, 100.2, 1000.2, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 100 = 3..4 or f % 100 = 3..4 @integer 3, 4, 103, 104, 203, 204, 303, 304, 403, 404, 503, 504, 603, 604, 703, 704, 1003, \u2026 @decimal 0.3, 0.4, 1.3, 1.4, 2.3, 2.4, 3.3, 3.4, 4.3, 4.4, 5.3, 5.4, 6.3, 6.4, 7.3, 7.4, 10.3, 100.3, 1000.3, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        dv: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        dz: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ee: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        el: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        en: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        eo: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        es: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        et: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        eu: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        fa: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ff: {
+          "pluralRule-count-one": "i = 0,1 @integer 0, 1 @decimal 0.0~1.5",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        fi: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        fil: {
+          "pluralRule-count-one": "v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 != 4,6,9 @integer 0~3, 5, 7, 8, 10~13, 15, 17, 18, 20, 21, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.3, 0.5, 0.7, 0.8, 1.0~1.3, 1.5, 1.7, 1.8, 2.0, 2.1, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 4, 6, 9, 14, 16, 19, 24, 26, 104, 1004, \u2026 @decimal 0.4, 0.6, 0.9, 1.4, 1.6, 1.9, 2.4, 2.6, 10.4, 100.4, 1000.4, \u2026"
+        },
+        fo: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        fr: {
+          "pluralRule-count-one": "i = 0,1 @integer 0, 1 @decimal 0.0~1.5",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        fur: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        fy: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ga: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-few": "n = 3..6 @integer 3~6 @decimal 3.0, 4.0, 5.0, 6.0, 3.00, 4.00, 5.00, 6.00, 3.000, 4.000, 5.000, 6.000, 3.0000, 4.0000, 5.0000, 6.0000",
+          "pluralRule-count-many": "n = 7..10 @integer 7~10 @decimal 7.0, 8.0, 9.0, 10.0, 7.00, 8.00, 9.00, 10.00, 7.000, 8.000, 9.000, 10.000, 7.0000, 8.0000, 9.0000, 10.0000",
+          "pluralRule-count-other": " @integer 0, 11~25, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        gd: {
+          "pluralRule-count-one": "n = 1,11 @integer 1, 11 @decimal 1.0, 11.0, 1.00, 11.00, 1.000, 11.000, 1.0000",
+          "pluralRule-count-two": "n = 2,12 @integer 2, 12 @decimal 2.0, 12.0, 2.00, 12.00, 2.000, 12.000, 2.0000",
+          "pluralRule-count-few": "n = 3..10,13..19 @integer 3~10, 13~19 @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 3.00",
+          "pluralRule-count-other": " @integer 0, 20~34, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        gl: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        gsw: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        gu: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        guw: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        gv: {
+          "pluralRule-count-one": "v = 0 and i % 10 = 1 @integer 1, 11, 21, 31, 41, 51, 61, 71, 101, 1001, \u2026",
+          "pluralRule-count-two": "v = 0 and i % 10 = 2 @integer 2, 12, 22, 32, 42, 52, 62, 72, 102, 1002, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 100 = 0,20,40,60,80 @integer 0, 20, 40, 60, 80, 100, 120, 140, 1000, 10000, 100000, 1000000, \u2026",
+          "pluralRule-count-many": "v != 0   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 3~10, 13~19, 23, 103, 1003, \u2026"
+        },
+        ha: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        haw: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        he: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-two": "i = 2 and v = 0 @integer 2",
+          "pluralRule-count-many": "v = 0 and n != 0..10 and n % 10 = 0 @integer 20, 30, 40, 50, 60, 70, 80, 90, 100, 1000, 10000, 100000, 1000000, \u2026",
+          "pluralRule-count-other": " @integer 0, 3~17, 101, 1001, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        hi: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        hr: {
+          "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, \u2026 @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        hsb: {
+          "pluralRule-count-one": "v = 0 and i % 100 = 1 or f % 100 = 1 @integer 1, 101, 201, 301, 401, 501, 601, 701, 1001, \u2026 @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-two": "v = 0 and i % 100 = 2 or f % 100 = 2 @integer 2, 102, 202, 302, 402, 502, 602, 702, 1002, \u2026 @decimal 0.2, 1.2, 2.2, 3.2, 4.2, 5.2, 6.2, 7.2, 10.2, 100.2, 1000.2, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 100 = 3..4 or f % 100 = 3..4 @integer 3, 4, 103, 104, 203, 204, 303, 304, 403, 404, 503, 504, 603, 604, 703, 704, 1003, \u2026 @decimal 0.3, 0.4, 1.3, 1.4, 2.3, 2.4, 3.3, 3.4, 4.3, 4.4, 5.3, 5.4, 6.3, 6.4, 7.3, 7.4, 10.3, 100.3, 1000.3, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        hu: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        hy: {
+          "pluralRule-count-one": "i = 0,1 @integer 0, 1 @decimal 0.0~1.5",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ia: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        id: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ig: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ii: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        in: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        io: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        is: {
+          "pluralRule-count-one": "t = 0 and i % 10 = 1 and i % 100 != 11 or t != 0 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 0.1~1.6, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        it: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        iu: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        iw: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-two": "i = 2 and v = 0 @integer 2",
+          "pluralRule-count-many": "v = 0 and n != 0..10 and n % 10 = 0 @integer 20, 30, 40, 50, 60, 70, 80, 90, 100, 1000, 10000, 100000, 1000000, \u2026",
+          "pluralRule-count-other": " @integer 0, 3~17, 101, 1001, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ja: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        jbo: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        jgo: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ji: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        jmc: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        jv: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        jw: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ka: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kab: {
+          "pluralRule-count-one": "i = 0,1 @integer 0, 1 @decimal 0.0~1.5",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kaj: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kcg: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kde: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kea: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kk: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kkj: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kl: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        km: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kn: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ko: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ks: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ksb: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ksh: {
+          "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ku: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        kw: {
+          "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n % 100 = 2,22,42,62,82 or n % 1000 = 0 and n % 100000 = 1000..20000,40000,60000,80000 or n != 0 and n % 1000000 = 100000 @integer 2, 22, 42, 62, 82, 102, 122, 142, 1000, 10000, 100000, \u2026 @decimal 2.0, 22.0, 42.0, 62.0, 82.0, 102.0, 122.0, 142.0, 1000.0, 10000.0, 100000.0, \u2026",
+          "pluralRule-count-few": "n % 100 = 3,23,43,63,83 @integer 3, 23, 43, 63, 83, 103, 123, 143, 1003, \u2026 @decimal 3.0, 23.0, 43.0, 63.0, 83.0, 103.0, 123.0, 143.0, 1003.0, \u2026",
+          "pluralRule-count-many": "n != 1 and n % 100 = 1,21,41,61,81 @integer 21, 41, 61, 81, 101, 121, 141, 161, 1001, \u2026 @decimal 21.0, 41.0, 61.0, 81.0, 101.0, 121.0, 141.0, 161.0, 1001.0, \u2026",
+          "pluralRule-count-other": " @integer 4~19, 100, 1004, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.1, 1000000.0, \u2026"
+        },
+        ky: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        lag: {
+          "pluralRule-count-zero": "n = 0 @integer 0 @decimal 0.0, 0.00, 0.000, 0.0000",
+          "pluralRule-count-one": "i = 0,1 and n != 0 @integer 1 @decimal 0.1~1.6",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        lb: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        lg: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        lkt: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ln: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        lo: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        lt: {
+          "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11..19 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 1.0, 21.0, 31.0, 41.0, 51.0, 61.0, 71.0, 81.0, 101.0, 1001.0, \u2026",
+          "pluralRule-count-few": "n % 10 = 2..9 and n % 100 != 11..19 @integer 2~9, 22~29, 102, 1002, \u2026 @decimal 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 22.0, 102.0, 1002.0, \u2026",
+          "pluralRule-count-many": "f != 0   @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-other": " @integer 0, 10~20, 30, 40, 50, 60, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        lv: {
+          "pluralRule-count-zero": "n % 10 = 0 or n % 100 = 11..19 or v = 2 and f % 100 = 11..19 @integer 0, 10~20, 30, 40, 50, 60, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11 or v = 2 and f % 10 = 1 and f % 100 != 11 or v != 2 and f % 10 = 1 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 0.1, 1.0, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-other": " @integer 2~9, 22~29, 102, 1002, \u2026 @decimal 0.2~0.9, 1.2~1.9, 10.2, 100.2, 1000.2, \u2026"
+        },
+        mas: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        mg: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        mgo: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        mk: {
+          "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 0.2~1.0, 1.2~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ml: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        mn: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        mo: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-few": "v != 0 or n = 0 or n % 100 = 2..19 @integer 0, 2~16, 102, 1002, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 20~35, 100, 1000, 10000, 100000, 1000000, \u2026"
+        },
+        mr: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ms: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        mt: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-few": "n = 0 or n % 100 = 2..10 @integer 0, 2~10, 102~107, 1002, \u2026 @decimal 0.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0, 102.0, 1002.0, \u2026",
+          "pluralRule-count-many": "n % 100 = 11..19 @integer 11~19, 111~117, 1011, \u2026 @decimal 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 111.0, 1011.0, \u2026",
+          "pluralRule-count-other": " @integer 20~35, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        my: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nah: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        naq: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nb: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nd: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ne: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nl: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nn: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nnh: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        no: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nqo: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nr: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nso: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ny: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        nyn: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        om: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        or: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        os: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        osa: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        pa: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        pap: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        pl: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, \u2026",
+          "pluralRule-count-many": "v = 0 and i != 1 and i % 10 = 0..1 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 12..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026",
+          "pluralRule-count-other": "   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        prg: {
+          "pluralRule-count-zero": "n % 10 = 0 or n % 100 = 11..19 or v = 2 and f % 100 = 11..19 @integer 0, 10~20, 30, 40, 50, 60, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-one": "n % 10 = 1 and n % 100 != 11 or v = 2 and f % 10 = 1 and f % 100 != 11 or v != 2 and f % 10 = 1 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 0.1, 1.0, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-other": " @integer 2~9, 22~29, 102, 1002, \u2026 @decimal 0.2~0.9, 1.2~1.9, 10.2, 100.2, 1000.2, \u2026"
+        },
+        ps: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        pt: {
+          "pluralRule-count-one": "i = 0..1 @integer 0, 1 @decimal 0.0~1.5",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 2.0~3.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        "pt-PT": {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        rm: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ro: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-few": "v != 0 or n = 0 or n % 100 = 2..19 @integer 0, 2~16, 102, 1002, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 20~35, 100, 1000, 10000, 100000, 1000000, \u2026"
+        },
+        rof: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        root: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ru: {
+          "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, \u2026",
+          "pluralRule-count-many": "v = 0 and i % 10 = 0 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 11..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026",
+          "pluralRule-count-other": "   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        rwk: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sah: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        saq: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sc: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        scn: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sd: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sdh: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        se: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        seh: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ses: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sg: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sh: {
+          "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, \u2026 @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        shi: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-few": "n = 2..10 @integer 2~10 @decimal 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 2.00, 3.00, 4.00, 5.00, 6.00, 7.00, 8.00",
+          "pluralRule-count-other": " @integer 11~26, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~1.9, 2.1~2.7, 10.1, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        si: {
+          "pluralRule-count-one": "n = 0,1 or i = 0 and f = 1 @integer 0, 1 @decimal 0.0, 0.1, 1.0, 0.00, 0.01, 1.00, 0.000, 0.001, 1.000, 0.0000, 0.0001, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.2~0.9, 1.1~1.8, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sk: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-few": "i = 2..4 and v = 0 @integer 2~4",
+          "pluralRule-count-many": "v != 0   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026"
+        },
+        sl: {
+          "pluralRule-count-one": "v = 0 and i % 100 = 1 @integer 1, 101, 201, 301, 401, 501, 601, 701, 1001, \u2026",
+          "pluralRule-count-two": "v = 0 and i % 100 = 2 @integer 2, 102, 202, 302, 402, 502, 602, 702, 1002, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 100 = 3..4 or v != 0 @integer 3, 4, 103, 104, 203, 204, 303, 304, 403, 404, 503, 504, 603, 604, 703, 704, 1003, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026"
+        },
+        sma: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        smi: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        smj: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        smn: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sms: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-two": "n = 2 @integer 2 @decimal 2.0, 2.00, 2.000, 2.0000",
+          "pluralRule-count-other": " @integer 0, 3~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sn: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        so: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sq: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sr: {
+          "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 or f % 10 = 1 and f % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026 @decimal 0.1, 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 10.1, 100.1, 1000.1, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, \u2026 @decimal 0.2~0.4, 1.2~1.4, 2.2~2.4, 3.2~3.4, 4.2~4.4, 5.2, 10.2, 100.2, 1000.2, \u2026",
+          "pluralRule-count-other": " @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0, 0.5~1.0, 1.5~2.0, 2.5~2.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ss: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ssy: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        st: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        su: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sv: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        sw: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        syr: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ta: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        te: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        teo: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        th: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ti: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        tig: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        tk: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        tl: {
+          "pluralRule-count-one": "v = 0 and i = 1,2,3 or v = 0 and i % 10 != 4,6,9 or v != 0 and f % 10 != 4,6,9 @integer 0~3, 5, 7, 8, 10~13, 15, 17, 18, 20, 21, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.3, 0.5, 0.7, 0.8, 1.0~1.3, 1.5, 1.7, 1.8, 2.0, 2.1, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026",
+          "pluralRule-count-other": " @integer 4, 6, 9, 14, 16, 19, 24, 26, 104, 1004, \u2026 @decimal 0.4, 0.6, 0.9, 1.4, 1.6, 1.9, 2.4, 2.6, 10.4, 100.4, 1000.4, \u2026"
+        },
+        tn: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        to: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        tr: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ts: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        tzm: {
+          "pluralRule-count-one": "n = 0..1 or n = 11..99 @integer 0, 1, 11~24 @decimal 0.0, 1.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0",
+          "pluralRule-count-other": " @integer 2~10, 100~106, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ug: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        uk: {
+          "pluralRule-count-one": "v = 0 and i % 10 = 1 and i % 100 != 11 @integer 1, 21, 31, 41, 51, 61, 71, 81, 101, 1001, \u2026",
+          "pluralRule-count-few": "v = 0 and i % 10 = 2..4 and i % 100 != 12..14 @integer 2~4, 22~24, 32~34, 42~44, 52~54, 62, 102, 1002, \u2026",
+          "pluralRule-count-many": "v = 0 and i % 10 = 0 or v = 0 and i % 10 = 5..9 or v = 0 and i % 100 = 11..14 @integer 0, 5~19, 100, 1000, 10000, 100000, 1000000, \u2026",
+          "pluralRule-count-other": "   @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ur: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        uz: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        ve: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        vi: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        vo: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        vun: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        wa: {
+          "pluralRule-count-one": "n = 0..1 @integer 0, 1 @decimal 0.0, 1.0, 0.00, 1.00, 0.000, 1.000, 0.0000, 1.0000",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.1~0.9, 1.1~1.7, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        wae: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        wo: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        xh: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        xog: {
+          "pluralRule-count-one": "n = 1 @integer 1 @decimal 1.0, 1.00, 1.000, 1.0000",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~0.9, 1.1~1.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        yi: {
+          "pluralRule-count-one": "i = 1 and v = 0 @integer 1",
+          "pluralRule-count-other": " @integer 0, 2~16, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        yo: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        yue: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        zh: {
+          "pluralRule-count-other": " @integer 0~15, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 0.0~1.5, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        },
+        zu: {
+          "pluralRule-count-one": "i = 0 or n = 1 @integer 0, 1 @decimal 0.0~1.0, 0.00~0.04",
+          "pluralRule-count-other": " @integer 2~17, 100, 1000, 10000, 100000, 1000000, \u2026 @decimal 1.1~2.6, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, \u2026"
+        }
+      }
+    }
   };
   const plurals$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    supplemental,
     default: plurals
   }, Symbol.toStringTag, { value: "Module" }));
   const ProductAttributeStyles = i$7`
@@ -40854,7 +41137,7 @@ var storefront = function(exports) {
     color: var(--oryx-color-ink);
   }
 `;
-  let ProductAttributesComponent = (_o = class extends ProductComponentMixin() {
+  let ProductAttributesComponent = class ProductAttributesComponent extends ProductComponentMixin() {
     constructor() {
       super(...arguments);
       this.product$ = new ProductController(this).getProduct();
@@ -40898,9 +41181,8 @@ var storefront = function(exports) {
       })}
     `;
     }
-  }, (() => {
-    _o.styles = ProductAttributeStyles;
-  })(), _o);
+  };
+  ProductAttributesComponent.styles = ProductAttributeStyles;
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -40920,7 +41202,8 @@ var storefront = function(exports) {
       this.product$ = new ProductController(this).getProduct();
       this.options$ = new ContentController(this).getOptions();
       this.rating$ = cjs.combineLatest([this.product$, this.options$]).pipe(cjs.map(([product, options]) => {
-        const reviewCount = (options == null ? void 0 : options.hideReviewCount) ? void 0 : (product == null ? void 0 : product.reviewCount) ?? 0;
+        var _a;
+        const reviewCount = (options == null ? void 0 : options.hideReviewCount) ? void 0 : (_a = product == null ? void 0 : product.reviewCount) != null ? _a : 0;
         return {
           rating: product == null ? void 0 : product.averageRating,
           reviewCount,
@@ -41148,7 +41431,7 @@ var storefront = function(exports) {
     margin-block-start: auto;
   }
 `;
-  let ProductCardComponent = (_p = class extends ProductComponentMixin() {
+  let ProductCardComponent = class ProductCardComponent extends ProductComponentMixin() {
     constructor() {
       super(...arguments);
       this.hideTitle = false;
@@ -41163,15 +41446,21 @@ var storefront = function(exports) {
       }));
       this.product$ = new ProductController(this).getProduct();
       this.card$ = cjs.combineLatest([this.product$, this.options$]).pipe(cjs.tap(([product, options]) => {
-        var _a2;
+        var _a;
         if (options && "truncateTitleAfter" in options) {
-          (_a2 = this.style) == null ? void 0 : _a2.setProperty("--oryx-product-card-title-line-clamp", String(options.truncateTitleAfter));
+          (_a = this.style) == null ? void 0 : _a.setProperty("--oryx-product-card-title-line-clamp", String(options.truncateTitleAfter));
         }
       }));
       this.sku$ = cjs.combineLatest([
         this.options$,
         this.observe.get("sku")
-      ]).pipe(cjs.filter(([options, propSku]) => Boolean(options.sku ?? propSku)), cjs.tap(([options, propSku]) => this.context.provide("sku", options.sku ?? propSku)));
+      ]).pipe(cjs.filter(([options, propSku]) => {
+        var _a;
+        return Boolean((_a = options.sku) != null ? _a : propSku);
+      }), cjs.tap(([options, propSku]) => {
+        var _a;
+        return this.context.provide("sku", (_a = options.sku) != null ? _a : propSku);
+      }));
     }
     preventPropagating(e2) {
       e2.preventDefault();
@@ -41234,9 +41523,8 @@ var storefront = function(exports) {
             </content-link>
           ` : y``)}`;
     }
-  }, (() => {
-    _p.styles = ProductCardStyles;
-  })(), _p);
+  };
+  ProductCardComponent.styles = ProductCardStyles;
   __decorate([
     e$3({ type: Boolean, reflect: true, attribute: "hide-title" }),
     __metadata("design:type", Object)
@@ -41273,17 +41561,20 @@ var storefront = function(exports) {
     }
     render() {
       return n$7`
-      ${asyncValue(this.options$, (options) => n$7`<oryx-text
-          .style=${`--line-clamp: ${options.truncateAfter ?? 0}`}
+      ${asyncValue(this.options$, (options) => {
+        var _a;
+        return n$7`<oryx-text
+          .style=${`--line-clamp: ${(_a = options.truncateAfter) != null ? _a : 0}`}
           .hideToggle=${!!options.hideToggle}
           .defaultExpanded=${!!options.defaultExpanded}
         >
           ${asyncValue(this.product$, (product) => n$7`${o$7(this.convert(product == null ? void 0 : product.description))}`)}
-        </oryx-text>`)}
+        </oryx-text>`;
+      })}
     `;
     }
     convert(text) {
-      return convertLineFeedsToHTML(text ?? "");
+      return convertLineFeedsToHTML(text != null ? text : "");
     }
   };
   ProductDescriptionComponent = __decorate([
@@ -41304,7 +41595,10 @@ var storefront = function(exports) {
     }
     render() {
       return n$7`
-      ${asyncValue(this.data$, ([options, product]) => n$7`${options.prefix ?? "SKU"}: ${product == null ? void 0 : product.sku}`)}
+      ${asyncValue(this.data$, ([options, product]) => {
+        var _a;
+        return n$7`${(_a = options.prefix) != null ? _a : "SKU"}: ${product == null ? void 0 : product.sku}`;
+      })}
     `;
     }
   };
@@ -41585,7 +41879,7 @@ var storefront = function(exports) {
   ${mainImageStyles}
   ${navigationStyles$1}
 `;
-  let ProductImagesComponent = (_q = class extends ProductComponentMixin() {
+  let ProductImagesComponent = class ProductImagesComponent extends ProductComponentMixin() {
     constructor() {
       super(...arguments);
       this.product$ = new ProductController(this).getProduct().pipe((product) => this.reset(product));
@@ -41601,9 +41895,9 @@ var storefront = function(exports) {
     `;
     }
     resolveImages(product, options) {
-      var _a2, _b2;
-      const set = !options.mediaSet ? (_a2 = product == null ? void 0 : product.mediaSet) == null ? void 0 : _a2[0] : (_b2 = product == null ? void 0 : product.mediaSet) == null ? void 0 : _b2.find((set2) => set2.name === options.mediaSet);
-      return (set == null ? void 0 : set.media) ?? [];
+      var _a, _b, _c;
+      const set = !options.mediaSet ? (_a = product == null ? void 0 : product.mediaSet) == null ? void 0 : _a[0] : (_b = product == null ? void 0 : product.mediaSet) == null ? void 0 : _b.find((set2) => set2.name === options.mediaSet);
+      return (_c = set == null ? void 0 : set.media) != null ? _c : [];
     }
     wrap(options, main, navigation) {
       const cssVar = (prop, value) => value ? `${prop}:${value}${isNaN(value) ? "" : "px"};` : "";
@@ -41649,12 +41943,14 @@ var storefront = function(exports) {
         return y``;
       }
       return y` <fieldset class="nav">
-      ${images.map((image2, i2) => y`
+      ${images.map((image2, i2) => {
+        var _a;
+        return y`
           <label aria-label=${`image ${i2}`}>
             <input
               value=${i2}
               type="radio"
-              name=${l$1(options.groupName ?? `product-image-nav-${this.uid}`)}
+              name=${l$1((_a = options.groupName) != null ? _a : `product-image-nav-${this.uid}`)}
               ?checked=${i2 === active}
               @input=${this.onInput}
               @mouseover=${(e2) => this.onMouseover(e2, options)}
@@ -41662,14 +41958,15 @@ var storefront = function(exports) {
             <product-media
               .sku=${this.sku}
               .options=${{
-        mediaIndex: i2,
-        containerSize: "thumbnail",
-        loading: active !== i2 ? "lazy" : void 0
-      }}
+          mediaIndex: i2,
+          containerSize: "thumbnail",
+          loading: active !== i2 ? "lazy" : void 0
+        }}
               ?active=${active === i2}
             ></product-media>
           </label>
-        `)}
+        `;
+      })}
     </fieldset>`;
     }
     onInput(e2) {
@@ -41683,17 +41980,17 @@ var storefront = function(exports) {
       }
     }
     setActive(active, behavior = "auto") {
-      var _a2, _b2, _c2, _d2, _e2, _f2;
+      var _a, _b, _c, _d, _e, _f;
       if (active !== void 0) {
         this.active$.next(active);
-        const navItems = (_a2 = this.shadowRoot) == null ? void 0 : _a2.querySelectorAll("input");
-        (_b2 = navItems == null ? void 0 : navItems[active]) == null ? void 0 : _b2.toggleAttribute("checked", true);
+        const navItems = (_a = this.shadowRoot) == null ? void 0 : _a.querySelectorAll("input");
+        (_b = navItems == null ? void 0 : navItems[active]) == null ? void 0 : _b.toggleAttribute("checked", true);
       }
-      const item = (_d2 = (_c2 = this.shadowRoot) == null ? void 0 : _c2.querySelectorAll("section product-media")) == null ? void 0 : _d2[this.active$.getValue()];
+      const item = (_d = (_c = this.shadowRoot) == null ? void 0 : _c.querySelectorAll("section product-media")) == null ? void 0 : _d[this.active$.getValue()];
       if (behavior === "disable") {
-        (_e2 = item == null ? void 0 : item.parentNode) == null ? void 0 : _e2.scrollTo(0, 0);
+        (_e = item == null ? void 0 : item.parentNode) == null ? void 0 : _e.scrollTo(0, 0);
       } else {
-        (_f2 = item == null ? void 0 : item.parentNode) == null ? void 0 : _f2.scroll({
+        (_f = item == null ? void 0 : item.parentNode) == null ? void 0 : _f.scroll({
           left: item == null ? void 0 : item.offsetLeft,
           behavior
         });
@@ -41702,9 +41999,8 @@ var storefront = function(exports) {
     reset(source$) {
       return source$.pipe(cjs.tap(() => this.setActive(0, "disable")));
     }
-  }, (() => {
-    _q.styles = styles$e;
-  })(), _q);
+  };
+  ProductImagesComponent.styles = styles$e;
   ProductImagesComponent = __decorate([
     hydratable("mouseover")
   ], ProductImagesComponent);
@@ -41721,7 +42017,7 @@ var storefront = function(exports) {
     padding: var(--oryx-space);
   }
 `;
-  const _ProductLabelsComponent = class extends ProductComponentMixin() {
+  class ProductLabelsComponent extends ProductComponentMixin() {
     constructor() {
       super(...arguments);
       this.options$ = new ContentController(this).getOptions();
@@ -41737,15 +42033,12 @@ var storefront = function(exports) {
     }
     filterLabels(options, labels = []) {
       return labels == null ? void 0 : labels.filter((label) => {
-        var _a2;
-        return !options.included && !options.excluded || ((_a2 = options.included) == null ? void 0 : _a2.toLowerCase().includes(label.name.toLowerCase())) || options.excluded && !options.excluded.toLowerCase().includes(label.name.toLowerCase());
+        var _a;
+        return !options.included && !options.excluded || ((_a = options.included) == null ? void 0 : _a.toLowerCase().includes(label.name.toLowerCase())) || options.excluded && !options.excluded.toLowerCase().includes(label.name.toLowerCase());
       });
     }
-  };
-  let ProductLabelsComponent = _ProductLabelsComponent;
-  (() => {
-    _ProductLabelsComponent.styles = [labelStyles];
-  })();
+  }
+  ProductLabelsComponent.styles = [labelStyles];
   const label_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     ProductLabelsComponent
@@ -41764,7 +42057,7 @@ var storefront = function(exports) {
     padding-bottom: 12px;
   }
 `;
-  const mediumScreen$6 = i$7`
+  const mediumScreen$7 = i$7`
   :host(.xs-layout-carousel) {
     padding-bottom: 0;
   }
@@ -41782,7 +42075,7 @@ var storefront = function(exports) {
     ...layoutScreenStyles,
     {
       media: mdScreen,
-      css: mediumScreen$6
+      css: mediumScreen$7
     },
     {
       media: lgScreen,
@@ -41794,7 +42087,7 @@ var storefront = function(exports) {
     baseStyles: baseStyles$9,
     screenStyles: screenStyles$9
   }, Symbol.toStringTag, { value: "Module" }));
-  const _ProductListComponent = class extends ProductComponentMixin() {
+  class ProductListComponent extends ProductComponentMixin() {
     constructor() {
       super(...arguments);
       this.productListService = resolve(ProductListService);
@@ -41803,7 +42096,10 @@ var storefront = function(exports) {
       this.products$ = this.options$.pipe(cjs.switchMap((options) => {
         const searchParams = this.productListService.getSearchParams(options);
         return this.hasOptions(searchParams) ? this.productListService.get(searchParams) : this.productListPageService.get();
-      }), cjs.map((list) => (list == null ? void 0 : list.products) ?? []));
+      }), cjs.map((list) => {
+        var _a;
+        return (_a = list == null ? void 0 : list.products) != null ? _a : [];
+      }));
     }
     renderProducts(products2) {
       return y`${products2.map((p2) => y`<product-card .sku=${p2.sku}></product-card>`)}`;
@@ -41816,11 +42112,8 @@ var storefront = function(exports) {
       ${asyncValue(this.products$, (products2) => this.renderProducts(products2))}
     `;
     }
-  };
-  let ProductListComponent = _ProductListComponent;
-  (() => {
-    _ProductListComponent.styles = [layoutStyles, baseStyles$9];
-  })();
+  }
+  ProductListComponent.styles = [layoutStyles, baseStyles$9];
   const list_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     ProductListComponent
@@ -41833,11 +42126,11 @@ var storefront = function(exports) {
         new ContentController(this).getOptions(),
         new ProductController(this).getProduct()
       ]).pipe(cjs.map(([options, product]) => {
-        var _a2;
+        var _a, _b;
         const image2 = this.resolveImage(product, options);
-        const sources = this.imageService.resolveSources(image2, (options == null ? void 0 : options.containerSize) ?? "detail");
+        const sources = this.imageService.resolveSources(image2, (_a = options == null ? void 0 : options.containerSize) != null ? _a : "detail");
         return {
-          src: (_a2 = sources == null ? void 0 : sources[0]) == null ? void 0 : _a2.url,
+          src: (_b = sources == null ? void 0 : sources[0]) == null ? void 0 : _b.url,
           alt: (options == null ? void 0 : options.alt) || (product == null ? void 0 : product.name),
           srcset: this.getSrcSet(sources),
           loading: options == null ? void 0 : options.loading
@@ -41846,26 +42139,27 @@ var storefront = function(exports) {
     }
     render() {
       return y`${asyncValue(this.productMedia$, (image2) => {
+        var _a;
         return y`<oryx-image
           .src=${image2.src}
           .srcset=${image2.srcset}
           .alt=${image2.alt}
-          .loading=${image2.loading ?? "lazy"}
+          .loading=${(_a = image2.loading) != null ? _a : "lazy"}
         ></oryx-image>`;
       })}`;
     }
     resolveImage(product, options) {
-      var _a2, _b2, _c2;
-      const set = !options.mediaSet ? (_a2 = product == null ? void 0 : product.mediaSet) == null ? void 0 : _a2[0] : (_b2 = product == null ? void 0 : product.mediaSet) == null ? void 0 : _b2.find((set2) => set2.name === options.mediaSet);
-      return (_c2 = set == null ? void 0 : set.media) == null ? void 0 : _c2[(options == null ? void 0 : options.mediaIndex) ?? 0];
+      var _a, _b, _c, _d;
+      const set = !options.mediaSet ? (_a = product == null ? void 0 : product.mediaSet) == null ? void 0 : _a[0] : (_b = product == null ? void 0 : product.mediaSet) == null ? void 0 : _b.find((set2) => set2.name === options.mediaSet);
+      return (_d = set == null ? void 0 : set.media) == null ? void 0 : _d[(_c = options == null ? void 0 : options.mediaIndex) != null ? _c : 0];
     }
     getSrcSet(sources) {
       if (sources.length < 2) {
         return;
       }
       return sources.map((source) => {
-        var _a2, _b2;
-        return ((_a2 = source.context) == null ? void 0 : _a2.density) ? `${source.url} ${(_b2 = source.context) == null ? void 0 : _b2.density}x` : void 0;
+        var _a, _b;
+        return ((_a = source.context) == null ? void 0 : _a.density) ? `${source.url} ${(_b = source.context) == null ? void 0 : _b.density}x` : void 0;
       }).filter((s2) => s2).join(",") || void 0;
     }
   };
@@ -41902,17 +42196,17 @@ var storefront = function(exports) {
     transform: rotate(-10deg);
   }
 `;
-  const _ProductPriceComponent = class extends ProductComponentMixin() {
+  class ProductPriceComponent extends ProductComponentMixin() {
     constructor() {
       super(...arguments);
       this.pricingService = resolve(PricingService);
       this.options$ = new ContentController(this).getOptions();
       this.product$ = new ProductController(this).getProduct();
       this.price$ = this.product$.pipe(cjs.switchMap((product) => {
-        var _a2, _b2;
+        var _a, _b;
         return cjs.combineLatest([
-          this.pricingService.format((_a2 = product == null ? void 0 : product.price) == null ? void 0 : _a2.defaultPrice),
-          this.pricingService.format((_b2 = product == null ? void 0 : product.price) == null ? void 0 : _b2.originalPrice),
+          this.pricingService.format((_a = product == null ? void 0 : product.price) == null ? void 0 : _a.defaultPrice),
+          this.pricingService.format((_b = product == null ? void 0 : product.price) == null ? void 0 : _b.originalPrice),
           this.options$
         ]);
       }));
@@ -41927,11 +42221,8 @@ var storefront = function(exports) {
         `)}
     `;
     }
-  };
-  let ProductPriceComponent = _ProductPriceComponent;
-  (() => {
-    _ProductPriceComponent.styles = ProductPriceStyles;
-  })();
+  }
+  ProductPriceComponent.styles = ProductPriceStyles;
   const price_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     ProductPriceComponent
@@ -41979,52 +42270,30 @@ var storefront = function(exports) {
     --oryx-line-height: var(--oryx-line-height-h6);
   }
 `;
-  let ProductTitleComponent = (_r = class extends ProductComponentMixin() {
+  let ProductTitleComponent = class ProductTitleComponent extends ProductComponentMixin() {
     constructor() {
       super(...arguments);
       this.product$ = new ProductController(this).getProduct();
       this.options$ = new ContentController(this).getOptions();
     }
     render() {
-      return n$7` ${asyncValue(cjs.combineLatest([this.options$, this.product$]), ([options, product]) => this.renderTitle(this.renderContent(product, options), options))}`;
+      return n$7` ${asyncValue(cjs.combineLatest([this.options$, this.product$]), ([options, product]) => n$7`<oryx-heading .tag=${options.tag} .maxLines=${options.maxLines}>
+          ${n$1(!(options == null ? void 0 : options.link), () => n$7`${product == null ? void 0 : product.name}`, () => this.renderLink(product))}
+        </oryx-heading>`)}`;
     }
-    renderContent(product, options) {
-      const textContent = n$7`<oryx-text hideToggle
-      >${product == null ? void 0 : product.name}</oryx-text
-    >`;
-      if (!(options == null ? void 0 : options.link)) {
-        return textContent;
-      }
+    renderLink(product) {
       return n$7`
       <content-link
         .options="${{
         type: SemanticLinkType.Product,
         id: product == null ? void 0 : product.sku
       }}"
-        >${textContent}</content-link
+        >${product == null ? void 0 : product.name}</content-link
       >
     `;
     }
-    renderTitle(title, options) {
-      switch (options.tag) {
-        case "h1":
-          return n$7`<h1>${title}</h1>`;
-        case "h2":
-          return n$7`<h2>${title}</h2>`;
-        case "h3":
-          return n$7`<h3>${title}</h3>`;
-        case "h4":
-          return n$7`<h4>${title}</h4>`;
-        case "h5":
-          return n$7`<h5>${title}</h5>`;
-        case "h6":
-          return n$7`<h6>${title}</h6>`;
-      }
-      return title;
-    }
-  }, (() => {
-    _r.styles = styles$d;
-  })(), _r);
+  };
+  ProductTitleComponent.styles = styles$d;
   ProductTitleComponent = __decorate([
     hydratable()
   ], ProductTitleComponent);
@@ -42044,9 +42313,10 @@ var storefront = function(exports) {
       this.host.addController(this);
     }
     setBoundingBox(element) {
-      const vOffset = this.getComputedProperty(this.host, "--oryx-popover-vertical-offset") ?? 0;
-      const maxHeight = this.getComputedProperty(this.host, "--oryx-popover-maxheight") ?? POPOVER_HEIGHT;
-      const maxWidth = this.getComputedProperty(this.host, "--oryx-popover-maxwidth") ?? 0;
+      var _a, _b, _c;
+      const vOffset = (_a = this.getComputedProperty(this.host, "--oryx-popover-vertical-offset")) != null ? _a : 0;
+      const maxHeight = (_b = this.getComputedProperty(this.host, "--oryx-popover-maxheight")) != null ? _b : POPOVER_HEIGHT;
+      const maxWidth = (_c = this.getComputedProperty(this.host, "--oryx-popover-maxwidth")) != null ? _c : 0;
       const { top: top2, right, bottom: bottom2, left, boundingElementWidth, boundingElementHeight } = this.getAvailableSpace(element);
       const isRTL = getComputedStyle(document.documentElement).direction === "rtl";
       this.host.toggleAttribute("rtl", isRTL);
@@ -42112,8 +42382,8 @@ var storefront = function(exports) {
       return this.items.findIndex((item) => item.hasAttribute("highlight"));
     }
     set highlight(index2) {
-      var _a2;
-      (_a2 = this.items[this.highlight]) == null ? void 0 : _a2.toggleAttribute("highlight", false);
+      var _a;
+      (_a = this.items[this.highlight]) == null ? void 0 : _a.toggleAttribute("highlight", false);
       const option = this.items[index2];
       if (option) {
         option.toggleAttribute("highlight", true);
@@ -42193,11 +42463,11 @@ var storefront = function(exports) {
       this.select(-1);
     }
     select(index2, omitDispatchEvent) {
-      var _a2;
+      var _a;
       if (this.selected === index2) {
         return;
       }
-      (_a2 = this.items.find((item) => item.hasAttribute("selected"))) == null ? void 0 : _a2.removeAttribute("selected");
+      (_a = this.items.find((item) => item.hasAttribute("selected"))) == null ? void 0 : _a.removeAttribute("selected");
       const selected = this.items[index2];
       if (selected) {
         this.selected = index2;
@@ -42308,15 +42578,16 @@ var storefront = function(exports) {
       this.focusShouldBeFocusedMaybe();
     }
     handleMousedown(e2) {
+      var _a;
       if (!isFocusable(e2.target) && this.emitterIsInsidePopover(e2)) {
         e2.preventDefault();
         e2.stopPropagation();
         return;
       }
       if (isSafari()) {
-        this.shouldBeFocused = e2.composedPath().find((element) => {
+        this.shouldBeFocused = (_a = e2.composedPath().find((element) => {
           return nonFocusableOnClickInSafari.some((selector) => element instanceof HTMLElement && element.matches(selector));
-        }) ?? null;
+        })) != null ? _a : null;
       }
       if (!this.isOpen) {
         this.timeStarted = Date.now();
@@ -42357,31 +42628,31 @@ var storefront = function(exports) {
       this.keyIsPressed = false;
     }
     handleContentCloseEvent(e2) {
-      var _a2;
+      var _a;
       const dispatchedByContent = e2.target !== this.element;
       if (dispatchedByContent && this.isOpen) {
         this.host.toggleAttribute("open", false);
-        (_a2 = this.element) == null ? void 0 : _a2.toggleAttribute("show", false);
+        (_a = this.element) == null ? void 0 : _a.toggleAttribute("show", false);
       }
     }
     toggle(force) {
-      var _a2, _b2;
-      if (force ?? !this.isOpen) {
+      var _a, _b;
+      if (force != null ? force : !this.isOpen) {
         this.show();
       } else {
         this.host.toggleAttribute("open", false);
-        (_a2 = this.element) == null ? void 0 : _a2.toggleAttribute("show", false);
-        (_b2 = this.element) == null ? void 0 : _b2.dispatchEvent(new CustomEvent(CLOSE_EVENT$1, { composed: true, bubbles: true }));
+        (_a = this.element) == null ? void 0 : _a.toggleAttribute("show", false);
+        (_b = this.element) == null ? void 0 : _b.dispatchEvent(new CustomEvent(CLOSE_EVENT$1, { composed: true, bubbles: true }));
       }
     }
     show() {
-      var _a2;
+      var _a;
       if (this.isOpen) {
         return;
       }
       this.setBoundingBox();
       this.host.toggleAttribute("open", true);
-      (_a2 = this.element) == null ? void 0 : _a2.toggleAttribute("show", true);
+      (_a = this.element) == null ? void 0 : _a.toggleAttribute("show", true);
       if (this.selected > -1 && this.selected === this.highlighted) {
         setTimeout(() => {
           this.items[this.selected].scrollIntoView({ block: "nearest" });
@@ -42392,7 +42663,8 @@ var storefront = function(exports) {
       return e2.composedPath().includes(this.element);
     }
     setBoundingBox() {
-      this.dimensionController.setBoundingBox(this.options.boundingElement ?? getControl(this.host));
+      var _a;
+      this.dimensionController.setBoundingBox((_a = this.options.boundingElement) != null ? _a : getControl(this.host));
     }
     shouldClosePopover(e2) {
       return e2.composedPath().some((element, i2, path) => i2 <= path.indexOf(this.element) && element instanceof Element && element.hasAttribute(CLOSE_POPOVER_ATTR));
@@ -42404,8 +42676,8 @@ var storefront = function(exports) {
       }
     }
     get isOpen() {
-      var _a2;
-      return !!((_a2 = this.element) == null ? void 0 : _a2.hasAttribute("show"));
+      var _a;
+      return !!((_a = this.element) == null ? void 0 : _a.hasAttribute("show"));
     }
     get selected() {
       return this.items.findIndex((item) => item.hasAttribute("selected"));
@@ -42444,15 +42716,12 @@ var storefront = function(exports) {
     transition: transform var(--oryx-transition-time) ease-in-out;
   }
 `;
-  const _PopoverComponent = class extends s$5 {
+  class PopoverComponent extends s$5 {
     render() {
       return y`<slot></slot>`;
     }
-  };
-  let PopoverComponent = _PopoverComponent;
-  (() => {
-    _PopoverComponent.styles = [popoverBaseStyles, popoverStyles];
-  })();
+  }
+  PopoverComponent.styles = [popoverBaseStyles, popoverStyles];
   const popover_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     PopoverComponent
@@ -42487,11 +42756,11 @@ var storefront = function(exports) {
       this.host.removeEventListener(POPOVER_EVENT, this.handleSelectEvent);
     }
     selectByValue(value, omitDispatchEvent) {
-      var _a2;
+      var _a;
       const index2 = this.items.findIndex((item) => item.value === value);
       this.selectedController.select(index2, omitDispatchEvent);
       if (this.toggleController.isOpen) {
-        (_a2 = this.items[index2]) == null ? void 0 : _a2.scrollIntoView({ block: "nearest" });
+        (_a = this.items[index2]) == null ? void 0 : _a.scrollIntoView({ block: "nearest" });
       }
     }
     handleKeydown(e2) {
@@ -42512,12 +42781,12 @@ var storefront = function(exports) {
       }
     }
     handleInput(e2) {
-      var _a2;
+      var _a;
       if (!e2.inputType) {
         return;
       }
       const composedTarget = e2.composedPath()[0];
-      if (((_a2 = e2.target) == null ? void 0 : _a2.value) || composedTarget instanceof HTMLInputElement && (composedTarget == null ? void 0 : composedTarget.value)) {
+      if (((_a = e2.target) == null ? void 0 : _a.value) || composedTarget instanceof HTMLInputElement && (composedTarget == null ? void 0 : composedTarget.value)) {
         this.toggleController.toggle(true);
       } else {
         this.selectedController.deselect();
@@ -42704,11 +42973,11 @@ var storefront = function(exports) {
       this.filterOptions(value);
     }
     dispatchMatchEvent(visibleOptionCount, value) {
-      var _a2;
+      var _a;
       let selected;
       if (visibleOptionCount === 1) {
         const option = this.items.find((el) => !el.hasAttribute("hide"));
-        const optionText = ((_a2 = option == null ? void 0 : option.innerText) == null ? void 0 : _a2.trim()) || (option == null ? void 0 : option.value) || "";
+        const optionText = ((_a = option == null ? void 0 : option.innerText) == null ? void 0 : _a.trim()) || (option == null ? void 0 : option.value) || "";
         if (optionText.toLowerCase() === value.toLowerCase()) {
           selected = option;
         }
@@ -42778,9 +43047,12 @@ var storefront = function(exports) {
       <oryx-popover>
         ${n$1(!this.host.isEmpty, () => y`<slot name="option"></slot>`)}
         <slot name="empty">
-          ${n$1(this.host.isEmpty, () => y`<div class="placeholder">
-                ${this.host.emptyMessage ?? emptyFallback}
-              </div>`)}
+          ${n$1(this.host.isEmpty, () => {
+        var _a;
+        return y`<div class="placeholder">
+                ${(_a = this.host.emptyMessage) != null ? _a : emptyFallback}
+              </div>`;
+      })}
         </slot>
         <slot name="loading">
           ${n$1(this.host.isLoading, () => y`<div class="placeholder">
@@ -42791,8 +43063,8 @@ var storefront = function(exports) {
     `;
     }
     onInput() {
-      var _a2;
-      const query = ((_a2 = this.typeaheadControl) == null ? void 0 : _a2.value) || this.control.value;
+      var _a;
+      const query = ((_a = this.typeaheadControl) == null ? void 0 : _a.value) || this.control.value;
       const event2 = new CustomEvent("oryx.typeahead", {
         detail: {
           query
@@ -42827,15 +43099,15 @@ var storefront = function(exports) {
       return getControl(this.host);
     }
     get typeaheadControl() {
-      var _a2;
-      return (_a2 = this.host.renderRoot) == null ? void 0 : _a2.querySelector("[typeaheadInput]");
+      var _a;
+      return (_a = this.host.renderRoot) == null ? void 0 : _a.querySelector("[typeaheadInput]");
     }
     getValue(option) {
       return option.value;
     }
     getText(option) {
-      var _a2;
-      return (_a2 = option.innerText) == null ? void 0 : _a2.trim();
+      var _a;
+      return (_a = option.innerText) == null ? void 0 : _a.trim();
     }
   }
   class AffixController {
@@ -42870,13 +43142,13 @@ var storefront = function(exports) {
       return y`<slot name=${slotName}>${content2}</slot>`;
     }
     updateFill() {
-      var _a2, _b2;
-      this.host.toggleAttribute("prefixFill", !!this.host.prefixFill && (!!this.host.prefixIcon || ((_a2 = queryAssignedElements(this.host, { slot: "prefix", flatten: true })) == null ? void 0 : _a2.length) > 0));
-      this.host.toggleAttribute("suffixFill", !!this.host.suffixFill && (!!this.host.suffixIcon || ((_b2 = queryAssignedElements(this.host, { slot: "suffix", flatten: true })) == null ? void 0 : _b2.length) > 0));
+      var _a, _b;
+      this.host.toggleAttribute("prefixFill", !!this.host.prefixFill && (!!this.host.prefixIcon || ((_a = queryAssignedElements(this.host, { slot: "prefix", flatten: true })) == null ? void 0 : _a.length) > 0));
+      this.host.toggleAttribute("suffixFill", !!this.host.suffixFill && (!!this.host.suffixIcon || ((_b = queryAssignedElements(this.host, { slot: "suffix", flatten: true })) == null ? void 0 : _b.length) > 0));
     }
     hasContent(slotName, icon) {
-      var _a2, _b2, _c2;
-      return !!icon || ((_c2 = (_b2 = (_a2 = this.host) == null ? void 0 : _a2.querySelectorAll) == null ? void 0 : _b2.call(_a2, `*[slot=${slotName}]`)) == null ? void 0 : _c2.length) > 0;
+      var _a, _b, _c;
+      return !!icon || ((_c = (_b = (_a = this.host) == null ? void 0 : _a.querySelectorAll) == null ? void 0 : _b.call(_a, `*[slot=${slotName}]`)) == null ? void 0 : _c.length) > 0;
     }
   }
   const affixStyles = i$7`
@@ -43027,7 +43299,7 @@ var storefront = function(exports) {
     --_label-background-color: var(--oryx-color-canvas-200);
   }
 `;
-  const mediumScreen$5 = i$7`
+  const mediumScreen$6 = i$7`
   :host([floatLabel]) slot[name='label'] {
     top: 13px;
   }
@@ -43035,7 +43307,7 @@ var storefront = function(exports) {
   const floatingLabelScreenStyles = [
     {
       media: mdScreen,
-      css: mediumScreen$5
+      css: mediumScreen$6
     }
   ];
   const focusableSelectors = [
@@ -43105,10 +43377,10 @@ var storefront = function(exports) {
       this.host.style.setProperty("--float-label-start-gap", `${prefix == null ? void 0 : prefix.offsetWidth}px`);
     }
     hostDisconnected() {
-      var _a2;
+      var _a;
       this.removeValidationListeners();
       this.host.removeEventListener("mousedown", this.mouseDownHandler);
-      (_a2 = this.controlAttrObserver) == null ? void 0 : _a2.disconnect();
+      (_a = this.controlAttrObserver) == null ? void 0 : _a.disconnect();
     }
     mouseDownHandler(e2) {
       if (!isFocusable(e2.target)) {
@@ -43149,14 +43421,14 @@ var storefront = function(exports) {
       this.host.toggleAttribute("hasError", false);
     }
     addValidationListeners() {
-      var _a2, _b2;
-      (_a2 = this.control) == null ? void 0 : _a2.addEventListener("invalid", this.setHasErrorAttr);
-      (_b2 = this.control) == null ? void 0 : _b2.addEventListener("input", this.removeHasErrorAttr);
+      var _a, _b;
+      (_a = this.control) == null ? void 0 : _a.addEventListener("invalid", this.setHasErrorAttr);
+      (_b = this.control) == null ? void 0 : _b.addEventListener("input", this.removeHasErrorAttr);
     }
     removeValidationListeners() {
-      var _a2, _b2;
-      (_a2 = this.control) == null ? void 0 : _a2.removeEventListener("invalid", this.setHasErrorAttr);
-      (_b2 = this.control) == null ? void 0 : _b2.removeEventListener("input", this.removeHasErrorAttr);
+      var _a, _b;
+      (_a = this.control) == null ? void 0 : _a.removeEventListener("invalid", this.setHasErrorAttr);
+      (_b = this.control) == null ? void 0 : _b.removeEventListener("input", this.removeHasErrorAttr);
     }
     detectAutofill() {
       let timesToTry = 30;
@@ -43185,10 +43457,10 @@ var storefront = function(exports) {
       });
     }
     registerListener(mutation, callback) {
-      var _a2;
+      var _a;
       this._attributes = [...this._attributes, ...mutation.attributes];
       this._listeners.push(callback);
-      (_a2 = this.controlAttrObserver) == null ? void 0 : _a2.disconnect();
+      (_a = this.controlAttrObserver) == null ? void 0 : _a.disconnect();
       this.controlAttrObserver = new MutationObserver((mutations, observer) => {
         this._listeners.forEach((listener) => listener(mutations, observer));
       });
@@ -43340,7 +43612,7 @@ var storefront = function(exports) {
     baseStyles: baseStyles$8,
     screenStyles: screenStyles$8
   }, Symbol.toStringTag, { value: "Module" }));
-  const _InputComponent = class extends s$5 {
+  class InputComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.formControlController = new FormControlController(this);
@@ -43352,11 +43624,8 @@ var storefront = function(exports) {
         after: this.affixController.renderSuffix()
       })}`;
     }
-  };
-  let InputComponent = _InputComponent;
-  (() => {
-    _InputComponent.styles = baseStyles$8;
-  })();
+  }
+  InputComponent.styles = baseStyles$8;
   __decorate([
     e$3({ type: Boolean, reflect: true }),
     __metadata("design:type", Boolean)
@@ -43456,7 +43725,7 @@ var storefront = function(exports) {
       <oryx-icon
         type=${icon}
         class="clear"
-        appearance=${clearIconAppearance ?? "TOGGLE"}
+        appearance=${clearIconAppearance != null ? clearIconAppearance : "TOGGLE"}
         @mousedown=${(e2) => this.muteEvents(e2)}
         @click=${(ev) => this.clear(ev)}
       ></oryx-icon>
@@ -43563,7 +43832,7 @@ var storefront = function(exports) {
     }
   `
   ];
-  const mediumScreen$4 = i$7`
+  const mediumScreen$5 = i$7`
   .clear[type='remove'] {
     --oryx-icon-size: var(--oryx-icon-size-medium);
   }
@@ -43572,7 +43841,7 @@ var storefront = function(exports) {
     ...screenStyles$8,
     {
       media: mdScreen,
-      css: mediumScreen$4
+      css: mediumScreen$5
     }
   ];
   const searchbox_styles = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -43655,7 +43924,7 @@ var storefront = function(exports) {
     baseStyles: baseStyles$6,
     screenStyles: screenStyles$6
   }, Symbol.toStringTag, { value: "Module" }));
-  let TypeaheadComponent = (_s = class extends s$5 {
+  let TypeaheadComponent = class TypeaheadComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.typeaheadController = new TypeaheadController(this);
@@ -43671,9 +43940,8 @@ var storefront = function(exports) {
       ${this.typeaheadController.renderPopover()}
     `;
     }
-  }, (() => {
-    _s.styles = baseStyles$6;
-  })(), _s);
+  };
+  TypeaheadComponent.styles = baseStyles$6;
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -43755,8 +44023,8 @@ var storefront = function(exports) {
   })(FilterStrategyType || (FilterStrategyType = {}));
   class QueryControlsController {
     dispatchEvent(e2, eventType) {
-      var _a2;
-      (_a2 = e2.target) == null ? void 0 : _a2.dispatchEvent(new CustomEvent(eventType, { bubbles: true, composed: true }));
+      var _a;
+      (_a = e2.target) == null ? void 0 : _a.dispatchEvent(new CustomEvent(eventType, { bubbles: true, composed: true }));
     }
     muteMousedown(e2) {
       e2.stopPropagation();
@@ -43801,8 +44069,8 @@ var storefront = function(exports) {
               <content-link
                 .options="${{
         type,
-        id: url ?? "",
-        params: params ?? null,
+        id: url != null ? url : "",
+        params: params != null ? params : null,
         text: name
       }}"
                 close-popover
@@ -43816,7 +44084,7 @@ var storefront = function(exports) {
       return n$7`
       <div slot="empty">
         <oryx-icon type="search"></oryx-icon>
-        <span>${nothingFoundText || "Nothing found…"}</span>
+        <span>${nothingFoundText || "Nothing found\u2026"}</span>
       </div>
     `;
     }
@@ -44013,7 +44281,7 @@ var storefront = function(exports) {
     inset-inline-start: 5px;
   }
 `;
-  const mediumScreen$3 = i$7`
+  const mediumScreen$4 = i$7`
   :host([stretched]) {
     --oryx-popover-width: auto;
   }
@@ -44042,7 +44310,7 @@ var storefront = function(exports) {
   const screenStyles$5 = [
     {
       media: mdScreen,
-      css: mediumScreen$3
+      css: mediumScreen$4
     }
   ];
   const searchboxStyles = i$7`
@@ -44126,7 +44394,7 @@ var storefront = function(exports) {
     searchboxMediumScreen,
     searchboxScreenStyles
   }, Symbol.toStringTag, { value: "Module" }));
-  let SearchBoxComponent = (_t = class extends ComponentMixin() {
+  let SearchBoxComponent = class SearchBoxComponent extends ComponentMixin() {
     constructor() {
       super();
       this.defaultOptions = {
@@ -44146,10 +44414,10 @@ var storefront = function(exports) {
       this.suggestion$ = this.triggerInputValue$.pipe(cjs.debounce(() => cjs.timer(300)), cjs.map((q) => q.trim()), cjs.distinctUntilChanged(), cjs.withLatestFrom(this.options$), cjs.switchMap(([query, options]) => {
         if (query && (!options.minChars || query.length >= options.minChars)) {
           return this.suggestionService.get({ query }).pipe(cjs.map((raw) => {
-            var _a2;
+            var _a, _b;
             const suggestion = raw ? {
               completion: raw.completion.slice(0, options.completionsCount),
-              products: ((_a2 = raw.products) == null ? void 0 : _a2.slice(0, options.productsCount)) ?? [],
+              products: (_b = (_a = raw.products) == null ? void 0 : _a.slice(0, options.productsCount)) != null ? _b : [],
               categories: raw.categories.slice(0, options.categoriesCount),
               cmsPages: raw.cmsPages.slice(0, options.cmsCount)
             } : raw;
@@ -44199,30 +44467,30 @@ var storefront = function(exports) {
       this.triggerInputValue$.next("");
     }
     close() {
-      var _a2;
-      (_a2 = this.renderRoot.querySelector("oryx-typeahead")) == null ? void 0 : _a2.removeAttribute("open");
+      var _a;
+      (_a = this.renderRoot.querySelector("oryx-typeahead")) == null ? void 0 : _a.removeAttribute("open");
     }
     onTypeahead() {
       this.query = this.inputRef.value.value;
       this.triggerInputValue$.next(this.query);
     }
     dispatchContainerScroll(e2) {
-      var _a2;
-      (_a2 = e2.target) == null ? void 0 : _a2.dispatchEvent(new CustomEvent("containerScroll", { bubbles: true, composed: true }));
+      var _a;
+      (_a = e2.target) == null ? void 0 : _a.dispatchEvent(new CustomEvent("containerScroll", { bubbles: true, composed: true }));
     }
     applyInputTexts(options) {
-      var _a2, _b2;
+      var _a, _b;
       const { placeholder: placeholder2 } = options;
       if (placeholder2) {
-        (_b2 = (_a2 = this.inputRef) == null ? void 0 : _a2.value) == null ? void 0 : _b2.setAttribute("placeholder", placeholder2);
+        (_b = (_a = this.inputRef) == null ? void 0 : _a.value) == null ? void 0 : _b.setAttribute("placeholder", placeholder2);
       }
     }
     hasLinks(suggestion) {
       return !!((suggestion == null ? void 0 : suggestion.completion.length) || (suggestion == null ? void 0 : suggestion.cmsPages.length) || (suggestion == null ? void 0 : suggestion.categories.length));
     }
     hasProducts(suggestion) {
-      var _a2;
-      return !!((_a2 = suggestion == null ? void 0 : suggestion.products) == null ? void 0 : _a2.length);
+      var _a;
+      return !!((_a = suggestion == null ? void 0 : suggestion.products) == null ? void 0 : _a.length);
     }
     isNothingFound(suggestion) {
       return !this.hasLinks(suggestion) && !this.hasProducts(suggestion);
@@ -44259,9 +44527,8 @@ var storefront = function(exports) {
       </oryx-typeahead>
     `;
     }
-  }, (() => {
-    _t.styles = [baseStyles$5, searchboxStyles];
-  })(), _t);
+  };
+  SearchBoxComponent.styles = [baseStyles$5, searchboxStyles];
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -44294,7 +44561,7 @@ var storefront = function(exports) {
     display: contents;
   }
 `;
-  const _SearchFacetNavigationComponent = class extends ComponentMixin() {
+  class SearchFacetNavigationComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.defaultOptions = {
@@ -44335,18 +44602,18 @@ var storefront = function(exports) {
       })}`;
     }
     renderFacetValues(facets, parameter, valueRenderLimit, activatedRouter) {
-      var _a2;
-      const renderedFacetElement = (_a2 = this.renderedFacetElements) == null ? void 0 : _a2.get(parameter);
+      var _a;
+      const renderedFacetElement = (_a = this.renderedFacetElements) == null ? void 0 : _a.get(parameter);
       return y`
       <ul>
         ${facets == null ? void 0 : facets.map((f2) => {
-        var _a3, _b2, _c2;
+        var _a2, _b, _c, _d, _e, _f, _g;
         if (this.checkValueRenderLimit(parameter, valueRenderLimit) && !(renderedFacetElement == null ? void 0 : renderedFacetElement.isShowAll)) {
           return;
         }
         this.renderedFacetElements.set(parameter, {
-          renderedItemsCount: ((_a3 = this.renderedFacetElements) == null ? void 0 : _a3.get(parameter).renderedItemsCount) + 1,
-          isShowAll: (renderedFacetElement == null ? void 0 : renderedFacetElement.isShowAll) ?? false
+          renderedItemsCount: ((_a2 = this.renderedFacetElements) == null ? void 0 : _a2.get(parameter).renderedItemsCount) + 1,
+          isShowAll: (_b = renderedFacetElement == null ? void 0 : renderedFacetElement.isShowAll) != null ? _b : false
         });
         return y`<li>
               <oryx-link>
@@ -44354,16 +44621,16 @@ var storefront = function(exports) {
                   href="${this.routerService.getUrl(activatedRouter.route, {
           ...activatedRouter.extras,
           queryParams: {
-            ...((_b2 = activatedRouter.extras) == null ? void 0 : _b2.queryParams) ?? {},
-            [parameter.toLowerCase()]: `${f2.value ?? f2.name}`
+            ...(_d = (_c = activatedRouter.extras) == null ? void 0 : _c.queryParams) != null ? _d : {},
+            [parameter.toLowerCase()]: `${(_e = f2.value) != null ? _e : f2.name}`
           }
         })}"
                 >
-                  ${f2.name ?? f2.value} (${f2.count})
+                  ${(_f = f2.name) != null ? _f : f2.value} (${f2.count})
                 </a>
               </oryx-link>
             </li>
-            ${n$1((_c2 = f2.children) == null ? void 0 : _c2.length, () => y`<li>
+            ${n$1((_g = f2.children) == null ? void 0 : _g.length, () => y`<li>
                   ${this.renderFacetValues(f2.children, parameter, valueRenderLimit, activatedRouter)}
                 </li>`)}`;
       })}
@@ -44376,7 +44643,7 @@ var storefront = function(exports) {
     render() {
       return y`
       ${asyncValue(this.facets$, ([facets, options, facetVisibilityChange, activatedRouter]) => {
-        return this.renderFacets(facets ?? [], options, facetVisibilityChange, activatedRouter);
+        return this.renderFacets(facets != null ? facets : [], options, facetVisibilityChange, activatedRouter);
       })}
     `;
     }
@@ -44384,9 +44651,9 @@ var storefront = function(exports) {
       let facetLength = facetValues.length;
       const calcFacetsLength = (facetList) => {
         facetList.forEach((f2) => {
-          var _a2, _b2;
-          if ((_a2 = f2.children) == null ? void 0 : _a2.length) {
-            facetLength += (_b2 = f2.children) == null ? void 0 : _b2.length;
+          var _a, _b;
+          if ((_a = f2.children) == null ? void 0 : _a.length) {
+            facetLength += (_b = f2.children) == null ? void 0 : _b.length;
             calcFacetsLength(f2.children);
           }
         });
@@ -44416,11 +44683,8 @@ var storefront = function(exports) {
     provideFacetVisibilityChange(parameter, isShowAll) {
       this.facetVisibilityChange.next({ parameter, isShowAll });
     }
-  };
-  let SearchFacetNavigationComponent = _SearchFacetNavigationComponent;
-  (() => {
-    _SearchFacetNavigationComponent.styles = [layoutStyles, facetNavigation];
-  })();
+  }
+  SearchFacetNavigationComponent.styles = [layoutStyles, facetNavigation];
   const facetNavigation_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     SearchFacetNavigationComponent
@@ -44491,7 +44755,7 @@ var storefront = function(exports) {
     padding: 11px;
   }
 `;
-  const _IconButtonComponent = class extends s$5 {
+  class IconButtonComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.size = Size.medium;
@@ -44499,11 +44763,8 @@ var storefront = function(exports) {
     render() {
       return y`<slot></slot>`;
     }
-  };
-  let IconButtonComponent = _IconButtonComponent;
-  (() => {
-    _IconButtonComponent.styles = [iconButtonBaseStyles];
-  })();
+  }
+  IconButtonComponent.styles = [iconButtonBaseStyles];
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", Object)
@@ -44595,7 +44856,7 @@ var storefront = function(exports) {
     color: var(--oryx-color-ink);
   }
 `;
-  const _LinkComponent = class extends s$5 {
+  class LinkComponent extends s$5 {
     render() {
       return y`
       <slot name="icon">
@@ -44604,11 +44865,8 @@ var storefront = function(exports) {
       <slot></slot>
     `;
     }
-  };
-  let LinkComponent = _LinkComponent;
-  (() => {
-    _LinkComponent.styles = linkStyles;
-  })();
+  }
+  LinkComponent.styles = linkStyles;
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", String)
@@ -44777,7 +45035,7 @@ var storefront = function(exports) {
   }
 `;
   const GENERATED_INPUT_EVENT = "oryx-gen";
-  const _ToggleIconComponent = class extends s$5 {
+  class ToggleIconComponent extends s$5 {
     connectedCallback() {
       super.connectedCallback();
       this.addEventListener("input", this.onInput);
@@ -44789,10 +45047,10 @@ var storefront = function(exports) {
       return y`<slot></slot>`;
     }
     onInput(e2) {
-      var _a2;
+      var _a;
       const el = e2.target;
       this.toggleAttribute("checked", el.checked);
-      if (this.isInRadioGroup(el) && ((_a2 = e2.detail) == null ? void 0 : _a2.toString()) !== GENERATED_INPUT_EVENT) {
+      if (this.isInRadioGroup(el) && ((_a = e2.detail) == null ? void 0 : _a.toString()) !== GENERATED_INPUT_EVENT) {
         this.updateSiblings(el);
       }
     }
@@ -44824,14 +45082,11 @@ var storefront = function(exports) {
       });
     }
     getSpan() {
-      var _a2, _b2;
-      return (_b2 = (_a2 = this.shadowRoot) == null ? void 0 : _a2.querySelector("slot")) == null ? void 0 : _b2.assignedElements({ flatten: true }).find((e2) => e2.tagName.toLowerCase() === "span");
+      var _a, _b;
+      return (_b = (_a = this.shadowRoot) == null ? void 0 : _a.querySelector("slot")) == null ? void 0 : _b.assignedElements({ flatten: true }).find((e2) => e2.tagName.toLowerCase() === "span");
     }
-  };
-  let ToggleIconComponent = _ToggleIconComponent;
-  (() => {
-    _ToggleIconComponent.styles = [toggleIconStyles];
-  })();
+  }
+  ToggleIconComponent.styles = [toggleIconStyles];
   __decorate([
     e$3({ type: Boolean }),
     __metadata("design:type", Boolean)
@@ -44961,7 +45216,7 @@ var storefront = function(exports) {
     margin-block-start: 1px;
   }
 `;
-  const _ToggleComponent = class extends s$5 {
+  class ToggleComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.errorController = new ErrorController(this);
@@ -44974,11 +45229,8 @@ var storefront = function(exports) {
       ${this.errorController.render()}
     `;
     }
-  };
-  let ToggleComponent = _ToggleComponent;
-  (() => {
-    _ToggleComponent.styles = styles$c;
-  })();
+  }
+  ToggleComponent.styles = styles$c;
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -45084,7 +45336,7 @@ var storefront = function(exports) {
     margin: 0;
   }
 `;
-  const _CardComponent = class extends s$5 {
+  class CardComponent extends s$5 {
     render() {
       return y`
       <slot name="header">
@@ -45094,11 +45346,8 @@ var storefront = function(exports) {
       <slot name="footer"></slot>
     `;
     }
-  };
-  let CardComponent = _CardComponent;
-  (() => {
-    _CardComponent.styles = styles$b;
-  })();
+  }
+  CardComponent.styles = styles$b;
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", String)
@@ -45171,7 +45420,7 @@ var storefront = function(exports) {
     margin-inline-start: auto;
   }
 `;
-  const _CollapsibleComponent = class extends s$5 {
+  class CollapsibleComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.appearance = "block";
@@ -45219,11 +45468,8 @@ var storefront = function(exports) {
     get isInline() {
       return this.appearance === "inline";
     }
-  };
-  let CollapsibleComponent = _CollapsibleComponent;
-  (() => {
-    _CollapsibleComponent.styles = [collapsibleBaseStyle];
-  })();
+  }
+  CollapsibleComponent.styles = [collapsibleBaseStyle];
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", Object)
@@ -45409,17 +45655,14 @@ var storefront = function(exports) {
     font-size: 12px;
   }
 `;
-  const _ErrorMessageComponent = class extends s$5 {
+  class ErrorMessageComponent extends s$5 {
     render() {
       return y`
       ${this.message ? y`<oryx-icon type="warning"></oryx-icon> ${this.message}` : y`<slot></slot>`}
     `;
     }
-  };
-  let ErrorMessageComponent = _ErrorMessageComponent;
-  (() => {
-    _ErrorMessageComponent.styles = [errorStyles];
-  })();
+  }
+  ErrorMessageComponent.styles = [errorStyles];
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -45553,7 +45796,7 @@ var storefront = function(exports) {
       inset 0 0 0 1px var(--oryx-color-canvas-100);
   }
 `;
-  const _CheckboxComponent = class extends s$5 {
+  class CheckboxComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.errorController = new ErrorController(this);
@@ -45566,11 +45809,8 @@ var storefront = function(exports) {
       ${this.errorController.render()}
     `;
     }
-  };
-  let CheckboxComponent = _CheckboxComponent;
-  (() => {
-    _CheckboxComponent.styles = checkboxStyles;
-  })();
+  }
+  CheckboxComponent.styles = checkboxStyles;
   __decorate([
     e$3({ type: Boolean, reflect: true }),
     __metadata("design:type", Boolean)
@@ -45629,7 +45869,7 @@ var storefront = function(exports) {
     margin-inline-start: 1px;
   }
 `;
-  const _InputListComponent = class extends s$5 {
+  class InputListComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.errorController = new ErrorController(this);
@@ -45639,9 +45879,9 @@ var storefront = function(exports) {
       this.handleError();
     }
     handleHeading() {
-      var _a2, _b2;
+      var _a, _b;
       const hasHeading = !!this.heading || !!this.headingSlot.length;
-      (_b2 = (_a2 = this.shadowRoot) == null ? void 0 : _a2.querySelector("legend")) == null ? void 0 : _b2.toggleAttribute("hasHeading", hasHeading);
+      (_b = (_a = this.shadowRoot) == null ? void 0 : _a.querySelector("legend")) == null ? void 0 : _b.toggleAttribute("hasHeading", hasHeading);
     }
     handleError() {
       const hasError = !!this.errorMessage || !!this.hasError;
@@ -45652,8 +45892,8 @@ var storefront = function(exports) {
     getInputElements() {
       const inputs = this.querySelectorAll("* > input:not([slot])");
       return [...inputs].filter((element) => {
-        var _a2;
-        return ((_a2 = element.parentElement) == null ? void 0 : _a2.parentElement) === this;
+        var _a;
+        return ((_a = element.parentElement) == null ? void 0 : _a.parentElement) === this;
       });
     }
     getGroupStatus() {
@@ -45702,11 +45942,8 @@ var storefront = function(exports) {
       ${this.errorController.render()}
     `;
     }
-  };
-  let InputListComponent = _InputListComponent;
-  (() => {
-    _InputListComponent.styles = [styles$9, errorStyles$1];
-  })();
+  }
+  InputListComponent.styles = [styles$9, errorStyles$1];
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -45767,7 +46004,7 @@ var storefront = function(exports) {
     baseStyles: baseStyles$4,
     screenStyles: screenStyles$4
   }, Symbol.toStringTag, { value: "Module" }));
-  const _PasswordInputComponent = class extends s$5 {
+  class PasswordInputComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.formControlController = new FormControlController(this);
@@ -45841,11 +46078,8 @@ var storefront = function(exports) {
     get control() {
       return getControl(this, "input");
     }
-  };
-  let PasswordInputComponent = _PasswordInputComponent;
-  (() => {
-    _PasswordInputComponent.styles = [...baseStyles$8, baseStyles$4];
-  })();
+  }
+  PasswordInputComponent.styles = [...baseStyles$8, baseStyles$4];
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -45996,7 +46230,7 @@ var storefront = function(exports) {
     color: var(--oryx-color-neutral-300);
   }
 `;
-  const mediumScreen$2 = i$7`
+  const mediumScreen$3 = i$7`
   :host {
     --oryx-radio-size: 18px;
   }
@@ -46004,7 +46238,7 @@ var storefront = function(exports) {
   const screenStyles$3 = [
     {
       media: mdScreen,
-      css: mediumScreen$2
+      css: mediumScreen$3
     }
   ];
   const radio_styles = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -46012,7 +46246,7 @@ var storefront = function(exports) {
     baseStyles: baseStyles$3,
     screenStyles: screenStyles$3
   }, Symbol.toStringTag, { value: "Module" }));
-  const _RadioComponent = class extends s$5 {
+  class RadioComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.errorController = new ErrorController(this);
@@ -46026,11 +46260,8 @@ var storefront = function(exports) {
       ${this.errorController.render()}
     `;
     }
-  };
-  let RadioComponent = _RadioComponent;
-  (() => {
-    _RadioComponent.styles = [baseStyles$3, errorStyles$1];
-  })();
+  }
+  RadioComponent.styles = [baseStyles$3, errorStyles$1];
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -46125,12 +46356,12 @@ var storefront = function(exports) {
     }
     reflectSelect(element) {
       const options = Array.from(element.options).filter((option) => option.value !== "").map((nativeOption) => {
-        var _a2;
+        var _a;
         nativeOption.hidden = true;
         const reflectedOption = {
           value: nativeOption.value
         };
-        const text = (_a2 = nativeOption.textContent) == null ? void 0 : _a2.trim();
+        const text = (_a = nativeOption.textContent) == null ? void 0 : _a.trim();
         if (text !== "" && text !== nativeOption.value) {
           reflectedOption.text = text;
         }
@@ -46148,7 +46379,8 @@ var storefront = function(exports) {
     reflectOptions() {
       this.clearOptions();
       this.options.forEach((option) => {
-        const newOption = `<oryx-option value='${option.value}' ${option.selected ? "selected" : ""} slot="option">${option.text ?? option.value}</oryx-option>`;
+        var _a;
+        const newOption = `<oryx-option value='${option.value}' ${option.selected ? "selected" : ""} slot="option">${(_a = option.text) != null ? _a : option.value}</oryx-option>`;
         this.host.insertAdjacentHTML("beforeend", newOption);
       });
     }
@@ -46156,8 +46388,8 @@ var storefront = function(exports) {
       this.host.querySelectorAll("oryx-option").forEach((el) => el.remove());
     }
     observeSelect() {
-      var _a2;
-      (_a2 = this.mutationObserver) == null ? void 0 : _a2.disconnect();
+      var _a;
+      (_a = this.mutationObserver) == null ? void 0 : _a.disconnect();
       this.mutationObserver = new MutationObserver(() => {
         this.host.requestUpdate();
       });
@@ -46168,8 +46400,8 @@ var storefront = function(exports) {
       });
     }
     hostDisconnected() {
-      var _a2;
-      (_a2 = this.mutationObserver) == null ? void 0 : _a2.disconnect();
+      var _a;
+      (_a = this.mutationObserver) == null ? void 0 : _a.disconnect();
     }
   }
   const selectFilterStyles = i$7`
@@ -46262,7 +46494,7 @@ var storefront = function(exports) {
     baseStyles: baseStyles$2,
     screenStyles: screenStyles$2
   }, Symbol.toStringTag, { value: "Module" }));
-  const _SelectComponent = class extends s$5 {
+  class SelectComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.suffixIcon = "dropdown";
@@ -46300,15 +46532,12 @@ var storefront = function(exports) {
       return y`${this.searchController.renderPrefix()}${this.selectFilterController.render()}`;
     }
     get allowEmptyValue() {
-      var _a2, _b2;
+      var _a, _b;
       const control = getControl(this);
-      return control instanceof HTMLInputElement || ((_b2 = (_a2 = control.options) == null ? void 0 : _a2[0]) == null ? void 0 : _b2.value) === "";
+      return control instanceof HTMLInputElement || ((_b = (_a = control.options) == null ? void 0 : _a[0]) == null ? void 0 : _b.value) === "";
     }
-  };
-  let SelectComponent = _SelectComponent;
-  (() => {
-    _SelectComponent.styles = baseStyles$2;
-  })();
+  }
+  SelectComponent.styles = baseStyles$2;
   __decorate([
     e$3({ type: Boolean }),
     __metadata("design:type", Boolean)
@@ -46441,7 +46670,7 @@ var storefront = function(exports) {
   }
 `;
   const CLOSE_EVENT = "oryx.close";
-  const _TagComponent = class extends s$5 {
+  class TagComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.removeButtonAriaLabel = "Remove tag";
@@ -46457,11 +46686,8 @@ var storefront = function(exports) {
       </button>
     `;
     }
-  };
-  let TagComponent = _TagComponent;
-  (() => {
-    _TagComponent.styles = [tagStyles];
-  })();
+  }
+  TagComponent.styles = [tagStyles];
   __decorate([
     e$3({ type: Boolean, reflect: true }),
     __metadata("design:type", Boolean)
@@ -46512,15 +46738,12 @@ var storefront = function(exports) {
     padding-inline: 7px;
   }
 `;
-  const _ChipComponent = class extends s$5 {
+  class ChipComponent extends s$5 {
     render() {
       return y`<slot></slot>`;
     }
-  };
-  let ChipComponent = _ChipComponent;
-  (() => {
-    _ChipComponent.styles = [chipBaseStyle];
-  })();
+  }
+  ChipComponent.styles = [chipBaseStyle];
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", String)
@@ -46665,29 +46888,25 @@ var storefront = function(exports) {
   }
 `;
   const DEFAULT_SPRITE = "/assets/icons.svg";
-  const _IconComponent = class extends s$5 {
+  class IconComponent extends s$5 {
     render() {
       return y`
       <slot>
-        ${n$1(this.type, () => _IconComponent.renderIcon(this.type, this.spriteUrl))}
+        ${n$1(this.type, () => IconComponent.renderIcon(this.type, this.spriteUrl))}
       </slot>
     `;
     }
     get spriteUrl() {
-      return `${this.sprite ?? DEFAULT_SPRITE}#${this.type}`;
+      var _a;
+      return `${(_a = this.sprite) != null ? _a : DEFAULT_SPRITE}#${this.type}`;
     }
-  };
-  let IconComponent = _IconComponent;
-  (() => {
-    _IconComponent.styles = styles$8;
-  })();
-  (() => {
-    _IconComponent.renderIcon = (type, spriteUrl = "") => y`
+  }
+  IconComponent.styles = styles$8;
+  IconComponent.renderIcon = (type, spriteUrl = "") => y`
     <svg viewBox="0 0 24 24">
       <use href="${spriteUrl}" />
     </svg>
   `;
-  })();
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", Object)
@@ -46734,7 +46953,7 @@ var storefront = function(exports) {
     object-fit: var(--image-fit, contain);
   }
 `;
-  const _ImageComponent = class extends s$5 {
+  class ImageComponent extends s$5 {
     render() {
       if (this.hasFailure())
         return this.renderFallback();
@@ -46770,11 +46989,8 @@ var storefront = function(exports) {
     onError() {
       this.failed = this.src;
     }
-  };
-  let ImageComponent = _ImageComponent;
-  (() => {
-    _ImageComponent.styles = styles$7;
-  })();
+  }
+  ImageComponent.styles = styles$7;
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -46947,7 +47163,7 @@ var storefront = function(exports) {
   }
 `;
   const MAX_SCALE = 25;
-  const _RatingComponent = class extends s$5 {
+  class RatingComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.scale = 5;
@@ -46976,8 +47192,9 @@ var storefront = function(exports) {
       />${n$1(!this.readonly, () => this.renderSlot(i2))}`;
     }
     renderSlot(i2) {
+      var _a;
       return y`<slot name=${i2 + 1} ?has-char=${this.hasChar(i2)}
-      >${this.getChar(i2) ?? y`<svg viewBox="0 0 18 18">
+      >${(_a = this.getChar(i2)) != null ? _a : y`<svg viewBox="0 0 18 18">
         <use href="#star" />
       </svg>`}</slot
     >`;
@@ -47003,7 +47220,8 @@ var storefront = function(exports) {
     `;
     }
     getValue() {
-      return this.value ?? 0;
+      var _a;
+      return (_a = this.value) != null ? _a : 0;
     }
     setValue(value) {
       this.value = value;
@@ -47012,23 +47230,22 @@ var storefront = function(exports) {
       return this.reviewCount;
     }
     hasChar(position) {
-      return [...this.characters ?? []].length > position;
+      var _a;
+      return [...(_a = this.characters) != null ? _a : []].length > position;
     }
     getChar(position) {
+      var _a;
       if (!this.hasChar(position)) {
         return;
       }
-      return [...this.characters ?? []][position];
+      return [...(_a = this.characters) != null ? _a : []][position];
     }
-  };
-  let RatingComponent = _RatingComponent;
-  (() => {
-    _RatingComponent.styles = [
-      ratingBaseStyles,
-      ratingEditModeStyles,
-      ratingReadonlyStyles
-    ];
-  })();
+  }
+  RatingComponent.styles = [
+    ratingBaseStyles,
+    ratingEditModeStyles,
+    ratingReadonlyStyles
+  ];
   __decorate([
     e$3({ type: Number }),
     __metadata("design:type", Number)
@@ -47108,7 +47325,7 @@ var storefront = function(exports) {
     }
   }
 `;
-  const _SpinnerComponent = class extends s$5 {
+  class SpinnerComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.icon = IconTypes.Loader;
@@ -47122,11 +47339,8 @@ var storefront = function(exports) {
       </slot>
     `;
     }
-  };
-  let SpinnerComponent = _SpinnerComponent;
-  (() => {
-    _SpinnerComponent.styles = [styles$6];
-  })();
+  }
+  SpinnerComponent.styles = [styles$6];
   __decorate([
     e$3(),
     __metadata("design:type", Object)
@@ -47195,7 +47409,7 @@ var storefront = function(exports) {
     border: solid 1px blue;
   }
 `;
-  const _NavigationItemComponent = class extends s$5 {
+  class NavigationItemComponent extends s$5 {
     render() {
       return y`
       <slot name="icon">
@@ -47204,11 +47418,8 @@ var storefront = function(exports) {
       <slot class="text"></slot>
     `;
     }
-  };
-  let NavigationItemComponent = _NavigationItemComponent;
-  (() => {
-    _NavigationItemComponent.styles = [navigationItemStyles];
-  })();
+  }
+  NavigationItemComponent.styles = [navigationItemStyles];
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -47313,7 +47524,7 @@ var storefront = function(exports) {
     text-decoration: none;
   }
 `;
-  const _NavigationComponent = class extends s$5 {
+  class NavigationComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.toggleButtonAriaLabel = "collapse navigation";
@@ -47334,11 +47545,8 @@ var storefront = function(exports) {
     toggle() {
       this.collapse.toggle();
     }
-  };
-  let NavigationComponent = _NavigationComponent;
-  (() => {
-    _NavigationComponent.styles = [navigationStyles];
-  })();
+  }
+  NavigationComponent.styles = [navigationStyles];
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -47410,7 +47618,7 @@ var storefront = function(exports) {
     box-shadow: 0 0 3px var(--oryx-color-primary-300);
   }
 `;
-  const _PageNavigationItemComponent = class extends s$5 {
+  class PageNavigationItemComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.active = false;
@@ -47421,11 +47629,8 @@ var storefront = function(exports) {
       <slot name="content"></slot>
     `;
     }
-  };
-  let PageNavigationItemComponent = _PageNavigationItemComponent;
-  (() => {
-    _PageNavigationItemComponent.styles = styles$5;
-  })();
+  }
+  PageNavigationItemComponent.styles = styles$5;
   __decorate([
     e$3({ reflect: true, type: Boolean }),
     __metadata("design:type", Object)
@@ -47502,10 +47707,10 @@ var storefront = function(exports) {
       this.onNavigationItemActivated(e2);
     }
     onNavigationItemActivated(e2) {
-      var _a2, _b2;
-      const targetId = (_a2 = e2.target.closest("oryx-page-navigation-item")) == null ? void 0 : _a2.getAttribute("targetId");
+      var _a, _b;
+      const targetId = (_a = e2.target.closest("oryx-page-navigation-item")) == null ? void 0 : _a.getAttribute("targetId");
       if (targetId) {
-        (_b2 = document.getElementById(targetId)) == null ? void 0 : _b2.scrollIntoView();
+        (_b = document.getElementById(targetId)) == null ? void 0 : _b.scrollIntoView();
       }
     }
     getVisibleSections() {
@@ -47618,7 +47823,7 @@ var storefront = function(exports) {
     display: none;
   }
 `;
-  const _PageNavigationComponent = class extends s$5 {
+  class PageNavigationComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.disableNavigation = false;
@@ -47631,11 +47836,8 @@ var storefront = function(exports) {
       </nav>
     `;
     }
-  };
-  let PageNavigationComponent = _PageNavigationComponent;
-  (() => {
-    _PageNavigationComponent.styles = styles$4;
-  })();
+  }
+  PageNavigationComponent.styles = styles$4;
   __decorate([
     e$3({ type: Boolean }),
     __metadata("design:type", Object)
@@ -47677,9 +47879,9 @@ var storefront = function(exports) {
       this.setTruncated(pages);
     }
     setTruncated(pages) {
-      var _a2, _b2;
-      this.host.toggleAttribute("start-truncated", !((_a2 = pages[1]) == null ? void 0 : _a2.hasAttribute("visible")));
-      this.host.toggleAttribute("end-truncated", !((_b2 = pages[pages.length - 2]) == null ? void 0 : _b2.hasAttribute("visible")) && !(this.host.max === 1 && (this.host.current === pages.length || this.host.current === 1)));
+      var _a, _b;
+      this.host.toggleAttribute("start-truncated", !((_a = pages[1]) == null ? void 0 : _a.hasAttribute("visible")));
+      this.host.toggleAttribute("end-truncated", !((_b = pages[pages.length - 2]) == null ? void 0 : _b.hasAttribute("visible")) && !(this.host.max === 1 && (this.host.current === pages.length || this.host.current === 1)));
     }
     getRange(length) {
       let start = this.host.current - (this.host.max - 1) / 2;
@@ -47867,7 +48069,7 @@ var storefront = function(exports) {
     transform: scaleX(-1);
   }
 `;
-  const _PaginationComponent = class extends s$5 {
+  class PaginationComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.max = 5;
@@ -47919,19 +48121,16 @@ var storefront = function(exports) {
       }
     }
     updatePages() {
-      var _a2;
-      this.isEmpty = !this.pages || ((_a2 = this.pages) == null ? void 0 : _a2.length) < 2;
+      var _a;
+      this.isEmpty = !this.pages || ((_a = this.pages) == null ? void 0 : _a.length) < 2;
       if (this.requiresUpdate) {
         this.requestUpdate();
         this.requiresUpdate = false;
       }
       this.controller.paginate(this.pages);
     }
-  };
-  let PaginationComponent = _PaginationComponent;
-  (() => {
-    _PaginationComponent.styles = [paginationStyles];
-  })();
+  }
+  PaginationComponent.styles = [paginationStyles];
   __decorate([
     e$3({ type: Boolean, reflect: true }),
     __metadata("design:type", Boolean)
@@ -48009,7 +48208,7 @@ var storefront = function(exports) {
     color: var(--oryx-color-error-300);
   }
 `;
-  const mediumScreen$1 = i$7`
+  const mediumScreen$2 = i$7`
   :host {
     border-width: 2px;
   }
@@ -48017,7 +48216,7 @@ var storefront = function(exports) {
   const screenStyles$1 = [
     {
       media: mdScreen,
-      css: mediumScreen$1
+      css: mediumScreen$2
     }
   ];
   const tab_styles = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -48025,7 +48224,7 @@ var storefront = function(exports) {
     baseStyles: baseStyles$1,
     screenStyles: screenStyles$1
   }, Symbol.toStringTag, { value: "Module" }));
-  const _TabComponent = class extends s$5 {
+  class TabComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.selected = false;
@@ -48034,11 +48233,8 @@ var storefront = function(exports) {
     render() {
       return y`<slot></slot>`;
     }
-  };
-  let TabComponent = _TabComponent;
-  (() => {
-    _TabComponent.styles = baseStyles$1;
-  })();
+  }
+  TabComponent.styles = baseStyles$1;
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -48148,7 +48344,7 @@ var storefront = function(exports) {
     display: none;
   }
 `;
-  const mediumScreen = i$7`
+  const mediumScreen$1 = i$7`
   :host([appearance='${secondary}']) ::slotted(oryx-tab) {
     border-width: 2px;
   }
@@ -48156,7 +48352,7 @@ var storefront = function(exports) {
   const screenStyles = [
     {
       media: mdScreen,
-      css: mediumScreen
+      css: mediumScreen$1
     }
   ];
   const tabs_styles = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -48164,7 +48360,7 @@ var storefront = function(exports) {
     baseStyles,
     screenStyles
   }, Symbol.toStringTag, { value: "Module" }));
-  const _TabsComponent = class extends s$5 {
+  class TabsComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.activeTabIndex = 0;
@@ -48172,6 +48368,7 @@ var storefront = function(exports) {
       this.shadow = false;
     }
     render() {
+      var _a;
       return y`
       <input
         type="range"
@@ -48179,34 +48376,34 @@ var storefront = function(exports) {
         min="1"
         @change=${this.onChange}
         value="${l$1(this.rangeValue)}"
-        .max=${(this.tabs.length ?? 0).toString()}
+        .max=${((_a = this.tabs.length) != null ? _a : 0).toString()}
       />
       <slot @click=${this.onClick} @slotchange=${this.onSlotChange}></slot>
       <slot name="panels"></slot>
     `;
     }
     select(tab) {
-      var _a2, _b2, _c2, _d2;
+      var _a, _b, _c, _d;
       if (!tab) {
         return;
       }
-      (_a2 = this.tabs) == null ? void 0 : _a2.forEach((t2, index2) => {
+      (_a = this.tabs) == null ? void 0 : _a.forEach((t2, index2) => {
         t2.selected = t2 === tab;
         if (t2.selected) {
           this.rangeValue = index2 + 1;
         }
       });
       if (tab.hasAttribute("for")) {
-        (_b2 = this.panels) == null ? void 0 : _b2.forEach((panel) => panel.toggleAttribute("selected", panel.id === tab.getAttribute("for")));
+        (_b = this.panels) == null ? void 0 : _b.forEach((panel) => panel.toggleAttribute("selected", panel.id === tab.getAttribute("for")));
       } else {
-        const tabIndex = (_c2 = this.tabs) == null ? void 0 : _c2.indexOf(tab);
-        (_d2 = this.panels) == null ? void 0 : _d2.forEach((panel, index2) => panel.toggleAttribute("selected", tabIndex === index2));
+        const tabIndex = (_c = this.tabs) == null ? void 0 : _c.indexOf(tab);
+        (_d = this.panels) == null ? void 0 : _d.forEach((panel, index2) => panel.toggleAttribute("selected", tabIndex === index2));
       }
       tab.scrollIntoView({ block: "nearest" });
     }
     onSlotChange() {
-      var _a2, _b2;
-      const tab = ((_a2 = this.tabs) == null ? void 0 : _a2.find((tab2) => tab2.selected)) || ((_b2 = this.tabs) == null ? void 0 : _b2[this.activeTabIndex]);
+      var _a, _b;
+      const tab = ((_a = this.tabs) == null ? void 0 : _a.find((tab2) => tab2.selected)) || ((_b = this.tabs) == null ? void 0 : _b[this.activeTabIndex]);
       this.select(tab);
     }
     onClick(e2) {
@@ -48214,16 +48411,13 @@ var storefront = function(exports) {
       this.select(tab);
     }
     onChange(e2) {
-      var _a2;
+      var _a;
       const target = e2.target;
-      const tab = (_a2 = this.tabs) == null ? void 0 : _a2[Number(target.value) - 1];
+      const tab = (_a = this.tabs) == null ? void 0 : _a[Number(target.value) - 1];
       this.select(tab);
     }
-  };
-  let TabsComponent = _TabsComponent;
-  (() => {
-    _TabsComponent.styles = baseStyles;
-  })();
+  }
+  TabsComponent.styles = baseStyles;
   __decorate([
     e$3({ type: Number }),
     __metadata("design:type", Object)
@@ -48322,23 +48516,21 @@ var storefront = function(exports) {
     display: inline;
   }
 `;
-  const _OptionComponent = class extends s$5 {
+  class OptionComponent extends s$5 {
     render() {
       return y` ${n$1(!!this.icon, () => y`<oryx-icon .type=${this.icon}></oryx-icon>`)}
       <slot>${this.value}</slot>
       <oryx-icon class="mark" type="mark"></oryx-icon>`;
     }
     get value() {
-      return this._value ?? this.innerText;
+      var _a;
+      return (_a = this._value) != null ? _a : this.innerText;
     }
     set value(value) {
       this._value = value;
     }
-  };
-  let OptionComponent = _OptionComponent;
-  (() => {
-    _OptionComponent.styles = [optionStyles];
-  })();
+  }
+  OptionComponent.styles = [optionStyles];
   __decorate([
     e$3(),
     __metadata("design:type", Object)
@@ -48514,7 +48706,7 @@ var storefront = function(exports) {
     border-end-start-radius: var(--oryx-border-radius);
   }
 `;
-  const _DrawerComponent = class extends s$5 {
+  class DrawerComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.notClosable = false;
@@ -48526,8 +48718,8 @@ var storefront = function(exports) {
       this.maximizeButtonAriaLabel = "maximize the drawer";
     }
     get dialog() {
-      var _a2;
-      return (_a2 = this.shadowRoot) == null ? void 0 : _a2.querySelector("dialog");
+      var _a;
+      return (_a = this.shadowRoot) == null ? void 0 : _a.querySelector("dialog");
     }
     renderTemplate() {
       return y`
@@ -48560,10 +48752,10 @@ var storefront = function(exports) {
     `;
     }
     resize(force) {
-      this.maximize = force ?? !this.maximize;
+      this.maximize = force != null ? force : !this.maximize;
     }
     handleSubmit(e2) {
-      var _a2;
+      var _a;
       e2.preventDefault();
       const prevented = !this.dispatchEvent(new CustomEvent("beforeclose", {
         cancelable: true,
@@ -48571,21 +48763,18 @@ var storefront = function(exports) {
         composed: true
       }));
       if (!prevented) {
-        (_a2 = this.dialog) == null ? void 0 : _a2.close();
+        (_a = this.dialog) == null ? void 0 : _a.close();
         this.open = false;
         this.resize(false);
       }
     }
-  };
-  let DrawerComponent = _DrawerComponent;
-  (() => {
-    _DrawerComponent.styles = [
-      drawerBaseStyles,
-      panelBaseStyles,
-      drawerStyles,
-      panelStyles
-    ];
-  })();
+  }
+  DrawerComponent.styles = [
+    drawerBaseStyles,
+    panelBaseStyles,
+    drawerStyles,
+    panelStyles
+  ];
   __decorate([
     e$3({ reflect: true }),
     __metadata("design:type", String)
@@ -48635,7 +48824,7 @@ var storefront = function(exports) {
     display: flex;
   }
 `;
-  const _NDSDrawerComponent = class extends DrawerComponent {
+  class NDSDrawerComponent extends DrawerComponent {
     show() {
       this.setAttribute("open", "open");
       this.focusControlButton();
@@ -48655,16 +48844,16 @@ var storefront = function(exports) {
       };
     }
     get dialogElement() {
-      var _a2;
-      return (_a2 = this.shadowRoot) == null ? void 0 : _a2.querySelector('[role="dialog"]');
+      var _a;
+      return (_a = this.shadowRoot) == null ? void 0 : _a.querySelector('[role="dialog"]');
     }
     get closeButtonElement() {
-      var _a2;
-      return (_a2 = this.shadowRoot) == null ? void 0 : _a2.querySelector('button[value="cancel"]');
+      var _a;
+      return (_a = this.shadowRoot) == null ? void 0 : _a.querySelector('button[value="cancel"]');
     }
     focusControlButton() {
-      var _a2, _b2;
-      (_b2 = (_a2 = this.shadowRoot) == null ? void 0 : _a2.querySelector("nav button")) == null ? void 0 : _b2.focus();
+      var _a, _b;
+      (_b = (_a = this.shadowRoot) == null ? void 0 : _a.querySelector("nav button")) == null ? void 0 : _b.focus();
     }
     render() {
       return y`
@@ -48684,11 +48873,8 @@ var storefront = function(exports) {
         this.close();
       }
     }
-  };
-  let NDSDrawerComponent = _NDSDrawerComponent;
-  (() => {
-    _NDSDrawerComponent.styles = [...DrawerComponent.styles, drawerNDSStyles];
-  })();
+  }
+  NDSDrawerComponent.styles = [...DrawerComponent.styles, drawerNDSStyles];
   const drawer_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     NDSDrawerComponent
@@ -48867,7 +49053,7 @@ var storefront = function(exports) {
     background: var(--oryx-color-canvas-200);
   }
 `;
-  const _DropdownComponent = class extends s$5 {
+  class DropdownComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.controller = new PopoverController(this, {
@@ -48897,20 +49083,17 @@ var storefront = function(exports) {
     `;
     }
     get trigger() {
-      var _a2;
-      return (_a2 = this.renderRoot) == null ? void 0 : _a2.querySelector('slot[name="trigger"]');
+      var _a;
+      return (_a = this.renderRoot) == null ? void 0 : _a.querySelector('slot[name="trigger"]');
     }
     onClose() {
-      var _a2, _b2;
-      if (this.matches(":focus-within") && !((_a2 = this.trigger) == null ? void 0 : _a2.matches(":focus-within"))) {
-        (_b2 = queryFirstFocusable(this.trigger)) == null ? void 0 : _b2.focus();
+      var _a, _b;
+      if (this.matches(":focus-within") && !((_a = this.trigger) == null ? void 0 : _a.matches(":focus-within"))) {
+        (_b = queryFirstFocusable(this.trigger)) == null ? void 0 : _b.focus();
       }
     }
-  };
-  let DropdownComponent = _DropdownComponent;
-  (() => {
-    _DropdownComponent.styles = [dropdownBaseStyles, dropdownStyles];
-  })();
+  }
+  DropdownComponent.styles = [dropdownBaseStyles, dropdownStyles];
   __decorate([
     e$3({ reflect: true, type: Boolean }),
     __metadata("design:type", Object)
@@ -48984,7 +49167,7 @@ var storefront = function(exports) {
     overflow: auto;
   }
 `;
-  const _ModalComponent = class extends s$5 {
+  class ModalComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.backdropTargetTag = "dialog";
@@ -49001,11 +49184,11 @@ var storefront = function(exports) {
       this.setDialogState();
     }
     setDialogState() {
-      var _a2, _b2, _c2, _d2;
+      var _a, _b, _c, _d;
       if (this.isOpen) {
-        (_b2 = (_a2 = this.dialog) == null ? void 0 : _a2.showModal) == null ? void 0 : _b2.call(_a2);
+        (_b = (_a = this.dialog) == null ? void 0 : _a.showModal) == null ? void 0 : _b.call(_a);
       } else {
-        (_d2 = (_c2 = this.dialog) == null ? void 0 : _c2.close) == null ? void 0 : _d2.call(_c2);
+        (_d = (_c = this.dialog) == null ? void 0 : _c.close) == null ? void 0 : _d.call(_c);
       }
     }
     emitCloseEvent() {
@@ -49039,8 +49222,8 @@ var storefront = function(exports) {
       }
     }
     get dialog() {
-      var _a2;
-      return (_a2 = this.shadowRoot) == null ? void 0 : _a2.querySelector("dialog");
+      var _a;
+      return (_a = this.shadowRoot) == null ? void 0 : _a.querySelector("dialog");
     }
     render() {
       return y`
@@ -49065,11 +49248,8 @@ var storefront = function(exports) {
       </dialog>
     `;
     }
-  };
-  let ModalComponent = _ModalComponent;
-  (() => {
-    _ModalComponent.styles = [styles$3, fullscreenModalStyles];
-  })();
+  }
+  ModalComponent.styles = [styles$3, fullscreenModalStyles];
   __decorate([
     e$3({ type: Boolean, attribute: "open" }),
     __metadata("design:type", Boolean)
@@ -49140,7 +49320,7 @@ var storefront = function(exports) {
     gap: 10px;
   }
 `;
-  const _NDSModalComponent = class extends ModalComponent {
+  class NDSModalComponent extends ModalComponent {
     constructor() {
       super(...arguments);
       this.backdropTargetTag = this.tagName.toLowerCase();
@@ -49189,16 +49369,13 @@ var storefront = function(exports) {
       </dialog>
     `;
     }
-  };
-  let NDSModalComponent = _NDSModalComponent;
-  (() => {
-    _NDSModalComponent.styles = [NDSStyles, fullscreenModalStyles];
-  })();
+  }
+  NDSModalComponent.styles = [NDSStyles, fullscreenModalStyles];
   const modal_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
     NDSModalComponent
   }, Symbol.toStringTag, { value: "Module" }));
-  const _SearchboxComponent = class extends s$5 {
+  class SearchboxComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.formControlController = new FormControlController(this);
@@ -49212,11 +49389,8 @@ var storefront = function(exports) {
       })}
     `;
     }
-  };
-  let SearchboxComponent = _SearchboxComponent;
-  (() => {
-    _SearchboxComponent.styles = baseStyles$7;
-  })();
+  }
+  SearchboxComponent.styles = baseStyles$7;
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -49269,72 +49443,187 @@ var storefront = function(exports) {
     __proto__: null,
     SearchboxComponent
   }, Symbol.toStringTag, { value: "Module" }));
-  const headlineStyles = i$7`
-  :host {
-    display: block;
-  }
-
-  ::slotted(h1),
-  ::slotted(h2),
-  ::slotted(h3),
-  ::slotted(h4),
-  ::slotted(h5),
-  ::slotted(h6) {
-    margin-block: 0;
-  }
-
-  ::slotted(h1) {
-    font-size: var(--oryx-font-size-h1);
-    line-height: var(--oryx-line-height-h1);
-    font-weight: var(--oryx-font-weight-semibold);
-  }
-
-  ::slotted(h2) {
-    font-size: var(--oryx-font-size-h2);
-    line-height: var(--oryx-line-height-h2);
-    font-weight: var(--oryx-font-weight-semibold);
-  }
-
-  ::slotted(h3) {
-    font-size: var(--oryx-font-size-h3);
-    line-height: var(--oryx-line-height-h3);
-    font-weight: var(--oryx-font-weight-medium);
-  }
-
-  ::slotted(h4) {
-    font-size: var(--oryx-font-size-h4);
-    line-height: var(--oryx-line-height-h4);
-    font-weight: var(--oryx-font-weight-medium);
-  }
-
-  ::slotted(h5) {
-    font-size: var(--oryx-font-size-h5);
-    line-height: var(--oryx-line-height-h5);
-    font-weight: var(--oryx-font-weight-semibold);
-  }
-
-  ::slotted(h6) {
-    font-size: var(--oryx-font-size-h6);
-    line-height: var(--oryx-line-height-h6);
-    font-weight: var(--oryx-font-weight-medium);
-  }
-`;
-  const _HeadlineComponent = class extends s$5 {
-    render() {
-      return y`<slot></slot>`;
+  const unsafe = (value) => r$5(value);
+  const headingStyle = (tag, size, lineHeight, weight = 600) => {
+    const selector = unsafe(tag);
+    return i$7`
+    :host(:not(:is([mimic], [sm-mimic], [md-mimic])))
+      ${selector},
+      :host(:not(:is([mimic], [sm-mimic], [md-mimic])))
+      ::slotted(${selector}),
+    :host([mimic='${selector}']) {
+      font-size: var(--oryx-typography-${selector}-size, ${unsafe(size)});
+      line-height: var(
+        --oryx-typography-${selector}-line,
+        ${unsafe(lineHeight)}
+      );
+      font-weight: var(--oryx-typography-${selector}-weight, ${weight});
     }
+  `;
   };
-  let HeadlineComponent = _HeadlineComponent;
-  (() => {
-    _HeadlineComponent.styles = headlineStyles;
-  })();
-  const headline_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  const headingStyleForMedium = (tag, size, lineHeight, weight = 600) => {
+    const selector = unsafe(tag);
+    return i$7`
+    :host([md-mimic='${selector}']) {
+      font-size: var(--oryx-typography-${selector}-size, ${unsafe(size)});
+      line-height: var(
+        --oryx-typography-${selector}-line,
+        ${unsafe(lineHeight)}
+      );
+      font-weight: var(--oryx-typography-${selector}-weight, ${weight});
+    }
+  `;
+  };
+  const headingStyleForSmall = (tag, size, lineHeight, weight = 600) => {
+    const selector = unsafe(tag);
+    return i$7`
+    :host([md-mimic]) ${selector}, :host([md-mimic]) ::slotted(${selector}) {
+      font-size: var(--oryx-typography-${selector}-size, ${unsafe(size)});
+      line-height: var(
+        --oryx-typography-${selector}-line,
+        ${unsafe(lineHeight)}
+      );
+      font-weight: var(--oryx-typography-${selector}-weight, ${weight});
+    }
+  `;
+  };
+  const headlineStyles = i$7`
+  :is(h1, h2, h3, h4, h5, h6, .subtitle),
+  ::slotted(:is(h1, h2, h3, h4, h5, h6, .subtitle)),
+  :is([mimic], [sm-mimic], [md-mimic]) *,
+  :is([mimic], [sm-mimic], [md-mimic]) ::slotted(*) {
+    margin-block: 0;
+    max-height: calc(var(--_lh) * var(--max-lines));
+    /* stylelint-disable-next-line */
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: var(--max-lines);
+    -webkit-box-orient: vertical;
+  }
+
+  :host([mimic]) :is(h1, h2, h3, h4, h5, h6, .subtitle),
+  :host([mimic]) ::slotted(:is(h1, h2, h3, h4, h5, h6, .subtitle)) {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+
+  .subtitle,
+  ::slotted(.subtitle),
+  :host([mimic='subtitle']) {
+    text-transform: uppercase;
+  }
+
+  ${headingStyle("h1", `1.571em`, `1.364em`)}
+  ${headingStyle("h2", `1.286em`, `1.444em`, 700)}
+  ${headingStyle("h3", `1.143em`, `1.375em`)}
+  ${headingStyle("h4", `1em`, `1.571em`)}
+  ${headingStyle("h5", `1em`, `1.571em`, 700)}
+  ${headingStyle("h6", `0.857em`, `1.333em`)}
+  ${headingStyle(".subtitle", `0.857em`, `1.333em`)}
+`;
+  const smallScreen = i$7`
+  ${headingStyleForSmall("h1", `1.571em`, `1.364em`)}
+  ${headingStyleForSmall("h2", `1.286em`, `1.444em`, 700)}
+  ${headingStyleForSmall("h3", `1.143em`, `1.375em`)}
+  ${headingStyleForSmall("h4", `1em`, `1.571em`)}
+  ${headingStyleForSmall("h5", `1em`, `1.571em`, 700)}
+  ${headingStyleForSmall("h6", `0.857em`, `1.333em`)}
+  ${headingStyleForSmall(".subtitle", `0.857em`, `1.333em`)}
+`;
+  const mediumScreen = i$7`
+  :host([md-mimic]) :is(h1, h2, h3, h4, h5, h6, .subtitle),
+  :host([md-mimic]) ::slotted(:is(h1, h2, h3, h4, h5, h6, .subtitle)) {
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+  }
+
+  :host([md-mimic='subtitle']) {
+    text-transform: uppercase;
+  }
+
+  :host(:not([md-mimic='subtitle'])) {
+    text-transform: initial;
+  }
+
+  ${headingStyleForMedium("h1", `2.857em`, `1.2em`)}
+  ${headingStyleForMedium("h2", `2.143em`, `1.2em`)}
+  ${headingStyleForMedium("h3", `1.571em`, `1.364em`, 500)}
+  ${headingStyleForMedium("h4", `1.286em`, `1.444em`, 500)}
+  ${headingStyleForMedium("h5", `1.143em`, `1.5em`)}
+  ${headingStyleForMedium("h6", `1.143em`, `1.5em`, 500)}
+  ${headingStyleForMedium(".subtitle", `0.857em`, `1.333em`)}
+`;
+  const headlineScreenStyles = [
+    {
+      media: smScreen,
+      css: smallScreen
+    },
+    {
+      media: mdScreen,
+      css: mediumScreen
+    }
+  ];
+  const heading_styles = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     __proto__: null,
-    HeadlineComponent
+    headlineStyles,
+    headlineScreenStyles
+  }, Symbol.toStringTag, { value: "Module" }));
+  class HeadingComponent extends s$5 {
+    set maxLines(value) {
+      if (value > 0) {
+        this.style.setProperty("--max-lines", String(value));
+      }
+    }
+    render() {
+      return y`${this.renderTag(y`<slot></slot>`)}`;
+    }
+    renderTag(template) {
+      switch (this.tag) {
+        case "h1":
+          return y`<h1>${template}</h1>`;
+        case "h2":
+          return y`<h2>${template}</h2>`;
+        case "h3":
+          return y`<h3>${template}</h3>`;
+        case "h4":
+          return y`<h4>${template}</h4>`;
+        case "h5":
+          return y`<h5>${template}</h5>`;
+        case "h6":
+          return y`<h6>${template}</h6>`;
+        case "subtitle":
+          return y`<b class="subtitle">${template}</b>`;
+      }
+      return template;
+    }
+  }
+  HeadingComponent.styles = headlineStyles;
+  __decorate([
+    e$3(),
+    __metadata("design:type", String)
+  ], HeadingComponent.prototype, "tag", void 0);
+  __decorate([
+    e$3({ reflect: true }),
+    __metadata("design:type", String)
+  ], HeadingComponent.prototype, "mimic", void 0);
+  __decorate([
+    e$3({ reflect: true, attribute: "md-mimic" }),
+    __metadata("design:type", String)
+  ], HeadingComponent.prototype, "mdMimic", void 0);
+  __decorate([
+    e$3(),
+    __metadata("design:type", Number),
+    __metadata("design:paramtypes", [Number])
+  ], HeadingComponent.prototype, "maxLines", null);
+  const heading_component = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+    __proto__: null,
+    HeadingComponent
   }, Symbol.toStringTag, { value: "Module" }));
   const truncateFix = async (host) => {
-    var _a2;
-    const container = (_a2 = host.shadowRoot) == null ? void 0 : _a2.querySelector("div > *");
+    var _a;
+    const container = (_a = host.shadowRoot) == null ? void 0 : _a.querySelector("div > *");
     const lineClampValue = Number(getComputedStyle(host).getPropertyValue("--line-clamp"));
     if (container && lineClampValue > 0) {
       const lineHeight = container.style.lineHeight;
@@ -49469,7 +49758,7 @@ var storefront = function(exports) {
     }
   }
 `;
-  const _TextComponent = class extends s$5 {
+  class TextComponent extends s$5 {
     constructor() {
       super(...arguments);
       this.hideToggle = false;
@@ -49479,13 +49768,13 @@ var storefront = function(exports) {
       this.containerRef = e();
     }
     disconnectedCallback() {
-      var _a2;
-      (_a2 = this.resizeObserver) == null ? void 0 : _a2.disconnect();
+      var _a;
+      (_a = this.resizeObserver) == null ? void 0 : _a.disconnect();
       super.disconnectedCallback();
     }
     get container() {
-      var _a2;
-      return (_a2 = this.containerRef) == null ? void 0 : _a2.value;
+      var _a;
+      return (_a = this.containerRef) == null ? void 0 : _a.value;
     }
     get shouldBeTruncated() {
       return !!Number(getComputedStyle(this).getPropertyValue("--line-clamp"));
@@ -49533,11 +49822,8 @@ var storefront = function(exports) {
       element.style.lineHeight = lineHeight;
       return Math.floor(height / factor);
     }
-  };
-  let TextComponent = _TextComponent;
-  (() => {
-    _TextComponent.styles = textStyles;
-  })();
+  }
+  TextComponent.styles = textStyles;
   __decorate([
     e$3({ type: Boolean }),
     __metadata("design:type", Object)
@@ -49604,15 +49890,12 @@ var storefront = function(exports) {
     box-shadow: 0 0 3px var(--oryx-color-primary-300);
   }
 `;
-  const _TileComponent = class extends s$5 {
+  class TileComponent extends s$5 {
     render() {
       return y`<slot></slot>`;
     }
-  };
-  let TileComponent = _TileComponent;
-  (() => {
-    _TileComponent.styles = tileStyles;
-  })();
+  }
+  TileComponent.styles = tileStyles;
   __decorate([
     e$3({ type: Boolean, reflect: true }),
     __metadata("design:type", Boolean)
@@ -49632,7 +49915,7 @@ var storefront = function(exports) {
     gap: var(--oryx-layout-gap);
   }
 `;
-  let AddressFormComponent = (_u = class extends FormComponentMixin() {
+  let AddressFormComponent = class AddressFormComponent extends FormComponentMixin() {
     constructor() {
       super(...arguments);
       this.fieldRenderer = resolve(FormRenderer);
@@ -49641,15 +49924,16 @@ var storefront = function(exports) {
       this.addressService = resolve(AddressService);
       this.country$ = new cjs.BehaviorSubject(this.country);
       this.activeCountry$ = this.country$.pipe(cjs.switchMap((country) => country ? cjs.of(country) : this.countryService.getAll().pipe(cjs.switchMap((countries) => countries.length === 1 ? cjs.of(countries[0].iso2Code) : this.addressService.getCurrentAddress().pipe(cjs.map((address) => {
-        return (address == null ? void 0 : address.iso2Code) ?? countries[0].iso2Code;
+        var _a;
+        return (_a = address == null ? void 0 : address.iso2Code) != null ? _a : countries[0].iso2Code;
       }))))));
       this.data$ = cjs.combineLatest([
         this.countryService.getAll(),
         this.activeCountry$
       ]);
       this.form$ = this.activeCountry$.pipe(cjs.switchMap((country) => country ? this.formService.getForm({ country }).pipe(cjs.map((form) => {
-        var _a2;
-        return (_a2 = form == null ? void 0 : form.data) == null ? void 0 : _a2.options;
+        var _a;
+        return (_a = form == null ? void 0 : form.data) == null ? void 0 : _a.options;
       })) : cjs.of([])));
     }
     render() {
@@ -49680,9 +49964,8 @@ var storefront = function(exports) {
       this.country = select.options[select.selectedIndex].value;
       this.countryService.set(this.country);
     }
-  }, (() => {
-    _u.styles = [styles$2, formStyles];
-  })(), _u);
+  };
+  AddressFormComponent.styles = [styles$2, formStyles];
   __decorate([
     e$3(),
     __metadata("design:type", String)
@@ -49749,7 +50032,7 @@ var storefront = function(exports) {
     margin-bottom: 15px;
   }
 `;
-  let AddressListComponent = (_v = class extends ComponentMixin() {
+  let AddressListComponent = class AddressListComponent extends ComponentMixin() {
     constructor() {
       super(...arguments);
       this.selectedAddress$ = new cjs.ReplaySubject(1);
@@ -49768,12 +50051,13 @@ var storefront = function(exports) {
         resolve(AddressService).getAddresses().pipe(cjs.distinctUntilChanged()),
         new ContentController(this).getOptions()
       ]).pipe(cjs.tap(([addresses, options]) => {
+        var _a;
         if (!options.selectable) {
           this.selectedAddress$.next(null);
           return;
         }
         const defaultAddress = addresses == null ? void 0 : addresses.find((address) => this.isDefault(address, options == null ? void 0 : options.defaultType));
-        this.selectedAddress$.next(defaultAddress ?? (addresses == null ? void 0 : addresses[0]) ?? null);
+        this.selectedAddress$.next((_a = defaultAddress != null ? defaultAddress : addresses == null ? void 0 : addresses[0]) != null ? _a : null);
       }));
       this.data$ = cjs.combineLatest([
         this.addresses$,
@@ -49781,12 +50065,14 @@ var storefront = function(exports) {
       ]).pipe(cjs.map(([addresses, selectedAddress]) => [...addresses, selectedAddress]));
     }
     isDefault(address, type = "shipping") {
-      return type === "shipping" ? (address == null ? void 0 : address.isDefaultShipping) ?? false : (address == null ? void 0 : address.isDefaultBilling) ?? false;
+      var _a, _b;
+      return type === "shipping" ? (_a = address == null ? void 0 : address.isDefaultShipping) != null ? _a : false : (_b = address == null ? void 0 : address.isDefaultBilling) != null ? _b : false;
     }
     onChange(e2) {
       const radio = e2.target;
       this.addresses$.pipe(cjs.take(1), cjs.tap(([addresses]) => {
-        this.selectedAddress$.next((addresses == null ? void 0 : addresses.find((address) => address.id === radio.value)) ?? null);
+        var _a;
+        this.selectedAddress$.next((_a = addresses == null ? void 0 : addresses.find((address) => address.id === radio.value)) != null ? _a : null);
       })).subscribe();
     }
     render() {
@@ -49817,7 +50103,7 @@ var storefront = function(exports) {
                         >${i18n("user.address.default")}</oryx-chip
                       >`)}
                 </div>
-                ${n$1(editable ?? true, () => y`<div
+                ${n$1(editable != null ? editable : true, () => y`<div
                       class="controls ${selectable ? "selectable" : ""}"
                     >
                       <oryx-button type="text">
@@ -49829,9 +50115,8 @@ var storefront = function(exports) {
         })}`;
       })}`;
     }
-  }, (() => {
-    _v.styles = styles$1;
-  })(), _v);
+  };
+  AddressListComponent.styles = styles$1;
   __decorate([
     subscribe(),
     __metadata("design:type", Object)
@@ -49879,7 +50164,7 @@ var storefront = function(exports) {
     flex: 1 0 calc(50% - calc(var(--oryx-layout-gap) / 2));
   }
 `;
-  let ContactFormComponent = (_w = class extends FormComponentMixin() {
+  let ContactFormComponent = class ContactFormComponent extends FormComponentMixin() {
     constructor() {
       super(...arguments);
       this.fieldRenderer = resolve(FormRenderer);
@@ -49887,9 +50172,8 @@ var storefront = function(exports) {
     render() {
       return y`<form>${this.fieldRenderer.buildForm(fields)}</form>`;
     }
-  }, (() => {
-    _w.styles = [formStyles, styles];
-  })(), _w);
+  };
+  ContactFormComponent.styles = [formStyles, styles];
   ContactFormComponent = __decorate([
     hydratable(["mouseover", "focusin"])
   ], ContactFormComponent);
@@ -51101,16 +51385,6 @@ c1,1,2.5,1,3.5,0l4.8-4.8l4.8,4.8c1,1,2.5,1,3.5,0c1-1,1-2.5,0-3.4L15.5,12l4.8-4.8
     }
   };
   const tokens = {
-    font: '"Montserrat", sans-serif',
-    "font-size": {
-      base: "14px",
-      medium: "16px",
-      large: "22px"
-    },
-    "font-weight": {
-      medium: "500",
-      semibold: "600"
-    },
     container: {
       width: "1340px"
     },
@@ -51196,10 +51470,43 @@ c1,1,2.5,1,3.5,0l4.8-4.8l4.8,4.8c1,1,2.5,1,3.5,0c1-1,1-2.5,0-3.4L15.5,12l4.8-4.8
       }
     }
   };
+  const typographyTokens = {
+    typography: {
+      font: {
+        face: '"Montserrat", sans-serif',
+        size: "14px",
+        weight: "500"
+      }
+    },
+    "font-size": {
+      base: "14px",
+      medium: "16px",
+      large: "22px"
+    },
+    "font-weight": {
+      medium: "500",
+      semibold: "600"
+    }
+  };
+  const typographySmallTokens = {
+    typography: {}
+  };
+  const typographyMediumTokens = {
+    typography: {
+      h1: { size: "2.857em", line: "1.2em", weight: "600" },
+      h2: { size: "2.143em", line: "1.2em", weight: "600" },
+      h3: { size: "1.571em", line: "1.364em", weight: "500" },
+      h4: { size: "1.286em", line: "1.444em", weight: "500" },
+      h5: { size: "1.143em", line: "1.5em", weight: "600" },
+      h6: { size: "1.143em", line: "1.5em", weight: "500" },
+      subtitle: { size: "0.857em", line: "1.333em", weight: "600" }
+    }
+  };
   const storefrontTokens = [
     {
       color,
-      ...tokens
+      ...tokens,
+      ...typographyTokens
     },
     {
       media: {
@@ -51212,27 +51519,13 @@ c1,1,2.5,1,3.5,0l4.8-4.8l4.8,4.8c1,1,2.5,1,3.5,0c1-1,1-2.5,0-3.4L15.5,12l4.8-4.8
       media: {
         screen: "sm"
       },
-      font: {
-        weight: {
-          medium: "600"
-        },
-        size: {
-          base: "16px"
-        }
-      }
+      ...typographySmallTokens
     },
     {
       media: {
         screen: "md"
       },
-      font: {
-        weight: {
-          medium: "500"
-        },
-        size: {
-          base: "14px"
-        }
-      }
+      ...typographyMediumTokens
     }
   ];
   const index = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -51240,6 +51533,6 @@ c1,1,2.5,1,3.5,0l4.8-4.8l4.8,4.8c1,1,2.5,1,3.5,0c1-1,1-2.5,0-3.4L15.5,12l4.8-4.8
     storefrontTokens
   }, Symbol.toStringTag, { value: "Module" }));
   exports.render = render;
-  Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+  Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
   return exports;
 }({});
