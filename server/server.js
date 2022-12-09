@@ -19,4 +19,4 @@ const config = {
   namespace: 'storefront',
 };
 
-createServer(config);
+createServer(config).run();
