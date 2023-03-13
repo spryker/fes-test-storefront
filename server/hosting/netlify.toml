@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/"
+  from = "/index.html"
   status = 200
   to = "/.netlify/functions/ssr"
   force = true
@@ -12,7 +12,7 @@
 [[redirects]]
   from = "/*"
   status = 200
-  to = "/.netlify/functions/ssr"
+  to = "/index.html"
   [redirects.headers]
     X-XSS-Protection = "1; mode=block"
     Content-Security-Policy = "default-src 'self' ; connect-src https: ; style-src 'self' 'unsafe-inline' https: ; form-action 'self'; script-src 'self' 'unsafe-inline' https: ; img-src https: data: ; base-uri 'self'; frame-src 'self' https://*.spryker.com https://*.netlify.com https://*.netlify.app"
