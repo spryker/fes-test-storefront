@@ -1,7 +1,7 @@
 [[redirects]]
-  from = "/index.html"
+  from = "/"
   status = 200
-  to = "/.netlify/functions/ssr"
+  to = "/index.html"
   force = true
   [redirects.headers]
     X-XSS-Protection = "1; mode=block"
