@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import {viteStaticCopy} from "vite-plugin-static-copy";
 
 export default defineConfig({
   root: './src',
@@ -11,4 +12,14 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: '../src/assets/addresses',
+          dest: '../../dist/client/assets',
+        },
+      ],
+    }),
+  ],
 });
