@@ -20,6 +20,7 @@ import useTheme from '@/store/theme';
 
 import { HotKeysButton } from './styled';
 import { getRandomJoke } from './utils';
+import OryxButton from "@/components/OryxButton";
 
 function Header() {
   const [, sidebarActions] = useSidebar();
@@ -68,6 +69,8 @@ function Header() {
           </FlexBox>
           <FlexBox>
             <FlexBox>
+              <OryxButton />
+              <oryx-color-mode-selector></oryx-color-mode-selector>
               <Tooltip title="Hot keys" arrow>
                 <HotKeysButton
                   size="small"
