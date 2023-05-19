@@ -8,6 +8,39 @@ import welcome from '@/utils/welcome';
 // Importing them with Promise.all (by using HTTP/2 multiplexing) we can load them in parallel
 // and achieve the best possible performance
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'root-app': React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+        >;
+      'oryx-button': React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+        >;
+      'oryx-color-mode-selector': React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+        >;
+      'oryx-rating': React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+        >;
+    }
+  }
+}
+
+import { appBuilder } from '@spryker-oryx/application';
+import { b2cFeatures } from '@spryker-oryx/presets';
+import { storefrontTheme } from '@spryker-oryx/themes';
+
+appBuilder()
+  .withFeature(b2cFeatures)
+  .withTheme(storefrontTheme)
+  .withAppOptions({ components: { root: 'body' } })
+  .create();
+
 Promise.all([import('@/Root'), import('@/App')]).then(([{ default: render }, { default: App }]) => {
   render(App);
 });
