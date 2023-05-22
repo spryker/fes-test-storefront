@@ -27,6 +27,10 @@ declare global {
         React.HTMLAttributes<HTMLElement>,
         HTMLElement
         >;
+      'oryx-site-navigation-button': React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+        >;
     }
   }
 }
@@ -39,6 +43,7 @@ appBuilder()
   .withFeature(b2cFeatures)
   .withTheme(storefrontTheme)
   .withAppOptions({ components: { root: 'body' } })
+  .withEnvironment(import.meta.env)
   .create();
 
 Promise.all([import('@/Root'), import('@/App')]).then(([{ default: render }, { default: App }]) => {

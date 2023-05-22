@@ -7,6 +7,7 @@ import manifest from './manifest.json';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  envPrefix: ['SCOS', 'STORE', 'ORYX'],
   plugins: [
     react(),
     VitePWA({
