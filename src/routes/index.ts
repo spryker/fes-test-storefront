@@ -16,12 +16,6 @@ const routes: Routes = {
     title: 'Welcome',
     icon: HomeIcon,
   },
-  [Pages.Oryx]: {
-    component: asyncComponentLoader(() => import('@/pages/Oryx')),
-    path: '/',
-    title: 'Oryx',
-    icon: HomeIcon,
-  },
   [Pages.Page1]: {
     component: asyncComponentLoader(() => import('@/pages/Page1')),
     path: '/page-1',
