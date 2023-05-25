@@ -8,6 +8,7 @@ function Page2() {
     <>
       <Meta title="page 2" />
       <FullSizeCenteredFlexBox>
+        <search-box></search-box>
         <Typography variant="h3">Page 2</Typography>
       </FullSizeCenteredFlexBox>
     </>
