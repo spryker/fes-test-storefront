@@ -6,10 +6,8 @@ import { FullSizeCenteredFlexBox } from '@/components/styled';
 function Page3() {
   return (
     <>
-      <Meta title="page 3" />
-      <FullSizeCenteredFlexBox>
-        <Typography variant="h3">Page 3</Typography>
-      </FullSizeCenteredFlexBox>
+      <Meta title="Oryx Shop" />
+        <root-app></root-app>
     </>
   );
 }

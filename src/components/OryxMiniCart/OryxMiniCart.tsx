@@ -1,9 +1,8 @@
 function OryxMiniCart() {
   return (
-    <oryx-site-navigation-button
-      icon="cart"
-      text="label"
-    ></oryx-site-navigation-button>
+    <oryx-site-navigation-item
+      uid="mini-cart"
+    ></oryx-site-navigation-item>
   );
 }
 
