@@ -3,7 +3,6 @@ import BugReportIcon from '@mui/icons-material/BugReport';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeIcon from '@mui/icons-material/Home';
 import TerrainIcon from '@mui/icons-material/Terrain';
-import ShoppingCart from '@mui/icons-material/ShoppingCart';
 
 import asyncComponentLoader from '@/utils/loader';
 
