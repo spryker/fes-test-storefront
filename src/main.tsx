@@ -1,6 +1,6 @@
 import welcome from '@/utils/welcome';
 import {appBuilder} from '@spryker-oryx/application';
-import {b2cFeatures} from '@spryker-oryx/presets';
+import {storefrontFeatures} from '@spryker-oryx/presets';
 import {storefrontTheme} from '@spryker-oryx/themes';
 import {AppFeature} from "@spryker-oryx/core";
 import {resolve} from "@spryker-oryx/di";
@@ -18,7 +18,7 @@ import {provideExperienceData} from '@spryker-oryx/experience';
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'root-app': React.DetailedHTMLProps<
+      'oryx-app': React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLElement>,
         HTMLElement
         >;
@@ -139,7 +139,7 @@ const oryxStoreForPWA: AppFeature = {
 }
 
 appBuilder()
-  .withFeature(b2cFeatures)
+  .withFeature(storefrontFeatures)
   .withFeature(oryxStoreForPWA)
   .withTheme(storefrontTheme)
   .withAppOptions({ components: { root: 'body' } })
