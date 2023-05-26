@@ -1480,7 +1480,7 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@spryker-oryx/application@^0.9.1", "@spryker-oryx/application@latest":
+"@spryker-oryx/application@0.9.1", "@spryker-oryx/application@latest":
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/@spryker-oryx/application/-/application-0.9.1.tgz#8c21d3dbf8548e9087a5ac5093f2faad13bd288e"
   integrity sha512-QE4LhN8YUw5x+vZggA2i2k9bIxoeVG1dWVYvekyvig1vUHTx8AWezj7rD/mIo31Nzy/wzla01T4OGTi+L3kN9A==
@@ -1569,7 +1569,7 @@
   resolved "https://registry.yarnpkg.com/@spryker-oryx/di/-/di-0.9.1.tgz#a1b2dd4861cf4363971d83026c3e2c53c4ac0cb4"
   integrity sha512-JDLJ4cmku95ONUd6zj+GbBQQ8rq0XLFfoAjv0inFwKoZ9ePV03KZEhz7l2U8qfFFpBTA46YMl8z9XYY6DSyirw==
 
-"@spryker-oryx/experience@latest":
+"@spryker-oryx/experience@0.9.1", "@spryker-oryx/experience@latest":
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/@spryker-oryx/experience/-/experience-0.9.1.tgz#fc439f7d183b14505b151ff647b5744c4b1ae1d1"
   integrity sha512-GZXUP3k9+5DKHoGgRNIG/Ojs+j8oPIFPsRgrKwg6IgMLjAf4wmf62oqsIkXfeGey5Z5s0gDjOc2pP1K0uLBHSg==
@@ -1649,7 +1649,7 @@
     "@spryker-oryx/utilities" latest
     jsonapi-serializer "~3.6.7"
 
-"@spryker-oryx/presets@latest":
+"@spryker-oryx/presets@0.9.1":
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/@spryker-oryx/presets/-/presets-0.9.1.tgz#2187ccbab9a903b805d573f1500c8f77044a2ee7"
   integrity sha512-TwjeaxgpsUNATaqb6vcRFOGCY4bkZX5lG6KHx1AJwKGU52Ls0DhW1tg+Mwb9Xms97OpTclfV5IrgN741vU0oZA==
