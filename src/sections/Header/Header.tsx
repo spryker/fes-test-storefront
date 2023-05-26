@@ -89,7 +89,7 @@ function Header() {
             </Tooltip>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>
-              <oryx-site-navigation-item uid="static8"></oryx-site-navigation-item>
+              <oryx-site-navigation-item uid="static10"></oryx-site-navigation-item>
             </FlexBox>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>

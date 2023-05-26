@@ -7,7 +7,7 @@ function Page3() {
   return (
     <>
       <Meta title="Oryx Shop" />
-        <root-app></root-app>
+      <oryx-app></oryx-app>
     </>
   );
 }

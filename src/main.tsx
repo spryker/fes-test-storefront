@@ -6,7 +6,7 @@ import { resolve } from '@spryker-oryx/di';
 import { provideExperienceData } from '@spryker-oryx/experience';
 import { colorPalette } from '@spryker-oryx/experience';
 import { ExperienceStaticData } from '@spryker-oryx/experience';
-import { b2cFeatures } from '@spryker-oryx/presets';
+import { storefrontFeatures } from '@spryker-oryx/presets';
 import { BASE_ROUTE } from '@spryker-oryx/router';
 import { storefrontTheme } from '@spryker-oryx/themes';
 
@@ -21,6 +21,7 @@ import welcome from '@/utils/welcome';
 // and achieve the best possible performance
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
     interface IntrinsicElements {
       [name: string]: unknown;
@@ -30,7 +31,7 @@ declare global {
 
 appBuilder()
   .withFeature([
-    ...b2cFeatures,
+    ...storefrontFeatures,
     {
       providers: [
         { provide: BASE_ROUTE, useValue: '/page-3' },
