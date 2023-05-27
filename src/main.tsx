@@ -6,6 +6,10 @@ import {AppFeature} from "@spryker-oryx/core";
 import {resolve} from "@spryker-oryx/di";
 import {BASE_ROUTE} from "@spryker-oryx/router";
 import {provideExperienceData} from '@spryker-oryx/experience';
+import {NavigationButtonComponent, NavigationItemComponent} from '@spryker-oryx/site';
+import {RatingComponent, ButtonComponent, ColorModeSelectorComponent, SearchboxComponent} from '@spryker-oryx/ui';
+import {DOMAttributes} from "react";
+import {OryxAppComponent} from "@spryker-oryx/application/oryx-app";
 
 // Root contains the main dependencies and providers of the base app
 //  - React, ReactDom, RecoilRoot, HelmetProvider, ThemeProvider, MUI-core)
@@ -15,29 +19,18 @@ import {provideExperienceData} from '@spryker-oryx/experience';
 // Importing them with Promise.all (by using HTTP/2 multiplexing) we can load them in parallel
 // and achieve the best possible performance
 
+type CustomElement<T> = Partial<T & DOMAttributes<T> & { children: any }>;
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'oryx-app': React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-        >;
-      'oryx-button': React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-        >;
-      'oryx-color-mode-selector': React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-        >;
-      'oryx-rating': React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-        >;
-      'oryx-site-navigation-button': React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement | { uid: string }>,
-        HTMLElement
-        >;
+      ['oryx-app']: CustomElement<OryxAppComponent>;
+      ['oryx-button']: CustomElement<ButtonComponent>;
+      ['oryx-color-mode-selector']: CustomElement<ColorModeSelectorComponent>;
+      ['oryx-rating']: CustomElement<RatingComponent>;
+      ['oryx-site-navigation-button']: CustomElement<NavigationButtonComponent>;
+      ['oryx-site-navigation-item']: CustomElement<NavigationItemComponent>;
+      ['search-box']: CustomElement<SearchboxComponent>;
     }
   }
 }

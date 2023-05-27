@@ -20,8 +20,6 @@ import useTheme from '@/store/theme';
 
 import { HotKeysButton } from './styled';
 import { getRandomJoke } from './utils';
-import OryxButton from "@/components/OryxButton";
-import OryxMiniCart from "@/components/OryxMiniCart";
 import OryxColorModeSwitcher from "@/components/OryxColorModeSwitcher";
 
 function Header() {
@@ -91,7 +89,9 @@ function Header() {
             </Tooltip>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>
-              <OryxMiniCart />
+              <oryx-site-navigation-item
+                uid="mini-cart"
+              ></oryx-site-navigation-item>
             </FlexBox>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>
