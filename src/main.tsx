@@ -1,6 +1,7 @@
 import { DOMAttributes } from 'react';
 
 import { appBuilder } from '@spryker-oryx/application';
+import { labsFeatures } from '@spryker-oryx/labs';
 import { AppFeature } from '@spryker-oryx/core';
 import { resolve } from '@spryker-oryx/di';
 import { provideExperienceData } from '@spryker-oryx/experience';
@@ -29,9 +30,14 @@ declare global {
   }
 }
 
+const features = [
+  ...storefrontFeatures,
+  ...labsFeatures,
+];
+
 appBuilder()
   .withFeature([
-    ...storefrontFeatures,
+    ...features,
     {
       providers: [
         { provide: BASE_ROUTE, useValue: '/page-3' },
