@@ -11,7 +11,6 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 
-import OryxButton from '@/components/OryxButton';
 import OryxColorModeSwitcher from '@/components/OryxColorModeSwitcher';
 import { FlexBox } from '@/components/styled';
 import { repository, title } from '@/config';
@@ -89,7 +88,7 @@ function Header() {
             </Tooltip>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>
-              <oryx-site-navigation-item uid="static10"></oryx-site-navigation-item>
+              <oryx-site-navigation-item uid="mini-cart"></oryx-site-navigation-item>
             </FlexBox>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>
