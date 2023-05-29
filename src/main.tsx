@@ -48,8 +48,8 @@ appBuilder()
     //   designTokens: [
     //     {
     //       color: {
-    //         primaryA: colorPalette.colors.sky,
-    //         secondaryA: colorPalette.colors.crimson,
+    //         primary: colorPalette.colors.sky,
+    //         secondary: colorPalette.colors.crimson,
     //       },
     //     },
     //   ],
