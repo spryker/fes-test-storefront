@@ -11,6 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 
+import OryxColorModeSwitcher from '@/components/OryxColorModeSwitcher';
 import { FlexBox } from '@/components/styled';
 import { repository, title } from '@/config';
 import useHotKeysDialog from '@/store/hotkeys';
@@ -20,7 +21,6 @@ import useTheme from '@/store/theme';
 
 import { HotKeysButton } from './styled';
 import { getRandomJoke } from './utils';
-import OryxColorModeSwitcher from "@/components/OryxColorModeSwitcher";
 
 function Header() {
   const [, sidebarActions] = useSidebar();
@@ -69,7 +69,6 @@ function Header() {
           </FlexBox>
           <FlexBox>
             <FlexBox>
-
               <Tooltip title="Hot keys" arrow>
                 <HotKeysButton
                   size="small"
@@ -89,9 +88,7 @@ function Header() {
             </Tooltip>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>
-              <oryx-site-navigation-item
-                uid="mini-cart"
-              ></oryx-site-navigation-item>
+              <oryx-site-navigation-item uid="static10"></oryx-site-navigation-item>
             </FlexBox>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>
