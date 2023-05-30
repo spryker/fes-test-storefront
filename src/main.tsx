@@ -9,6 +9,7 @@ import { ExperienceStaticData } from '@spryker-oryx/experience';
 import { storefrontFeatures } from '@spryker-oryx/presets';
 import { BASE_ROUTE } from '@spryker-oryx/router';
 import { storefrontTheme } from '@spryker-oryx/themes';
+import { labsFeatures } from '@spryker-oryx/labs';
 
 import welcome from '@/utils/welcome';
 
@@ -29,9 +30,14 @@ declare global {
   }
 }
 
+const features = [
+  ...storefrontFeatures,
+  ...labsFeatures,
+];
+
 appBuilder()
   .withFeature([
-    ...storefrontFeatures,
+    ...features,
     {
       providers: [
         { provide: BASE_ROUTE, useValue: '/page-3' },
