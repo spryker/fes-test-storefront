@@ -29,6 +29,7 @@
     "@mui/utils": "^5.10.6",
     "@spryker-oryx/presets": "latest",
     "@spryker-oryx/themes": "latest",
+    "@spryker-oryx/labs": "latest",
     "is-mobile": "^3.1.1",
     "mockdate": "^3.0.5",
     "notistack": "^2.0.5",
