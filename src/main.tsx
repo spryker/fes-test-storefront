@@ -37,7 +37,7 @@ appBuilder()
         { provide: BASE_ROUTE, useValue: '/page-3' },
         {
           provide: ExperienceStaticData,
-          useValue: [{ id: 'header' }, { id: 'footer' }],
+          useValue: [{ id: 'header', type: 'Page' }, { id: 'footer', type: 'Page'  }],
         },
       ],
     },
