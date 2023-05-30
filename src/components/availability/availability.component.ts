@@ -23,7 +23,7 @@ export class ProductAvailabilityComponent extends ProductMixin(
         return html`<oryx-swatch
             color="var(--oryx-color-error-9)"
           ></oryx-swatch>
-          ${i18n('product.stock.not-available')} ()`;
+          ${i18n('product.stock.not-available')}`;
       case StockAvailability.InStock:
         return html`<oryx-swatch
             color="var(--oryx-color-warning-9)"
