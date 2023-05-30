@@ -6,12 +6,14 @@ import { resolve } from '@spryker-oryx/di';
 import { provideExperienceData } from '@spryker-oryx/experience';
 import { colorPalette } from '@spryker-oryx/experience';
 import { ExperienceStaticData } from '@spryker-oryx/experience';
+import { labsFeatures } from '@spryker-oryx/labs';
 import { storefrontFeatures } from '@spryker-oryx/presets';
 import { BASE_ROUTE } from '@spryker-oryx/router';
 import { storefrontTheme } from '@spryker-oryx/themes';
-import { labsFeatures } from '@spryker-oryx/labs';
 
 import welcome from '@/utils/welcome';
+
+import { productAvailabilityComponent } from './components/availability/availability.def';
 
 // Root contains the main dependencies and providers of the base app
 //  - React, ReactDom, RecoilRoot, HelmetProvider, ThemeProvider, MUI-core)
@@ -30,10 +32,7 @@ declare global {
   }
 }
 
-const features = [
-  ...storefrontFeatures,
-  ...labsFeatures,
-];
+const features = [...storefrontFeatures, ...labsFeatures];
 
 appBuilder()
   .withFeature([
@@ -43,11 +42,15 @@ appBuilder()
         { provide: BASE_ROUTE, useValue: '/page-3' },
         {
           provide: ExperienceStaticData,
-          useValue: [{ id: 'header', type: 'Page' }, { id: 'footer', type: 'Page'  }],
+          useValue: [
+            { id: 'header', type: 'Page' },
+            { id: 'footer', type: 'Page' },
+          ],
         },
       ],
     },
   ])
+  .withFeature({ components: [productAvailabilityComponent] })
   .withTheme([
     storefrontTheme,
     // {

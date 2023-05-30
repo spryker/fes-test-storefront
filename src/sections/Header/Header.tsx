@@ -92,7 +92,16 @@ function Header() {
             </FlexBox>
             <Divider orientation="vertical" flexItem />
             <FlexBox sx={{ alignItems: 'center' }}>
-              <OryxColorModeSwitcher></OryxColorModeSwitcher>
+              <oryx-color-mode-selector
+                onClick={() => {
+                  themeActions.toggle();
+                }}
+              ></oryx-color-mode-selector>
+              <Tooltip title="Switch theme" arrow>
+                <IconButton color="info" edge="end" size="large" onClick={themeActions.toggle}>
+                  <ThemeIcon />
+                </IconButton>
+              </Tooltip>
             </FlexBox>
           </FlexBox>
         </Toolbar>
