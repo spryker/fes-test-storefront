@@ -12,6 +12,7 @@ import { BASE_ROUTE } from '@spryker-oryx/router';
 import { storefrontTheme } from '@spryker-oryx/themes';
 
 import welcome from '@/utils/welcome';
+import {PWANotificationService} from "@/notification";
 
 import { productAvailabilityComponent } from './components/availability/availability.def';
 
@@ -47,6 +48,10 @@ appBuilder()
             { id: 'footer', type: 'Page' },
           ],
         },
+        {
+          provide: 'oryx.NotificationService',
+          useClass: PWANotificationService,
+        }
       ],
     },
   ])
@@ -65,14 +70,14 @@ appBuilder()
     // },
   ])
   .withAppOptions({ components: { root: 'body' } })
-  // .withOptions({
-  //   'oryx-cart-entries': {
-  //     notifyOnUpdate: true,
-  //   },
-  //   'oryx-cart-entry': {
-  //     notifyOnUpdate: true,
-  //   },
-  // })
+  .withOptions({
+    'oryx-cart-entries': {
+      notifyOnUpdate: true,
+    },
+    'oryx-cart-entry': {
+      notifyOnUpdate: true,
+    },
+  })
   .withEnvironment(import.meta.env)
   .create();
 
