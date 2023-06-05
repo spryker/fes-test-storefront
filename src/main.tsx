@@ -11,8 +11,8 @@ import { storefrontFeatures } from '@spryker-oryx/presets';
 import { BASE_ROUTE } from '@spryker-oryx/router';
 import { storefrontTheme } from '@spryker-oryx/themes';
 
+import { PWANotificationService } from '@/notification';
 import welcome from '@/utils/welcome';
-import {PWANotificationService} from "@/notification";
 
 import { productAvailabilityComponent } from './components/availability/availability.def';
 
@@ -51,7 +51,7 @@ appBuilder()
         {
           provide: 'oryx.NotificationService',
           useClass: PWANotificationService,
-        }
+        },
       ],
     },
   ])
@@ -71,9 +71,6 @@ appBuilder()
   ])
   .withAppOptions({ components: { root: 'body' } })
   .withOptions({
-    'oryx-cart-entries': {
-      notifyOnUpdate: true,
-    },
     'oryx-cart-entry': {
       notifyOnUpdate: true,
     },

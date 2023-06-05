@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 
+import { resolve } from '@spryker-oryx/di';
 import { SnackbarKey, useSnackbar } from 'notistack';
 
 import useNotifications from '@/store/notifications';
-import {resolve} from "@spryker-oryx/di";
 
 // NOTE: this is a workaround for a missing feature in notistack
 // This will be removed once the new version of notistack is released
@@ -12,7 +12,7 @@ function Notifier() {
   const [notifications, actions] = useNotifications();
 
   const notificationService = resolve('oryx.NotificationService');
-  notificationService?.initialize();
+  notificationService?.initialize?.();
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const displayed = useRef<SnackbarKey[]>([]);
